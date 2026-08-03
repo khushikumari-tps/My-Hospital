@@ -4,14 +4,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>City Hospital | Quality Healthcare for You & Your Family</title>
+    <title>Advitya Healthcares | Quality Healthcare for You & Your Family</title>
     <meta name="description"
-        content="City Hospital provides 24/7 emergency services, modern equipment, and experienced doctors. Book an appointment today.">
+        content="Advitya Healthcares provides 24/7 emergency services, modern equipment, and experienced doctors. Book an appointment today.">
     <link rel="stylesheet" href="style.css">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Animation & Slider CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
 <body>
@@ -19,14 +22,14 @@
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <i class="fa-solid fa-hospital-user"></i> City<span>Hospital</span>
+                <img src="image/advitya_logo_clean.png" alt="Advitya Healthcares" style="height: 70px; transform: scale(1.4); transform-origin: left center;">
             </div>
             <nav class="nav-links">
                 <a href="#home" class="active">Home</a>
-                <a href="#about">About</a>
+                <a href="#about">About Us</a>
                 <a href="#doctors">Doctors</a>
-                <a href="#services">Services</a>
-                <a href="#contact">Contact</a>
+                <a href="#" onclick="document.getElementById('galleryModal').style.display='block'; return false;">Gallery</a>
+                <a href="#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
             </nav>
             <div class="mobile-menu">
                 <i class="fa-solid fa-bars"></i>
@@ -37,108 +40,109 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-overlay"></div>
-        <img src="assets/hospital_hero.png" alt="City Hospital Interior" class="hero-bg">
+        <img src="image/hero_background_new.png" alt="City Hospital Building" class="hero-bg">
         <div class="container hero-content">
-            <span class="badge">🏥 Welcome to City Hospital</span>
-            <h1>Quality Healthcare for You & Your Family</h1>
-            <p>Providing exceptional medical care with state-of-the-art technology and compassionate professionals. Your
-                health is our priority.</p>
-            <div class="hero-buttons">
-                <a href="#contact" class="btn btn-primary">Book Appointment</a>
-                <a href="tel:911" class="btn btn-danger"><i class="fa-solid fa-phone"></i> Emergency</a>
+            <h1 data-aos="fade-up" data-aos-duration="1000">Advitya <span class="highlight">Welcome You</span></h1>
+            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">We, at Advitya, Envision Science for Humanity by providing Healthcare Excellence in Every Procedure regardless of your geographic location.</p>
+            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
+                <a href="#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn btn-premium">Book Appointment</a>
+                <a href="tel:911" class="btn btn-outline-danger"><i class="fa-solid fa-phone"></i> Emergency</a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Services</h2>
-                <p>Comprehensive healthcare solutions tailored to your needs</p>
-            </div>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-stethoscope"></i></div>
-                    <h3>General Medicine</h3>
-                    <p>Expert primary care for all ages, focusing on prevention and overall wellness.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-heart-pulse"></i></div>
-                    <h3>Cardiology</h3>
-                    <p>Advanced heart care, diagnostics, and treatments by top cardiovascular specialists.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-bone"></i></div>
-                    <h3>Orthopedics</h3>
-                    <p>Comprehensive care for bone, joint, and muscle conditions and injuries.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-baby"></i></div>
-                    <h3>Pediatrics</h3>
-                    <p>Specialized healthcare for infants, children, and adolescents in a friendly environment.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-brain"></i></div>
-                    <h3>Neurology</h3>
-                    <p>Expert diagnosis and treatment of disorders affecting the brain and nervous system.</p>
-                </div>
-                <div class="service-card">
-                    <div class="service-icon"><i class="fa-solid fa-tooth"></i></div>
-                    <h3>Dental Care</h3>
-                    <p>Complete oral healthcare services including preventive, cosmetic, and restorative dentistry.</p>
-                </div>
-            </div>
-        </div>
-    </section>
 
     <!-- Doctors Section -->
-    <section id="doctors" class="doctors section bg-light">
-        <div class="container">
-            <div class="section-title">
-                <h2>Meet Our Doctors</h2>
-                <p>Highly qualified and experienced medical professionals dedicated to your care</p>
+    <section id="doctors" class="doctors section bg-light" style="padding: 80px 0 20px 0; background-color: #fbfbfb;">
+        <div class="container" style="max-width: 1400px;">
+            <style>
+                .doctor-profile-card {
+                    transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+                .doctor-profile-card:hover {
+                    transform: translateY(-8px);
+                    box-shadow: 0 15px 40px rgba(0,0,0,0.08) !important;
+                }
+                .doctor-profile-card .doctor-img-container {
+                    overflow: hidden;
+                }
+                .doctor-profile-card .doctor-img-container img {
+                    transition: transform 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+                }
+                .doctor-profile-card:hover .doctor-img-container img {
+                    transform: scale(1.05);
+                }
+            </style>
+            <div class="doctor-profile-card" data-aos="fade-up" data-aos-duration="1000" style="display: flex; flex-wrap: wrap; background: white; max-width: 1300px; margin: 0 auto; box-shadow: 0 5px 25px rgba(0,0,0,0.03); border-radius: 12px; overflow: hidden;">
+                <!-- Doctor Image -->
+                <div class="doctor-img-container" data-aos="fade-right" data-aos-delay="200" data-aos-duration="1000" style="flex: none; width: 460px; height: 688px; background-color: #f4f4f4;">
+                    <img src="image/dr_diksha_updated.jpg" alt="Dr. Diksha Kapoor" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: top center;">
+                </div>
+                <!-- Doctor Info -->
+                <div data-aos="fade-left" data-aos-delay="400" data-aos-duration="1000" style="flex: 1.5; min-width: 350px; padding: 70px 80px; display: flex; flex-direction: column; justify-content: center;">
+                    <h2 style="font-size: 3rem; font-weight: 700; color: #000; margin-bottom: 5px;">Dr. Diksha Kapoor</h2>
+                    <h4 style="font-size: 1.3rem; font-weight: 500; color: #333; margin-bottom: 30px;">Pancreato-Biliary & Gastrointestinal Surgery</h4>
+                    <p style="font-size: 1.2rem; line-height: 1.8; color: #444; margin-bottom: 0;">
+                        Welcome to PancreaCare+, where expertise meets compassion in treating pancreato-biliary and gastrointestinal diseases. I am Dr Diksha Kapoor, an accomplished pancreato-biliary and gastrointestinal surgeon with a strong foundation in advanced surgical oncology and minimally invasive procedures. With extensive training and experience from premier institutions in India and abroad, I am committed to providing world-class, patient-centered care.
+                    </p>
+                </div>
             </div>
-            <div class="doctors-grid">
-                <div class="doctor-card">
-                    <div class="doctor-img">
-                        <img src="assets/doctor_1.png" alt="Dr. Sarah Jenkins">
+        </div>
+    </section>
+
+    <!-- Meet Our Team Section -->
+    <section id="team" class="team-section">
+        <div class="container">
+            <div class="team-grid">
+                <!-- Dr. Deeksha Kapoor -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="team-img-wrapper">
+                        <img src="image/image copy 6.png" alt="Dr. Deeksha Kapoor" onerror="this.src='image/doctor_1.png'">
                     </div>
-                    <div class="doctor-info">
-                        <h3>Dr. Sarah Jenkins</h3>
-                        <p class="specialty">Cardiologist</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="doctor-card">
-                    <div class="doctor-img">
-                        <img src="assets/doctor_2.png" alt="Dr. Michael Chen">
-                    </div>
-                    <div class="doctor-info">
-                        <h3>Dr. Michael Chen</h3>
-                        <p class="specialty">Neurologist</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
+                    <div class="team-info">
+                        <h3>Dr. Deeksha Kapoor</h3>
+                        <h4>(CEO & Medical Head)</h4>
+                        <h4 style="margin-top: 5px;">Advitya Healthcares | PancreaCare Initiative</h4>
+                        <p style="margin-top: 15px;">Pancreato-Biliary-Liver, Gastrointestinal Surgery, Oncosurgery</p>
+                        <p>MBBS, DNB (General Surgery), DNB (Surgical Gastroenterology)</p>
+                        <p>HPB & GI Surgical Oncology Fellowship (Tata Memorial Hospital),<br>Console-trained Robotic Surgeon (Da Vinci Xi)</p>
                     </div>
                 </div>
-                <div class="doctor-card">
-                    <div class="doctor-img">
-                        <img src="assets/doctor_3.png" alt="Dr. Emily Roberts">
+                <!-- Dr. Shyamal Kumar Sen -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="team-img-wrapper">
+                        <img src="image/image copy 7.png" alt="Dr. Shyamal Kumar Sen" onerror="this.src='image/doctor_2.png'">
                     </div>
-                    <div class="doctor-info">
-                        <h3>Dr. Emily Roberts</h3>
-                        <p class="specialty">Pediatrician</p>
-                        <div class="social-links">
-                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        </div>
+                    <div class="team-info">
+                        <h3>Dr. Shyamal Kumar Sen</h3>
+                        <p style="margin-top: 20px;"><strong>Senior Physician</strong> | Internal Medicine & Department<br>of Pancreato-Biliary, Liver, and Gastrointestinal Sciences | Medical Administrator</p>
                     </div>
                 </div>
+                <!-- Dr. Sachin Kumar -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="team-img-wrapper">
+                        <img src="image/image copy 8.png" alt="Dr. Sachin Kumar" onerror="this.src='image/doctor_3.png'">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Sachin Kumar</h3>
+                        <p style="margin-top: 20px;"><strong>Junior Resident</strong> – PancreaCare, Advitya Healthcares<br>Department of Pancreato-Biliary, Liver & Gastrointestinal Sciences</p>
+                    </div>
+                </div>
+                <!-- Ms. Poonam Sharma -->
+                <div class="team-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="team-img-wrapper">
+                        <img src="image/image copy 9.png" alt="Ms. Poonam Sharma" onerror="this.src='image/doctor_1.png'">
+                    </div>
+                    <div class="team-info">
+                        <h3>Ms. Poonam Sharma</h3>
+                        <p style="margin-top: 20px;"><strong>Head OT Staff</strong> | Patient Support Group Team Leader – PancreaCare,<br>Advitya Healthcares<br>Senior OT & Robotic Surgery Nurse | GI–HPB & Abdominal Surgery Specialist</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="team-cta" data-aos="fade-up" data-aos-delay="500">
+                <h3>Need Expert Medical Advice?</h3>
+                <a href="#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn btn-premium">Book an Appointment</a>
             </div>
         </div>
     </section>
@@ -149,9 +153,8 @@
             <div class="why-content">
                 <div class="why-text">
                     <div class="section-title left-align">
-                        <h2>Why Choose Us?</h2>
-                        <p>We combine medical excellence with a compassionate approach to provide the best healthcare
-                            experience.</p>
+                        <h2>From Inception to Realization</h2>
+                        <p>We were not born in a boardroom or conceived in an investor's plan. We were moulded in hospital corridors, in the waiting rooms of overcrowded clinics, amidst the anxious whispers of families who had travelled miles, desperate for care.</p>
                     </div>
                     <ul class="features-list">
                         <li>
@@ -186,9 +189,9 @@
                 </div>
                 <div class="why-image">
                     <!-- Stylized div for about section -->
-                    <div class="image-wrapper">
-                        <img src="assets/hospital_hero.png" alt="Hospital Facility"
-                            style="width: 100%; height: 100%; object-fit: cover; opacity: 0.8;">
+                    <div class="image-wrapper" style="background: transparent; overflow: visible;">
+                        <img src="image/inception_hospital_v2.png" alt="The MediAid Healthcare Services"
+                            style="width: 130%; max-width: none; height: auto; margin-left: -15%; display: block; margin-top: -10%;">
                         <div class="experience-badge">
                             <span class="years">25+</span>
                             <span class="text">Years of<br>Experience</span>
@@ -206,74 +209,186 @@
                 <h2>Patient Testimonials</h2>
                 <p>What our patients say about our care</p>
             </div>
-            <div class="testimonial-card">
-                <div class="stars">
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
-                    <i class="fa-solid fa-star"></i>
+            
+            <!-- Swiper -->
+            <div class="swiper testimonials-swiper" style="padding-bottom: 50px;">
+                <div class="swiper-wrapper">
+                    <!-- Slide 1 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="quote">"Excellent treatment and caring staff. The doctors took the time to explain everything to me, and the facilities are top-notch. I felt well taken care of during my entire stay."</p>
+                            <h4 class="author">- John Doe</h4>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star-half-stroke"></i>
+                            </div>
+                            <p class="quote">"Dr. Dikasha Kapoor performed a flawless procedure. The pre-op and post-op care were exceptional. Advitya Healthcares truly lives up to its promise of world-class care."</p>
+                            <h4 class="author">- Sarah Jenkins</h4>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                            </div>
+                            <p class="quote">"The emergency ward was rapid and highly responsive. In a moment of sheer panic, the staff managed everything with such calm professionalism. Forever grateful!"</p>
+                            <h4 class="author">- Michael Chang</h4>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="swiper-slide">
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-solid fa-star"></i>
+                                <i class="fa-regular fa-star"></i>
+                            </div>
+                            <p class="quote">"Very clean and modern facilities. Booking an appointment was seamless, and the wait times were minimal. A very pleasant experience overall for my family."</p>
+                            <h4 class="author">- Anita Sharma</h4>
+                        </div>
+                    </div>
                 </div>
-                <p class="quote">"Excellent treatment and caring staff. The doctors took the time to explain everything
-                    to me, and the facilities are top-notch. I felt well taken care of during my entire stay."</p>
-                <h4 class="author">- John Doe</h4>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination"></div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact section">
+    <!-- Gallery Modal -->
+    <div id="galleryModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 2000; overflow-y: auto; padding: 50px 0; backdrop-filter: blur(5px);">
+        <span onclick="document.getElementById('galleryModal').style.display='none'" style="position: fixed; top: 20px; right: 40px; color: white; font-size: 50px; font-weight: bold; cursor: pointer; z-index: 2001;">&times;</span>
         <div class="container">
-            <div class="section-title">
-                <h2>Contact Us</h2>
-                <p>Get in touch with us for appointments and inquiries</p>
+            <div class="section-title" style="color: white;">
+                <h2 style="color: white;">Our Gallery</h2>
+                <p style="color: #ccc;">Take a look inside our state-of-the-art facilities</p>
             </div>
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="info-item">
-                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.01-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.01-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.01-PM-2-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.02-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.03-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.03-PM-2-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.03-PM-576x1024.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.04-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.04-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.47.54-PM-1024x768.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.47.59-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.48.00-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.49.43-PM-1024x768.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-27-at-11.17.29-PM-1-808x1024.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-27-at-11.17.29-PM-785x1024.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/09/Untitled-design-2.jpg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            </div>
+        </div>
+    </div>
+
+    <!-- Gallery Modal -->
+    <div id="galleryModal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top:0; left:0; width: 100%; height: 100%; z-index: 2000; background: rgba(0,0,0,0.95);">
+        <span onclick="document.getElementById('galleryModal').style.display='none'" style="position: absolute; top: 20px; right: 30px; cursor: pointer; font-size: 3rem; color: white; z-index: 2010;">&times;</span>
+        
+        <!-- Swiper -->
+        <div class="swiper gallery-swiper" style="width: 100%; height: 100%;">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="image/image copy.png" style="max-width: 90%; max-height: 90vh; object-fit: contain;" onerror="this.src='image/hero_background_new.png'">
+                </div>
+                <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="image/image copy 2.png" style="max-width: 90%; max-height: 90vh; object-fit: contain;" onerror="this.src='image/advitya_welcome_banner.png'">
+                </div>
+                <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="image/image copy 3.png" style="max-width: 90%; max-height: 90vh; object-fit: contain;" onerror="this.src='image/hospital_hero.png'">
+                </div>
+                <div class="swiper-slide" style="display: flex; align-items: center; justify-content: center;">
+                    <img src="image/inception_hospital_v2.png" style="max-width: 90%; max-height: 90vh; object-fit: contain;">
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next" style="color: white;"></div>
+            <div class="swiper-button-prev" style="color: white;"></div>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top:0; left:0; width: 100%; height: 100%; z-index: 2000; background: rgba(0,0,0,0.8);">
+        <div class="modal-content contact-modal" style="background: white; padding: 40px; border-radius: 15px; position: relative; max-width: 800px; width: 90%;">
+            <span class="contact-modal-close" onclick="document.getElementById('contactModal').style.display='none'" style="position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 2rem;">&times;</span>
+            <div class="contact-modal-left">
+                <div>
+                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Contact Us</h2>
+                    <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 40px;">We're here to help. Reach out to us for appointments or any medical inquiries.</p>
+                    
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div style="width: 45px; height: 45px; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                            <i class="fa-solid fa-location-dot"></i>
+                        </div>
                         <div>
-                            <h4>Address</h4>
-                            <p>123 Healthcare Ave, Medical District, City 10001</p>
+                            <h4 style="margin: 0; font-size: 1.1rem;">Location</h4>
+                            <p style="margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem;">603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                    
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
+                        <div style="width: 45px; height: 45px; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                            <i class="fa-solid fa-phone"></i>
+                        </div>
                         <div>
-                            <h4>Phone</h4>
-                            <p>+1 (555) 123-4567</p>
+                            <h4 style="margin: 0; font-size: 1.1rem;">Emergency</h4>
+                            <p style="margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem;">+91-124-4286663</p>
                         </div>
                     </div>
-                    <div class="info-item">
-                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <p>info@cityhospital.com</p>
+                    
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <div style="width: 45px; height: 45px; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                            <i class="fa-solid fa-envelope"></i>
                         </div>
-                    </div>
-                    <div class="map-container">
-                        <!-- Simulated Google Map -->
-                        <div class="map-placeholder">
-                            <i class="fa-solid fa-map-location-dot"></i>
-                            <p>Interactive Google Map</p>
+                        <div>
+                            <h4 style="margin: 0; font-size: 1.1rem;">Email</h4>
+                            <p style="margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem;">info@advityahealthcares.com</p>
                         </div>
                     </div>
                 </div>
-                <div class="contact-form-container">
-                    <h3>Book an Appointment</h3>
-                    <form class="appointment-form">
-                        <div class="form-group">
-                            <input type="text" placeholder="Your Name" required>
+            </div>
+            <div class="contact-modal-right">
+                <h3 style="font-size: 2rem; margin-bottom: 25px;">Book an Appointment</h3>
+                <form class="premium-form">
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
+                            <input type="text" placeholder="Full Name" required>
                         </div>
-                        <div class="form-group">
-                            <input type="email" placeholder="Your Email" required>
+                        <div class="form-group" style="flex: 1;">
+                            <input type="tel" placeholder="Phone Number" required>
                         </div>
-                        <div class="form-group">
-                            <input type="tel" placeholder="Your Phone Number" required>
-                        </div>
-                        <div class="form-group">
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Email Address" required>
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <div class="form-group" style="flex: 1;">
                             <select required>
-                                <option value="" disabled selected>Select Department</option>
+                                <option value="" disabled selected>Department</option>
                                 <option value="general">General Medicine</option>
                                 <option value="cardiology">Cardiology</option>
                                 <option value="orthopedics">Orthopedics</option>
@@ -282,49 +397,83 @@
                                 <option value="dental">Dental Care</option>
                             </select>
                         </div>
-                        <div class="form-group">
-                            <input type="date" required>
+                        <div class="form-group" style="flex: 1;">
+                            <input type="date" required style="color: #666;">
                         </div>
-                        <button type="submit" class="btn btn-primary w-100">Submit Request</button>
-                    </form>
-                </div>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message or Symptoms..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn-gradient">Book Appointment</button>
+                </form>
             </div>
         </div>
-    </section>
+    </div>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" style="background-color: #8b1014; color: white; padding: 40px 0 20px; position: relative;">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <div class="logo">
-                        <i class="fa-solid fa-hospital-user"></i> City<span>Hospital</span>
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <!-- Column 1 -->
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
                     </div>
-                    <p>Providing quality healthcare services with compassion and excellence.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#about">About Us</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="#doctors">Doctors</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Follow Us</h4>
-                    <div class="social-icons">
-                        <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
                     </div>
+                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="#home" style="color: white; text-decoration: none;">Home</a>
+                    <a href="#about" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="#" style="color: white; text-decoration: none;">Blog</a>
+                    <a href="#" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="#services" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="#" style="color: white; text-decoration: none;">Research</a>
+                    <a href="#contact" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="#" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
                 </div>
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2026 City Hospital. All rights reserved.</p>
+
+            <!-- Horizontal line -->
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <!-- Bottom Section -->
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
             </div>
         </div>
+        
+        <!-- WhatsApp Icon -->
+        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
     </footer>
 
     <script>
@@ -336,6 +485,37 @@
             } else {
                 navbar.classList.remove('scrolled');
             }
+        });
+    </script>
+
+    <!-- Animation & Slider Scripts -->
+    <!-- Swiper -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script>
+        // 1. Initialize Swiper for Testimonials
+        const swiper = new Swiper('.testimonials-swiper', {
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            spaceBetween: 30,
+            breakpoints: {
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 },
+            }
+        });
+
+        // 2. Initialize Swiper for Gallery
+        const gallerySwiper = new Swiper('.gallery-swiper', {
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            keyboard: {
+                enabled: true,
+            },
         });
     </script>
 </body>
