@@ -7,7 +7,7 @@
     <title>Gallery | Advitya Healthcares</title>
     <meta name="description"
         content="What a healthy pancreas does and why it matters. Understanding the Normal Pancreas: A Q&A Guide.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -18,7 +18,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
         .inner-hero {
-            background-color: var(--primary);
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
             color: white;
             padding: 120px 0 60px;
             text-align: center;
@@ -45,7 +45,7 @@
         details {
             margin-bottom: 15px;
             background: #fff;
-            border: 1px solid #eaeaea;
+            border: 1px solid #F0E4E0;
             border-radius: 8px;
             overflow: hidden;
         }
@@ -54,7 +54,7 @@
             padding: 18px 20px;
             font-size: 1.25rem;
             font-weight: 600;
-            background: #fbfbfb;
+            background: #FDF7F5;
             cursor: pointer;
             list-style: none;
             display: flex;
@@ -65,7 +65,7 @@
         }
         
         summary:hover {
-            background-color: #f0f0f0;
+            background-color: #FBEFEC;
         }
 
         summary::-webkit-details-marker {
@@ -85,7 +85,7 @@
         }
 
         details[open] summary {
-            border-bottom: 1px solid #eaeaea;
+            border-bottom: 1px solid #F0E4E0;
         }
 
         .details-content {
@@ -119,43 +119,51 @@
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="index.html">
-                    <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
-                        <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
-                    </a>
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
                 </a>
             </div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">Pancreas <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="the-story-of-pancreacare.html">The story of pancreaCare+</a>
-                        <div class="dropdown-submenu">
-                            <a href="#">Normal pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
-                            <div class="dropdown-submenu-content">
-                                <a href="understanding-the-normal-pancreas.html">Anatomy & Function</a>
-                            </div>
+                <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown mega">
+                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Digestive Care</h4>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
                         </div>
-                        <div class="dropdown-submenu">
-                            <a href="#">Diseases pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
-                            <div class="dropdown-submenu-content">
-                                <a href="index.html#pancreatitis">Pancreatitis</a>
-                                <a href="index.html#pancreatic-cancer">Pancreatic Cancer</a>
-                                <a href="index.html#surgical-care">Surgical Care</a>
-                            </div>
+                        <div class="mega-col">
+                            <h4>Procedures</h4>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Wellness</h4>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
                         </div>
                     </div>
                 </div>
-                <a href="index.html#related-disease">Related Disease</a>
-                <a href="index.html#what-we-do">What We Do</a>
-                <a href="index.html#doctors">Doctors</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="index.html#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="gallery.html" class="active">Gallery</a>
+                <a href="faqs.html">FAQs</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contactModal">Contact us</a>
             </nav>
-            <div class="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
+            <div class="nav-actions">
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -206,7 +214,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer" style="background-color: #8b1014; color: white; padding: 40px 0 20px; position: relative;">
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
         <div class="container">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
                 <!-- Column 1 -->
@@ -231,17 +239,17 @@
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
                     <a href="index.html" style="color: white; text-decoration: none;">Home</a>
                     <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
-                    <a href="#" style="color: white; text-decoration: none;">Blog</a>
-                    <a href="#" style="color: white; text-decoration: none;">Careers</a>
-                    <a href="index.html#services" style="color: white; text-decoration: none;">Clinical Services</a>
-                    <a href="#" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
                     <a href="#" style="color: white; text-decoration: none;">Research</a>
-                    <a href="index.html#contact" style="color: white; text-decoration: none;">Contact Us</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
                 </div>
 
                 <!-- Column 3 -->
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
-                    <a href="#" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
                     <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
                     <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
                     <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
@@ -290,33 +298,7 @@
             });
         });
 
-        // Dropdown click handler
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = document.querySelectorAll('.dropdown > .dropbtn');
-            dropdowns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('show');
-                });
-            });
-
-            const submenus = document.querySelectorAll('.dropdown-submenu > a');
-            submenus.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('show');
-                });
-            });
-
-            window.addEventListener('click', function(e) {
-                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-submenu')) {
-                    const dropdowns = document.querySelectorAll('.dropdown-content.show, .dropdown-submenu-content.show');
-                    dropdowns.forEach(d => d.classList.remove('show'));
-                }
-            });
-        });
     </script>
+    <script src="nav.js?v=2"></script>
 </body>
 </html>

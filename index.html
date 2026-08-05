@@ -7,7 +7,7 @@
     <title>Advitya Healthcares | Quality Healthcare for You & Your Family</title>
     <meta name="description"
         content="Advitya Healthcares provides 24/7 emergency services, modern equipment, and experienced doctors. Book an appointment today.">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=2">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -31,53 +31,35 @@
             <nav class="nav-links">
                 <a href="index.html" class="active">Home</a>
                 <a href="about.html">About Us</a>
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">Pancreas <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="the-story-of-pancreacare.html">The story of pancreaCare+</a>
-                        <div class="dropdown-submenu">
-                            <a href="#">Normal pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
-                            <div class="dropdown-submenu-content">
-                                <a href="understanding-the-normal-pancreas.html">Anatomy & Function</a>
-                            </div>
-                        </div>
-                        <div class="dropdown-submenu">
-                            <a href="#">Diseases pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
-                            <div class="dropdown-submenu-content">
-                                <a href="#pancreatitis">Pancreatitis</a>
-                                <a href="#pancreatic-cancer">Pancreatic Cancer</a>
-                                <a href="#surgical-care">Surgical Care</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <a href="pancrea-care.html">Pancrea Care</a>
                 <div class="dropdown mega">
                     <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content mega-content">
                         <div class="mega-col">
                             <h4>Digestive Care</h4>
-                            <a href="#what-we-do">Gastroenterology</a>
-                            <a href="#pancreatitis">Pancreatic Disorders</a>
-                            <a href="#what-we-do">Liver Care</a>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
                         </div>
                         <div class="mega-col">
                             <h4>Procedures</h4>
-                            <a href="#what-we-do">Endoscopy</a>
-                            <a href="#surgical-care">GI Surgery</a>
-                            <a href="#what-we-do">Colonoscopy</a>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
                         </div>
                         <div class="mega-col">
                             <h4>Wellness</h4>
-                            <a href="#what-we-do">Nutrition &amp; Dietetics</a>
-                            <a href="#what-we-do">Preventive Health Checkups</a>
-                            <a href="tel:911">Emergency Care</a>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
                         </div>
                     </div>
                 </div>
-                <a href="#related-disease">Related Disease</a>
-                <a href="#what-we-do">What We Do</a>
-                <a href="#doctors">Doctors</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="careers.html">Careers</a>
                 <a href="gallery.html">Gallery</a>
+                <a href="faqs.html">FAQs</a>
+                <a href="blogs.html">Blogs</a>
                 <a href="#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
             </nav>
             <div class="nav-actions">
@@ -107,7 +89,7 @@
 
 
     <!-- Doctors Section -->
-    <section id="doctors" class="doctors section bg-light" style="padding: 80px 0 20px 0; background-color: #fbfbfb;">
+    <section id="doctors" class="doctors section bg-light" style="padding: 80px 0 20px 0; background-color: #FDF7F5;">
         <div class="container" style="max-width: 1400px;">
             <style>
                 .doctor-profile-card {
@@ -237,7 +219,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials section bg-primary">
+    <section id="testimonials" class="testimonials section bg-primary">
         <div class="container">
             <div class="section-title text-white">
                 <h2>Patient Testimonials</h2>
@@ -404,14 +386,14 @@
             <div class="section-title" style="margin-bottom: 20px;">
                 <h2>Our Location</h2>
             </div>
-            <div class="map-container" style="height: 450px; border: 2px solid #eaeaea; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 12px; overflow: hidden;">
+            <div class="map-container" style="height: 450px; border: 2px solid #F0E4E0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 12px; overflow: hidden;">
                 <iframe src="https://maps.google.com/maps?q=Nirvana%20Courtyard,%20Sector%2050,%20Gurugram,%20Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="footer" style="background-color: #8b1014; color: white; padding: 40px 0 20px; position: relative;">
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
         <div class="container">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
                 <!-- Column 1 -->
@@ -436,17 +418,17 @@
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
                     <a href="index.html" style="color: white; text-decoration: none;">Home</a>
                     <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
-                    <a href="#" style="color: white; text-decoration: none;">Blog</a>
-                    <a href="#" style="color: white; text-decoration: none;">Careers</a>
-                    <a href="#services" style="color: white; text-decoration: none;">Clinical Services</a>
-                    <a href="#" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
                     <a href="#" style="color: white; text-decoration: none;">Research</a>
-                    <a href="#contact" style="color: white; text-decoration: none;">Contact Us</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
                 </div>
 
                 <!-- Column 3 -->
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
-                    <a href="#" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
                     <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
                     <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
                     <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
@@ -476,17 +458,6 @@
         </a>
     </footer>
 
-    <script>
-        // Simple script for sticky navbar
-        window.addEventListener('scroll', () => {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
-        });
-    </script>
 
     <!-- Animation & Slider Scripts -->
     <!-- Swiper -->
@@ -523,58 +494,8 @@
             offset: 100 // offset (in px) from the original trigger point
         });
 
-        // Dropdown click handler
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = document.querySelectorAll('.dropdown > .dropbtn');
-            dropdowns.forEach(btn => {
-                btn.setAttribute('href', '#');
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('show');
-                });
-            });
-
-            const submenus = document.querySelectorAll('.dropdown-submenu > a');
-            submenus.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('show');
-                });
-            });
-
-            // Mobile hamburger drawer
-            const mobileMenu = document.querySelector('.mobile-menu');
-            const navLinks = document.querySelector('.nav-links');
-            if (mobileMenu && navLinks) {
-                const icon = mobileMenu.querySelector('i');
-                mobileMenu.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    const open = navLinks.classList.toggle('open');
-                    icon.classList.toggle('fa-bars', !open);
-                    icon.classList.toggle('fa-xmark', open);
-                });
-
-                // Close the drawer after tapping a real link
-                navLinks.querySelectorAll('a:not(.dropbtn)').forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (this.closest('.dropdown-submenu') && this.nextElementSibling) return;
-                        navLinks.classList.remove('open');
-                        icon.classList.add('fa-bars');
-                        icon.classList.remove('fa-xmark');
-                    });
-                });
-            }
-
-            window.addEventListener('click', function(e) {
-                if (!e.target.closest('.dropbtn') && !e.target.closest('.dropdown-submenu')) {
-                    const dropdowns = document.querySelectorAll('.dropdown-content.show, .dropdown-submenu-content.show');
-                    dropdowns.forEach(d => d.classList.remove('show'));
-                }
-            });
-        });
     </script>
+    <script src="nav.js?v=2"></script>
 </body>
 
 </html>

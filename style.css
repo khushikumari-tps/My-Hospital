@@ -12,15 +12,18 @@
     --text-muted: #6F6F6F;
     --text-light: #FFFFFF;
 
-    --bg-main: #FFFFFF;
-    --bg-light: #FFF8F6;
+    /* Pearl + blush surfaces */
+    --bg-main: #FFFBFA;
+    --bg-light: #FDF2EF;
+    --bg-wash: #FDF7F5;
     --bg-card: #FFFFFF;
-    
+
     --border-color: #F2D8D3;
 
-    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    /* Rose-tinted shadows read softer than neutral grey on a blush base */
+    --shadow-sm: 0 1px 2px 0 rgba(120, 60, 55, 0.06);
+    --shadow-md: 0 6px 16px -4px rgba(120, 60, 55, 0.12), 0 2px 6px -2px rgba(120, 60, 55, 0.08);
+    --shadow-lg: 0 18px 40px -12px rgba(120, 60, 55, 0.18), 0 6px 14px -6px rgba(120, 60, 55, 0.1);
 
     --font-sans: 'Inter', sans-serif;
     --font-heading: 'Outfit', sans-serif;
@@ -45,7 +48,13 @@ html {
 body {
     font-family: var(--font-sans);
     color: var(--text-main);
+    /* Pearl base with two faint blush washes; fixed so they don't scroll as bands */
     background-color: var(--bg-main);
+    background-image:
+        radial-gradient(1100px 620px at 12% -8%, rgba(255, 214, 205, 0.55), transparent 62%),
+        radial-gradient(900px 520px at 92% 4%, rgba(255, 228, 216, 0.45), transparent 58%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     line-height: 1.6;
     overflow-x: hidden;
 }
@@ -92,8 +101,13 @@ img {
     background-color: var(--bg-light);
 }
 
+/* Soft blush band — sits between pearl and bg-light */
+.bg-wash {
+    background-color: var(--bg-wash);
+}
+
 .bg-primary {
-    background-color: var(--primary);
+    background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
     color: white;
 }
 
@@ -209,7 +223,8 @@ img {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.65);
+    /* Opaque enough that the blush hero underneath doesn't bleed through pink */
+    background-color: rgba(255, 252, 251, 0.94);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     z-index: 1000;
@@ -218,11 +233,11 @@ img {
 }
 
 .navbar.scrolled {
-    background-color: rgba(255, 255, 255, 0.98);
+    background-color: rgba(255, 252, 251, 0.99);
     backdrop-filter: blur(18px);
     -webkit-backdrop-filter: blur(18px);
     box-shadow: var(--shadow-md);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .nav-container {
@@ -285,17 +300,16 @@ img {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 1.4rem;
+    gap: 1.05rem;
     flex: 1;
-    /* Push the menu to the right, up against the CTA */
-    justify-content: flex-end;
-    margin-left: auto;
-    margin-right: 0.75rem;
+    /* Centre the menu between the logo and the CTA */
+    justify-content: center;
+    margin: 0 1rem;
 }
 
 .nav-links a {
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 1rem;
     color: var(--text-main);
     position: relative;
     white-space: nowrap;
@@ -354,7 +368,7 @@ img {
 }
 
 .dropdown-content a:hover {
-    background-color: #f1f1f1;
+    background-color: var(--bg-light);
     color: var(--primary);
 }
 
@@ -383,6 +397,19 @@ img {
 .dropdown-submenu-content.show {
     display: block;
 }
+
+/* Pancrea Care sub-site nav: only 6 items, so it carries larger type than the
+   ten-item main nav. At 1.2rem it fits the standard 96px bar. */
+.navbar-pancreas .nav-links {
+    gap: 2rem;
+}
+
+.navbar-pancreas .nav-links a {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.1;
+}
+
 
 /* Mega Dropdown (Clinical Services) */
 .dropdown.mega {
@@ -1442,8 +1469,17 @@ img {
     box-shadow: 0 15px 25px rgba(187, 26, 52, 0.4);
 }
 
-/* Mobile navbar drawer (kept last so it wins over the earlier duplicate media blocks) */
-@media (max-width: 768px) {
+/* Mobile navbar drawer (kept last so it wins over the earlier duplicate media blocks).
+   Breakpoint is 1100px, not 768px: ten menu items + the CTA stop fitting below that. */
+@media (max-width: 1100px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: block;
+    }
+
     .nav-links.open {
         display: flex;
         flex-direction: column;
@@ -1458,7 +1494,7 @@ img {
         max-height: calc(100vh - 96px);
         overflow-y: auto;
         padding: 1rem 1.5rem 2rem;
-        background-color: rgba(255, 255, 255, 0.98);
+        background-color: rgba(255, 251, 250, 0.98);
         backdrop-filter: blur(18px);
         -webkit-backdrop-filter: blur(18px);
         box-shadow: var(--shadow-lg);
@@ -1470,7 +1506,7 @@ img {
         display: block;
         width: 100%;
         padding: 0.85rem 0;
-        font-size: 1rem;
+        font-size: 1.1rem;
         border-bottom: 1px solid var(--border-color);
     }
 
@@ -1516,5 +1552,12 @@ img {
 
     .appointment-btn i {
         display: none;
+    }
+}
+
+/* Pancrea Care drawer: six items at 1.2rem, slightly larger than the main drawer */
+@media (max-width: 1100px) {
+    .navbar-pancreas .nav-links.open > a {
+        font-size: 1.2rem;
     }
 }

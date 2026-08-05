@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clinical Services | Advitya Healthcares</title>
+    <meta name="description"
+        content="Gastroenterology, pancreatic disorders, liver care, endoscopy, GI surgery, nutrition and preventive health services at Advitya Healthcares.">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .inner-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
+            color: white;
+            padding: 150px 0 60px;
+            text-align: center;
+        }
+
+        .inner-hero h1 {
+            font-size: 3.6rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .inner-hero p {
+            font-size: 1.4rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        /* Anchor targets must clear the fixed 96px navbar */
+        .service-block {
+            scroll-margin-top: 120px;
+            background: #fff;
+            border: 1px solid #F0E4E0;
+            border-left: 5px solid var(--primary);
+            border-radius: 12px;
+            padding: 35px;
+            margin-bottom: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .service-block h2 {
+            font-size: 1.9rem;
+            color: var(--primary-dark);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .service-block h2 i {
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+
+        .service-block > p {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 18px;
+        }
+
+        .service-block ul {
+            padding-left: 20px;
+            color: #555;
+            line-height: 1.85;
+        }
+
+        .sub-block {
+            scroll-margin-top: 120px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            padding: 22px 25px;
+            margin-top: 20px;
+        }
+
+        .sub-block h3 {
+            font-size: 1.3rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+        }
+
+        .sub-block p {
+            color: #555;
+            line-height: 1.75;
+        }
+
+        .service-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 45px;
+        }
+
+        .service-nav a {
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            padding: 8px 18px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary-dark);
+            transition: var(--transition);
+        }
+
+        .service-nav a:hover {
+            background: var(--primary);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .cta-strip {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown mega">
+                    <a href="#" class="dropbtn active">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Digestive Care</h4>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Procedures</h4>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Wellness</h4>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="faqs.html">FAQs</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contactModal">Contact us</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inner Hero -->
+    <section class="inner-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Clinical Services</h1>
+            <p data-aos="fade-up" data-aos-delay="150">Digestive, pancreatic and surgical care under one roof</p>
+            <div style="margin-top: 25px; font-size: 1.05rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up"
+                data-aos-delay="300">
+                Home / Clinical Services
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding: 70px 0; background: #FDF7F5;">
+        <div class="container" style="max-width: 1000px;">
+
+            <div class="service-nav" data-aos="fade-up">
+                <a href="#gastroenterology">Gastroenterology</a>
+                <a href="#pancreatic-disorders">Pancreatic Disorders</a>
+                <a href="#liver-care">Liver Care</a>
+                <a href="#endoscopy">Endoscopy</a>
+                <a href="#gi-surgery">GI Surgery</a>
+                <a href="#colonoscopy">Colonoscopy</a>
+                <a href="#nutrition">Nutrition &amp; Dietetics</a>
+                <a href="#preventive-health">Preventive Health Checkups</a>
+                <a href="#emergency-care">Emergency Care</a>
+            </div>
+
+            <div class="service-block" id="gastroenterology" data-aos="fade-up">
+                <h2><i class="fa-solid fa-stethoscope"></i> Gastroenterology</h2>
+                <p>Assessment and treatment of the full digestive tract — from reflux and ulcers to inflammatory bowel
+                    disease and chronic abdominal pain that has gone undiagnosed elsewhere.</p>
+                <ul>
+                    <li>Acid reflux, gastritis and peptic ulcer disease</li>
+                    <li>Irritable bowel syndrome and inflammatory bowel disease</li>
+                    <li>Chronic diarrhoea, constipation and malabsorption</li>
+                    <li>GI bleeding evaluation</li>
+                </ul>
+            </div>
+
+            <div class="service-block" id="pancreatic-disorders" data-aos="fade-up">
+                <h2><i class="fa-solid fa-notes-medical"></i> Pancreatic Disorders</h2>
+                <p>Our pancreaCare+ programme is built around one of the hardest organs in the abdomen to treat well.
+                    Read <a href="the-story-of-pancreacare.html" style="color: var(--primary); font-weight: 600;">how it
+                        started</a>, or <a href="understanding-the-normal-pancreas.html"
+                        style="color: var(--primary); font-weight: 600;">what a healthy pancreas does</a>.</p>
+
+                <div class="sub-block" id="pancreatitis">
+                    <h3>Pancreatitis</h3>
+                    <p>Acute and chronic pancreatitis managed end to end — pain control, nutrition, drainage of
+                        collections, enzyme replacement, and surgery when the disease demands it.</p>
+                </div>
+
+                <div class="sub-block" id="pancreatic-cancer">
+                    <h3>Pancreatic Cancer</h3>
+                    <p>Staging, tumour board review, resection where possible including Whipple's procedure, and
+                        coordinated chemotherapy and follow-up. Early referral changes what is possible.</p>
+                </div>
+
+                <div class="sub-block" id="surgical-care">
+                    <h3>Surgical Care</h3>
+                    <p>Cysts, pseudocysts, ductal disease and complex reoperations, handled by a team that does this
+                        work regularly rather than occasionally.</p>
+                </div>
+            </div>
+
+            <div class="service-block" id="liver-care" data-aos="fade-up">
+                <h2><i class="fa-solid fa-heart-pulse"></i> Liver Care</h2>
+                <p>Evaluation and management of liver and biliary disease, with imaging and endoscopic support in the
+                    same building.</p>
+                <ul>
+                    <li>Fatty liver disease and cirrhosis</li>
+                    <li>Hepatitis evaluation and monitoring</li>
+                    <li>Jaundice workup and bile duct obstruction</li>
+                    <li>Gallbladder and gallstone disease</li>
+                </ul>
+            </div>
+
+            <div class="service-block" id="endoscopy" data-aos="fade-up">
+                <h2><i class="fa-solid fa-microscope"></i> Endoscopy</h2>
+                <p>Diagnostic and therapeutic upper GI endoscopy performed as a day procedure in most cases.</p>
+                <ul>
+                    <li>Upper GI endoscopy and biopsy</li>
+                    <li>ERCP for bile and pancreatic duct disease</li>
+                    <li>Endoscopic ultrasound (EUS) and guided sampling</li>
+                    <li>Stenting, dilatation and bleeding control</li>
+                </ul>
+            </div>
+
+            <div class="service-block" id="gi-surgery" data-aos="fade-up">
+                <h2><i class="fa-solid fa-user-doctor"></i> GI Surgery</h2>
+                <p>Open and laparoscopic surgery across the gastrointestinal tract, including cancer resections with
+                    oncology input from the outset.</p>
+                <ul>
+                    <li>Hepatobiliary and pancreatic (HPB) surgery</li>
+                    <li>Colorectal and gastric cancer surgery</li>
+                    <li>Laparoscopic gallbladder, hernia and appendix surgery</li>
+                    <li>Redo and complex abdominal surgery</li>
+                </ul>
+            </div>
+
+            <div class="service-block" id="colonoscopy" data-aos="fade-up">
+                <h2><i class="fa-solid fa-magnifying-glass"></i> Colonoscopy</h2>
+                <p>Screening and diagnostic colonoscopy with polyp removal in the same sitting where indicated.</p>
+                <ul>
+                    <li>Screening from age 45, or earlier with family history</li>
+                    <li>Investigation of bleeding, anaemia or altered bowel habit</li>
+                    <li>Polypectomy and biopsy</li>
+                    <li>Surveillance after previous polyps or cancer</li>
+                </ul>
+            </div>
+
+            <div class="service-block" id="nutrition" data-aos="fade-up">
+                <h2><i class="fa-solid fa-apple-whole"></i> Nutrition &amp; Dietetics</h2>
+                <p>Digestive and pancreatic disease changes what the body can absorb. Our dietitians work alongside the
+                    surgical team from admission through recovery at home.</p>
+                <ul>
+                    <li>Pre-operative nutritional optimisation</li>
+                    <li>Pancreatic enzyme replacement guidance</li>
+                    <li>Post-surgical diet progression</li>
+                    <li>Diabetes and weight management support</li>
+                </ul>
+            </div>
+
+            <div class="service-block" id="preventive-health" data-aos="fade-up">
+                <h2><i class="fa-solid fa-clipboard-check"></i> Preventive Health Checkups</h2>
+                <p>Structured packages that look for the things that stay silent until they are advanced.</p>
+                <ul>
+                    <li>Abdominal ultrasound and liver function panel</li>
+                    <li>Diabetes and lipid screening</li>
+                    <li>Colorectal cancer screening</li>
+                    <li>Consultation and a written plan, not just a report</li>
+                </ul>
+            </div>
+
+            <div class="service-block" id="emergency-care" data-aos="fade-up">
+                <h2><i class="fa-solid fa-truck-medical"></i> Emergency Care</h2>
+                <p>Severe abdominal pain with vomiting, fever or jaundice needs to be seen the same day. Call
+                    <strong>+91 9211221551</strong> — do not wait for a scheduled appointment.</p>
+                <ul>
+                    <li>Acute abdomen and suspected pancreatitis</li>
+                    <li>GI bleeding</li>
+                    <li>Obstructive jaundice and cholangitis</li>
+                    <li>Post-operative complications</li>
+                </ul>
+                <p style="margin-top: 18px;">
+                    <a href="tel:+919211221551" class="btn btn-danger" style="display: inline-flex; gap: 8px;">
+                        <i class="fa-solid fa-phone"></i> Call Emergency
+                    </a>
+                </p>
+            </div>
+
+            <div class="cta-strip" data-aos="fade-up">
+                <h3 style="font-size: 1.6rem; margin-bottom: 12px;">Not sure which service you need?</h3>
+                <p style="color: #555; font-size: 1.08rem; margin-bottom: 20px;">
+                    Send us your reports and a coordinator will route you to the right consultant.
+                </p>
+                <a href="index.html#contactModal" class="appointment-btn" style="display: inline-flex;">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
+                        Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/919211221551"
+            style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="nav.js?v=2"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
+</body>
+
+</html>

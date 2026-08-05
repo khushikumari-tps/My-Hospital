@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pancrea Care | Advitya Healthcares</title>
+    <meta name="description"
+        content="pancreaCare+ from Advitya Healthcares: what the pancreas does, the diseases that affect it, and how our team diagnoses, operates and supports recovery.">
+    <link rel="stylesheet" href="style.css?v=2">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .inner-hero {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
+            color: white;
+            padding: 150px 0 60px;
+            text-align: center;
+        }
+
+        .inner-hero h1 {
+            font-size: 3.6rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .inner-hero p {
+            font-size: 1.35rem;
+            opacity: 0.95;
+            font-weight: 500;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+
+        /* Anchor targets must clear the fixed 96px navbar */
+        .anchor-section {
+            scroll-margin-top: 120px;
+            padding: 70px 0;
+        }
+
+        .anchor-section h2 {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .lead {
+            font-size: 1.15rem;
+            line-height: 1.85;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .split {
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .split img {
+            width: 100%;
+            border-radius: 14px;
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 35px;
+        }
+
+        .info-card {
+            background: #fff;
+            border: 1px solid #F0E4E0;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .info-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 40px rgba(0, 0, 0, 0.09);
+        }
+
+        .info-card i {
+            font-size: 1.6rem;
+            color: var(--primary);
+            margin-bottom: 14px;
+        }
+
+        .info-card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 10px;
+            color: var(--text-main);
+        }
+
+        .info-card p {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 14px;
+        }
+
+        .info-card a {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        .step-row {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            background: #fff;
+            border: 1px solid #F0E4E0;
+            border-left: 5px solid var(--primary);
+            border-radius: 12px;
+            padding: 26px 28px;
+            margin-bottom: 18px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+        }
+
+        .step-num {
+            flex-shrink: 0;
+            width: 46px;
+            height: 46px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            color: #fff;
+            font-weight: 700;
+            font-size: 1.15rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .step-row h3 {
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+            color: var(--primary-dark);
+        }
+
+        .step-row p {
+            color: #555;
+            line-height: 1.75;
+        }
+
+        .cta-strip {
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        @media (max-width: 900px) {
+            .split {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .inner-hero h1 {
+                font-size: 2.6rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar navbar-pancreas">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="#functions" class="active">Functions</a>
+                <a href="#diseases">Diseases</a>
+                <a href="#treatment">Treatment</a>
+                <a href="index.html#contactModal">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inner Hero -->
+    <section class="inner-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">pancreaCare<span style="opacity: 0.8;">+</span></h1>
+            <p data-aos="fade-up" data-aos-delay="150">A dedicated programme for the organ most people never think about
+                until it goes wrong</p>
+            <div style="margin-top: 25px; font-size: 1.05rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up"
+                data-aos-delay="300">
+                Home / Pancrea Care
+            </div>
+        </div>
+    </section>
+
+    <!-- The Pancreas -->
+    <section class="anchor-section" id="functions" style="background: #FDF7F5;">
+        <div class="container" style="max-width: 1100px;">
+            <div class="split">
+                <div data-aos="fade-up">
+                    <h2>Functions of the Pancreas</h2>
+                    <p class="lead">A flat organ tucked behind the stomach, roughly the length of your hand. It does two
+                        jobs at once: it makes the enzymes that break down what you eat, and it makes the insulin that
+                        controls your blood sugar.</p>
+                    <p class="lead">When it stops doing either well, the symptoms are vague at first — bloating, back
+                        pain, weight that falls off without explanation. That vagueness is why pancreatic disease is so
+                        often found late, and why we built a programme around it.</p>
+                    <div style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px;">
+                        <a href="understanding-the-normal-pancreas.html" class="appointment-btn"
+                            style="display: inline-flex;">
+                            <i class="fa-solid fa-book-open"></i> Anatomy &amp; Function
+                        </a>
+                        <a href="the-story-of-pancreacare.html" class="btn btn-primary"
+                            style="display: inline-flex; align-items: center; gap: 8px;">
+                            <i class="fa-solid fa-heart"></i> The story of pancreaCare+
+                        </a>
+                    </div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="150">
+                    <img src="image/pancreas_illustration.png" alt="Illustration of the pancreas">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Disease -->
+    <section class="anchor-section" id="diseases">
+        <div class="container" style="max-width: 1100px;">
+            <h2 data-aos="fade-up">Related Disease</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100" style="max-width: 800px;">
+                The conditions we see most often in this programme. Each links through to how we treat it.
+            </p>
+
+            <div class="card-grid">
+                <div class="info-card" data-aos="fade-up">
+                    <i class="fa-solid fa-fire"></i>
+                    <h3>Pancreatitis</h3>
+                    <p>Sudden or long-standing inflammation of the pancreas. Severe upper abdominal pain that bores
+                        through to the back is the classic sign.</p>
+                    <a href="clinical-services.html#pancreatitis">How we treat it <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="80">
+                    <i class="fa-solid fa-ribbon"></i>
+                    <h3>Pancreatic Cancer</h3>
+                    <p>Often silent until it obstructs the bile duct or causes weight loss. Early referral is what
+                        decides whether surgery is still an option.</p>
+                    <a href="clinical-services.html#pancreatic-cancer">How we treat it <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="160">
+                    <i class="fa-solid fa-droplet"></i>
+                    <h3>Cysts &amp; Pseudocysts</h3>
+                    <p>Fluid collections that follow inflammation or appear on their own. Some need watching, some need
+                        draining, a few need removing.</p>
+                    <a href="clinical-services.html#surgical-care">How we treat it <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="info-card" data-aos="fade-up">
+                    <i class="fa-solid fa-gem"></i>
+                    <h3>Gallstone &amp; Bile Duct Disease</h3>
+                    <p>The commonest trigger for acute pancreatitis in India. Treating the stones is part of treating
+                        the pancreas.</p>
+                    <a href="clinical-services.html#liver-care">How we treat it <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="80">
+                    <i class="fa-solid fa-syringe"></i>
+                    <h3>Pancreatogenic Diabetes</h3>
+                    <p>Diabetes caused by a damaged pancreas behaves differently from type 2. It needs a different plan,
+                        not a standard one.</p>
+                    <a href="clinical-services.html#nutrition">How we manage it <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+
+                <div class="info-card" data-aos="fade-up" data-aos-delay="160">
+                    <i class="fa-solid fa-utensils"></i>
+                    <h3>Exocrine Insufficiency</h3>
+                    <p>When enzyme output drops, food passes through undigested — greasy stools, weight loss, fatigue.
+                        Enzyme replacement changes it.</p>
+                    <a href="clinical-services.html#nutrition">How we manage it <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Do -->
+    <section class="anchor-section" id="treatment" style="background: #FDF7F5;">
+        <div class="container" style="max-width: 1000px;">
+            <h2 data-aos="fade-up">What We Do</h2>
+            <p class="lead" data-aos="fade-up" data-aos-delay="100" style="max-width: 800px;">
+                From the first scan to the follow-up call after you are home — the path is the same for every patient in
+                the programme.
+            </p>
+
+            <div style="margin-top: 35px;">
+                <div class="step-row" data-aos="fade-up">
+                    <div class="step-num">1</div>
+                    <div>
+                        <h3>Diagnose Properly, Once</h3>
+                        <p>CT, MRI, endoscopic ultrasound and guided sampling in one place, so you are not sent between
+                            centres collecting reports. Existing scans are reviewed rather than repeated where they are
+                            adequate.</p>
+                    </div>
+                </div>
+
+                <div class="step-row" data-aos="fade-up" data-aos-delay="80">
+                    <div class="step-num">2</div>
+                    <div>
+                        <h3>Decide as a Team</h3>
+                        <p>Surgery, gastroenterology, oncology, radiology and nutrition review the case together before
+                            a plan is offered. You are told what the options are, including the option of waiting.</p>
+                    </div>
+                </div>
+
+                <div class="step-row" data-aos="fade-up" data-aos-delay="160">
+                    <div class="step-num">3</div>
+                    <div>
+                        <h3>Operate Where It Helps</h3>
+                        <p>Whipple's procedure, distal pancreatectomy, drainage procedures and complex reoperations —
+                            done by a team that performs this work regularly, not occasionally.</p>
+                    </div>
+                </div>
+
+                <div class="step-row" data-aos="fade-up" data-aos-delay="240">
+                    <div class="step-num">4</div>
+                    <div>
+                        <h3>Feed and Rebuild</h3>
+                        <p>Nutrition is not an afterthought in pancreatic disease. Enzyme support, diet progression and
+                            blood sugar control are planned before surgery and carried through recovery.</p>
+                    </div>
+                </div>
+
+                <div class="step-row" data-aos="fade-up" data-aos-delay="320">
+                    <div class="step-num">5</div>
+                    <div>
+                        <h3>Follow Up Without the Journey</h3>
+                        <p>Routine follow-up by phone or video for outstation patients, with appointments clustered so
+                            you travel once instead of four times.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="cta-strip" data-aos="fade-up" style="margin-top: 40px;">
+                <h3 style="font-size: 1.7rem; margin-bottom: 12px;">Send us your reports</h3>
+                <p style="color: #555; font-size: 1.1rem; margin-bottom: 22px;">
+                    A consultant reviews them before you travel. Call <strong>+91 9211221551</strong> or write to
+                    <strong>info@advityahealthcares.com</strong>.
+                </p>
+                <a href="index.html#contactModal" class="appointment-btn" style="display: inline-flex;">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="pancrea-care.html" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
+                        Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/919211221551"
+            style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="nav.js?v=2"></script>
+    <script>
+        AOS.init({ once: true, offset: 100 });
+    </script>
+</body>
+
+</html>

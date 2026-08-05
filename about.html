@@ -4,10 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Advitya Healthcares</title>
+    <title>About Us | From Inception to Realization | Advitya Healthcares</title>
     <meta name="description"
-        content="What a healthy pancreas does and why it matters. Understanding the Normal Pancreas: A Q&A Guide.">
-    <link rel="stylesheet" href="style.css">
+        content="From Inception to Realization - the journey of Advitya Healthcares, from hospital corridors in 2003 to the Alliance Model bringing surgical and cancer care to tier 2 and tier 3 cities.">
+    <link rel="stylesheet" href="style.css?v=2">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -17,99 +17,431 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
+        /* ---- Premium About page ---- */
         .inner-hero {
-            background-color: var(--primary);
-            color: white;
-            padding: 120px 0 60px;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 160px 0 90px;
         }
+
+        /* Soft light sweep across the banner */
+        .inner-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(720px 320px at 18% 0%, rgba(255, 255, 255, 0.28), transparent 65%),
+                radial-gradient(560px 260px at 88% 110%, rgba(255, 255, 255, 0.16), transparent 60%);
+            pointer-events: none;
+        }
+
+        .inner-hero .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-eyebrow {
+            display: inline-block;
+            font-size: 0.82rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            font-weight: 600;
+            opacity: 0.9;
+            border: 1px solid rgba(255, 255, 255, 0.45);
+            border-radius: 50px;
+            padding: 7px 20px;
+            margin-bottom: 26px;
+        }
+
         .inner-hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 20px;
+            font-size: 4rem;
+            line-height: 1.08;
+            margin-bottom: 14px;
             font-weight: 700;
         }
+
         .inner-hero p {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             opacity: 0.95;
             font-weight: 500;
         }
-        
-        .story-section {
-            padding: 60px 0;
-        }
-        
-        .accordion {
-            margin-top: 30px;
-        }
 
-        details {
-            margin-bottom: 15px;
-            background: #fff;
-            border: 1px solid #eaeaea;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-
-        summary {
-            padding: 18px 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            background: #fbfbfb;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: var(--primary-dark);
-            transition: background-color 0.3s;
-        }
-        
-        summary:hover {
-            background-color: #f0f0f0;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        summary::after {
-            content: '\f078';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
+        .hero-crumb {
+            margin-top: 28px;
             font-size: 1rem;
-            transition: transform 0.3s;
+            letter-spacing: 0.06em;
+            opacity: 0.8;
+            font-weight: 500;
         }
 
-        details[open] summary::after {
-            transform: rotate(180deg);
+        /* Opening pull quote */
+        .opening {
+            padding: 80px 0 20px;
         }
 
-        details[open] summary {
-            border-bottom: 1px solid #eaeaea;
+        .pull-quote {
+            position: relative;
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            line-height: 1.6;
+            font-weight: 500;
+            color: var(--text-main);
+            text-align: center;
+            padding-top: 50px;
         }
 
-        .details-content {
-            padding: 25px;
-            font-size: 1.1rem;
+        .pull-quote::before {
+            content: 'C';
+            position: absolute;
+            top: -18px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 7rem;
+            line-height: 1;
+            color: var(--primary);
+            opacity: 0.22;
+        }
+
+        /* Shared section furniture */
+        .eyebrow {
+            display: block;
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.7rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 14px;
+            color: var(--text-main);
+        }
+
+        .section-sub {
+            text-align: center;
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto 55px;
             line-height: 1.7;
-            color: #444;
         }
-        
-        .details-content ul {
-            padding-left: 20px;
-            margin-top: 10px;
+
+        /* Timeline */
+        .journey {
+            padding: 70px 0 90px;
         }
-        
-        .details-content li {
-            margin-bottom: 8px;
+
+        .timeline {
+            position: relative;
+            padding-left: 130px;
         }
-        
-        .details-content p {
-            margin-bottom: 15px;
+
+        /* The rail */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 55px;
+            top: 12px;
+            bottom: 12px;
+            width: 2px;
+            background: linear-gradient(180deg, var(--primary) 0%, var(--primary-light) 60%, transparent 100%);
         }
-        
-        .details-content p:last-child {
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 34px;
+        }
+
+        .tl-marker {
+            position: absolute;
+            left: -130px;
+            top: 26px;
+            width: 112px;
+            height: 112px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            border: 2px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.15rem;
+            line-height: 1.25;
+            color: var(--primary-dark);
+        }
+
+        .tl-years b {
+            display: block;
+        }
+
+        .tl-marker.is-final {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .tl-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 40px 44px;
+            box-shadow: var(--shadow-md);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .tl-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .tl-card h3 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+            margin-bottom: 18px;
+            line-height: 1.3;
+        }
+
+        .tl-card p {
+            font-size: 1.12rem;
+            line-height: 1.85;
+            color: #4a4a4a;
+            margin-bottom: 16px;
+        }
+
+        .tl-card p:last-child {
             margin-bottom: 0;
+        }
+
+        .tl-closing {
+            font-size: 1.25rem !important;
+            font-weight: 700;
+            color: var(--text-main) !important;
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+            margin-top: 24px !important;
+        }
+
+        /* The founding belief */
+        .belief {
+            position: relative;
+            background: var(--bg-light);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 28px 32px 28px 64px;
+            margin: 26px 0;
+        }
+
+        .belief i {
+            position: absolute;
+            left: 26px;
+            top: 30px;
+            color: var(--primary);
+            opacity: 0.5;
+            font-size: 1.3rem;
+        }
+
+        .belief p {
+            font-family: var(--font-heading);
+            font-size: 1.3rem !important;
+            font-weight: 600;
+            line-height: 1.6 !important;
+            color: var(--primary-dark) !important;
+            margin: 0 !important;
+        }
+
+        /* Alliance model */
+        .alliance {
+            padding: 90px 0;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .pillar-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .pillar {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 38px 32px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+        }
+
+        .pillar:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .pillar i {
+            font-size: 1.9rem;
+            color: var(--primary);
+            margin-bottom: 18px;
+        }
+
+        .pillar h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: var(--text-main);
+        }
+
+        .pillar p {
+            color: #555;
+            line-height: 1.75;
+        }
+
+        /* Closing */
+        .closing {
+            padding: 90px 0;
+            text-align: center;
+        }
+
+        .closing-line {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            line-height: 1.5;
+            color: var(--text-main);
+            margin-bottom: 18px;
+        }
+
+        .closing-line strong {
+            color: var(--primary);
+        }
+
+        .closing-tag {
+            font-size: 1.2rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Newsletter */
+        .newsletter {
+            padding: 70px 0 90px;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+        }
+
+        .newsletter p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .news-form {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .news-form input {
+            flex: 1;
+            min-width: 260px;
+            max-width: 380px;
+            padding: 0.95rem 1.3rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            color: var(--text-main);
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 50px;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .news-form input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(228, 87, 78, 0.12);
+        }
+
+        .news-form button {
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-sans);
+        }
+
+        @media (max-width: 820px) {
+            .inner-hero {
+                padding: 130px 0 60px;
+            }
+
+            .inner-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .inner-hero p {
+                font-size: 1.2rem;
+            }
+
+            .pull-quote {
+                font-size: 1.25rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            /* Rail moves to the left edge, markers become pills above each card */
+            .timeline {
+                padding-left: 0;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .tl-marker {
+                position: static;
+                width: auto;
+                height: auto;
+                border-radius: 50px;
+                padding: 8px 20px;
+                margin-bottom: 14px;
+                display: inline-flex;
+                font-size: 0.95rem;
+            }
+
+            .tl-years b {
+                display: inline;
+            }
+
+            /* On desktop the years stack; inline they need a dash between them */
+            .tl-years b + b::before {
+                content: '–';
+                margin: 0 4px;
+                font-weight: 400;
+            }
+
+            .tl-card {
+                padding: 28px 24px;
+            }
+
+            .tl-card h3 {
+                font-size: 1.4rem;
+            }
+
+            .closing-line {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -119,43 +451,51 @@
     <header class="navbar">
         <div class="container nav-container">
             <div class="logo">
-                <a href="index.html">
-                    <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
-                        <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
-                    </a>
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
                 </a>
             </div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
-                <div class="dropdown">
-                    <a href="#" class="dropbtn">Pancreas <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="the-story-of-pancreacare.html">The story of pancreaCare+</a>
-                        <div class="dropdown-submenu">
-                            <a href="#">Normal pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
-                            <div class="dropdown-submenu-content">
-                                <a href="understanding-the-normal-pancreas.html">Anatomy & Function</a>
-                            </div>
+                <a href="about.html" class="active">About Us</a>
+                <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown mega">
+                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Digestive Care</h4>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
                         </div>
-                        <div class="dropdown-submenu">
-                            <a href="#">Diseases pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
-                            <div class="dropdown-submenu-content">
-                                <a href="index.html#pancreatitis">Pancreatitis</a>
-                                <a href="index.html#pancreatic-cancer">Pancreatic Cancer</a>
-                                <a href="index.html#surgical-care">Surgical Care</a>
-                            </div>
+                        <div class="mega-col">
+                            <h4>Procedures</h4>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Wellness</h4>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
                         </div>
                     </div>
                 </div>
-                <a href="index.html#related-disease">Related Disease</a>
-                <a href="index.html#what-we-do">What We Do</a>
-                <a href="index.html#doctors">Doctors</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="careers.html">Careers</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="index.html#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
+                <a href="faqs.html">FAQs</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contactModal">Contact us</a>
             </nav>
-            <div class="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
+            <div class="nav-actions">
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </div>
     </header>
@@ -163,68 +503,194 @@
     <!-- Inner Hero Section -->
     <section class="inner-hero">
         <div class="container">
-            <h1 data-aos="fade-up">Our Journey</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Bringing Expert Surgery to Tier 2 Cities</p>
-            <div style="margin-top: 30px; font-size: 1.2rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up" data-aos-delay="400">
+            <span class="hero-eyebrow" data-aos="fade-up">Advitya Healthcares</span>
+            <h1 data-aos="fade-up" data-aos-delay="80">From Inception to Realization</h1>
+            <p data-aos="fade-up" data-aos-delay="160">&mdash; This is Our Journey</p>
+            <div class="hero-crumb" data-aos="fade-up" data-aos-delay="240">
                 Home / About Us
             </div>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="about-section" style="padding: 60px 0; background: #fbfbfb;">
-        <div class="container" style="max-width: 1000px;">
-            <h2 style="font-size: 2.8rem; color: #000; font-weight: 700; margin-bottom: 30px; text-align: center;" data-aos="fade-up">The Journey of Advitya</h2>
-            <p style="font-size: 1.25rem; line-height: 1.8; color: #444; margin-bottom: 50px; text-align: center; font-weight: 500;" data-aos="fade-up" data-aos-delay="100">We were not born in a boardroom or conceived in an investor's plan. We were moulded in hospital corridors, in the waiting rooms of overcrowded clinics, amidst the anxious whispers of families who had travelled miles, desperate for care.</p>
-            
-            <div class="timeline" style="margin-top: 40px;">
-                <!-- 2003-2008 -->
-                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2003-2008: The First Glimpse into Healthcare</h3>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We witnessed their silent prayers and unspoken fears. We saw the exhaustion in their eyes, not just from long journeys, but from the despair of realising that the care they needed was missing in their homes.</p>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555;">Big cities boasted world-class hospitals, yet outside them, access to specialised healthcare was severely limited. We witnessed families leaving their homes, their livelihoods, everything they cherished, just to grasp a few more moments with their loved ones. It was during those times that we realised something profound—treatment and healing are not the same. Medicine should not be restricted by geography. Healthcare should not be a privilege.</p>
+    <!-- Opening Statement -->
+    <section class="opening">
+        <div class="container" style="max-width: 900px;">
+            <blockquote class="pull-quote" data-aos="fade-up">
+                We were not born in a boardroom or conceived in an investor's plan. We were moulded in hospital
+                corridors, in the waiting rooms of overcrowded clinics, amidst the anxious whispers of families who had
+                travelled miles, desperate for care.
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="journey">
+        <div class="container" style="max-width: 1080px;">
+            <h2 class="section-title" data-aos="fade-up">The Journey of Advitya</h2>
+            <p class="section-sub" data-aos="fade-up" data-aos-delay="80">Two decades in hospital corridors, condensed
+                into four chapters.</p>
+
+            <div class="timeline">
+                <div class="tl-item" data-aos="fade-up">
+                    <div class="tl-marker"><span class="tl-years"><b>2003</b><b>2008</b></span></div>
+                    <div class="tl-card">
+                        <h3>The First Glimpse into Healthcare</h3>
+                        <p>We witnessed their silent prayers and unspoken fears. We saw the exhaustion in their eyes, not
+                            just from long journeys, but from the despair of realising that the care they needed was
+                            missing in their homes.</p>
+                        <p>Big cities boasted world-class hospitals, yet outside them, access to specialised healthcare
+                            was severely limited. We witnessed families leaving their homes, their livelihoods,
+                            everything they cherished, just to grasp a few more moments with their loved ones. It was
+                            during those times that we realised something profound—treatment and healing are not the
+                            same. Medicine should not be restricted by geography. Healthcare should not be a privilege.
+                        </p>
+                    </div>
                 </div>
 
-                <!-- 2009-2015 -->
-                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2009-2015: Learning the Language of Surgery and Cancer Care</h3>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555;">As we grew, we found ourselves in the realm of surgery and oncology. Surgery was not merely about technical skill; it was about responsibility, about standing at the threshold between despair and hope. It is a place where a few minutes and a single decision can alter the course of a life. We learned from mentors who showed us that surgery is not merely an act, but a commitment—to ethics, to morality, and to the individuals who place their trust in our hands. We witnessed how cancer patients suffered and how their loved ones did everything possible to spend another day with them. With every lesson, we understood our purpose more clearly: expertise should not be confined to a few institutions, it should be accessible where people need it most.</p>
+                <div class="tl-item" data-aos="fade-up">
+                    <div class="tl-marker"><span class="tl-years"><b>2009</b><b>2015</b></span></div>
+                    <div class="tl-card">
+                        <h3>Learning the Language of Surgery and Cancer Care</h3>
+                        <p>As we grew, we found ourselves in the realm of surgery and oncology. Surgery was not merely
+                            about technical skill; it was about responsibility, about standing at the threshold between
+                            despair and hope. It is a place where a few minutes and a single decision can alter the
+                            course of a life. We learned from mentors who showed us that surgery is not merely an act,
+                            but a commitment—to ethics, to morality, and to the individuals who place their trust in our
+                            hands. We witnessed how cancer patients suffered and how their loved ones did everything
+                            possible to spend another day with them. With every lesson, we understood our purpose more
+                            clearly: expertise should not be confined to a few institutions, it should be accessible
+                            where people need it most.</p>
+                    </div>
                 </div>
 
-                <!-- 2015-2023 -->
-                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2015-2023: Recognizing the Gaps, Preparing for Change</h3>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">As we delved deeper, our understanding of healthcare inequities became more acute. We observed that the highest level of surgical and cancer expertise was concentrated in only a handful of institutions, while extensive areas continued to be underserved. Patients from smaller towns faced an impossible dilemma: travel to a distant city for specialised care, often too late, or settle for what was available, even if it wasn't sufficient.</p>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We met families who delayed life-saving surgeries and cancer care, not because they didn't desire treatment but because they couldn't afford the weeks of travel, accommodation, and lost wages. We witnessed people making devastating sacrifices—selling land, exhausting their savings—to reach hospitals with the needed expertise, and sometimes, even when they arrived, it was too late.</p>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555;">We realised then that this wasn't merely a logistical challenge but a fundamental flaw in healthcare delivery. Why should world-class treatment be limited to a select few hospitals? Why should a person's survival depend on their ability to travel? We were no longer merely observing a problem but getting ready to be the solution.</p>
+                <div class="tl-item" data-aos="fade-up">
+                    <div class="tl-marker"><span class="tl-years"><b>2015</b><b>2023</b></span></div>
+                    <div class="tl-card">
+                        <h3>Recognizing the Gaps, Preparing for Change</h3>
+                        <p>As we delved deeper, our understanding of healthcare inequities became more acute. We observed
+                            that the highest level of surgical and cancer expertise was concentrated in only a handful of
+                            institutions, while extensive areas continued to be underserved. Patients from smaller towns
+                            faced an impossible dilemma: travel to a distant city for specialised care, often too late,
+                            or settle for what was available, even if it wasn't sufficient.</p>
+                        <p>We met families who delayed life-saving surgeries and cancer care, not because they didn't
+                            desire treatment but because they couldn't afford the weeks of travel, accommodation, and
+                            lost wages. We witnessed people making devastating sacrifices—selling land, exhausting their
+                            savings—to reach hospitals with the needed expertise, and sometimes, even when they arrived,
+                            it was too late.</p>
+                        <p>We realised then that this wasn't merely a logistical challenge but a fundamental flaw in
+                            healthcare delivery. Why should world-class treatment be limited to a select few hospitals?
+                            Why should a person's survival depend on their ability to travel? We were no longer merely
+                            observing a problem but getting ready to be the solution.</p>
+                    </div>
                 </div>
 
-                <!-- 2023-2025 -->
-                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
-                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2023-2025: The Birth of Advitya</h3>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">By 2023, we were no longer merely a thought. We had become a mission, a movement, a force taking shape.</p>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We were named Advitya (meaning unique) to reflect our character and purpose. To ensure our perpetual existence, we were formally incorporated on February 21, 2025. However, you will realise that we have been around for a long time, and when you meet us, you will feel that you have missed us all along. We were born from a simple yet powerful belief: If patients cannot access the finest surgical and cancer care, the finest care should be brought to them.</p>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We have re-imagined our approach. Instead of merely being just another large hospital in a metropolitan area, we chose a different route: collaborating with hospitals in second- and third-tier cities, equipping them with expertise, technology, and training to provide world-class gastrointestinal, hepatopancreatobiliary surgical care, and cancer care.</p>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">This Alliance Model goes beyond merely expanding services. It focuses on keeping families together when they need one another the most. It aims at strengthening hospitals, empowering local doctors, and ensuring that people don't just receive treatment but genuinely heal—physically, emotionally, and financially.</p>
-                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We are evolving. With each partnership, every successful surgery, and every patient who no longer has to leave their home for the best care, our purpose becomes ever stronger.</p>
-                    <p style="font-size: 1.2rem; line-height: 1.7; color: #000; font-weight: 700;">We were born from a problem, yet we exist to provide a solution.</p>
+                <div class="tl-item" data-aos="fade-up">
+                    <div class="tl-marker is-final"><span class="tl-years"><b>2023</b><b>2025</b></span></div>
+                    <div class="tl-card">
+                        <h3>The Birth of Advitya</h3>
+                        <p>By 2023, we were no longer merely a thought. We had become a mission, a movement, a force
+                            taking shape.</p>
+                        <p>We were named Advitya (meaning unique) to reflect our character and purpose. To ensure our
+                            perpetual existence, we were formally incorporated on February 21, 2025. However, you will
+                            realise that we have been around for a long time, and when you meet us, you will feel that
+                            you have missed us all along. We were born from a simple yet powerful belief:</p>
+
+                        <div class="belief">
+                            <i class="fa-solid fa-quote-left"></i>
+                            <p>If patients cannot access the finest surgical and cancer care, the finest care should be
+                                brought to them.</p>
+                        </div>
+
+                        <p>We have re-imagined our approach. Instead of merely being just another large hospital in a
+                            metropolitan area, we chose a different route: collaborating with hospitals in second- and
+                            third-tier cities, equipping them with expertise, technology, and training to provide
+                            world-class gastrointestinal, hepatopancreatobiliary surgical care, and cancer care.</p>
+                        <p>This Alliance Model goes beyond merely expanding services. It focuses on keeping families
+                            together when they need one another the most. It aims at strengthening hospitals, empowering
+                            local doctors, and ensuring that people don't just receive treatment but genuinely
+                            heal—physically, emotionally, and financially.</p>
+                        <p>We are evolving. With each partnership, every successful surgery, and every patient who no
+                            longer has to leave their home for the best care, our purpose becomes ever stronger.</p>
+                        <p class="tl-closing">We were born from a problem, yet we exist to provide a solution.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="bg-primary text-white" style="padding: 60px 0; text-align: center;">
-        <div class="container">
-            <h2 style="margin-bottom: 15px; font-size: 2.5rem;">To Book an Appointment, Please Contact:</h2>
-            <h3 style="margin-bottom: 30px; font-size: 2rem;">+91 9711669119, +91 9355661973, +91 7042410785</h3>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact us for any query !</p>
-            <a href="index.html#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; font-weight: 600;">Contact Us</a>
+    <!-- The Alliance Model -->
+    <section class="alliance">
+        <div class="container" style="max-width: 1100px;">
+            <span class="eyebrow" data-aos="fade-up">Our Model</span>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">The Alliance Model</h2>
+            <p class="section-sub" data-aos="fade-up" data-aos-delay="120">Not another large hospital in a metropolitan
+                area — expertise carried to where patients already are.</p>
+
+            <div class="pillar-grid">
+                <div class="pillar" data-aos="fade-up">
+                    <i class="fa-solid fa-hospital"></i>
+                    <h3>Strengthening Hospitals</h3>
+                    <p>Partnering with hospitals in second- and third-tier cities, equipping them with expertise,
+                        technology and training.</p>
+                </div>
+                <div class="pillar" data-aos="fade-up" data-aos-delay="80">
+                    <i class="fa-solid fa-user-doctor"></i>
+                    <h3>Empowering Local Doctors</h3>
+                    <p>World-class gastrointestinal, hepatopancreatobiliary surgical care and cancer care, delivered by
+                        the teams already serving that community.</p>
+                </div>
+                <div class="pillar" data-aos="fade-up" data-aos-delay="160">
+                    <i class="fa-solid fa-people-roof"></i>
+                    <h3>Keeping Families Together</h3>
+                    <p>People don't just receive treatment but genuinely heal — physically, emotionally and financially,
+                        without leaving home.</p>
+                </div>
+            </div>
         </div>
     </section>
 
+    <!-- Closing Statement -->
+    <section class="closing">
+        <div class="container" style="max-width: 860px;">
+            <p class="closing-line" data-aos="fade-up">Today and Beyond, we, Advitya, bring you
+                <strong>Science for Humanity</strong>.
+            </p>
+            <p class="closing-tag" data-aos="fade-up" data-aos-delay="120">This… is merely the Beginning.</p>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container" style="max-width: 720px;">
+            <h2 data-aos="fade-up">Stay Updated with Advitya</h2>
+            <p data-aos="fade-up" data-aos-delay="80">News from our alliance hospitals, and what we are learning along
+                the way.</p>
+            <form class="news-form" data-aos="fade-up" data-aos-delay="160"
+                onsubmit="window.location.href='mailto:info@advityahealthcares.com?subject=Newsletter%20subscription&amp;body=' + encodeURIComponent(this.email.value); return false;">
+                <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
+                <button type="submit" class="appointment-btn">
+                    <i class="fa-regular fa-paper-plane"></i> Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-primary text-white" style="padding: 70px 0; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 15px; font-size: 2.4rem;">To Book an Appointment, Please Contact:</h2>
+            <h3 style="margin-bottom: 25px; font-size: 1.7rem; font-weight: 600; letter-spacing: 0.02em;">+91 9711669119
+                &nbsp;·&nbsp; +91 9355661973 &nbsp;·&nbsp; +91 7042410785</h3>
+            <p style="font-size: 1.15rem; margin-bottom: 30px; opacity: 0.95;">Contact us for any query!</p>
+            <a href="index.html#contactModal" class="btn"
+                style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.15rem; border-radius: 30px; font-weight: 600;">Contact
+                Us</a>
+        </div>
+    </section>
+
+
     <!-- Footer -->
-    <footer class="footer" style="background-color: #8b1014; color: white; padding: 40px 0 20px; position: relative;">
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
         <div class="container">
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
                 <!-- Column 1 -->
@@ -249,17 +715,17 @@
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
                     <a href="index.html" style="color: white; text-decoration: none;">Home</a>
                     <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
-                    <a href="#" style="color: white; text-decoration: none;">Blog</a>
-                    <a href="#" style="color: white; text-decoration: none;">Careers</a>
-                    <a href="index.html#services" style="color: white; text-decoration: none;">Clinical Services</a>
-                    <a href="#" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
                     <a href="#" style="color: white; text-decoration: none;">Research</a>
-                    <a href="index.html#contact" style="color: white; text-decoration: none;">Contact Us</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
                 </div>
 
                 <!-- Column 3 -->
                 <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
-                    <a href="#" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
                     <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
                     <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
                     <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
@@ -308,33 +774,7 @@
             });
         });
 
-        // Dropdown click handler
-        document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = document.querySelectorAll('.dropdown > .dropbtn');
-            dropdowns.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('show');
-                });
-            });
-
-            const submenus = document.querySelectorAll('.dropdown-submenu > a');
-            submenus.forEach(btn => {
-                btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const content = this.nextElementSibling;
-                    content.classList.toggle('show');
-                });
-            });
-
-            window.addEventListener('click', function(e) {
-                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-submenu')) {
-                    const dropdowns = document.querySelectorAll('.dropdown-content.show, .dropdown-submenu-content.show');
-                    dropdowns.forEach(d => d.classList.remove('show'));
-                }
-            });
-        });
     </script>
+    <script src="nav.js?v=2"></script>
 </body>
 </html>
