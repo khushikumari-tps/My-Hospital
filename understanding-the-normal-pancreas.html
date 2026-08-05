@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Understanding the Normal Pancreas | Advitya Healthcares</title>
+    <meta name="description"
+        content="What a healthy pancreas does and why it matters. Understanding the Normal Pancreas: A Q&A Guide.">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .inner-hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .inner-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .inner-hero p {
+            font-size: 1.8rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .story-section {
+            padding: 60px 0;
+        }
+        
+        .accordion {
+            margin-top: 30px;
+        }
+
+        details {
+            margin-bottom: 15px;
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 18px 20px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            background: #fbfbfb;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-dark);
+            transition: background-color 0.3s;
+        }
+        
+        summary:hover {
+            background-color: #f0f0f0;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .details-content {
+            padding: 25px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        .details-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .details-content li {
+            margin-bottom: 8px;
+        }
+        
+        .details-content p {
+            margin-bottom: 15px;
+        }
+        
+        .details-content p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                        <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                    </a>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Pancreas <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="the-story-of-pancreacare.html">The story of pancreaCare+</a>
+                        <div class="dropdown-submenu">
+                            <a href="#">Normal pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
+                            <div class="dropdown-submenu-content">
+                                <a href="understanding-the-normal-pancreas.html">Anatomy & Function</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                            <a href="#">Diseases pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
+                            <div class="dropdown-submenu-content">
+                                <a href="index.html#pancreatitis">Pancreatitis</a>
+                                <a href="index.html#pancreatic-cancer">Pancreatic Cancer</a>
+                                <a href="index.html#surgical-care">Surgical Care</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#related-disease">Related Disease</a>
+                <a href="index.html#what-we-do">What We Do</a>
+                <a href="index.html#doctors">Doctors</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="index.html#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inner Hero Section -->
+    <section class="inner-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">What a healthy pancreas does and why it matters</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Understanding the Normal Pancreas: A Q&A Guide</p>
+            <div style="margin-top: 30px; font-size: 1.2rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up" data-aos-delay="400">
+                Home / Pancreas / Normal Pancreas
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="story-section">
+        <div class="container" style="max-width: 1000px;">
+            <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap; margin-bottom: 40px;">
+                <!-- Image Column (Left) -->
+                <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; background-color: #e5e5e5; padding: 40px; border-radius: 8px;">
+                    <img src="image/pancreas_illustration.png" alt="Normal Pancreas Illustration" style="width: 100%; max-width: 450px; mix-blend-mode: multiply;">
+                </div>
+                <!-- Text Column (Right) -->
+                <div style="flex: 1; min-width: 300px;">
+                    <h2 style="font-size: 2.5rem; color: #000; font-weight: 700; margin-bottom: 20px; line-height: 1.2;">Understanding the Normal Pancreas: A Q&A Guide</h2>
+                    <div style="font-size: 1.15rem; line-height: 1.8; color: #444;">
+                        <p>The pancreas is an incredible organ essential for digestion and maintaining blood sugar balance. This Q&A-style guide will help you understand its functions, importance, and how to keep it healthy.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Q&A Accordion -->
+            <div class="accordion">
+                <details open>
+                    <summary>1. What is the pancreas, and where is it located?</summary>
+                    <div class="details-content">
+                        <p>The pancreas is a vital gland located deep in the abdomen. It sits behind the stomach and is nestled between the liver, spleen, and small intestine. Shaped like a flat, elongated fish, it has three main parts:</p>
+                        <ul>
+                            <li><strong>Head</strong>: Tucked into the curve of the small intestine.</li>
+                            <li><strong>Body</strong>: The central portion behind the stomach.</li>
+                            <li><strong>Tail</strong>: The tapered end near the spleen.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>2. What does the pancreas do?</summary>
+                    <div class="details-content">
+                        <p>The pancreas plays two critical roles:</p>
+                        <ul>
+                            <li><strong>Digestion (Exocrine Function)</strong>: It produces digestive enzymes to break down fats, proteins, and carbohydrates, ensuring your body absorbs nutrients efficiently.</li>
+                            <li><strong>Blood Sugar Regulation (Endocrine Function)</strong>: The body releases hormones like insulin and glucagon to keep blood sugar levels in check.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>3. What are pancreatic digestive enzymes, and why are they important?</summary>
+                    <div class="details-content">
+                        <p>The pancreas produces three main types of enzymes:</p>
+                        <ul>
+                            <li><strong>Amylase</strong>: Breaks down carbohydrates into sugars.</li>
+                            <li><strong>Lipase</strong>: Helps digest dietary fats.</li>
+                            <li><strong>Proteases (like trypsin and chymotrypsin)</strong>: Break down proteins into amino acids.</li>
+                        </ul>
+                        <p>These enzymes are crucial for nutrient absorption and energy production. Without them, food would pass through your system without providing nourishment.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>4. How does the pancreas regulate blood sugar?</summary>
+                    <div class="details-content">
+                        <p>The pancreas secretes hormones into the bloodstream:</p>
+                        <ul>
+                            <li><strong>Insulin</strong>: Helps cells absorb glucose, reducing blood sugar levels.</li>
+                            <li><strong>Glucagon</strong>: Signals the liver to release stored glucose, raising blood sugar levels.</li>
+                            <li><strong>Somatostatin</strong>: Acts as a regulator, ensuring a balance between insulin and glucagon.</li>
+                        </ul>
+                        <p>This delicate balance keeps your energy levels stable throughout the day.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>5. How does the pancreas interact with other organs?</summary>
+                    <div class="details-content">
+                        <p>The pancreas works in harmony with several organs:</p>
+                        <ul>
+                            <li><strong>With the Stomach</strong>: Releases digestive enzymes when food enters the small intestine.</li>
+                            <li><strong>With the Liver</strong>: Regulates blood sugar levels through glucagon and insulin.</li>
+                            <li><strong>With the Intestines</strong>: Helps neutralize stomach acid and facilitates digestion.</li>
+                        </ul>
+                        <p>Together, these systems ensure smooth digestion and metabolism.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>6. What does a healthy pancreas look like in action?</summary>
+                    <div class="details-content">
+                        <p>A healthy pancreas operates silently and seamlessly. You likely have a well-functioning pancreas if:</p>
+                        <ul>
+                            <li>You digest food without bloating or discomfort.</li>
+                            <li>Your blood sugar levels remain stable.</li>
+                            <li>You maintain energy and a healthy weight.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>7. Can the pancreas heal itself if damaged?</summary>
+                    <div class="details-content">
+                        <p>The pancreas has some ability to recover, particularly from mild inflammation, like in acute pancreatitis. However, chronic damage—due to repeated inflammation, alcohol misuse, or other factors—can lead to irreversible scarring and loss of function. Preventive care is key to protecting this organ.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>8. How can you keep your pancreas healthy?</summary>
+                    <div class="details-content">
+                        <p>Here are practical tips for pancreatic health:</p>
+                        <ul>
+                            <li><strong>Eat a balanced diet</strong>: Focus on fresh fruits, vegetables, whole grains, and lean proteins.</li>
+                            <li><strong>Limit alcohol and avoid smoking</strong>: Both are major risk factors for pancreatic damage.</li>
+                            <li><strong>Stay active</strong>: Regular exercise supports overall health and weight management.</li>
+                            <li><strong>Stay hydrated</strong>: Proper hydration supports digestion and enzyme activity.</li>
+                            <li><strong>Monitor your health</strong>: Regular checkups can identify early signs of issues.</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>9. What are some common tests to check pancreatic health?</summary>
+                    <div class="details-content">
+                        <p>Doctors may use various tests, including:</p>
+                        <ul>
+                            <li><strong>Blood Tests</strong>: To measure enzyme and blood sugar levels.</li>
+                            <li><strong>Imaging (Ultrasound, CT, MRI)</strong>: To visualize the pancreas and surrounding structures.</li>
+                            <li><strong>Endoscopic Tests (e.g., ERCP)</strong>: To examine the pancreatic ducts and detect blockages.</li>
+                        </ul>
+                        <p>Early diagnosis can prevent complications and improve treatment outcomes.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>10. Why is it important to understand the pancreas?</summary>
+                    <div class="details-content">
+                        <p>Understanding your pancreas can empower you to recognize early warning signs of issues like diabetes, pancreatitis, or pancreatic cancer. Awareness is the first step toward prevention and timely care.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>11. In Conclusion</summary>
+                    <div class="details-content">
+                        <p>The pancreas may be small, its impact on health is immense. Protecting it through a healthy lifestyle and regular checkups can go a long way toward preventing diseases and ensuring long-term wellness.</p>
+                        <p>Do you have more questions about the pancreas? Our other blogs offer detailed insights, or you can leave your questions in the comments below. Let’s take the journey to better health together!</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-primary text-white" style="padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 15px; font-size: 2.5rem;">To Book an Appointment, Please Contact:</h2>
+            <h3 style="margin-bottom: 30px; font-size: 2rem;">+91 9711669119, +91 9355661973, +91 7042410785</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact us for any query !</p>
+            <a href="index.html#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; font-weight: 600;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #8b1014; color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <!-- Column 1 -->
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="#" style="color: white; text-decoration: none;">Blog</a>
+                    <a href="#" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="index.html#services" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="#" style="color: white; text-decoration: none;">Research</a>
+                    <a href="index.html#contact" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="#" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WhatsApp Icon -->
+        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100
+        });
+
+        // Add auto-close behavior to details/summary accordions
+        const details = document.querySelectorAll('details');
+        details.forEach(targetDetail => {
+            targetDetail.addEventListener('click', () => {
+                // Close all other details elements
+                details.forEach(detail => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute('open');
+                    }
+                });
+            });
+        });
+
+        // Dropdown click handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown > .dropbtn');
+            dropdowns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                });
+            });
+
+            const submenus = document.querySelectorAll('.dropdown-submenu > a');
+            submenus.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                });
+            });
+
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-submenu')) {
+                    const dropdowns = document.querySelectorAll('.dropdown-content.show, .dropdown-submenu-content.show');
+                    dropdowns.forEach(d => d.classList.remove('show'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

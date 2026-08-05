@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Story of PancreaCare | Advitya Healthcares</title>
+    <meta name="description"
+        content="Our journey: from pancreatic specialists to comprehensive digestive care">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .inner-hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .inner-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .inner-hero p {
+            font-size: 1.8rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .story-section {
+            padding: 60px 0;
+        }
+        
+        .tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #eaeaea;
+            padding-bottom: 10px;
+        }
+        
+        .tab-btn {
+            background: none;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            color: #666;
+            transition: all 0.3s;
+        }
+        
+        .tab-btn.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+            margin-bottom: -13px;
+        }
+        
+        .tab-content {
+            display: none;
+            padding: 20px;
+            background: #fbfbfb;
+            border-radius: 8px;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .tab-content ul {
+            padding-left: 20px;
+        }
+        
+        .tab-content li {
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .accordion {
+            margin-top: 30px;
+        }
+
+        details {
+            margin-bottom: 15px;
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 15px 20px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            background: #fbfbfb;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-dark);
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        .details-content {
+            padding: 20px;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        .details-content ul {
+            padding-left: 20px;
+        }
+        
+        .details-content li {
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                        <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                    </a>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html" class="active">About Us</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Pancreas <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="the-story-of-pancreacare.html">The story of pancreaCare+</a>
+                        <div class="dropdown-submenu">
+                            <a href="#">Normal pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
+                            <div class="dropdown-submenu-content">
+                                <a href="understanding-the-normal-pancreas.html">Anatomy & Function</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                            <a href="#">Diseases pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
+                            <div class="dropdown-submenu-content">
+                                <a href="index.html#pancreatitis">Pancreatitis</a>
+                                <a href="index.html#pancreatic-cancer">Pancreatic Cancer</a>
+                                <a href="index.html#surgical-care">Surgical Care</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#related-disease">Related Disease</a>
+                <a href="index.html#what-we-do">What We Do</a>
+                <a href="index.html#doctors">Doctors</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="index.html#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inner Hero Section -->
+    <section class="inner-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">The Story of PancreaCare+</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Our journey: from pancreatic specialists to comprehensive digestive care</p>
+            <div style="margin-top: 30px; font-size: 1.2rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up" data-aos-delay="400">
+                Home / About Us / The story of PancreaCare
+            </div>
+        </div>
+    </section>
+
+    <!-- About PancreaCare+ Section -->
+    <section class="story-section">
+        <div class="container">
+            <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
+                <!-- Text Column -->
+                <div style="flex: 1; min-width: 300px;">
+                    <div class="section-title left-align" style="margin-bottom: 30px;">
+                        <h2 style="font-size: 2.5rem; color: #000; font-weight: 700;">About PancreaCare+</h2>
+                    </div>
+                    <div style="font-size: 1.15rem; line-height: 1.8; color: #444;">
+                        <p style="margin-bottom: 20px;">PancreaCare+ was founded with a steadfast commitment to creating a world-class centre of excellence dedicated entirely to pancreatic health. The "Pancrea" in our name reflects our unwavering focus on pancreatic diseases, while "Care" embodies the compassionate values that drive us. The "+" symbolises our ambition to grow and create a meaningful impact within the specialised field of pancreatic healthcare.</p>
+                        <p>It is our humble initiative to address Pancreatic Health and cure aggressively. We continuously strive to upgrade our skills, adopt the latest techniques, and offer state-of-the-art, cost-effective treatments, providing hope and healing to patients across all communities.</p>
+                    </div>
+                </div>
+                <!-- Image Column -->
+                <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; background-color: #e5e5e5; padding: 40px; border-radius: 8px;">
+                    <img src="image/pancreas_illustration.png" alt="Pancreas Illustration" style="width: 100%; max-width: 450px; mix-blend-mode: multiply;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision, Mission, Values Section -->
+    <section class="story-section bg-light" style="padding: 60px 0;">
+        <div class="container">
+            <div class="section-title text-center">
+                <h2>Enhancing Life Through Advanced & Affordable PancreaCare+</h2>
+                <p>Dedicated to Your Well-being</p>
+            </div>
+            
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab(event, 'vision')">Vision</button>
+                <button class="tab-btn" onclick="openTab(event, 'mission')">Mission</button>
+                <button class="tab-btn" onclick="openTab(event, 'values')">Values</button>
+            </div>
+
+            <div id="vision" class="tab-content active">
+                <h3>Our Vision</h3>
+                <p style="font-size: 1.1rem; line-height: 1.6; margin-top: 15px;">Enhancing Life Through Advanced & Affordable PancreaCare+</p>
+            </div>
+
+            <div id="mission" class="tab-content">
+                <h3>Our Mission</h3>
+                <ul style="margin-top: 15px;">
+                    <li>Establish Technology cell for efficiency and process adherence to deliver on promise.</li>
+                    <li>Invest significantly in Research and Development to keep upgrading our offering and enhancing patient well-being.</li>
+                    <li>Building Alliances with Tier 2 & 3 cities to provide services for lower socio-economic segment.</li>
+                    <li>Establish a strong Brand, who prioritize well-being and is dedicated to restoring normalcy, helping patients live life to the fullest.</li>
+                    <li>Create a fund for services for poor through NGOs and CSR funds.</li>
+                </ul>
+            </div>
+
+            <div id="values" class="tab-content">
+                <h3>Our Values</h3>
+                <ul style="margin-top: 15px;">
+                    <li><strong>Consistent Excellence:</strong> Committed to excellence through the latest medicine and science.</li>
+                    <li><strong>Responsible:</strong> Accountable and ethical in our actions and decisions.</li>
+                    <li><strong>Integrative:</strong> Delivering holistic, patient-centric care by collaborating across specialities and disciplines.</li>
+                    <li><strong>Cost Conscious:</strong> Exercising financial prudence in high-quality patient care.</li>
+                    <li><strong>Leadership:</strong> Foster creativity and innovation to improve patient outcomes and induce positive change.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Section -->
+    <section class="story-section">
+        <div class="container" style="max-width: 1000px;">
+            <div class="section-title left-align">
+                <h2>Leadership</h2>
+            </div>
+            
+            <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 300px;">
+                    <img src="image/dr_diksha_updated.jpg" alt="Dr. Deeksha Kapoor" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                </div>
+                <div style="flex: 2; min-width: 300px;">
+                    <h3 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 5px;">Dr. Deeksha Kapoor</h3>
+                    <h5 style="font-size: 1.2rem; color: #666; margin-bottom: 20px; font-weight: 500;">Pancreato-Biliary & Gastrointestinal Surgery</h5>
+                    <p style="font-size: 1.1rem; line-height: 1.7; color: #444;">Welcome to PancreaCare+, where expertise meets compassion in treating pancreato-biliary and gastrointestinal diseases. I am Dr Deeksha Kapoor, an accomplished pancreato-biliary and gastrointestinal surgeon with a strong foundation in advanced surgical oncology and minimally invasive procedures. With extensive training and experience from premier institutions in India and abroad, I am committed to providing world-class, patient-centered care.</p>
+                </div>
+            </div>
+
+            <!-- Collapsible Sections -->
+            <div class="accordion">
+                <details>
+                    <summary>Qualifications & Expertise</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li>MBBS - Maulana Azad Medical College, New Delhi</li>
+                            <li>DNB (General Surgery) - Bangalore Baptist Hospital (Recipient of the Dr. B. Ramamurthi National Gold Medal)</li>
+                            <li>DNB (Surgical Gastroenterology) - Medanta - The Medicity, Gurugram</li>
+                            <li>HPB and GI Surgical Oncology Fellowship - Tata Memorial Hospital, Mumbai (Ethicon Fellow 2023)</li>
+                            <li><strong>International Training & Fellowships:</strong>
+                                <ul>
+                                    <li>Robotic Pancreatic Surgery Fellowship - Tokyo, Japan</li>
+                                    <li>Hepato-Pancreato-Biliary Surgery - University of Heidelberg, Germany</li>
+                                    <li>Laparoscopic Pancreatic Surgery - Beaujon Hospital, Paris</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Accomplishments and Awards</summary>
+                    <div class="details-content">
+                        <ul>
+                            <li>Young Investigator's Travel Grant Award - Real World Evidence of Portal Vein Resections with Pancreatectomy - Multicentre Indian Study (PVR-IM) - APA/IAP/CPA/JPS, 2024, Hawaii, December 2024</li>
+                            <li>Travel Grant Award - Can we predict the need for supplemental nutrition after pancreatoduodenectomy - HBP Surgery Week, Korea, 2021 (Virtual Conference)</li>
+                            <li>Travel Grant Award from KSSMN 2021 for the paper - Impact of psoas muscle area and density on postoperative outcomes following pancreatoduodenectomy</li>
+                            <li>Best Poster Award for "Asymptomatic leaks following anterior resection" during IASG 2016</li>
+                            <li>Dr. B. Ramamurthi National Gold medal for DNB General Surgery - batch of June 2014.</li>
+                            <li>Best outgoing surgical trainee from Bangalore Baptist Hospital 2014.</li>
+                            <li>Best oral presentation on Blunt abdominal trauma at the Surgical Society of Bangalore in 2014.</li>
+                            <li>Distinction in Pathology, Paediatrics and Physiology during MBBS</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Clinical Focus</summary>
+                    <div class="details-content">
+                        <p style="margin-bottom: 10px;">With specialised expertise in pancreatic, biliary, and liver surgery, I focus on:</p>
+                        <ul>
+                            <li>Complex pancreatic cancer surgery, including Whipple procedures and vascular resections</li>
+                            <li>Minimally invasive and robotic surgery for pancreatic and gastrointestinal diseases</li>
+                            <li>Management of acute and chronic pancreatitis</li>
+                            <li>Hepato-biliary oncology and advanced GI cancer treatments</li>
+                            <li>Postoperative outcomes and patient rehabilitation</li>
+                        </ul>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>The Vision Behind PancreaCare+</summary>
+                    <div class="details-content">
+                        <p>PancreaCare+ was established to connect specialised surgical expertise with accessible patient education. Too often, patients encounter misinformation, delays in diagnosis, and obstacles to obtaining expert care. Through PancreaCare+, I aim to offer accurate medical insights, evidence-based treatment strategies, and educational resources to empower patients and their families.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Research & Academic Contributions</summary>
+                    <div class="details-content">
+                        <p>I am actively engaged in clinical research, particularly focusing on predictive analytics for postoperative outcomes and the role of vascular resections in pancreatic surgery. My work also addresses gender-related challenges in surgical specialities and includes mentoring future surgeons. I serve as a reviewer for prominent medical journals and contribute to national and international surgical registries.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Services Offered</summary>
+                    <div class="details-content">
+                        <h4 style="margin-bottom: 10px; color: var(--primary);">Pancreatic Surgery</h4>
+                        <ul>
+                            <li>Whipple procedure (Pancreaticoduodenectomy)</li>
+                            <li>Distal and total pancreatectomy</li>
+                            <li>Minimally invasive and robotic-assisted pancreatic surgery</li>
+                            <li>Surgical management of pancreatic cysts and neuroendocrine tumours</li>
+                            <li>Vascular resections in pancreatic cancer surgery</li>
+                            <li>Surgical drainage of pancreatic pseudocysts</li>
+                            <li>Necrosectomy for infected pancreatic necrosis</li>
+                            <li>Surgery for chronic pancreatitis</li>
+                        </ul>
+                        
+                        <h4 style="margin: 15px 0 10px; color: var(--primary);">Biliary and Liver Surgery</h4>
+                        <ul>
+                            <li>Hepatectomy for liver tumors and metastases</li>
+                            <li>Bile duct resections and reconstructions</li>
+                            <li>Surgery for bile duct injuries and strictures</li>
+                            <li>Management of gallbladder cancer</li>
+                            <li>Liver cyst and abscess drainage procedures</li>
+                        </ul>
+
+                        <h4 style="margin: 15px 0 10px; color: var(--primary);">Gastrointestinal Oncology</h4>
+                        <ul>
+                            <li>Surgery for stomach and colorectal cancers</li>
+                            <li>HIPEC (Hyperthermic Intraperitoneal Chemotherapy) for advanced GI cancers</li>
+                            <li>Laparoscopic and robotic-assisted gastrointestinal surgeries</li>
+                        </ul>
+
+                        <h4 style="margin: 15px 0 10px; color: var(--primary);">Benign GI Conditions</h4>
+                        <ul>
+                            <li>Surgery for gastrointestinal stromal tumors (GISTs)</li>
+                            <li>Fundoplication for GERD and hiatal hernias</li>
+                            <li>Surgery for small bowel obstructions and diverticular disease</li>
+                            <li>Management of achalasia and esophageal motility disorders</li>
+                        </ul>
+                        
+                        <h4 style="margin: 15px 0 10px; color: var(--primary);">Advanced Minimal Access Surgery</h4>
+                        <ul>
+                            <li>Laparoscopic and robotic gastrointestinal surgeries</li>
+                            <li>Keyhole surgery for hernia repairs (inguinal, incisional, and diaphragmatic hernias)</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-primary text-white" style="padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 15px; font-size: 2.5rem;">To Book an Appointment, Please Contact:</h2>
+            <h3 style="margin-bottom: 30px; font-size: 2rem;">+91 9711669119, +91 9355661973, +91 7042410785</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact us for any query !</p>
+            <a href="index.html#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; font-weight: 600;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #8b1014; color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <!-- Column 1 -->
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="#" style="color: white; text-decoration: none;">Blog</a>
+                    <a href="#" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="index.html#services" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="#" style="color: white; text-decoration: none;">Research</a>
+                    <a href="index.html#contact" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="#" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        
+        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100
+        });
+
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        // Dropdown click handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown > .dropbtn');
+            dropdowns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                });
+            });
+
+            const submenus = document.querySelectorAll('.dropdown-submenu > a');
+            submenus.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                });
+            });
+
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-submenu')) {
+                    const dropdowns = document.querySelectorAll('.dropdown-content.show, .dropdown-submenu-content.show');
+                    dropdowns.forEach(d => d.classList.remove('show'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>

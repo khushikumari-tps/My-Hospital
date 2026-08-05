@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Advitya Healthcares</title>
+    <meta name="description"
+        content="What a healthy pancreas does and why it matters. Understanding the Normal Pancreas: A Q&A Guide.">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <style>
+        .inner-hero {
+            background-color: var(--primary);
+            color: white;
+            padding: 120px 0 60px;
+            text-align: center;
+        }
+        .inner-hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        .inner-hero p {
+            font-size: 1.8rem;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+        
+        .story-section {
+            padding: 60px 0;
+        }
+        
+        .accordion {
+            margin-top: 30px;
+        }
+
+        details {
+            margin-bottom: 15px;
+            background: #fff;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        summary {
+            padding: 18px 20px;
+            font-size: 1.25rem;
+            font-weight: 600;
+            background: #fbfbfb;
+            cursor: pointer;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--primary-dark);
+            transition: background-color 0.3s;
+        }
+        
+        summary:hover {
+            background-color: #f0f0f0;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
+        summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: 1rem;
+            transition: transform 0.3s;
+        }
+
+        details[open] summary::after {
+            transform: rotate(180deg);
+        }
+
+        details[open] summary {
+            border-bottom: 1px solid #eaeaea;
+        }
+
+        .details-content {
+            padding: 25px;
+            font-size: 1.1rem;
+            line-height: 1.7;
+            color: #444;
+        }
+        
+        .details-content ul {
+            padding-left: 20px;
+            margin-top: 10px;
+        }
+        
+        .details-content li {
+            margin-bottom: 8px;
+        }
+        
+        .details-content p {
+            margin-bottom: 15px;
+        }
+        
+        .details-content p:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html">
+                    <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                        <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                    </a>
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About Us</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Pancreas <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="the-story-of-pancreacare.html">The story of pancreaCare+</a>
+                        <div class="dropdown-submenu">
+                            <a href="#">Normal pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
+                            <div class="dropdown-submenu-content">
+                                <a href="understanding-the-normal-pancreas.html">Anatomy & Function</a>
+                            </div>
+                        </div>
+                        <div class="dropdown-submenu">
+                            <a href="#">Diseases pancreas <i class="fa-solid fa-plus" style="float: right; font-size: 0.8em; margin-top: 6px;"></i></a>
+                            <div class="dropdown-submenu-content">
+                                <a href="index.html#pancreatitis">Pancreatitis</a>
+                                <a href="index.html#pancreatic-cancer">Pancreatic Cancer</a>
+                                <a href="index.html#surgical-care">Surgical Care</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#related-disease">Related Disease</a>
+                <a href="index.html#what-we-do">What We Do</a>
+                <a href="index.html#doctors">Doctors</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="index.html#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
+            </nav>
+            <div class="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Inner Hero Section -->
+    <section class="inner-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Our Journey</h1>
+            <p data-aos="fade-up" data-aos-delay="200">Bringing Expert Surgery to Tier 2 Cities</p>
+            <div style="margin-top: 30px; font-size: 1.2rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up" data-aos-delay="400">
+                Home / About Us
+            </div>
+        </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="about-section" style="padding: 60px 0; background: #fbfbfb;">
+        <div class="container" style="max-width: 1000px;">
+            <h2 style="font-size: 2.8rem; color: #000; font-weight: 700; margin-bottom: 30px; text-align: center;" data-aos="fade-up">The Journey of Advitya</h2>
+            <p style="font-size: 1.25rem; line-height: 1.8; color: #444; margin-bottom: 50px; text-align: center; font-weight: 500;" data-aos="fade-up" data-aos-delay="100">We were not born in a boardroom or conceived in an investor's plan. We were moulded in hospital corridors, in the waiting rooms of overcrowded clinics, amidst the anxious whispers of families who had travelled miles, desperate for care.</p>
+            
+            <div class="timeline" style="margin-top: 40px;">
+                <!-- 2003-2008 -->
+                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2003-2008: The First Glimpse into Healthcare</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We witnessed their silent prayers and unspoken fears. We saw the exhaustion in their eyes, not just from long journeys, but from the despair of realising that the care they needed was missing in their homes.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555;">Big cities boasted world-class hospitals, yet outside them, access to specialised healthcare was severely limited. We witnessed families leaving their homes, their livelihoods, everything they cherished, just to grasp a few more moments with their loved ones. It was during those times that we realised something profound—treatment and healing are not the same. Medicine should not be restricted by geography. Healthcare should not be a privilege.</p>
+                </div>
+
+                <!-- 2009-2015 -->
+                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2009-2015: Learning the Language of Surgery and Cancer Care</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555;">As we grew, we found ourselves in the realm of surgery and oncology. Surgery was not merely about technical skill; it was about responsibility, about standing at the threshold between despair and hope. It is a place where a few minutes and a single decision can alter the course of a life. We learned from mentors who showed us that surgery is not merely an act, but a commitment—to ethics, to morality, and to the individuals who place their trust in our hands. We witnessed how cancer patients suffered and how their loved ones did everything possible to spend another day with them. With every lesson, we understood our purpose more clearly: expertise should not be confined to a few institutions, it should be accessible where people need it most.</p>
+                </div>
+
+                <!-- 2015-2023 -->
+                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2015-2023: Recognizing the Gaps, Preparing for Change</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">As we delved deeper, our understanding of healthcare inequities became more acute. We observed that the highest level of surgical and cancer expertise was concentrated in only a handful of institutions, while extensive areas continued to be underserved. Patients from smaller towns faced an impossible dilemma: travel to a distant city for specialised care, often too late, or settle for what was available, even if it wasn't sufficient.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We met families who delayed life-saving surgeries and cancer care, not because they didn't desire treatment but because they couldn't afford the weeks of travel, accommodation, and lost wages. We witnessed people making devastating sacrifices—selling land, exhausting their savings—to reach hospitals with the needed expertise, and sometimes, even when they arrived, it was too late.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555;">We realised then that this wasn't merely a logistical challenge but a fundamental flaw in healthcare delivery. Why should world-class treatment be limited to a select few hospitals? Why should a person's survival depend on their ability to travel? We were no longer merely observing a problem but getting ready to be the solution.</p>
+                </div>
+
+                <!-- 2023-2025 -->
+                <div style="margin-bottom: 40px; background: #fff; border: 1px solid #eaeaea; border-left: 5px solid var(--primary); border-radius: 8px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.03);" data-aos="fade-up">
+                    <h3 style="color: var(--primary); font-size: 1.8rem; margin-bottom: 15px;">2023-2025: The Birth of Advitya</h3>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">By 2023, we were no longer merely a thought. We had become a mission, a movement, a force taking shape.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We were named Advitya (meaning unique) to reflect our character and purpose. To ensure our perpetual existence, we were formally incorporated on February 21, 2025. However, you will realise that we have been around for a long time, and when you meet us, you will feel that you have missed us all along. We were born from a simple yet powerful belief: If patients cannot access the finest surgical and cancer care, the finest care should be brought to them.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We have re-imagined our approach. Instead of merely being just another large hospital in a metropolitan area, we chose a different route: collaborating with hospitals in second- and third-tier cities, equipping them with expertise, technology, and training to provide world-class gastrointestinal, hepatopancreatobiliary surgical care, and cancer care.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">This Alliance Model goes beyond merely expanding services. It focuses on keeping families together when they need one another the most. It aims at strengthening hospitals, empowering local doctors, and ensuring that people don't just receive treatment but genuinely heal—physically, emotionally, and financially.</p>
+                    <p style="font-size: 1.15rem; line-height: 1.7; color: #555; margin-bottom: 15px;">We are evolving. With each partnership, every successful surgery, and every patient who no longer has to leave their home for the best care, our purpose becomes ever stronger.</p>
+                    <p style="font-size: 1.2rem; line-height: 1.7; color: #000; font-weight: 700;">We were born from a problem, yet we exist to provide a solution.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="bg-primary text-white" style="padding: 60px 0; text-align: center;">
+        <div class="container">
+            <h2 style="margin-bottom: 15px; font-size: 2.5rem;">To Book an Appointment, Please Contact:</h2>
+            <h3 style="margin-bottom: 30px; font-size: 2rem;">+91 9711669119, +91 9355661973, +91 7042410785</h3>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact us for any query !</p>
+            <a href="index.html#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; font-weight: 600;">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" style="background-color: #8b1014; color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <!-- Column 1 -->
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="#" style="color: white; text-decoration: none;">Blog</a>
+                    <a href="#" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="index.html#services" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="#" style="color: white; text-decoration: none;">Research</a>
+                    <a href="index.html#contact" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="#" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WhatsApp Icon -->
+        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100
+        });
+
+        // Add auto-close behavior to details/summary accordions
+        const details = document.querySelectorAll('details');
+        details.forEach(targetDetail => {
+            targetDetail.addEventListener('click', () => {
+                // Close all other details elements
+                details.forEach(detail => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute('open');
+                    }
+                });
+            });
+        });
+
+        // Dropdown click handler
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = document.querySelectorAll('.dropdown > .dropbtn');
+            dropdowns.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                });
+            });
+
+            const submenus = document.querySelectorAll('.dropdown-submenu > a');
+            submenus.forEach(btn => {
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('show');
+                });
+            });
+
+            window.addEventListener('click', function(e) {
+                if (!e.target.matches('.dropbtn') && !e.target.closest('.dropdown-submenu')) {
+                    const dropdowns = document.querySelectorAll('.dropdown-content.show, .dropdown-submenu-content.show');
+                    dropdowns.forEach(d => d.classList.remove('show'));
+                }
+            });
+        });
+    </script>
+</body>
+</html>
