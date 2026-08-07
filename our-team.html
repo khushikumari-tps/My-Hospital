@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Advitya Healthcares</title>
+    <meta name="description" content="Meet the clinicians and staff behind the PancreaCare+ programme at Advitya Healthcares.">
+    <link rel="stylesheet" href="style.css?v=8">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        .inner-hero {
+            position: relative;
+            overflow: hidden;
+            padding: 140px 0 40px;
+        }
+
+        .inner-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(720px 320px at 18% 0%, rgba(255, 255, 255, 0.28), transparent 65%),
+                radial-gradient(560px 260px at 88% 110%, rgba(255, 255, 255, 0.16), transparent 60%);
+            pointer-events: none;
+        }
+
+        .inner-hero .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+        }
+
+        .inner-hero h1 {
+            font-size: 3.4rem;
+            line-height: 1.1;
+            margin-bottom: 0;
+            font-weight: 700;
+        }
+
+        .eyebrow {
+            display: block;
+            text-align: center;
+            font-size: 0.78rem;
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-title {
+            font-size: 2.4rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 14px;
+            color: var(--text-main);
+        }
+
+        .section-sub {
+            text-align: center;
+            font-size: 1.12rem;
+            color: var(--text-muted);
+            max-width: 640px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+
+        /* This page is only the team, so the portraits get more room than the
+           compact versions on the homepage grid. */
+        .team-section .team-grid {
+            gap: 26px;
+        }
+
+        .team-section .team-card {
+            padding: 32px 24px 26px;
+        }
+
+        .team-section .team-img-wrapper {
+            width: 190px;
+            height: 190px;
+            margin: 0 auto 20px;
+            /* No gradient ring, no white gap, no outer shadow */
+            padding: 0;
+            background: none;
+            box-shadow: none;
+        }
+
+        .team-section .team-img-wrapper img {
+            border: none;
+        }
+
+        .team-section .team-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .team-section .team-role {
+            font-size: 0.76rem;
+            padding: 4px 13px;
+            margin-bottom: 10px;
+        }
+
+        .team-section .team-org {
+            font-size: 0.9rem;
+        }
+
+        .team-section .team-spec {
+            font-size: 0.88rem;
+            line-height: 1.6;
+        }
+
+        .team-section .team-creds li {
+            font-size: 0.78rem;
+            padding: 0;
+        }
+
+        /* Four 190px portraits will not fit a 4-up row on mid widths */
+        @media (max-width: 1240px) {
+            .team-section .team-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .team-section .team-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .team-section .team-img-wrapper {
+                width: 210px;
+                height: 210px;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="about.html" class="dropbtn active">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                    </div>
+                </div>
+                <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown mega">
+                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Digestive Care</h4>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Procedures</h4>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Wellness</h4>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#location" class="nav-loc">Locations</a>
+                <a href="index.html#testimonials">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <a href="faqs.html">FAQs</a>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contactModal">Contact us</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#location" class="location-btn">
+                    <i class="fa-solid fa-location-dot"></i> Our Locations
+                </a>
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="inner-hero">
+        <div class="container">
+            <h1 data-aos="fade-up">Meet Our Team</h1>
+        </div>
+    </section>
+
+    <section class="team-section" style="padding: 50px 0 70px;">
+        <div class="container">
+            <p class="section-sub" data-aos="fade-up">The clinicians and staff behind the PancreaCare+ programme
+                &mdash; the same faces from consultation through to follow-up.</p>
+
+            <div class="team-grid">
+                <!-- Dr. Deeksha Kapoor -->
+                <article class="team-card is-lead">
+                    <div class="team-img-wrapper">
+                        <img src="image/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Deeksha Kapoor</h3>
+                        <span class="team-role">CEO &amp; Medical Head</span>
+                        <p class="team-org">Advitya Healthcares <span>&middot;</span> PancreaCare Initiative</p>
+                        <p class="team-spec">Pancreato-Biliary-Liver, Gastrointestinal Surgery, Oncosurgery</p>
+                        <ul class="team-creds">
+                            <li>MBBS</li>
+                            <li>DNB General Surgery</li>
+                            <li>DNB Surgical Gastroenterology</li>
+                            <li>HPB &amp; GI Surgical Oncology Fellowship — Tata Memorial</li>
+                            <li>Console-trained Robotic Surgeon — Da Vinci Xi</li>
+                        </ul>
+                    </div>
+                    <a href="index.html#contactModal" class="team-link">
+                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Dr. Shyamal Kumar Sen -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="image/team_shyamal_sen.png" alt="Dr. Shyamal Kumar Sen">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Shyamal Kumar Sen</h3>
+                        <span class="team-role">Senior Physician</span>
+                        <p class="team-org">Medical Administrator</p>
+                        <p class="team-spec">Internal Medicine &amp; Department of Pancreato-Biliary, Liver and
+                            Gastrointestinal Sciences</p>
+                    </div>
+                    <a href="index.html#contactModal" class="team-link">
+                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Dr. Sachin Kumar -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="image/team_sachin_kumar.png" alt="Dr. Sachin Kumar">
+                    </div>
+                    <div class="team-info">
+                        <h3>Dr. Sachin Kumar</h3>
+                        <span class="team-role">Junior Resident</span>
+                        <p class="team-org">PancreaCare <span>&middot;</span> Advitya Healthcares</p>
+                        <p class="team-spec">Department of Pancreato-Biliary, Liver &amp; Gastrointestinal Sciences</p>
+                    </div>
+                    <a href="index.html#contactModal" class="team-link">
+                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
+                <!-- Ms. Poonam Sharma -->
+                <article class="team-card">
+                    <div class="team-img-wrapper">
+                        <img src="image/team_poonam_sharma.png" alt="Ms. Poonam Sharma">
+                    </div>
+                    <div class="team-info">
+                        <h3>Ms. Poonam Sharma</h3>
+                        <span class="team-role">Head OT Staff</span>
+                        <p class="team-org">Patient Support Group Team Leader <span>&middot;</span> PancreaCare</p>
+                        <p class="team-spec">Senior OT &amp; Robotic Surgery Nurse — GI–HPB &amp; Abdominal Surgery
+                            Specialist</p>
+                    </div>
+                    <a href="index.html#contactModal" class="team-link">
+                        Talk to patient support <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+            </div>
+
+            <div class="team-cta" data-aos="fade-up">
+                <h3>Need Expert Medical Advice?</h3>
+                <p>Send us your reports &mdash; a consultant reviews them before you travel.</p>
+                <a href="index.html#contactModal" class="btn btn-premium">Book an Appointment</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <!-- Column 1 -->
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
+                    </div>
+                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="#" style="color: white; text-decoration: none;">Research</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WhatsApp Icon -->
+        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 100
+        });
+
+        // Add auto-close behavior to details/summary accordions
+        const details = document.querySelectorAll('details');
+        details.forEach(targetDetail => {
+            targetDetail.addEventListener('click', () => {
+                // Close all other details elements
+                details.forEach(detail => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute('open');
+                    }
+                });
+            });
+        });
+
+    </script>
+    <script src="nav.js?v=2"></script>
+</body>
+</html>

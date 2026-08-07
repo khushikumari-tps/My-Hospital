@@ -83,8 +83,12 @@
 
         // Let other pages deep-link to the contact modal: index.html#contactModal
         if (window.location.hash === '#contactModal') {
-            var modal = document.getElementById('contactModal');
-            if (modal) modal.style.display = 'flex';
+            if (typeof window.openContactModal === 'function') {
+                window.openContactModal();
+            } else {
+                var modal = document.getElementById('contactModal');
+                if (modal) modal.style.display = 'flex';
+            }
         }
     });
 })();

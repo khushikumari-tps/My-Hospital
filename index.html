@@ -7,7 +7,7 @@
     <title>Advitya Healthcares | Quality Healthcare for You & Your Family</title>
     <meta name="description"
         content="Advitya Healthcares provides 24/7 emergency services, modern equipment, and experienced doctors. Book an appointment today.">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=8">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -30,7 +30,16 @@
             </div>
             <nav class="nav-links">
                 <a href="index.html" class="active">Home</a>
-                <a href="about.html">About Us</a>
+                <div class="dropdown">
+                    <a href="about.html" class="dropbtn">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                    </div>
+                </div>
                 <a href="pancrea-care.html">Pancrea Care</a>
                 <div class="dropdown mega">
                     <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
@@ -55,15 +64,19 @@
                         </div>
                     </div>
                 </div>
+                <a href="#location" class="nav-loc">Locations</a>
                 <a href="#testimonials">Testimonials</a>
                 <a href="careers.html">Careers</a>
                 <a href="gallery.html">Gallery</a>
                 <a href="faqs.html">FAQs</a>
                 <a href="blogs.html">Blogs</a>
-                <a href="#" onclick="document.getElementById('contactModal').style.display='flex'; return false;">Contact us</a>
+                <a href="#" onclick="openContactModal(); return false;">Contact us</a>
             </nav>
             <div class="nav-actions">
-                <a href="#" class="appointment-btn" onclick="document.getElementById('contactModal').style.display='flex'; return false;">
+                <a href="#location" class="location-btn">
+                    <i class="fa-solid fa-location-dot"></i> Our Locations
+                </a>
+                <a href="#" class="appointment-btn" onclick="openContactModal(); return false;">
                     <i class="fa-regular fa-calendar-check"></i> Book Appointment
                 </a>
                 <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
@@ -81,7 +94,7 @@
             <h1 data-aos="fade-up" data-aos-duration="1000">Advitya <span class="highlight">Welcome You</span></h1>
             <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">We, at Advitya, Envision Science for Humanity by providing Healthcare Excellence in Every Procedure regardless of your geographic location.</p>
             <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-                <a href="#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn btn-premium">Book Appointment</a>
+                <a href="#contactModal" onclick="openContactModal(); return false;" class="btn btn-premium">Book Appointment</a>
                 <a href="tel:911" class="btn btn-outline-danger"><i class="fa-solid fa-phone"></i> Emergency</a>
             </div>
         </div>
@@ -109,14 +122,14 @@
             <div class="doctor-profile-card" data-aos="fade-up" data-aos-duration="1000" style="display: flex; flex-wrap: wrap; background: white; max-width: 1300px; margin: 0 auto; box-shadow: 0 5px 25px rgba(0,0,0,0.03); border-radius: 12px; overflow: hidden;">
                 <!-- Doctor Image -->
                 <div class="doctor-img-container" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" style="flex: 1; min-width: 350px; background-color: #f4f4f4; overflow: hidden;">
-                    <img src="image/dr_diksha_updated.jpg" alt="Dr. Diksha Kapoor" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: top center;">
+                    <img src="image/dr_deeksha_portrait.png" alt="Dr. Deeksha Kapoor" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center 20%;">
                 </div>
                 <!-- Doctor Info -->
                 <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" style="flex: 1; min-width: 350px; padding: 70px 80px; display: flex; flex-direction: column; justify-content: center;">
-                    <h2 style="font-size: 3rem; font-weight: 700; color: #000; margin-bottom: 5px;">Dr. Diksha Kapoor</h2>
+                    <h2 style="font-size: 3rem; font-weight: 700; color: #000; margin-bottom: 5px;">Dr. Deeksha Kapoor</h2>
                     <h4 style="font-size: 1.3rem; font-weight: 500; color: #333; margin-bottom: 30px;">Pancreato-Biliary & Gastrointestinal Surgery</h4>
                     <p style="font-size: 1.2rem; line-height: 1.8; color: #444; margin-bottom: 0;">
-                        Welcome to PancreaCare+, where expertise meets compassion in treating pancreato-biliary and gastrointestinal diseases. I am Dr Diksha Kapoor, an accomplished pancreato-biliary and gastrointestinal surgeon with a strong foundation in advanced surgical oncology and minimally invasive procedures. With extensive training and experience from premier institutions in India and abroad, I am committed to providing world-class, patient-centered care.
+                        Welcome to PancreaCare+, where expertise meets compassion in treating pancreato-biliary and gastrointestinal diseases. I am Dr Deeksha Kapoor, an accomplished pancreato-biliary and gastrointestinal surgeon with a strong foundation in advanced surgical oncology and minimally invasive procedures. With extensive training and experience from premier institutions in India and abroad, I am committed to providing world-class, patient-centered care.
                     </p>
                 </div>
             </div>
@@ -124,41 +137,94 @@
     </section>
 
     <!-- Meet Our Team Section -->
-    <section id="team" class="team-section">
+    <section id="team" class="team-section team-cinema">
         <div class="container">
             <div class="section-title">
+                <span class="section-eyebrow">Our People</span>
                 <h2>Meet Our Team</h2>
+                <p>The clinicians and staff behind the PancreaCare+ programme
+                    — the same faces from consultation through to follow-up.</p>
             </div>
+
             <div class="team-grid">
                 <!-- Dr. Deeksha Kapoor -->
-                <div class="team-card">
+                <article class="team-card is-lead">
                     <div class="team-img-wrapper">
-                        <img src="image/image copy 2.png" alt="Dr. Deeksha Kapoor">
+                        <img src="image/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor">
                     </div>
-                </div>
+                    <div class="team-info">
+                        <h3>Dr. Deeksha Kapoor</h3>
+                        <span class="team-role">CEO &amp; Medical Head</span>
+                        <p class="team-org">Advitya Healthcares <span>&middot;</span> PancreaCare Initiative</p>
+                        <p class="team-spec">Pancreato-Biliary-Liver, Gastrointestinal Surgery, Oncosurgery</p>
+                        <ul class="team-creds">
+                            <li>MBBS</li>
+                            <li>DNB General Surgery</li>
+                            <li>DNB Surgical Gastroenterology</li>
+                            <li>HPB &amp; GI Surgical Oncology Fellowship — Tata Memorial</li>
+                            <li>Console-trained Robotic Surgeon — Da Vinci Xi</li>
+                        </ul>
+                    </div>
+                    <a href="#" class="team-link" onclick="openContactModal(); return false;">
+                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
                 <!-- Dr. Shyamal Kumar Sen -->
-                <div class="team-card">
+                <article class="team-card">
                     <div class="team-img-wrapper">
-                        <img src="image/image copy 6.png" alt="Dr. Shyamal Kumar Sen">
+                        <img src="image/team_shyamal_sen.png" alt="Dr. Shyamal Kumar Sen">
                     </div>
-                </div>
+                    <div class="team-info">
+                        <h3>Dr. Shyamal Kumar Sen</h3>
+                        <span class="team-role">Senior Physician</span>
+                        <p class="team-org">Medical Administrator</p>
+                        <p class="team-spec">Internal Medicine &amp; Department of Pancreato-Biliary, Liver and
+                            Gastrointestinal Sciences</p>
+                    </div>
+                    <a href="#" class="team-link" onclick="openContactModal(); return false;">
+                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
                 <!-- Dr. Sachin Kumar -->
-                <div class="team-card">
+                <article class="team-card">
                     <div class="team-img-wrapper">
-                        <img src="image/image copy 7.png" alt="Dr. Sachin Kumar">
+                        <img src="image/team_sachin_kumar.png" alt="Dr. Sachin Kumar">
                     </div>
-                </div>
+                    <div class="team-info">
+                        <h3>Dr. Sachin Kumar</h3>
+                        <span class="team-role">Junior Resident</span>
+                        <p class="team-org">PancreaCare <span>&middot;</span> Advitya Healthcares</p>
+                        <p class="team-spec">Department of Pancreato-Biliary, Liver &amp; Gastrointestinal Sciences</p>
+                    </div>
+                    <a href="#" class="team-link" onclick="openContactModal(); return false;">
+                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
+
                 <!-- Ms. Poonam Sharma -->
-                <div class="team-card">
+                <article class="team-card">
                     <div class="team-img-wrapper">
-                        <img src="image/image copy 8.png" alt="Ms. Poonam Sharma">
+                        <img src="image/team_poonam_sharma.png" alt="Ms. Poonam Sharma">
                     </div>
-                </div>
+                    <div class="team-info">
+                        <h3>Ms. Poonam Sharma</h3>
+                        <span class="team-role">Head OT Staff</span>
+                        <p class="team-org">Patient Support Group Team Leader <span>&middot;</span> PancreaCare</p>
+                        <p class="team-spec">Senior OT &amp; Robotic Surgery Nurse — GI–HPB &amp; Abdominal Surgery
+                            Specialist</p>
+                    </div>
+                    <a href="#" class="team-link" onclick="openContactModal(); return false;">
+                        Talk to patient support <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+                </article>
             </div>
-            
-            <div class="team-cta" data-aos="fade-up" data-aos-delay="500">
+
+            <div class="team-cta">
                 <h3>Need Expert Medical Advice?</h3>
-                <a href="#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn btn-premium">Book an Appointment</a>
+                <p>Send us your reports — a consultant reviews them before you travel.</p>
+                <a href="#" onclick="openContactModal(); return false;" class="btn btn-premium">Book an Appointment</a>
             </div>
         </div>
     </section>
@@ -170,6 +236,7 @@
                 <div class="why-text">
                     <div class="section-title left-align">
                         <h2>From Inception to Realization</h2>
+                        <p class="why-tagline">&mdash; This is Our Journey</p>
                         <p>We were not born in a boardroom or conceived in an investor's plan. We were moulded in hospital corridors, in the waiting rooms of overcrowded clinics, amidst the anxious whispers of families who had travelled miles, desperate for care.</p>
                     </div>
                     <ul class="features-list">
@@ -204,15 +271,53 @@
                     </ul>
                 </div>
                 <div class="why-image">
-                    <!-- Stylized div for about section -->
-                    <div class="image-wrapper" style="background: transparent; overflow: visible;">
-                        <img src="image/inception_hospital_v2.png" alt="The MediAid Healthcare Services"
-                            style="width: 130%; max-width: none; height: auto; margin-left: -15%; display: block; margin-top: -10%;">
+                    <div class="image-wrapper">
+                        <img src="image/inception_doctor.png"
+                            alt="Illustration of a clinician reviewing patient notes">
                         <div class="experience-badge">
                             <span class="years">25+</span>
                             <span class="text">Years of<br>Experience</span>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Milestone -->
+    <section id="milestone" class="milestone">
+        <div class="container">
+            <div class="ms-grid">
+                <div class="ms-media" data-aos="fade-right">
+                    <img src="image/inception_hospital_v2.png"
+                        alt="The MediAid Healthcare Services and JMM Gastro Cancer Centre, Baruipur, Kolkata">
+                    <span class="ms-flag"><i class="fa-solid fa-location-dot"></i> Baruipur, Kolkata</span>
+                </div>
+
+                <div class="ms-body" data-aos="fade-left" data-aos-delay="80">
+                    <span class="ms-badge"><span class="ms-dot"></span> New Milestone</span>
+                    <h2>Advitya Healthcares Expands to Baruipur, Kolkata</h2>
+                    <p class="ms-lead">Another Alliance Model partnership &mdash; surgical and cancer care delivered
+                        where patients already are, rather than a city away.</p>
+
+                    <p class="ms-partner">In association with <b>The MediAid Healthcare Services</b> and
+                        <b>JMM Gastro Cancer Centre</b>.</p>
+
+                    <ul class="ms-facilities">
+                        <li><i class="fa-solid fa-check"></i> Day Care OPD &amp; Admission</li>
+                        <li><i class="fa-solid fa-check"></i> Endoscopy (OGD / Colonoscopy)</li>
+                        <li><i class="fa-solid fa-check"></i> Fully Equipped OT &amp; Advanced Surgery</li>
+                        <li><i class="fa-solid fa-check"></i> Pathology (Histopath / IHC / FISH / ER / PR)</li>
+                        <li><i class="fa-solid fa-check"></i> Chemotherapy Services</li>
+                        <li><i class="fa-solid fa-check"></i> Radiology (X-Ray / USG / CT / MRI)</li>
+                        <li><i class="fa-solid fa-check"></i> 4D Laparoscopic Surgery</li>
+                        <li><i class="fa-solid fa-check"></i> Onco Pharmacy / Nutritional Counselling</li>
+                    </ul>
+
+                    <p class="ms-tag">Early diagnosis, precise treatment, compassionate care.</p>
+
+                    <a href="#" onclick="openContactModal(); return false;" class="btn btn-premium">Book an
+                        Appointment</a>
                 </div>
             </div>
         </div>
@@ -253,7 +358,7 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star-half-stroke"></i>
                             </div>
-                            <p class="quote">"Dr. Dikasha Kapoor performed a flawless procedure. The pre-op and post-op care were exceptional. Advitya Healthcares truly lives up to its promise of world-class care."</p>
+                            <p class="quote">"Dr. Deeksha Kapoor performed a flawless procedure. The pre-op and post-op care were exceptional. Advitya Healthcares truly lives up to its promise of world-class care."</p>
                             <h4 class="author">- Sarah Jenkins</h4>
                         </div>
                     </div>
@@ -292,102 +397,217 @@
         </div>
     </section>
 
-    
-
-    
-            <!-- Add Arrows -->
-            <div class="swiper-button-next" style="color: white;"></div>
-            <div class="swiper-button-prev" style="color: white;"></div>
-        </div>
-    </div>
-
     <!-- Contact Modal -->
-    <div id="contactModal" class="modal" style="display: none; align-items: center; justify-content: center; position: fixed; top:0; left:0; width: 100%; height: 100%; z-index: 2000; background: rgba(0,0,0,0.8);">
-        <div class="modal-content contact-modal" style="background: white; padding: 40px; border-radius: 15px; position: relative; max-width: 800px; width: 90%;">
-            <span class="contact-modal-close" onclick="document.getElementById('contactModal').style.display='none'" style="position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 2rem;">&times;</span>
+    <div id="contactModal" class="modal">
+        <div class="modal-content contact-modal">
+            <span class="contact-modal-close" onclick="closeContactModal()" role="button" tabindex="0"
+                aria-label="Close">&times;</span>
+
             <div class="contact-modal-left">
                 <div>
-                    <h2 style="font-size: 2.5rem; margin-bottom: 20px;">Contact Us</h2>
-                    <p style="font-size: 1.1rem; opacity: 0.9; margin-bottom: 40px;">We're here to help. Reach out to us for appointments or any medical inquiries.</p>
-                    
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
-                        <div style="width: 45px; height: 45px; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
-                            <i class="fa-solid fa-location-dot"></i>
-                        </div>
+                    <h2>Contact Us</h2>
+                    <p class="cm-intro">We're here to help — appointments, second opinions, or questions about a
+                        report. Outstation patients: send your scans before you travel.</p>
+
+                    <div class="cm-row">
+                        <div class="cm-icon"><i class="fa-solid fa-phone"></i></div>
                         <div>
-                            <h4 style="margin: 0; font-size: 1.1rem;">Location</h4>
-                            <p style="margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem;">603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram</p>
+                            <h4>Call Us</h4>
+                            <p>
+                                <a href="tel:+919211221551">+91 9211221551</a> /
+                                <a href="tel:+919211221552">9211221552</a><br>
+                                <a href="tel:+919211221553">+91 9211221553</a> /
+                                <a href="tel:+919211221554">9211221554</a>
+                            </p>
                         </div>
                     </div>
-                    
-                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 25px;">
-                        <div style="width: 45px; height: 45px; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
-                            <i class="fa-solid fa-phone"></i>
-                        </div>
+
+                    <div class="cm-row">
+                        <div class="cm-icon"><i class="fa-brands fa-whatsapp"></i></div>
                         <div>
-                            <h4 style="margin: 0; font-size: 1.1rem;">Emergency</h4>
-                            <p style="margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem;">+91-124-4286663</p>
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/919211221551">+91 9211221551</a></p>
                         </div>
                     </div>
-                    
-                    <div style="display: flex; align-items: center; gap: 15px;">
-                        <div style="width: 45px; height: 45px; background: rgba(0,0,0,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
-                            <i class="fa-solid fa-envelope"></i>
-                        </div>
+
+                    <div class="cm-row">
+                        <div class="cm-icon"><i class="fa-solid fa-envelope"></i></div>
                         <div>
-                            <h4 style="margin: 0; font-size: 1.1rem;">Email</h4>
-                            <p style="margin: 5px 0 0; opacity: 0.8; font-size: 0.9rem;">info@advityahealthcares.com</p>
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@advityahealthcares.com">info@advityahealthcares.com</a></p>
+                        </div>
+                    </div>
+
+                    <div class="cm-row">
+                        <div class="cm-icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <h4>Centres</h4>
+                            <p>Ranchi &middot; Khunti &middot; Kolkata<br>
+                                <a href="#location" onclick="closeContactModal()">See all locations</a>
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
+
             <div class="contact-modal-right">
-                <h3 style="font-size: 2rem; margin-bottom: 25px;">Book an Appointment</h3>
-                <form class="premium-form">
-                    <div style="display: flex; gap: 15px;">
-                        <div class="form-group" style="flex: 1;">
-                            <input type="text" placeholder="Full Name" required>
+                <h3>Book an Appointment</h3>
+                <form class="premium-form" id="appointmentForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" name="name" placeholder="Full Name" required>
                         </div>
-                        <div class="form-group" style="flex: 1;">
-                            <input type="tel" placeholder="Phone Number" required>
+                        <div class="form-group">
+                            <input type="tel" name="phone" placeholder="Phone Number" required
+                                pattern="[0-9+ ()-]{7,}">
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <input type="email" placeholder="Email Address" required>
+                        <input type="email" name="email" placeholder="Email Address" required>
                     </div>
-                    <div style="display: flex; gap: 15px;">
-                        <div class="form-group" style="flex: 1;">
-                            <select required>
-                                <option value="" disabled selected>Department</option>
-                                <option value="general">General Medicine</option>
-                                <option value="cardiology">Cardiology</option>
-                                <option value="orthopedics">Orthopedics</option>
-                                <option value="pediatrics">Pediatrics</option>
-                                <option value="neurology">Neurology</option>
-                                <option value="dental">Dental Care</option>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <select name="service" required>
+                                <option value="" disabled selected>Service</option>
+                                <option>Gastroenterology</option>
+                                <option>Pancreatic Disorders</option>
+                                <option>Liver Care</option>
+                                <option>Endoscopy / ERCP / EUS</option>
+                                <option>GI Surgery</option>
+                                <option>Colonoscopy</option>
+                                <option>Nutrition &amp; Dietetics</option>
+                                <option>Preventive Health Checkup</option>
+                                <option>Second Opinion on Reports</option>
                             </select>
                         </div>
-                        <div class="form-group" style="flex: 1;">
-                            <input type="date" required style="color: #666;">
+                        <div class="form-group">
+                            <select name="centre" required>
+                                <option value="" disabled selected>Preferred Centre</option>
+                                <option>Care Clinic, Morabadi — Ranchi</option>
+                                <option>Jeevah Healthcares, Bariatu Road — Ranchi</option>
+                                <option>Synergy Global Hospital — Ranchi</option>
+                                <option>Rane Hospital — Khunti</option>
+                                <option>Kolkata</option>
+                            </select>
                         </div>
                     </div>
+
                     <div class="form-group">
-                        <textarea placeholder="Your Message or Symptoms..." required></textarea>
+                        <label class="form-label" for="apptDate">Preferred date</label>
+                        <input type="date" id="apptDate" name="date" required>
                     </div>
-                    <button type="submit" class="btn-gradient">Book Appointment</button>
+
+                    <div class="form-group">
+                        <textarea name="message" placeholder="Your message or symptoms..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-gradient">Send Request</button>
+                    <p class="form-note">Not for emergencies. If this is urgent, call
+                        <a href="tel:+919211221551">+91 9211221551</a> now.</p>
                 </form>
             </div>
         </div>
     </div>
 
     <!-- Location Section -->
-    <section id="location" style="padding: 40px 0;">
+    <section id="location" class="locations">
         <div class="container">
-            <div class="section-title" style="margin-bottom: 20px;">
-                <h2>Our Location</h2>
+            <div class="section-title">
+                <h2>Our Locations</h2>
+                <p>Advitya works through alliance partners in Ranchi, Khunti and Kolkata. Pick a centre to see it on
+                    the map.</p>
             </div>
-            <div class="map-container" style="height: 450px; border: 2px solid #F0E4E0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); border-radius: 12px; overflow: hidden;">
-                <iframe src="https://maps.google.com/maps?q=Nirvana%20Courtyard,%20Sector%2050,%20Gurugram,%20Haryana&t=&z=14&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+
+            <div class="loc-layout">
+                <div class="loc-list">
+                    <span class="loc-city">Ranchi, Jharkhand</span>
+
+                    <button class="loc-card is-active" type="button"
+                        data-map="Shree Durga Palace, Morabadi, Ranchi 834008">
+                        <h3>Care Clinic <span>— Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Shree Durga Palace, Morabadi,
+                            Ranchi – 834008</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919711669119">9711669119</a>
+                        </p>
+                    </button>
+
+                    <button class="loc-card" type="button"
+                        data-map="Badhai Chowk, Bariatu Road, Ranchi 834009">
+                        <h3>Jeevah Healthcares <span>— Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Near Badhai Chowk, Bariatu Road,
+                            Ranchi – 834009</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919711669119">9711669119</a>
+                        </p>
+                    </button>
+
+                    <button class="loc-card" type="button"
+                        data-map="Synergy Global Hospital, Krishna Nagar Colony, Bariatu Road, Muharram Toli, Ranchi 834012">
+                        <h3>Synergy Global Hospital <span>— Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Krishna Nagar Colony, Bariatu Rd,
+                            Muharram Toli, Ranchi, Jharkhand 834012</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919341529415">9341529415</a>
+                        </p>
+                    </button>
+
+                    <span class="loc-city">Khunti, Jharkhand</span>
+
+                    <button class="loc-card" type="button"
+                        data-map="Gayatri Nagar, Khunti, Jharkhand 835201">
+                        <h3>Rane Hospital <span>— Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Opp. Hero Showroom, Gayatri Nagar,
+                            Khunti – 835201</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919942538566">9942538566</a>
+                        </p>
+                    </button>
+
+                    <span class="loc-city">Kolkata, West Bengal</span>
+
+                    <button class="loc-card" type="button" data-map="Kolkata, West Bengal">
+                        <h3>Advitya Kolkata <span>— PancreaCare</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-user-doctor"></i> Gastrointestinal consultations,
+                            surgical, medical and cancer care</p>
+                        <p class="loc-note">Consultation venue confirmed at the time of booking — please call.</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919211221553">9211221553</a>,
+                            <a href="tel:+919211221554">9211221554</a>
+                        </p>
+                    </button>
+
+                    <span class="loc-city">Registered Office</span>
+
+                    <button class="loc-card" type="button"
+                        data-map="Nirvana Courtyard, Sector 50, Gurugram, Haryana 122018">
+                        <h3>Advitya Healthcares <span>— Head Office</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-building"></i> 603, Tower C, 6th Floor, Nirvana
+                            Courtyard, Sector 50, Gurugram – 122018</p>
+                        <p class="loc-tel"><i class="fa-regular fa-envelope"></i>
+                            <a href="mailto:info@advityahealthcares.com">info@advityahealthcares.com</a>
+                        </p>
+                    </button>
+                </div>
+
+                <div class="loc-map">
+                    <iframe id="locationMap"
+                        src="https://maps.google.com/maps?q=Shree%20Durga%20Palace%2C%20Morabadi%2C%20Ranchi%20834008&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                        title="Map of the selected Advitya centre"></iframe>
+                </div>
             </div>
         </div>
     </section>
@@ -442,7 +662,7 @@
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
                 <div style="margin-bottom: 10px;">
                     <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
-                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
                 </div>
                 <div style="display: flex; gap: 15px;">
                     <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
@@ -493,6 +713,113 @@
             once: true, // whether animation should happen only once - while scrolling down
             offset: 100 // offset (in px) from the original trigger point
         });
+
+        // Meet Our Team: play the reveal sequence once the section scrolls in.
+        // Arming from JS means the section stays visible if this never runs.
+        (function () {
+            const team = document.querySelector('.team-cinema');
+            if (!team) return;
+
+            team.classList.add('is-armed');
+
+            const play = () => {
+                team.classList.add('is-playing');
+                // Matches the last animation (CTA at 1.9s + 0.6s) plus a little slack
+                setTimeout(() => team.classList.add('is-done'), 2700);
+            };
+
+            if (!('IntersectionObserver' in window)) {
+                play();
+                return;
+            }
+
+            const io = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                    if (!entry.isIntersecting) return;
+                    io.disconnect();
+                    play();
+                });
+            }, { threshold: 0.2 });
+
+            io.observe(team);
+        })();
+
+        // Contact modal: open/close plumbing
+        function openContactModal() {
+            document.getElementById('contactModal').style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            document.getElementById('contactModal').style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        (function () {
+            const modal = document.getElementById('contactModal');
+            if (!modal) return;
+
+            // Click the backdrop, or press Escape, to close
+            modal.addEventListener('click', e => {
+                if (e.target === modal) closeContactModal();
+            });
+            document.addEventListener('keydown', e => {
+                if (e.key === 'Escape' && modal.style.display === 'flex') closeContactModal();
+            });
+
+            // No backend on this site, so the request is handed to the visitor's mail client
+            const form = document.getElementById('appointmentForm');
+            if (!form) return;
+
+            // Can't book a date in the past
+            const date = form.querySelector('input[type="date"]');
+            if (date) date.min = new Date().toISOString().split('T')[0];
+
+            form.addEventListener('submit', function (e) {
+                e.preventDefault();
+                const f = new FormData(form);
+                const body = [
+                    `Name: ${f.get('name')}`,
+                    `Phone: ${f.get('phone')}`,
+                    `Email: ${f.get('email')}`,
+                    `Service: ${f.get('service')}`,
+                    `Preferred centre: ${f.get('centre')}`,
+                    `Preferred date: ${f.get('date')}`,
+                    '',
+                    'Message:',
+                    f.get('message')
+                ].join('\n');
+
+                window.location.href = 'mailto:info@advityahealthcares.com'
+                    + '?subject=' + encodeURIComponent(`Appointment request - ${f.get('name')}`)
+                    + '&body=' + encodeURIComponent(body);
+
+                form.innerHTML = `
+                    <div class="form-sent">
+                        <i class="fa-regular fa-circle-check"></i>
+                        <h4>Your email is ready to send</h4>
+                        <p>We've opened your mail app with the request filled in — press send and we'll reply within
+                           one working day.<br>Prefer to talk? Call
+                           <a href="tel:+919211221551">+91 9211221551</a>.</p>
+                    </div>`;
+            });
+        })();
+
+        // Locations: clicking a centre moves the map to it
+        (function () {
+            const cards = document.querySelectorAll('.loc-card');
+            const map = document.getElementById('locationMap');
+            if (!cards.length || !map) return;
+
+            cards.forEach(card => {
+                card.addEventListener('click', function () {
+                    cards.forEach(c => c.classList.remove('is-active'));
+                    this.classList.add('is-active');
+                    const q = encodeURIComponent(this.dataset.map);
+                    map.src = `https://maps.google.com/maps?q=${q}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+                });
+            });
+        })();
 
     </script>
     <script src="nav.js?v=2"></script>

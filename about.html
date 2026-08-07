@@ -7,7 +7,7 @@
     <title>About Us | From Inception to Realization | Advitya Healthcares</title>
     <meta name="description"
         content="From Inception to Realization - the journey of Advitya Healthcares, from hospital corridors in 2003 to the Alliance Model bringing surgical and cancer care to tier 2 and tier 3 cities.">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="stylesheet" href="style.css?v=8">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -21,7 +21,7 @@
         .inner-hero {
             position: relative;
             overflow: hidden;
-            padding: 160px 0 90px;
+            padding: 140px 0 28px;
         }
 
         /* Soft light sweep across the banner */
@@ -56,7 +56,7 @@
         .inner-hero h1 {
             font-size: 4rem;
             line-height: 1.08;
-            margin-bottom: 14px;
+            margin-bottom: 0;
             font-weight: 700;
         }
 
@@ -66,40 +66,18 @@
             font-weight: 500;
         }
 
-        .hero-crumb {
-            margin-top: 28px;
-            font-size: 1rem;
-            letter-spacing: 0.06em;
-            opacity: 0.8;
-            font-weight: 500;
-        }
-
         /* Opening pull quote */
         .opening {
-            padding: 80px 0 20px;
+            padding: 10px 0 10px;
         }
 
         .pull-quote {
-            position: relative;
             font-family: var(--font-heading);
             font-size: 1.6rem;
             line-height: 1.6;
             font-weight: 500;
             color: var(--text-main);
             text-align: center;
-            padding-top: 50px;
-        }
-
-        .pull-quote::before {
-            content: 'C';
-            position: absolute;
-            top: -18px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 7rem;
-            line-height: 1;
-            color: var(--primary);
-            opacity: 0.22;
         }
 
         /* Shared section furniture */
@@ -133,7 +111,7 @@
 
         /* Timeline */
         .journey {
-            padding: 70px 0 90px;
+            padding: 50px 0 60px;
         }
 
         .timeline {
@@ -154,7 +132,7 @@
 
         .tl-item {
             position: relative;
-            margin-bottom: 34px;
+            margin-bottom: 22px;
         }
 
         .tl-marker {
@@ -192,9 +170,37 @@
             background: var(--bg-card);
             border: 1px solid var(--border-color);
             border-radius: 16px;
-            padding: 40px 44px;
+            padding: 28px 32px;
             box-shadow: var(--shadow-md);
             transition: transform 0.4s ease, box-shadow 0.4s ease;
+            /* Text and chapter illustration side by side */
+            display: flex;
+            align-items: flex-start;
+            gap: 28px;
+        }
+
+        .tl-text {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .tl-media {
+            flex: 0 0 260px;
+        }
+
+        .tl-media img {
+            width: 100%;
+            height: auto;
+            display: block;
+            /* Illustrations ship on their own light field; a soft panel keeps
+               them from floating loose against the card */
+            border-radius: 12px;
+            background: var(--bg-light);
+        }
+
+        /* Alternate the illustration side so the column does not read as a rail */
+        .tl-item:nth-child(even) .tl-media {
+            order: -1;
         }
 
         .tl-card:hover {
@@ -203,17 +209,17 @@
         }
 
         .tl-card h3 {
-            font-size: 1.75rem;
+            font-size: 1.55rem;
             color: var(--primary-dark);
-            margin-bottom: 18px;
-            line-height: 1.3;
+            margin-bottom: 12px;
+            line-height: 1.25;
         }
 
         .tl-card p {
-            font-size: 1.12rem;
-            line-height: 1.85;
+            font-size: 1.02rem;
+            line-height: 1.7;
             color: #4a4a4a;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         .tl-card p:last-child {
@@ -225,8 +231,8 @@
             font-weight: 700;
             color: var(--text-main) !important;
             border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-            margin-top: 24px !important;
+            padding-top: 14px;
+            margin-top: 16px !important;
         }
 
         /* The founding belief */
@@ -235,8 +241,8 @@
             background: var(--bg-light);
             border-left: 4px solid var(--primary);
             border-radius: 12px;
-            padding: 28px 32px 28px 64px;
-            margin: 26px 0;
+            padding: 20px 24px 20px 56px;
+            margin: 18px 0;
         }
 
         .belief i {
@@ -329,6 +335,370 @@
             color: var(--text-muted);
         }
 
+        /* Get in Touch */
+        .getintouch {
+            padding: 60px 0;
+            background: var(--bg-light);
+        }
+
+        .git-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1fr);
+            gap: 48px;
+            align-items: start;
+        }
+
+        .getintouch .section-title {
+            text-align: left;
+            margin-bottom: 8px;
+        }
+
+        .git-lead {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            margin-bottom: 26px;
+        }
+
+        .git-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .git-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 14px;
+            margin-bottom: 18px;
+        }
+
+        .git-list i {
+            flex: 0 0 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--primary);
+            font-size: 0.95rem;
+        }
+
+        .git-list a {
+            display: block;
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--text-main);
+            text-decoration: none;
+            line-height: 1.7;
+        }
+
+        .git-list a:hover {
+            color: var(--primary);
+        }
+
+        .git-form {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 30px 32px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .git-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .git-field {
+            margin-bottom: 16px;
+        }
+
+        .git-field label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .git-field input,
+        .git-field textarea {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            color: var(--text-main);
+            background: var(--bg-main);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            outline: none;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+
+        .git-field textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .git-field input:focus,
+        .git-field textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(139, 16, 20, 0.12);
+        }
+
+        .git-submit {
+            width: 100%;
+            justify-content: center;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 860px) {
+            .git-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .git-form {
+                padding: 24px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .git-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        /* Our Locations */
+        .locmap {
+            padding: 60px 0;
+        }
+
+        .locmap-grid {
+            display: grid;
+            grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+            gap: 44px;
+            align-items: start;
+            margin-top: 32px;
+        }
+
+        .locmap-figure {
+            position: sticky;
+            top: 110px;
+        }
+
+        /* Soft field behind the line art, so the map reads as a panel not a loose PNG */
+        .locmap-canvas {
+            position: relative;
+            padding: 18px;
+            border-radius: 20px;
+            background:
+                radial-gradient(circle at 62% 42%, rgba(139, 16, 20, 0.07) 0%, transparent 55%),
+                linear-gradient(160deg, var(--bg-light) 0%, var(--bg-card) 70%);
+            border: 1px solid var(--border-color);
+            box-shadow: var(--shadow-md);
+        }
+
+        .locmap-canvas img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* One hotspot per pin already drawn into the artwork */
+        .locmap-pin {
+            position: absolute;
+            left: var(--x);
+            top: var(--y);
+            width: 34px;
+            height: 34px;
+            margin: -17px 0 0 -17px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background: transparent;
+            cursor: pointer;
+            z-index: 2;
+        }
+
+        /* The ring is the visible part - the pin itself is in the PNG underneath */
+        .locmap-pin::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            opacity: 0;
+            transform: scale(0.6);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .locmap-pin::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 50%;
+            background: rgba(139, 16, 20, 0.16);
+            opacity: 0;
+            transform: scale(0.4);
+        }
+
+        .locmap-pin:hover::before,
+        .locmap-pin:focus-visible::before,
+        .locmap-pin.is-active::before {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .locmap-pin.is-active::after {
+            animation: pinPulse 1.8s ease-out infinite;
+        }
+
+        @keyframes pinPulse {
+            0% { opacity: 0.7; transform: scale(0.5); }
+            100% { opacity: 0; transform: scale(2.1); }
+        }
+
+        .locmap-pin:focus-visible {
+            outline: 2px solid var(--primary);
+            outline-offset: 4px;
+        }
+
+        /* Tooltip */
+        .locmap-tip {
+            position: absolute;
+            left: 50%;
+            bottom: calc(100% + 10px);
+            transform: translate(-50%, 6px);
+            white-space: nowrap;
+            background: var(--primary-dark);
+            color: #fff;
+            font-size: 0.78rem;
+            font-weight: 700;
+            line-height: 1.35;
+            text-align: left;
+            padding: 8px 12px;
+            border-radius: 8px;
+            box-shadow: var(--shadow-lg);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.25s ease, transform 0.25s ease;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .locmap-tip b {
+            display: block;
+            font-weight: 500;
+            opacity: 0.85;
+        }
+
+        .locmap-tip::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            border: 6px solid transparent;
+            border-top-color: var(--primary-dark);
+        }
+
+        .locmap-pin:hover .locmap-tip,
+        .locmap-pin:focus-visible .locmap-tip,
+        .locmap-pin.is-active .locmap-tip {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(-50%, 0);
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .locmap-pin.is-active::after {
+                animation: none;
+            }
+        }
+
+        .locmap-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-left: 4px solid var(--primary);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.35s ease, box-shadow 0.35s ease;
+        }
+
+        .locmap-card:hover,
+        .locmap-card.is-active {
+            transform: translateX(4px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .locmap-card.is-active {
+            background: var(--bg-light);
+            border-left-width: 6px;
+        }
+
+        .locmap-card:last-child {
+            margin-bottom: 0;
+        }
+
+        .locmap-card h3 {
+            font-size: 1.15rem;
+            color: var(--primary-dark);
+            margin-bottom: 8px;
+            line-height: 1.35;
+        }
+
+        .locmap-card h3 span {
+            font-weight: 500;
+            color: var(--text-muted);
+        }
+
+        .locmap-addr {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .locmap-tel {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px 16px;
+            margin: 0;
+        }
+
+        .locmap-tel a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .locmap-tel a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 860px) {
+            .locmap-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .locmap-figure {
+                position: static;
+                max-width: 420px;
+                margin: 0 auto;
+            }
+        }
+
         /* Newsletter */
         .newsletter {
             padding: 70px 0 90px;
@@ -381,7 +751,7 @@
 
         @media (max-width: 820px) {
             .inner-hero {
-                padding: 130px 0 60px;
+                padding: 120px 0 40px;
             }
 
             .inner-hero h1 {
@@ -433,10 +803,23 @@
 
             .tl-card {
                 padding: 28px 24px;
+                flex-direction: column;
+                align-items: stretch;
+                gap: 24px;
             }
 
             .tl-card h3 {
                 font-size: 1.4rem;
+            }
+
+            /* Illustration drops below the text on every card, alternation off */
+            .tl-media,
+            .tl-item:nth-child(even) .tl-media {
+                order: 0;
+                flex: none;
+                width: 100%;
+                max-width: 320px;
+                margin: 0 auto;
             }
 
             .closing-line {
@@ -457,7 +840,16 @@
             </div>
             <nav class="nav-links">
                 <a href="index.html">Home</a>
-                <a href="about.html" class="active">About Us</a>
+                <div class="dropdown">
+                    <a href="about.html" class="dropbtn active">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                    </div>
+                </div>
                 <a href="pancrea-care.html">Pancrea Care</a>
                 <div class="dropdown mega">
                     <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
@@ -482,6 +874,7 @@
                         </div>
                     </div>
                 </div>
+                <a href="index.html#location" class="nav-loc">Locations</a>
                 <a href="index.html#testimonials">Testimonials</a>
                 <a href="careers.html">Careers</a>
                 <a href="gallery.html">Gallery</a>
@@ -490,6 +883,9 @@
                 <a href="index.html#contactModal">Contact us</a>
             </nav>
             <div class="nav-actions">
+                <a href="index.html#location" class="location-btn">
+                    <i class="fa-solid fa-location-dot"></i> Our Locations
+                </a>
                 <a href="index.html#contactModal" class="appointment-btn">
                     <i class="fa-regular fa-calendar-check"></i> Book Appointment
                 </a>
@@ -505,10 +901,6 @@
         <div class="container">
             <span class="hero-eyebrow" data-aos="fade-up">Advitya Healthcares</span>
             <h1 data-aos="fade-up" data-aos-delay="80">From Inception to Realization</h1>
-            <p data-aos="fade-up" data-aos-delay="160">&mdash; This is Our Journey</p>
-            <div class="hero-crumb" data-aos="fade-up" data-aos-delay="240">
-                Home / About Us
-            </div>
         </div>
     </section>
 
@@ -524,7 +916,7 @@
     </section>
 
     <!-- Timeline -->
-    <section class="journey">
+    <section class="journey" id="journey">
         <div class="container" style="max-width: 1080px;">
             <h2 class="section-title" data-aos="fade-up">The Journey of Advitya</h2>
             <p class="section-sub" data-aos="fade-up" data-aos-delay="80">Two decades in hospital corridors, condensed
@@ -534,38 +926,50 @@
                 <div class="tl-item" data-aos="fade-up">
                     <div class="tl-marker"><span class="tl-years"><b>2003</b><b>2008</b></span></div>
                     <div class="tl-card">
-                        <h3>The First Glimpse into Healthcare</h3>
-                        <p>We witnessed their silent prayers and unspoken fears. We saw the exhaustion in their eyes, not
-                            just from long journeys, but from the despair of realising that the care they needed was
-                            missing in their homes.</p>
-                        <p>Big cities boasted world-class hospitals, yet outside them, access to specialised healthcare
-                            was severely limited. We witnessed families leaving their homes, their livelihoods,
-                            everything they cherished, just to grasp a few more moments with their loved ones. It was
-                            during those times that we realised something profound—treatment and healing are not the
-                            same. Medicine should not be restricted by geography. Healthcare should not be a privilege.
-                        </p>
+                        <div class="tl-text">
+                            <h3>The First Glimpse into Healthcare</h3>
+                            <p>We witnessed their silent prayers and unspoken fears. We saw the exhaustion in their eyes,
+                                not just from long journeys, but from the despair of realising that the care they needed
+                                was missing in their homes.</p>
+                            <p>Big cities boasted world-class hospitals, yet outside them, access to specialised
+                                healthcare was severely limited. We witnessed families leaving their homes, their
+                                livelihoods, everything they cherished, just to grasp a few more moments with their loved
+                                ones. It was during those times that we realised something profound—treatment and healing
+                                are not the same. Medicine should not be restricted by geography. Healthcare should not
+                                be a privilege.</p>
+                        </div>
+                        <div class="tl-media">
+                            <img src="image/image copy 9.png" alt="The First Glimpse into Healthcare">
+                        </div>
                     </div>
                 </div>
 
                 <div class="tl-item" data-aos="fade-up">
                     <div class="tl-marker"><span class="tl-years"><b>2009</b><b>2015</b></span></div>
                     <div class="tl-card">
-                        <h3>Learning the Language of Surgery and Cancer Care</h3>
-                        <p>As we grew, we found ourselves in the realm of surgery and oncology. Surgery was not merely
-                            about technical skill; it was about responsibility, about standing at the threshold between
-                            despair and hope. It is a place where a few minutes and a single decision can alter the
-                            course of a life. We learned from mentors who showed us that surgery is not merely an act,
-                            but a commitment—to ethics, to morality, and to the individuals who place their trust in our
-                            hands. We witnessed how cancer patients suffered and how their loved ones did everything
-                            possible to spend another day with them. With every lesson, we understood our purpose more
-                            clearly: expertise should not be confined to a few institutions, it should be accessible
-                            where people need it most.</p>
+                        <div class="tl-text">
+                            <h3>Learning the Language of Surgery and Cancer Care</h3>
+                            <p>As we grew, we found ourselves in the realm of surgery and oncology. Surgery was not
+                                merely about technical skill; it was about responsibility, about standing at the
+                                threshold between despair and hope. It is a place where a few minutes and a single
+                                decision can alter the course of a life. We learned from mentors who showed us that
+                                surgery is not merely an act, but a commitment—to ethics, to morality, and to the
+                                individuals who place their trust in our hands. We witnessed how cancer patients suffered
+                                and how their loved ones did everything possible to spend another day with them. With
+                                every lesson, we understood our purpose more clearly: expertise should not be confined to
+                                a few institutions, it should be accessible where people need it most.</p>
+                        </div>
+                        <div class="tl-media">
+                            <img src="image/image copy 10.png"
+                                alt="Learning the Language of Surgery and Cancer Care">
+                        </div>
                     </div>
                 </div>
 
                 <div class="tl-item" data-aos="fade-up">
                     <div class="tl-marker"><span class="tl-years"><b>2015</b><b>2023</b></span></div>
                     <div class="tl-card">
+                        <div class="tl-text">
                         <h3>Recognizing the Gaps, Preparing for Change</h3>
                         <p>As we delved deeper, our understanding of healthcare inequities became more acute. We observed
                             that the highest level of surgical and cancer expertise was concentrated in only a handful of
@@ -581,12 +985,17 @@
                             healthcare delivery. Why should world-class treatment be limited to a select few hospitals?
                             Why should a person's survival depend on their ability to travel? We were no longer merely
                             observing a problem but getting ready to be the solution.</p>
+                        </div>
+                        <div class="tl-media">
+                            <img src="image/image copy 11.png" alt="Recognizing the Gaps, Preparing for Change">
+                        </div>
                     </div>
                 </div>
 
                 <div class="tl-item" data-aos="fade-up">
                     <div class="tl-marker is-final"><span class="tl-years"><b>2023</b><b>2025</b></span></div>
                     <div class="tl-card">
+                        <div class="tl-text">
                         <h3>The Birth of Advitya</h3>
                         <p>By 2023, we were no longer merely a thought. We had become a mission, a movement, a force
                             taking shape.</p>
@@ -612,6 +1021,10 @@
                         <p>We are evolving. With each partnership, every successful surgery, and every patient who no
                             longer has to leave their home for the best care, our purpose becomes ever stronger.</p>
                         <p class="tl-closing">We were born from a problem, yet we exist to provide a solution.</p>
+                        </div>
+                        <div class="tl-media">
+                            <img src="image/image copy 12.png" alt="The Birth of Advitya">
+                        </div>
                     </div>
                 </div>
             </div>
@@ -652,10 +1065,151 @@
     <!-- Closing Statement -->
     <section class="closing">
         <div class="container" style="max-width: 860px;">
-            <p class="closing-line" data-aos="fade-up">Today and Beyond, we, Advitya, bring you
+            <h3 class="closing-line" data-aos="fade-up">Today and Beyond, we, Advitya, bring you
                 <strong>Science for Humanity</strong>.
-            </p>
+            </h3>
             <p class="closing-tag" data-aos="fade-up" data-aos-delay="120">This… is merely the Beginning.</p>
+        </div>
+    </section>
+
+    <!-- Get in Touch -->
+    <section class="getintouch" id="get-in-touch">
+        <div class="container" style="max-width: 1100px;">
+            <div class="git-grid">
+                <div class="git-info" data-aos="fade-right">
+                    <span class="eyebrow">Contact</span>
+                    <h2 class="section-title">Get in Touch</h2>
+                    <p class="git-lead">We look forward to hearing from you.</p>
+
+                    <ul class="git-list">
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <a href="tel:+919211221551">+91 9211221551</a>
+                                <a href="tel:+919211221552">+91 9211221552</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <a href="tel:+919211221553">+91 9211221553</a>
+                                <a href="tel:+919211221554">+91 9211221554</a>
+                            </div>
+                        </li>
+                        <li>
+                            <i class="fa-regular fa-envelope"></i>
+                            <div>
+                                <a href="mailto:info@advityahealthcares.com">info@advityahealthcares.com</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- No backend on this site, so the form hands off to the mail client,
+                     same approach as the newsletter form below -->
+                <form class="git-form" data-aos="fade-left" data-aos-delay="80" onsubmit="return sendGitForm(this);">
+                    <div class="git-row">
+                        <div class="git-field">
+                            <label for="git-first">First Name</label>
+                            <input type="text" id="git-first" name="first" required>
+                        </div>
+                        <div class="git-field">
+                            <label for="git-last">Last Name</label>
+                            <input type="text" id="git-last" name="last" required>
+                        </div>
+                    </div>
+                    <div class="git-field">
+                        <label for="git-email">Email</label>
+                        <input type="email" id="git-email" name="email" required>
+                    </div>
+                    <div class="git-field">
+                        <label for="git-message">Message</label>
+                        <textarea id="git-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="appointment-btn git-submit">
+                        <i class="fa-regular fa-paper-plane"></i> Submit
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Locations -->
+    <section class="locmap" id="locations">
+        <div class="container" style="max-width: 1100px;">
+            <span class="eyebrow" data-aos="fade-up">Where We Are</span>
+            <h2 class="section-title" data-aos="fade-up" data-aos-delay="60">Our Locations</h2>
+
+            <div class="locmap-grid">
+                <div class="locmap-figure" data-aos="fade-right">
+                    <div class="locmap-canvas">
+                        <img src="image/advitya_locations_map.png"
+                            alt="Map of India showing Advitya Healthcares centres in Gurugram, Ranchi and Khunti">
+
+                        <!-- Hotspots sit on top of the pins already drawn into the PNG.
+                             Percentages are of the 699x780 artwork, so they hold at any width. -->
+                        <button class="locmap-pin" type="button" data-loc="office"
+                            style="--x: 32.2%; --y: 29.2%;" aria-label="Registered Office, Gurugram">
+                            <span class="locmap-tip">Registered Office<b>Gurugram, Haryana</b></span>
+                        </button>
+                        <button class="locmap-pin" type="button" data-loc="jeevah"
+                            style="--x: 61.9%; --y: 41.3%;" aria-label="Jeevah Healthcares, Ranchi">
+                            <span class="locmap-tip">Jeevah Healthcares<b>Bariatu Road, Ranchi</b></span>
+                        </button>
+                        <button class="locmap-pin" type="button" data-loc="care"
+                            style="--x: 58.2%; --y: 45.9%;" aria-label="Care Clinic, Ranchi">
+                            <span class="locmap-tip">Care Clinic<b>Morabadi, Ranchi</b></span>
+                        </button>
+                        <button class="locmap-pin" type="button" data-loc="synergy"
+                            style="--x: 68.4%; --y: 47.2%;" aria-label="Synergy Global Hospital, Ranchi">
+                            <span class="locmap-tip">Synergy Global<b>Krishna Nagar, Ranchi</b></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="locmap-list" data-aos="fade-left" data-aos-delay="80">
+                    <article class="locmap-card" data-loc="care">
+                        <h3>Care Clinic <span>&ndash; Advitya Healthcares</span></h3>
+                        <p class="locmap-addr">Shree Durga Palace, Morabadi, Ranchi &ndash; 834008</p>
+                        <p class="locmap-tel">
+                            <a href="tel:+919211221551">+91 9211221551</a>
+                            <a href="tel:+919211221552">+91 9211221552</a>
+                            <a href="tel:+919711669119">+91 9711669119</a>
+                        </p>
+                    </article>
+
+                    <article class="locmap-card" data-loc="jeevah">
+                        <h3>Jeevah Healthcares <span>&ndash; Advitya Healthcares</span></h3>
+                        <p class="locmap-addr">Near Badhai Chowk, Bariatu Road, Ranchi &ndash; 834009</p>
+                        <p class="locmap-tel">
+                            <a href="tel:+919211221551">+91 9211221551</a>
+                            <a href="tel:+919211221552">+91 9211221552</a>
+                            <a href="tel:+919711669119">+91 9711669119</a>
+                        </p>
+                    </article>
+
+                    <article class="locmap-card" data-loc="rane">
+                        <h3>Rane Hospital <span>&ndash; Advitya Healthcares</span></h3>
+                        <p class="locmap-addr">Opp. Hero Showroom, Gayatri Nagar, Khunti &ndash; 835201</p>
+                        <p class="locmap-tel">
+                            <a href="tel:+919211221551">+91 9211221551</a>
+                            <a href="tel:+919211221552">+91 9211221552</a>
+                            <a href="tel:+919942538566">+91 9942538566</a>
+                        </p>
+                    </article>
+
+                    <article class="locmap-card" data-loc="synergy">
+                        <h3>Synergy Global Hospital <span>&ndash; Advitya Healthcares</span></h3>
+                        <p class="locmap-addr">99WC+VJ3 Krishna Nagar Colony, Bariatu Rd, Muharram Toli, Ranchi &ndash;
+                            834012</p>
+                        <p class="locmap-tel">
+                            <a href="tel:+919211221551">+91 9211221551</a>
+                            <a href="tel:+919211221552">+91 9211221552</a>
+                            <a href="tel:+919341529415">+91 9341529415</a>
+                        </p>
+                    </article>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -663,8 +1217,8 @@
     <section class="newsletter">
         <div class="container" style="max-width: 720px;">
             <h2 data-aos="fade-up">Stay Updated with Advitya</h2>
-            <p data-aos="fade-up" data-aos-delay="80">News from our alliance hospitals, and what we are learning along
-                the way.</p>
+            <p data-aos="fade-up" data-aos-delay="80">Subscribe to our newsletter for the latest updates, news, events, and
+                healthcare insights from Advitya Healthcares.</p>
             <form class="news-form" data-aos="fade-up" data-aos-delay="160"
                 onsubmit="window.location.href='mailto:info@advityahealthcares.com?subject=Newsletter%20subscription&amp;body=' + encodeURIComponent(this.email.value); return false;">
                 <input type="email" name="email" placeholder="Your email address" required aria-label="Email address">
@@ -737,7 +1291,7 @@
             <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
                 <div style="margin-bottom: 10px;">
                     <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
-                    <p>&copy; 2026 Advitya Healthcares. All rights reserved.</p>
+                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
                 </div>
                 <div style="display: flex; gap: 15px;">
                     <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
@@ -760,6 +1314,54 @@
             once: true,
             offset: 100
         });
+
+        // Locations map: pins and cards highlight each other, both directions.
+        // Rane Hospital has no pin of its own - the artwork shows three Jharkhand
+        // markers for four centres - so it simply has no map counterpart.
+        (function () {
+            const pins = document.querySelectorAll('.locmap-pin');
+            const cards = document.querySelectorAll('.locmap-card');
+            if (!pins.length) return;
+
+            const setActive = (loc) => {
+                pins.forEach(p => p.classList.toggle('is-active', p.dataset.loc === loc));
+                cards.forEach(c => c.classList.toggle('is-active', c.dataset.loc === loc));
+            };
+
+            const clear = () => {
+                pins.forEach(p => p.classList.remove('is-active'));
+                cards.forEach(c => c.classList.remove('is-active'));
+            };
+
+            pins.forEach((pin) => {
+                pin.addEventListener('mouseenter', () => setActive(pin.dataset.loc));
+                pin.addEventListener('focus', () => setActive(pin.dataset.loc));
+                pin.addEventListener('mouseleave', clear);
+                pin.addEventListener('blur', clear);
+                pin.addEventListener('click', () => {
+                    const card = document.querySelector('.locmap-card[data-loc="' + pin.dataset.loc + '"]');
+                    if (card) card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                });
+            });
+
+            cards.forEach((card) => {
+                card.addEventListener('mouseenter', () => setActive(card.dataset.loc));
+                card.addEventListener('mouseleave', clear);
+            });
+        })();
+
+        // Get in Touch: no server to post to, so compose a mail to the info address
+        function sendGitForm(form) {
+            const name = (form.first.value + ' ' + form.last.value).trim();
+            const subject = 'Website enquiry from ' + name;
+            const body = 'Name: ' + name
+                + '\nEmail: ' + form.email.value
+                + '\n\n' + form.message.value;
+            window.location.href = 'mailto:info@advityahealthcares.com'
+                + '?subject=' + encodeURIComponent(subject)
+                + '&body=' + encodeURIComponent(body);
+            return false;
+        }
 
         // Add auto-close behavior to details/summary accordions
         const details = document.querySelectorAll('details');
