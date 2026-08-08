@@ -4,151 +4,532 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Advitya Healthcares | Quality Healthcare for You & Your Family</title>
+    <title>Advitya Healthcares | Science for Humanity</title>
     <meta name="description"
         content="Advitya Healthcares provides 24/7 emergency services, modern equipment, and experienced doctors. Book an appointment today.">
     <link rel="stylesheet" href="style.css?v=8">
+    <link rel="stylesheet" href="home-v2.css?v=5">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- AOS Animation CSS -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Animation & Slider CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 
-<body>
-    <!-- Navbar -->
-    <header class="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
-                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
-                </a>
-            </div>
-            <nav class="nav-links">
-                <a href="index.html" class="active">Home</a>
-                <div class="dropdown">
-                    <a href="about.html" class="dropbtn">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="about.html">The Journey of Advitya</a>
-                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
-                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
-                        <a href="vision-mission.html">Vision &amp; Mission</a>
-                        <a href="our-team.html">Our Team</a>
-                    </div>
-                </div>
-                <a href="pancrea-care.html">Pancrea Care</a>
-                <div class="dropdown mega">
-                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content mega-content">
-                        <div class="mega-col">
-                            <h4>Digestive Care</h4>
-                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
-                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
-                            <a href="clinical-services.html#liver-care">Liver Care</a>
-                        </div>
-                        <div class="mega-col">
-                            <h4>Procedures</h4>
-                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
-                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
-                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
-                        </div>
-                        <div class="mega-col">
-                            <h4>Wellness</h4>
-                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
-                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
-                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
-                        </div>
-                    </div>
-                </div>
-                <a href="#location" class="nav-loc">Locations</a>
-                <a href="#testimonials">Testimonials</a>
-                <a href="careers.html">Careers</a>
-                <a href="gallery.html">Gallery</a>
-                <a href="faqs.html">FAQs</a>
-                <a href="blogs.html">Blogs</a>
-                <a href="#" onclick="openContactModal(); return false;">Contact us</a>
-            </nav>
-            <div class="nav-actions">
-                <a href="#location" class="location-btn">
-                    <i class="fa-solid fa-location-dot"></i> Our Locations
-                </a>
-                <a href="#" class="appointment-btn" onclick="openContactModal(); return false;">
-                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
-                </a>
-                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
-                    <i class="fa-solid fa-bars"></i>
+<body class="hv-light">
+    <!-- Header: utility bar + main navigation travel together as one block -->
+    <div class="hv-headwrap" id="hvHead">
+        <div class="hv-topbar">
+            <div class="container hv-topbar-in">
+                <span class="hv-tb-left"><i class="fa-solid fa-star-of-life"></i> Science for Humanity</span>
+                <div class="hv-tb-right">
+                    <a href="tel:+919211221551" class="hv-tb-sos"><i class="fa-solid fa-phone-volume"></i>
+                        <span class="hv-tb-txt">24&times;7 Emergency</span> +91 9211221551</a>
+                    <a href="https://wa.me/919211221551"><i class="fa-brands fa-whatsapp"></i>
+                        <span class="hv-tb-txt">WhatsApp</span></a>
+                    <a href="mailto:info@advityahealthcares.com"><i class="fa-regular fa-envelope"></i>
+                        <span class="hv-tb-txt">info@advityahealthcares.com</span></a>
                 </div>
             </div>
         </div>
-    </header>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-overlay"></div>
-        <img src="image/hero_background_new.png" alt="City Hospital Building" class="hero-bg">
-        <div class="container hero-content">
-            <h1 data-aos="fade-up" data-aos-duration="1000">Advitya <span class="highlight">Welcome You</span></h1>
-            <p data-aos="fade-up" data-aos-delay="200" data-aos-duration="1000">We, at Advitya, Envision Science for Humanity by providing Healthcare Excellence in Every Procedure regardless of your geographic location.</p>
-            <div class="hero-buttons" data-aos="fade-up" data-aos-delay="400" data-aos-duration="1000">
-                <a href="#contactModal" onclick="openContactModal(); return false;" class="btn btn-premium">Book Appointment</a>
-                <a href="tel:911" class="btn btn-outline-danger"><i class="fa-solid fa-phone"></i> Emergency</a>
+        <header class="navbar">
+            <div class="container nav-container">
+                <div class="logo">
+                    <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                        <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                    </a>
+                </div>
+                <nav class="nav-links">
+                    <a href="index.html" class="active">Home</a>
+                    <div class="dropdown">
+                        <a href="about.html" class="dropbtn">About Us <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                        <div class="dropdown-content">
+                            <a href="about.html">The Journey of Advitya</a>
+                            <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                            <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                            <a href="vision-mission.html">Vision &amp; Mission</a>
+                            <a href="our-team.html">Our Team</a>
+                        </div>
+                    </div>
+                    <a href="pancrea-care.html">Pancrea Care</a>
+                    <div class="dropdown mega">
+                        <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down"
+                                style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                        <div class="dropdown-content mega-content">
+                            <div class="mega-col">
+                                <h4>Digestive Care</h4>
+                                <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                                <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                                <a href="clinical-services.html#liver-care">Liver Care</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Procedures</h4>
+                                <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                                <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                                <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                            </div>
+                            <div class="mega-col">
+                                <h4>Wellness</h4>
+                                <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                                <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                                <a href="clinical-services.html#emergency-care">Emergency Care</a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#location" class="nav-loc">Locations</a>
+                    <a href="#hv-testimonials">Testimonials</a>
+                    <a href="careers.html">Careers</a>
+                    <a href="gallery.html">Gallery</a>
+                    <a href="faqs.html">FAQs</a>
+                    <a href="blogs.html">Blogs</a>
+                    <a href="#" onclick="openContactModal(); return false;">Contact us</a>
+                </nav>
+                <div class="nav-actions hv-actions">
+                    <a href="#location" class="hv-act hv-act-loc">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Locations</span>
+                    </a>
+                    <a href="#" class="hv-act hv-act-book" onclick="openContactModal(); return false;">
+                        <i class="fa-regular fa-calendar-check"></i>
+                        <span>Book Appointment</span>
+                    </a>
+                    <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                </div>
             </div>
+        </header>
+    </div>
+
+    <!-- Hero -->
+    <section class="hv-hero">
+        <div class="hv-hero-bg">
+            <img src="image/hero_background_new.png" alt="">
+        </div>
+        <div class="container hv-hero-inner">
+            <div class="hv-hero-grid">
+                <div class="hv-hero-copy">
+                    <span class="hv-kicker" data-aos="fade-up">Science for Humanity</span>
+                    <h1 data-aos="fade-up" data-aos-delay="60">Advitya brings to you
+                        <span>PancreaCare</span></h1>
+                    <p class="hv-lede" data-aos="fade-up" data-aos-delay="120">At PancreaCare, we specialize in
+                        advanced pancreatic and GI surgeries, delivering world-class treatment with the latest surgical
+                        techniques and a compassionate, patient-centered approach.</p>
+
+                    <div class="hv-cta" data-aos="fade-up" data-aos-delay="180">
+                        <a href="#" onclick="openContactModal(); return false;" class="btn btn-premium">
+                            <i class="fa-regular fa-calendar-check"></i> Book an Appointment</a>
+                        <a href="our-team.html" class="hv-ghost"><i class="fa-solid fa-user-doctor"></i> Find a
+                            Doctor</a>
+                    </div>
+
+                    <div class="hv-assure" data-aos="fade-up" data-aos-delay="220">
+                        <span><i class="fa-solid fa-check"></i> Reports reviewed before you travel</span>
+                        <span><i class="fa-solid fa-check"></i> Four centres across Jharkhand</span>
+                        <span><i class="fa-solid fa-check"></i> 24&times;7 emergency line</span>
+                    </div>
+                </div>
+
+                <div class="hv-hero-media" data-aos="fade-left" data-aos-delay="160">
+                    <div class="hv-portrait">
+                        <img src="image/dr_deeksha_portrait.png" alt="Dr. Deeksha Kapoor, CEO and Medical Head">
+                        <div class="hv-portrait-cap">
+                            <strong>Dr. Deeksha Kapoor</strong>
+                            <span>CEO &amp; Medical Head &middot; PancreaCare Initiative</span>
+                        </div>
+                    </div>
+                    <div class="hv-chip hv-chip-1">
+                        <i class="fa-solid fa-award"></i>
+                        <div>
+                            <b>Tata Memorial</b>
+                            <small>HPB &amp; GI onco fellowship</small>
+                        </div>
+                    </div>
+                    <div class="hv-chip hv-chip-2">
+                        <i class="fa-solid fa-robot"></i>
+                        <div>
+                            <b>Da Vinci Xi</b>
+                            <small>Console-trained robotic surgery</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Speciality picker: jumps to the matching block on the services page -->
+            <form class="hv-finder" data-aos="fade-up" data-aos-delay="240" onsubmit="return hvFind(this);">
+                <div class="hv-field">
+                    <label for="hv-spec">Speciality</label>
+                    <select id="hv-spec" name="spec">
+                        <option value="gastroenterology">Gastroenterology</option>
+                        <option value="pancreatic-disorders">Pancreatic Disorders</option>
+                        <option value="liver-care">Liver Care</option>
+                        <option value="endoscopy">Endoscopy</option>
+                        <option value="gi-surgery">GI Surgery</option>
+                        <option value="colonoscopy">Colonoscopy</option>
+                        <option value="nutrition">Nutrition &amp; Dietetics</option>
+                        <option value="preventive-health">Preventive Health Checkups</option>
+                        <option value="emergency-care">Emergency Care</option>
+                    </select>
+                </div>
+                <div class="hv-field">
+                    <label for="hv-centre">Centre</label>
+                    <select id="hv-centre" name="centre">
+                        <option value="">Any centre</option>
+                        <option value="care-clinic">Care Clinic, Ranchi</option>
+                        <option value="jeevah">Jeevah Healthcares, Ranchi</option>
+                        <option value="rane">Rane Hospital, Khunti</option>
+                        <option value="synergy">Synergy Global, Ranchi</option>
+                    </select>
+                </div>
+                <button type="submit" class="hv-find-btn"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+            </form>
         </div>
     </section>
 
-
-    <!-- Doctors Section -->
-    <section id="doctors" class="doctors section bg-light" style="padding: 80px 0 20px 0; background-color: #FDF7F5;">
-        <div class="container" style="max-width: 1400px;">
-            <style>
-                .doctor-profile-card {
-                    transition: transform 0.4s ease, box-shadow 0.4s ease;
-                }
-                .doctor-profile-card:hover {
-                    transform: translateY(-10px);
-                    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
-                }
-                .doctor-profile-card img {
-                    transition: transform 0.5s ease;
-                }
-                .doctor-profile-card:hover img {
-                    transform: scale(1.05);
-                }
-            </style>
-            <div class="doctor-profile-card" data-aos="fade-up" data-aos-duration="1000" style="display: flex; flex-wrap: wrap; background: white; max-width: 1300px; margin: 0 auto; box-shadow: 0 5px 25px rgba(0,0,0,0.03); border-radius: 12px; overflow: hidden;">
-                <!-- Doctor Image -->
-                <div class="doctor-img-container" data-aos="fade-right" data-aos-duration="1000" data-aos-delay="200" style="flex: 1; min-width: 350px; background-color: #f4f4f4; overflow: hidden;">
-                    <img src="image/dr_deeksha_portrait.png" alt="Dr. Deeksha Kapoor" style="width: 100%; height: 100%; object-fit: cover; display: block; object-position: center 20%;">
-                </div>
-                <!-- Doctor Info -->
-                <div data-aos="fade-left" data-aos-duration="1000" data-aos-delay="400" style="flex: 1; min-width: 350px; padding: 70px 80px; display: flex; flex-direction: column; justify-content: center;">
-                    <h2 style="font-size: 3rem; font-weight: 700; color: #000; margin-bottom: 5px;">Dr. Deeksha Kapoor</h2>
-                    <h4 style="font-size: 1.3rem; font-weight: 500; color: #333; margin-bottom: 30px;">Pancreato-Biliary & Gastrointestinal Surgery</h4>
-                    <p style="font-size: 1.2rem; line-height: 1.8; color: #444; margin-bottom: 0;">
-                        Welcome to PancreaCare+, where expertise meets compassion in treating pancreato-biliary and gastrointestinal diseases. I am Dr Deeksha Kapoor, an accomplished pancreato-biliary and gastrointestinal surgeon with a strong foundation in advanced surgical oncology and minimally invasive procedures. With extensive training and experience from premier institutions in India and abroad, I am committed to providing world-class, patient-centered care.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Meet Our Team Section -->
-    <section id="team" class="team-section team-cinema">
+    <!-- Trust strip -->
+    <section class="hv-trust">
         <div class="container">
-            <div class="section-title">
-                <span class="section-eyebrow">Our People</span>
-                <h2>Meet Our Team</h2>
-                <p>The clinicians and staff behind the PancreaCare+ programme
-                    — the same faces from consultation through to follow-up.</p>
+            <div class="hv-trust-grid" data-aos="fade-up">
+                <div class="hv-stat">
+                    <b>04</b>
+                    <span>Alliance centres</span>
+                    <small>Ranchi, Khunti &mdash; plus Kolkata</small>
+                </div>
+                <div class="hv-stat">
+                    <b>24&times;7</b>
+                    <span>Emergency cover</span>
+                    <small>Acute abdomen, GI bleeding, jaundice</small>
+                </div>
+                <div class="hv-stat">
+                    <b>Xi</b>
+                    <span>Da Vinci robotic surgery</span>
+                    <small>Plus 4D laparoscopic procedures</small>
+                </div>
+                <div class="hv-stat">
+                    <b>HPB</b>
+                    <span>Tata Memorial trained</span>
+                    <small>GI surgical oncology fellowship</small>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Patient dashboard -->
+    <section class="hv-dash" id="hv-dashboard">
+        <div class="container">
+            <span class="hv-eyebrow" data-aos="fade-up">Your Care, At a Glance</span>
+            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Patient Dashboard</h2>
+            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">Everything a patient needs, in one calm grid
+                &mdash; no clinical clutter, no hunting through menus.</p>
+
+            <div class="hv-dash-grid">
+                <a class="hv-tile hv-tile-wide" href="#" onclick="openContactModal(); return false;"
+                    data-aos="fade-up">
+                    <span class="hv-ti"><i class="fa-regular fa-calendar-check"></i></span>
+                    <div>
+                        <h3>Schedule a Consultation</h3>
+                        <p>Choose a speciality and centre. A consultant reviews your reports before you travel.</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right hv-tarrow"></i>
+                </a>
+
+                <a class="hv-tile" href="tel:+919211221551" data-aos="fade-up" data-aos-delay="60">
+                    <span class="hv-ti hv-ti-alert"><i class="fa-solid fa-truck-medical"></i></span>
+                    <div>
+                        <h3>Emergency Support</h3>
+                        <p>24&times;7 &mdash; call +91 9211221551 directly.</p>
+                    </div>
+                </a>
+
+                <a class="hv-tile" href="our-team.html" data-aos="fade-up" data-aos-delay="120">
+                    <span class="hv-ti"><i class="fa-solid fa-user-doctor"></i></span>
+                    <div>
+                        <h3>Find a Consultant</h3>
+                        <p>Profiles, credentials, availability.</p>
+                    </div>
+                </a>
+
+                <a class="hv-tile" href="clinical-services.html#preventive-health" data-aos="fade-up"
+                    data-aos-delay="180">
+                    <span class="hv-ti"><i class="fa-solid fa-clipboard-check"></i></span>
+                    <div>
+                        <h3>Health Packages</h3>
+                        <p>Preventive checkups and screening.</p>
+                    </div>
+                </a>
+
+                <a class="hv-tile" href="#location" data-aos="fade-up" data-aos-delay="240">
+                    <span class="hv-ti"><i class="fa-solid fa-location-dot"></i></span>
+                    <div>
+                        <h3>Our Centres</h3>
+                        <p>Four locations across Jharkhand.</p>
+                    </div>
+                </a>
+
+                <a class="hv-tile" href="#hv-suites" data-aos="fade-up" data-aos-delay="300">
+                    <span class="hv-ti"><i class="fa-solid fa-bed"></i></span>
+                    <div>
+                        <h3>Luxury Suites</h3>
+                        <p>Private rooms for patient and family.</p>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key specialities -->
+    <section class="hv-spec">
+        <div class="container">
+            <span class="hv-eyebrow" data-aos="fade-up">What We Treat</span>
+            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Key Specialities</h2>
+            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">Focused expertise across the digestive system
+                &mdash; from diagnosis through surgery to follow-up.</p>
+
+            <div class="hv-spec-grid">
+                <a class="hv-spec-card" href="clinical-services.html#gastroenterology" data-aos="fade-up">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2015.png" alt="Gastroenterology" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-stethoscope"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Gastroenterology</h3>
+                        <p>Acid reflux and ulcer disease, inflammatory bowel disease, chronic diarrhoea and GI bleeding
+                            evaluation.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#pancreatic-disorders" data-aos="fade-up"
+                    data-aos-delay="60">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2016.png" alt="Pancreatic Disorders" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-notes-medical"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Pancreatic Disorders</h3>
+                        <p>Acute and chronic pancreatitis, pancreatic cancer and Whipple&rsquo;s procedure, cysts and
+                            complex reoperations.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#liver-care" data-aos="fade-up"
+                    data-aos-delay="120">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2014.png" alt="Liver Care" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-heart-pulse"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Liver Care</h3>
+                        <p>Fatty liver and cirrhosis, hepatitis monitoring, jaundice workup, bile duct obstruction and
+                            gallstone disease.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#endoscopy" data-aos="fade-up">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2017.png" alt="Endoscopy" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-microscope"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Endoscopy</h3>
+                        <p>Upper GI endoscopy and biopsy, ERCP, endoscopic ultrasound with guided sampling, stenting and
+                            dilatation.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#gi-surgery" data-aos="fade-up"
+                    data-aos-delay="60">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2018.png" alt="GI Surgery" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-user-doctor"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>GI Surgery</h3>
+                        <p>Hepatobiliary and pancreatic surgery, colorectal and gastric cancer resection, laparoscopic
+                            gallbladder and hernia repair.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#colonoscopy" data-aos="fade-up"
+                    data-aos-delay="120">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2019.png" alt="Colonoscopy" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-magnifying-glass-chart"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Colonoscopy</h3>
+                        <p>Screening from age 45 or earlier with family history, polypectomy in the same sitting, and
+                            post-treatment surveillance.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#nutrition" data-aos="fade-up">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2020.png" alt="Nutrition and Dietetics" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-apple-whole"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Nutrition &amp; Dietetics</h3>
+                        <p>Pre-operative optimisation, pancreatic enzyme replacement, post-surgical diet progression and
+                            diabetes support.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#preventive-health" data-aos="fade-up"
+                    data-aos-delay="60">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2021.png" alt="Preventive Health Checkups" loading="lazy">
+                        <span class="hv-si"><i class="fa-regular fa-calendar-check"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Preventive Health</h3>
+                        <p>Abdominal ultrasound and liver panel, diabetes and lipid screening, colorectal screening
+                            &mdash; with a written plan.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+
+                <a class="hv-spec-card" href="clinical-services.html#emergency-care" data-aos="fade-up"
+                    data-aos-delay="120">
+                    <div class="hv-spec-img">
+                        <img src="image/image%20copy%2022.png" alt="Emergency Care" loading="lazy">
+                        <span class="hv-si"><i class="fa-solid fa-truck-medical"></i></span>
+                    </div>
+                    <div class="hv-spec-body">
+                        <h3>Emergency Care</h3>
+                        <p>Acute abdomen and suspected pancreatitis, GI bleeding, obstructive jaundice and
+                            post-operative complications.</p>
+                        <span class="hv-spec-more">Explore <i class="fa-solid fa-arrow-right"></i></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Centres of excellence -->
+    <section class="hv-coe">
+        <div class="container">
+            <span class="hv-eyebrow" data-aos="fade-up">Centres of Excellence</span>
+            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Where Expertise Meets Access</h2>
+            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">Four programmes that carry the weight of what we
+                do &mdash; each staffed by the same team from first consultation to follow-up.</p>
+
+            <div class="hv-coe-grid">
+                <article class="hv-coe-card" data-aos="fade-up">
+                    <div class="hv-coe-img is-art"><img src="image/image%20copy%2010.png" alt="Surgical oncology"></div>
+                    <div class="hv-coe-body">
+                        <h3>Surgical Oncology</h3>
+                        <p>Cancer surgery led by a Tata Memorial&ndash;trained HPB and GI surgical oncology team.</p>
+                        <a href="clinical-services.html#gi-surgery">View <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="hv-coe-card" data-aos="fade-up" data-aos-delay="80">
+                    <div class="hv-coe-img is-art"><img src="image/pancreas_illustration.png"
+                            alt="Pancreato-biliary care"></div>
+                    <div class="hv-coe-body">
+                        <h3>Pancreato-Biliary Care</h3>
+                        <p>The PancreaCare+ programme &mdash; the same faces from consultation to follow-up.</p>
+                        <a href="pancrea-care.html">View <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="hv-coe-card" data-aos="fade-up" data-aos-delay="160">
+                    <div class="hv-coe-img"><img src="image/operation_room.png"
+                            alt="Robotic and laparoscopic surgery"></div>
+                    <div class="hv-coe-body">
+                        <h3>Robotic &amp; Laparoscopic Surgery</h3>
+                        <p>Console-trained robotic surgery on the Da Vinci Xi, plus 4D laparoscopic procedures.</p>
+                        <a href="clinical-services.html#gi-surgery">View <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+
+                <article class="hv-coe-card" data-aos="fade-up" data-aos-delay="240">
+                    <div class="hv-coe-img is-art"><img src="image/image%20copy%2011.png" alt="Liver care"></div>
+                    <div class="hv-coe-body">
+                        <h3>Liver Care</h3>
+                        <p>Hepatology and hepatobiliary surgery, from early diagnosis to complex resection.</p>
+                        <a href="clinical-services.html#liver-care">View <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Luxury suites -->
+    <section class="hv-suites" id="hv-suites">
+        <div class="container">
+            <span class="hv-eyebrow" data-aos="fade-up">Stay With Us</span>
+            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Luxury Suites</h2>
+            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">Private accommodation designed so families can
+                stay close through treatment and recovery.</p>
+
+            <div class="hv-suite-grid">
+                <article class="hv-suite-card" data-aos="fade-up">
+                    <span class="hv-suite-tag">Private</span>
+                    <h3>Deluxe Room</h3>
+                    <p>Single occupancy for patients who want quiet and a family member beside them.</p>
+                    <ul class="hv-suite-list">
+                        <li><i class="fa-solid fa-check"></i> Attendant bed</li>
+                        <li><i class="fa-solid fa-check"></i> En-suite bathroom</li>
+                        <li><i class="fa-solid fa-check"></i> Daily housekeeping</li>
+                    </ul>
+                    <a href="#" onclick="openContactModal(); return false;">Enquire <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="hv-suite-card is-feature" data-aos="fade-up" data-aos-delay="80">
+                    <span class="hv-suite-tag">Most Requested</span>
+                    <h3>Executive Suite</h3>
+                    <p>Room enough for visiting family without moving the conversation into a corridor.</p>
+                    <ul class="hv-suite-list">
+                        <li><i class="fa-solid fa-check"></i> Separate lounge</li>
+                        <li><i class="fa-solid fa-check"></i> Dedicated nursing call</li>
+                        <li><i class="fa-solid fa-check"></i> In-room dining</li>
+                    </ul>
+                    <a href="#" onclick="openContactModal(); return false;">Enquire <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </article>
+
+                <article class="hv-suite-card" data-aos="fade-up" data-aos-delay="160">
+                    <span class="hv-suite-tag">Extended Stay</span>
+                    <h3>Family Suite</h3>
+                    <p>Built for treatment courses that run over weeks rather than days.</p>
+                    <ul class="hv-suite-list">
+                        <li><i class="fa-solid fa-check"></i> Patient plus two attendants</li>
+                        <li><i class="fa-solid fa-check"></i> Long-stay layout</li>
+                        <li><i class="fa-solid fa-check"></i> Nutrition support on call</li>
+                    </ul>
+                    <a href="#" onclick="openContactModal(); return false;">Enquire <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Doctors -->
+    <section class="hv-docs" id="hv-doctors">
+        <div class="container">
+            <span class="hv-eyebrow" data-aos="fade-up">Our People</span>
+            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Meet Our Doctors</h2>
+            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">The clinicians and staff behind the PancreaCare+
+                programme.</p>
 
             <div class="team-grid">
                 <!-- Dr. Deeksha Kapoor -->
-                <article class="team-card is-lead">
+                <article class="team-card is-lead" data-aos="fade-up">
                     <div class="team-img-wrapper">
                         <img src="image/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor">
                     </div>
@@ -161,8 +542,8 @@
                             <li>MBBS</li>
                             <li>DNB General Surgery</li>
                             <li>DNB Surgical Gastroenterology</li>
-                            <li>HPB &amp; GI Surgical Oncology Fellowship — Tata Memorial</li>
-                            <li>Console-trained Robotic Surgeon — Da Vinci Xi</li>
+                            <li>HPB &amp; GI Surgical Oncology Fellowship &mdash; Tata Memorial</li>
+                            <li>Console-trained Robotic Surgeon &mdash; Da Vinci Xi</li>
                         </ul>
                     </div>
                     <a href="#" class="team-link" onclick="openContactModal(); return false;">
@@ -171,7 +552,7 @@
                 </article>
 
                 <!-- Dr. Shyamal Kumar Sen -->
-                <article class="team-card">
+                <article class="team-card" data-aos="fade-up" data-aos-delay="80">
                     <div class="team-img-wrapper">
                         <img src="image/team_shyamal_sen.png" alt="Dr. Shyamal Kumar Sen">
                     </div>
@@ -188,7 +569,7 @@
                 </article>
 
                 <!-- Dr. Sachin Kumar -->
-                <article class="team-card">
+                <article class="team-card" data-aos="fade-up" data-aos-delay="160">
                     <div class="team-img-wrapper">
                         <img src="image/team_sachin_kumar.png" alt="Dr. Sachin Kumar">
                     </div>
@@ -204,7 +585,7 @@
                 </article>
 
                 <!-- Ms. Poonam Sharma -->
-                <article class="team-card">
+                <article class="team-card" data-aos="fade-up" data-aos-delay="240">
                     <div class="team-img-wrapper">
                         <img src="image/team_poonam_sharma.png" alt="Ms. Poonam Sharma">
                     </div>
@@ -212,8 +593,8 @@
                         <h3>Ms. Poonam Sharma</h3>
                         <span class="team-role">Head OT Staff</span>
                         <p class="team-org">Patient Support Group Team Leader <span>&middot;</span> PancreaCare</p>
-                        <p class="team-spec">Senior OT &amp; Robotic Surgery Nurse — GI–HPB &amp; Abdominal Surgery
-                            Specialist</p>
+                        <p class="team-spec">Senior OT &amp; Robotic Surgery Nurse &mdash; GI&ndash;HPB &amp; Abdominal
+                            Surgery Specialist</p>
                     </div>
                     <a href="#" class="team-link" onclick="openContactModal(); return false;">
                         Talk to patient support <i class="fa-solid fa-arrow-right"></i>
@@ -221,70 +602,13 @@
                 </article>
             </div>
 
-            <div class="team-cta">
-                <h3>Need Expert Medical Advice?</h3>
-                <p>Send us your reports — a consultant reviews them before you travel.</p>
-                <a href="#" onclick="openContactModal(); return false;" class="btn btn-premium">Book an Appointment</a>
+            <div class="hv-docs-more" data-aos="fade-up">
+                <a href="our-team.html" class="btn btn-premium">View the full team</a>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
-    <section id="about" class="why-choose-us section">
-        <div class="container">
-            <div class="why-content">
-                <div class="why-text">
-                    <div class="section-title left-align">
-                        <h2>From Inception to Realization</h2>
-                        <p class="why-tagline">&mdash; This is Our Journey</p>
-                        <p>We were not born in a boardroom or conceived in an investor's plan. We were moulded in hospital corridors, in the waiting rooms of overcrowded clinics, amidst the anxious whispers of families who had travelled miles, desperate for care.</p>
-                    </div>
-                    <ul class="features-list">
-                        <li>
-                            <div class="feature-icon"><i class="fa-solid fa-truck-medical"></i></div>
-                            <div class="feature-text">
-                                <h4>24/7 Emergency</h4>
-                                <p>Round-the-clock emergency services for critical situations.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon"><i class="fa-solid fa-user-doctor"></i></div>
-                            <div class="feature-text">
-                                <h4>Experienced Doctors</h4>
-                                <p>A team of highly qualified specialists and medical experts.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon"><i class="fa-solid fa-microscope"></i></div>
-                            <div class="feature-text">
-                                <h4>Modern Equipment</h4>
-                                <p>State-of-the-art medical technology for accurate diagnosis.</p>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="feature-icon"><i class="fa-regular fa-calendar-check"></i></div>
-                            <div class="feature-text">
-                                <h4>Online Appointments</h4>
-                                <p>Easy and hassle-free booking system for your convenience.</p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-                <div class="why-image">
-                    <div class="image-wrapper">
-                        <img src="image/inception_doctor.png"
-                            alt="Illustration of a clinician reviewing patient notes">
-                        <div class="experience-badge">
-                            <span class="years">25+</span>
-                            <span class="text">Years of<br>Experience</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- New Milestone -->
+    <!-- Milestone -->
     <section id="milestone" class="milestone">
         <div class="container">
             <div class="ms-grid">
@@ -323,18 +647,146 @@
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials section bg-primary">
+    <!-- About -->
+    <section class="hv-about" id="about">
         <div class="container">
-            <div class="section-title text-white">
-                <h2>Patient Testimonials</h2>
-                <p>What our patients say about our care</p>
+            <div class="hv-about-grid">
+                <div class="hv-about-media" data-aos="fade-right">
+                    <img src="image/inception_doctor.png" alt="Illustration of a clinician reviewing patient notes">
+                </div>
+                <div class="hv-about-body" data-aos="fade-left" data-aos-delay="80">
+                    <span class="hv-eyebrow left">About Advitya</span>
+                    <h2 class="hv-title left">From Inception to Realization</h2>
+                    <p class="hv-quote">We were not born in a boardroom or conceived in an investor&rsquo;s plan. We
+                        were moulded in hospital corridors.</p>
+                    <p>In the waiting rooms of overcrowded clinics, amidst the anxious whispers of families who had
+                        travelled miles, desperate for care.</p>
+                    <p>Instead of building another large hospital in a metropolitan area, we chose a different route:
+                        collaborating with hospitals in second- and third-tier cities, equipping them with expertise,
+                        technology and training.</p>
+                    <a href="about.html" class="hv-textlink">Read our journey <i
+                            class="fa-solid fa-arrow-right"></i></a>
+                </div>
             </div>
-            
-            <!-- Swiper -->
-            <div class="swiper testimonials-swiper" style="padding-bottom: 50px;">
+        </div>
+    </section>
+
+    <!-- Locations -->
+    <section id="location" class="locations">
+        <span id="hv-locations"></span>
+        <div class="container">
+            <span class="hv-eyebrow" data-aos="fade-up">Where We Are</span>
+            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Our Locations</h2>
+            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">Advitya works through alliance partners in
+                Ranchi, Khunti and Kolkata. Pick a centre to see it on the map.</p>
+
+            <div class="hv-loc-layout">
+                <div class="loc-list" data-aos="fade-right">
+                    <div class="hv-loc-inset">
+                        <img src="image/advitya_locations_map.png"
+                            alt="Map of India showing Advitya Healthcares centres">
+                        <p><b>Four centres, three cities</b>
+                            Care delivered close to home, so families are not forced to travel for treatment.</p>
+                    </div>
+
+                    <span class="loc-city">Ranchi, Jharkhand</span>
+
+                    <button class="loc-card is-active" type="button"
+                        data-map="Shree Durga Palace, Morabadi, Ranchi 834008">
+                        <h3>Care Clinic <span>&mdash; Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Shree Durga Palace, Morabadi,
+                            Ranchi &ndash; 834008</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919711669119">9711669119</a>
+                        </p>
+                    </button>
+
+                    <button class="loc-card" type="button" data-map="Badhai Chowk, Bariatu Road, Ranchi 834009">
+                        <h3>Jeevah Healthcares <span>&mdash; Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Near Badhai Chowk, Bariatu Road,
+                            Ranchi &ndash; 834009</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919711669119">9711669119</a>
+                        </p>
+                    </button>
+
+                    <button class="loc-card" type="button"
+                        data-map="Synergy Global Hospital, Krishna Nagar Colony, Bariatu Road, Muharram Toli, Ranchi 834012">
+                        <h3>Synergy Global Hospital <span>&mdash; Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Krishna Nagar Colony, Bariatu Rd,
+                            Muharram Toli, Ranchi, Jharkhand 834012</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919341529415">9341529415</a>
+                        </p>
+                    </button>
+
+                    <span class="loc-city">Khunti, Jharkhand</span>
+
+                    <button class="loc-card" type="button" data-map="Gayatri Nagar, Khunti, Jharkhand 835201">
+                        <h3>Rane Hospital <span>&mdash; Advitya Healthcares</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Opp. Hero Showroom, Gayatri Nagar,
+                            Khunti &ndash; 835201</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919942538566">9942538566</a>
+                        </p>
+                    </button>
+
+                    <span class="loc-city">Kolkata, West Bengal</span>
+
+                    <button class="loc-card" type="button" data-map="Kolkata, West Bengal">
+                        <h3>Advitya Kolkata <span>&mdash; PancreaCare</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-user-doctor"></i> Gastrointestinal consultations,
+                            surgical, medical and cancer care</p>
+                        <p class="loc-note">Consultation venue confirmed at the time of booking &mdash; please call.</p>
+                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
+                            <a href="tel:+919211221551">+91 9211221551</a>,
+                            <a href="tel:+919211221552">9211221552</a>,
+                            <a href="tel:+919211221553">9211221553</a>,
+                            <a href="tel:+919211221554">9211221554</a>
+                        </p>
+                    </button>
+
+                    <span class="loc-city">Registered Office</span>
+
+                    <button class="loc-card" type="button"
+                        data-map="Nirvana Courtyard, Sector 50, Gurugram, Haryana 122018">
+                        <h3>Advitya Healthcares <span>&mdash; Head Office</span></h3>
+                        <p class="loc-addr"><i class="fa-solid fa-building"></i> 603, Tower C, 6th Floor, Nirvana
+                            Courtyard, Sector 50, Gurugram &ndash; 122018</p>
+                        <p class="loc-tel"><i class="fa-regular fa-envelope"></i>
+                            <a href="mailto:info@advityahealthcares.com">info@advityahealthcares.com</a>
+                        </p>
+                    </button>
+                </div>
+
+                <div class="loc-map" data-aos="fade-left" data-aos-delay="80">
+                    <iframe id="locationMap"
+                        src="https://maps.google.com/maps?q=Shree%20Durga%20Palace%2C%20Morabadi%2C%20Ranchi%20834008&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
+                        title="Map of the selected Advitya centre"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="hv-testimonials" class="hv-testi">
+        <div class="container">
+            <span class="hv-eyebrow" data-aos="fade-up">In Their Words</span>
+            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Patient Testimonials</h2>
+            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">What our patients say about the care they
+                received.</p>
+
+            <div class="swiper testimonials-swiper" data-aos="fade-up" data-aos-delay="160">
                 <div class="swiper-wrapper">
-                    <!-- Slide 1 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="stars">
@@ -344,11 +796,12 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="quote">"Excellent treatment and caring staff. The doctors took the time to explain everything to me, and the facilities are top-notch. I felt well taken care of during my entire stay."</p>
-                            <h4 class="author">- John Doe</h4>
+                            <p class="quote">Excellent treatment and caring staff. The doctors took the time to explain
+                                everything to me, and the facilities are top-notch. I felt well taken care of during my
+                                entire stay.</p>
+                            <h4 class="author">John Doe</h4>
                         </div>
                     </div>
-                    <!-- Slide 2 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="stars">
@@ -358,11 +811,12 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star-half-stroke"></i>
                             </div>
-                            <p class="quote">"Dr. Deeksha Kapoor performed a flawless procedure. The pre-op and post-op care were exceptional. Advitya Healthcares truly lives up to its promise of world-class care."</p>
-                            <h4 class="author">- Sarah Jenkins</h4>
+                            <p class="quote">Dr. Deeksha Kapoor performed a flawless procedure. The pre-op and post-op
+                                care were exceptional. Advitya Healthcares truly lives up to its promise of world-class
+                                care.</p>
+                            <h4 class="author">Sarah Jenkins</h4>
                         </div>
                     </div>
-                    <!-- Slide 3 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="stars">
@@ -372,11 +826,12 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-solid fa-star"></i>
                             </div>
-                            <p class="quote">"The emergency ward was rapid and highly responsive. In a moment of sheer panic, the staff managed everything with such calm professionalism. Forever grateful!"</p>
-                            <h4 class="author">- Michael Chang</h4>
+                            <p class="quote">The emergency ward was rapid and highly responsive. In a moment of sheer
+                                panic, the staff managed everything with such calm professionalism. Forever grateful.
+                            </p>
+                            <h4 class="author">Michael Chang</h4>
                         </div>
                     </div>
-                    <!-- Slide 4 -->
                     <div class="swiper-slide">
                         <div class="testimonial-card">
                             <div class="stars">
@@ -386,13 +841,30 @@
                                 <i class="fa-solid fa-star"></i>
                                 <i class="fa-regular fa-star"></i>
                             </div>
-                            <p class="quote">"Very clean and modern facilities. Booking an appointment was seamless, and the wait times were minimal. A very pleasant experience overall for my family."</p>
-                            <h4 class="author">- Anita Sharma</h4>
+                            <p class="quote">Very clean and modern facilities. Booking an appointment was seamless, and
+                                the wait times were minimal. A very pleasant experience overall for my family.</p>
+                            <h4 class="author">Anita Sharma</h4>
                         </div>
                     </div>
                 </div>
-                <!-- Add Pagination -->
                 <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Closing CTA -->
+    <section class="hv-cta-band">
+        <div class="container hv-cta-in">
+            <div data-aos="fade-right">
+                <h2>Send your reports before you travel.</h2>
+                <p>A consultant reviews your scans and pathology first, so the first visit is a decision &mdash; not a
+                    waiting room.</p>
+            </div>
+            <div class="hv-cta-actions" data-aos="fade-left" data-aos-delay="80">
+                <a href="#" class="hv-cta-solid" onclick="openContactModal(); return false;">
+                    <i class="fa-regular fa-calendar-check"></i> Book an Appointment</a>
+                <a href="tel:+919211221551" class="hv-cta-line"><i class="fa-solid fa-phone-volume"></i>
+                    +91 9211221551</a>
             </div>
         </div>
     </section>
@@ -511,237 +983,137 @@
         </div>
     </div>
 
-    <!-- Location Section -->
-    <section id="location" class="locations">
-        <div class="container">
-            <div class="section-title">
-                <h2>Our Locations</h2>
-                <p>Advitya works through alliance partners in Ranchi, Khunti and Kolkata. Pick a centre to see it on
-                    the map.</p>
-            </div>
-
-            <div class="loc-layout">
-                <div class="loc-list">
-                    <span class="loc-city">Ranchi, Jharkhand</span>
-
-                    <button class="loc-card is-active" type="button"
-                        data-map="Shree Durga Palace, Morabadi, Ranchi 834008">
-                        <h3>Care Clinic <span>— Advitya Healthcares</span></h3>
-                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Shree Durga Palace, Morabadi,
-                            Ranchi – 834008</p>
-                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919211221551">+91 9211221551</a>,
-                            <a href="tel:+919211221552">9211221552</a>,
-                            <a href="tel:+919711669119">9711669119</a>
-                        </p>
-                    </button>
-
-                    <button class="loc-card" type="button"
-                        data-map="Badhai Chowk, Bariatu Road, Ranchi 834009">
-                        <h3>Jeevah Healthcares <span>— Advitya Healthcares</span></h3>
-                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Near Badhai Chowk, Bariatu Road,
-                            Ranchi – 834009</p>
-                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919211221551">+91 9211221551</a>,
-                            <a href="tel:+919211221552">9211221552</a>,
-                            <a href="tel:+919711669119">9711669119</a>
-                        </p>
-                    </button>
-
-                    <button class="loc-card" type="button"
-                        data-map="Synergy Global Hospital, Krishna Nagar Colony, Bariatu Road, Muharram Toli, Ranchi 834012">
-                        <h3>Synergy Global Hospital <span>— Advitya Healthcares</span></h3>
-                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Krishna Nagar Colony, Bariatu Rd,
-                            Muharram Toli, Ranchi, Jharkhand 834012</p>
-                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919211221551">+91 9211221551</a>,
-                            <a href="tel:+919211221552">9211221552</a>,
-                            <a href="tel:+919341529415">9341529415</a>
-                        </p>
-                    </button>
-
-                    <span class="loc-city">Khunti, Jharkhand</span>
-
-                    <button class="loc-card" type="button"
-                        data-map="Gayatri Nagar, Khunti, Jharkhand 835201">
-                        <h3>Rane Hospital <span>— Advitya Healthcares</span></h3>
-                        <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Opp. Hero Showroom, Gayatri Nagar,
-                            Khunti – 835201</p>
-                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919211221551">+91 9211221551</a>,
-                            <a href="tel:+919211221552">9211221552</a>,
-                            <a href="tel:+919942538566">9942538566</a>
-                        </p>
-                    </button>
-
-                    <span class="loc-city">Kolkata, West Bengal</span>
-
-                    <button class="loc-card" type="button" data-map="Kolkata, West Bengal">
-                        <h3>Advitya Kolkata <span>— PancreaCare</span></h3>
-                        <p class="loc-addr"><i class="fa-solid fa-user-doctor"></i> Gastrointestinal consultations,
-                            surgical, medical and cancer care</p>
-                        <p class="loc-note">Consultation venue confirmed at the time of booking — please call.</p>
-                        <p class="loc-tel"><i class="fa-solid fa-phone"></i>
-                            <a href="tel:+919211221551">+91 9211221551</a>,
-                            <a href="tel:+919211221552">9211221552</a>,
-                            <a href="tel:+919211221553">9211221553</a>,
-                            <a href="tel:+919211221554">9211221554</a>
-                        </p>
-                    </button>
-
-                    <span class="loc-city">Registered Office</span>
-
-                    <button class="loc-card" type="button"
-                        data-map="Nirvana Courtyard, Sector 50, Gurugram, Haryana 122018">
-                        <h3>Advitya Healthcares <span>— Head Office</span></h3>
-                        <p class="loc-addr"><i class="fa-solid fa-building"></i> 603, Tower C, 6th Floor, Nirvana
-                            Courtyard, Sector 50, Gurugram – 122018</p>
-                        <p class="loc-tel"><i class="fa-regular fa-envelope"></i>
-                            <a href="mailto:info@advityahealthcares.com">info@advityahealthcares.com</a>
-                        </p>
-                    </button>
-                </div>
-
-                <div class="loc-map">
-                    <iframe id="locationMap"
-                        src="https://maps.google.com/maps?q=Shree%20Durga%20Palace%2C%20Morabadi%2C%20Ranchi%20834008&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                        width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
-                        title="Map of the selected Advitya centre"></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer -->
-    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+    <footer class="hv-footer">
         <div class="container">
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
-                <!-- Column 1 -->
-                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
-                    <div class="logo" style="margin-bottom: 10px;">
-                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+            <div class="hv-foot-grid">
+                <div class="hv-foot-brand">
+                    <div class="hv-foot-logo">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares">
                     </div>
-                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
-                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
-                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
-                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
-                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
-                    <div style="margin-bottom: 15px;">
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
+                    <p class="hv-foot-tag">Science for Humanity</p>
+                    <p>World-class surgical and cancer care, delivered through our Alliance Model in the cities where
+                        patients already live.</p>
+                    <div class="hv-social">
+                        <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/919211221551" aria-label="WhatsApp"><i
+                                class="fa-brands fa-whatsapp"></i></a>
                     </div>
-                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
-                </div>
-                
-                <!-- Column 2 -->
-                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
-                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
-                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
-                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
-                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
-                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
-                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
-                    <a href="#" style="color: white; text-decoration: none;">Research</a>
-                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                    <p style="font-size:.76rem; opacity:.7;">Website updated as of March 3, 2026</p>
                 </div>
 
-                <!-- Column 3 -->
-                <div style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
-                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
-                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
-                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
-                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                <div class="hv-foot-col">
+                    <h4>Explore</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="clinical-services.html">Clinical Services</a></li>
+                        <li><a href="our-team.html">Our Team</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blogs.html">Blogs</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                        <li><a href="faqs.html">FAQs</a></li>
+                    </ul>
+                </div>
+
+                <div class="hv-foot-col">
+                    <h4>Group</h4>
+                    <ul>
+                        <li><a href="pancrea-care.html">PancreaCare+</a></li>
+                        <li><a href="the-story-of-pancreacare.html">The Story of PancreaCare</a></li>
+                        <li><a href="understanding-the-normal-pancreas.html">The Normal Pancreas</a></li>
+                        <li><a href="#">MA Pest Control LLP</a></li>
+                        <li><a href="#">Glopal Management and Services</a></li>
+                        <li><a href="#">Research</a></li>
+                        <li><a href="#">Employee Email</a></li>
+                    </ul>
+                </div>
+
+                <div class="hv-foot-col">
+                    <h4>Reach Us</h4>
+                    <ul class="hv-foot-contact">
+                        <li><i class="fa-solid fa-phone"></i>
+                            <span><a href="tel:+919211221551">+91 9211221551</a> /
+                                <a href="tel:+919211221552">9211221552</a><br>
+                                <a href="tel:+919211221553">+91 9211221553</a> /
+                                <a href="tel:+919211221554">9211221554</a></span>
+                        </li>
+                        <li><i class="fa-regular fa-envelope"></i>
+                            <span><a href="mailto:info@advityahealthcares.com">info@advityahealthcares.com</a></span>
+                        </li>
+                        <li><i class="fa-solid fa-location-dot"></i>
+                            <span>Ranchi &middot; Khunti &middot; Kolkata<br>
+                                <a href="#location">See all centres</a></span>
+                        </li>
+                    </ul>
                 </div>
             </div>
 
-            <!-- Horizontal line -->
-            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
-
-            <!-- Bottom Section -->
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
-                <div style="margin-bottom: 10px;">
-                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
-                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
-                </div>
-                <div style="display: flex; gap: 15px;">
-                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
-                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
-                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+            <div class="hv-foot-bottom">
+                <p><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram
+                    122018<br>
+                    &copy; 2025 Advitya Healthcares. All rights reserved.</p>
+                <div class="hv-foot-legal">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Disclaimer</a>
                 </div>
             </div>
         </div>
-        
-        <!-- WhatsApp Icon -->
-        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
-            <i class="fa-brands fa-whatsapp"></i>
-        </a>
     </footer>
 
+    <a href="https://wa.me/919211221551" class="hv-wa" aria-label="Chat on WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
 
     <!-- Animation & Slider Scripts -->
-    <!-- Swiper -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- AOS Animation JS -->
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
     <script>
-        // Initialize AOS Animation
+
+        // Speciality finder: jump to the matching block on the services page.
+        // Centre is carried through so the contact modal can be pre-filled later.
+        function hvFind(form) {
+            const spec = form.spec.value;
+            const centre = form.centre.value;
+            let url = 'clinical-services.html#' + spec;
+            if (centre) {
+                url = 'clinical-services.html?centre=' + encodeURIComponent(centre) + '#' + spec;
+            }
+            window.location.href = url;
+            return false;
+        }
+
         AOS.init({
             once: true,
             offset: 100
         });
 
-        // 1. Initialize Swiper for Testimonials
+        // Testimonials carousel
         const swiper = new Swiper('.testimonials-swiper', {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            spaceBetween: 30,
+            spaceBetween: 26,
+            slidesPerView: 1,
             breakpoints: {
-                640: { slidesPerView: 1 },
                 768: { slidesPerView: 2 },
                 1024: { slidesPerView: 3 },
             }
         });
 
-        
-
-        // 3. Initialize AOS Animation
-        AOS.init({
-            once: true, // whether animation should happen only once - while scrolling down
-            offset: 100 // offset (in px) from the original trigger point
-        });
-
-        // Meet Our Team: play the reveal sequence once the section scrolls in.
-        // Arming from JS means the section stays visible if this never runs.
+        // Utility bar folds away once the visitor starts reading, so the
+        // main navigation keeps the full height for itself.
         (function () {
-            const team = document.querySelector('.team-cinema');
-            if (!team) return;
-
-            team.classList.add('is-armed');
-
-            const play = () => {
-                team.classList.add('is-playing');
-                // Matches the last animation (CTA at 1.9s + 0.6s) plus a little slack
-                setTimeout(() => team.classList.add('is-done'), 2700);
-            };
-
-            if (!('IntersectionObserver' in window)) {
-                play();
-                return;
-            }
-
-            const io = new IntersectionObserver((entries) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    io.disconnect();
-                    play();
-                });
-            }, { threshold: 0.2 });
-
-            io.observe(team);
+            const head = document.getElementById('hvHead');
+            if (!head) return;
+            const setTight = () => head.classList.toggle('is-tight', window.scrollY > 60);
+            setTight();
+            window.addEventListener('scroll', setTight, { passive: true });
         })();
 
         // Contact modal: open/close plumbing

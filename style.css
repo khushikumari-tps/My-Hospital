@@ -345,31 +345,39 @@ img {
     display: inline-block;
 }
 
+/* --white and --text-dark were never defined, which left the panel with no
+   background at all and the page reading straight through it. */
 .dropdown-content {
     display: none;
     position: absolute;
-    background-color: var(--white);
-    min-width: 220px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    z-index: 1;
-    border-radius: 8px;
-    margin-top: 15px;
-    padding: 10px 0;
+    background-color: var(--bg-card);
+    min-width: 248px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    z-index: 60;
+    border-radius: 14px;
+    margin-top: 14px;
+    padding: 8px;
     text-align: left;
 }
 
 .dropdown-content a {
-    color: var(--text-dark);
-    padding: 12px 16px;
+    position: relative;
+    color: var(--text-main);
+    padding: 11px 14px;
+    border-radius: 9px;
     text-decoration: none;
     display: block;
+    font-size: 0.94rem;
     font-weight: 500;
-    transition: background-color 0.3s ease;
+    line-height: 1.35;
+    transition: background-color 0.25s ease, color 0.25s ease, padding-left 0.25s ease;
 }
 
 .dropdown-content a:hover {
     background-color: var(--bg-light);
-    color: var(--primary);
+    color: var(--primary-dark);
+    padding-left: 18px;
 }
 
 .dropdown-content.show {
@@ -386,12 +394,13 @@ img {
     position: absolute;
     left: 100%;
     top: 0;
-    background-color: var(--white);
-    min-width: 220px;
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
-    z-index: 1;
-    border-radius: 8px;
-    padding: 10px 0;
+    background-color: var(--bg-card);
+    min-width: 232px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-lg);
+    z-index: 61;
+    border-radius: 14px;
+    padding: 8px;
 }
 
 .dropdown-submenu-content.show {
@@ -408,6 +417,18 @@ img {
     font-size: 1.2rem;
     font-weight: 600;
     line-height: 1.1;
+}
+
+/* The descriptive labels are longer than the old one-word ones, so give the
+   bar back some room before the action buttons get pushed off the edge. */
+@media (max-width: 1400px) {
+    .navbar-pancreas .nav-links {
+        gap: 1.1rem;
+    }
+
+    .navbar-pancreas .nav-links a {
+        font-size: 1rem;
+    }
 }
 
 
