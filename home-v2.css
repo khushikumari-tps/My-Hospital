@@ -243,11 +243,26 @@ body.hv-light .nav-links .dropbtn {
     z-index: 0;
 }
 
+/* Slow Ken Burns drift. Starting scale is above 1 so the frame never exposes
+   an edge as it moves; transform only, so it stays on the compositor. */
 .hv-hero-bg img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     opacity: .28;
+    transform: scale(1.08);
+    will-change: transform;
+    animation: hvHeroPan 42s cubic-bezier(.4, 0, .2, 1) infinite alternate;
+}
+
+@keyframes hvHeroPan {
+    from {
+        transform: scale(1.08) translate3d(0, 0, 0);
+    }
+
+    to {
+        transform: scale(1.14) translate3d(-1.6%, -1.1%, 0);
+    }
 }
 
 /* Pearl wash so the photograph reads as texture, never as subject */
@@ -258,6 +273,60 @@ body.hv-light .nav-links .dropbtn {
     background:
         radial-gradient(820px 460px at 78% 8%, rgba(255, 138, 76, .18), transparent 62%),
         linear-gradient(102deg, rgba(255, 252, 251, .985) 0%, rgba(255, 252, 251, .95) 40%, rgba(253, 243, 240, .86) 70%, rgba(249, 230, 225, .78) 100%);
+}
+
+/* Aurora: two soft brand-coloured clouds drifting behind the copy.
+   A parent ::after paints after its children, so this sits above the wash but
+   still below .hv-hero-inner (z-index 1). Overscanned by 18% so the blurred
+   edges never enter frame. */
+.hv-hero::after,
+.hv-hero::before {
+    content: '';
+    position: absolute;
+    inset: -18%;
+    z-index: 0;
+    pointer-events: none;
+    filter: blur(46px);
+    will-change: transform, opacity;
+}
+
+.hv-hero::before {
+    background:
+        radial-gradient(38% 44% at 72% 26%, rgba(255, 138, 76, .30), transparent 68%),
+        radial-gradient(30% 34% at 88% 62%, rgba(233, 162, 59, .22), transparent 70%);
+    animation: hvHeroAurora 34s cubic-bezier(.45, 0, .3, 1) infinite alternate;
+}
+
+.hv-hero::after {
+    background:
+        radial-gradient(34% 40% at 24% 74%, rgba(228, 87, 78, .20), transparent 70%),
+        radial-gradient(26% 30% at 8% 30%, rgba(228, 87, 78, .13), transparent 72%);
+    /* Offset phase and a different period, so the two never beat in sync */
+    animation: hvHeroAuroraAlt 46s cubic-bezier(.45, 0, .3, 1) infinite alternate;
+}
+
+@keyframes hvHeroAurora {
+    from {
+        transform: translate3d(0, 0, 0) scale(1);
+        opacity: .85;
+    }
+
+    to {
+        transform: translate3d(-5%, 3.5%, 0) scale(1.16);
+        opacity: 1;
+    }
+}
+
+@keyframes hvHeroAuroraAlt {
+    from {
+        transform: translate3d(0, 0, 0) scale(1.1);
+        opacity: 1;
+    }
+
+    to {
+        transform: translate3d(4.5%, -3%, 0) scale(1);
+        opacity: .8;
+    }
 }
 
 .hv-hero-inner {
@@ -2106,5 +2175,16 @@ body.hv-light .swiper-pagination-bullet-active {
     .hv-spec-card:hover .hv-spec-img::before,
     .hv-spec-card:hover .hv-si {
         animation: none;
+    }
+
+    /* Hero keeps its colour, loses its motion */
+    .hv-hero-bg img,
+    .hv-hero::before,
+    .hv-hero::after {
+        animation: none;
+    }
+
+    .hv-hero-bg img {
+        transform: scale(1.08);
     }
 }
