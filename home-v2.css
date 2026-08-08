@@ -805,6 +805,55 @@ body.hv-light .btn-premium:hover {
     pointer-events: none;
 }
 
+/* Third motion layer: a light sweep crosses the image on hover, on top of the
+   gradient rule wiping in and the image itself zooming. */
+.hv-spec-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -60%;
+    width: 45%;
+    z-index: 1;
+    transform: skewX(-18deg);
+    /* Warm-tinted, not plain white — several of these images are illustrations
+       on a near-white ground, where a white sheen would be invisible. */
+    background: linear-gradient(90deg,
+            transparent 0%,
+            rgba(255, 138, 76, .16) 28%,
+            rgba(255, 255, 255, .62) 50%,
+            rgba(201, 66, 57, .18) 72%,
+            transparent 100%);
+    pointer-events: none;
+}
+
+.hv-spec-card:hover .hv-spec-img::before {
+    animation: hvSpecSheen .9s var(--ease) forwards;
+}
+
+@keyframes hvSpecSheen {
+    to {
+        left: 115%;
+    }
+}
+
+/* The badge lifts and settles as the sheen passes */
+.hv-spec-card:hover .hv-si {
+    animation: hvSpecBadge .5s var(--ease);
+}
+
+@keyframes hvSpecBadge {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    45% {
+        transform: translateY(-5px) scale(1.08);
+    }
+}
+
 .hv-spec-body {
     display: flex;
     flex-direction: column;
@@ -2052,5 +2101,10 @@ body.hv-light .swiper-pagination-bullet-active {
     .hv-coe-card:hover .hv-coe-img img,
     body.hv-light .hv-docs .team-card:hover .team-img-wrapper img {
         transform: none;
+    }
+
+    .hv-spec-card:hover .hv-spec-img::before,
+    .hv-spec-card:hover .hv-si {
+        animation: none;
     }
 }
