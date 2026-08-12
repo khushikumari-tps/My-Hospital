@@ -1,0 +1,1810 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonials | Advitya Healthcares</title>
+    <meta name="description" content="Real stories from patients who found world-class surgical and cancer care close to home with Advitya Healthcares.">
+    <link rel="stylesheet" href="style.css?v=13">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ============================================================
+           PancreaCare — premium clinical theme
+           Drawn from the Advitya mark: deep maroon base, crimson-to-coral
+           gradient (the triangle), warm coral highlights (the rays), on white.
+           Neutrals are warmed to sit with the brand rather than fight it.
+           ============================================================ */
+        .pcare {
+            --brand-900: #5A0A0E;
+            --brand-800: #7C1218;
+            --brand-700: #9E1F2B;
+            --brand-600: #C04050;
+            --brand-500: #E06050;
+            --accent-400: #F08060;
+            --accent-200: #F4CDC3;
+            --accent-100: #FBE5DE;
+            --accent-050: #FDF5F2;
+            --ink: #2B1A18;
+            --ink-soft: #6B534F;
+            --ink-mute: #99807B;
+            --line: #F0DED8;
+            --white: #FFFFFF;
+
+            --sh-xs: 0 1px 2px rgba(90, 10, 14, .05);
+            --sh-sm: 0 4px 14px -6px rgba(90, 10, 14, .12);
+            --sh-md: 0 14px 34px -14px rgba(90, 10, 14, .22);
+            --sh-lg: 0 30px 60px -24px rgba(90, 10, 14, .3);
+            --sh-brand: 0 16px 34px -14px rgba(158, 31, 43, .55);
+
+            --r-sm: 12px;
+            --r-md: 18px;
+            --r-lg: 26px;
+            --r-xl: 34px;
+
+            --ease: cubic-bezier(.22, .61, .36, 1);
+
+            font-family: var(--font-sans);
+            color: var(--ink);
+            background: var(--white);
+        }
+
+        .pcare *,
+        .pcare *::before,
+        .pcare *::after {
+            box-sizing: border-box;
+        }
+
+        .pc-wrap {
+            width: min(1180px, 92vw);
+            margin-inline: auto;
+        }
+
+        .pcare section {
+            padding: clamp(64px, 8vw, 112px) 0;
+        }
+
+        .pcare h1,
+        .pcare h2,
+        .pcare h3,
+        .pcare h4 {
+            font-family: var(--font-heading);
+            color: var(--ink);
+            letter-spacing: -.02em;
+            line-height: 1.15;
+        }
+
+        .pcare p {
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+
+        /* ---------- shared heading block ---------- */
+        .pc-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 16px;
+            border-radius: 999px;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-600);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .pc-eyebrow i {
+            font-size: .8em;
+        }
+
+        .pc-head {
+            max-width: 720px;
+        }
+
+        .pc-head.is-center {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .pc-head h2 {
+            font-size: clamp(1.9rem, 3.4vw, 2.85rem);
+            font-weight: 700;
+            margin: 18px 0 16px;
+        }
+
+        .pc-head p {
+            font-size: clamp(1rem, 1.3vw, 1.1rem);
+        }
+
+        /* ---------- buttons ---------- */
+        .pc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 28px;
+            border-radius: 999px;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease), background-color .3s, color .3s, border-color .3s;
+        }
+
+        .pc-btn-primary {
+            background: linear-gradient(135deg, var(--brand-700), var(--brand-500));
+            color: #fff;
+            box-shadow: var(--sh-brand);
+        }
+
+        .pc-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 44px -16px rgba(158, 31, 43, .7);
+        }
+
+        .pc-btn-ghost {
+            background: rgba(255, 255, 255, .72);
+            color: var(--brand-800);
+            border-color: var(--accent-200);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .pc-btn-ghost:hover {
+            transform: translateY(-3px);
+            background: #fff;
+            border-color: var(--brand-500);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-btn-light {
+            background: #fff;
+            color: var(--brand-800);
+        }
+
+        .pc-btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 44px -18px rgba(0, 0, 0, .45);
+        }
+
+        .pc-btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255, 255, 255, .5);
+        }
+
+        .pc-btn-outline-light:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, .12);
+            border-color: #fff;
+        }
+
+        /* ============================ 1. HERO ============================ */
+        .pc-hero {
+            position: relative;
+            padding: clamp(130px, 15vw, 175px) 0 clamp(70px, 8vw, 110px);
+            background:
+                radial-gradient(1100px 620px at 82% 12%, #FCEBE5 0%, rgba(227, 243, 248, 0) 62%),
+                radial-gradient(820px 520px at 8% 88%, #FDF1EC 0%, rgba(234, 246, 250, 0) 60%),
+                linear-gradient(180deg, #FFFCFB 0%, #FDF6F3 100%);
+            overflow: hidden;
+        }
+
+        .pc-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Rays radiating from the top, echoing the sunburst above the mark */
+            background: repeating-conic-gradient(from -97deg at 50% -14%,
+                    rgba(158, 31, 43, .07) 0deg 1.1deg,
+                    transparent 1.1deg 14deg);
+            mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
+            pointer-events: none;
+        }
+
+        .pc-hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: clamp(32px, 5vw, 68px);
+            align-items: center;
+        }
+
+        .pc-hero h1 {
+            font-size: clamp(2.25rem, 4.6vw, 3.8rem);
+            font-weight: 700;
+            margin: 22px 0 20px;
+        }
+
+        .pc-hero h1 .accent {
+            background: linear-gradient(120deg, var(--brand-700), var(--accent-400));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pc-hero-sub {
+            font-size: clamp(1.02rem, 1.4vw, 1.16rem);
+            max-width: 54ch;
+        }
+
+        .pc-hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 34px;
+        }
+
+        .pc-hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 30px;
+            margin-top: 38px;
+            padding-top: 28px;
+            border-top: 1px solid var(--line);
+        }
+
+        .pc-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-size: .93rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+        }
+
+        .pc-trust-item i {
+            color: var(--brand-500);
+            font-size: 1.05rem;
+        }
+
+        /* hero visual */
+        .pc-hero-visual {
+            position: relative;
+        }
+
+        .pc-visual-stage {
+            position: relative;
+            border-radius: var(--r-xl);
+            padding: 26px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, .82), rgba(253, 240, 235, .55));
+            border: 1px solid rgba(255, 255, 255, .85);
+            box-shadow: var(--sh-lg);
+            -webkit-backdrop-filter: blur(18px);
+            backdrop-filter: blur(18px);
+        }
+
+        .pc-visual-stage::after {
+            content: '';
+            position: absolute;
+            inset: -22%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(240, 128, 96, .3), transparent 62%);
+            filter: blur(46px);
+        }
+
+        @keyframes pcFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* ============================ 3. CONDITIONS ============================ */
+        .pc-soft {
+            background: linear-gradient(180deg, #FDF8F6 0%, #FBEFEA 100%);
+        }
+
+        .pc-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 22px;
+            margin-top: 52px;
+        }
+
+        .pc-card {
+            position: relative;
+            padding: 30px 28px 28px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--sh-xs);
+            overflow: hidden;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s var(--ease);
+        }
+
+        .pc-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* ---- dimensional pancreas illustrations ---- */
+        .pc-card-viz {
+            position: relative;
+            display: grid;
+            place-items: center;
+            height: 176px;
+            margin-bottom: 22px;
+            padding: 12px;
+            border-radius: 18px;
+            background:
+                radial-gradient(120% 90% at 50% 115%, rgba(240, 128, 96, .16), transparent 62%),
+                linear-gradient(150deg, var(--accent-050), #fff);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: border-color .45s, background-color .45s;
+        }
+
+        .pc-card:hover .pc-card-viz {
+            border-color: var(--accent-200);
+        }
+
+        .pc-card-viz img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            transition: transform .55s var(--ease);
+        }
+
+        /* 3D zoom — slow push-in with a parallax tilt, as a CapCut-style Ken Burns move */
+        .pc-card-viz.is-zoom3d {
+            perspective: 900px;
+            perspective-origin: 50% 45%;
+        }
+
+        .pc-card-viz.is-zoom3d img {
+            transform-style: preserve-3d;
+            animation: vizZoom3d 16s ease-in-out infinite;
+        }
+
+        .pc-card:hover .pc-card-viz.is-zoom3d img {
+            animation-play-state: paused;
+            transform: perspective(900px) translateZ(46px) scale(1.02);
+        }
+
+        @keyframes vizZoom3d {
+            0% {
+                transform: perspective(900px) translateZ(0) rotateY(0deg) scale(1);
+            }
+
+            35% {
+                transform: perspective(900px) translateZ(38px) rotateY(2.2deg) scale(1.015);
+            }
+
+            65% {
+                transform: perspective(900px) translateZ(52px) rotateY(-1.8deg) scale(1.03);
+            }
+
+            100% {
+                transform: perspective(900px) translateZ(0) rotateY(0deg) scale(1);
+            }
+        }
+        .pc-card-viz.is-photo {
+            padding: 0;
+        }
+
+        .pc-card-viz.is-photo img {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
+            mix-blend-mode: normal;
+        }
+        .pc-card:hover .pc-card-viz img {
+            transform: scale(1.05);
+        }
+        .pc-card h3 {
+            font-size: 1.16rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pc-card p {
+            font-size: .96rem;
+            line-height: 1.7;
+        }
+
+        .pc-tag {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: .74rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            background: var(--accent-050);
+            color: var(--brand-600);
+            border: 1px solid var(--line);
+        }
+
+        /* ============================ 4. WARNING SIGNS ============================ */
+        .pc-signs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 52px;
+        }
+
+        .pc-sign {
+            display: flex;
+            gap: 16px;
+            padding: 24px 22px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s;
+        }
+
+        .pc-sign:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-sign i {
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: linear-gradient(140deg, var(--brand-800), var(--brand-600));
+            color: #fff;
+            font-size: 1.05rem;
+        }
+
+        .pc-sign h4 {
+            font-size: 1.02rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .pc-sign p {
+            font-size: .9rem;
+            line-height: 1.62;
+            margin: 0;
+        }
+
+        .pc-alert {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-top: 34px;
+            padding: 22px 26px;
+            border-radius: var(--r-md);
+            background: linear-gradient(120deg, #FFF7ED, #FFFDF9);
+            border: 1px solid #F3DDBE;
+        }
+
+        .pc-alert i {
+            color: #C87A18;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .pc-alert p {
+            margin: 0;
+            font-size: .97rem;
+            color: #6B5127;
+        }
+
+        /* ============================ 5. PATHWAY ============================ */
+        .pc-path {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+            gap: 16px;
+            margin-top: 54px;
+            counter-reset: step;
+        }
+
+        .pc-step {
+            position: relative;
+            padding: 28px 22px 26px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .6s var(--ease), transform .6s var(--ease), box-shadow .4s, border-color .4s;
+        }
+
+        .pc-step.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .pc-step:hover {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-step-n {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: .95rem;
+            color: #fff;
+            background: linear-gradient(140deg, var(--brand-800), var(--brand-500));
+            box-shadow: var(--sh-brand);
+        }
+
+        .pc-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pc-step p {
+            font-size: .87rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pc-step::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 46px;
+            right: -13px;
+            font-size: .8rem;
+            color: var(--accent-200);
+            z-index: 2;
+        }
+
+        .pc-step:last-child::after {
+            display: none;
+        }
+
+        /* ============================ 6. TREATMENTS ============================ */
+        .pc-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 52px;
+        }
+
+        .pc-treat {
+            position: relative;
+            padding: 28px 24px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-treat:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-500);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-treat i {
+            display: block;
+            font-size: 1.35rem;
+            color: var(--brand-600);
+            margin-bottom: 16px;
+            transition: transform .45s var(--ease);
+        }
+
+        .pc-treat:hover i {
+            transform: translateY(-3px) scale(1.08);
+        }
+
+        .pc-treat h4 {
+            font-size: 1.06rem;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .pc-treat p {
+            font-size: .92rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================ 7. WHY CHOOSE ============================ */
+        .pc-why {
+            position: relative;
+            color: #fff;
+            background:
+                radial-gradient(900px 500px at 85% 15%, rgba(240, 128, 96, .35), transparent 60%),
+                linear-gradient(150deg, var(--brand-900) 0%, var(--brand-800) 52%, var(--brand-700) 100%);
+            overflow: hidden;
+        }
+
+        .pc-why::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from -97deg at 22% -18%,
+                    rgba(255, 255, 255, .07) 0deg 1.2deg,
+                    transparent 1.2deg 15deg);
+            mask-image: radial-gradient(ellipse 78% 76% at 22% 0%, #000, transparent 76%);
+            -webkit-mask-image: radial-gradient(ellipse 78% 76% at 22% 0%, #000, transparent 76%);
+        }
+
+        .pc-why .pc-wrap {
+            position: relative;
+        }
+
+        .pc-why h2,
+        .pc-why h3,
+        .pc-why h4 {
+            color: #fff;
+        }
+
+        .pc-why p {
+            color: rgba(252, 235, 229, .82);
+        }
+
+        .pc-why .pc-eyebrow {
+            background: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .22);
+            color: #FBD9CF;
+        }
+
+        .pc-why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 52px;
+        }
+
+        .pc-why-card {
+            padding: 28px 24px;
+            border-radius: var(--r-md);
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .14);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            transition: transform .45s var(--ease), background-color .4s, border-color .4s;
+        }
+
+        .pc-why-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, .12);
+            border-color: rgba(255, 255, 255, .3);
+        }
+
+        .pc-why-card i {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .14);
+            color: #FBDCD2;
+            font-size: 1.1rem;
+        }
+
+        .pc-why-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .pc-why-card p {
+            font-size: .92rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================ 8. JOURNEY ============================ */
+        .pc-journey {
+            position: relative;
+            margin-top: 56px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding-bottom: 8px;
+        }
+
+        .pc-journey::-webkit-scrollbar {
+            display: none;
+        }
+
+        .pc-journey-track {
+            position: relative;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(190px, 1fr);
+            gap: 0;
+            min-width: 780px;
+            padding-top: 58px;
+        }
+
+        .pc-journey-track::before {
+            content: '';
+            position: absolute;
+            top: 27px;
+            left: 8%;
+            right: 8%;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--accent-100);
+        }
+
+        .pc-journey-track::after {
+            content: '';
+            position: absolute;
+            top: 27px;
+            left: 8%;
+            width: 0;
+            height: 3px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transition: width 1.6s var(--ease);
+        }
+
+        .pc-journey-track.is-in::after {
+            width: 84%;
+        }
+
+        .pc-jstep {
+            position: relative;
+            text-align: center;
+            padding: 0 12px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .55s var(--ease), transform .55s var(--ease);
+        }
+
+        .pc-jstep.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .pc-jdot {
+            position: absolute;
+            top: -46px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--accent-200);
+            color: var(--brand-700);
+            font-size: .82rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            transition: border-color .5s, box-shadow .5s, transform .5s var(--ease);
+        }
+
+        .pc-jstep.is-in .pc-jdot {
+            border-color: var(--brand-500);
+            box-shadow: 0 0 0 6px rgba(224, 96, 80, .13);
+        }
+
+        .pc-jstep:hover .pc-jdot {
+            transform: translateX(-50%) scale(1.12);
+        }
+
+        .pc-jstep h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .pc-jstep p {
+            font-size: .86rem;
+            line-height: 1.58;
+            margin: 0;
+        }
+
+        /* ============================ 10. EDUCATION ============================ */
+        .pc-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 52px;
+        }
+
+        .pc-article {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 26px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-decoration: none;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-article:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-article-kicker {
+            font-size: .74rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--brand-500);
+            margin-bottom: 14px;
+        }
+
+        .pc-article h3 {
+            font-size: 1.12rem;
+            font-weight: 600;
+            margin-bottom: 11px;
+        }
+
+        .pc-article p {
+            font-size: .93rem;
+            line-height: 1.68;
+            flex: 1;
+        }
+
+        .pc-article-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 18px;
+            font-family: var(--font-heading);
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--brand-700);
+            transition: gap .35s var(--ease);
+        }
+
+        .pc-article:hover .pc-article-more {
+            gap: 15px;
+        }
+
+        /* ============================ 11. FAQ ============================ */
+        .pc-faq {
+            max-width: 860px;
+            margin: 52px auto 0;
+        }
+
+        .pcare details {
+            margin-bottom: 12px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: box-shadow .4s, border-color .4s;
+        }
+
+        .pcare details[open] {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pcare summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 20px 24px;
+            list-style: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1.04rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: color .3s, background-color .3s;
+        }
+
+        .pcare summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pcare summary:hover {
+            color: var(--brand-700);
+            background: var(--accent-050);
+        }
+
+        .pcare summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: .7rem;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            transition: transform .4s var(--ease), background-color .35s, color .35s;
+        }
+
+        .pcare details[open] summary {
+            color: var(--brand-800);
+        }
+
+        .pcare details[open] summary::after {
+            transform: rotate(180deg);
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .pc-answer {
+            padding: 4px 24px 24px;
+            font-size: .98rem;
+            line-height: 1.78;
+            color: var(--ink-soft);
+            animation: pcReveal .35s var(--ease);
+        }
+
+        @keyframes pcReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .pc-answer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .pc-answer li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+        }
+
+        .pc-answer li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: .68em;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-400);
+        }
+
+        .pc-faq-foot {
+            text-align: center;
+            margin-top: 30px;
+            font-size: .97rem;
+        }
+
+        .pc-faq-foot a {
+            color: var(--brand-700);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-200);
+        }
+
+        .pc-faq-foot a:hover {
+            color: var(--brand-500);
+        }
+
+        /* ============================ COMPLETE GUIDE ============================ */
+        .pc-index {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px;
+            margin-top: 46px;
+        }
+
+        .pc-index a {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 16px 18px;
+            border-radius: var(--r-sm);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-decoration: none;
+            font-size: .92rem;
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--ink-soft);
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s, color .3s;
+        }
+
+        .pc-index a:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-sm);
+            color: var(--brand-800);
+        }
+
+        .pc-index b {
+            flex: 0 0 auto;
+            font-family: var(--font-heading);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: var(--brand-500);
+            padding-top: 2px;
+        }
+
+        .pc-guide {
+            margin-top: 44px;
+        }
+
+        .pc-chapter {
+            margin-bottom: 14px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            scroll-margin-top: 110px;
+            transition: box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-chapter[open] {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-chapter>summary {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 24px 26px;
+            list-style: none;
+            cursor: pointer;
+            transition: background-color .35s;
+        }
+
+        .pc-chapter>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pc-chapter>summary:hover {
+            background: var(--accent-050);
+        }
+
+        .pc-ch-n {
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            font-family: var(--font-heading);
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--brand-700);
+            background: linear-gradient(140deg, var(--accent-100), #fff);
+            border: 1px solid var(--line);
+            transition: background-color .4s, color .4s, transform .4s var(--ease);
+        }
+
+        .pc-chapter[open] .pc-ch-n,
+        .pc-chapter>summary:hover .pc-ch-n {
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+        .pc-ch-t {
+            flex: 1;
+        }
+
+        .pc-ch-t h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 4px;
+        }
+
+        .pc-ch-t span {
+            font-size: .82rem;
+            color: var(--ink-mute);
+            font-weight: 500;
+        }
+
+        .pc-chapter>summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: .72rem;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            transition: transform .4s var(--ease), background-color .35s, color .35s;
+        }
+
+        .pc-chapter[open]>summary::after {
+            transform: rotate(180deg);
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .pc-ch-body {
+            padding: 4px 26px 26px;
+            animation: pcReveal .35s var(--ease);
+        }
+
+        .pc-qa {
+            margin-bottom: 9px;
+            border-radius: var(--r-sm);
+            background: var(--accent-050);
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: background-color .35s, border-color .35s;
+        }
+
+        .pc-qa[open] {
+            background: #fff;
+            border-color: var(--line);
+        }
+
+        .pc-qa>summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 15px 18px;
+            list-style: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: .99rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: color .3s;
+        }
+
+        .pc-qa>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pc-qa>summary:hover,
+        .pc-qa[open]>summary {
+            color: var(--brand-700);
+        }
+
+        .pc-qa>summary::after {
+            content: '\2b';
+            flex: 0 0 auto;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: .78rem;
+            color: var(--brand-500);
+            transition: transform .35s var(--ease);
+        }
+
+        .pc-qa[open]>summary::after {
+            content: '\f068';
+            transform: rotate(180deg);
+        }
+
+        .pc-qa .pc-answer {
+            padding: 0 18px 18px;
+            font-size: .95rem;
+        }
+
+        @media (max-width: 600px) {
+            .pc-chapter>summary {
+                padding: 18px 18px;
+                gap: 13px;
+            }
+
+            .pc-ch-n {
+                width: 40px;
+                height: 40px;
+                font-size: .85rem;
+            }
+
+            .pc-ch-t h3 {
+                font-size: 1rem;
+            }
+
+            .pc-ch-body {
+                padding: 4px 16px 20px;
+            }
+        }
+
+        /* ============================ 12. FINAL CTA ============================ */
+        .pc-final {
+            padding-bottom: clamp(80px, 9vw, 120px);
+        }
+
+        .pc-final-card {
+            position: relative;
+            padding: clamp(44px, 6vw, 78px) clamp(28px, 5vw, 66px);
+            border-radius: var(--r-xl);
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            background:
+                radial-gradient(700px 400px at 20% 0%, rgba(240, 128, 96, .4), transparent 62%),
+                linear-gradient(140deg, var(--brand-900), var(--brand-700));
+            box-shadow: var(--sh-lg);
+        }
+
+        .pc-final-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from -97deg at 50% -20%,
+                    rgba(255, 255, 255, .08) 0deg 1.2deg,
+                    transparent 1.2deg 15deg);
+            mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, #000, transparent 78%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, #000, transparent 78%);
+        }
+
+        .pc-final-card>* {
+            position: relative;
+        }
+
+        .pc-final-card h2 {
+            color: #fff;
+            font-size: clamp(1.85rem, 3.6vw, 2.9rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .pc-final-card p {
+            color: rgba(253, 241, 236, .88);
+            font-size: clamp(1rem, 1.3vw, 1.12rem);
+            max-width: 58ch;
+            margin: 0 auto;
+        }
+
+        .pc-final-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 34px;
+        }
+
+        .pc-final-note {
+            margin-top: 26px;
+            font-size: .88rem;
+            color: rgba(250, 224, 214, .72);
+        }
+
+        /* ============================ sticky mobile CTA ============================ */
+        .pc-sticky {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1200;
+            display: none;
+            gap: 10px;
+            padding: 11px 14px calc(11px + env(safe-area-inset-bottom));
+            background: rgba(255, 255, 255, .92);
+            border-top: 1px solid var(--line);
+            box-shadow: 0 -10px 30px -18px rgba(90, 10, 14, .5);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .pc-sticky a {
+            flex: 1;
+            padding: 13px 12px;
+            font-size: .95rem;
+        }
+
+        /* ============================ navbar tint for this page ============================ */
+        /* The navbar already carries the brand colours from style.css —
+           no page-level override is needed now that the page matches it. */
+
+        /* ============================ responsive ============================ */
+        @media (max-width: 1024px) {
+            .pc-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .pc-hero-visual {
+                order: -1;
+                max-width: 500px;
+                margin-inline: auto;
+            }
+
+            .pc-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .pcare {
+                padding-bottom: 74px;
+            }
+
+            .pc-sticky {
+                display: flex;
+            }
+
+            .pc-visual-stage {
+                padding: 18px;
+            }
+
+            .pc-hero-cta .pc-btn,
+            .pc-final-cta .pc-btn {
+                flex: 1 1 100%;
+            }
+
+            .pc-hero-trust {
+                gap: 12px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .pcare *,
+            .pcare *::before,
+            .pcare *::after {
+                animation: none !important;
+                transition-duration: .01ms !important;
+            }
+
+            .pc-step,
+            .pc-jstep {
+                opacity: 1;
+                transform: none;
+            }
+        }
+        /* ---------- testimonials ---------- */
+        .pc-testi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 22px;
+        }
+
+        .pc-testi {
+            position: relative;
+            margin: 0;
+            padding: 34px 30px 28px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--sh-xs);
+            overflow: hidden;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-testi::before {
+            content: '\201C';
+            position: absolute;
+            top: -18px;
+            right: 18px;
+            font-family: var(--font-heading);
+            font-size: 8rem;
+            line-height: 1;
+            color: var(--accent-100);
+            pointer-events: none;
+        }
+
+        .pc-testi:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-stars {
+            display: flex;
+            gap: 4px;
+            margin-bottom: 18px;
+            color: var(--brand-500);
+            font-size: .95rem;
+        }
+
+        .pc-testi blockquote {
+            margin: 0;
+            position: relative;
+        }
+
+        .pc-testi blockquote p {
+            font-size: 1rem;
+            line-height: 1.78;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .pc-testi figcaption {
+            margin-top: 22px;
+            padding-top: 18px;
+            border-top: 1px solid var(--line);
+        }
+
+        .pc-testi-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 999px;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            font-family: var(--font-heading);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .pc-testi-note {
+            max-width: 640px;
+            margin: 44px auto 0;
+            text-align: center;
+            font-size: .9rem;
+            line-height: 1.7;
+            color: var(--ink-mute);
+        }
+    </style>
+</head>
+
+<body class="pancreacare">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="about.html" class="dropbtn">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                    </div>
+                </div>
+                <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown mega">
+                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Digestive Care</h4>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Procedures</h4>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Wellness</h4>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#location" class="nav-loc">Locations</a>
+                <a href="testimonials.html" class="active">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <a href="faqs.html" class="dropbtn">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="pancreas.html">Pancreas</a>
+                        <a href="gallbladder.html">GallBladder</a>
+                        <a href="faqs.html#liver">Liver</a>
+                        <a href="faqs.html#large-intestine">Large Intestine</a>
+                        <a href="faqs.html#stomach">Stomach</a>
+                        <a href="faqs.html#esophagus">Esophagus</a>
+                    </div>
+                </div>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contactModal">Contact us</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#location" class="location-btn">
+                    <i class="fa-solid fa-location-dot"></i> Our Locations
+                </a>
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pcare">
+
+        <!-- ==================== 1 · HERO ==================== -->
+        <section class="pc-hero">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" style="max-width: 760px;">
+                    <span class="pc-eyebrow" data-aos="fade-up">
+                        <i class="fa-solid fa-quote-left"></i> In Their Words
+                    </span>
+                    <h1 data-aos="fade-up" data-aos-delay="60"
+                        style="font-size: clamp(2.25rem, 4.6vw, 3.6rem); font-weight: 700; margin: 22px 0 18px;">
+                        Testimonials
+                    </h1>
+                    <p data-aos="fade-up" data-aos-delay="120"
+                        style="font-size: clamp(1.02rem, 1.4vw, 1.16rem);">
+                        Real stories from those who found world-class care close to home.
+                    </p>
+                    <div class="pc-hero-cta" style="justify-content: center;" data-aos="fade-up" data-aos-delay="180">
+                        <a href="index.html#contactModal" class="pc-btn pc-btn-primary">
+                            <i class="fa-regular fa-calendar-check"></i> Book a Consultation
+                        </a>
+                        <a href="tel:+919211221551" class="pc-btn pc-btn-ghost">
+                            <i class="fa-solid fa-phone"></i> Talk to a Specialist
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2 · TESTIMONIALS ==================== -->
+        <section id="stories">
+            <div class="pc-wrap">
+                <div class="pc-testi-grid">
+
+                    <figure class="pc-testi" data-aos="fade-up">
+                        <div class="pc-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote>
+                            <p>When I was diagnosed with pancreatic cancer, I thought I'd have to leave my family for
+                                months of treatment in a big city. Discovering Advitya's services in our local hospital
+                                was life-changing. I received world-class surgical care right here and could recover at
+                                home with my loved ones. The expertise was exceptional, and most importantly, my family
+                                stayed together during the most challenging time of our lives.</p>
+                        </blockquote>
+                        <figcaption><span class="pc-testi-tag">Pancreatic cancer</span></figcaption>
+                    </figure>
+
+                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="70">
+                        <div class="pc-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote>
+                            <p>We couldn't afford treatment in a metropolitan hospital for my father's liver condition.
+                                When Advitya's specialists came to our regional hospital, it felt like a miracle. The
+                                technology and care were outstanding, yet costs remained manageable. The surgeon
+                                explained everything in our local language, and my father made a complete recovery
+                                without us having to sacrifice our savings.</p>
+                        </blockquote>
+                        <figcaption><span class="pc-testi-tag">Liver condition</span></figcaption>
+                    </figure>
+
+                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="140">
+                        <div class="pc-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote>
+                            <p>I never expected such advanced laparoscopic surgery in our small city. The precision and
+                                post-operative care exceeded all expectations. What impressed me most was how they
+                                treated me as a person, patiently answering all my questions. The follow-up was
+                                meticulous, and I'm completely back to normal life. Excellent healthcare truly doesn't
+                                require leaving home.</p>
+                        </blockquote>
+                        <figcaption><span class="pc-testi-tag">Laparoscopic surgery</span></figcaption>
+                    </figure>
+
+                    <figure class="pc-testi" data-aos="fade-up">
+                        <div class="pc-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote>
+                            <p>When my wife was diagnosed with gastric cancer, we prepared to sell everything for big
+                                city treatment. Advitya's alliance with our local hospital changed everything. The
+                                oncological care was comprehensive and world-class. Today, she's cancer-free and active
+                                again. We're grateful that families like ours can access exceptional care without
+                                leaving our community.</p>
+                        </blockquote>
+                        <figcaption><span class="pc-testi-tag">Gastric cancer</span></figcaption>
+                    </figure>
+
+                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="70">
+                        <div class="pc-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote>
+                            <p>As a healthcare professional, I was initially skeptical about local surgery over
+                                metropolitan centres. Advitya completely changed my perspective. The pre-operative
+                                evaluation, surgical techniques, and post-operative care were remarkable. The
+                                coordination between visiting specialists and local staff created true excellence and my
+                                recovery had no complications.</p>
+                        </blockquote>
+                        <figcaption><span class="pc-testi-tag">Healthcare professional</span></figcaption>
+                    </figure>
+
+                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="140">
+                        <div class="pc-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                                class="fa-solid fa-star"></i>
+                        </div>
+                        <blockquote>
+                            <p>Beyond the medical excellence, it was the human touch that impressed me most. Dealing
+                                with a complex intestinal condition was frightening, but the team explained everything
+                                and involved my family throughout. They respected our cultural values while using
+                                state-of-the-art technology. Six months later, I'm healthier than ever, all while
+                                staying close to my support system.</p>
+                        </blockquote>
+                        <figcaption><span class="pc-testi-tag">Intestinal condition</span></figcaption>
+                    </figure>
+
+                </div>
+
+                <p class="pc-testi-note" data-aos="fade-up">
+                    Patient testimonials shared with informed consent. Individual treatment outcomes and results may
+                    vary.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== 3 · FINAL CTA ==================== -->
+        <section class="pc-final">
+            <div class="pc-wrap">
+                <div class="pc-final-card" data-aos="fade-up">
+                    <h2>Your Story Could Be Next.</h2>
+                    <p>Talk to a specialist about your reports, and find out what care is possible close to home.</p>
+                    <div class="pc-final-cta">
+                        <a href="index.html#contactModal" class="pc-btn pc-btn-light">
+                            <i class="fa-regular fa-calendar-check"></i> Book Consultation
+                        </a>
+                        <a href="tel:+919211221551" class="pc-btn pc-btn-outline-light">
+                            <i class="fa-solid fa-phone"></i> Call Specialist
+                        </a>
+                    </div>
+                    <p class="pc-final-note">+91 9211221551 &middot; info@advityahealthcares.com &middot; Reports
+                        reviewed before you travel</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky mobile appointment bar -->
+    <div class="pc-sticky">
+        <a href="tel:+919211221551" class="pc-btn pc-btn-ghost"><i class="fa-solid fa-phone"></i> Call</a>
+        <a href="index.html#contactModal" class="pc-btn pc-btn-primary"><i class="fa-regular fa-calendar-check"></i> Book
+            Appointment</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
+                        Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/919211221551" aria-label="WhatsApp us"
+            style="position: fixed; bottom: 88px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="nav.js?v=2"></script>
+    <script src="contact-modal.js?v=1"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });
+    </script>
+</body>
+
+</html>

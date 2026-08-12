@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pancrea Care | Advitya Healthcares</title>
+    <title>What We Do | Advitya Healthcares</title>
     <meta name="description"
-        content="pancreaCare+ from Advitya Healthcares: what the pancreas does, the diseases that affect it, and how our team diagnoses, operates and supports recovery.">
+        content="End-to-end care for pancreatic, biliary, liver and gastrointestinal disease: diagnostics, surgery, medical management, supportive care and prevention.">
     <link rel="stylesheet" href="style.css?v=13">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
@@ -15,9 +15,9 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* ===================================================================
-           pancreaCare+ page styling. Everything is prefixed .pc- so it cannot
-           collide with the shared components in style.css, and it draws only on
-           the site's own custom properties so the palette stays in one place.
+           What We Do page. Shares the .pc- namespace with pancrea-care.html so
+           the two pages read as one programme; only the rules this page uses
+           are carried over.
            =================================================================== */
 
         /* ----------------------------- Hero ----------------------------- */
@@ -89,11 +89,6 @@
             margin-bottom: 18px;
         }
 
-        .pc-hero h1 em {
-            font-style: normal;
-            color: var(--accent);
-        }
-
         .pc-hero-lede {
             font-size: 1.18rem;
             line-height: 1.75;
@@ -145,29 +140,6 @@
             border-color: rgba(255, 255, 255, .8);
             color: #fff;
             box-shadow: none;
-        }
-
-        .pc-btn-solid {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
-            color: #fff;
-            box-shadow: 0 16px 30px -16px rgba(201, 66, 57, .9);
-        }
-
-        .pc-btn-solid:hover {
-            color: #fff;
-            box-shadow: 0 22px 38px -16px rgba(201, 66, 57, .95);
-        }
-
-        .pc-btn-soft {
-            background: #fff;
-            color: var(--primary-dark);
-            border: 1px solid var(--border-color);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .pc-btn-soft:hover {
-            border-color: rgba(228, 87, 78, .4);
-            box-shadow: var(--shadow-md);
         }
 
         /* --------------------------- Sections --------------------------- */
@@ -225,89 +197,18 @@
             margin: 0 auto;
         }
 
-        .pc-prose p {
-            font-size: 1.08rem;
-            line-height: 1.85;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-        }
-
-        /* ------------------------ Split + artwork ----------------------- */
-        .pc-split {
+        /* ------------------------ What we do: services ------------------- */
+        .pc-svc-grid {
             display: grid;
-            grid-template-columns: 1.04fr .96fr;
-            gap: 58px;
-            align-items: center;
-        }
-
-        /* Framed panel: the illustration sits on paper rather than floating */
-        .pc-art {
-            position: relative;
-            padding: 26px;
-            border-radius: 26px;
-            border: 1px solid var(--border-color);
-            background: linear-gradient(165deg, #fff 0%, var(--bg-light) 100%);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .pc-art::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 26px;
-            background: linear-gradient(140deg, rgba(255, 138, 76, .3) 0%, transparent 46%);
-            pointer-events: none;
-        }
-
-        .pc-art img {
-            position: relative;
-            display: block;
-            width: 100%;
-            border-radius: 16px;
-        }
-
-        .pc-facts {
-            list-style: none;
-            display: grid;
-            gap: 13px;
-            margin: 26px 0 28px;
-        }
-
-        .pc-facts li {
-            display: flex;
-            gap: 12px;
-            align-items: flex-start;
-            font-size: 1rem;
-            line-height: 1.65;
-            color: var(--text-main);
-        }
-
-        .pc-facts i {
-            flex-shrink: 0;
-            margin-top: .3em;
-            font-size: .85rem;
-            color: var(--primary);
-        }
-
-        .pc-acts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-        }
-
-        /* --------------------------- Card grid -------------------------- */
-        .pc-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
             gap: 24px;
             margin-top: 46px;
         }
 
-        .pc-card {
+        .pc-svc {
             position: relative;
-            display: flex;
-            flex-direction: column;
             overflow: hidden;
+            padding: 32px 30px 30px;
             border-radius: 20px;
             border: 1px solid var(--border-color);
             background: var(--bg-card);
@@ -315,110 +216,78 @@
             transition: transform .45s cubic-bezier(.22, .61, .36, 1), box-shadow .45s ease, border-color .4s ease;
         }
 
-        /* Medical illustrations carry printed labels, so they are fitted whole
-           rather than cropped to fill — object-fit: contain, never cover. */
-        .pc-media {
-            position: relative;
-            height: 200px;
-            flex-shrink: 0;
-            background: #fff;
-            border-bottom: 1px solid var(--border-color);
-            overflow: hidden;
-        }
-
-        .pc-media img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 16px;
-            transition: transform .6s cubic-bezier(.22, .61, .36, 1);
-        }
-
-        .pc-card:hover .pc-media img {
-            transform: scale(1.04);
-        }
-
-        .pc-card-body {
-            display: flex;
-            flex-direction: column;
-            flex: 1;
-            padding: 26px 28px 26px;
-        }
-
-        /* Brand hairline wipes across the card top on hover */
-        .pc-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-dark), var(--primary), var(--primary-light));
-            transform: scaleX(0);
-            transform-origin: left;
-            transition: transform .55s cubic-bezier(.22, .61, .36, 1);
-        }
-
-        .pc-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(228, 87, 78, .34);
+        .pc-svc:hover {
+            transform: translateY(-6px);
+            border-color: rgba(228, 87, 78, .32);
             box-shadow: var(--shadow-lg);
         }
 
-        .pc-card:hover::before {
-            transform: scaleX(1);
-        }
-
-        .pc-card h3 {
-            font-size: 1.2rem;
-            line-height: 1.3;
-            margin-bottom: 10px;
-            color: var(--text-main);
-        }
-
-        .pc-card p {
-            font-size: .98rem;
-            line-height: 1.72;
-            color: var(--text-muted);
-            margin-bottom: 20px;
-        }
-
-        .pc-link {
+        /* Numbered badge, sitting in the flow above the heading */
+        .pc-svc-n {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            /* Pins the link to the card floor so a grid row stays aligned */
-            margin-top: auto;
+            justify-content: center;
+            min-width: 42px;
+            height: 42px;
+            padding: 0 12px;
+            margin-bottom: 16px;
+            border-radius: 12px;
             font-family: var(--font-heading);
-            font-weight: 600;
-            font-size: .92rem;
+            font-size: 1.05rem;
+            font-weight: 800;
+            line-height: 1;
+            letter-spacing: .01em;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 10px 20px -12px rgba(201, 66, 57, .85);
+            transition: transform .45s cubic-bezier(.22, .61, .36, 1), box-shadow .45s ease;
+        }
+
+        .pc-svc:hover .pc-svc-n {
+            transform: translateY(-2px);
+            box-shadow: 0 14px 26px -12px rgba(201, 66, 57, .95);
+        }
+
+        .pc-svc h3 {
+            position: relative;
+            font-size: 1.2rem;
+            line-height: 1.3;
             color: var(--primary-dark);
+            margin-bottom: 18px;
         }
 
-        .pc-link i {
-            transition: transform .35s cubic-bezier(.22, .61, .36, 1);
+        .pc-list {
+            list-style: none;
+            display: grid;
+            gap: 11px;
         }
 
-        .pc-card:hover .pc-link i {
-            transform: translateX(5px);
+        .pc-list li {
+            display: flex;
+            gap: 11px;
+            align-items: flex-start;
+            font-size: .98rem;
+            line-height: 1.6;
+            color: var(--text-muted);
+        }
+
+        .pc-list i {
+            flex-shrink: 0;
+            margin-top: .32em;
+            font-size: .75rem;
+            color: var(--primary);
         }
 
         /* ---------------------------- CTA band -------------------------- */
         .pc-cta {
             position: relative;
             overflow: hidden;
-            margin-top: 60px;
             padding: 58px 48px;
             border-radius: 28px;
             text-align: center;
             color: #fff;
             background: linear-gradient(135deg, #6B0B0E 0%, #8B1014 44%, var(--primary-dark) 100%);
             box-shadow: var(--shadow-lg);
-        }
-
-        /* No section heading above it now, so it carries its own top spacing */
-        .pc-cta.is-standalone {
-            margin-top: 0;
         }
 
         .pc-cta::before {
@@ -449,11 +318,6 @@
             margin: 0 auto 28px;
         }
 
-        .pc-cta a.pc-inline {
-            color: var(--accent);
-            font-weight: 600;
-        }
-
         .pc-cta-acts {
             display: flex;
             flex-wrap: wrap;
@@ -471,16 +335,6 @@
                 padding: 72px 0;
             }
 
-            .pc-split {
-                grid-template-columns: 1fr;
-                gap: 38px;
-            }
-
-            /* Artwork below the copy on narrow screens */
-            .pc-split .pc-art {
-                order: 2;
-            }
-
             .pc-cta {
                 padding: 44px 26px;
                 border-radius: 22px;
@@ -489,14 +343,8 @@
 
         @media (prefers-reduced-motion: reduce) {
 
-            .pc-card:hover,
+            .pc-svc:hover,
             .pc-btn:hover {
-                transform: none;
-            }
-
-            .pc-card:hover::before,
-            .pc-card:hover .pc-media img {
-                transition: none;
                 transform: none;
             }
         }
@@ -515,9 +363,9 @@
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="#functions" class="active">The Pancreas</a>
-                <a href="#diseases">Related Disease</a>
-                <a href="what-we-do.html">What We Do</a>
+                <a href="pancrea-care.html#functions">The Pancreas</a>
+                <a href="pancrea-care.html#diseases">Related Disease</a>
+                <a href="what-we-do.html" class="active">What We Do</a>
                 <a href="index.html#contactModal">Contact</a>
             </nav>
             <div class="nav-actions">
@@ -537,154 +385,89 @@
     <!-- Hero -->
     <section class="pc-hero">
         <div class="container">
-            <span class="pc-kicker" data-aos="fade-up"><i class="fa-solid fa-star-of-life"></i> A Dedicated
-                Programme</span>
-            <h1 data-aos="fade-up" data-aos-delay="60">pancreaCare<em>+</em></h1>
-            <p class="pc-hero-lede" data-aos="fade-up" data-aos-delay="120">For the organ most people never think about
-                &mdash; until it goes wrong.</p>
+            <span class="pc-kicker" data-aos="fade-up"><i class="fa-solid fa-star-of-life"></i> The Programme</span>
+            <h1 data-aos="fade-up" data-aos-delay="60">What We Do</h1>
+            <p class="pc-hero-lede" data-aos="fade-up" data-aos-delay="120">Diagnosis, surgery, medical management and
+                support &mdash; one team, one pathway.</p>
             <div class="pc-hero-acts" data-aos="fade-up" data-aos-delay="180">
-                <a href="#diseases" class="pc-btn"><i class="fa-solid fa-list-check"></i> Conditions we treat</a>
+                <a href="#services" class="pc-btn"><i class="fa-solid fa-list-check"></i> Our services</a>
                 <a href="index.html#contactModal" class="pc-btn pc-btn-line"><i
                         class="fa-regular fa-calendar-check"></i> Book a consultation</a>
             </div>
         </div>
     </section>
 
-    <!-- The Pancreas -->
-    <section class="pc-sec is-wash" id="functions">
-        <div class="container" style="max-width: 1120px;">
-            <div class="pc-split">
-                <div data-aos="fade-up">
-                    <span class="pc-eyebrow">The Organ</span>
-                    <h2 class="pc-title">Functions of the Pancreas</h2>
-                    <div class="pc-prose">
-                        <p>A flat organ tucked behind the stomach, roughly the length of your hand &mdash; and it does
-                            two jobs at once.</p>
-                    </div>
-                    <ul class="pc-facts">
-                        <li><i class="fa-solid fa-circle-check"></i> Makes the enzymes that break down what you eat.
-                        </li>
-                        <li><i class="fa-solid fa-circle-check"></i> Makes the insulin that controls your blood sugar.
-                        </li>
-                        <li><i class="fa-solid fa-circle-check"></i> When either falters, the early signs are vague
-                            &mdash; bloating, back pain, weight that falls off without explanation.</li>
-                    </ul>
-                    <div class="pc-prose">
-                        <p>That vagueness is why pancreatic disease is so often found late, and why we built a programme
-                            around it.</p>
-                    </div>
-                    <div class="pc-acts">
-                        <a href="understanding-the-normal-pancreas.html" class="pc-btn pc-btn-solid">
-                            <i class="fa-solid fa-book-open"></i> Anatomy &amp; Function
-                        </a>
-                        <a href="the-story-of-pancreacare.html" class="pc-btn pc-btn-soft">
-                            <i class="fa-solid fa-heart"></i> The story of pancreaCare+
-                        </a>
-                    </div>
-                </div>
-                <div class="pc-art" data-aos="fade-up" data-aos-delay="150">
-                    <!-- Intrinsic size reserves the space before the file lands,
-                         so nothing below it jumps as the page loads -->
-                    <img src="image/image%20copy%2025.png" width="600" height="600"
-                        alt="Anatomical illustration showing the pancreas among the surrounding digestive organs">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Related Disease -->
-    <section class="pc-sec" id="diseases">
+    <!-- What We Do -->
+    <section class="pc-sec is-wash" id="services">
         <div class="container" style="max-width: 1120px;">
             <div class="pc-head-center">
-                <span class="pc-eyebrow" data-aos="fade-up">What We See</span>
-                <h2 class="pc-title" data-aos="fade-up" data-aos-delay="60">Related Disease</h2>
-                <p class="pc-sub" data-aos="fade-up" data-aos-delay="120">The conditions we see most often in this
-                    programme. Each links through to how we treat it.</p>
+                <span class="pc-eyebrow" data-aos="fade-up">The Programme</span>
+                <h2 class="pc-title" data-aos="fade-up" data-aos-delay="60">What We Do</h2>
+                <p class="pc-sub" data-aos="fade-up" data-aos-delay="120">We are dedicated to providing end-to-end care
+                    for pancreatic, biliary, liver, and gastrointestinal (GI) diseases. From initial diagnosis to
+                    long-term management and recovery, we deliver comprehensive, patient-centered services that address
+                    every aspect of your health journey.</p>
             </div>
 
-            <div class="pc-grid">
-                <article class="pc-card" data-aos="fade-up">
-                    <div class="pc-media">
-                        <img src="image/image%20copy%2026.png"
-                            alt="Illustration of pancreatitis: inflamed pancreatic tissue with gallstones in the gallbladder and bile duct">
-                    </div>
-                    <div class="pc-card-body">
-                        <h3>Pancreatitis</h3>
-                        <p>Sudden or long-standing inflammation of the pancreas. Severe upper abdominal pain that bores
-                            through to the back is the classic sign.</p>
-                        <a href="clinical-services.html#pancreatitis" class="pc-link">How we treat it <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+            <div class="pc-svc-grid">
+                <article class="pc-svc" data-aos="fade-up">
+                    <span class="pc-svc-n">01</span>
+                    <h3>Advanced Diagnostics</h3>
+                    <ul class="pc-list">
+                        <li><i class="fa-solid fa-circle-check"></i> High-resolution imaging (MRI, CT, PET scans,
+                            ultrasound)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Endoscopic procedures (ERCP, EUS)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Genetic testing and biomarker analysis</li>
+                    </ul>
                 </article>
 
-                <article class="pc-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="pc-media">
-                        <img src="image/image%20copy%2027.png"
-                            alt="Illustration of a pancreatic tumour in the head of the pancreas, beside the liver and small intestine">
-                    </div>
-                    <div class="pc-card-body">
-                        <h3>Pancreatic Cancer</h3>
-                        <p>Often silent until it obstructs the bile duct or causes weight loss. Early referral is what
-                            decides whether surgery is still an option.</p>
-                        <a href="clinical-services.html#pancreatic-cancer" class="pc-link">How we treat it <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                <article class="pc-svc" data-aos="fade-up" data-aos-delay="80">
+                    <span class="pc-svc-n">02</span>
+                    <h3>Specialized Surgical and Interventional Care</h3>
+                    <ul class="pc-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Pancreatic Surgeries (Whipple procedures,
+                            pancreatectomies)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Liver Surgeries (resections, minimally invasive
+                            approaches)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Biliary Surgeries (gallbladder cancer, bile duct
+                            work)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Gastrointestinal Surgeries (colorectal, gastric,
+                            esophageal)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Vascular Resections</li>
+                    </ul>
                 </article>
 
-                <article class="pc-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="pc-media">
-                        <img src="image/image%20copy%2028.png"
-                            alt="Illustration of pancreatic pseudocysts sitting below the stomach">
-                    </div>
-                    <div class="pc-card-body">
-                        <h3>Cysts &amp; Pseudocysts</h3>
-                        <p>Fluid collections that follow inflammation or appear on their own. Some need watching, some
-                            need draining, a few need removing.</p>
-                        <a href="clinical-services.html#surgical-care" class="pc-link">How we treat it <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                <article class="pc-svc" data-aos="fade-up" data-aos-delay="160">
+                    <span class="pc-svc-n">03</span>
+                    <h3>Comprehensive Medical Management</h3>
+                    <ul class="pc-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Acute and chronic pancreatitis</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Liver diseases (cirrhosis, fatty liver, hepatitis)
+                        </li>
+                        <li><i class="fa-solid fa-circle-check"></i> Gallbladder and bile duct disorders</li>
+                        <li><i class="fa-solid fa-circle-check"></i> GI diseases (GERD, IBS, IBD)</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Nutritional management</li>
+                    </ul>
                 </article>
 
-                <article class="pc-card" data-aos="fade-up">
-                    <div class="pc-media">
-                        <img src="image/image%20copy%2029.png"
-                            alt="Illustration of a gallstone blocking the common bile duct">
-                    </div>
-                    <div class="pc-card-body">
-                        <h3>Gallstone &amp; Bile Duct Disease</h3>
-                        <p>The commonest trigger for acute pancreatitis in India. Treating the stones is part of
-                            treating the pancreas.</p>
-                        <a href="clinical-services.html#liver-care" class="pc-link">How we treat it <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                <article class="pc-svc" data-aos="fade-up">
+                    <span class="pc-svc-n">04</span>
+                    <h3>Integrated Palliative and Supportive Care</h3>
+                    <ul class="pc-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Symptom-focused care</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Emotional and psychological support</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Nutritional counseling</li>
+                    </ul>
                 </article>
 
-                <article class="pc-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="pc-media">
-                        <img src="image/image%20copy%2030.png"
-                            alt="Illustration of the pancreas with the duodenum, gallbladder and hepatic ducts">
-                    </div>
-                    <div class="pc-card-body">
-                        <h3>Pancreatogenic Diabetes</h3>
-                        <p>Diabetes caused by a damaged pancreas behaves differently from type 2. It needs a different
-                            plan, not a standard one.</p>
-                        <a href="clinical-services.html#nutrition" class="pc-link">How we manage it <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
-                </article>
-
-                <article class="pc-card" data-aos="fade-up" data-aos-delay="160">
-                    <div class="pc-media">
-                        <img src="image/image%20copy%2031.png"
-                            alt="Illustration of the pancreas and its duct system beside the duodenum and gallbladder">
-                    </div>
-                    <div class="pc-card-body">
-                        <h3>Exocrine Insufficiency</h3>
-                        <p>When enzyme output drops, food passes through undigested &mdash; greasy stools, weight loss,
-                            fatigue. Enzyme replacement changes it.</p>
-                        <a href="clinical-services.html#nutrition" class="pc-link">How we manage it <i
-                                class="fa-solid fa-arrow-right"></i></a>
-                    </div>
+                <article class="pc-svc" data-aos="fade-up" data-aos-delay="80">
+                    <span class="pc-svc-n">05</span>
+                    <h3>Preventive Care and Education</h3>
+                    <ul class="pc-list">
+                        <li><i class="fa-solid fa-circle-check"></i> Regular cancer screenings</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Lifestyle modification plans</li>
+                        <li><i class="fa-solid fa-circle-check"></i> Educational resources</li>
+                    </ul>
                 </article>
             </div>
         </div>
@@ -693,7 +476,7 @@
     <!-- Closing call to action -->
     <section class="pc-sec">
         <div class="container" style="max-width: 1020px;">
-            <div class="pc-cta is-standalone" data-aos="fade-up">
+            <div class="pc-cta" data-aos="fade-up">
                 <h3>Send us your reports</h3>
                 <p>A consultant reviews them before you travel, so the first visit is a decision &mdash; not a waiting
                     room.</p>
@@ -782,17 +565,12 @@
     <script>
         AOS.init({ once: true, offset: 100 });
 
-        // The illustrations finish loading after AOS has measured the page, and
-        // each one that arrives pushes the sections below it further down. AOS
-        // caches trigger positions at init, so without a re-measure the lower
-        // sections never cross their trigger and stay stuck at opacity 0 —
-        // which reads as the section being missing entirely.
+        // Same guard as pancrea-care.html: if AOS fails to load, aos.css leaves
+        // every [data-aos] element hidden, so strip the attributes and show the
+        // content unanimated rather than an empty page.
         (function () {
             var refresh = function () { if (window.AOS) AOS.refresh(); };
             window.addEventListener('load', function () {
-                // aos.css hides [data-aos] elements on its own. If the AOS
-                // script itself failed to load, nothing ever reveals them, so
-                // drop the attributes and show the content unanimated.
                 if (!window.AOS) {
                     document.querySelectorAll('[data-aos]').forEach(function (el) {
                         el.removeAttribute('data-aos');
@@ -809,12 +587,9 @@
                 img.addEventListener('error', refresh, { once: true });
             });
 
-            // Belt and braces: AOS works from positions it measured earlier, so
-            // a late layout change can still leave an element hidden until
-            // something forces a recalculation — which is why the section would
-            // appear only after jumping to it from the menu. An observer reads
-            // real geometry at the moment of intersection and cannot go stale,
-            // so anything AOS misses is revealed anyway.
+            // AOS works from positions measured earlier, so a late layout shift
+            // can leave an element stuck at opacity 0. The observer reads real
+            // geometry at intersection time and cannot go stale.
             if ('IntersectionObserver' in window) {
                 var io = new IntersectionObserver(function (entries) {
                     entries.forEach(function (entry) {

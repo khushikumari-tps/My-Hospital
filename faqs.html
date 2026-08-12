@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FAQs | Advitya Healthcares</title>
     <meta name="description"
-        content="Answers to common questions about appointments, pancreatic and GI treatment, admissions, insurance and emergency care at Advitya Healthcares.">
+        content="Patient answers on the pancreas, gallbladder and bile duct, liver, large intestine, stomach and esophagus — plus appointments, admissions, insurance and emergency care at Advitya Healthcares.">
     <link rel="stylesheet" href="style.css?v=13">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
@@ -14,63 +14,276 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
-        .inner-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
-            color: white;
-            padding: 150px 0 60px;
-            text-align: center;
+        :root {
+            --faq-nav-h: 92px;
+            --faq-rail-h: 64px;
+            --faq-ink: #3A2F2D;
         }
 
-        .inner-hero h1 {
-            font-size: 3.6rem;
-            margin-bottom: 15px;
+        /* ---------- Sticky organ rail ---------- */
+        .organ-rail {
+            position: sticky;
+            top: var(--faq-nav-h);
+            margin-top: var(--faq-nav-h);
+            z-index: 900;
+            background: rgba(255, 251, 250, 0.94);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 6px 18px -14px rgba(120, 60, 55, 0.55);
+        }
+
+        .organ-rail-inner {
+            display: flex;
+            gap: 8px;
+            align-items: center;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding: 12px 0;
+        }
+
+        .organ-rail-inner::-webkit-scrollbar {
+            display: none;
+        }
+
+        .rail-link {
+            flex: 0 0 auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 10px 18px;
+            border-radius: 999px;
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 0.96rem;
+            color: var(--text-muted);
+            text-decoration: none;
+            border: 1px solid transparent;
+            white-space: nowrap;
+            transition: var(--transition);
+        }
+
+        .rail-link .rail-num {
+            font-size: 0.72rem;
             font-weight: 700;
+            letter-spacing: 0.08em;
+            opacity: 0.6;
         }
 
-        .inner-hero p {
-            font-size: 1.4rem;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-
-        .faq-group {
-            margin-bottom: 45px;
-        }
-
-        .faq-group > h2 {
-            font-size: 1.8rem;
-            font-weight: 700;
+        .rail-link:hover {
             color: var(--primary-dark);
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-color);
+            background: var(--bg-light);
         }
 
-        details {
-            margin-bottom: 15px;
+        .rail-link.is-external {
+            border-color: var(--border-color);
             background: #fff;
-            border: 1px solid #F0E4E0;
-            border-radius: 8px;
+        }
+
+        .rail-link.is-external:hover {
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            border-color: transparent;
+        }
+
+        .rail-link.is-external:hover .rail-num,
+        .rail-link.is-external:hover i {
+            opacity: .9;
+        }
+        .rail-link.active {
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            border-color: transparent;
+            box-shadow: 0 8px 18px -8px rgba(201, 66, 57, 0.65);
+        }
+
+        .rail-link.active .rail-num {
+            opacity: 0.85;
+        }
+
+        /* ---------- Layout ---------- */
+        .faq-body {
+            background: linear-gradient(180deg, #FFFBFA 0%, #FDF7F5 100%);
+            padding: 60px 0 90px;
+        }
+
+        .faq-shell {
+            max-width: 960px;
+        }
+
+        /* ---------- One organ at a time ---------- */
+        .organ {
+            display: none;
+        }
+
+        .organ.is-shown {
+            display: block;
+        }
+        /* ---------- Organ section ---------- */
+        .organ {
+            scroll-margin-top: calc(var(--faq-nav-h) + var(--faq-rail-h) + 16px);
+            margin-bottom: 70px;
+        }
+
+        .organ-head {
+            display: flex;
+            gap: 22px;
+            align-items: flex-start;
+            padding: 30px 32px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 20px;
+            box-shadow: var(--shadow-md);
+            position: relative;
             overflow: hidden;
+            margin-bottom: 30px;
+        }
+
+        .organ-head::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, var(--primary-dark), var(--primary-light));
+        }
+
+        .organ-medallion {
+            flex: 0 0 auto;
+            width: 66px;
+            height: 66px;
+            border-radius: 18px;
+            display: grid;
+            place-items: center;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.4rem;
+            color: #fff;
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            box-shadow: 0 12px 24px -12px rgba(201, 66, 57, 0.8);
+            letter-spacing: -0.01em;
+        }
+
+        .organ-kicker {
+            display: inline-block;
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+
+        .organ-head h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--faq-ink);
+            line-height: 1.2;
+            margin-bottom: 10px;
+        }
+
+        .organ-intro {
+            color: var(--text-muted);
+            font-size: 1.03rem;
+            line-height: 1.7;
+            max-width: 62ch;
+        }
+
+        /* ---------- Chapter jump links ---------- */
+        .chapter-nav {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 20px;
+            padding-top: 18px;
+            border-top: 1px dashed var(--border-color);
+        }
+
+        .chapter-nav a {
+            display: inline-block;
+            padding: 7px 14px;
+            border-radius: 999px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-color);
+            color: var(--primary-dark);
+            font-size: 0.86rem;
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .chapter-nav a:hover {
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            border-color: transparent;
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* ---------- Sub group ---------- */
+        .faq-sub {
+            margin-bottom: 34px;
+            scroll-margin-top: calc(var(--faq-nav-h) + var(--faq-rail-h) + 16px);
+        }
+
+        .sub-label {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            font-family: var(--font-heading);
+            font-size: 0.86rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--primary-dark);
+            margin-bottom: 16px;
+        }
+
+        .sub-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(90deg, var(--border-color), transparent);
+        }
+
+        /* ---------- Accordion ---------- */
+        details {
+            margin-bottom: 12px;
+            background: #fff;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: box-shadow 0.3s, border-color 0.3s, transform 0.3s;
+        }
+
+        details:hover {
+            box-shadow: var(--shadow-md);
+            border-color: #EBC4BD;
+        }
+
+        details[open] {
+            box-shadow: var(--shadow-lg);
+            border-color: #E9BDB5;
         }
 
         summary {
-            padding: 18px 20px;
-            font-size: 1.12rem;
+            padding: 18px 22px;
+            font-family: var(--font-heading);
+            font-size: 1.08rem;
             font-weight: 600;
-            background: #FDF7F5;
             cursor: pointer;
             list-style: none;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            gap: 15px;
-            color: var(--primary-dark);
-            transition: background-color 0.3s;
+            gap: 16px;
+            color: var(--faq-ink);
+            transition: color 0.25s, background-color 0.25s;
         }
 
         summary:hover {
-            background-color: #FBEFEC;
+            color: var(--primary-dark);
+            background-color: #FFF8F6;
         }
 
         summary::-webkit-details-marker {
@@ -78,44 +291,147 @@
         }
 
         summary::after {
-            content: '\f078';
+            content: '\f067';
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
-            font-size: 0.9rem;
-            transition: transform 0.3s;
-        }
-
-        details[open] summary::after {
-            transform: rotate(180deg);
+            font-size: 0.72rem;
+            flex: 0 0 auto;
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: var(--bg-light);
+            color: var(--primary-dark);
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s, color 0.3s;
         }
 
         details[open] summary {
-            border-bottom: 1px solid #F0E4E0;
+            color: var(--primary-dark);
+            background: linear-gradient(90deg, #FFF6F3, #FFFDFC);
+            border-bottom: 1px solid #F7E4DF;
+        }
+
+        details[open] summary::after {
+            content: '\f068';
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+            color: #fff;
+            transform: rotate(180deg);
         }
 
         .details-content {
-            padding: 22px 25px;
-            font-size: 1.05rem;
-            line-height: 1.75;
-            color: #444;
+            padding: 20px 24px 24px;
+            font-size: 1.03rem;
+            line-height: 1.78;
+            color: #4A4340;
+            animation: faqReveal 0.3s ease;
+        }
+
+        @keyframes faqReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .details-content p+p,
+        .details-content p+ul,
+        .details-content ul+p {
+            margin-top: 12px;
         }
 
         .details-content ul {
-            padding-left: 20px;
-            margin-top: 10px;
+            list-style: none;
+            padding-left: 4px;
         }
 
         .details-content li {
-            margin-bottom: 8px;
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 9px;
         }
 
-        .still-asking {
+        .details-content li::before {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 0.72em;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+        }
+
+        .details-content strong {
+            color: var(--faq-ink);
+        }
+
+        .note {
+            margin-top: 14px;
+            padding: 12px 16px;
+            border-left: 3px solid var(--primary);
             background: var(--bg-light);
+            border-radius: 0 8px 8px 0;
+            font-size: 0.96rem;
+            color: #5A4E4B;
+        }
+
+        /* ---------- Search states ---------- */
+        .faq-hidden {
+            display: none !important;
+        }
+
+        /* ---------- Closing CTA ---------- */
+        .still-asking {
+            background: #fff;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 35px;
+            border-radius: 20px;
+            padding: 44px 35px;
             text-align: center;
-            margin-top: 20px;
+            box-shadow: var(--shadow-md);
+            margin-top: 10px;
+        }
+
+        .still-asking h3 {
+            font-size: 1.7rem;
+            margin-bottom: 12px;
+            color: var(--faq-ink);
+        }
+
+        .disclaimer {
+            max-width: 960px;
+            margin: 34px auto 0;
+            text-align: center;
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        @media (max-width: 768px) {
+
+            .organ-head {
+                flex-direction: column;
+                gap: 16px;
+                padding: 26px 22px;
+            }
+
+            .organ-head h2 {
+                font-size: 1.6rem;
+            }
+
+            summary {
+                font-size: 1rem;
+                padding: 16px 18px;
+            }
+
+            .details-content {
+                padding: 18px 18px 20px;
+            }
         }
     </style>
 </head>
@@ -166,10 +482,20 @@
                     </div>
                 </div>
                 <a href="index.html#location" class="nav-loc">Locations</a>
-                <a href="index.html#testimonials">Testimonials</a>
+                <a href="testimonials.html">Testimonials</a>
                 <a href="careers.html">Careers</a>
                 <a href="gallery.html">Gallery</a>
-                <a href="faqs.html" class="active">FAQs</a>
+                <div class="dropdown">
+                    <a href="faqs.html" class="dropbtn active">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="pancreas.html">Pancreas</a>
+                        <a href="gallbladder.html">GallBladder</a>
+                        <a href="faqs.html#liver">Liver</a>
+                        <a href="faqs.html#large-intestine">Large Intestine</a>
+                        <a href="faqs.html#stomach">Stomach</a>
+                        <a href="faqs.html#esophagus">Esophagus</a>
+                    </div>
+                </div>
                 <a href="blogs.html">Blogs</a>
                 <a href="index.html#contactModal">Contact us</a>
             </nav>
@@ -187,131 +513,1190 @@
         </div>
     </header>
 
-    <!-- Inner Hero -->
-    <section class="inner-hero">
+    <!-- Sticky organ rail -->
+    <div class="organ-rail" id="organRail">
         <div class="container">
-            <h1 data-aos="fade-up">FAQs</h1>
-            <p data-aos="fade-up" data-aos-delay="150">The questions patients and families ask us most</p>
-            <div style="margin-top: 25px; font-size: 1.05rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up"
-                data-aos-delay="300">
-                Home / FAQs
+            <div class="organ-rail-inner">
+                <a href="pancreas.html" class="rail-link is-external"><span class="rail-num">01</span> Pancreas <i class="fa-solid fa-arrow-up-right-from-square" style="font-size:.7em;opacity:.65;"></i></a>
+                <a href="#gallbladder" class="rail-link" data-target="gallbladder"><span class="rail-num">02</span> GallBladder</a>
+                <a href="#liver" class="rail-link" data-target="liver"><span class="rail-num">03</span> Liver</a>
+                <a href="#large-intestine" class="rail-link" data-target="large-intestine"><span class="rail-num">04</span> Large Intestine</a>
+                <a href="#stomach" class="rail-link" data-target="stomach"><span class="rail-num">05</span> Stomach</a>
+                <a href="#esophagus" class="rail-link" data-target="esophagus"><span class="rail-num">06</span> Esophagus</a>
+                <a href="#hospital" class="rail-link" data-target="hospital"><span class="rail-num">07</span> Your Visit</a>
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="section" style="padding: 70px 0; background: #FDF7F5;">
-        <div class="container" style="max-width: 900px;">
+    <section class="faq-body">
+        <div class="container faq-shell">
 
-            <div class="faq-group" data-aos="fade-up">
-                <h2>Appointments &amp; Visits</h2>
-
-                <details>
-                    <summary>How do I book an appointment?</summary>
-                    <div class="details-content">
-                        <p>Use the <strong>Book Appointment</strong> button in the header, call
-                            <strong>+91 9211221551</strong>, or write to <strong>info@advityahealthcares.com</strong>.
-                            Our coordinator confirms the slot and tells you what to bring.</p>
+            <!-- ==================== 02 GALLBLADDER ==================== -->
+            <section class="organ" id="gallbladder">
+                <div class="organ-head" data-aos="fade-up">
+                    <div class="organ-medallion">02</div>
+                    <div>
+                        <span class="organ-kicker">GallBladder</span>
+                        <h2>Gallbladder, Bile Ducts &amp; Gallstones</h2>
+                        <p class="organ-intro">The gallbladder is a small organ under the liver that stores bile. Most
+                            of what goes wrong with it &mdash; and with the bile ducts alongside it &mdash; is benign
+                            and very treatable, but chronic inflammation is worth taking seriously.</p>
                     </div>
-                </details>
+                </div>
 
-                <details>
-                    <summary>What should I bring to my first consultation?</summary>
-                    <div class="details-content">
-                        <ul>
-                            <li>Photo ID and insurance card, if you have one</li>
-                            <li>All previous prescriptions and discharge summaries</li>
-                            <li>Recent scans — CT, MRI or ultrasound — including the films or CD, not just the report</li>
-                            <li>Blood reports from the last three months</li>
-                        </ul>
+                <div class="faq-sub" id="gb-benign" data-aos="fade-up">
+                    <h3 class="sub-label">Benign gallbladder disease</h3>
+
+                    <details>
+                        <summary>What are the common benign diseases of the gallbladder?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Gallstones (cholelithiasis)</strong> &mdash; hardened deposits of bile or
+                                    cholesterol</li>
+                                <li><strong>Biliary sludge</strong> &mdash; microscopic cholesterol and bile particles</li>
+                                <li><strong>Cholecystitis</strong> &mdash; inflammation of the gallbladder, usually caused
+                                    by gallstones</li>
+                                <li><strong>Adenomyomatosis</strong> &mdash; non-cancerous thickening of the gallbladder
+                                    wall</li>
+                                <li><strong>Gallbladder polyps</strong> &mdash; small benign growths in the lining</li>
+                                <li><strong>Functional gallbladder disorder (biliary dyskinesia)</strong> &mdash;
+                                    abnormal function without stones</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What causes these conditions?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Gallstones and sludge</strong> &mdash; imbalance in bile composition,
+                                    genetics, obesity or rapid weight loss</li>
+                                <li><strong>Cholecystitis</strong> &mdash; blockage of the cystic duct, usually by a
+                                    stone</li>
+                                <li><strong>Adenomyomatosis and polyps</strong> &mdash; exact cause unclear, possibly
+                                    linked to chronic inflammation</li>
+                                <li><strong>Functional disorders</strong> &mdash; abnormal gallbladder motility or
+                                    hypersensitivity</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Which symptoms should send me to a doctor?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li>Persistent pain in the upper right abdomen, especially after meals (biliary colic)</li>
+                                <li>Nausea or vomiting</li>
+                                <li>Indigestion, bloating or intolerance of fatty food</li>
+                                <li>Fever and chills, which may mean inflammation or infection</li>
+                                <li>Yellowing of the skin or eyes (jaundice), which may mean bile duct obstruction</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How is benign gallbladder disease diagnosed and treated?</summary>
+                        <div class="details-content">
+                            <p><strong>Diagnosis:</strong> history and examination, ultrasound (to find stones, polyps or
+                                thickened walls), a HIDA scan to assess function, CT or MRI for complex cases, and blood
+                                tests for liver function, infection and obstruction.</p>
+                            <p><strong>Treatment:</strong></p>
+                            <ul>
+                                <li><strong>Lifestyle</strong> &mdash; a low-fat diet eases mild symptoms</li>
+                                <li><strong>Medication</strong> to dissolve small stones &mdash; rarely effective</li>
+                                <li><strong>Laparoscopic cholecystectomy</strong> &mdash; gallbladder removal, the most
+                                    common treatment for symptomatic stones or cholecystitis</li>
+                                <li><strong>Endoscopic procedures</strong> to clear stones from the bile duct</li>
+                                <li><strong>Monitoring</strong> for small asymptomatic polyps or adenomyomatosis</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can I live normally without a gallbladder?</summary>
+                        <div class="details-content">
+                            <p>Yes. Most people live normal, healthy lives after removal &mdash; the liver keeps
+                                producing bile for digestion. Fatty meals may need some dietary adjustment at first.</p>
+                            <p>To prevent gallbladder problems in the first place: keep a healthy weight and avoid rapid
+                                weight loss, eat a balanced diet with moderate fat and plenty of fibre, stay active and
+                                drink enough water.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="gb-cancer" data-aos="fade-up">
+                    <h3 class="sub-label">Gallstones and cancer risk</h3>
+
+                    <details>
+                        <summary>What is gallbladder cancer, and how common is it?</summary>
+                        <div class="details-content">
+                            <p>A malignant tumour beginning in the cells of the gallbladder &mdash; most commonly
+                                <strong>adenocarcinoma</strong>, starting in the epithelial cells of the lining.</p>
+                            <p>It is rare overall, but noticeably more common in India, Pakistan, South America and
+                                Eastern Europe. Women are affected more often than men, usually in their 60s or 70s.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What raises the risk of gallbladder cancer?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Gallstones</strong> &mdash; chronic inflammation is a significant risk factor</li>
+                                <li><strong>Porcelain gallbladder</strong> &mdash; calcification of the wall from
+                                    long-term inflammation</li>
+                                <li><strong>Chronic infections</strong> of the bile ducts</li>
+                                <li><strong>Gallbladder polyps</strong> larger than 1 cm</li>
+                                <li><strong>Obesity</strong>, which raises the risk of stones and inflammation</li>
+                                <li><strong>Family history</strong> and exposure to certain industrial toxins</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Do gallstones mean I will get gallbladder cancer?</summary>
+                        <div class="details-content">
+                            <p>No. Gallstones are present in <strong>80&ndash;90%</strong> of gallbladder cancer
+                                patients, which makes them the most strongly associated risk factor &mdash; but only a
+                                tiny fraction of people with gallstones ever develop the cancer.</p>
+                            <p>The link is chronic inflammation: persistent stones irritate the gallbladder wall,
+                                repeated injury alters the DNA of the lining cells, and prolonged inflammation can
+                                calcify the wall into a porcelain gallbladder. Larger stones and long-standing disease
+                                carry more risk than small, recent ones.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Does removing the gallbladder reduce cancer risk?</summary>
+                        <div class="details-content">
+                            <p>Yes. Cholecystectomy is the most effective way to eliminate the risk in patients with
+                                symptomatic stones or high-risk features:</p>
+                            <ul>
+                                <li>Large gallstones</li>
+                                <li>Porcelain gallbladder</li>
+                                <li>Gallbladder polyps larger than 1 cm</li>
+                            </ul>
+                            <p>For asymptomatic gallstones, surgery is usually <em>not</em> recommended unless other risk
+                                factors are present.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the symptoms, stages and treatment of gallbladder cancer?</summary>
+                        <div class="details-content">
+                            <p><strong>Symptoms</strong> are usually absent early. Later: upper right abdominal pain,
+                                nausea and vomiting, jaundice, weight loss and loss of appetite, fever and fatigue, or a
+                                lump in the abdomen.</p>
+                            <p><strong>Diagnosis:</strong> ultrasound first, then CT or MRI, PET scans for spread; ERCP
+                                and endoscopic ultrasound for detailed imaging and biopsy; liver function tests and
+                                tumour markers such as CA 19-9 and CEA; and biopsy for confirmation.</p>
+                            <p><strong>Stages</strong> run from Stage 0 (limited to the inner lining) through Stage I
+                                (confined to the wall), Stage II (nearby tissue), Stage III (lymph nodes or nearby
+                                organs) to Stage IV (distant metastasis).</p>
+                            <p><strong>Treatment:</strong> cholecystectomy for early-stage disease; extended surgery
+                                including part of the liver and lymph nodes for advanced local disease; chemotherapy;
+                                radiation therapy; and palliative care where the disease is inoperable. It is curable
+                                when detected early and removed surgically &mdash; unfortunately many cases present
+                                late.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="gb-ducts" data-aos="fade-up">
+                    <h3 class="sub-label">Bile ducts</h3>
+
+                    <details>
+                        <summary>What are benign biliary diseases?</summary>
+                        <div class="details-content">
+                            <p>Non-cancerous conditions of the bile ducts or gallbladder:</p>
+                            <ul>
+                                <li><strong>Cholelithiasis</strong> &mdash; stones in the gallbladder or bile ducts</li>
+                                <li><strong>Choledocholithiasis</strong> &mdash; stones lodged in the common bile duct</li>
+                                <li><strong>Cholangitis</strong> &mdash; inflammation of the bile ducts, usually from
+                                    infection after an obstruction</li>
+                                <li><strong>Biliary strictures</strong> &mdash; narrowing after injury, surgery or chronic
+                                    inflammation</li>
+                                <li><strong>Biliary dyskinesia</strong> &mdash; dysfunctional bile duct or gallbladder
+                                    motility</li>
+                                <li><strong>Primary biliary cholangitis (PBC)</strong> &mdash; a chronic autoimmune
+                                    disease damaging the small bile ducts</li>
+                            </ul>
+                            <p>Symptoms range from right upper abdominal pain after fatty food to jaundice, dark urine
+                                and pale stools, nausea and vomiting, fever and chills, and persistent fatigue.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How are biliary diseases diagnosed and treated?</summary>
+                        <div class="details-content">
+                            <p><strong>Diagnosis:</strong> liver function tests, bilirubin, ALP and GGT; ultrasound as
+                                first-line imaging; MRCP for non-invasive imaging of the ducts; ERCP for both diagnosis
+                                and treatment; and biopsy where PBC is suspected.</p>
+                            <p><strong>Treatment</strong> depends on the condition:</p>
+                            <ul>
+                                <li><strong>Gallstones</strong> &mdash; cholecystectomy if symptomatic; asymptomatic
+                                    stones may need nothing</li>
+                                <li><strong>Cholangitis</strong> &mdash; antibiotics and bile duct drainage via ERCP</li>
+                                <li><strong>Strictures</strong> &mdash; endoscopic stenting or balloon dilation</li>
+                                <li><strong>Biliary dyskinesia</strong> &mdash; cholecystectomy if symptoms are severe</li>
+                                <li><strong>Primary biliary cholangitis</strong> &mdash; ursodeoxycholic acid (UDCA) to
+                                    slow progression</li>
+                            </ul>
+                            <p>Left untreated, these can lead to biliary colic, acute cholangitis (life-threatening),
+                                pancreatitis and biliary cirrhosis.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Why do bile duct injuries after gallbladder removal need expert repair?</summary>
+                        <div class="details-content">
+                            <p>Surgery restores bile flow from the liver to the intestine, prevents infection, leaks,
+                                strictures and liver damage, and relieves jaundice and pain. Early repair by an
+                                experienced hepatobiliary surgeon has success rates of <strong>85&ndash;95%</strong>.</p>
+                            <p>A poorly performed repair can cause:</p>
+                            <ul>
+                                <li><strong>Biliary strictures</strong> &mdash; scar tissue narrowing the ducts, in
+                                    25&ndash;40% of suboptimal repairs</li>
+                                <li><strong>Persistent bile leaks</strong> &mdash; infection, peritonitis or abscess</li>
+                                <li><strong>Recurrent cholangitis</strong> &mdash; up to 10% mortality if untreated</li>
+                                <li><strong>Liver damage or failure</strong> &mdash; chronic obstruction can lead to
+                                    cirrhosis and, in some cases, transplantation</li>
+                            </ul>
+                            <p>Low-experience centres report failure rates up to 50%, against 5&ndash;10% in high-volume
+                                specialised centres. Timing matters too: early repair within 72 hours gives the best
+                                outcomes; delayed repair after 6&ndash;8 weeks is workable; repair during active
+                                inflammation carries the highest risk.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What is bile duct cancer (cholangiocarcinoma)?</summary>
+                        <div class="details-content">
+                            <p>Cancer forming in the ducts that carry bile from the liver to the small intestine:</p>
+                            <ul>
+                                <li><strong>Intrahepatic</strong> &mdash; inside the liver</li>
+                                <li><strong>Perihilar</strong> &mdash; where the ducts enter the liver</li>
+                                <li><strong>Extrahepatic</strong> &mdash; outside the liver, near the gallbladder or small
+                                    intestine</li>
+                            </ul>
+                            <p>Risk factors include cirrhosis and hepatitis, primary sclerosing cholangitis, liver fluke
+                                infection, gallstones and bile duct abnormalities, and age over 65 (more common in men).
+                                Symptoms are vague &mdash; jaundice, upper right abdominal pain, itchy skin, unexplained
+                                weight loss, dark urine and pale stools, fever and chills.</p>
+                            <p><strong>Treatment:</strong> surgical resection of part of the bile duct, liver or
+                                gallbladder is the most effective option, with liver transplant for a very selected
+                                group. Where surgery is not possible, stenting relieves blockage, and chemotherapy,
+                                radiation, targeted therapy and immunotherapy help control the disease. Prognosis depends
+                                heavily on how early it is found.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== 03 LIVER ==================== -->
+            <section class="organ" id="liver">
+                <div class="organ-head" data-aos="fade-up">
+                    <div class="organ-medallion">03</div>
+                    <div>
+                        <span class="organ-kicker">Liver</span>
+                        <h2>Liver &mdash; Benign Disease and Liver Cancer</h2>
+                        <p class="organ-intro">The liver detoxifies the body, produces bile and drives digestion. Many
+                            liver findings are benign and need only monitoring &mdash; but fatty liver, hepatitis and
+                            cirrhosis are the pathways that lead to serious disease, and all three are worth catching
+                            early.</p>
                     </div>
-                </details>
+                </div>
 
-                <details>
-                    <summary>Do you offer teleconsultation for outstation patients?</summary>
-                    <div class="details-content">
-                        <p>Yes. If you are travelling from another city, a video review of your reports before you make
-                            the trip is usually the first step. Ask the coordinator when you call.</p>
+                <div class="faq-sub" id="lv-benign" data-aos="fade-up">
+                    <h3 class="sub-label">Benign liver disease</h3>
+
+                    <details>
+                        <summary>What are benign liver diseases?</summary>
+                        <div class="details-content">
+                            <p>Conditions affecting the liver that do not involve cancer or immediate risk of liver
+                                failure. They may change the structure of the liver or how it functions, but are usually
+                                treatable and do not progress to liver cancer. Common ones:</p>
+                            <ul>
+                                <li>Fatty liver disease (NAFLD / NASH)</li>
+                                <li>Liver cysts</li>
+                                <li>Hepatic hemangiomas</li>
+                                <li>Liver adenomas</li>
+                                <li>Benign biliary lesions</li>
+                                <li>Hemochromatosis</li>
+                            </ul>
+                            <p>They are not cancerous, but some can cause complications, so monitoring still matters.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What is fatty liver disease (NAFLD), and how is it managed?</summary>
+                        <div class="details-content">
+                            <p>Non-alcoholic fatty liver disease is fat building up in liver cells without significant
+                                alcohol intake, usually linked to obesity, type 2 diabetes and poor diet.
+                                <strong>NASH</strong> (non-alcoholic steatohepatitis) is the more severe form, where the
+                                fat causes inflammation and tissue damage.</p>
+                            <p>It often causes no symptoms but can damage the liver over time. Early-stage disease is
+                                managed with weight loss, a better diet and more physical activity; medication may be
+                                added for related problems such as high cholesterol or diabetes.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are liver cysts, and do they need treatment?</summary>
+                        <div class="details-content">
+                            <p>Fluid-filled sacs in the liver, usually benign and symptom-free, most often found by
+                                chance during imaging for something else. Two main types:</p>
+                            <ul>
+                                <li><strong>Simple cysts</strong> &mdash; the most common, and usually harmless</li>
+                                <li><strong>Polycystic liver disease</strong> &mdash; a genetic condition where multiple
+                                    cysts form over time</li>
+                            </ul>
+                            <p>Most need only regular monitoring. If a cyst grows large or becomes painful, it may be
+                                drained or, rarely, surgically removed.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are hepatic hemangiomas and liver adenomas?</summary>
+                        <div class="details-content">
+                            <p><strong>Hepatic hemangiomas</strong> are the most common benign liver tumour &mdash;
+                                clusters of blood vessels, usually symptom-free and found incidentally. Treatment is
+                                normally unnecessary unless they cause abdominal pain or bleeding, in which case surgical
+                                removal may be needed.</p>
+                            <p><strong>Liver adenomas</strong> form from liver cells and are more common in women,
+                                particularly those who have used oral contraceptives or anabolic steroids. They are
+                                generally harmless, but can rupture, bleed or (rarely) turn malignant. Large or
+                                symptomatic adenomas are usually removed; small, silent ones are monitored.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Do benign liver diseases cause symptoms, and what is the outlook?</summary>
+                        <div class="details-content">
+                            <p>Many cause nothing at all, especially early. Some people notice:</p>
+                            <ul>
+                                <li>Abdominal pain, especially in the upper right side</li>
+                                <li>Fatigue</li>
+                                <li>Nausea or loss of appetite</li>
+                                <li>Jaundice, in rare cases</li>
+                                <li>Itchy skin</li>
+                            </ul>
+                            <p>The prognosis is generally excellent. Most of these conditions cause no long-term liver
+                                damage and are managed with lifestyle changes or minor interventions. Regular monitoring
+                                catches the rare complication early.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="lv-cancer" data-aos="fade-up">
+                    <h3 class="sub-label">Liver cancer</h3>
+
+                    <details>
+                        <summary>What is liver cancer?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Primary liver cancer</strong> &mdash; starts in the liver itself. The most
+                                    common form is hepatocellular carcinoma (HCC), arising from liver cells. Others
+                                    include cholangiocarcinoma (bile duct cancer) and angiosarcoma</li>
+                                <li><strong>Secondary (metastatic) liver cancer</strong> &mdash; has spread to the liver
+                                    from elsewhere, such as the colon, lungs or breast</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What causes liver cancer?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Chronic liver disease</strong> &mdash; long-term hepatitis B or C infection</li>
+                                <li><strong>Cirrhosis</strong> &mdash; scarring from alcohol, fatty liver disease or
+                                    hepatitis</li>
+                                <li><strong>NAFLD</strong> &mdash; fat accumulation unrelated to alcohol</li>
+                                <li><strong>Aflatoxins</strong> &mdash; toxins from moulds on badly stored grain and nuts</li>
+                                <li><strong>Heavy alcohol use</strong></li>
+                                <li><strong>Diabetes and obesity</strong></li>
+                                <li><strong>Family history</strong></li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the symptoms, and how is it diagnosed?</summary>
+                        <div class="details-content">
+                            <p>Early liver cancer often causes nothing. As it progresses: unexplained weight loss, loss
+                                of appetite, fatigue and weakness, abdominal pain or swelling in the upper right side,
+                                jaundice, nausea or vomiting, dark urine and pale stools.</p>
+                            <p><strong>Diagnosis:</strong></p>
+                            <ul>
+                                <li>History and physical examination, reviewing risk factors</li>
+                                <li>Blood tests &mdash; liver function and alpha-fetoprotein (AFP)</li>
+                                <li>Imaging &mdash; ultrasound, CT and MRI to find tumours and assess size and location</li>
+                                <li>Liver biopsy to confirm cancer cells</li>
+                                <li>Screening &mdash; regular ultrasound and AFP for people with cirrhosis or chronic
+                                    hepatitis B/C</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the treatment options for liver cancer?</summary>
+                        <div class="details-content">
+                            <p><strong>Surgery</strong> &mdash; the most effective treatment in early disease:</p>
+                            <ul>
+                                <li><strong>Liver resection (hepatectomy)</strong> &mdash; removes the part of the liver
+                                    containing the tumour; suitable when liver function is good and the cancer is
+                                    localised</li>
+                                <li><strong>Liver transplant</strong> &mdash; replaces the diseased liver, often for
+                                    early-stage cancer with underlying disease such as cirrhosis</li>
+                            </ul>
+                            <p><strong>Ablative therapies:</strong> radiofrequency or microwave ablation (heat) and
+                                cryoablation (freezing) to destroy cancer cells.</p>
+                            <p><strong>Chemoembolisation and radioembolisation:</strong> TACE delivers chemotherapy
+                                directly into the tumour's blood supply; SIRT delivers radiation through tiny beads
+                                injected into it.</p>
+                            <p><strong>Drug therapy:</strong> targeted drugs such as sorafenib or lenvatinib, and
+                                immunotherapy such as atezolizumab with bevacizumab.</p>
+                            <p><strong>Radiation therapy</strong> for advanced cases or where surgery is not possible,
+                                and <strong>palliative care</strong> focused on symptom control and quality of life.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How can I support someone with liver cancer?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Listen</strong> &mdash; let them express fear and frustration without being
+                                    fixed</li>
+                                <li><strong>Help with appointments</strong> &mdash; transport, notes, company</li>
+                                <li><strong>Learn about the disease</strong> so you understand what they are facing</li>
+                                <li><strong>Encourage healthy habits</strong> &mdash; diet, activity where possible, and
+                                    sticking to the treatment plan</li>
+                                <li><strong>Find support</strong> &mdash; for them, and for yourself as a caregiver</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== 04 LARGE INTESTINE ==================== -->
+            <section class="organ" id="large-intestine">
+                <div class="organ-head" data-aos="fade-up">
+                    <div class="organ-medallion">04</div>
+                    <div>
+                        <span class="organ-kicker">Large Intestine</span>
+                        <h2>Colon &amp; Rectum &mdash; Benign Disease and Colorectal Cancer</h2>
+                        <p class="organ-intro">Most colorectal cancer starts as a polyp that could have been removed
+                            during a routine colonoscopy. That single fact is why screening matters more here than
+                            almost anywhere else in the digestive tract.</p>
                     </div>
-                </details>
-            </div>
+                </div>
 
-            <div class="faq-group" data-aos="fade-up">
-                <h2>Pancreatic &amp; GI Care</h2>
+                <div class="faq-sub" id="li-benign" data-aos="fade-up">
+                    <h3 class="sub-label">Benign colorectal disease</h3>
 
-                <details>
-                    <summary>What conditions does the pancreaCare+ programme cover?</summary>
-                    <div class="details-content">
-                        <p>Acute and chronic pancreatitis, pancreatic cysts and tumours, pancreatic cancer, bile duct and
-                            gallbladder disease, and the surgical and nutritional care that goes with them. Read
-                            <a href="the-story-of-pancreacare.html">the story of pancreaCare+</a> for the full picture.</p>
+                    <details>
+                        <summary>What are benign colorectal diseases?</summary>
+                        <div class="details-content">
+                            <p>Non-cancerous conditions affecting the colon (large intestine) and rectum:</p>
+                            <ul>
+                                <li><strong>Colon polyps</strong> &mdash; growths on the inner lining, some of which can
+                                    become cancerous if not removed</li>
+                                <li><strong>Diverticular disease</strong> &mdash; small pouches in the colon wall that can
+                                    become inflamed or infected (diverticulitis)</li>
+                                <li><strong>Irritable bowel syndrome (IBS)</strong> &mdash; a functional disorder causing
+                                    pain, bloating and changed bowel habits</li>
+                                <li><strong>Inflammatory bowel disease (IBD)</strong> &mdash; ulcerative colitis and
+                                    Crohn's disease, causing chronic inflammation</li>
+                            </ul>
+                            <p>These are not life-threatening, but some &mdash; polyps in particular &mdash; need timely
+                                management to prevent progression to colorectal cancer.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What symptoms should I watch for?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li>Abdominal pain or cramping</li>
+                                <li>Changes in bowel habits &mdash; diarrhoea, constipation, or both</li>
+                                <li>Rectal bleeding or blood in the stool</li>
+                                <li>Mucus in the stool</li>
+                                <li>Bloating or excessive gas</li>
+                                <li>Unexplained fatigue, from anaemia caused by chronic bleeding</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How are these conditions diagnosed?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>History and examination</strong> &mdash; symptoms, family history, risk
+                                    factors</li>
+                                <li><strong>Colonoscopy</strong> &mdash; direct visualisation of the colon and rectum to
+                                    find polyps or inflammation</li>
+                                <li><strong>Imaging</strong> &mdash; CT, MRI or barium enema X-rays for structural
+                                    problems</li>
+                                <li><strong>Lab tests</strong> &mdash; stool tests for blood, infection or inflammation;
+                                    blood tests for anaemia and inflammatory markers</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>When is surgery needed, and what are the options?</summary>
+                        <div class="details-content">
+                            <p>Surgery becomes necessary when:</p>
+                            <ul>
+                                <li>Symptoms persist and significantly affect quality of life</li>
+                                <li>Complications develop &mdash; obstruction, perforation or severe bleeding</li>
+                                <li>Diverticulitis is recurrent or complicated</li>
+                                <li>A polyp cannot be removed at colonoscopy or carries a high cancer risk</li>
+                                <li>Medical management of inflammatory bowel disease fails</li>
+                            </ul>
+                            <p><strong>Procedures:</strong> polypectomy during colonoscopy; laparoscopic surgery to
+                                remove affected sections; segmental colectomy preserving the rest of the tract; total
+                                colectomy in severe IBD or familial polyposis; and rarely a colostomy or ileostomy to
+                                reroute waste temporarily or permanently.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What is recovery like, and how can I lower my risk?</summary>
+                        <div class="details-content">
+                            <p><strong>Recovery:</strong> 3&ndash;7 days in hospital after major surgery; light
+                                activities within a few weeks and full recovery in 4&ndash;6 weeks; a gradual return to
+                                normal eating starting with a low-fibre or soft diet; and regular follow-ups.</p>
+                            <p><strong>Prevention:</strong></p>
+                            <ul>
+                                <li>Eat a high-fibre diet &mdash; whole grains, fruit and vegetables</li>
+                                <li>Stay hydrated to keep stools soft</li>
+                                <li>Exercise regularly</li>
+                                <li>Avoid smoking and heavy alcohol</li>
+                                <li>Get screened, especially over 45 or with a family history</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="li-cancer" data-aos="fade-up">
+                    <h3 class="sub-label">Colorectal cancer</h3>
+
+                    <details>
+                        <summary>What is colorectal cancer, and who is at risk?</summary>
+                        <div class="details-content">
+                            <p>Cancer developing in the colon or rectum. It typically begins as a small, non-cancerous
+                                polyp that gradually turns cancerous over time.</p>
+                            <p>Risk factors:</p>
+                            <ul>
+                                <li><strong>Age</strong> &mdash; most cases occur after 50, though younger people are
+                                    affected too</li>
+                                <li><strong>Family history</strong> of colorectal cancer or polyps</li>
+                                <li><strong>Lifestyle</strong> &mdash; diets high in red and processed meat, obesity,
+                                    smoking, heavy alcohol</li>
+                                <li><strong>Medical conditions</strong> &mdash; IBD such as Crohn's and ulcerative
+                                    colitis, and genetic syndromes like Lynch syndrome or familial adenomatous polyposis
+                                    (FAP)</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the symptoms?</summary>
+                        <div class="details-content">
+                            <p>Early-stage disease often has none, which is exactly why screening matters. When symptoms
+                                do appear:</p>
+                            <ul>
+                                <li>Changes in bowel habits &mdash; diarrhoea, constipation or narrowed stool &mdash;
+                                    lasting more than a few weeks</li>
+                                <li>Rectal bleeding or blood in the stool</li>
+                                <li>Persistent abdominal pain or cramping</li>
+                                <li>Unexplained weight loss</li>
+                                <li>Fatigue or weakness from anaemia</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How is colorectal cancer treated?</summary>
+                        <div class="details-content">
+                            <p><strong>Surgery:</strong></p>
+                            <ul>
+                                <li><strong>Polypectomy</strong> during colonoscopy for very early cancers</li>
+                                <li><strong>Partial colectomy</strong> &mdash; removes the cancerous section, usually
+                                    reattaching the healthy ends</li>
+                                <li><strong>Abdominoperineal resection (APR)</strong> &mdash; for rectal cancers close to
+                                    the anus, removing the rectum and anus and creating a colostomy</li>
+                            </ul>
+                            <p>Plus <strong>chemotherapy</strong> before or after surgery, <strong>radiation
+                                    therapy</strong> often combined with chemotherapy for rectal cancers,
+                                <strong>targeted therapy</strong> for advanced disease and <strong>immunotherapy</strong>
+                                for some genetic subtypes.</p>
+                            <p>After surgery, expect 3&ndash;7 days in hospital and 4&ndash;6 weeks to full recovery,
+                                with dietary adjustment starting on soft or low-fibre food. Chemotherapy or radiation may
+                                run over weeks or months.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What is the prognosis for colorectal cancer?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Early-stage cancers</strong> have a high survival rate &mdash; up to 90% of
+                                    patients survive five years or more after treatment</li>
+                                <li><strong>Advanced cancers</strong> that have spread are harder to treat, though
+                                    targeted therapies and immunotherapies are improving outcomes</li>
+                            </ul>
+                            <p>Regular screening and early treatment give the best chance of a successful recovery.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="li-surgery" data-aos="fade-up">
+                    <h3 class="sub-label">Rectal cancer surgery</h3>
+
+                    <details>
+                        <summary>What types of surgery are used for rectal cancer?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Local excision</strong> &mdash; for small, early tumours near the anus,
+                                    removed through the anus without major incisions</li>
+                                <li><strong>Low anterior resection (LAR)</strong> &mdash; for tumours in the upper or
+                                    middle rectum; the colon is reconnected to the remaining rectum to keep normal bowel
+                                    function</li>
+                                <li><strong>Abdominoperineal resection (APR)</strong> &mdash; for cancers in the lower
+                                    rectum close to the anus; the rectum, anus and surrounding tissue are removed and a
+                                    permanent colostomy created</li>
+                                <li><strong>Total mesorectal excision (TME)</strong> &mdash; a precise technique removing
+                                    the rectum and surrounding lymph nodes, often combined with LAR or APR</li>
+                                <li><strong>Laparoscopic or robotic surgery</strong> &mdash; smaller incisions, quicker
+                                    recovery, less pain afterwards</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>When is chemotherapy or radiation given &mdash; before or after surgery?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Neoadjuvant therapy (before surgery)</strong> &mdash; radiation and/or
+                                    chemotherapy for locally advanced rectal cancer, to shrink the tumour, make it easier
+                                    to remove and reduce recurrence</li>
+                                <li><strong>Adjuvant therapy (after surgery)</strong> &mdash; used if cancer cells are
+                                    found in the lymph nodes or the margins of removed tissue are positive</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What is a colostomy, and will I need one?</summary>
+                        <div class="details-content">
+                            <p>A colostomy is an opening (stoma) created in the abdominal wall so waste can leave the
+                                body into a bag. It may be:</p>
+                            <ul>
+                                <li><strong>Temporary</strong> &mdash; to let the rectum heal after surgery</li>
+                                <li><strong>Permanent</strong> &mdash; when the anus and rectum are removed, as in APR</li>
+                            </ul>
+                            <p>Your surgeon will tell you whether one is needed for your case. If it is, specialised
+                                stoma nurses will teach you how to manage it.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the risks of rectal cancer surgery?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li>Bleeding or infection at the surgical site</li>
+                                <li>Leakage where the colon and rectum are reconnected</li>
+                                <li>Changes in bowel function &mdash; diarrhoea or incontinence</li>
+                                <li>Nerve damage affecting bladder or sexual function</li>
+                                <li>Adhesions or bowel obstruction</li>
+                            </ul>
+                            <p>Early-stage rectal cancer confined to the rectum with no lymph node involvement may be
+                                cured by surgery alone. Advanced stages do best with surgery, chemotherapy and radiation
+                                combined.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== 05 STOMACH ==================== -->
+            <section class="organ" id="stomach">
+                <div class="organ-head" data-aos="fade-up">
+                    <div class="organ-medallion">05</div>
+                    <div>
+                        <span class="organ-kicker">Stomach</span>
+                        <h2>Stomach &mdash; Gastritis, Ulcers and Gastric Cancer</h2>
+                        <p class="organ-intro">Indigestion is common; persistent indigestion is not. Most gastric
+                            complaints turn out to be gastritis or an ulcer, both very treatable &mdash; but the same
+                            symptoms can mask something that needs an endoscope to find.</p>
                     </div>
-                </details>
+                </div>
 
-                <details>
-                    <summary>What are the warning signs of a pancreatic problem?</summary>
-                    <div class="details-content">
-                        <p>Persistent upper abdominal pain that radiates to the back, unexplained weight loss, jaundice,
-                            greasy or floating stools, and new-onset diabetes after 50. Any of these lasting more than a
-                            couple of weeks deserves a specialist review.</p>
-                        <p>This page is general information, not a diagnosis. See a doctor about your own symptoms.</p>
+                <div class="faq-sub" id="st-benign" data-aos="fade-up">
+                    <h3 class="sub-label">Benign gastric disease</h3>
+
+                    <details>
+                        <summary>What are benign gastric diseases?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Gastritis</strong> &mdash; inflammation of the stomach lining, often from
+                                    <em>Helicobacter pylori</em> infection, heavy alcohol use or NSAID medicines</li>
+                                <li><strong>Peptic ulcers</strong> &mdash; open sores in the lining of the stomach or
+                                    upper small intestine, usually from H. pylori or prolonged NSAID use</li>
+                                <li><strong>Gastric polyps</strong> &mdash; small growths, usually harmless, sometimes
+                                    removed if symptomatic or suspicious</li>
+                                <li><strong>Gastroparesis</strong> &mdash; the stomach empties too slowly, often related
+                                    to diabetes or nerve damage</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the symptoms?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li>Upper abdominal pain or discomfort</li>
+                                <li>Nausea or vomiting</li>
+                                <li>Loss of appetite or unintentional weight loss</li>
+                                <li>Bloating, or feeling full after small meals</li>
+                                <li>Heartburn or indigestion</li>
+                                <li>Black or tarry stools, which may mean a bleeding ulcer</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How are they diagnosed?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Endoscopy</strong> &mdash; a flexible camera examines the lining and finds
+                                    ulcers or polyps</li>
+                                <li><strong>Biopsy</strong> during endoscopy, to rule out infection, inflammation or
+                                    malignancy</li>
+                                <li><strong>Imaging</strong> &mdash; X-rays, CT scans or barium swallow studies for
+                                    structural problems</li>
+                                <li><strong>Lab tests</strong> &mdash; blood, stool or breath tests for H. pylori</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How are benign gastric diseases treated?</summary>
+                        <div class="details-content">
+                            <p><strong>Medication:</strong> antibiotics to eradicate H. pylori; proton pump inhibitors
+                                (PPIs) to cut acid and heal ulcers; antacids for heartburn; prokinetic agents to speed
+                                stomach emptying in gastroparesis.</p>
+                            <p><strong>Diet and lifestyle:</strong> avoid spicy, acidic or greasy food; cut alcohol and
+                                caffeine; eat smaller, more frequent meals.</p>
+                            <p><strong>Procedures:</strong> polypectomy during endoscopy; surgery for ulcers (rarely
+                                needed, but used for perforation or severe bleeding); gastric pacing or partial stomach
+                                removal for severe gastroparesis.</p>
+                            <p>Surgery becomes necessary for persistent or recurrent ulcer bleeding, perforation,
+                                obstruction from scarring or polyps, and severe gastroparesis that does not respond to
+                                medical management.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can benign gastric disease lead to cancer?</summary>
+                        <div class="details-content">
+                            <p>Most do not. However, chronic H. pylori infection, long-standing gastritis and large
+                                gastric polyps can raise the risk of gastric cancer over time. Regular monitoring and
+                                timely treatment reduce that risk substantially.</p>
+                            <p>To protect your stomach: eat a balanced diet of whole grains, lean protein and
+                                vegetables; avoid smoking and limit alcohol; use NSAIDs cautiously and with food; manage
+                                stress; and treat underlying conditions such as diabetes.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="st-cancer" data-aos="fade-up">
+                    <h3 class="sub-label">Gastric cancer</h3>
+
+                    <details>
+                        <summary>What is gastric cancer?</summary>
+                        <div class="details-content">
+                            <p>Cancer developing in the inner lining of the stomach, which can spread elsewhere if
+                                untreated. The most common type is <strong>adenocarcinoma</strong>, starting in the
+                                glandular cells of the lining. Rarer types include lymphomas and gastrointestinal stromal
+                                tumours (GISTs).</p>
+                            <p>Early gastric cancer often causes no symptoms. Later ones include persistent indigestion
+                                or heartburn, loss of appetite or weight, nausea or vomiting (sometimes with blood),
+                                abdominal pain, feeling full quickly, and black tarry stools.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the risk factors?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>H. pylori infection</strong> &mdash; linked to chronic gastritis and ulcers</li>
+                                <li><strong>Diet</strong> &mdash; high intake of salted, smoked or pickled food</li>
+                                <li><strong>Smoking and alcohol</strong></li>
+                                <li><strong>Family history</strong></li>
+                                <li><strong>Chronic inflammation</strong> &mdash; pernicious anaemia, chronic gastritis</li>
+                                <li><strong>Previous stomach surgery</strong>, such as for ulcers</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the types of gastric cancer surgery?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Subtotal (partial) gastrectomy</strong> &mdash; removes the cancerous part of
+                                    the stomach, usually for tumours in the lower or middle stomach; the remainder is
+                                    reconnected to the small intestine</li>
+                                <li><strong>Total gastrectomy</strong> &mdash; removes the whole stomach with nearby
+                                    lymph nodes, and sometimes parts of the esophagus or small intestine; the esophagus
+                                    is joined directly to the small intestine</li>
+                                <li><strong>Endoscopic resection</strong> &mdash; for very early cancers confined to the
+                                    lining, removed through an endoscope with no major incisions</li>
+                                <li><strong>Lymphadenectomy</strong> &mdash; removal of nearby lymph nodes to check and
+                                    limit spread</li>
+                                <li><strong>Palliative surgery</strong> &mdash; in advanced cases, to relieve blockage or
+                                    bleeding rather than to cure</li>
+                            </ul>
+                            <p>Minimally invasive laparoscopic or robotic techniques are used where appropriate,
+                                shortening recovery and reducing complications.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Will I need chemotherapy or radiation as well?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Neoadjuvant therapy (before surgery)</strong> &mdash; chemotherapy or
+                                    chemoradiation to shrink the tumour and make surgery more effective</li>
+                                <li><strong>Adjuvant therapy (after surgery)</strong> &mdash; to kill remaining cancer
+                                    cells and reduce recurrence</li>
+                                <li><strong>Targeted therapy</strong> &mdash; drugs such as trastuzumab for cancers with
+                                    specific markers (e.g. HER2-positive)</li>
+                                <li><strong>Immunotherapy</strong> &mdash; boosts the immune response in advanced
+                                    disease</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the risks, and how does surgery affect eating?</summary>
+                        <div class="details-content">
+                            <p><strong>Risks:</strong> bleeding or infection; anastomotic leak from surgical connections;
+                                blood clots or deep vein thrombosis; nutritional deficiencies; and dumping syndrome,
+                                where food moves too fast into the small intestine causing nausea, dizziness or
+                                diarrhoea.</p>
+                            <p><strong>Eating afterwards:</strong> the stomach holds less, so smaller and more frequent
+                                meals are necessary. Total gastrectomy can cause deficiencies in iron, calcium and
+                                vitamin B12 that need supplements. Diarrhoea, bloating and dumping syndrome are managed
+                                with dietary changes and medication, guided by a dietitian.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can gastric cancer be cured, and how is recovery?</summary>
+                        <div class="details-content">
+                            <p>Yes, if detected and treated early. Prognosis depends on the stage at diagnosis, the
+                                patient's overall health and response to treatment, and whether the cancer has spread.
+                                Advances in surgical technique, chemotherapy and targeted therapy have improved survival
+                                rates.</p>
+                            <p><strong>Recovery:</strong> usually 7&ndash;10 days in hospital; liquids first, then soft
+                                food, with long-term dietary adjustment; light activity such as walking encouraged, with
+                                no heavy lifting for several weeks; and regular follow-up with imaging, blood tests and
+                                endoscopy.</p>
+                            <p>Preparation before surgery helps: pre-surgical testing, quitting smoking and alcohol,
+                                optimising nutrition, and emotional preparation through counselling or support groups.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+
+            <!-- ==================== 06 ESOPHAGUS ==================== -->
+            <section class="organ" id="esophagus">
+                <div class="organ-head" data-aos="fade-up">
+                    <div class="organ-medallion">06</div>
+                    <div>
+                        <span class="organ-kicker">Esophagus</span>
+                        <h2>Esophagus &mdash; Reflux, Swallowing Problems and Cancer</h2>
+                        <p class="organ-intro">Heartburn that never really goes away, or food that starts catching on
+                            the way down, are the two symptoms worth acting on. Both are usually benign, and both are
+                            far easier to treat early.</p>
                     </div>
-                </details>
+                </div>
 
-                <details>
-                    <summary>How long is recovery after major pancreatic surgery?</summary>
-                    <div class="details-content">
-                        <p>Most patients stay in hospital for 7–14 days depending on the procedure and their condition on
-                            admission. Returning to routine activity typically takes 6–8 weeks, with diet and enzyme
-                            support guided by our nutrition team throughout.</p>
+                <div class="faq-sub" id="es-benign" data-aos="fade-up">
+                    <h3 class="sub-label">Benign esophageal disease</h3>
+
+                    <details>
+                        <summary>What are benign diseases of the esophagus?</summary>
+                        <div class="details-content">
+                            <p>Non-cancerous conditions affecting the structure or function of the esophagus:</p>
+                            <ul>
+                                <li><strong>Gastroesophageal reflux disease (GERD)</strong> &mdash; stomach acid flows
+                                    back up, causing heartburn and irritation</li>
+                                <li><strong>Achalasia</strong> &mdash; the lower esophageal sphincter (LES) fails to
+                                    relax, so food struggles to pass into the stomach</li>
+                                <li><strong>Esophageal strictures</strong> &mdash; narrowing, often from scarring after
+                                    acid reflux or injury</li>
+                                <li><strong>Hiatal hernia</strong> &mdash; part of the stomach pushes up into the chest
+                                    through the diaphragm</li>
+                                <li><strong>Esophageal diverticula</strong> &mdash; pouches in the lining that can trap
+                                    food</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the symptoms?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li>Heartburn or acid reflux</li>
+                                <li>Difficulty swallowing (dysphagia)</li>
+                                <li>Regurgitation of undigested food</li>
+                                <li>Chest pain or discomfort</li>
+                                <li>Chronic cough or hoarseness, common in GERD</li>
+                                <li>A feeling of food getting stuck in the throat or chest</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How are they diagnosed?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Endoscopy</strong> &mdash; a camera examines the esophagus for inflammation,
+                                    strictures and other abnormalities</li>
+                                <li><strong>Barium swallow test</strong> &mdash; X-rays after swallowing barium to
+                                    highlight the esophagus</li>
+                                <li><strong>Esophageal manometry</strong> &mdash; measures muscle contractions, used
+                                    especially for achalasia</li>
+                                <li><strong>pH monitoring</strong> &mdash; assesses acid levels for GERD</li>
+                                <li><strong>CT or MRI</strong> &mdash; for structural issues such as hiatal hernia or
+                                    diverticula</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the treatment options?</summary>
+                        <div class="details-content">
+                            <p><strong>Lifestyle</strong> (mainly for GERD and hiatal hernia): avoid spicy, fatty and
+                                acidic food; eat smaller meals and stay upright afterwards; stop smoking and cut alcohol;
+                                keep a healthy weight.</p>
+                            <p><strong>Medication:</strong> antacids, PPIs or H2 blockers to reduce acid and heal the
+                                esophagus; prokinetic agents to improve motility.</p>
+                            <p><strong>Endoscopic procedures:</strong> dilation of strictures with a balloon or dilator;
+                                Botox injections to temporarily relax the LES in achalasia.</p>
+                            <p><strong>Surgery:</strong> fundoplication to strengthen the LES in GERD or hiatal hernia;
+                                Heller myotomy to relieve LES pressure in achalasia; diverticulectomy to remove
+                                diverticula.</p>
+                            <p>Surgery is considered when medication and lifestyle changes fail, when narrowing or
+                                motility problems are significant, when complications such as perforation or recurrent
+                                aspiration pneumonia arise, or when GERD leads to Barrett's esophagus or severe
+                                esophagitis.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can benign esophageal disease lead to cancer?</summary>
+                        <div class="details-content">
+                            <p>The benign conditions themselves are not cancerous. However, chronic GERD can increase the
+                                risk of developing <strong>Barrett's esophagus</strong>, which may progress to esophageal
+                                cancer if left untreated. Regular monitoring and treatment reduce that risk
+                                significantly.</p>
+                            <div class="note">See a doctor promptly for persistent heartburn, difficulty swallowing or a
+                                sensation of food sticking, unexplained weight loss or chest pain, vomiting blood, or
+                                black tarry stools.</div>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="es-cancer" data-aos="fade-up">
+                    <h3 class="sub-label">Esophageal cancer</h3>
+
+                    <details>
+                        <summary>What is esophageal cancer?</summary>
+                        <div class="details-content">
+                            <p>A malignant growth in the esophagus, the tube connecting throat to stomach. Two main
+                                types:</p>
+                            <ul>
+                                <li><strong>Squamous cell carcinoma</strong> &mdash; affects the upper or middle
+                                    esophagus</li>
+                                <li><strong>Adenocarcinoma</strong> &mdash; more common in the lower esophagus, often
+                                    linked to chronic acid reflux or Barrett's esophagus</li>
+                            </ul>
+                            <p>Symptoms include difficulty swallowing, unexplained weight loss, chest or back pain,
+                                persistent heartburn or indigestion, vomiting or regurgitation of food, and chronic cough
+                                or hoarseness.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How is it diagnosed?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li><strong>Endoscopy</strong> &mdash; to view the esophagus and take biopsies</li>
+                                <li><strong>Barium swallow test</strong> &mdash; highlights abnormalities on X-ray</li>
+                                <li><strong>CT or PET scans</strong> &mdash; assess spread to nearby organs or lymph
+                                    nodes</li>
+                                <li><strong>Endoscopic ultrasound (EUS)</strong> &mdash; determines how deep the tumour
+                                    has invaded and checks nearby lymph nodes</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>When is surgery recommended, and what happens during an esophagectomy?</summary>
+                        <div class="details-content">
+                            <p>Surgery is recommended for <strong>early-stage cancer</strong> that is localised and has
+                                not spread, and for <strong>locally advanced cancer</strong>, usually after chemotherapy
+                                or radiation has shrunk the tumour. It may not be an option with significant metastasis
+                                or where other health conditions make major surgery unsafe.</p>
+                            <p>During an <strong>esophagectomy</strong>:</p>
+                            <ul>
+                                <li>The cancerous portion of the esophagus and nearby lymph nodes are removed</li>
+                                <li>The stomach is reshaped into a tube and connected to the remaining esophagus</li>
+                                <li>Sometimes part of the colon or small intestine is used to reconstruct it</li>
+                                <li>Incisions may be made in the neck, chest or abdomen depending on tumour location</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What are the risks of esophageal cancer surgery?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li>Leakage at the surgical connection (anastomotic leak)</li>
+                                <li>Infection or bleeding</li>
+                                <li>Respiratory complications such as pneumonia</li>
+                                <li>Difficulty swallowing or reflux after surgery</li>
+                                <li>Nutritional challenges requiring dietary adjustment</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What is recovery like, and how does it affect eating?</summary>
+                        <div class="details-content">
+                            <p><strong>Recovery:</strong> 7&ndash;10 days in hospital with close monitoring; a liquid or
+                                soft diet at first, with solids reintroduced gradually; medication for pain; light
+                                activity encouraged but no heavy lifting or strenuous exercise for 4&ndash;6 weeks; and
+                                regular follow-up with imaging.</p>
+                            <p><strong>Eating and digestion:</strong> the stomach holds less, so meals need to be smaller
+                                and more frequent; swallowing can be temporarily difficult; reflux or dumping syndrome
+                                may cause nausea, diarrhoea or bloating; and nutritional deficiencies may need
+                                monitoring and supplements. A dietitian will guide you through it.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Will I need other treatments, and can surgery cure the cancer?</summary>
+                        <div class="details-content">
+                            <p>Treatment usually combines several approaches: <strong>neoadjuvant therapy</strong>
+                                (chemotherapy or radiation before surgery to shrink the tumour), <strong>adjuvant
+                                    therapy</strong> afterwards to kill remaining cells, and <strong>targeted therapy or
+                                    immunotherapy</strong> for advanced cases.</p>
+                            <p>Surgery offers the best chance of cure when the cancer is found early and is localised.
+                                Advanced-stage cancers usually need additional therapies to control the disease, and
+                                regular follow-up is essential to detect recurrence.</p>
+                            <p>To prepare: pre-surgical tests including imaging, blood work and nutritional assessment;
+                                quitting smoking and alcohol; optimising nutrition; and emotional readiness through
+                                counselling or support groups.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
+            <!-- ==================== Hospital & visit FAQs ==================== -->
+            <section class="organ" id="hospital">
+                <div class="organ-head" data-aos="fade-up">
+                    <div class="organ-medallion"><i class="fa-solid fa-hospital" style="font-size:1.5rem;"></i></div>
+                    <div>
+                        <span class="organ-kicker">Your visit</span>
+                        <h2>Appointments, Admissions &amp; Emergencies</h2>
+                        <p class="organ-intro">The practical side &mdash; booking, what to bring, insurance, and what to
+                            do when something cannot wait.</p>
                     </div>
-                </details>
-            </div>
+                </div>
 
-            <div class="faq-group" data-aos="fade-up">
-                <h2>Admissions, Billing &amp; Insurance</h2>
+                <div class="faq-sub" id="hp-appointments" data-aos="fade-up">
+                    <h3 class="sub-label">Appointments &amp; visits</h3>
 
-                <details>
-                    <summary>Do you accept health insurance and cashless claims?</summary>
-                    <div class="details-content">
-                        <p>We work with most major insurers and TPAs. Share your policy details at least 48 hours before
-                            a planned admission so pre-authorisation can be cleared in time. For emergencies, the desk
-                            starts the claim while treatment begins.</p>
-                    </div>
-                </details>
+                    <details>
+                        <summary>How do I book an appointment?</summary>
+                        <div class="details-content">
+                            <p>Use the <strong>Book Appointment</strong> button in the header, call
+                                <strong>+91 9211221551</strong>, or write to <strong>info@advityahealthcares.com</strong>.
+                                Our coordinator confirms the slot and tells you what to bring.</p>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>Can I get a cost estimate before admission?</summary>
-                    <div class="details-content">
-                        <p>Yes. Once the treating consultant confirms the plan, the billing desk issues a written
-                            estimate covering surgery, stay, consumables and expected investigations.</p>
-                    </div>
-                </details>
+                    <details>
+                        <summary>What should I bring to my first consultation?</summary>
+                        <div class="details-content">
+                            <ul>
+                                <li>Photo ID and insurance card, if you have one</li>
+                                <li>All previous prescriptions and discharge summaries</li>
+                                <li>Recent scans &mdash; CT, MRI or ultrasound &mdash; including the films or CD, not
+                                    just the report</li>
+                                <li>Blood reports from the last three months</li>
+                            </ul>
+                        </div>
+                    </details>
 
-                <details>
-                    <summary>Do you help outstation families with stay and travel?</summary>
-                    <div class="details-content">
-                        <p>Our patient care coordinators help with nearby accommodation, appointment clustering so fewer
-                            trips are needed, and follow-up by phone once you are home.</p>
-                    </div>
-                </details>
-            </div>
+                    <details>
+                        <summary>Do you offer teleconsultation for outstation patients?</summary>
+                        <div class="details-content">
+                            <p>Yes. If you are travelling from another city, a video review of your reports before you
+                                make the trip is usually the first step. Ask the coordinator when you call.</p>
+                        </div>
+                    </details>
+                </div>
 
-            <div class="faq-group" data-aos="fade-up">
-                <h2>Emergencies</h2>
+                <div class="faq-sub" id="hp-billing" data-aos="fade-up">
+                    <h3 class="sub-label">Admissions, billing &amp; insurance</h3>
 
-                <details>
-                    <summary>What do I do in an emergency?</summary>
-                    <div class="details-content">
-                        <p>Call <strong>+91 9211221551</strong> immediately, or dial the national emergency number. Do not
-                            wait for an appointment — severe abdominal pain with vomiting, fever or jaundice needs to be
-                            seen the same day.</p>
-                    </div>
-                </details>
-            </div>
+                    <details>
+                        <summary>Do you accept health insurance and cashless claims?</summary>
+                        <div class="details-content">
+                            <p>We work with most major insurers and TPAs. Share your policy details at least 48 hours
+                                before a planned admission so pre-authorisation can be cleared in time. For emergencies,
+                                the desk starts the claim while treatment begins.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can I get a cost estimate before admission?</summary>
+                        <div class="details-content">
+                            <p>Yes. Once the treating consultant confirms the plan, the billing desk issues a written
+                                estimate covering surgery, stay, consumables and expected investigations.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Do you help outstation families with stay and travel?</summary>
+                        <div class="details-content">
+                            <p>Our patient care coordinators help with nearby accommodation, appointment clustering so
+                                fewer trips are needed, and follow-up by phone once you are home.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="faq-sub" id="hp-emergency" data-aos="fade-up">
+                    <h3 class="sub-label">Emergencies</h3>
+
+                    <details>
+                        <summary>What do I do in an emergency?</summary>
+                        <div class="details-content">
+                            <p>Call <strong>+91 9211221551</strong> immediately, or dial the national emergency number.
+                                Do not wait for an appointment &mdash; severe abdominal pain with vomiting, fever or
+                                jaundice needs to be seen the same day.</p>
+                        </div>
+                    </details>
+                </div>
+            </section>
 
             <div class="still-asking" data-aos="fade-up">
-                <h3 style="font-size: 1.5rem; margin-bottom: 12px;">Question not answered here?</h3>
-                <p style="color: #555; font-size: 1.08rem; margin-bottom: 20px;">
+                <h3>Question not answered here?</h3>
+                <p style="color: #555; font-size: 1.08rem; margin-bottom: 22px;">
                     Call <strong>+91 9211221551</strong> or write to <strong>info@advityahealthcares.com</strong> and a
                     coordinator will get back to you.
                 </p>
@@ -319,6 +1704,12 @@
                     <i class="fa-regular fa-calendar-check"></i> Book Appointment
                 </a>
             </div>
+
+            <p class="disclaimer">
+                Everything on this page is general patient information, not a diagnosis or a treatment plan. Symptoms
+                overlap between conditions, and only an examination and the right investigations can tell them apart.
+                Please discuss your own symptoms with a doctor.
+            </p>
         </div>
     </section>
 
@@ -391,18 +1782,82 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="nav.js?v=2"></script>
+    <script src="contact-modal.js?v=1"></script>
     <script>
-        AOS.init({ once: true, offset: 100 });
+        AOS.init({ once: true, offset: 80 });
 
-        // Accordion: opening one question closes the others
-        const details = document.querySelectorAll('details');
-        details.forEach(targetDetail => {
-            targetDetail.addEventListener('click', () => {
-                details.forEach(detail => {
-                    if (detail !== targetDetail) detail.removeAttribute('open');
+        // Accordion: opening a question closes the others in the same group
+        document.querySelectorAll('details').forEach(target => {
+            target.addEventListener('toggle', () => {
+                if (!target.open) return;
+                const group = target.closest('.faq-sub') || document;
+                group.querySelectorAll('details[open]').forEach(other => {
+                    if (other !== target) other.removeAttribute('open');
                 });
             });
         });
+
+        // One organ at a time. Selecting a tab swaps the visible section
+        // instead of scrolling past every other organ.
+        const railLinks = Array.from(document.querySelectorAll('.rail-link[data-target]'));
+        const organs = Array.from(document.querySelectorAll('.organ'));
+        const rail = document.querySelector('.organ-rail-inner');
+        const DEFAULT_ORGAN = 'gallbladder';
+
+        function showOrgan(id, opts) {
+            const target = document.getElementById(id);
+            if (!target || !target.classList.contains('organ')) return false;
+
+            organs.forEach(section => section.classList.toggle('is-shown', section === target));
+            railLinks.forEach(link => link.classList.toggle('active', link.dataset.target === id));
+
+            // Collapse anything left open in the section we just left
+            organs.forEach(section => {
+                if (section === target) return;
+                section.querySelectorAll('details[open]').forEach(d => d.removeAttribute('open'));
+            });
+
+            const pill = rail && rail.querySelector('.rail-link.active');
+            if (pill) pill.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+
+            if (opts && opts.scroll) {
+                const anchor = opts.chapter ? document.getElementById(opts.chapter) : target;
+                if (anchor) anchor.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            return true;
+        }
+
+        // Resolve a hash to its organ — either the organ itself or one of its chapters
+        function organFromHash(hash) {
+            const id = (hash || '').replace('#', '');
+            if (!id) return null;
+            const node = document.getElementById(id);
+            if (!node) return null;
+            if (node.classList.contains('organ')) return { organ: id, chapter: null };
+            const parent = node.closest('.organ');
+            return parent ? { organ: parent.id, chapter: id } : null;
+        }
+
+        railLinks.forEach(link => {
+            link.addEventListener('click', event => {
+                event.preventDefault();
+                const id = link.dataset.target;
+                showOrgan(id, { scroll: true });
+                history.replaceState(null, '', '#' + id);
+            });
+        });
+
+        function applyHash(scroll) {
+            const found = organFromHash(location.hash);
+            if (found) {
+                showOrgan(found.organ, { scroll: scroll, chapter: found.chapter });
+            } else {
+                showOrgan(DEFAULT_ORGAN);
+            }
+        }
+
+        applyHash(false);
+        window.addEventListener('hashchange', () => applyHash(true));
     </script>
 </body>
 

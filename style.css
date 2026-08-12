@@ -407,13 +407,6 @@ img {
     display: block;
 }
 
-/* Pancrea Care sub-site nav: six links instead of ten, so it can afford one
-   step above the main nav's 0.92rem without crowding the action buttons. */
-.navbar-pancreas .nav-links a {
-    font-size: 1rem;
-}
-
-
 /* Mega Dropdown (Clinical Services) */
 .dropdown.mega {
     position: static;

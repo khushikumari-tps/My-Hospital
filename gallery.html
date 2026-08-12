@@ -6,110 +6,515 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Advitya Healthcares</title>
     <meta name="description"
-        content="What a healthy pancreas does and why it matters. Understanding the Normal Pancreas: A Q&A Guide.">
+        content="Moments that define our journey — achievements, outreach initiatives, surgical expertise and memorable moments at Advitya Healthcares.">
     <link rel="stylesheet" href="style.css?v=13">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- AOS Animation CSS -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <style>
-        .inner-hero {
-            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 55%, var(--primary-light) 100%);
-            color: white;
-            padding: 120px 0 60px;
+        /* ===================================================================
+           Gallery. Everything is prefixed .agy- so it cannot collide with the
+           shared components in style.css. The palette is taken straight from
+           the logo: deep maroon through red, with the sunburst gold as the
+           highlight, so the page matches the navbar and footer.
+           =================================================================== */
+        :root {
+            --agy-brand: var(--primary-dark);
+            --agy-brand-deep: #8B1014;
+            --agy-brand-light: var(--primary);
+            --agy-gold: var(--accent);
+            --agy-ink: var(--text-main);
+            --agy-muted: var(--text-muted);
+            --agy-line: var(--border-color);
+            --agy-radius: 16px;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        /* ----------------------------- Header ---------------------------- */
+        .agy-head {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            padding: 108px 0 48px;
             text-align: center;
         }
-        .inner-hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: 20px;
-            font-weight: 700;
-        }
-        .inner-hero p {
-            font-size: 1.8rem;
-            opacity: 0.95;
-            font-weight: 500;
-        }
-        
-        .story-section {
-            padding: 60px 0;
-        }
-        
-        .accordion {
-            margin-top: 30px;
+
+        /* Two slow-drifting washes: enough movement to feel alive, never
+           enough to compete with the photographs. */
+        .agy-head::before,
+        .agy-head::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
         }
 
-        details {
-            margin-bottom: 15px;
-            background: #fff;
-            border: 1px solid #F0E4E0;
-            border-radius: 8px;
-            overflow: hidden;
+        .agy-head::before {
+            width: 460px;
+            height: 460px;
+            top: -190px;
+            left: -120px;
+            background: radial-gradient(circle, rgba(255, 179, 71, .26), transparent 70%);
+            animation: agy-drift 17s ease-in-out infinite;
         }
 
-        summary {
-            padding: 18px 20px;
-            font-size: 1.25rem;
-            font-weight: 600;
-            background: #FDF7F5;
-            cursor: pointer;
-            list-style: none;
-            display: flex;
-            justify-content: space-between;
+        .agy-head::after {
+            width: 400px;
+            height: 400px;
+            top: -140px;
+            right: -110px;
+            background: radial-gradient(circle, rgba(201, 66, 57, .16), transparent 70%);
+            animation: agy-drift 21s ease-in-out infinite reverse;
+        }
+
+        @keyframes agy-drift {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(28px, 26px, 0) scale(1.08); }
+        }
+
+        .agy-head .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .agy-eyebrow {
+            display: inline-flex;
             align-items: center;
-            color: var(--primary-dark);
-            transition: background-color 0.3s;
-        }
-        
-        summary:hover {
-            background-color: #FBEFEC;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .24em;
+            text-transform: uppercase;
+            color: var(--agy-brand);
+            margin-bottom: 18px;
         }
 
-        summary::-webkit-details-marker {
+        .agy-eyebrow::before,
+        .agy-eyebrow::after {
+            content: '';
+            width: 30px;
+            height: 1.5px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, transparent, var(--agy-brand-light));
+        }
+
+        .agy-eyebrow::after {
+            background: linear-gradient(90deg, var(--agy-brand-light), transparent);
+        }
+
+        .agy-head h1 {
+            font-size: clamp(2.2rem, 4.6vw, 3.5rem);
+            line-height: 1.08;
+            letter-spacing: -.03em;
+            font-weight: 800;
+            color: var(--agy-ink);
+            margin-bottom: 18px;
+        }
+
+        .agy-head h1 em {
+            font-style: normal;
+            background: linear-gradient(120deg, var(--agy-brand), var(--agy-brand-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .agy-head p {
+            font-size: 1.08rem;
+            line-height: 1.8;
+            color: var(--agy-muted);
+            max-width: 68ch;
+            margin: 0 auto;
+        }
+
+        .agy-rule {
+            width: 62px;
+            height: 3px;
+            margin: 26px auto 0;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--agy-brand), var(--agy-brand-light));
+        }
+
+        /* ----------------------------- Filters --------------------------- */
+        .agy-filterbar {
+            position: sticky;
+            top: 76px;
+            z-index: 30;
+            padding: 16px 0 14px;
+            background: rgba(255, 255, 255, .88);
+            -webkit-backdrop-filter: saturate(150%) blur(12px);
+            backdrop-filter: saturate(150%) blur(12px);
+            border-bottom: 1px solid var(--agy-line);
+        }
+
+        .agy-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .agy-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: .6rem 1.15rem;
+            border-radius: 50px;
+            border: 1px solid var(--agy-line);
+            background: #fff;
+            color: var(--agy-muted);
+            font-family: var(--font-heading);
+            font-size: .9rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color .3s ease, border-color .3s ease, background .3s ease, box-shadow .3s ease, transform .3s ease;
+        }
+
+        .agy-chip:hover {
+            color: var(--agy-brand-deep);
+            border-color: rgba(201, 66, 57, .38);
+            transform: translateY(-2px);
+        }
+
+        .agy-chip.is-active {
+            color: #fff;
+            border-color: transparent;
+            background: linear-gradient(120deg, var(--agy-brand-deep), var(--agy-brand-light));
+            box-shadow: 0 12px 24px -14px rgba(139, 16, 20, .9);
+        }
+
+        .agy-chip-n {
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 20px;
+            background: rgba(201, 66, 57, .1);
+            color: var(--agy-brand-deep);
+        }
+
+        .agy-chip.is-active .agy-chip-n {
+            background: rgba(255, 255, 255, .22);
+            color: #fff;
+        }
+
+        /* ------------------------------ Grid ----------------------------- */
+        .agy-wrap {
+            padding: 46px 0 90px;
+        }
+
+        /* The grid breaks out of the 1200px site container so the tiles can
+           run close to their 1177px native width on a large screen. */
+        .agy-wrap .container {
+            max-width: 1560px;
+        }
+
+        /* Uniform tiles: one 3:4 frame for every card, so each row lines up
+           edge to edge like the source site. */
+        .agy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+            gap: 26px;
+        }
+
+        .agy-card {
+            margin: 0;
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .agy-card.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Filtered-out cards fade before they leave the flow, so the grid
+           reflow reads as a transition rather than a jump. */
+        .agy-card.is-out {
+            opacity: 0;
+            transform: scale(.96);
+        }
+
+        .agy-card.is-gone {
             display: none;
         }
 
-        summary::after {
-            content: '\f078';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            font-size: 1rem;
-            transition: transform 0.3s;
+        .agy-open {
+            position: relative;
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            padding: 0;
+            border: 0;
+            border-radius: var(--agy-radius);
+            overflow: hidden;
+            background: var(--bg-light);
+            cursor: zoom-in;
+            box-shadow: 0 2px 6px rgba(120, 60, 55, .08), 0 12px 26px -20px rgba(120, 60, 55, .45);
+            transition: box-shadow .45s ease, transform .45s cubic-bezier(.22, .61, .36, 1);
         }
 
-        details[open] summary::after {
-            transform: rotate(180deg);
+        .agy-open:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(120, 60, 55, .12), 0 26px 46px -24px rgba(120, 60, 55, .55);
         }
 
-        details[open] summary {
-            border-bottom: 1px solid #F0E4E0;
+        .agy-open:focus-visible {
+            outline: 3px solid var(--agy-brand-light);
+            outline-offset: 3px;
         }
 
-        .details-content {
-            padding: 25px;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: #444;
+        /* The frame owns the size; the photo fills it from the centre. */
+        .agy-card img {
+            display: block;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform .8s cubic-bezier(.22, .61, .36, 1);
         }
-        
-        .details-content ul {
-            padding-left: 20px;
-            margin-top: 10px;
+
+
+        .agy-veil,
+        .agy-cap,
+        .agy-zoom {
+            z-index: 2;
         }
-        
-        .details-content li {
-            margin-bottom: 8px;
+
+        .agy-open:hover img {
+            transform: scale(1.06);
         }
-        
-        .details-content p {
-            margin-bottom: 15px;
+
+        /* A permanent whisper of a scrim keeps the standing label legible on
+           pale photos; hover deepens it for the full caption. */
+        .agy-veil {
+            position: absolute;
+            inset: 0;
+            opacity: .35;
+            background: linear-gradient(to top, rgba(46, 10, 10, .9) 0%, rgba(46, 10, 10, .48) 42%, rgba(46, 10, 10, .05) 100%);
+            transition: opacity .45s ease;
         }
-        
-        .details-content p:last-child {
-            margin-bottom: 0;
+
+        .agy-open:hover .agy-veil,
+        .agy-open:focus-visible .agy-veil {
+            opacity: 1;
+        }
+
+        .agy-cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* The category sits on every tile at rest, as a solid plate so the
+           maroon stays readable whatever the photo behind it is doing. */
+        .agy-cap-eyebrow {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: .68rem;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--agy-brand-deep);
+            background: rgba(255, 255, 255, .95);
+            padding: 7px 13px;
+            border-radius: 50px;
+            box-shadow: 0 6px 16px -8px rgba(46, 10, 10, .65);
+        }
+
+        .agy-zoom {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            font-size: .85rem;
+            color: var(--agy-brand-deep);
+            background: rgba(255, 255, 255, .94);
+            opacity: 0;
+            transform: scale(.8);
+            transition: opacity .4s ease, transform .4s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .agy-open:hover .agy-zoom,
+        .agy-open:focus-visible .agy-zoom {
+            opacity: 1;
+            transform: none;
+        }
+
+        .agy-empty {
+            display: none;
+            text-align: center;
+            color: var(--agy-muted);
+            padding: 40px 0;
+        }
+
+        /* ---------------------------- Lightbox --------------------------- */
+        .agy-lb {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 18px 92px;
+            background: rgba(40, 8, 10, .94);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity .32s ease;
+        }
+
+        .agy-lb.is-open {
+            display: flex;
+        }
+
+        .agy-lb.is-visible {
+            opacity: 1;
+        }
+
+        .agy-lb-fig {
+            margin: 0;
+            max-width: min(1180px, 92vw);
+            transform: scale(.94);
+            opacity: 0;
+            transition: transform .38s cubic-bezier(.22, .61, .36, 1), opacity .38s ease;
+        }
+
+        .agy-lb.is-visible .agy-lb-fig {
+            transform: none;
+            opacity: 1;
+        }
+
+        .agy-lb-fig img {
+            display: block;
+            max-width: 100%;
+            max-height: 78vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .9);
+        }
+
+        .agy-lb-meta {
+            margin-top: 16px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .agy-lb-meta .cat {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--agy-gold);
+            margin-bottom: 6px;
+        }
+
+        .agy-lb-meta .title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .agy-lb-btn {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 52px;
+            height: 52px;
+            border: 1px solid rgba(255, 255, 255, .28);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .1);
+            color: #fff;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: background .3s ease, border-color .3s ease, transform .3s ease;
+        }
+
+        .agy-lb-btn:hover {
+            background: rgba(255, 255, 255, .2);
+            border-color: rgba(255, 255, 255, .55);
+            transform: scale(1.06);
+        }
+
+        .agy-lb-prev { left: 24px; top: 50%; margin-top: -26px; }
+        .agy-lb-next { right: 24px; top: 50%; margin-top: -26px; }
+        .agy-lb-close { top: 22px; right: 24px; }
+
+        .agy-lb-count {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-heading);
+            font-size: .82rem;
+            letter-spacing: .12em;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        /* --------------------------- Responsive -------------------------- */
+        @media (max-width: 1200px) {
+            .agy-grid { grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); }
+        }
+
+        @media (max-width: 900px) {
+            .agy-grid { grid-template-columns: repeat(2, 1fr); }
+            .agy-head { padding: 96px 0 38px; }
+            .agy-filterbar { top: 68px; }
+            .agy-lb { padding: 18px 10px 86px; }
+            .agy-lb-btn { width: 46px; height: 46px; }
+            .agy-lb-prev { left: 10px; }
+            .agy-lb-next { right: 10px; }
+        }
+
+        @media (max-width: 560px) {
+            .agy-grid { grid-template-columns: 1fr; gap: 14px; }
+            .agy-chip { padding: .5rem .85rem; font-size: .82rem; }
+            .agy-lb-fig img { max-height: 68vh; }
+            .agy-veil { background: linear-gradient(to top, rgba(46, 10, 10, .82) 0%, rgba(46, 10, 10, .2) 46%, transparent 78%); }
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+            .agy-card,
+            .agy-open,
+            .agy-card img,
+            .agy-lb,
+            .agy-lb-fig {
+                transition: none;
+                animation: none;
+            }
+
+            .agy-head::before,
+            .agy-head::after {
+                animation: none;
+            }
+
+            .agy-card {
+                opacity: 1;
+                transform: none;
+            }
         }
     </style>
 </head>
@@ -160,10 +565,20 @@
                     </div>
                 </div>
                 <a href="index.html#location" class="nav-loc">Locations</a>
-                <a href="index.html#testimonials">Testimonials</a>
+                <a href="testimonials.html">Testimonials</a>
                 <a href="careers.html">Careers</a>
                 <a href="gallery.html" class="active">Gallery</a>
-                <a href="faqs.html">FAQs</a>
+                <div class="dropdown">
+                    <a href="faqs.html" class="dropbtn">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="pancreas.html">Pancreas</a>
+                        <a href="gallbladder.html">GallBladder</a>
+                        <a href="faqs.html#liver">Liver</a>
+                        <a href="faqs.html#large-intestine">Large Intestine</a>
+                        <a href="faqs.html#stomach">Stomach</a>
+                        <a href="faqs.html#esophagus">Esophagus</a>
+                    </div>
+                </div>
                 <a href="blogs.html">Blogs</a>
                 <a href="index.html#contactModal">Contact us</a>
             </nav>
@@ -181,50 +596,502 @@
         </div>
     </header>
 
-    <!-- Inner Hero Section -->
-    <section class="inner-hero">
+    <!-- Gallery header -->
+    <section class="agy-head">
         <div class="container">
-            <h1 data-aos="fade-up">Our Gallery</h1>
-            <p data-aos="fade-up" data-aos-delay="200">Take a look inside our state-of-the-art facilities</p>
-            <div style="margin-top: 30px; font-size: 1.2rem; opacity: 0.85; font-weight: 500;" data-aos="fade-up" data-aos-delay="400">
-                Home / Gallery
-            </div>
+            <span class="agy-eyebrow">Advitya Healthcares</span>
+            <h1>Moments That Define <em>Our Journey</em></h1>
+            <p>Explore Advitya Healthcares &mdash; our achievements, outreach initiatives, surgical expertise and
+                memorable moments.</p>
+            <div class="agy-rule"></div>
         </div>
     </section>
 
-    <!-- Content Section -->
-    <section class="gallery-section" style="padding: 60px 0;">
+    <!-- Category filters -->
+    <div class="agy-filterbar">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px;">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.01-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.01-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.01-PM-2-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.02-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.03-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.03-PM-2-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.03-PM-576x1024.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.04-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.44.04-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.47.54-PM-1024x768.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.47.59-PM-1-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.48.00-PM-1024x576.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-26-at-10.49.43-PM-1024x768.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-27-at-11.17.29-PM-1-808x1024.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/08/WhatsApp-Image-2025-08-27-at-11.17.29-PM-785x1024.jpeg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
-                <img style="width: 100%; height: 250px; object-fit: cover; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.3s ease;" src="https://advityahealthcares.com/wp-content/uploads/2025/09/Untitled-design-2.jpg" alt="Advitya Healthcare Facility" onmouseover="this.style.transform='scale(1.03)'" onmouseout="this.style.transform='scale(1)'">
+            <div class="agy-filters" role="group" aria-label="Filter gallery by category">
+                <button class="agy-chip is-active" type="button" data-filter="all">All<span class="agy-chip-n">40</span></button>
+                <button class="agy-chip" type="button" data-filter="ihpba-2026">IHPBA India 2026<span class="agy-chip-n">4</span></button>
+                <button class="agy-chip" type="button" data-filter="achievements">Our Achievements<span class="agy-chip-n">4</span></button>
+                <button class="agy-chip" type="button" data-filter="gi-camp">GI Camp at Jharkhand, Ghaghra<span class="agy-chip-n">13</span></button>
+                <button class="agy-chip" type="button" data-filter="outreach">Our Outreach Programmes<span class="agy-chip-n">5</span></button>
+                <button class="agy-chip" type="button" data-filter="surgeons">Surgeons in Action<span class="agy-chip-n">4</span></button>
+                <button class="agy-chip" type="button" data-filter="biliary">Complex Biliary Surgery<span class="agy-chip-n">4</span></button>
+                <button class="agy-chip" type="button" data-filter="pancreatic">Complex Pancreatic Surgery<span class="agy-chip-n">6</span></button>
             </div>
+        </div>
+    </div>
+
+    <!-- Masonry grid -->
+    <section class="agy-wrap">
+        <div class="container">
+            <div class="agy-grid" id="agyGrid">
+                <figure class="agy-card" data-cat="ihpba-2026" data-index="0">
+                    <button class="agy-open" type="button" aria-label="Open image: Academic presence at IHPBA India 2026">
+                        <img src="image/gallery/ihpba-2026-01.webp" alt="Academic presence at IHPBA India 2026 &mdash; Advitya Healthcares" width="960" height="1280"
+                            loading="eager" decoding="async" fetchpriority="high">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">IHPBA India 2026</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="ihpba-2026" data-index="1">
+                    <button class="agy-open" type="button" aria-label="Open image: Academic presence at IHPBA India 2026">
+                        <img src="image/gallery/ihpba-2026-02.webp" alt="Academic presence at IHPBA India 2026 &mdash; Advitya Healthcares" width="959" height="784"
+                            loading="eager" decoding="async" fetchpriority="high">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">IHPBA India 2026</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="ihpba-2026" data-index="2">
+                    <button class="agy-open" type="button" aria-label="Open image: Academic presence at IHPBA India 2026">
+                        <img src="image/gallery/ihpba-2026-03.webp" alt="Academic presence at IHPBA India 2026 &mdash; Advitya Healthcares" width="960" height="811"
+                            loading="eager" decoding="async" fetchpriority="high">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">IHPBA India 2026</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="ihpba-2026" data-index="3">
+                    <button class="agy-open" type="button" aria-label="Open image: Academic presence at IHPBA India 2026">
+                        <img src="image/gallery/ihpba-2026-04.webp" alt="Academic presence at IHPBA India 2026 &mdash; Advitya Healthcares" width="960" height="716"
+                            loading="eager" decoding="async" fetchpriority="high">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">IHPBA India 2026</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="achievements" data-index="4">
+                    <button class="agy-open" type="button" aria-label="Open image: Recognition and milestones">
+                        <img src="image/gallery/achievements-01.jpg" alt="Recognition and milestones &mdash; Advitya Healthcares" width="600" height="848"
+                            loading="eager" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Achievements</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="achievements" data-index="5">
+                    <button class="agy-open" type="button" aria-label="Open image: Recognition and milestones">
+                        <img src="image/gallery/achievements-02.jpeg" alt="Recognition and milestones &mdash; Advitya Healthcares" width="880" height="1148"
+                            loading="eager" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Achievements</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="achievements" data-index="6">
+                    <button class="agy-open" type="button" aria-label="Open image: Recognition and milestones">
+                        <img src="image/gallery/achievements-03.jpeg" alt="Recognition and milestones &mdash; Advitya Healthcares" width="1263" height="1600"
+                            loading="eager" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Achievements</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="achievements" data-index="7">
+                    <button class="agy-open" type="button" aria-label="Open image: Recognition and milestones">
+                        <img src="image/gallery/achievements-04.jpeg" alt="Recognition and milestones &mdash; Advitya Healthcares" width="1104" height="631"
+                            loading="eager" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Achievements</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="8">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-01.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="960"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="9">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-02.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="10">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-03.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="11">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-04.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="12">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-05.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="13">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-06.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="960"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="14">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-07.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="15">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-08.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="16">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-09.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="720" height="1280"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="17">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-10.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="18">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-11.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="19">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-12.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="gi-camp" data-index="20">
+                    <button class="agy-open" type="button" aria-label="Open image: Community GI camp in Ghaghra">
+                        <img src="image/gallery/gi-camp-13.jpeg" alt="Community GI camp in Ghaghra &mdash; Advitya Healthcares" width="1280" height="720"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">GI Camp at Jharkhand, Ghaghra</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="outreach" data-index="21">
+                    <button class="agy-open" type="button" aria-label="Open image: Outreach programme in the field">
+                        <img src="image/gallery/outreach-01.webp" alt="Outreach programme in the field &mdash; Advitya Healthcares" width="1040" height="780"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Outreach Programmes</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="outreach" data-index="22">
+                    <button class="agy-open" type="button" aria-label="Open image: Outreach programme in the field">
+                        <img src="image/gallery/outreach-02.webp" alt="Outreach programme in the field &mdash; Advitya Healthcares" width="1599" height="899"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Outreach Programmes</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="outreach" data-index="23">
+                    <button class="agy-open" type="button" aria-label="Open image: Outreach programme in the field">
+                        <img src="image/gallery/outreach-03.webp" alt="Outreach programme in the field &mdash; Advitya Healthcares" width="1599" height="899"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Outreach Programmes</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="outreach" data-index="24">
+                    <button class="agy-open" type="button" aria-label="Open image: Outreach programme in the field">
+                        <img src="image/gallery/outreach-04.webp" alt="Outreach programme in the field &mdash; Advitya Healthcares" width="1599" height="899"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Outreach Programmes</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="outreach" data-index="25">
+                    <button class="agy-open" type="button" aria-label="Open image: Outreach programme in the field">
+                        <img src="image/gallery/outreach-05.webp" alt="Outreach programme in the field &mdash; Advitya Healthcares" width="1599" height="899"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Our Outreach Programmes</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="surgeons" data-index="26">
+                    <button class="agy-open" type="button" aria-label="Open image: Inside the operating room">
+                        <img src="image/gallery/surgeons-01.webp" alt="Inside the operating room &mdash; Advitya Healthcares" width="717" height="538"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Surgeons in Action</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="surgeons" data-index="27">
+                    <button class="agy-open" type="button" aria-label="Open image: Inside the operating room">
+                        <img src="image/gallery/surgeons-02.webp" alt="Inside the operating room &mdash; Advitya Healthcares" width="717" height="538"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Surgeons in Action</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="surgeons" data-index="28">
+                    <button class="agy-open" type="button" aria-label="Open image: Inside the operating room">
+                        <img src="image/gallery/surgeons-03.webp" alt="Inside the operating room &mdash; Advitya Healthcares" width="700" height="933"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Surgeons in Action</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="surgeons" data-index="29">
+                    <button class="agy-open" type="button" aria-label="Open image: Inside the operating room">
+                        <img src="image/gallery/surgeons-04.webp" alt="Inside the operating room &mdash; Advitya Healthcares" width="2822" height="2117"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Surgeons in Action</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="biliary" data-index="30">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex biliary procedure">
+                        <img src="image/gallery/biliary-01.webp" alt="Complex biliary procedure &mdash; Advitya Healthcares" width="2117" height="2822"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Biliary Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="biliary" data-index="31">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex biliary procedure">
+                        <img src="image/gallery/biliary-02.webp" alt="Complex biliary procedure &mdash; Advitya Healthcares" width="1343" height="1882"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Biliary Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="biliary" data-index="32">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex biliary procedure">
+                        <img src="image/gallery/biliary-03.webp" alt="Complex biliary procedure &mdash; Advitya Healthcares" width="2822" height="2117"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Biliary Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="biliary" data-index="33">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex biliary procedure">
+                        <img src="image/gallery/biliary-04.webp" alt="Complex biliary procedure &mdash; Advitya Healthcares" width="2117" height="2822"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Biliary Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="pancreatic" data-index="34">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex pancreatic procedure">
+                        <img src="image/gallery/pancreatic-01.webp" alt="Complex pancreatic procedure &mdash; Advitya Healthcares" width="800" height="1125"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Pancreatic Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="pancreatic" data-index="35">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex pancreatic procedure">
+                        <img src="image/gallery/pancreatic-02.webp" alt="Complex pancreatic procedure &mdash; Advitya Healthcares" width="1512" height="2016"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Pancreatic Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="pancreatic" data-index="36">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex pancreatic procedure">
+                        <img src="image/gallery/pancreatic-03.webp" alt="Complex pancreatic procedure &mdash; Advitya Healthcares" width="1512" height="2016"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Pancreatic Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="pancreatic" data-index="37">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex pancreatic procedure">
+                        <img src="image/gallery/pancreatic-04.webp" alt="Complex pancreatic procedure &mdash; Advitya Healthcares" width="1024" height="768"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Pancreatic Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="pancreatic" data-index="38">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex pancreatic procedure">
+                        <img src="image/gallery/pancreatic-05.webp" alt="Complex pancreatic procedure &mdash; Advitya Healthcares" width="2016" height="1512"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Pancreatic Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+                <figure class="agy-card" data-cat="pancreatic" data-index="39">
+                    <button class="agy-open" type="button" aria-label="Open image: Complex pancreatic procedure">
+                        <img src="image/gallery/pancreatic-06.webp" alt="Complex pancreatic procedure &mdash; Advitya Healthcares" width="2016" height="1512"
+                            loading="lazy" decoding="async">
+                        <span class="agy-veil"></span>
+                        <figcaption class="agy-cap">
+                            <span class="agy-cap-eyebrow">Complex Pancreatic Surgery</span>
+                        </figcaption>
+                        <span class="agy-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </figure>
+            </div>
+            <p class="agy-empty" id="agyEmpty">No images in this category yet.</p>
         </div>
     </section>
 
-    <!-- Call to Action Section -->
-    <section class="bg-primary text-white" style="padding: 60px 0; text-align: center;">
-        <div class="container">
-            <h2 style="margin-bottom: 15px; font-size: 2.5rem;">To Book an Appointment, Please Contact:</h2>
-            <h3 style="margin-bottom: 30px; font-size: 2rem;">+91 9711669119, +91 9355661973, +91 7042410785</h3>
-            <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact us for any query !</p>
-            <a href="index.html#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; font-weight: 600;">Contact Us</a>
-        </div>
-    </section>
+    <!-- Lightbox -->
+    <div class="agy-lb" id="agyLb" role="dialog" aria-modal="true" aria-label="Gallery image viewer">
+        <button class="agy-lb-btn agy-lb-close" type="button" id="agyClose" aria-label="Close viewer">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <button class="agy-lb-btn agy-lb-prev" type="button" id="agyPrev" aria-label="Previous image">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+        <button class="agy-lb-btn agy-lb-next" type="button" id="agyNext" aria-label="Next image">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <figure class="agy-lb-fig">
+            <img id="agyLbImg" src="" alt="">
+            <figcaption class="agy-lb-meta">
+                <span class="cat" id="agyLbCat"></span>
+                <span class="title" id="agyLbTitle"></span>
+            </figcaption>
+        </figure>
+        <div class="agy-lb-count" id="agyLbCount"></div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
@@ -290,28 +1157,158 @@
         </a>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
-        AOS.init({
-            once: true,
-            offset: 100
-        });
+        var AGY_IMAGES = [{"src": "image/gallery/ihpba-2026-01.webp", "cat": "IHPBA India 2026", "title": "Academic presence at IHPBA India 2026", "slug": "ihpba-2026", "w": 960, "h": 1280}, {"src": "image/gallery/ihpba-2026-02.webp", "cat": "IHPBA India 2026", "title": "Academic presence at IHPBA India 2026", "slug": "ihpba-2026", "w": 959, "h": 784}, {"src": "image/gallery/ihpba-2026-03.webp", "cat": "IHPBA India 2026", "title": "Academic presence at IHPBA India 2026", "slug": "ihpba-2026", "w": 960, "h": 811}, {"src": "image/gallery/ihpba-2026-04.webp", "cat": "IHPBA India 2026", "title": "Academic presence at IHPBA India 2026", "slug": "ihpba-2026", "w": 960, "h": 716}, {"src": "image/gallery/achievements-01.jpg", "cat": "Our Achievements", "title": "Recognition and milestones", "slug": "achievements", "w": 600, "h": 848}, {"src": "image/gallery/achievements-02.jpeg", "cat": "Our Achievements", "title": "Recognition and milestones", "slug": "achievements", "w": 880, "h": 1148}, {"src": "image/gallery/achievements-03.jpeg", "cat": "Our Achievements", "title": "Recognition and milestones", "slug": "achievements", "w": 1263, "h": 1600}, {"src": "image/gallery/achievements-04.jpeg", "cat": "Our Achievements", "title": "Recognition and milestones", "slug": "achievements", "w": 1104, "h": 631}, {"src": "image/gallery/gi-camp-01.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 960}, {"src": "image/gallery/gi-camp-02.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-03.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-04.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-05.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-06.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 960}, {"src": "image/gallery/gi-camp-07.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-08.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-09.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 720, "h": 1280}, {"src": "image/gallery/gi-camp-10.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-11.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-12.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/gi-camp-13.jpeg", "cat": "GI Camp at Jharkhand, Ghaghra", "title": "Community GI camp in Ghaghra", "slug": "gi-camp", "w": 1280, "h": 720}, {"src": "image/gallery/outreach-01.webp", "cat": "Our Outreach Programmes", "title": "Outreach programme in the field", "slug": "outreach", "w": 1040, "h": 780}, {"src": "image/gallery/outreach-02.webp", "cat": "Our Outreach Programmes", "title": "Outreach programme in the field", "slug": "outreach", "w": 1599, "h": 899}, {"src": "image/gallery/outreach-03.webp", "cat": "Our Outreach Programmes", "title": "Outreach programme in the field", "slug": "outreach", "w": 1599, "h": 899}, {"src": "image/gallery/outreach-04.webp", "cat": "Our Outreach Programmes", "title": "Outreach programme in the field", "slug": "outreach", "w": 1599, "h": 899}, {"src": "image/gallery/outreach-05.webp", "cat": "Our Outreach Programmes", "title": "Outreach programme in the field", "slug": "outreach", "w": 1599, "h": 899}, {"src": "image/gallery/surgeons-01.webp", "cat": "Surgeons in Action", "title": "Inside the operating room", "slug": "surgeons", "w": 717, "h": 538}, {"src": "image/gallery/surgeons-02.webp", "cat": "Surgeons in Action", "title": "Inside the operating room", "slug": "surgeons", "w": 717, "h": 538}, {"src": "image/gallery/surgeons-03.webp", "cat": "Surgeons in Action", "title": "Inside the operating room", "slug": "surgeons", "w": 700, "h": 933}, {"src": "image/gallery/surgeons-04.webp", "cat": "Surgeons in Action", "title": "Inside the operating room", "slug": "surgeons", "w": 2822, "h": 2117}, {"src": "image/gallery/biliary-01.webp", "cat": "Complex Biliary Surgery", "title": "Complex biliary procedure", "slug": "biliary", "w": 2117, "h": 2822}, {"src": "image/gallery/biliary-02.webp", "cat": "Complex Biliary Surgery", "title": "Complex biliary procedure", "slug": "biliary", "w": 1343, "h": 1882}, {"src": "image/gallery/biliary-03.webp", "cat": "Complex Biliary Surgery", "title": "Complex biliary procedure", "slug": "biliary", "w": 2822, "h": 2117}, {"src": "image/gallery/biliary-04.webp", "cat": "Complex Biliary Surgery", "title": "Complex biliary procedure", "slug": "biliary", "w": 2117, "h": 2822}, {"src": "image/gallery/pancreatic-01.webp", "cat": "Complex Pancreatic Surgery", "title": "Complex pancreatic procedure", "slug": "pancreatic", "w": 800, "h": 1125}, {"src": "image/gallery/pancreatic-02.webp", "cat": "Complex Pancreatic Surgery", "title": "Complex pancreatic procedure", "slug": "pancreatic", "w": 1512, "h": 2016}, {"src": "image/gallery/pancreatic-03.webp", "cat": "Complex Pancreatic Surgery", "title": "Complex pancreatic procedure", "slug": "pancreatic", "w": 1512, "h": 2016}, {"src": "image/gallery/pancreatic-04.webp", "cat": "Complex Pancreatic Surgery", "title": "Complex pancreatic procedure", "slug": "pancreatic", "w": 1024, "h": 768}, {"src": "image/gallery/pancreatic-05.webp", "cat": "Complex Pancreatic Surgery", "title": "Complex pancreatic procedure", "slug": "pancreatic", "w": 2016, "h": 1512}, {"src": "image/gallery/pancreatic-06.webp", "cat": "Complex Pancreatic Surgery", "title": "Complex pancreatic procedure", "slug": "pancreatic", "w": 2016, "h": 1512}];
 
-        // Add auto-close behavior to details/summary accordions
-        const details = document.querySelectorAll('details');
-        details.forEach(targetDetail => {
-            targetDetail.addEventListener('click', () => {
-                // Close all other details elements
-                details.forEach(detail => {
-                    if (detail !== targetDetail) {
-                        detail.removeAttribute('open');
+        (function () {
+            var grid = document.getElementById('agyGrid');
+            var cards = Array.prototype.slice.call(grid.querySelectorAll('.agy-card'));
+            var empty = document.getElementById('agyEmpty');
+            var chips = Array.prototype.slice.call(document.querySelectorAll('.agy-chip'));
+            var filter = 'all';
+
+            /* ---------------------- scroll reveal ---------------------- */
+            if ('IntersectionObserver' in window) {
+                var io = new IntersectionObserver(function (entries) {
+                    entries.forEach(function (e) {
+                        if (!e.isIntersecting) return;
+                        e.target.classList.add('is-in');
+                        io.unobserve(e.target);
+                    });
+                }, { rootMargin: '0px 0px -6% 0px' });
+                cards.forEach(function (c) { io.observe(c); });
+            } else {
+                cards.forEach(function (c) { c.classList.add('is-in'); });
+            }
+
+            /* ------------------------- filtering ------------------------ */
+            function apply(next) {
+                filter = next;
+                var shown = 0;
+
+                cards.forEach(function (card) {
+                    var match = filter === 'all' || card.dataset.cat === filter;
+                    if (match) shown++;
+
+                    if (match) {
+                        card.classList.remove('is-gone');
+                        // Next frame, so the browser sees display change first
+                        // and the fade-in actually animates.
+                        requestAnimationFrame(function () {
+                            card.classList.remove('is-out');
+                            card.classList.add('is-in');
+                        });
+                    } else {
+                        card.classList.add('is-out');
+                        setTimeout(function () {
+                            if (filter === 'all' || card.dataset.cat === filter) return;
+                            card.classList.add('is-gone');
+                        }, 260);
                     }
                 });
-            });
-        });
 
+                empty.style.display = shown ? 'none' : 'block';
+            }
+
+            chips.forEach(function (chip) {
+                chip.addEventListener('click', function () {
+                    chips.forEach(function (c) { c.classList.remove('is-active'); });
+                    chip.classList.add('is-active');
+                    apply(chip.dataset.filter);
+                });
+            });
+
+            /* ------------------------- lightbox ------------------------- */
+            var lb = document.getElementById('agyLb');
+            var lbImg = document.getElementById('agyLbImg');
+            var lbCat = document.getElementById('agyLbCat');
+            var lbTitle = document.getElementById('agyLbTitle');
+            var lbCount = document.getElementById('agyLbCount');
+            var current = 0;
+            var opener = null;
+
+            // Only the images the active filter shows take part in prev/next,
+            // so navigation matches what the visitor is looking at.
+            function visible() {
+                return AGY_IMAGES
+                    .map(function (im, i) { return { im: im, i: i }; })
+                    .filter(function (r) { return filter === 'all' || r.im.slug === filter; });
+            }
+
+            function show(index) {
+                var im = AGY_IMAGES[index];
+                if (!im) return;
+                current = index;
+                lbImg.src = im.src;
+                lbImg.alt = im.title + ' — Advitya Healthcares';
+                lbImg.width = im.w;
+                lbImg.height = im.h;
+                lbCat.textContent = im.cat;
+                lbTitle.textContent = im.title;
+
+                var list = visible();
+                var pos = list.findIndex(function (r) { return r.i === index; });
+                lbCount.textContent = (pos + 1) + ' / ' + list.length;
+            }
+
+            function step(dir) {
+                var list = visible();
+                if (!list.length) return;
+                var pos = list.findIndex(function (r) { return r.i === current; });
+                var nextPos = (pos + dir + list.length) % list.length;
+                show(list[nextPos].i);
+            }
+
+            function open(index, trigger) {
+                opener = trigger || null;
+                show(index);
+                lb.classList.add('is-open');
+                document.body.style.overflow = 'hidden';
+                requestAnimationFrame(function () { lb.classList.add('is-visible'); });
+                document.getElementById('agyClose').focus();
+            }
+
+            function close() {
+                lb.classList.remove('is-visible');
+                document.body.style.overflow = '';
+                setTimeout(function () {
+                    lb.classList.remove('is-open');
+                    lbImg.src = '';
+                    if (opener) opener.focus();
+                }, 300);
+            }
+
+            cards.forEach(function (card) {
+                card.querySelector('.agy-open').addEventListener('click', function () {
+                    open(parseInt(card.dataset.index, 10), this);
+                });
+            });
+
+            document.getElementById('agyClose').addEventListener('click', close);
+            document.getElementById('agyPrev').addEventListener('click', function () { step(-1); });
+            document.getElementById('agyNext').addEventListener('click', function () { step(1); });
+            lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+
+            document.addEventListener('keydown', function (e) {
+                if (!lb.classList.contains('is-open')) return;
+                if (e.key === 'Escape') close();
+                else if (e.key === 'ArrowLeft') step(-1);
+                else if (e.key === 'ArrowRight') step(1);
+            });
+
+            // Swipe between images on touch devices
+            var x0 = null;
+            lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+            lb.addEventListener('touchend', function (e) {
+                if (x0 === null) return;
+                var dx = e.changedTouches[0].clientX - x0;
+                if (Math.abs(dx) > 55) step(dx < 0 ? 1 : -1);
+                x0 = null;
+            }, { passive: true });
+        })();
     </script>
     <script src="nav.js?v=2"></script>
+    <script src="contact-modal.js?v=1"></script>
 </body>
+
 </html>

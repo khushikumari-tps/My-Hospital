@@ -1,0 +1,3219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallbladder &amp; Biliary Care | Advitya Healthcares</title>
+    <meta name="description" content="Expert gallbladder and biliary care — gallstones, cholecystitis, polyps, gallbladder cancer, bile duct injuries and cholangiocarcinoma. Laparoscopic and robotic surgery, ERCP, MRCP and specialist bile duct reconstruction.">
+    <link rel="stylesheet" href="style.css?v=13">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ============================================================
+           PancreaCare — premium clinical theme
+           Drawn from the Advitya mark: deep maroon base, crimson-to-coral
+           gradient (the triangle), warm coral highlights (the rays), on white.
+           Neutrals are warmed to sit with the brand rather than fight it.
+           ============================================================ */
+        .pcare {
+            --brand-900: #5A0A0E;
+            --brand-800: #7C1218;
+            --brand-700: #9E1F2B;
+            --brand-600: #C04050;
+            --brand-500: #E06050;
+            --accent-400: #F08060;
+            --accent-200: #F4CDC3;
+            --accent-100: #FBE5DE;
+            --accent-050: #FDF5F2;
+            --ink: #2B1A18;
+            --ink-soft: #6B534F;
+            --ink-mute: #99807B;
+            --line: #F0DED8;
+            --white: #FFFFFF;
+
+            --sh-xs: 0 1px 2px rgba(90, 10, 14, .05);
+            --sh-sm: 0 4px 14px -6px rgba(90, 10, 14, .12);
+            --sh-md: 0 14px 34px -14px rgba(90, 10, 14, .22);
+            --sh-lg: 0 30px 60px -24px rgba(90, 10, 14, .3);
+            --sh-brand: 0 16px 34px -14px rgba(158, 31, 43, .55);
+
+            --r-sm: 12px;
+            --r-md: 18px;
+            --r-lg: 26px;
+            --r-xl: 34px;
+
+            --ease: cubic-bezier(.22, .61, .36, 1);
+
+            font-family: var(--font-sans);
+            color: var(--ink);
+            background: var(--white);
+        }
+
+        .pcare *,
+        .pcare *::before,
+        .pcare *::after {
+            box-sizing: border-box;
+        }
+
+        .pc-wrap {
+            width: min(1180px, 92vw);
+            margin-inline: auto;
+        }
+
+        .pcare section {
+            padding: clamp(64px, 8vw, 112px) 0;
+        }
+
+        .pcare h1,
+        .pcare h2,
+        .pcare h3,
+        .pcare h4 {
+            font-family: var(--font-heading);
+            color: var(--ink);
+            letter-spacing: -.02em;
+            line-height: 1.15;
+        }
+
+        .pcare p {
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+
+        /* ---------- shared heading block ---------- */
+        .pc-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 16px;
+            border-radius: 999px;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-600);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .pc-eyebrow i {
+            font-size: .8em;
+        }
+
+        .pc-head {
+            max-width: 720px;
+        }
+
+        .pc-head.is-center {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .pc-head h2 {
+            font-size: clamp(1.9rem, 3.4vw, 2.85rem);
+            font-weight: 700;
+            margin: 18px 0 16px;
+        }
+
+        .pc-head p {
+            font-size: clamp(1rem, 1.3vw, 1.1rem);
+        }
+
+        /* ---------- buttons ---------- */
+        .pc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 28px;
+            border-radius: 999px;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease), background-color .3s, color .3s, border-color .3s;
+        }
+
+        .pc-btn-primary {
+            background: linear-gradient(135deg, var(--brand-700), var(--brand-500));
+            color: #fff;
+            box-shadow: var(--sh-brand);
+        }
+
+        .pc-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 44px -16px rgba(158, 31, 43, .7);
+        }
+
+        .pc-btn-ghost {
+            background: rgba(255, 255, 255, .72);
+            color: var(--brand-800);
+            border-color: var(--accent-200);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .pc-btn-ghost:hover {
+            transform: translateY(-3px);
+            background: #fff;
+            border-color: var(--brand-500);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-btn-light {
+            background: #fff;
+            color: var(--brand-800);
+        }
+
+        .pc-btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 44px -18px rgba(0, 0, 0, .45);
+        }
+
+        .pc-btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255, 255, 255, .5);
+        }
+
+        .pc-btn-outline-light:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, .12);
+            border-color: #fff;
+        }
+
+        /* ============================ 1. HERO ============================ */
+        .pc-hero {
+            position: relative;
+            padding: clamp(130px, 15vw, 175px) 0 clamp(70px, 8vw, 110px);
+            background:
+                radial-gradient(1100px 620px at 82% 12%, #FCEBE5 0%, rgba(227, 243, 248, 0) 62%),
+                radial-gradient(820px 520px at 8% 88%, #FDF1EC 0%, rgba(234, 246, 250, 0) 60%),
+                linear-gradient(180deg, #FFFCFB 0%, #FDF6F3 100%);
+            overflow: hidden;
+        }
+
+        .pc-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Rays radiating from the top, echoing the sunburst above the mark */
+            background: repeating-conic-gradient(from -97deg at 50% -14%,
+                    rgba(158, 31, 43, .07) 0deg 1.1deg,
+                    transparent 1.1deg 14deg);
+            mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
+            pointer-events: none;
+        }
+
+        .pc-hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: clamp(32px, 5vw, 68px);
+            align-items: center;
+        }
+
+        .pc-hero h1 {
+            font-size: clamp(2.25rem, 4.6vw, 3.8rem);
+            font-weight: 700;
+            margin: 22px 0 20px;
+        }
+
+        .pc-hero h1 .accent {
+            background: linear-gradient(120deg, var(--brand-700), var(--accent-400));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pc-hero-sub {
+            font-size: clamp(1.02rem, 1.4vw, 1.16rem);
+            max-width: 54ch;
+        }
+
+        .pc-hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 34px;
+        }
+
+        .pc-hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 30px;
+            margin-top: 38px;
+            padding-top: 28px;
+            border-top: 1px solid var(--line);
+        }
+
+        .pc-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-size: .93rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+        }
+
+        .pc-trust-item i {
+            color: var(--brand-500);
+            font-size: 1.05rem;
+        }
+
+        /* hero visual */
+        .pc-hero-visual {
+            position: relative;
+        }
+
+        .pc-visual-stage {
+            position: relative;
+            border-radius: var(--r-xl);
+            padding: 26px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, .82), rgba(253, 240, 235, .55));
+            border: 1px solid rgba(255, 255, 255, .85);
+            box-shadow: var(--sh-lg);
+            -webkit-backdrop-filter: blur(18px);
+            backdrop-filter: blur(18px);
+        }
+
+        .pc-visual-stage::after {
+            content: '';
+            position: absolute;
+            inset: -22%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(240, 128, 96, .3), transparent 62%);
+            filter: blur(46px);
+        }
+
+        @keyframes pcFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+
+        /* ============================ 3. CONDITIONS ============================ */
+        .pc-soft {
+            background: linear-gradient(180deg, #FDF8F6 0%, #FBEFEA 100%);
+        }
+
+        .pc-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 22px;
+            margin-top: 52px;
+        }
+
+        .pc-card {
+            position: relative;
+            padding: 30px 28px 28px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--sh-xs);
+            overflow: hidden;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s var(--ease);
+        }
+
+        .pc-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* ---- dimensional pancreas illustrations ---- */
+        .pc-card-viz {
+            position: relative;
+            display: grid;
+            place-items: center;
+            height: 176px;
+            margin-bottom: 22px;
+            padding: 12px;
+            border-radius: 18px;
+            background:
+                radial-gradient(120% 90% at 50% 115%, rgba(240, 128, 96, .16), transparent 62%),
+                linear-gradient(150deg, var(--accent-050), #fff);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: border-color .45s, background-color .45s;
+        }
+
+        .pc-card:hover .pc-card-viz {
+            border-color: var(--accent-200);
+        }
+
+        .pc-card-viz img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            transition: transform .55s var(--ease);
+        }
+
+        /* 3D zoom — slow push-in with a parallax tilt, as a CapCut-style Ken Burns move */
+        .pc-card-viz.is-zoom3d {
+            perspective: 900px;
+            perspective-origin: 50% 45%;
+        }
+
+        .pc-card-viz.is-zoom3d img {
+            transform-style: preserve-3d;
+            animation: vizZoom3d 16s ease-in-out infinite;
+        }
+
+        .pc-card:hover .pc-card-viz.is-zoom3d img {
+            animation-play-state: paused;
+            transform: perspective(900px) translateZ(46px) scale(1.02);
+        }
+
+        @keyframes vizZoom3d {
+            0% {
+                transform: perspective(900px) translateZ(0) rotateY(0deg) scale(1);
+            }
+
+            35% {
+                transform: perspective(900px) translateZ(38px) rotateY(2.2deg) scale(1.015);
+            }
+
+            65% {
+                transform: perspective(900px) translateZ(52px) rotateY(-1.8deg) scale(1.03);
+            }
+
+            100% {
+                transform: perspective(900px) translateZ(0) rotateY(0deg) scale(1);
+            }
+        }
+        .pc-card-viz.is-photo {
+            padding: 0;
+        }
+
+        .pc-card-viz.is-photo img {
+            width: 100%;
+            height: 100%;
+            max-width: none;
+            max-height: none;
+            object-fit: cover;
+            mix-blend-mode: normal;
+        }
+        .pc-card:hover .pc-card-viz img {
+            transform: scale(1.05);
+        }
+        .pc-card h3 {
+            font-size: 1.16rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pc-card p {
+            font-size: .96rem;
+            line-height: 1.7;
+        }
+
+        .pc-tag {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: .74rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            background: var(--accent-050);
+            color: var(--brand-600);
+            border: 1px solid var(--line);
+        }
+
+        /* ============================ 4. WARNING SIGNS ============================ */
+        .pc-signs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 52px;
+        }
+
+        .pc-sign {
+            display: flex;
+            gap: 16px;
+            padding: 24px 22px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s;
+        }
+
+        .pc-sign:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-sign i {
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: linear-gradient(140deg, var(--brand-800), var(--brand-600));
+            color: #fff;
+            font-size: 1.05rem;
+        }
+
+        .pc-sign h4 {
+            font-size: 1.02rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .pc-sign p {
+            font-size: .9rem;
+            line-height: 1.62;
+            margin: 0;
+        }
+
+        .pc-alert {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-top: 34px;
+            padding: 22px 26px;
+            border-radius: var(--r-md);
+            background: linear-gradient(120deg, #FFF7ED, #FFFDF9);
+            border: 1px solid #F3DDBE;
+        }
+
+        .pc-alert i {
+            color: #C87A18;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .pc-alert p {
+            margin: 0;
+            font-size: .97rem;
+            color: #6B5127;
+        }
+
+        /* ============================ 5. PATHWAY ============================ */
+        .pc-path {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+            gap: 16px;
+            margin-top: 54px;
+            counter-reset: step;
+        }
+
+        .pc-step {
+            position: relative;
+            padding: 28px 22px 26px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .6s var(--ease), transform .6s var(--ease), box-shadow .4s, border-color .4s;
+        }
+
+        .pc-step.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .pc-step:hover {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-step-n {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: .95rem;
+            color: #fff;
+            background: linear-gradient(140deg, var(--brand-800), var(--brand-500));
+            box-shadow: var(--sh-brand);
+        }
+
+        .pc-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pc-step p {
+            font-size: .87rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pc-step::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 46px;
+            right: -13px;
+            font-size: .8rem;
+            color: var(--accent-200);
+            z-index: 2;
+        }
+
+        .pc-step:last-child::after {
+            display: none;
+        }
+
+        /* ============================ 6. TREATMENTS ============================ */
+        .pc-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 52px;
+        }
+
+        .pc-treat {
+            position: relative;
+            padding: 28px 24px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-treat:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-500);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-treat i {
+            display: block;
+            font-size: 1.35rem;
+            color: var(--brand-600);
+            margin-bottom: 16px;
+            transition: transform .45s var(--ease);
+        }
+
+        .pc-treat:hover i {
+            transform: translateY(-3px) scale(1.08);
+        }
+
+        .pc-treat h4 {
+            font-size: 1.06rem;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .pc-treat p {
+            font-size: .92rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================ 7. WHY CHOOSE ============================ */
+        .pc-why {
+            position: relative;
+            color: #fff;
+            background:
+                radial-gradient(900px 500px at 85% 15%, rgba(240, 128, 96, .35), transparent 60%),
+                linear-gradient(150deg, var(--brand-900) 0%, var(--brand-800) 52%, var(--brand-700) 100%);
+            overflow: hidden;
+        }
+
+        .pc-why::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from -97deg at 22% -18%,
+                    rgba(255, 255, 255, .07) 0deg 1.2deg,
+                    transparent 1.2deg 15deg);
+            mask-image: radial-gradient(ellipse 78% 76% at 22% 0%, #000, transparent 76%);
+            -webkit-mask-image: radial-gradient(ellipse 78% 76% at 22% 0%, #000, transparent 76%);
+        }
+
+        .pc-why .pc-wrap {
+            position: relative;
+        }
+
+        .pc-why h2,
+        .pc-why h3,
+        .pc-why h4 {
+            color: #fff;
+        }
+
+        .pc-why p {
+            color: rgba(252, 235, 229, .82);
+        }
+
+        .pc-why .pc-eyebrow {
+            background: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .22);
+            color: #FBD9CF;
+        }
+
+        .pc-why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 52px;
+        }
+
+        .pc-why-card {
+            padding: 28px 24px;
+            border-radius: var(--r-md);
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .14);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            transition: transform .45s var(--ease), background-color .4s, border-color .4s;
+        }
+
+        .pc-why-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, .12);
+            border-color: rgba(255, 255, 255, .3);
+        }
+
+        .pc-why-card i {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .14);
+            color: #FBDCD2;
+            font-size: 1.1rem;
+        }
+
+        .pc-why-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .pc-why-card p {
+            font-size: .92rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================ 8. JOURNEY ============================ */
+        .pc-journey {
+            position: relative;
+            margin-top: 56px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding-bottom: 8px;
+        }
+
+        .pc-journey::-webkit-scrollbar {
+            display: none;
+        }
+
+        .pc-journey-track {
+            position: relative;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(190px, 1fr);
+            gap: 0;
+            min-width: 780px;
+            padding-top: 58px;
+        }
+
+        .pc-journey-track::before {
+            content: '';
+            position: absolute;
+            top: 27px;
+            left: 8%;
+            right: 8%;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--accent-100);
+        }
+
+        .pc-journey-track::after {
+            content: '';
+            position: absolute;
+            top: 27px;
+            left: 8%;
+            width: 0;
+            height: 3px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transition: width 1.6s var(--ease);
+        }
+
+        .pc-journey-track.is-in::after {
+            width: 84%;
+        }
+
+        .pc-jstep {
+            position: relative;
+            text-align: center;
+            padding: 0 12px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .55s var(--ease), transform .55s var(--ease);
+        }
+
+        .pc-jstep.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .pc-jdot {
+            position: absolute;
+            top: -46px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--accent-200);
+            color: var(--brand-700);
+            font-size: .82rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            transition: border-color .5s, box-shadow .5s, transform .5s var(--ease);
+        }
+
+        .pc-jstep.is-in .pc-jdot {
+            border-color: var(--brand-500);
+            box-shadow: 0 0 0 6px rgba(224, 96, 80, .13);
+        }
+
+        .pc-jstep:hover .pc-jdot {
+            transform: translateX(-50%) scale(1.12);
+        }
+
+        .pc-jstep h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .pc-jstep p {
+            font-size: .86rem;
+            line-height: 1.58;
+            margin: 0;
+        }
+
+        /* ============================ 10. EDUCATION ============================ */
+        .pc-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 52px;
+        }
+
+        .pc-article {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 26px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-decoration: none;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-article:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-article-kicker {
+            font-size: .74rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--brand-500);
+            margin-bottom: 14px;
+        }
+
+        .pc-article h3 {
+            font-size: 1.12rem;
+            font-weight: 600;
+            margin-bottom: 11px;
+        }
+
+        .pc-article p {
+            font-size: .93rem;
+            line-height: 1.68;
+            flex: 1;
+        }
+
+        .pc-article-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 18px;
+            font-family: var(--font-heading);
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--brand-700);
+            transition: gap .35s var(--ease);
+        }
+
+        .pc-article:hover .pc-article-more {
+            gap: 15px;
+        }
+
+        /* ============================ 11. FAQ ============================ */
+        .pc-faq {
+            max-width: 860px;
+            margin: 52px auto 0;
+        }
+
+        .pcare details {
+            margin-bottom: 12px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: box-shadow .4s, border-color .4s;
+        }
+
+        .pcare details[open] {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pcare summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 20px 24px;
+            list-style: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1.04rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: color .3s, background-color .3s;
+        }
+
+        .pcare summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pcare summary:hover {
+            color: var(--brand-700);
+            background: var(--accent-050);
+        }
+
+        .pcare summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: .7rem;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            transition: transform .4s var(--ease), background-color .35s, color .35s;
+        }
+
+        .pcare details[open] summary {
+            color: var(--brand-800);
+        }
+
+        .pcare details[open] summary::after {
+            transform: rotate(180deg);
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .pc-answer {
+            padding: 4px 24px 24px;
+            font-size: .98rem;
+            line-height: 1.78;
+            color: var(--ink-soft);
+            animation: pcReveal .35s var(--ease);
+        }
+
+        @keyframes pcReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .pc-answer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .pc-answer li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+        }
+
+        .pc-answer li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: .68em;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-400);
+        }
+
+        .pc-faq-foot {
+            text-align: center;
+            margin-top: 30px;
+            font-size: .97rem;
+        }
+
+        .pc-faq-foot a {
+            color: var(--brand-700);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-200);
+        }
+
+        .pc-faq-foot a:hover {
+            color: var(--brand-500);
+        }
+
+        /* ============================ COMPLETE GUIDE ============================ */
+        .pc-index {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px;
+            margin-top: 46px;
+        }
+
+        .pc-index a {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 16px 18px;
+            border-radius: var(--r-sm);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-decoration: none;
+            font-size: .92rem;
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--ink-soft);
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s, color .3s;
+        }
+
+        .pc-index a:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-sm);
+            color: var(--brand-800);
+        }
+
+        .pc-index b {
+            flex: 0 0 auto;
+            font-family: var(--font-heading);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: var(--brand-500);
+            padding-top: 2px;
+        }
+
+        .pc-guide {
+            margin-top: 44px;
+        }
+
+        .pc-chapter {
+            margin-bottom: 14px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            scroll-margin-top: 110px;
+            transition: box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-chapter[open] {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-chapter>summary {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 24px 26px;
+            list-style: none;
+            cursor: pointer;
+            transition: background-color .35s;
+        }
+
+        .pc-chapter>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pc-chapter>summary:hover {
+            background: var(--accent-050);
+        }
+
+        .pc-ch-n {
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            font-family: var(--font-heading);
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--brand-700);
+            background: linear-gradient(140deg, var(--accent-100), #fff);
+            border: 1px solid var(--line);
+            transition: background-color .4s, color .4s, transform .4s var(--ease);
+        }
+
+        .pc-chapter[open] .pc-ch-n,
+        .pc-chapter>summary:hover .pc-ch-n {
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+        .pc-ch-t {
+            flex: 1;
+        }
+
+        .pc-ch-t h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 4px;
+        }
+
+        .pc-ch-t span {
+            font-size: .82rem;
+            color: var(--ink-mute);
+            font-weight: 500;
+        }
+
+        .pc-chapter>summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: .72rem;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            transition: transform .4s var(--ease), background-color .35s, color .35s;
+        }
+
+        .pc-chapter[open]>summary::after {
+            transform: rotate(180deg);
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .pc-ch-body {
+            padding: 4px 26px 26px;
+            animation: pcReveal .35s var(--ease);
+        }
+
+        .pc-qa {
+            margin-bottom: 9px;
+            border-radius: var(--r-sm);
+            background: var(--accent-050);
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: background-color .35s, border-color .35s;
+        }
+
+        .pc-qa[open] {
+            background: #fff;
+            border-color: var(--line);
+        }
+
+        .pc-qa>summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 15px 18px;
+            list-style: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: .99rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: color .3s;
+        }
+
+        .pc-qa>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pc-qa>summary:hover,
+        .pc-qa[open]>summary {
+            color: var(--brand-700);
+        }
+
+        .pc-qa>summary::after {
+            content: '\2b';
+            flex: 0 0 auto;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: .78rem;
+            color: var(--brand-500);
+            transition: transform .35s var(--ease);
+        }
+
+        .pc-qa[open]>summary::after {
+            content: '\f068';
+            transform: rotate(180deg);
+        }
+
+        .pc-qa .pc-answer {
+            padding: 0 18px 18px;
+            font-size: .95rem;
+        }
+
+        @media (max-width: 600px) {
+            .pc-chapter>summary {
+                padding: 18px 18px;
+                gap: 13px;
+            }
+
+            .pc-ch-n {
+                width: 40px;
+                height: 40px;
+                font-size: .85rem;
+            }
+
+            .pc-ch-t h3 {
+                font-size: 1rem;
+            }
+
+            .pc-ch-body {
+                padding: 4px 16px 20px;
+            }
+        }
+
+        /* ============================ 12. FINAL CTA ============================ */
+        .pc-final {
+            padding-bottom: clamp(80px, 9vw, 120px);
+        }
+
+        .pc-final-card {
+            position: relative;
+            padding: clamp(44px, 6vw, 78px) clamp(28px, 5vw, 66px);
+            border-radius: var(--r-xl);
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            background:
+                radial-gradient(700px 400px at 20% 0%, rgba(240, 128, 96, .4), transparent 62%),
+                linear-gradient(140deg, var(--brand-900), var(--brand-700));
+            box-shadow: var(--sh-lg);
+        }
+
+        .pc-final-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from -97deg at 50% -20%,
+                    rgba(255, 255, 255, .08) 0deg 1.2deg,
+                    transparent 1.2deg 15deg);
+            mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, #000, transparent 78%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, #000, transparent 78%);
+        }
+
+        .pc-final-card>* {
+            position: relative;
+        }
+
+        .pc-final-card h2 {
+            color: #fff;
+            font-size: clamp(1.85rem, 3.6vw, 2.9rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .pc-final-card p {
+            color: rgba(253, 241, 236, .88);
+            font-size: clamp(1rem, 1.3vw, 1.12rem);
+            max-width: 58ch;
+            margin: 0 auto;
+        }
+
+        .pc-final-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 34px;
+        }
+
+        .pc-final-note {
+            margin-top: 26px;
+            font-size: .88rem;
+            color: rgba(250, 224, 214, .72);
+        }
+
+        /* ============================ sticky mobile CTA ============================ */
+        .pc-sticky {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1200;
+            display: none;
+            gap: 10px;
+            padding: 11px 14px calc(11px + env(safe-area-inset-bottom));
+            background: rgba(255, 255, 255, .92);
+            border-top: 1px solid var(--line);
+            box-shadow: 0 -10px 30px -18px rgba(90, 10, 14, .5);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .pc-sticky a {
+            flex: 1;
+            padding: 13px 12px;
+            font-size: .95rem;
+        }
+
+        /* ============================ navbar tint for this page ============================ */
+        /* The navbar already carries the brand colours from style.css —
+           no page-level override is needed now that the page matches it. */
+
+        /* ============================ responsive ============================ */
+        @media (max-width: 1024px) {
+            .pc-hero-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .pc-hero-visual {
+                order: -1;
+                max-width: 500px;
+                margin-inline: auto;
+            }
+
+            .pc-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .pcare {
+                padding-bottom: 74px;
+            }
+
+            .pc-sticky {
+                display: flex;
+            }
+
+            .pc-visual-stage {
+                padding: 18px;
+            }
+
+            .pc-hero-cta .pc-btn,
+            .pc-final-cta .pc-btn {
+                flex: 1 1 100%;
+            }
+
+            .pc-hero-trust {
+                gap: 12px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .pcare *,
+            .pcare *::before,
+            .pcare *::after {
+                animation: none !important;
+                transition-duration: .01ms !important;
+            }
+
+            .pc-step,
+            .pc-jstep {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="pancreacare">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="about.html" class="dropbtn">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                    </div>
+                </div>
+                <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown mega">
+                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Digestive Care</h4>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Procedures</h4>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Wellness</h4>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#location" class="nav-loc">Locations</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <a href="faqs.html" class="dropbtn">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="pancreas.html">Pancreas</a>
+                        <a href="gallbladder.html" class="active">GallBladder</a>
+                        <a href="faqs.html#liver">Liver</a>
+                        <a href="faqs.html#large-intestine">Large Intestine</a>
+                        <a href="faqs.html#stomach">Stomach</a>
+                        <a href="faqs.html#esophagus">Esophagus</a>
+                    </div>
+                </div>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contactModal">Contact us</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#location" class="location-btn">
+                    <i class="fa-solid fa-location-dot"></i> Our Locations
+                </a>
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pcare">
+
+        <!-- ==================== 1 · HERO ==================== -->
+        <section class="pc-hero">
+            <div class="pc-wrap">
+                <div class="pc-hero-grid">
+                    <div class="pc-hero-copy">
+                        <span class="pc-eyebrow" data-aos="fade-up">
+                            <i class="fa-solid fa-shield-heart"></i> PancreaCare<sup>+</sup> by Advitya
+                        </span>
+                        <h1 data-aos="fade-up" data-aos-delay="60">
+                            Expert Gallbladder &amp; <span class="accent">Biliary Care</span>
+                        </h1>
+                        <p class="pc-hero-sub" data-aos="fade-up" data-aos-delay="120">
+                            From a single gallstone attack to complex bile duct reconstruction &mdash; diagnosed
+                            precisely, treated by a dedicated hepato-pancreato-biliary team, and followed up by the
+                            same specialists who operated.
+                        </p>
+                        <div class="pc-hero-cta" data-aos="fade-up" data-aos-delay="180">
+                            <a href="index.html#contactModal" class="pc-btn pc-btn-primary">
+                                <i class="fa-regular fa-calendar-check"></i> Book a Consultation
+                            </a>
+                            <a href="tel:+919211221551" class="pc-btn pc-btn-ghost">
+                                <i class="fa-solid fa-phone"></i> Talk to a Specialist
+                            </a>
+                        </div>
+                        <div class="pc-hero-trust" data-aos="fade-up" data-aos-delay="240">
+                            <div class="pc-trust-item"><i class="fa-solid fa-user-doctor"></i> Laparoscopic &amp; robotic
+                                cholecystectomy</div>
+                            <div class="pc-trust-item"><i class="fa-solid fa-microscope"></i> Ultrasound · HIDA · MRCP ·
+                                ERCP</div>
+                            <div class="pc-trust-item"><i class="fa-solid fa-people-group"></i> Specialist bile duct
+                                repair</div>
+                        </div>
+                    </div>
+
+                    <div class="pc-hero-visual" data-aos="fade-left" data-aos-delay="150">
+                        <div class="pc-visual-stage">
+                            <img src="image/image%20copy%2032.png"
+                                alt="Three-dimensional illustration of the gallbladder with gallstones inside it, and the cystic duct draining into the common bile duct">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2 · CONDITIONS ==================== -->
+        <section class="pc-soft" id="conditions">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-notes-medical"></i> Conditions We Treat</span>
+                    <h2>The full spectrum of gallbladder and biliary disease</h2>
+                    <p>From a single stone to complex bile duct reconstruction &mdash; managed by one specialist team
+                        working from a single shared plan.</p>
+                </div>
+
+                <div class="pc-grid-3">
+                    <article class="pc-card" data-aos="fade-up">
+                        <div class="pc-card-viz is-photo">
+                            <img src="image/image%20copy%2034.png" alt="Three-dimensional illustration of a gallbladder packed with gallstones, seen against the liver" loading="lazy">
+                        </div>
+                        <h3>Gallstones (Cholelithiasis)</h3>
+                        <p>Hardened deposits of bile or cholesterol. Often silent, but when one blocks the cystic duct it causes biliary colic &mdash; sharp upper-right pain after a fatty meal.</p>
+                        <span class="pc-tag">Most common</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="60">
+                        <div class="pc-card-viz">
+                            <svg viewBox="0 0 220 130" role="img" aria-label="Biliary sludge settling in the gallbladder">
+                                <defs>
+                                    <linearGradient id="gg2" x1="0" y1="0" x2=".6" y2="1">
+                                        <stop offset="0" stop-color="#F5AC92" />
+                                        <stop offset=".42" stop-color="#E06050" />
+                                        <stop offset="1" stop-color="#9E1F2B" />
+                                    </linearGradient>
+                                    <linearGradient id="gs2" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+
+                                </defs>
+                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg2)" />
+                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs2)" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
+                                <path d="M78 92c8 14 30 22 52 20 18-2 32-9 36-19-6 12-24 20-44 20-20 0-38-8-44-21Z"
+                                    fill="#F3D8C6" opacity=".8" />
+                                <g fill="#F7E4D6">
+                                    <circle class="viz-twinkle" cx="104" cy="98" r="2.4" />
+                                    <circle class="viz-twinkle-b" cx="118" cy="102" r="2" />
+                                    <circle class="viz-twinkle" cx="132" cy="99" r="2.2" />
+                                    <circle class="viz-twinkle-b" cx="146" cy="94" r="1.8" />
+                                </g>
+                                <text class="viz-label" x="62" y="124">Sludge</text>
+                            </svg>
+                        </div>
+                        <h3>Biliary Sludge</h3>
+                        <p>A collection of microscopic cholesterol and bile particles that settles in the gallbladder. Can resolve on its own, or thicken into stones over time.</p>
+                        <span class="pc-tag">Early change</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="120">
+                        <div class="pc-card-viz is-photo">
+                            <img src="image/image%20copy%2036.png" alt="Cutaway three-dimensional illustration of an inflamed gallbladder with a thickened wall, packed with gallstones, tucked under the liver" loading="lazy">
+                        </div>
+                        <h3>Cholecystitis</h3>
+                        <p>Inflammation of the gallbladder, almost always caused by a stone blocking the cystic duct. Brings fever, chills and constant pain &mdash; and needs same-day assessment.</p>
+                        <span class="pc-tag">Urgent</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up">
+                        <div class="pc-card-viz">
+                            <svg viewBox="0 0 220 130" role="img" aria-label="Thickened gallbladder wall with small pockets">
+                                <defs>
+                                    <linearGradient id="gg4" x1="0" y1="0" x2=".6" y2="1">
+                                        <stop offset="0" stop-color="#F5AC92" />
+                                        <stop offset=".42" stop-color="#E06050" />
+                                        <stop offset="1" stop-color="#9E1F2B" />
+                                    </linearGradient>
+                                    <linearGradient id="gs4" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+
+                                </defs>
+                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg4)" />
+                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs4)" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
+                                <path d="M82 62c12-9 32-11 48-6 21 7 32 21 29 35-3 14-22 20-42 17-19-3-33-14-36-27-2-8 0-14 1-19Z"
+                                    fill="none" stroke="#FFD9C6" stroke-width="6" opacity=".85" />
+                                <g fill="#FFF3EC" opacity=".9">
+                                    <circle class="viz-twinkle" cx="92" cy="70" r="3" />
+                                    <circle class="viz-twinkle-b" cx="150" cy="80" r="2.6" />
+                                    <circle class="viz-twinkle" cx="120" cy="106" r="2.8" />
+                                </g>
+                                <text class="viz-label" x="62" y="124">Wall thickening</text>
+                            </svg>
+                        </div>
+                        <h3>Adenomyomatosis</h3>
+                        <p>Non-cancerous thickening of the gallbladder wall, thought to follow chronic inflammation. Usually found incidentally on ultrasound and monitored rather than removed.</p>
+                        <span class="pc-tag">Monitored</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="60">
+                        <div class="pc-card-viz">
+                            <svg viewBox="0 0 220 130" role="img" aria-label="Polyps growing from the gallbladder lining">
+                                <defs>
+                                    <linearGradient id="gg5" x1="0" y1="0" x2=".6" y2="1">
+                                        <stop offset="0" stop-color="#F5AC92" />
+                                        <stop offset=".42" stop-color="#E06050" />
+                                        <stop offset="1" stop-color="#9E1F2B" />
+                                    </linearGradient>
+                                    <linearGradient id="gs5" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+
+                                </defs>
+                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg5)" />
+                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs5)" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
+                                <g fill="#FFE8DC" stroke="#E8B9A6" stroke-width="1.2">
+                                    <ellipse class="viz-drift" cx="106" cy="62" rx="7" ry="5.5" />
+                                    <ellipse class="viz-drift-b" cx="140" cy="72" rx="5.5" ry="4.5" />
+                                    <ellipse class="viz-drift" cx="150" cy="94" rx="5" ry="4" />
+                                </g>
+                                <g stroke="#FFD9C6" stroke-width="1.6" fill="none">
+                                    <path d="M106 68v5M140 77v4M150 99v4" />
+                                </g>
+                                <text class="viz-label" x="62" y="124">Polyps</text>
+                            </svg>
+                        </div>
+                        <h3>Gallbladder Polyps</h3>
+                        <p>Small growths in the lining. Most are harmless cholesterol polyps, but anything larger than 1&nbsp;cm carries a real cancer risk and is usually removed.</p>
+                        <span class="pc-tag">Size matters</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="120">
+                        <div class="pc-card-viz">
+                            <svg viewBox="0 0 220 130" role="img" aria-label="A gallbladder contracting abnormally">
+                                <defs>
+                                    <linearGradient id="gg6" x1="0" y1="0" x2=".6" y2="1">
+                                        <stop offset="0" stop-color="#F5AC92" />
+                                        <stop offset=".42" stop-color="#E06050" />
+                                        <stop offset="1" stop-color="#9E1F2B" />
+                                    </linearGradient>
+                                    <linearGradient id="gs6" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+
+                                </defs>
+                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg6)" />
+                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs6)" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
+                                <g class="viz-pulse" fill="none" stroke="#FFE0D0" stroke-width="3" stroke-linecap="round">
+                                    <path d="M92 66c-5 8-5 18 0 26" />
+                                    <path d="M150 66c5 8 5 18 0 26" />
+                                </g>
+                                <g fill="#FFF3EC" opacity=".9">
+                                    <path class="viz-drift" d="M116 62l7 10h-14Z" />
+                                    <path class="viz-drift-b" d="M126 100l-7-10h14Z" />
+                                </g>
+                                <text class="viz-label" x="62" y="124">Poor emptying</text>
+                            </svg>
+                        </div>
+                        <h3>Biliary Dyskinesia</h3>
+                        <p>Abnormal gallbladder function without any stones &mdash; the organ simply fails to empty properly. Diagnosed with a HIDA scan measuring ejection fraction.</p>
+                        <span class="pc-tag">Functional</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up">
+                        <div class="pc-card-viz">
+                            <svg viewBox="0 0 220 130" role="img" aria-label="A tumour growing in the gallbladder wall">
+                                <defs>
+                                    <linearGradient id="gg7" x1="0" y1="0" x2=".6" y2="1">
+                                        <stop offset="0" stop-color="#F5AC92" />
+                                        <stop offset=".42" stop-color="#E06050" />
+                                        <stop offset="1" stop-color="#9E1F2B" />
+                                    </linearGradient>
+                                    <linearGradient id="gs7" x1="0" y1="0" x2="0" y2="1">
+                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
+                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
+                                    </linearGradient>
+                                    <radialGradient id="gh7"><stop offset="0" stop-color="#4A0709" stop-opacity=".92"/><stop offset="1" stop-color="#4A0709" stop-opacity=".18"/></radialGradient>
+                                </defs>
+                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg7)" />
+                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs7)" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
+                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
+                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
+                                <circle class="viz-pulse-slow" cx="132" cy="82" r="26" fill="none" stroke="#5A0A0E"
+                                    stroke-width="1.6" opacity=".55" />
+                                <path d="M112 68c12-6 26-4 34 6 8 10 6 24-4 30-12 7-28 3-34-8-6-12-2-24 4-28Z"
+                                    fill="url(#gh7)" />
+                                <g fill="#3E0507" opacity=".5">
+                                    <circle cx="126" cy="78" r="3.2" />
+                                    <circle cx="136" cy="86" r="3.8" />
+                                    <circle cx="128" cy="92" r="2.6" />
+                                </g>
+                                <text class="viz-label" x="62" y="124">Tumour</text>
+                            </svg>
+                        </div>
+                        <h3>Gallbladder Cancer</h3>
+                        <p>A malignant tumour of the gallbladder lining, most often adenocarcinoma. Notably more common in India than in most of the world, and curable when caught early.</p>
+                        <span class="pc-tag">Surgical oncology</span>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+        <!-- ==================== 3 · WARNING SIGNS ==================== -->
+        <section id="warning-signs">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-triangle-exclamation"></i> Warning Signs</span>
+                    <h2>Six symptoms worth a specialist opinion</h2>
+                    <p>Gallstones are often silent. These are the signs that they have stopped being silent &mdash; and
+                        that a scan is overdue.</p>
+                </div>
+
+                <div class="pc-signs">
+                    <div class="pc-sign" data-aos="fade-up">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <div>
+                            <h4>Upper-right abdominal pain</h4>
+                            <p>Persistent pain below the right ribs, typically after a fatty meal &mdash; biliary
+                                colic.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="60">
+                        <i class="fa-solid fa-eye"></i>
+                        <div>
+                            <h4>Jaundice</h4>
+                            <p>Yellowing of the skin or eyes, with dark urine and pale stools &mdash; a blocked bile
+                                duct.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="120">
+                        <i class="fa-solid fa-temperature-high"></i>
+                        <div>
+                            <h4>Fever and chills</h4>
+                            <p>With abdominal pain, this suggests infection &mdash; cholecystitis or cholangitis.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up">
+                        <i class="fa-solid fa-utensils"></i>
+                        <div>
+                            <h4>Fatty food intolerance</h4>
+                            <p>Bloating, indigestion or nausea that reliably follows rich or greasy meals.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="60">
+                        <i class="fa-solid fa-weight-scale"></i>
+                        <div>
+                            <h4>Unexplained weight loss</h4>
+                            <p>Losing weight without trying, particularly alongside a palpable abdominal lump.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="120">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                        <div>
+                            <h4>Recurrent attacks</h4>
+                            <p>Repeated episodes of colic mean the next one may not settle on its own.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="pc-alert" data-aos="fade-up">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    <p><strong>Severe abdominal pain with fever, vomiting or jaundice needs to be seen the same
+                            day.</strong> Call <a href="tel:+919211221551"
+                            style="color: #A45E0A; font-weight: 600;">+91 9211221551</a> rather than waiting for an
+                        appointment &mdash; an infected bile duct is a medical emergency.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4 · ADVANCED DIAGNOSIS ==================== -->
+        <section class="pc-soft" id="diagnosis">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-microscope"></i> Advanced Diagnosis</span>
+                    <h2>A clear pathway from first visit to a firm answer</h2>
+                    <p>Gallbladder symptoms overlap with the stomach, the pancreas and the heart. Each step below rules
+                        something out before anyone commits to surgery.</p>
+                </div>
+
+                <div class="pc-path" id="pathway">
+                    <div class="pc-step">
+                        <div class="pc-step-n">01</div>
+                        <h4>Consultation</h4>
+                        <p>History, examination and a review of every previous report and scan you bring.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">02</div>
+                        <h4>Ultrasound</h4>
+                        <p>First-line imaging &mdash; finds stones, wall thickening and polyps within minutes.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">03</div>
+                        <h4>Blood work</h4>
+                        <p>Liver function, bilirubin, ALP and GGT to check whether the duct is obstructed.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">04</div>
+                        <h4>HIDA / CT / MRCP</h4>
+                        <p>Function testing and detailed duct mapping when ultrasound leaves questions.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">05</div>
+                        <h4>ERCP or EUS</h4>
+                        <p>Close-range imaging, tissue sampling, and stone clearance in the same sitting.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">06</div>
+                        <h4>Personalised Treatment</h4>
+                        <p>A written plan covering procedure, diet, recovery and follow-up schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5 · TREATMENT & SURGERY ==================== -->
+        <section id="treatments">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-briefcase-medical"></i> Treatment &amp; Surgery</span>
+                    <h2>Every option, under one team</h2>
+                    <p>Keyhole surgery for the routine, reconstruction for the complex, and the medical care that
+                        determines how well you recover.</p>
+                </div>
+
+                <div class="pc-grid-4">
+                    <article class="pc-treat" data-aos="fade-up">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                        <h4>Laparoscopic Cholecystectomy</h4>
+                        <p>Keyhole removal of the gallbladder &mdash; the definitive treatment for symptomatic stones
+                            and cholecystitis. Most patients go home within a day.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="50">
+                        <i class="fa-solid fa-robot"></i>
+                        <h4>Robotic Surgery</h4>
+                        <p>Console-controlled instruments for difficult anatomy, dense adhesions or a previously
+                            inflamed, scarred gallbladder bed.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <h4>ERCP &amp; Stone Clearance</h4>
+                        <p>Endoscopic removal of stones lodged in the common bile duct, restoring drainage and
+                            clearing jaundice without an incision.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fa-solid fa-grip-lines-vertical"></i>
+                        <h4>Biliary Stenting</h4>
+                        <p>A stent placed across a narrowed or obstructed duct to hold it open, used for strictures
+                            and for inoperable tumours.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up">
+                        <i class="fa-solid fa-code-branch"></i>
+                        <h4>Bile Duct Reconstruction</h4>
+                        <p>Roux-en-Y hepaticojejunostomy for injured or strictured ducts &mdash; the repair that
+                            decides long-term liver health, best done by an experienced team.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="50">
+                        <i class="fa-solid fa-scissors"></i>
+                        <h4>Extended Resection</h4>
+                        <p>Removal of the gallbladder with part of the liver bed and regional lymph nodes, for
+                            gallbladder cancer that has spread locally.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-vials"></i>
+                        <h4>Chemotherapy &amp; Radiation</h4>
+                        <p>Used after surgery to reduce recurrence, or as primary treatment where the tumour cannot be
+                            removed.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fa-solid fa-apple-whole"></i>
+                        <h4>Diet &amp; Recovery Support</h4>
+                        <p>A structured low-fat plan for the weeks after surgery, and guidance on returning to a
+                            normal diet as your digestion adjusts.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 6 · WHY CHOOSE ==================== -->
+        <section class="pc-why" id="why-pancreacare">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-award"></i> Why PancreaCare</span>
+                    <h2>Specialist depth, without the distance</h2>
+                    <p>A routine gallbladder removal is routine only until it isn't. What matters is who is holding the
+                        instruments when it stops being routine.</p>
+                </div>
+
+                <div class="pc-why-grid">
+                    <div class="pc-why-card" data-aos="fade-up">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <h4>Advanced GI &amp; HPB Expertise</h4>
+                        <p>Fellowship-trained hepato-pancreato-biliary surgeons who handle bile duct work as their
+                            primary focus, not occasionally.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="60">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h4>Multidisciplinary Care</h4>
+                        <p>Surgeons, gastroenterologists, radiologists, oncologists and dietitians working from one
+                            shared plan.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="120">
+                        <i class="fa-solid fa-microscope"></i>
+                        <h4>Advanced Diagnostics</h4>
+                        <p>Ultrasound, HIDA, CT, MRCP, ERCP and endoscopic ultrasound &mdash; all available before a
+                            decision is made.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="180">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h4>Personalised Treatment</h4>
+                        <p>A written plan for your stage, your fitness and your circumstances &mdash; with a cost
+                            estimate before admission.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="240">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h4>Comprehensive Follow-up</h4>
+                        <p>Scheduled review, imaging where needed, and phone follow-up once you are home &mdash; with
+                            the same faces throughout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 7 · TREATMENT JOURNEY ==================== -->
+        <section id="journey">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-route"></i> Treatment Journey</span>
+                    <h2>What the road ahead actually looks like</h2>
+                    <p>Six stages, from your first appointment to discharge and review &mdash; so you always know where
+                        you are and what comes next.</p>
+                </div>
+
+                <div class="pc-journey">
+                    <div class="pc-journey-track" id="journeyTrack">
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">01</div>
+                            <h4>Consultation</h4>
+                            <p>Your history and existing scans reviewed by a specialist, in person or by video.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">02</div>
+                            <h4>Diagnosis</h4>
+                            <p>Ultrasound, blood work and duct imaging to confirm what is causing the symptoms.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">03</div>
+                            <h4>Treatment Planning</h4>
+                            <p>Timing, approach and anaesthetic decided, then explained to you in writing.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">04</div>
+                            <h4>Procedure</h4>
+                            <p>Keyhole removal, ERCP clearance or reconstruction &mdash; as planned.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">05</div>
+                            <h4>Recovery</h4>
+                            <p>Pain control, early mobilisation and a graded return to normal eating.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">06</div>
+                            <h4>Follow-up</h4>
+                            <p>Wound review, histology discussion where relevant, and diet support at home.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 8 · PATIENT EDUCATION ==================== -->
+        <section class="pc-soft" id="education">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-book-open"></i> Patient Education</span>
+                    <h2>Understand your diagnosis before you decide</h2>
+                    <p>Detailed, plain-language guides written by our team &mdash; so the conversation in clinic starts
+                        from a better place.</p>
+                </div>
+
+                <div class="pc-articles">
+                    <a href="#ch1" class="pc-article" data-aos="fade-up">
+                        <span class="pc-article-kicker">Benign disease</span>
+                        <h3>Benign Diseases of the Gallbladder</h3>
+                        <p>Stones, sludge, cholecystitis, adenomyomatosis, polyps and functional disorders &mdash; and
+                            what each one needs.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="#ch2" class="pc-article" data-aos="fade-up" data-aos-delay="70">
+                        <span class="pc-article-kicker">Oncology</span>
+                        <h3>Cancers of the Gallbladder</h3>
+                        <p>Who is at risk, how it is staged, when surgery is curative, and what the prognosis depends
+                            on.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="#ch3" class="pc-article" data-aos="fade-up" data-aos-delay="140">
+                        <span class="pc-article-kicker">Risk</span>
+                        <h3>Gallstones vs Gallbladder Cancer</h3>
+                        <p>How chronic inflammation raises risk, who should worry, and when removal is the safer
+                            choice.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="#ch5" class="pc-article" data-aos="fade-up" data-aos-delay="210">
+                        <span class="pc-article-kicker">Complex surgery</span>
+                        <h3>Bile Duct Injury Repair</h3>
+                        <p>Why the first repair matters most, what poor repair costs, and how to choose a surgeon.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 9 · FAQ ==================== -->
+        <section id="faq">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-circle-question"></i> Frequently Asked</span>
+                    <h2>Questions patients ask us most</h2>
+                </div>
+
+                <div class="pc-faq" data-aos="fade-up">
+                    <details>
+                        <summary>Can I live a normal life without a gallbladder?</summary>
+                        <div class="pc-answer">
+                            <p>Yes. Most people live normal, healthy lives after gallbladder removal. The liver
+                                continues to produce bile for digestion &mdash; it simply drains continuously instead of
+                                being stored. Fatty meals may need some dietary adjustment in the first few weeks, but
+                                the vast majority of patients return to a completely normal diet.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>I have gallstones but no symptoms. Do I need surgery?</summary>
+                        <div class="pc-answer">
+                            <p>Usually not. Asymptomatic gallstones are generally left alone and monitored. Surgery is
+                                recommended when stones become symptomatic, or when specific risk factors are present:</p>
+                            <ul>
+                                <li>Large gallstones</li>
+                                <li>Porcelain gallbladder &mdash; a calcified wall from long-term inflammation</li>
+                                <li>Gallbladder polyps larger than 1&nbsp;cm</li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Do gallstones cause gallbladder cancer?</summary>
+                        <div class="pc-answer">
+                            <p>Gallstones are present in <strong>80&ndash;90%</strong> of gallbladder cancer patients,
+                                making them the most strongly associated risk factor &mdash; but only a tiny fraction of
+                                people with gallstones ever develop the cancer. The link is chronic inflammation:
+                                persistent stones irritate the wall, repeated injury alters the DNA of the lining cells,
+                                and prolonged inflammation can calcify the wall into a porcelain gallbladder.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How long is recovery after gallbladder removal?</summary>
+                        <div class="pc-answer">
+                            <p>After keyhole surgery most patients go home within 24 hours and return to desk work in
+                                about a week, with heavy lifting avoided for three to four weeks. Open or extended
+                                surgery takes longer &mdash; several days in hospital and six weeks or so to full
+                                activity. Your surgeon will give you a specific timeline based on what was found during
+                                the operation.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>What is ERCP, and will I need it?</summary>
+                        <div class="pc-answer">
+                            <p>ERCP combines endoscopy and X-ray to see the bile and pancreatic ducts. A stone stuck in
+                                the common bile duct can be removed, or a stent placed to restore drainage. It is
+                                indicated when there is persistent blockage, cholangitis or jaundice &mdash; often within
+                                24&ndash;48 hours. It is generally safe, though it carries a small risk of infection,
+                                bleeding or triggering pancreatitis.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>My bile duct was injured during a previous surgery. What now?</summary>
+                        <div class="pc-answer">
+                            <p>This needs a specialist hepatobiliary team, and the timing matters. Early repair within
+                                72 hours gives the best outcomes; repair delayed 6&ndash;8 weeks is workable; operating
+                                during active inflammation carries the highest risk of failure. Experienced teams report
+                                long-term success rates of <strong>85&ndash;95%</strong>, against 50% or less in
+                                non-specialised settings.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Do you review reports before I travel for an appointment?</summary>
+                        <div class="pc-answer">
+                            <p>Yes. For outstation patients a video review of your existing scans and reports is
+                                usually the first step, so the trip is made only when it will change something. Bring
+                                the actual films or CD rather than only the printed report, along with previous
+                                prescriptions, discharge summaries and blood work from the last three months.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Do you accept insurance, and can I get a cost estimate first?</summary>
+                        <div class="pc-answer">
+                            <p>We work with most major insurers and TPAs. Share your policy details at least 48 hours
+                                before a planned admission so pre-authorisation can be cleared in time; for emergencies
+                                the desk starts the claim while treatment begins. Once the treating consultant confirms
+                                the plan, the billing desk issues a written estimate covering surgery, stay, consumables
+                                and expected investigations.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <p class="pc-faq-foot" data-aos="fade-up">
+                    Looking for more detail? Read <a href="#guide">the complete gallbladder guide</a> below &mdash; 51
+                    questions across six chapters.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== 10 · COMPLETE GUIDE ==================== -->
+        <section class="pc-soft" id="guide">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-book-medical"></i> The Complete Guide</span>
+                    <h2>Everything about the gallbladder, in six chapters</h2>
+                    <p>Written for patients and families, in plain language. Open only the chapter you need &mdash;
+                        each one holds the full set of questions we are asked about that topic.</p>
+                </div>
+
+                <nav class="pc-index" data-aos="fade-up" aria-label="Guide chapters">
+                    <a href="#ch1"><b>01</b> Benign Diseases of the Gallbladder</a>
+                    <a href="#ch2"><b>02</b> Cancers of the Gallbladder</a>
+                    <a href="#ch3"><b>03</b> Gallstones vs Gallbladder Cancer</a>
+                    <a href="#ch4"><b>04</b> Benign Biliary Diseases</a>
+                    <a href="#ch5"><b>05</b> Surgery for Bile Duct Injuries</a>
+                    <a href="#ch6"><b>06</b> Bile Duct Cancer</a>
+                </nav>
+
+                <div class="pc-guide" data-aos="fade-up">
+
+                    <!-- ---------- 01 ---------- -->
+                    <details class="pc-chapter" id="ch1">
+                        <summary>
+                            <div class="pc-ch-n">01</div>
+                            <div class="pc-ch-t">
+                                <h3>Benign Diseases of the Gallbladder</h3>
+                                <span>8 questions &middot; causes, symptoms, diagnosis and treatment</span>
+                            </div>
+                        </summary>
+                        <div class="pc-ch-body">
+                            <details class="pc-qa">
+                                <summary>What are the common benign diseases of the gallbladder?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Gallstones (cholelithiasis):</strong> hardened deposits of bile or
+                                            cholesterol in the gallbladder</li>
+                                        <li><strong>Biliary sludge:</strong> a collection of microscopic cholesterol and
+                                            bile particles</li>
+                                        <li><strong>Cholecystitis:</strong> inflammation of the gallbladder, often
+                                            caused by gallstones</li>
+                                        <li><strong>Adenomyomatosis:</strong> a non-cancerous thickening of the
+                                            gallbladder wall</li>
+                                        <li><strong>Gallbladder polyps:</strong> small, benign growths in the
+                                            gallbladder lining</li>
+                                        <li><strong>Functional gallbladder disorder (biliary dyskinesia):</strong>
+                                            abnormal gallbladder function without stones</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What causes these conditions?</summary>
+                                <div class="pc-answer">
+                                    <p>Causes vary depending on the condition:</p>
+                                    <ul>
+                                        <li><strong>Gallstones and biliary sludge:</strong> imbalance in bile
+                                            composition, genetics, obesity or rapid weight loss</li>
+                                        <li><strong>Cholecystitis:</strong> blockage of the cystic duct, usually by
+                                            gallstones</li>
+                                        <li><strong>Adenomyomatosis and polyps:</strong> the exact causes are unclear
+                                            but may be linked to chronic inflammation</li>
+                                        <li><strong>Functional disorders:</strong> thought to result from abnormal
+                                            gallbladder motility or hypersensitivity</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What symptoms should prompt a visit to the doctor?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li>Persistent pain in the upper right abdomen, especially after meals (biliary
+                                            colic)</li>
+                                        <li>Nausea or vomiting</li>
+                                        <li>Indigestion, bloating or fatty food intolerance</li>
+                                        <li>Fever and chills, which may indicate inflammation or infection</li>
+                                        <li>Yellowing of the skin or eyes (jaundice), which could indicate bile duct
+                                            obstruction</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How are benign gallbladder diseases diagnosed?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li>Medical history and physical examination to identify symptoms</li>
+                                        <li><strong>Ultrasound imaging</strong> to detect gallstones, polyps or
+                                            thickened walls</li>
+                                        <li><strong>HIDA scan (cholescintigraphy):</strong> evaluates gallbladder
+                                            function</li>
+                                        <li><strong>CT or MRI scans</strong> for complex cases</li>
+                                        <li><strong>Blood tests</strong> to assess liver function and rule out infection
+                                            or obstruction</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the treatment options?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Lifestyle changes:</strong> a low-fat diet to reduce symptoms in
+                                            mild cases</li>
+                                        <li><strong>Medications:</strong> to dissolve small gallstones (rarely
+                                            effective)</li>
+                                        <li><strong>Laparoscopic cholecystectomy (gallbladder removal):</strong> the
+                                            most common treatment for symptomatic gallstones or cholecystitis</li>
+                                        <li><strong>Endoscopic procedures:</strong> to remove stones in the bile duct or
+                                            address blockages</li>
+                                        <li><strong>Monitoring:</strong> for small, asymptomatic polyps or
+                                            adenomyomatosis</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Can benign gallbladder diseases turn into cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Most benign gallbladder diseases, like gallstones or adenomyomatosis, rarely
+                                        progress to cancer. However, chronic inflammation from untreated conditions may
+                                        slightly increase the risk of gallbladder cancer. Regular follow-ups can help
+                                        mitigate this risk.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Is it possible to live a normal life without a gallbladder?</summary>
+                                <div class="pc-answer">
+                                    <p>Yes, most people live normal, healthy lives after gallbladder removal. The liver
+                                        continues to produce bile for digestion, though fatty meals may require dietary
+                                        adjustments initially.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How can I prevent gallbladder problems?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li>Maintain a healthy weight and avoid rapid weight loss</li>
+                                        <li>Follow a balanced diet with moderate fat intake and plenty of fibre</li>
+                                        <li>Stay physically active</li>
+                                        <li>Drink plenty of water to aid digestion and bile production</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                    <!-- ---------- 02 ---------- -->
+                    <details class="pc-chapter" id="ch2">
+                        <summary>
+                            <div class="pc-ch-n">02</div>
+                            <div class="pc-ch-t">
+                                <h3>Cancers of the Gallbladder</h3>
+                                <span>10 questions &middot; risk, staging, treatment and prognosis</span>
+                            </div>
+                        </summary>
+                        <div class="pc-ch-body">
+                            <details class="pc-qa">
+                                <summary>What is gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallbladder cancer is a malignant tumour that begins in the gallbladder cells, a
+                                        small organ beneath the liver that stores bile. The most common type is
+                                        adenocarcinoma, which starts in the epithelial cells lining the gallbladder.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How common is gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallbladder cancer is rare but more common in regions like India, Pakistan, South
+                                        America and Eastern Europe. Women are affected more often than men, typically in
+                                        their 60s or 70s.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What causes gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>The exact cause is unknown, but certain factors increase the risk:</p>
+                                    <ul>
+                                        <li><strong>Gallstones:</strong> chronic inflammation due to gallstones is a
+                                            significant risk factor</li>
+                                        <li><strong>Porcelain gallbladder:</strong> calcification of the gallbladder
+                                            wall from long-term inflammation</li>
+                                        <li><strong>Chronic infections:</strong> recurrent infections in the bile
+                                            ducts</li>
+                                        <li><strong>Gallbladder polyps:</strong> larger polyps (greater than 1 cm) carry
+                                            a higher risk</li>
+                                        <li><strong>Obesity:</strong> increases the risk of gallstones and
+                                            inflammation</li>
+                                        <li><strong>Family history:</strong> genetic predisposition in some cases</li>
+                                        <li><strong>Exposure to toxins:</strong> certain chemicals or industrial
+                                            exposures</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the symptoms of gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Early stages often have no symptoms. As the disease progresses, patients may
+                                        experience:</p>
+                                    <ul>
+                                        <li>Abdominal pain, especially in the upper right side</li>
+                                        <li>Nausea and vomiting</li>
+                                        <li>Jaundice (yellowing of the skin and eyes)</li>
+                                        <li>Weight loss and loss of appetite</li>
+                                        <li>Fever and fatigue</li>
+                                        <li>A lump in the abdomen</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How is gallbladder cancer diagnosed?</summary>
+                                <div class="pc-answer">
+                                    <p><strong>Imaging studies:</strong></p>
+                                    <ul>
+                                        <li><strong>Ultrasound:</strong> often the first test to detect abnormalities</li>
+                                        <li><strong>CT or MRI scans:</strong> provide detailed images of the gallbladder
+                                            and surrounding areas</li>
+                                        <li><strong>PET scans:</strong> to identify cancer spread (metastasis)</li>
+                                    </ul>
+                                    <p><strong>Endoscopic procedures:</strong></p>
+                                    <ul>
+                                        <li><strong>ERCP:</strong> to evaluate bile ducts and collect samples</li>
+                                        <li><strong>Endoscopic ultrasound:</strong> for detailed imaging and biopsy</li>
+                                    </ul>
+                                    <p><strong>Blood tests:</strong> liver function tests to check for bile duct
+                                        obstruction, and tumour markers like CA 19-9 or CEA, which may be elevated. A
+                                        <strong>biopsy</strong> confirms the diagnosis by examining tissue under a
+                                        microscope.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the stages of gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallbladder cancer is staged based on tumour size, spread and lymph node
+                                        involvement:</p>
+                                    <ul>
+                                        <li><strong>Stage 0:</strong> cancer is limited to the inner lining (in situ)</li>
+                                        <li><strong>Stage I:</strong> tumour is confined to the gallbladder wall</li>
+                                        <li><strong>Stage II:</strong> tumour has invaded nearby tissues but not lymph
+                                            nodes</li>
+                                        <li><strong>Stage III:</strong> cancer involves lymph nodes or nearby organs</li>
+                                        <li><strong>Stage IV:</strong> advanced cancer with distant metastasis</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the treatment options for gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Treatment depends on the stage and the patient's health.</p>
+                                    <p><strong>Surgery:</strong></p>
+                                    <ul>
+                                        <li><strong>Cholecystectomy:</strong> removal of the gallbladder, used in
+                                            early-stage cancer</li>
+                                        <li><strong>Extended surgery:</strong> includes removal of part of the liver and
+                                            lymph nodes for advanced local disease</li>
+                                    </ul>
+                                    <ul>
+                                        <li><strong>Chemotherapy:</strong> used for advanced cancer to shrink tumours,
+                                            or after surgery to reduce recurrence risk</li>
+                                        <li><strong>Radiation therapy:</strong> targets cancer cells, often combined
+                                            with chemotherapy</li>
+                                        <li><strong>Palliative care:</strong> focused on symptom relief in advanced,
+                                            inoperable cases</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Is gallbladder cancer curable?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallbladder cancer is curable if detected early and surgically removed.
+                                        Unfortunately, many cases are diagnosed at advanced stages, making treatment
+                                        more challenging.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Can gallbladder cancer be prevented?</summary>
+                                <div class="pc-answer">
+                                    <p>While prevention is not always possible, certain measures can reduce risk:</p>
+                                    <ul>
+                                        <li>Treat gallstones and chronic gallbladder inflammation promptly</li>
+                                        <li>Maintain a healthy weight and diet</li>
+                                        <li>Avoid smoking and exposure to industrial toxins</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What is the prognosis for gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Prognosis depends on the stage at diagnosis:</p>
+                                    <ul>
+                                        <li><strong>Early-stage cancers</strong> have a higher survival rate, especially
+                                            after complete surgical removal</li>
+                                        <li><strong>Advanced stages</strong> are associated with poorer outcomes, but
+                                            advances in treatment are improving survival and quality of life</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                    <!-- ---------- 03 ---------- -->
+                    <details class="pc-chapter" id="ch3">
+                        <summary>
+                            <div class="pc-ch-n">03</div>
+                            <div class="pc-ch-t">
+                                <h3>Difference Between Gallbladder Stones and Gallbladder Cancer</h3>
+                                <span>10 questions &middot; how the two are linked, and who is at risk</span>
+                            </div>
+                        </summary>
+                        <div class="pc-ch-body">
+                            <details class="pc-qa">
+                                <summary>What are gallstones, and how do they form?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallstones are solid particles that form in the gallbladder from bile components
+                                        such as cholesterol, bile salts and bilirubin. They form due to an imbalance in
+                                        bile composition, often made worse by:</p>
+                                    <ul>
+                                        <li>Obesity</li>
+                                        <li>Rapid weight loss</li>
+                                        <li>A high-fat, low-fibre diet</li>
+                                        <li>Genetics</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How common are gallstones in people with gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallstones are present in <strong>80&ndash;90%</strong> of patients with
+                                        gallbladder cancer, making it one of the most strongly associated risk factors.
+                                        However, it is essential to note that only a tiny fraction of individuals with
+                                        gallstones will develop gallbladder cancer.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How do gallstones increase the risk of gallbladder cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallstones contribute to risk primarily through chronic inflammation:</p>
+                                    <ul>
+                                        <li><strong>Irritation of the gallbladder wall:</strong> persistent presence of
+                                            gallstones leads to repeated injury and inflammation of the lining</li>
+                                        <li><strong>Cellular damage:</strong> chronic inflammation causes changes in the
+                                            DNA of gallbladder cells, increasing the risk of malignancy</li>
+                                        <li><strong>Porcelain gallbladder:</strong> prolonged inflammation may cause
+                                            calcium deposits in the wall, a condition associated with higher cancer
+                                            risk</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Does the size or duration of gallstone disease affect cancer risk?</summary>
+                                <div class="pc-answer">
+                                    <p>Yes, both influence risk:</p>
+                                    <ul>
+                                        <li><strong>Larger gallstones</strong> are associated with a higher risk of
+                                            cancer</li>
+                                        <li><strong>Chronic gallstone disease:</strong> long-standing gallstones
+                                            increase the risk due to prolonged inflammation and damage</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Who is at higher risk of gallbladder cancer among gallstone patients?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Women:</strong> gallbladder cancer is more common in women, partly
+                                            due to their higher prevalence of gallstone disease</li>
+                                        <li><strong>Older adults:</strong> risk increases with age, particularly after
+                                            60</li>
+                                        <li><strong>Geographic and ethnic factors:</strong> higher rates are observed in
+                                            South Asia, Latin America and Indigenous populations in North America</li>
+                                        <li><strong>Individuals with a family history:</strong> genetics play a role in
+                                            both gallstone disease and gallbladder cancer</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What symptoms should people with gallstones watch for?</summary>
+                                <div class="pc-answer">
+                                    <p>Gallstones often cause no symptoms. However, signs that may indicate
+                                        complications or gallbladder cancer include:</p>
+                                    <ul>
+                                        <li>Persistent upper-right abdominal pain</li>
+                                        <li>Unexplained weight loss</li>
+                                        <li>Jaundice (yellowing of the skin and eyes)</li>
+                                        <li>A palpable lump in the abdomen</li>
+                                        <li>Fever or chills indicating infection</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Can removing the gallbladder reduce cancer risk?</summary>
+                                <div class="pc-answer">
+                                    <p>Yes. Cholecystectomy is the most effective way to eliminate the risk of
+                                        gallbladder cancer in patients with symptomatic gallstones or high-risk
+                                        conditions such as:</p>
+                                    <ul>
+                                        <li>Large gallstones</li>
+                                        <li>Porcelain gallbladder</li>
+                                        <li>Gallbladder polyps larger than 1 cm</li>
+                                    </ul>
+                                    <p>For asymptomatic gallstones, surgery is usually not recommended unless other risk
+                                        factors are present.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How can gallbladder cancer be detected in gallstone patients?</summary>
+                                <div class="pc-answer">
+                                    <p>Early detection is challenging because gallbladder cancer symptoms overlap with
+                                        benign gallstone disease. Methods include:</p>
+                                    <ul>
+                                        <li><strong>Imaging tests:</strong> ultrasound, CT or MRI to detect
+                                            abnormalities</li>
+                                        <li><strong>Endoscopic procedures:</strong> ERCP or endoscopic ultrasound for
+                                            detailed evaluation and biopsy</li>
+                                        <li><strong>Tumour markers:</strong> blood tests like CA 19-9 and CEA may aid in
+                                            detection, although they are not definitive</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Can gallstone prevention lower gallbladder cancer risk?</summary>
+                                <div class="pc-answer">
+                                    <p>While not all cases can be prevented, you can reduce your risk by:</p>
+                                    <ul>
+                                        <li>Maintaining a healthy weight</li>
+                                        <li>Eating a balanced diet rich in fibre and low in unhealthy fats</li>
+                                        <li>Staying physically active</li>
+                                        <li>Treating symptomatic gallstones promptly &mdash; avoid delaying surgery if
+                                            advised by your doctor</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What is the takeaway for patients with gallstones?</summary>
+                                <div class="pc-answer">
+                                    <p>If you have gallstones, stay vigilant about your symptoms and follow your
+                                        doctor's recommendations. While the risk of gallbladder cancer is low,
+                                        addressing gallstone-related complications early can prevent chronic
+                                        inflammation and reduce cancer risk.</p>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                    <!-- ---------- 04 ---------- -->
+                    <details class="pc-chapter" id="ch4">
+                        <summary>
+                            <div class="pc-ch-n">04</div>
+                            <div class="pc-ch-t">
+                                <h3>Benign Biliary Diseases: Common Conditions and Their Management</h3>
+                                <span>9 questions &middot; bile ducts, strictures, cholangitis and PBC</span>
+                            </div>
+                        </summary>
+                        <div class="pc-ch-body">
+                            <details class="pc-qa">
+                                <summary>What are benign biliary diseases?</summary>
+                                <div class="pc-answer">
+                                    <p>Benign biliary diseases are non-cancerous conditions affecting the bile ducts or
+                                        gallbladder. Common examples include:</p>
+                                    <ul>
+                                        <li><strong>Cholelithiasis (gallstones):</strong> stones formed in the
+                                            gallbladder or bile ducts</li>
+                                        <li><strong>Cholangitis:</strong> inflammation of the bile ducts, often caused
+                                            by infection or obstruction</li>
+                                        <li><strong>Choledocholithiasis:</strong> gallstones lodged in the common bile
+                                            duct</li>
+                                        <li><strong>Biliary strictures:</strong> narrowing of the bile ducts, often due
+                                            to injury or inflammation</li>
+                                        <li><strong>Biliary dyskinesia:</strong> dysfunctional bile duct or gallbladder
+                                            motility</li>
+                                        <li><strong>Primary biliary cholangitis (PBC):</strong> chronic autoimmune
+                                            disease causing bile duct damage</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What causes benign biliary diseases?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Gallstones:</strong> result from bile composition imbalances,
+                                            obesity or rapid weight loss</li>
+                                        <li><strong>Cholangitis:</strong> usually caused by bacterial infection
+                                            following bile duct obstruction</li>
+                                        <li><strong>Strictures:</strong> may develop after surgery, injury or chronic
+                                            inflammation</li>
+                                        <li><strong>Biliary dyskinesia:</strong> often idiopathic, but stress and
+                                            hormonal changes may contribute</li>
+                                        <li><strong>Primary biliary cholangitis:</strong> an autoimmune reaction
+                                            damaging the small bile ducts</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the symptoms of benign biliary diseases?</summary>
+                                <div class="pc-answer">
+                                    <p>Symptoms range from mild discomfort to severe pain:</p>
+                                    <ul>
+                                        <li>Right upper abdominal pain, especially after eating fatty foods</li>
+                                        <li>Jaundice (yellowing of the skin and eyes)</li>
+                                        <li>Dark urine and pale stools</li>
+                                        <li>Nausea and vomiting</li>
+                                        <li>Fever and chills, suggesting infection</li>
+                                        <li>Persistent fatigue, common in PBC</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How are benign biliary diseases diagnosed?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li>Medical history and physical examination</li>
+                                        <li><strong>Blood tests:</strong> liver function tests, bilirubin levels, and
+                                            markers like ALP and GGT</li>
+                                        <li><strong>Ultrasound:</strong> first-line for gallstones and bile duct
+                                            obstruction</li>
+                                        <li><strong>MRCP:</strong> non-invasive magnetic resonance imaging of the bile
+                                            ducts</li>
+                                        <li><strong>ERCP:</strong> used for both diagnosis and treatment</li>
+                                        <li><strong>Biopsy:</strong> may be required for conditions like primary biliary
+                                            cholangitis</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the treatment options?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Gallstones:</strong> asymptomatic stones may not require treatment;
+                                            cholecystectomy is recommended for symptomatic stones</li>
+                                        <li><strong>Cholangitis:</strong> treated with antibiotics and bile duct
+                                            drainage via ERCP</li>
+                                        <li><strong>Biliary strictures:</strong> treated with endoscopic stenting or
+                                            balloon dilation to open the narrowed duct</li>
+                                        <li><strong>Biliary dyskinesia:</strong> managed with cholecystectomy if
+                                            symptoms are severe</li>
+                                        <li><strong>Primary biliary cholangitis:</strong> treated with medications like
+                                            ursodeoxycholic acid (UDCA) to slow disease progression</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Are benign biliary diseases preventable?</summary>
+                                <div class="pc-answer">
+                                    <p>While not all conditions can be prevented, these steps lower your risk:</p>
+                                    <ul>
+                                        <li><strong>Maintain a healthy weight:</strong> obesity increases the risk of
+                                            gallstones</li>
+                                        <li><strong>Adopt a balanced diet:</strong> high in fibre and low in unhealthy
+                                            fats</li>
+                                        <li><strong>Stay hydrated:</strong> proper hydration supports bile production
+                                            and flow</li>
+                                        <li><strong>Exercise regularly:</strong> improves overall metabolism and bile
+                                            regulation</li>
+                                        <li><strong>Seek prompt treatment:</strong> address infections or gallstone
+                                            symptoms early to avoid complications</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What complications can arise if they are untreated?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Biliary colic:</strong> severe pain from gallstone obstruction</li>
+                                        <li><strong>Acute cholangitis:</strong> life-threatening infection of the bile
+                                            ducts</li>
+                                        <li><strong>Pancreatitis:</strong> inflammation of the pancreas due to bile duct
+                                            obstruction</li>
+                                        <li><strong>Biliary cirrhosis:</strong> chronic damage to the liver from
+                                            prolonged bile duct obstruction or disease</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How can benign biliary diseases affect daily life?</summary>
+                                <div class="pc-answer">
+                                    <p>While mild cases may have little impact, severe conditions can disrupt daily life
+                                        due to:</p>
+                                    <ul>
+                                        <li>Frequent pain episodes</li>
+                                        <li>Dietary restrictions</li>
+                                        <li>Fatigue and reduced energy levels, particularly in autoimmune conditions
+                                            like PBC</li>
+                                    </ul>
+                                    <p>Early diagnosis and treatment significantly improve quality of life and prevent
+                                        complications.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>When should you consult a gastrointestinal surgeon?</summary>
+                                <div class="pc-answer">
+                                    <p>You should see a specialist if you experience:</p>
+                                    <ul>
+                                        <li>Persistent abdominal pain or discomfort</li>
+                                        <li>Symptoms of jaundice or infection (fever, chills)</li>
+                                        <li>Recurrent episodes of biliary colic</li>
+                                        <li>Diagnosed gallstones with complications like pancreatitis or cholangitis</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                    <!-- ---------- 05 ---------- -->
+                    <details class="pc-chapter" id="ch5">
+                        <summary>
+                            <div class="pc-ch-n">05</div>
+                            <div class="pc-ch-t">
+                                <h3>Surgery for Bile Duct Injuries After Gallbladder Removal</h3>
+                                <span>6 questions &middot; why the first repair decides the outcome</span>
+                            </div>
+                        </summary>
+                        <div class="pc-ch-body">
+                            <details class="pc-qa">
+                                <summary>Why is surgery essential for bile duct injuries?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Restores bile flow:</strong> ensures bile drains from the liver into
+                                            the intestine</li>
+                                        <li><strong>Prevents complications:</strong> avoids long-term infections, bile
+                                            leaks, strictures and liver damage</li>
+                                        <li><strong>Relieves symptoms:</strong> alleviates jaundice, pain and digestive
+                                            problems caused by the injury</li>
+                                    </ul>
+                                    <p><strong>Data insight:</strong> studies show that early surgical repair, performed
+                                        by experienced hepatobiliary surgeons, has success rates of 85% to 95% in
+                                        restoring normal bile flow and preventing complications.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What can happen if bile duct injuries are poorly repaired?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Biliary strictures:</strong> scar tissue narrows the bile ducts,
+                                            leading to recurrent jaundice and pain &mdash; occurring in 25% to 40% of
+                                            cases with suboptimal repairs</li>
+                                        <li><strong>Persistent bile leaks:</strong> unaddressed leaks can cause
+                                            infections, peritonitis or abscesses, and are associated with longer
+                                            hospitalisation and multiple interventions</li>
+                                        <li><strong>Cholangitis:</strong> recurrent infections of the bile ducts, with a
+                                            mortality rate of up to 10% in untreated cases</li>
+                                        <li><strong>Liver damage or failure:</strong> chronic bile obstruction can lead
+                                            to cirrhosis, with some patients requiring liver transplantation</li>
+                                        <li><strong>Diminished quality of life:</strong> chronic pain, fatigue and
+                                            frequent hospitalisations significantly impair physical and mental
+                                            health</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What factors contribute to poor outcomes in bile duct surgery?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Delayed diagnosis:</strong> waiting too long to identify and address
+                                            the injury</li>
+                                        <li><strong>Improper technique:</strong> misaligned repairs or failure to
+                                            recognise the extent of the damage</li>
+                                        <li><strong>Inadequate expertise:</strong> general surgeons without specialised
+                                            hepatobiliary training face higher complication rates</li>
+                                        <li><strong>Lack of follow-up care:</strong> missed opportunities to detect and
+                                            manage complications early</li>
+                                    </ul>
+                                    <p><strong>Data insight:</strong> centres with low experience in bile duct repairs
+                                        report failure rates of up to 50%, compared to 5% to 10% in high-volume,
+                                        specialised centres.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How does expert surgical care improve outcomes?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Precise assessment:</strong> advanced imaging like MRCP or ERCP
+                                            ensures accurate evaluation of the injury</li>
+                                        <li><strong>Tailored surgical techniques:</strong> primary repair or stenting
+                                            may suffice for minor injuries, while techniques like Roux-en-Y
+                                            hepaticojejunostomy have a high success rate for complex injuries</li>
+                                        <li><strong>Multidisciplinary approach:</strong> collaboration with
+                                            gastroenterologists, interventional radiologists and infectious disease
+                                            specialists enhances care</li>
+                                        <li><strong>Close monitoring post-surgery:</strong> regular follow-ups with
+                                            imaging and liver function tests detect issues early</li>
+                                    </ul>
+                                    <p><strong>Data insight:</strong> surgeries performed by experienced hepatobiliary
+                                        teams achieve long-term success rates of 85% to 95%, compared to 50% or less in
+                                        non-specialised settings.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>Why is the timing of surgical repair critical?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Early repair (within 72 hours):</strong> offers the best outcomes by
+                                            minimising inflammation</li>
+                                        <li><strong>Delayed repair (after 6&ndash;8 weeks):</strong> allows inflammation
+                                            to subside but requires careful interim management</li>
+                                        <li><strong>Intermediate repair (during active inflammation):</strong> carries
+                                            the highest risk of failure and complications</li>
+                                    </ul>
+                                    <p><strong>Data insight:</strong> delayed repairs have a slightly lower success rate
+                                        (70%&ndash;90%) than early repairs (85%&ndash;95%), but outcomes depend heavily
+                                        on surgical expertise.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What should patients consider when choosing a surgeon?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Seek specialists:</strong> choose surgeons trained in hepatobiliary
+                                            or gastrointestinal surgery</li>
+                                        <li><strong>Prefer high-volume centres:</strong> hospitals with experience in
+                                            complex bile duct repairs have lower complication rates</li>
+                                        <li><strong>Check success rates:</strong> ask about the surgeon's experience and
+                                            outcomes in bile duct injury repairs</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                    <!-- ---------- 06 ---------- -->
+                    <details class="pc-chapter" id="ch6">
+                        <summary>
+                            <div class="pc-ch-n">06</div>
+                            <div class="pc-ch-t">
+                                <h3>Bile Duct Cancer: Key Questions Answered</h3>
+                                <span>8 questions &middot; cholangiocarcinoma, from diagnosis to support</span>
+                            </div>
+                        </summary>
+                        <div class="pc-ch-body">
+                            <details class="pc-qa">
+                                <summary>What is bile duct cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Bile duct cancer forms in the bile ducts, which carry bile from the liver to the
+                                        small intestine. It can develop in several parts of the system:</p>
+                                    <ul>
+                                        <li><strong>Intrahepatic cholangiocarcinoma:</strong> occurs inside the liver</li>
+                                        <li><strong>Extrahepatic cholangiocarcinoma:</strong> develops outside the
+                                            liver, including near the gallbladder or small intestine</li>
+                                        <li><strong>Perihilar cholangiocarcinoma:</strong> occurs where the bile ducts
+                                            enter the liver</li>
+                                    </ul>
+                                    <p>This cancer can grow slowly and may not cause symptoms until it is advanced.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What causes bile duct cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>While the exact cause remains unclear, several factors may increase the risk:</p>
+                                    <ul>
+                                        <li>Chronic liver diseases such as cirrhosis and hepatitis</li>
+                                        <li><strong>Primary sclerosing cholangitis (PSC):</strong> an inflammatory
+                                            disease of the bile ducts</li>
+                                        <li><strong>Liver fluke infections:</strong> more common in Southeast Asia</li>
+                                        <li>Gallstones and other bile duct abnormalities</li>
+                                        <li><strong>Age and gender:</strong> most commonly diagnosed in people over 65,
+                                            with men at higher risk</li>
+                                    </ul>
+                                    <p>Some people have multiple risk factors; others develop bile duct cancer without
+                                        any of these conditions.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the symptoms of bile duct cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Symptoms can be vague and may resemble other conditions. The most common signs
+                                        include:</p>
+                                    <ul>
+                                        <li><strong>Jaundice:</strong> yellowing of the skin or eyes</li>
+                                        <li>Abdominal pain, particularly in the upper right side</li>
+                                        <li>Itchy skin</li>
+                                        <li>Unexplained weight loss</li>
+                                        <li>Dark urine and pale stools</li>
+                                        <li>Fever and chills</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How is bile duct cancer diagnosed?</summary>
+                                <div class="pc-answer">
+                                    <p>Diagnosis often involves multiple steps, starting with a medical history review
+                                        and physical exam. Key tests include:</p>
+                                    <ul>
+                                        <li><strong>Imaging tests:</strong> CT scans, MRIs or MRCP provide detailed
+                                            pictures of the bile ducts and any tumours</li>
+                                        <li><strong>ERCP:</strong> a procedure to visualise the bile ducts and take
+                                            tissue samples if necessary</li>
+                                        <li><strong>Blood tests:</strong> check liver function and tumour markers that
+                                            may indicate cancer</li>
+                                        <li><strong>Biopsy:</strong> a tissue sample taken during ERCP or surgery to
+                                            confirm the diagnosis</li>
+                                    </ul>
+                                    <p>Early detection is critical, as bile duct cancer is often diagnosed in later
+                                        stages, which can limit treatment options.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What are the treatment options for bile duct cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Treatment varies based on the tumour's location, size and stage:</p>
+                                    <ul>
+                                        <li><strong>Surgery:</strong> the most effective treatment, mainly if the cancer
+                                            is confined to a specific area. <strong>Resection</strong> removes part of
+                                            the bile duct, liver or gallbladder to eliminate the tumour. A <strong>liver
+                                                transplant</strong> may be recommended in a very select group of
+                                            patients</li>
+                                        <li><strong>Endoscopic procedures:</strong> for those who cannot undergo
+                                            surgery, stenting may relieve bile duct blockages and ease symptoms such as
+                                            jaundice</li>
+                                        <li><strong>Chemotherapy and radiation:</strong> often used when surgery is not
+                                            an option &mdash; chemotherapy may shrink tumours, while radiation helps
+                                            manage pain and control growth</li>
+                                        <li><strong>Targeted therapy and immunotherapy:</strong> newer therapies for
+                                            advanced stages or specific genetic mutations</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What is the prognosis for bile duct cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>The prognosis depends mainly on how early the cancer is detected. The five-year
+                                        survival rate is higher for patients diagnosed earlier, where surgery is more
+                                        likely to be successful. However, bile duct cancer is often diagnosed in its
+                                        later stages, which can make treatment more challenging.</p>
+                                    <p>Early-stage cancers that can be surgically removed have the best chance for
+                                        long-term survival. For more advanced cases, treatment can help manage symptoms
+                                        and improve quality of life. Because the disease is rare, ongoing research and
+                                        clinical trials are essential to developing new, more effective treatments.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>What role does surgery play in treating bile duct cancer?</summary>
+                                <div class="pc-answer">
+                                    <p>Surgery is the primary treatment if the tumour is localised and can be entirely
+                                        removed. The type depends on the cancer's location &mdash;
+                                        <strong>resection</strong> removes the tumour and a portion of surrounding
+                                        tissue, including parts of the bile duct or liver.</p>
+                                    <p>Surgery can be curative for patients diagnosed in the early stages. However, if
+                                        the cancer has spread too far, palliative treatments may be considered to
+                                        improve symptoms and quality of life.</p>
+                                </div>
+                            </details>
+                            <details class="pc-qa">
+                                <summary>How can I support a loved one diagnosed with bile duct cancer?</summary>
+                                <div class="pc-answer">
+                                    <ul>
+                                        <li><strong>Emotional support:</strong> be a compassionate listener and help
+                                            them navigate treatment options</li>
+                                        <li><strong>Practical help:</strong> assist with daily tasks, such as transport
+                                            to appointments or managing household chores</li>
+                                        <li><strong>Stay informed:</strong> learn about the disease, treatment options
+                                            and potential side effects to help make informed decisions together</li>
+                                        <li><strong>Seek support:</strong> encourage your loved one to connect with
+                                            support groups or speak with a counsellor to help manage the emotional
+                                            impact of the diagnosis</li>
+                                    </ul>
+                                </div>
+                            </details>
+                        </div>
+                    </details>
+
+                </div>
+
+                <p class="pc-faq-foot" data-aos="fade-up">
+                    This guide is general patient information, not a diagnosis. To discuss your own reports, call
+                    <a href="tel:+919211221551">+91 9211221551</a> or
+                    <a href="index.html#contactModal">book a consultation</a>.
+                </p>
+            </div>
+        </section>
+
+        <!-- ==================== 11 · FINAL CTA ==================== -->
+        <section class="pc-final">
+            <div class="pc-wrap">
+                <div class="pc-final-card" data-aos="fade-up">
+                    <h2>Don't Wait for the Next Attack.</h2>
+                    <p>Take the first step towards expert gallbladder and biliary care with PancreaCare by Advitya
+                        Healthcares.</p>
+                    <div class="pc-final-cta">
+                        <a href="index.html#contactModal" class="pc-btn pc-btn-light">
+                            <i class="fa-regular fa-calendar-check"></i> Book Consultation
+                        </a>
+                        <a href="tel:+919211221551" class="pc-btn pc-btn-outline-light">
+                            <i class="fa-solid fa-phone"></i> Call Specialist
+                        </a>
+                    </div>
+                    <p class="pc-final-note">+91 9211221551 &middot; info@advityahealthcares.com &middot; Reports
+                        reviewed before you travel</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky mobile appointment bar -->
+    <div class="pc-sticky">
+        <a href="tel:+919211221551" class="pc-btn pc-btn-ghost"><i class="fa-solid fa-phone"></i> Call</a>
+        <a href="index.html#contactModal" class="pc-btn pc-btn-primary"><i class="fa-regular fa-calendar-check"></i> Book
+            Appointment</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
+                        Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/919211221551" aria-label="WhatsApp us"
+            style="position: fixed; bottom: 88px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="nav.js?v=2"></script>
+    <script src="contact-modal.js?v=1"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });
+
+        // FAQ accordion — opening one closes the rest
+        const faqItems = document.querySelectorAll('#faq details');
+        faqItems.forEach(item => {
+            item.addEventListener('toggle', () => {
+                if (!item.open) return;
+                faqItems.forEach(other => { if (other !== item) other.removeAttribute('open'); });
+            });
+        });
+
+        // Guide: one chapter open at a time, and one question open within a chapter
+        const chapters = document.querySelectorAll('.pc-chapter');
+        chapters.forEach(chapter => {
+            chapter.addEventListener('toggle', () => {
+                if (!chapter.open) return;
+                chapters.forEach(other => { if (other !== chapter) other.removeAttribute('open'); });
+            });
+
+            const questions = chapter.querySelectorAll('.pc-qa');
+            questions.forEach(question => {
+                question.addEventListener('toggle', () => {
+                    if (!question.open) return;
+                    questions.forEach(other => { if (other !== question) other.removeAttribute('open'); });
+                });
+            });
+        });
+
+        // Chapter index and education cards open the chapter they point at
+        document.querySelectorAll('.pc-index a, .pc-article[href^="#ch"]').forEach(link => {
+            link.addEventListener('click', event => {
+                const chapter = document.querySelector(link.getAttribute('href'));
+                if (!chapter) return;
+                event.preventDefault();
+                chapter.open = true;
+                chapter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', link.getAttribute('href'));
+            });
+        });
+
+        // Open the chapter named in the URL hash on arrival
+        if (location.hash.startsWith('#ch')) {
+            const target = document.querySelector(location.hash);
+            if (target && target.classList.contains('pc-chapter')) {
+                target.open = true;
+                setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+            }
+        }
+
+        // Staggered reveal for the diagnosis pathway and the treatment journey
+        function revealSequence(nodes, gap) {
+            nodes.forEach((node, i) => setTimeout(() => node.classList.add('is-in'), i * gap));
+        }
+
+        if ('IntersectionObserver' in window) {
+            const revealer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const host = entry.target;
+                    host.classList.add('is-in');
+                    revealSequence(Array.from(host.children), host.id === 'journeyTrack' ? 180 : 110);
+                    obs.unobserve(host);
+                });
+            }, { threshold: 0.25 });
+
+            ['pathway', 'journeyTrack'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) revealer.observe(el);
+            });
+        } else {
+            document.querySelectorAll('.pc-step, .pc-jstep').forEach(n => n.classList.add('is-in'));
+        }
+    </script>
+</body>
+
+</html>
