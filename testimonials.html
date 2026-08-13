@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials | Advitya Healthcares</title>
     <meta name="description" content="Real stories from patients who found world-class surgical and cancer care close to home with Advitya Healthcares.">
-    <link rel="stylesheet" href="style.css?v=13">
+    <link rel="stylesheet" href="style.css?v=17">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -1485,6 +1485,111 @@
             line-height: 1.7;
             color: var(--ink-mute);
         }
+
+        /* ---------- video testimonials ---------- */
+        .pc-vid-head {
+            max-width: 720px;
+            margin: 0 auto 40px;
+            text-align: center;
+        }
+
+        .pc-vid-head h2 {
+            margin: 0 0 12px;
+            font-family: var(--font-heading);
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            color: var(--brand-700);
+        }
+
+        .pc-vid-head p {
+            margin: 0;
+            font-size: .98rem;
+            line-height: 1.75;
+            color: var(--ink-soft);
+        }
+
+        .pc-vid-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 22px;
+        }
+
+        .pc-vid {
+            position: relative;
+            aspect-ratio: 9 / 16;
+            margin: 0;
+            border-radius: var(--r-lg);
+            overflow: hidden;
+            background: #0b0b0b;
+            border: 1px solid var(--line);
+            box-shadow: var(--sh-xs);
+            cursor: pointer;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-vid:hover,
+        .pc-vid:focus-visible {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+            outline: none;
+        }
+
+        .pc-vid img,
+        .pc-vid iframe {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            display: block;
+        }
+
+        .pc-vid img {
+            object-fit: cover;
+            transition: transform .6s var(--ease), filter .4s;
+        }
+
+        .pc-vid:hover img {
+            transform: scale(1.05);
+            filter: brightness(.82);
+        }
+
+        .pc-vid-play {
+            position: absolute;
+            inset: 0;
+            display: grid;
+            place-items: center;
+            pointer-events: none;
+        }
+
+        .pc-vid-play span {
+            width: 64px;
+            height: 64px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: rgba(255, 255, 255, .92);
+            color: var(--brand-700);
+            font-size: 1.25rem;
+            padding-left: 4px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
+            transition: transform .4s var(--ease), background .4s;
+        }
+
+        .pc-vid:hover .pc-vid-play span {
+            transform: scale(1.12);
+            background: #fff;
+        }
+
+        .pc-vid.is-playing {
+            cursor: default;
+            transform: none;
+        }
+
+        .pc-vid.is-playing .pc-vid-play,
+        .pc-vid.is-playing img {
+            display: none;
+        }
     </style>
 </head>
 
@@ -1510,6 +1615,29 @@
                     </div>
                 </div>
                 <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown advmega">
+                    <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content advmega-panel">
+                        <div class="advmega-head">
+                            <strong>Conditions We Treat</strong>
+                            <span>Nine areas of hepato-pancreato-biliary and gastrointestinal care.</span>
+                        </div>
+                        <div class="advmega-list">
+                            <a href="diseases/gall-bladder/">Gall Bladder<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/biliary-disease/">Biliary Disease<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/liver/">Liver<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/colon-rectum/">Colon and Rectum<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/stomach/">Stomach<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/esophagus/">Esophagus<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/pancreas/">Pancreas<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/pancreatic-cancer/">Pancreatic Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/gall-bladder-cancer/">Gall Bladder Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
+                        </div>
+                        <div class="advmega-foot">
+                            Not sure which applies to you? <a href="index.html#contactModal">Send us your reports</a> and a specialist will review them.
+                        </div>
+                    </div>
+                </div>
                 <div class="dropdown mega">
                     <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content mega-content">
@@ -1542,10 +1670,10 @@
                     <div class="dropdown-content">
                         <a href="pancreas.html">Pancreas</a>
                         <a href="gallbladder.html">GallBladder</a>
-                        <a href="faqs.html#liver">Liver</a>
-                        <a href="faqs.html#large-intestine">Large Intestine</a>
-                        <a href="faqs.html#stomach">Stomach</a>
-                        <a href="faqs.html#esophagus">Esophagus</a>
+                        <a href="liver.html">Liver</a>
+                        <a href="large-intestine.html">Large Intestine</a>
+                        <a href="stomach.html">Stomach</a>
+                        <a href="esophagus.html">Esophagus</a>
                     </div>
                 </div>
                 <a href="blogs.html">Blogs</a>
@@ -1594,7 +1722,31 @@
             </div>
         </section>
 
-        <!-- ==================== 2 · TESTIMONIALS ==================== -->
+        <!-- ==================== 2 · VIDEO TESTIMONIALS ==================== -->
+        <section id="video-stories">
+            <div class="pc-wrap">
+                <div class="pc-vid-head" data-aos="fade-up">
+                    <h2>Real stories from those who found world-class care close to home</h2>
+                    <p>Patients and families share their Advitya experience. Tap any story to play.</p>
+                </div>
+
+                <div class="pc-vid-grid" id="pcVidGrid">
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="mKL9KXqrJPA" aria-label="Play patient video testimonial 1" data-aos="fade-up"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="mxm96DbSlDQ" aria-label="Play patient video testimonial 2" data-aos="fade-up" data-aos-delay="60"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="5HHAxJXpa5E" aria-label="Play patient video testimonial 3" data-aos="fade-up" data-aos-delay="120"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="cOT_eeSU0V8" aria-label="Play patient video testimonial 4" data-aos="fade-up" data-aos-delay="180"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="KCdRLodzI1s" aria-label="Play patient video testimonial 5" data-aos="fade-up"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="eF1ghQoLrHo" aria-label="Play patient video testimonial 6" data-aos="fade-up" data-aos-delay="60"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="bzAncKsKvVo" aria-label="Play patient video testimonial 7" data-aos="fade-up" data-aos-delay="120"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="FR4_2fQnSyM" aria-label="Play patient video testimonial 8" data-aos="fade-up" data-aos-delay="180"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="LH7ysXtexKg" aria-label="Play patient video testimonial 9" data-aos="fade-up"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="z1AOOP05dhU" aria-label="Play patient video testimonial 10" data-aos="fade-up" data-aos-delay="60"></figure>
+                    <figure class="pc-vid" role="button" tabindex="0" data-yt="2grCE5UYHj4" aria-label="Play patient video testimonial 11" data-aos="fade-up" data-aos-delay="120"></figure>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3 · TESTIMONIALS ==================== -->
         <section id="stories">
             <div class="pc-wrap">
                 <div class="pc-testi-grid">
@@ -1800,10 +1952,76 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="nav.js?v=2"></script>
+    <script src="nav.js?v=5"></script>
     <script src="contact-modal.js?v=1"></script>
     <script>
         AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });
+
+        /* ---- YouTube facade: thumbnail first, iframe only on click ---- */
+        (function () {
+            var grid = document.getElementById('pcVidGrid');
+            if (!grid) return;
+
+            var cards = grid.querySelectorAll('.pc-vid');
+
+            cards.forEach(function (card) {
+                var id = card.dataset.yt;
+
+                var img = document.createElement('img');
+                img.loading = 'lazy';
+                img.alt = '';
+                img.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
+                img.onerror = function () {
+                    this.onerror = null;
+                    this.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
+                };
+
+                var play = document.createElement('div');
+                play.className = 'pc-vid-play';
+                play.innerHTML = '<span><i class="fa-solid fa-play"></i></span>';
+
+                card.appendChild(img);
+                card.appendChild(play);
+            });
+
+            function play(card) {
+                if (card.classList.contains('is-playing')) return;
+
+                var params = [
+                    'autoplay=1',
+                    'rel=0',            // related videos limited to same channel
+                    'modestbranding=1',
+                    'controls=1',
+                    'playsinline=1',
+                    'iv_load_policy=3', // no annotation overlays
+                    'color=white'
+                ].join('&');
+
+                var frame = document.createElement('iframe');
+                frame.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.yt + '?' + params;
+                frame.title = card.getAttribute('aria-label') || 'Patient video testimonial';
+                frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                frame.allowFullscreen = true;
+
+                card.classList.add('is-playing');
+                card.removeAttribute('role');
+                card.removeAttribute('tabindex');
+                card.appendChild(frame);
+            }
+
+            grid.addEventListener('click', function (e) {
+                var card = e.target.closest('.pc-vid');
+                if (card) play(card);
+            });
+
+            grid.addEventListener('keydown', function (e) {
+                if (e.key !== 'Enter' && e.key !== ' ') return;
+                var card = e.target.closest('.pc-vid');
+                if (!card) return;
+                e.preventDefault();
+                play(card);
+            });
+        })();
     </script>
 </body>
 

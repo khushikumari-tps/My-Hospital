@@ -49,6 +49,18 @@
             });
         });
 
+        // The Related Disease mega menu opens on hover at desktop width, so a
+        // stale .show left by an earlier click would pin it open. Clear it
+        // whenever the pointer leaves the item.
+        document.querySelectorAll('.dropdown.advmega').forEach(function (menu) {
+            menu.addEventListener('mouseleave', function () {
+                if (window.matchMedia('(min-width: 993px)').matches) {
+                    var panel = menu.querySelector('.advmega-panel');
+                    if (panel) panel.classList.remove('show');
+                }
+            });
+        });
+
         // Mobile hamburger drawer
         if (mobileMenu && navLinks) {
             var icon = mobileMenu.querySelector('i');

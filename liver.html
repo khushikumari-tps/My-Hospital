@@ -1,0 +1,2326 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Liver Care | Advanced Liver Treatment &amp; Surgery &mdash; Advitya Healthcares</title>
+    <meta name="description"
+        content="Specialist liver care at Advitya Healthcares: fatty liver disease, cirrhosis, liver cysts and tumours, liver cancer and liver resection surgery, by a dedicated hepato-pancreato-biliary team.">
+    <link rel="stylesheet" href="style.css?v=17">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* ============================================================
+           PancreaCare — premium clinical theme
+           Drawn from the Advitya mark: deep maroon base, crimson-to-coral
+           gradient (the triangle), warm coral highlights (the rays), on white.
+           Neutrals are warmed to sit with the brand rather than fight it.
+           ============================================================ */
+        .pcare {
+            --brand-900: #5A0A0E;
+            --brand-800: #7C1218;
+            --brand-700: #9E1F2B;
+            --brand-600: #C04050;
+            --brand-500: #E06050;
+            --accent-400: #F08060;
+            --accent-200: #F4CDC3;
+            --accent-100: #FBE5DE;
+            --accent-050: #FDF5F2;
+            --ink: #2B1A18;
+            --ink-soft: #6B534F;
+            --ink-mute: #99807B;
+            --line: #F0DED8;
+            --white: #FFFFFF;
+
+            --sh-xs: 0 1px 2px rgba(90, 10, 14, .05);
+            --sh-sm: 0 4px 14px -6px rgba(90, 10, 14, .12);
+            --sh-md: 0 14px 34px -14px rgba(90, 10, 14, .22);
+            --sh-lg: 0 30px 60px -24px rgba(90, 10, 14, .3);
+            --sh-brand: 0 16px 34px -14px rgba(158, 31, 43, .55);
+
+            --r-sm: 12px;
+            --r-md: 18px;
+            --r-lg: 26px;
+            --r-xl: 34px;
+
+            --ease: cubic-bezier(.22, .61, .36, 1);
+
+            font-family: var(--font-sans);
+            color: var(--ink);
+            background: var(--white);
+        }
+
+        .pcare *,
+        .pcare *::before,
+        .pcare *::after {
+            box-sizing: border-box;
+        }
+
+        .pc-wrap {
+            width: min(1180px, 92vw);
+            margin-inline: auto;
+        }
+
+        .pcare section {
+            padding: clamp(64px, 8vw, 112px) 0;
+        }
+
+        .pcare h1,
+        .pcare h2,
+        .pcare h3,
+        .pcare h4 {
+            font-family: var(--font-heading);
+            color: var(--ink);
+            letter-spacing: -.02em;
+            line-height: 1.15;
+        }
+
+        .pcare p {
+            color: var(--ink-soft);
+            line-height: 1.75;
+        }
+
+        /* ---------- shared heading block ---------- */
+        .pc-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 7px 16px;
+            border-radius: 999px;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-600);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+        }
+
+        .pc-eyebrow i {
+            font-size: .8em;
+        }
+
+        .pc-head {
+            max-width: 720px;
+        }
+
+        .pc-head.is-center {
+            margin-inline: auto;
+            text-align: center;
+        }
+
+        .pc-head h2 {
+            font-size: clamp(1.9rem, 3.4vw, 2.85rem);
+            font-weight: 700;
+            margin: 18px 0 16px;
+        }
+
+        .pc-head p {
+            font-size: clamp(1rem, 1.3vw, 1.1rem);
+        }
+
+        /* ---------- buttons ---------- */
+        .pc-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 15px 28px;
+            border-radius: 999px;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease), background-color .3s, color .3s, border-color .3s;
+        }
+
+        .pc-btn-primary {
+            background: linear-gradient(135deg, var(--brand-700), var(--brand-500));
+            color: #fff;
+            box-shadow: var(--sh-brand);
+        }
+
+        .pc-btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 44px -16px rgba(158, 31, 43, .7);
+        }
+
+        .pc-btn-ghost {
+            background: rgba(255, 255, 255, .72);
+            color: var(--brand-800);
+            border-color: var(--accent-200);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+
+        .pc-btn-ghost:hover {
+            transform: translateY(-3px);
+            background: #fff;
+            border-color: var(--brand-500);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-btn-light {
+            background: #fff;
+            color: var(--brand-800);
+        }
+
+        .pc-btn-light:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 22px 44px -18px rgba(0, 0, 0, .45);
+        }
+
+        .pc-btn-outline-light {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255, 255, 255, .5);
+        }
+
+        .pc-btn-outline-light:hover {
+            transform: translateY(-3px);
+            background: rgba(255, 255, 255, .12);
+            border-color: #fff;
+        }
+
+        /* ============================ 1. HERO ============================ */
+        .pc-hero {
+            position: relative;
+            padding: clamp(130px, 15vw, 175px) 0 clamp(70px, 8vw, 110px);
+            background:
+                radial-gradient(1100px 620px at 82% 12%, #FCEBE5 0%, rgba(227, 243, 248, 0) 62%),
+                radial-gradient(820px 520px at 8% 88%, #FDF1EC 0%, rgba(234, 246, 250, 0) 60%),
+                linear-gradient(180deg, #FFFCFB 0%, #FDF6F3 100%);
+            overflow: hidden;
+        }
+
+        .pc-hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            /* Rays radiating from the top, echoing the sunburst above the mark */
+            background: repeating-conic-gradient(from -97deg at 50% -14%,
+                    rgba(158, 31, 43, .07) 0deg 1.1deg,
+                    transparent 1.1deg 14deg);
+            mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
+            -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
+            pointer-events: none;
+        }
+
+        .pc-hero-grid {
+            position: relative;
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: clamp(32px, 5vw, 68px);
+            align-items: center;
+        }
+
+        .pc-hero h1 {
+            font-size: clamp(2.25rem, 4.6vw, 3.8rem);
+            font-weight: 700;
+            margin: 22px 0 20px;
+        }
+
+        .pc-hero h1 .accent {
+            background: linear-gradient(120deg, var(--brand-700), var(--accent-400));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .pc-hero-sub {
+            font-size: clamp(1.02rem, 1.4vw, 1.16rem);
+            max-width: 54ch;
+        }
+
+        .pc-hero-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 34px;
+        }
+
+        .pc-hero-trust {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px 30px;
+            margin-top: 38px;
+            padding-top: 28px;
+            border-top: 1px solid var(--line);
+        }
+
+        .pc-trust-item {
+            display: flex;
+            align-items: center;
+            gap: 11px;
+            font-size: .93rem;
+            font-weight: 500;
+            color: var(--ink-soft);
+        }
+
+        .pc-trust-item i {
+            color: var(--brand-500);
+            font-size: 1.05rem;
+        }
+        /* hero visual */
+        .pc-hero-visual {
+            position: relative;
+        }
+
+        .pc-visual-stage {
+            position: relative;
+            border-radius: var(--r-xl);
+            padding: 26px;
+            background: linear-gradient(145deg, rgba(255, 255, 255, .82), rgba(253, 240, 235, .55));
+            border: 1px solid rgba(255, 255, 255, .85);
+            box-shadow: var(--sh-lg);
+            -webkit-backdrop-filter: blur(18px);
+            backdrop-filter: blur(18px);
+        }
+
+        .pc-visual-stage::after {
+            content: '';
+            position: absolute;
+            inset: -22%;
+            z-index: -1;
+            background: radial-gradient(circle, rgba(240, 128, 96, .3), transparent 62%);
+            filter: blur(46px);
+        }
+
+        .pc-visual-stage img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: var(--r-lg);
+            mix-blend-mode: multiply;
+            animation: pcFloat 7s ease-in-out infinite;
+        }
+
+        @keyframes pcFloat {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-12px);
+            }
+        }
+        /* ============================ 2. INTRO ============================ */
+        .pc-intro-grid {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            gap: clamp(32px, 5vw, 70px);
+            align-items: center;
+        }
+
+        .pc-intro-media {
+            position: relative;
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: linear-gradient(160deg, #FDF8F6, #EAF5F9);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-intro-media img {
+            display: block;
+            width: 100%;
+            height: auto;
+            mix-blend-mode: multiply;
+        }
+
+        .pc-facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .pc-fact {
+            padding: 20px 18px;
+            border-radius: var(--r-md);
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+        }
+
+        .pc-fact:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sh-sm);
+        }
+
+        .pc-fact strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brand-700);
+            line-height: 1;
+            margin-bottom: 7px;
+        }
+
+        .pc-fact span {
+            font-size: .84rem;
+            color: var(--ink-mute);
+            line-height: 1.45;
+            display: block;
+        }
+
+        /* ============================ 3. CONDITIONS ============================ */
+        .pc-soft {
+            background: linear-gradient(180deg, #FDF8F6 0%, #FBEFEA 100%);
+        }
+
+        .pc-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            gap: 22px;
+            margin-top: 52px;
+        }
+
+        .pc-card {
+            position: relative;
+            padding: 30px 28px 28px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: var(--sh-xs);
+            overflow: hidden;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-card::before {
+            content: '';
+            position: absolute;
+            inset: 0 0 auto 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .5s var(--ease);
+        }
+
+        .pc-card:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        /* ---- dimensional pancreas illustrations ---- */
+        .pc-card-viz {
+            position: relative;
+            display: grid;
+            place-items: center;
+            height: 176px;
+            margin-bottom: 22px;
+            padding: 12px;
+            border-radius: 18px;
+            background:
+                radial-gradient(120% 90% at 50% 115%, rgba(240, 128, 96, .16), transparent 62%),
+                linear-gradient(150deg, var(--accent-050), #fff);
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: border-color .45s, background-color .45s;
+        }
+
+        .pc-card:hover .pc-card-viz {
+            border-color: var(--accent-200);
+        }
+
+        .pc-card-viz img {
+            max-width: 100%;
+            max-height: 100%;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            mix-blend-mode: multiply;
+            transition: transform .55s var(--ease);
+        }
+
+        /* 3D zoom — slow push-in with a parallax tilt, as a CapCut-style Ken Burns move */
+        .pc-card-viz.is-zoom3d {
+            perspective: 900px;
+            perspective-origin: 50% 45%;
+        }
+
+        .pc-card-viz.is-zoom3d img {
+            transform-style: preserve-3d;
+            animation: vizZoom3d 16s ease-in-out infinite;
+        }
+
+        .pc-card:hover .pc-card-viz.is-zoom3d img {
+            animation-play-state: paused;
+            transform: perspective(900px) translateZ(46px) scale(1.02);
+        }
+
+        @keyframes vizZoom3d {
+            0% {
+                transform: perspective(900px) translateZ(0) rotateY(0deg) scale(1);
+            }
+
+            35% {
+                transform: perspective(900px) translateZ(38px) rotateY(2.2deg) scale(1.015);
+            }
+
+            65% {
+                transform: perspective(900px) translateZ(52px) rotateY(-1.8deg) scale(1.03);
+            }
+
+            100% {
+                transform: perspective(900px) translateZ(0) rotateY(0deg) scale(1);
+            }
+        }
+        .pc-card:hover .pc-card-viz img {
+            transform: scale(1.05);
+        }
+        .pc-card h3 {
+            font-size: 1.16rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .pc-card p {
+            font-size: .96rem;
+            line-height: 1.7;
+        }
+
+        .pc-tag {
+            display: inline-block;
+            margin-top: 16px;
+            padding: 5px 12px;
+            border-radius: 999px;
+            font-size: .74rem;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            background: var(--accent-050);
+            color: var(--brand-600);
+            border: 1px solid var(--line);
+        }
+
+        /* ============================ 4. WARNING SIGNS ============================ */
+        .pc-signs {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 18px;
+            margin-top: 52px;
+        }
+
+        .pc-sign {
+            display: flex;
+            gap: 16px;
+            padding: 24px 22px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s;
+        }
+
+        .pc-sign:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-sign i {
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            border-radius: 14px;
+            background: linear-gradient(140deg, var(--brand-800), var(--brand-600));
+            color: #fff;
+            font-size: 1.05rem;
+        }
+
+        .pc-sign h4 {
+            font-size: 1.02rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+        }
+
+        .pc-sign p {
+            font-size: .9rem;
+            line-height: 1.62;
+            margin: 0;
+        }
+
+        .pc-alert {
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+            margin-top: 34px;
+            padding: 22px 26px;
+            border-radius: var(--r-md);
+            background: linear-gradient(120deg, #FFF7ED, #FFFDF9);
+            border: 1px solid #F3DDBE;
+        }
+
+        .pc-alert i {
+            color: #C87A18;
+            font-size: 1.2rem;
+            margin-top: 3px;
+        }
+
+        .pc-alert p {
+            margin: 0;
+            font-size: .97rem;
+            color: #6B5127;
+        }
+
+        /* ============================ 5. PATHWAY ============================ */
+        .pc-path {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(178px, 1fr));
+            gap: 16px;
+            margin-top: 54px;
+            counter-reset: step;
+        }
+
+        .pc-step {
+            position: relative;
+            padding: 28px 22px 26px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-align: center;
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .6s var(--ease), transform .6s var(--ease), box-shadow .4s, border-color .4s;
+        }
+
+        .pc-step.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .pc-step:hover {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-step-n {
+            display: grid;
+            place-items: center;
+            width: 46px;
+            height: 46px;
+            margin: 0 auto 16px;
+            border-radius: 50%;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: .95rem;
+            color: #fff;
+            background: linear-gradient(140deg, var(--brand-800), var(--brand-500));
+            box-shadow: var(--sh-brand);
+        }
+
+        .pc-step h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .pc-step p {
+            font-size: .87rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        .pc-step::after {
+            content: '\f061';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            top: 46px;
+            right: -13px;
+            font-size: .8rem;
+            color: var(--accent-200);
+            z-index: 2;
+        }
+
+        .pc-step:last-child::after {
+            display: none;
+        }
+
+        /* ============================ 6. TREATMENTS ============================ */
+        .pc-grid-4 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 52px;
+        }
+
+        .pc-treat {
+            position: relative;
+            padding: 28px 24px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-treat:hover {
+            transform: translateY(-6px);
+            border-color: var(--brand-500);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-treat i {
+            display: block;
+            font-size: 1.35rem;
+            color: var(--brand-600);
+            margin-bottom: 16px;
+            transition: transform .45s var(--ease);
+        }
+
+        .pc-treat:hover i {
+            transform: translateY(-3px) scale(1.08);
+        }
+
+        .pc-treat h4 {
+            font-size: 1.06rem;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .pc-treat p {
+            font-size: .92rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================ 7. WHY CHOOSE ============================ */
+        .pc-why {
+            position: relative;
+            color: #fff;
+            background:
+                radial-gradient(900px 500px at 85% 15%, rgba(240, 128, 96, .35), transparent 60%),
+                linear-gradient(150deg, var(--brand-900) 0%, var(--brand-800) 52%, var(--brand-700) 100%);
+            overflow: hidden;
+        }
+
+        .pc-why::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from -97deg at 22% -18%,
+                    rgba(255, 255, 255, .07) 0deg 1.2deg,
+                    transparent 1.2deg 15deg);
+            mask-image: radial-gradient(ellipse 78% 76% at 22% 0%, #000, transparent 76%);
+            -webkit-mask-image: radial-gradient(ellipse 78% 76% at 22% 0%, #000, transparent 76%);
+        }
+
+        .pc-why .pc-wrap {
+            position: relative;
+        }
+
+        .pc-why h2,
+        .pc-why h3,
+        .pc-why h4 {
+            color: #fff;
+        }
+
+        .pc-why p {
+            color: rgba(252, 235, 229, .82);
+        }
+
+        .pc-why .pc-eyebrow {
+            background: rgba(255, 255, 255, .1);
+            border-color: rgba(255, 255, 255, .22);
+            color: #FBD9CF;
+        }
+
+        .pc-why-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 18px;
+            margin-top: 52px;
+        }
+
+        .pc-why-card {
+            padding: 28px 24px;
+            border-radius: var(--r-md);
+            background: rgba(255, 255, 255, .07);
+            border: 1px solid rgba(255, 255, 255, .14);
+            -webkit-backdrop-filter: blur(14px);
+            backdrop-filter: blur(14px);
+            transition: transform .45s var(--ease), background-color .4s, border-color .4s;
+        }
+
+        .pc-why-card:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, .12);
+            border-color: rgba(255, 255, 255, .3);
+        }
+
+        .pc-why-card i {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            margin-bottom: 18px;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .14);
+            color: #FBDCD2;
+            font-size: 1.1rem;
+        }
+
+        .pc-why-card h4 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 9px;
+        }
+
+        .pc-why-card p {
+            font-size: .92rem;
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        /* ============================ 8. JOURNEY ============================ */
+        .pc-journey {
+            position: relative;
+            margin-top: 56px;
+            overflow-x: auto;
+            scrollbar-width: none;
+            padding-bottom: 8px;
+        }
+
+        .pc-journey::-webkit-scrollbar {
+            display: none;
+        }
+
+        .pc-journey-track {
+            position: relative;
+            display: grid;
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(190px, 1fr);
+            gap: 0;
+            min-width: 780px;
+            padding-top: 58px;
+        }
+
+        .pc-journey-track::before {
+            content: '';
+            position: absolute;
+            top: 27px;
+            left: 8%;
+            right: 8%;
+            height: 3px;
+            border-radius: 3px;
+            background: var(--accent-100);
+        }
+
+        .pc-journey-track::after {
+            content: '';
+            position: absolute;
+            top: 27px;
+            left: 8%;
+            width: 0;
+            height: 3px;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transition: width 1.6s var(--ease);
+        }
+
+        .pc-journey-track.is-in::after {
+            width: 84%;
+        }
+
+        .pc-jstep {
+            position: relative;
+            text-align: center;
+            padding: 0 12px;
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity .55s var(--ease), transform .55s var(--ease);
+        }
+
+        .pc-jstep.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        .pc-jdot {
+            position: absolute;
+            top: -46px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: #fff;
+            border: 3px solid var(--accent-200);
+            color: var(--brand-700);
+            font-size: .82rem;
+            font-weight: 700;
+            font-family: var(--font-heading);
+            transition: border-color .5s, box-shadow .5s, transform .5s var(--ease);
+        }
+
+        .pc-jstep.is-in .pc-jdot {
+            border-color: var(--brand-500);
+            box-shadow: 0 0 0 6px rgba(224, 96, 80, .13);
+        }
+
+        .pc-jstep:hover .pc-jdot {
+            transform: translateX(-50%) scale(1.12);
+        }
+
+        .pc-jstep h4 {
+            font-size: 1rem;
+            font-weight: 600;
+            margin-bottom: 7px;
+        }
+
+        .pc-jstep p {
+            font-size: .86rem;
+            line-height: 1.58;
+            margin: 0;
+        }
+
+        /* ============================ 10. EDUCATION ============================ */
+        .pc-articles {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 22px;
+            margin-top: 52px;
+        }
+
+        .pc-article {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 26px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-decoration: none;
+            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-article:hover {
+            transform: translateY(-7px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-article-kicker {
+            font-size: .74rem;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--brand-500);
+            margin-bottom: 14px;
+        }
+
+        .pc-article h3 {
+            font-size: 1.12rem;
+            font-weight: 600;
+            margin-bottom: 11px;
+        }
+
+        .pc-article p {
+            font-size: .93rem;
+            line-height: 1.68;
+            flex: 1;
+        }
+
+        .pc-article-more {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            margin-top: 18px;
+            font-family: var(--font-heading);
+            font-size: .9rem;
+            font-weight: 600;
+            color: var(--brand-700);
+            transition: gap .35s var(--ease);
+        }
+
+        .pc-article:hover .pc-article-more {
+            gap: 15px;
+        }
+
+        /* ============================ 11. FAQ ============================ */
+        .pc-faq {
+            max-width: 860px;
+            margin: 52px auto 0;
+        }
+
+        .pcare details {
+            margin-bottom: 12px;
+            border-radius: var(--r-md);
+            background: #fff;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            transition: box-shadow .4s, border-color .4s;
+        }
+
+        .pcare details[open] {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pcare summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+            padding: 20px 24px;
+            list-style: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: 1.04rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: color .3s, background-color .3s;
+        }
+
+        .pcare summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pcare summary:hover {
+            color: var(--brand-700);
+            background: var(--accent-050);
+        }
+
+        .pcare summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            font-size: .7rem;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            transition: transform .4s var(--ease), background-color .35s, color .35s;
+        }
+
+        .pcare details[open] summary {
+            color: var(--brand-800);
+        }
+
+        .pcare details[open] summary::after {
+            transform: rotate(180deg);
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .pc-answer {
+            padding: 4px 24px 24px;
+            font-size: .98rem;
+            line-height: 1.78;
+            color: var(--ink-soft);
+            animation: pcReveal .35s var(--ease);
+        }
+
+        @keyframes pcReveal {
+            from {
+                opacity: 0;
+                transform: translateY(-6px);
+            }
+
+            to {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        .pc-answer ul {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0 0;
+        }
+
+        .pc-answer li {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 8px;
+        }
+
+        .pc-answer li::before {
+            content: '';
+            position: absolute;
+            left: 2px;
+            top: .68em;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--accent-400);
+        }
+
+        .pc-faq-foot {
+            text-align: center;
+            margin-top: 30px;
+            font-size: .97rem;
+        }
+
+        .pc-faq-foot a {
+            color: var(--brand-700);
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid var(--accent-200);
+        }
+
+        .pc-faq-foot a:hover {
+            color: var(--brand-500);
+        }
+
+        /* ============================ COMPLETE GUIDE ============================ */
+        .pc-index {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 12px;
+            margin-top: 46px;
+        }
+
+        .pc-index a {
+            display: flex;
+            align-items: flex-start;
+            gap: 13px;
+            padding: 16px 18px;
+            border-radius: var(--r-sm);
+            background: #fff;
+            border: 1px solid var(--line);
+            text-decoration: none;
+            font-size: .92rem;
+            font-weight: 500;
+            line-height: 1.45;
+            color: var(--ink-soft);
+            transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s, color .3s;
+        }
+
+        .pc-index a:hover {
+            transform: translateY(-3px);
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-sm);
+            color: var(--brand-800);
+        }
+
+        .pc-index b {
+            flex: 0 0 auto;
+            font-family: var(--font-heading);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .04em;
+            color: var(--brand-500);
+            padding-top: 2px;
+        }
+
+        .pc-guide {
+            margin-top: 44px;
+        }
+
+        .pc-chapter {
+            margin-bottom: 14px;
+            border-radius: var(--r-lg);
+            background: #fff;
+            border: 1px solid var(--line);
+            overflow: hidden;
+            scroll-margin-top: 110px;
+            transition: box-shadow .45s var(--ease), border-color .4s;
+        }
+
+        .pc-chapter[open] {
+            border-color: var(--accent-200);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-chapter>summary {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            padding: 24px 26px;
+            list-style: none;
+            cursor: pointer;
+            transition: background-color .35s;
+        }
+
+        .pc-chapter>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pc-chapter>summary:hover {
+            background: var(--accent-050);
+        }
+
+        .pc-ch-n {
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 14px;
+            font-family: var(--font-heading);
+            font-size: .95rem;
+            font-weight: 700;
+            color: var(--brand-700);
+            background: linear-gradient(140deg, var(--accent-100), #fff);
+            border: 1px solid var(--line);
+            transition: background-color .4s, color .4s, transform .4s var(--ease);
+        }
+
+        .pc-chapter[open] .pc-ch-n,
+        .pc-chapter>summary:hover .pc-ch-n {
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            color: #fff;
+            transform: scale(1.04);
+        }
+
+        .pc-ch-t {
+            flex: 1;
+        }
+
+        .pc-ch-t h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.35;
+            margin-bottom: 4px;
+        }
+
+        .pc-ch-t span {
+            font-size: .82rem;
+            color: var(--ink-mute);
+            font-weight: 500;
+        }
+
+        .pc-chapter>summary::after {
+            content: '\f078';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            flex: 0 0 auto;
+            display: grid;
+            place-items: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            font-size: .72rem;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            transition: transform .4s var(--ease), background-color .35s, color .35s;
+        }
+
+        .pc-chapter[open]>summary::after {
+            transform: rotate(180deg);
+            background: linear-gradient(140deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .pc-ch-body {
+            padding: 4px 26px 26px;
+            animation: pcReveal .35s var(--ease);
+        }
+
+        .pc-qa {
+            margin-bottom: 9px;
+            border-radius: var(--r-sm);
+            background: var(--accent-050);
+            border: 1px solid transparent;
+            overflow: hidden;
+            transition: background-color .35s, border-color .35s;
+        }
+
+        .pc-qa[open] {
+            background: #fff;
+            border-color: var(--line);
+        }
+
+        .pc-qa>summary {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            padding: 15px 18px;
+            list-style: none;
+            cursor: pointer;
+            font-family: var(--font-heading);
+            font-size: .99rem;
+            font-weight: 600;
+            color: var(--ink);
+            transition: color .3s;
+        }
+
+        .pc-qa>summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .pc-qa>summary:hover,
+        .pc-qa[open]>summary {
+            color: var(--brand-700);
+        }
+
+        .pc-qa>summary::after {
+            content: '\2b';
+            flex: 0 0 auto;
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            font-size: .78rem;
+            color: var(--brand-500);
+            transition: transform .35s var(--ease);
+        }
+
+        .pc-qa[open]>summary::after {
+            content: '\f068';
+            transform: rotate(180deg);
+        }
+
+        .pc-qa .pc-answer {
+            padding: 0 18px 18px;
+            font-size: .95rem;
+        }
+
+        @media (max-width: 600px) {
+            .pc-chapter>summary {
+                padding: 18px 18px;
+                gap: 13px;
+            }
+
+            .pc-ch-n {
+                width: 40px;
+                height: 40px;
+                font-size: .85rem;
+            }
+
+            .pc-ch-t h3 {
+                font-size: 1rem;
+            }
+
+            .pc-ch-body {
+                padding: 4px 16px 20px;
+            }
+        }
+
+        /* ============================ 12. FINAL CTA ============================ */
+        .pc-final {
+            padding-bottom: clamp(80px, 9vw, 120px);
+        }
+
+        .pc-final-card {
+            position: relative;
+            padding: clamp(44px, 6vw, 78px) clamp(28px, 5vw, 66px);
+            border-radius: var(--r-xl);
+            text-align: center;
+            color: #fff;
+            overflow: hidden;
+            background:
+                radial-gradient(700px 400px at 20% 0%, rgba(240, 128, 96, .4), transparent 62%),
+                linear-gradient(140deg, var(--brand-900), var(--brand-700));
+            box-shadow: var(--sh-lg);
+        }
+
+        .pc-final-card::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: repeating-conic-gradient(from -97deg at 50% -20%,
+                    rgba(255, 255, 255, .08) 0deg 1.2deg,
+                    transparent 1.2deg 15deg);
+            mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, #000, transparent 78%);
+            -webkit-mask-image: radial-gradient(ellipse 80% 90% at 50% 0%, #000, transparent 78%);
+        }
+
+        .pc-final-card>* {
+            position: relative;
+        }
+
+        .pc-final-card h2 {
+            color: #fff;
+            font-size: clamp(1.85rem, 3.6vw, 2.9rem);
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .pc-final-card p {
+            color: rgba(253, 241, 236, .88);
+            font-size: clamp(1rem, 1.3vw, 1.12rem);
+            max-width: 58ch;
+            margin: 0 auto;
+        }
+
+        .pc-final-cta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            justify-content: center;
+            margin-top: 34px;
+        }
+
+        .pc-final-note {
+            margin-top: 26px;
+            font-size: .88rem;
+            color: rgba(250, 224, 214, .72);
+        }
+
+        /* ============================ sticky mobile CTA ============================ */
+        .pc-sticky {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1200;
+            display: none;
+            gap: 10px;
+            padding: 11px 14px calc(11px + env(safe-area-inset-bottom));
+            background: rgba(255, 255, 255, .92);
+            border-top: 1px solid var(--line);
+            box-shadow: 0 -10px 30px -18px rgba(90, 10, 14, .5);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+        }
+
+        .pc-sticky a {
+            flex: 1;
+            padding: 13px 12px;
+            font-size: .95rem;
+        }
+
+        /* ============================ navbar tint for this page ============================ */
+        /* The navbar already carries the brand colours from style.css —
+           no page-level override is needed now that the page matches it. */
+
+        /* ============================ responsive ============================ */
+        @media (max-width: 1024px) {
+            .pc-hero-grid {
+                grid-template-columns: 1.05fr .95fr;
+                gap: 48px;
+            }
+
+            .pc-hero-visual {
+                order: -1;
+                max-width: 500px;
+                margin-inline: auto;
+            }
+
+            .pc-intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .pc-intro-media {
+                max-width: 520px;
+                margin-inline: auto;
+            }
+
+            .pc-step::after {
+                display: none;
+            }
+        }
+
+        @media (max-width: 760px) {
+            .pcare {
+                padding-bottom: 74px;
+            }
+
+            .pc-sticky {
+                display: flex;
+            }
+
+            .pc-facts {
+                grid-template-columns: 1fr;
+            }
+
+            .pc-hero-cta .pc-btn,
+            .pc-final-cta .pc-btn {
+                flex: 1 1 100%;
+            }
+
+            .pc-hero-trust {
+                gap: 12px 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .pcare *,
+            .pcare *::before,
+            .pcare *::after {
+                animation: none !important;
+                transition-duration: .01ms !important;
+            }
+
+            .pc-step,
+            .pc-jstep {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="pancreacare">
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="image/advitya_logo_nav.png" alt="Advitya Healthcares">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="about.html" class="dropbtn">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                    </div>
+                </div>
+                <a href="pancrea-care.html">Pancrea Care</a>
+                <div class="dropdown advmega">
+                    <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content advmega-panel">
+                        <div class="advmega-head">
+                            <strong>Conditions We Treat</strong>
+                            <span>Nine areas of hepato-pancreato-biliary and gastrointestinal care.</span>
+                        </div>
+                        <div class="advmega-list">
+                            <a href="diseases/gall-bladder/">Gall Bladder<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/biliary-disease/">Biliary Disease<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/liver/">Liver<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/colon-rectum/">Colon and Rectum<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/stomach/">Stomach<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/esophagus/">Esophagus<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/pancreas/">Pancreas<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/pancreatic-cancer/">Pancreatic Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
+                            <a href="diseases/gall-bladder-cancer/">Gall Bladder Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
+                        </div>
+                        <div class="advmega-foot">
+                            Not sure which applies to you? <a href="index.html#contactModal">Send us your reports</a> and a specialist will review them.
+                        </div>
+                    </div>
+                </div>
+                <div class="dropdown mega">
+                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Digestive Care</h4>
+                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
+                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
+                            <a href="clinical-services.html#liver-care">Liver Care</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Procedures</h4>
+                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
+                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
+                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Wellness</h4>
+                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
+                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
+                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html#location" class="nav-loc">Locations</a>
+                <a href="testimonials.html">Testimonials</a>
+                <a href="careers.html">Careers</a>
+                <a href="gallery.html">Gallery</a>
+                <div class="dropdown">
+                    <a href="faqs.html" class="dropbtn">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="pancreas.html" class="active">Pancreas</a>
+                        <a href="gallbladder.html">GallBladder</a>
+                        <a href="liver.html" class="active">Liver</a>
+                        <a href="large-intestine.html">Large Intestine</a>
+                        <a href="stomach.html">Stomach</a>
+                        <a href="esophagus.html">Esophagus</a>
+                    </div>
+                </div>
+                <a href="blogs.html">Blogs</a>
+                <a href="index.html#contactModal">Contact us</a>
+            </nav>
+            <div class="nav-actions">
+                <a href="index.html#location" class="location-btn">
+                    <i class="fa-solid fa-location-dot"></i> Our Locations
+                </a>
+                <a href="index.html#contactModal" class="appointment-btn">
+                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="pcare">
+        <!-- ==================== 1 · HERO ==================== -->
+        <section class="pc-hero">
+            <div class="pc-wrap">
+                <div class="pc-hero-grid">
+                    <div class="pc-hero-copy">
+                        <span class="pc-eyebrow" data-aos="fade-up">
+                            <i class="fa-solid fa-shield-heart"></i> Liver Care by Advitya
+                        </span>
+                        <h1 data-aos="fade-up" data-aos-delay="60">
+                            Advanced Liver Care, <span class="accent">Close to Home</span>
+                        </h1>
+                        <p class="pc-hero-sub" data-aos="fade-up" data-aos-delay="120">
+                            Expert diagnosis, resection surgery and long-term liver care &mdash; delivered by a dedicated
+                            hepato-pancreato-biliary team. From the first scan to recovery and surveillance, you are
+                            treated by the same specialists, without travelling to a distant city.
+                        </p>
+                        <div class="pc-hero-cta" data-aos="fade-up" data-aos-delay="180">
+                            <a href="index.html#contactModal" class="pc-btn pc-btn-primary">
+                                <i class="fa-regular fa-calendar-check"></i> Book a Consultation
+                            </a>
+                            <a href="tel:+919211221551" class="pc-btn pc-btn-ghost">
+                                <i class="fa-solid fa-phone"></i> Talk to a Specialist
+                            </a>
+                        </div>
+                        <div class="pc-hero-trust" data-aos="fade-up" data-aos-delay="240">
+                            <div class="pc-trust-item"><i class="fa-solid fa-user-doctor"></i> HPB &amp; GI surgical
+                                oncology</div>
+                            <div class="pc-trust-item"><i class="fa-solid fa-microscope"></i> Triple-phase CT &middot; MRI
+                                &middot; Elastography</div>
+                            <div class="pc-trust-item"><i class="fa-solid fa-people-group"></i> Multidisciplinary tumour
+                                board</div>
+                        </div>
+                    </div>
+                    <div class="pc-hero-visual" data-aos="fade-left" data-aos-delay="150">
+                        <div class="pc-visual-stage">
+                            <img src="image/image%20copy%2014.png"
+                                alt="Medical illustration representing the liver and hepatology care">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2 · INTRODUCTION ==================== -->
+        <section id="about-liver">
+            <div class="pc-wrap">
+                <div class="pc-intro-grid">
+                    <div class="pc-intro-media" data-aos="fade-right">
+                        <img src="image/image%20copy%2018.png"
+                            alt="Illustration representing hepatobiliary and gastrointestinal surgical care">
+                    </div>
+
+                    <div data-aos="fade-left" data-aos-delay="80">
+                        <span class="pc-eyebrow"><i class="fa-solid fa-circle-nodes"></i> The Programme</span>
+                        <h2 style="font-size: clamp(1.9rem, 3.4vw, 2.7rem); font-weight: 700; margin: 18px 0 16px;">
+                            The one solid organ that grows back</h2>
+                        <p>The liver sits under the right ribs and runs the body's chemistry. It processes everything
+                            absorbed from the gut, manufactures bile and clotting factors, stores energy and clears
+                            drugs and toxins. It also holds enormous reserve &mdash; which is why disease can advance a
+                            long way before it produces a single symptom.</p>
+                        <p style="margin-top: 14px;">It is also the only solid organ that regenerates. Remove a
+                            substantial portion and the remainder regrows within weeks. That single property is what
+                            makes major liver resection possible, and it governs how every operation is planned: not
+                            simply whether the lesion can come out, but whether enough healthy liver will be left
+                            behind to carry you through.</p>
+                        <p style="margin-top: 14px;"><strong style="color: var(--ink);">Advitya's liver programme</strong>
+                            brings hepato-pancreato-biliary surgeons, gastroenterologists, radiologists, oncologists and
+                            dietitians around a single table, so that lesions are characterised precisely, resections
+                            are planned on volumetry rather than guesswork, and surveillance does not depend on which
+                            department you happen to reach.</p>
+
+                        <div class="pc-facts">
+                            <div class="pc-fact">
+                                <strong>8</strong><span>Segments &mdash; each with its own blood and bile supply</span>
+                            </div>
+                            <div class="pc-fact">
+                                <strong>70%</strong><span>Of a healthy liver can be safely resected</span>
+                            </div>
+                            <div class="pc-fact">
+                                <strong>1</strong><span>Team, from first scan to follow-up</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3 · CONDITIONS ==================== -->
+        <section class="pc-soft" id="conditions">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-notes-medical"></i> Conditions We Treat</span>
+                    <h2>The full spectrum of liver disease</h2>
+                    <p>From an incidental cyst found on a routine scan to a major resection for cancer &mdash; each
+                        condition is managed by the same specialist team, using one shared treatment plan.</p>
+                </div>
+
+                <div class="pc-grid-3">
+                    <article class="pc-card" data-aos="fade-up">
+                        <h3>Fatty Liver Disease</h3>
+                        <p>Fat accumulating in liver cells alongside obesity, insulin resistance or type 2 diabetes.
+                            Now the commonest liver condition worldwide, and reversible in its earlier stages with
+                            sustained weight reduction and metabolic control.</p>
+                        <span class="pc-tag">Metabolic</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="60">
+                        <h3>Steatohepatitis &amp; Fibrosis</h3>
+                        <p>The more advanced form, where fat is joined by inflammation and scarring. Assessed with
+                            elastography rather than biopsy in most patients, and halted &mdash; sometimes reversed
+                            &mdash; before it reaches cirrhosis.</p>
+                        <span class="pc-tag">Progressive</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="120">
+                        <h3>Cirrhosis &amp; Portal Hypertension</h3>
+                        <p>Irreversible scarring that stiffens the liver and raises pressure in the portal vein, leading
+                            to varices, ascites and encephalopathy. Managed to slow progression, prevent bleeding and
+                            maintain nutrition.</p>
+                        <span class="pc-tag">Long-term care</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up">
+                        <h3>Liver Cysts &amp; Abscess</h3>
+                        <p>Simple cysts, polycystic liver disease, hydatid cysts and pyogenic or amoebic abscess. Most
+                            simple cysts need only monitoring; infected or symptomatic collections need drainage or
+                            deroofing.</p>
+                        <span class="pc-tag">Benign</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="60">
+                        <h3>Benign Liver Tumours</h3>
+                        <p>Haemangioma, focal nodular hyperplasia and hepatic adenoma. Most are found by chance and
+                            left alone; adenomas are watched more closely because they can bleed and, rarely,
+                            transform.</p>
+                        <span class="pc-tag">Surveillance</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up" data-aos-delay="120">
+                        <h3>Hepatocellular Carcinoma</h3>
+                        <p>The commonest primary liver cancer, usually arising in a cirrhotic liver. Treatment depends
+                            as much on remaining liver function as on the tumour, which is why staging assesses both
+                            together.</p>
+                        <span class="pc-tag">Surgical oncology</span>
+                    </article>
+
+                    <article class="pc-card" data-aos="fade-up">
+                        <h3>Liver Metastases</h3>
+                        <p>Secondary deposits spreading from colorectal, pancreatic or neuroendocrine primaries.
+                            Resection of colorectal liver metastases, often after chemotherapy, offers a genuine
+                            prospect of long-term survival.</p>
+                        <span class="pc-tag">Multidisciplinary</span>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4 · WARNING SIGNS ==================== -->
+        <section id="warning-signs">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-triangle-exclamation"></i> Warning Signs</span>
+                    <h2>Six symptoms worth a specialist opinion</h2>
+                    <p>Individually these are common and often harmless. Together, or persisting beyond a couple of
+                        weeks, they deserve a proper liver assessment.</p>
+                </div>
+
+                <div class="pc-signs">
+                    <div class="pc-sign" data-aos="fade-up">
+                        <i class="fa-solid fa-battery-quarter"></i>
+                        <div>
+                            <h4>Persistent fatigue</h4>
+                            <p>Tiredness out of proportion to your activity, which rest does not resolve.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="60">
+                        <i class="fa-solid fa-eye"></i>
+                        <div>
+                            <h4>Jaundice</h4>
+                            <p>Yellowing of the eyes or skin, with dark urine and pale stools.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="120">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                        <div>
+                            <h4>Right upper abdominal ache</h4>
+                            <p>A dull, dragging discomfort under the right ribs from a stretched liver capsule.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up">
+                        <i class="fa-solid fa-water"></i>
+                        <div>
+                            <h4>Abdominal swelling</h4>
+                            <p>Fluid collecting in the abdomen, or new swelling of the ankles and legs.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="60">
+                        <i class="fa-solid fa-hand-dots"></i>
+                        <div>
+                            <h4>Itching without a rash</h4>
+                            <p>A generalised itch, characteristically worse at night, from bile salts in the skin.</p>
+                        </div>
+                    </div>
+
+                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="120">
+                        <i class="fa-solid fa-droplet"></i>
+                        <div>
+                            <h4>Easy bruising or bleeding</h4>
+                            <p>Bruising from minor knocks, or bleeding gums &mdash; a sign clotting factors are low.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5 · ADVANCED DIAGNOSIS ==================== -->
+        <section class="pc-soft" id="diagnosis">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-microscope"></i> Advanced Diagnosis</span>
+                    <h2>A clear pathway from first visit to a firm answer</h2>
+                    <p>Most liver lesions can be characterised confidently on imaging alone. Each step below narrows
+                        the possibilities before anyone reaches for a needle.</p>
+                </div>
+
+                <div class="pc-path" id="pathway">
+                    <div class="pc-step">
+                        <div class="pc-step-n">01</div>
+                        <h4>Consultation</h4>
+                        <p>History, examination and a review of every previous report, scan and prescription.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">02</div>
+                        <h4>Bloods &amp; Serology</h4>
+                        <p>Liver function, albumin, clotting, alpha-fetoprotein and hepatitis B and C screening.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">03</div>
+                        <h4>Ultrasound &amp; Elastography</h4>
+                        <p>Detects lesions and measures liver stiffness &mdash; fibrosis assessed without a biopsy.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">04</div>
+                        <h4>Triple-Phase CT / MRI</h4>
+                        <p>Timed contrast imaging characterises lesions by blood supply and provides volumetry.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">05</div>
+                        <h4>Diagnosis</h4>
+                        <p>Findings taken to a multidisciplinary board so stage, function and plan are agreed once.</p>
+                    </div>
+                    <div class="pc-step">
+                        <div class="pc-step-n">06</div>
+                        <h4>Personalised Treatment</h4>
+                        <p>A written plan covering procedure, nutrition, recovery and surveillance schedule.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 6 · TREATMENT & SURGERY ==================== -->
+        <section id="treatments">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-briefcase-medical"></i> Treatment &amp; Surgery</span>
+                    <h2>Every option, under one team</h2>
+                    <p>Open, laparoscopic and ablative approaches, alongside the medical and nutritional care that
+                        determines how well the liver recovers.</p>
+                </div>
+
+                <div class="pc-grid-4">
+                    <article class="pc-treat" data-aos="fade-up">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                        <h4>Liver Resection</h4>
+                        <p>Anatomical and non-anatomical resections, from segmentectomy to extended hepatectomy,
+                            planned on volumetry so enough functional liver remains.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="50">
+                        <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        <h4>Laparoscopic Liver Surgery</h4>
+                        <p>Keyhole removal of peripheral lesions, with less pain, shorter stay and a faster return to
+                            work than open surgery in suitable cases.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-temperature-arrow-up"></i>
+                        <h4>Ablation Therapy</h4>
+                        <p>Radiofrequency or microwave energy to destroy small tumours, used where resection would cost
+                            more liver than the patient can spare.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fa-solid fa-diagram-project"></i>
+                        <h4>Portal Vein Embolisation</h4>
+                        <p>Deliberately growing the future liver remnant before major resection, so an operation that
+                            was unsafe becomes safe.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up">
+                        <i class="fa-solid fa-vials"></i>
+                        <h4>Chemotherapy</h4>
+                        <p>Given before resection to shrink colorectal liver metastases, or afterwards to reduce the
+                            risk of recurrence.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="50">
+                        <i class="fa-solid fa-syringe"></i>
+                        <h4>Cyst &amp; Abscess Drainage</h4>
+                        <p>Image-guided drainage or laparoscopic deroofing for symptomatic cysts, hydatid disease and
+                            liver abscess.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="100">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h4>Cirrhosis Management</h4>
+                        <p>Variceal surveillance, ascites control, encephalopathy management and six-monthly cancer
+                            screening for patients with established cirrhosis.</p>
+                    </article>
+
+                    <article class="pc-treat" data-aos="fade-up" data-aos-delay="150">
+                        <i class="fa-solid fa-apple-whole"></i>
+                        <h4>Nutritional Support</h4>
+                        <p>Protein and calorie planning, vitamin monitoring and a structured weight-reduction programme
+                            for metabolic liver disease.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 7 · WHY CHOOSE ==================== -->
+        <section class="pc-why" id="why-livercare">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-award"></i> Why Advitya</span>
+                    <h2>Specialist depth, without the distance</h2>
+                    <p>Liver outcomes depend heavily on how often a team does this work. Ours does it as its primary
+                        focus &mdash; and brings that expertise to where patients actually live.</p>
+                </div>
+
+                <div class="pc-why-grid">
+                    <div class="pc-why-card" data-aos="fade-up">
+                        <i class="fa-solid fa-user-doctor"></i>
+                        <h4>Advanced HPB Expertise</h4>
+                        <p>Fellowship-trained hepato-pancreato-biliary and GI surgical oncology, with liver resection as
+                            core practice rather than occasional work.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="60">
+                        <i class="fa-solid fa-people-group"></i>
+                        <h4>Multidisciplinary Care</h4>
+                        <p>Surgeons, hepatologists, radiologists, oncologists and dietitians working from one shared
+                            plan rather than parallel opinions.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="120">
+                        <i class="fa-solid fa-microscope"></i>
+                        <h4>Advanced Diagnostics</h4>
+                        <p>Triple-phase CT, contrast MRI, elastography and CT volumetry &mdash; so remnant volume is
+                            measured, not estimated.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="180">
+                        <i class="fa-solid fa-clipboard-list"></i>
+                        <h4>Personalised Treatment</h4>
+                        <p>A written plan for your stage, your liver function and your circumstances &mdash; with a cost
+                            estimate before admission.</p>
+                    </div>
+
+                    <div class="pc-why-card" data-aos="fade-up" data-aos-delay="240">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                        <h4>Comprehensive Follow-up</h4>
+                        <p>Scheduled surveillance imaging, liver function review and phone follow-up once you are home
+                            &mdash; with the same faces throughout.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 8 · TREATMENT JOURNEY ==================== -->
+        <section id="journey">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-route"></i> Treatment Journey</span>
+                    <h2>What the road ahead actually looks like</h2>
+                    <p>Six stages, from your first appointment to long-term surveillance &mdash; so you always know
+                        where you are and what comes next.</p>
+                </div>
+
+                <div class="pc-journey">
+                    <div class="pc-journey-track" id="journeyTrack">
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">01</div>
+                            <h4>Consultation</h4>
+                            <p>Your history and existing reports reviewed by a specialist, in person or by video.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">02</div>
+                            <h4>Diagnosis</h4>
+                            <p>Imaging and blood work to characterise the lesion and measure how well the liver works.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">03</div>
+                            <h4>Treatment Planning</h4>
+                            <p>The board agrees the plan and the remnant volume, and it is explained to you in writing.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">04</div>
+                            <h4>Treatment</h4>
+                            <p>Resection, ablation, drainage or medical management &mdash; as planned, by the same team.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">05</div>
+                            <h4>Recovery</h4>
+                            <p>Pain control, graded diet, early mobilisation and monitoring while the liver regenerates.</p>
+                        </div>
+                        <div class="pc-jstep">
+                            <div class="pc-jdot">06</div>
+                            <h4>Follow-up</h4>
+                            <p>Scheduled review, surveillance imaging and nutrition support once you are home.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 9 · PATIENT EDUCATION ==================== -->
+        <section id="education">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-book-open"></i> Patient Education</span>
+                    <h2>Understand your diagnosis before you decide</h2>
+                    <p>Detailed, plain-language guides written by our team &mdash; so the conversation in clinic starts
+                        from a better place.</p>
+                </div>
+
+                <div class="pc-articles">
+                    <a href="diseases/liver/" class="pc-article" data-aos="fade-up">
+                        <span class="pc-article-kicker">Overview</span>
+                        <h3>Comprehensive Liver Care</h3>
+                        <p>What the liver does, the conditions that affect it, and how diagnosis and treatment are
+                            planned around remaining function.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="benign-diseases-of-the-liver.html" class="pc-article" data-aos="fade-up" data-aos-delay="70">
+                        <span class="pc-article-kicker">Benign</span>
+                        <h3>Non-Cancerous Liver Disease</h3>
+                        <p>Fatty liver, cysts, haemangiomas and adenomas &mdash; which need treating, which need
+                            watching, and which need nothing at all.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="liver-cancers.html" class="pc-article" data-aos="fade-up" data-aos-delay="140">
+                        <span class="pc-article-kicker">Oncology</span>
+                        <h3>Liver Cancers</h3>
+                        <p>Primary and secondary liver cancer &mdash; risk factors, symptoms, how it is staged, and the
+                            treatment options at each stage.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                    <a href="liver-surgery.html" class="pc-article" data-aos="fade-up" data-aos-delay="210">
+                        <span class="pc-article-kicker">Surgery</span>
+                        <h3>Liver Surgery &amp; Recovery</h3>
+                        <p>How resection is planned across the liver's eight segments, what recovery involves, and the
+                            alternatives when surgery is not the right answer.</p>
+                        <span class="pc-article-more">Read the guide <i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 10 · FAQ ==================== -->
+        <section class="pc-soft" id="faq">
+            <div class="pc-wrap">
+                <div class="pc-head is-center" data-aos="fade-up">
+                    <span class="pc-eyebrow"><i class="fa-solid fa-circle-question"></i> Frequently Asked</span>
+                    <h2>Questions patients ask us most</h2>
+                </div>
+
+                <div class="pc-faq" data-aos="fade-up">
+                    <details>
+                        <summary>What are the earliest warning signs of liver disease?</summary>
+                        <div class="pc-answer">
+                            <p>Frequently there are none. The liver holds substantial reserve and can be significantly
+                                affected before producing symptoms, which is why abnormal liver function tests on a
+                                routine blood panel matter. When symptoms do appear they tend to be non-specific
+                                &mdash; fatigue, a dull ache under the right ribs, reduced appetite. Jaundice, abdominal
+                                swelling and confusion are features of advanced disease rather than early disease.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Does a liver lesion found on a scan mean cancer?</summary>
+                        <div class="pc-answer">
+                            <p>Usually not. Simple cysts and haemangiomas are common incidental findings and are
+                                entirely benign. What matters is how the lesion behaves on contrast imaging rather than
+                                how large it is. A triple-phase CT or contrast MRI characterises most lesions
+                                confidently without any need for a biopsy.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Can fatty liver disease be reversed?</summary>
+                        <div class="pc-answer">
+                            <p>Yes, particularly in its earlier stages. The evidence is consistent on what works:</p>
+                            <ul>
+                                <li>Sustained weight reduction of around ten percent clears liver fat and can reverse
+                                    early fibrosis</li>
+                                <li>Improved glycaemic control in diabetes slows progression measurably</li>
+                                <li>Eliminating alcohol removes a second, compounding injury</li>
+                                <li>Regular physical activity helps independently of weight lost</li>
+                            </ul>
+                            <p>Established cirrhosis cannot be reversed, but its progression can be halted.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How much of the liver can safely be removed?</summary>
+                        <div class="pc-answer">
+                            <p>Up to about seventy percent of a healthy liver, because the remnant regenerates within
+                                weeks. In a liver damaged by cirrhosis or previous chemotherapy the safe margin is
+                                considerably smaller. This is why we measure remnant volume with CT volumetry and assess
+                                function before deciding, rather than discovering the limit during surgery.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Is liver surgery very risky?</summary>
+                        <div class="pc-answer">
+                            <p>Liver surgery is major surgery, and the organ's rich blood supply means bleeding is the
+                                principal concern. In specialist units with careful preoperative planning, modern
+                                parenchymal transection technique and enhanced recovery protocols, outcomes have
+                                improved substantially over the past two decades. As with pancreatic surgery, how often
+                                the team performs the operation matters more than almost any other single factor.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>How long is recovery after liver resection?</summary>
+                        <div class="pc-answer">
+                            <p>Most patients stay in hospital five to ten days after a major open resection, and two to
+                                four days after a laparoscopic one. Light activity resumes within two to three weeks and
+                                full recovery takes six to eight weeks. Liver volume typically returns to near-normal
+                                within about three months.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Who needs six-monthly liver cancer screening?</summary>
+                        <div class="pc-answer">
+                            <p>Anyone with established cirrhosis, from any cause, and selected patients with chronic
+                                hepatitis B without cirrhosis. Screening is an ultrasound with or without
+                                alpha-fetoprotein every six months. It is the single most effective thing available in
+                                liver oncology, because it shifts diagnosis to a stage where resection or ablation is
+                                still possible.</p>
+                        </div>
+                    </details>
+
+                    <details>
+                        <summary>Do you review reports before I travel for an appointment?</summary>
+                        <div class="pc-answer">
+                            <p>Yes. For outstation patients, a video review of your existing scans and reports is
+                                usually the first step, so the trip is made only when it will change something. Bring
+                                the actual films or CD rather than only the printed report &mdash; liver lesions are
+                                judged on the images, not the summary &mdash; along with previous prescriptions,
+                                discharge summaries and blood work from the last three months.</p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 11 · FINAL CTA ==================== -->
+        <section class="pc-final">
+            <div class="pc-wrap">
+                <div class="pc-final-card" data-aos="fade-up">
+                    <h2>Send us your liver scans.</h2>
+                    <p>A specialist reviews your imaging and blood work before you travel, so the first visit starts
+                        with a plan rather than a repeat test.</p>
+                    <div class="pc-final-cta">
+                        <a href="index.html#contactModal" class="pc-btn pc-btn-light">
+                            <i class="fa-regular fa-calendar-check"></i> Book Consultation
+                        </a>
+                        <a href="tel:+919211221551" class="pc-btn pc-btn-outline-light">
+                            <i class="fa-solid fa-phone"></i> Call Specialist
+                        </a>
+                    </div>
+                    <p class="pc-final-note">+91 9211221551 &middot; info@advityahealthcares.com &middot; Reports
+                        reviewed before you travel</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky mobile appointment bar -->
+    <div class="pc-sticky">
+        <a href="tel:+919211221551" class="pc-btn pc-btn-ghost"><i class="fa-solid fa-phone"></i> Call</a>
+        <a href="index.html#contactModal" class="pc-btn pc-btn-primary"><i class="fa-regular fa-calendar-check"></i> Book
+            Appointment</a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="image/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a>
+                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                </div>
+
+                <div
+                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
+                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
+                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
+                        Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+
+        <a href="https://wa.me/919211221551" aria-label="WhatsApp us"
+            style="position: fixed; bottom: 88px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="nav.js?v=5"></script>
+    <script src="contact-modal.js?v=1"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });
+
+        // FAQ accordion — opening one closes the rest
+        const faqItems = document.querySelectorAll('#faq details');
+        faqItems.forEach(item => {
+            item.addEventListener('toggle', () => {
+                if (!item.open) return;
+                faqItems.forEach(other => { if (other !== item) other.removeAttribute('open'); });
+            });
+        });
+
+        // Guide: one chapter open at a time, and one question open within a chapter
+        const chapters = document.querySelectorAll('.pc-chapter');
+        chapters.forEach(chapter => {
+            chapter.addEventListener('toggle', () => {
+                if (!chapter.open) return;
+                chapters.forEach(other => { if (other !== chapter) other.removeAttribute('open'); });
+            });
+
+            const questions = chapter.querySelectorAll('.pc-qa');
+            questions.forEach(question => {
+                question.addEventListener('toggle', () => {
+                    if (!question.open) return;
+                    questions.forEach(other => { if (other !== question) other.removeAttribute('open'); });
+                });
+            });
+        });
+
+        // Chapter index: open the chapter it points at, then scroll to it
+        document.querySelectorAll('.pc-index a').forEach(link => {
+            link.addEventListener('click', event => {
+                const chapter = document.querySelector(link.getAttribute('href'));
+                if (!chapter) return;
+                event.preventDefault();
+                chapter.open = true;
+                chapter.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                history.replaceState(null, '', link.getAttribute('href'));
+            });
+        });
+
+        // Open the chapter named in the URL hash on arrival
+        if (location.hash.startsWith('#ch')) {
+            const target = document.querySelector(location.hash);
+            if (target && target.classList.contains('pc-chapter')) {
+                target.open = true;
+                setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 150);
+            }
+        }
+
+        // Staggered reveal for the diagnosis pathway and the treatment journey
+        function revealSequence(nodes, gap) {
+            nodes.forEach((node, i) => setTimeout(() => node.classList.add('is-in'), i * gap));
+        }
+
+        if ('IntersectionObserver' in window) {
+            const revealer = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) return;
+                    const host = entry.target;
+                    host.classList.add('is-in');
+                    revealSequence(Array.from(host.children), host.id === 'journeyTrack' ? 180 : 110);
+                    obs.unobserve(host);
+                });
+            }, { threshold: 0.25 });
+
+            ['pathway', 'journeyTrack'].forEach(id => {
+                const el = document.getElementById(id);
+                if (el) revealer.observe(el);
+            });
+        } else {
+            document.querySelectorAll('.pc-step, .pc-jstep').forEach(n => n.classList.add('is-in'));
+            document.getElementById('journeyTrack')?.classList.add('is-in');
+        }
+    </script>
+</body>
+
+</html>
