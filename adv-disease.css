@@ -194,62 +194,67 @@
 }
 
 /* =============================== 1. HERO =============================== */
-/* Deliberately plain: a single burgundy-to-crimson gradient, nothing layered
-   over it. The hierarchy comes from type and spacing, not decoration. */
+/* Palette is scoped to the hero so the sections below keep their own tokens.
+   Everything decorative is painted with gradients on the section itself —
+   there is no extra markup and nothing to clip or mis-stack. */
 .adv-hero {
+    --h-burgundy: #4A050B;
+    --h-wine: #650A12;
+    --h-crimson: #A91D2A;
+    --h-coral: #F05A55;
+    --h-soft: #E8C9CB;
+
     position: relative;
     display: flex;
     align-items: center;
-    min-height: 660px;
-    padding: clamp(140px, 15vw, 172px) 0 clamp(64px, 7vw, 92px);
+    min-height: 680px;
+    padding: clamp(146px, 15vw, 184px) 0 clamp(72px, 8vw, 104px);
     overflow: hidden;
-    background: linear-gradient(118deg,
-            #2A0206 0%,
-            var(--deep-900) 22%,
-            var(--brand-800) 54%,
-            var(--brand-700) 84%,
-            #B02A3C 100%);
+    background: linear-gradient(118deg, #2C0206 0%, var(--h-burgundy) 30%, var(--h-wine) 58%,
+            #8A1522 84%, var(--h-crimson) 100%);
 }
 
 /* ------------------------------ layout ------------------------------ */
 .adv-hero-grid {
     position: relative;
+    z-index: 1;
     display: grid;
-    grid-template-columns: minmax(0, 1fr) minmax(0, .8fr);
-    gap: clamp(34px, 5vw, 76px);
+    grid-template-columns: minmax(0, 1.06fr) minmax(0, .82fr);
+    gap: clamp(38px, 5.5vw, 84px);
     align-items: center;
     width: 100%;
 }
 
 .adv-hero-inner {
-    max-width: 650px;
+    max-width: 640px;
 }
 
-/* staged entrance — each child declares its own delay */
+/* staged entrance, slow and even */
 .adv-hero-inner > *,
 .adv-hero-visual {
-    animation: advHeroUp .8s cubic-bezier(.22, .61, .36, 1) backwards;
+    animation: advHeroUp .78s cubic-bezier(.22, .68, .3, 1) backwards;
 }
 
 @keyframes advHeroUp {
-    from { opacity: 0; transform: translateY(22px); }
+    from { opacity: 0; transform: translateY(26px); }
     to   { opacity: 1; transform: none; }
 }
 
 @keyframes advHeroRight {
-    from { opacity: 0; transform: translateX(38px); }
+    from { opacity: 0; transform: translateX(46px); }
     to   { opacity: 1; transform: none; }
 }
 
-.adv-hero-inner .adv-crumbs    { animation-delay: .05s; }
-.adv-hero-inner .adv-eyebrow   { animation-delay: .15s; }
-.adv-hero-inner h1             { animation-delay: .25s; }
-.adv-hero-inner .adv-hero-sub  { animation-delay: .35s; }
-.adv-hero-inner .adv-hero-acts { animation-delay: .45s; }
+.adv-hero-inner .adv-crumbs    { animation-delay: .08s; }
+.adv-hero-inner .adv-eyebrow   { animation-delay: .2s; }
+.adv-hero-inner h1             { animation-delay: .32s; }
+.adv-hero-inner .adv-hero-sub  { animation-delay: .44s; }
+.adv-hero-inner .adv-hero-acts { animation-delay: .58s; }
 
 .adv-hero-visual {
     animation-name: advHeroRight;
-    animation-delay: .3s;
+    animation-duration: .82s;
+    animation-delay: .34s;
 }
 
 /* ------------------------------ copy ------------------------------ */
@@ -257,86 +262,100 @@
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 9px;
-    margin-bottom: 24px;
+    gap: 10px;
+    margin-bottom: 26px;
     font-size: .86rem;
-    color: rgba(255, 255, 255, .72);
+    letter-spacing: .01em;
+    color: rgba(232, 201, 203, .78);
 }
 
 .adv-crumbs a {
-    color: rgba(255, 255, 255, .9);
+    color: rgba(255, 255, 255, .92);
     text-decoration: none;
     transition: color .25s ease;
 }
 
 .adv-crumbs a:hover {
-    color: var(--brand-300);
-    text-decoration: underline;
+    color: var(--h-coral);
 }
 
 .adv-crumbs span[aria-hidden] {
-    opacity: .45;
+    opacity: .4;
 }
 
+/* glass badge */
 .adv-hero .adv-eyebrow {
-    background: rgba(255, 255, 255, .13);
-    border-color: rgba(255, 255, 255, .3);
+    padding: 9px 20px;
+    background: rgba(255, 255, 255, .1);
+    border: 1px solid rgba(255, 255, 255, .28);
+    box-shadow: 0 8px 24px -12px rgba(0, 0, 0, .8), inset 0 1px 0 rgba(255, 255, 255, .22);
     color: #fff;
-    -webkit-backdrop-filter: blur(8px);
-    backdrop-filter: blur(8px);
+    letter-spacing: .2em;
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+}
+
+.adv-hero .adv-eyebrow i {
+    color: var(--h-coral);
 }
 
 .adv-hero h1 {
     color: #fff;
-    font-size: clamp(2.15rem, 4.2vw, 3.5rem);
+    font-size: clamp(2.3rem, 4.6vw, 3.75rem);
     font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -.028em;
-    margin: 24px 0 20px;
+    line-height: 1.06;
+    letter-spacing: -.032em;
+    margin: 26px 0 22px;
     text-wrap: balance;
 }
 
 .adv-hero-sub {
-    color: rgba(255, 249, 247, .88);
-    font-size: clamp(1.04rem, 1.3vw, 1.16rem);
-    line-height: 1.8;
-    max-width: 56ch;
+    color: var(--h-soft);
+    font-size: clamp(1.06rem, 1.35vw, 1.18rem);
+    font-weight: 400;
+    line-height: 1.82;
+    max-width: 54ch;
     margin: 0;
 }
 
 .adv-hero-acts {
     display: flex;
     flex-wrap: wrap;
-    gap: 14px;
-    margin-top: 38px;
+    gap: 16px;
+    margin-top: 40px;
 }
 
-/* hero-scoped button treatment: warmer gradient, deeper red on the ghost */
+/* ------------------------------ buttons ------------------------------ */
 .adv-hero .adv-btn {
-    transition: transform .25s ease, box-shadow .25s ease, background-color .25s ease, color .25s ease, border-color .25s ease;
+    padding: 16px 30px;
+    font-size: 1rem;
+    transition: transform .3s cubic-bezier(.22, .68, .3, 1), box-shadow .3s ease,
+        background-color .3s ease, color .3s ease, border-color .3s ease;
 }
 
 .adv-hero .adv-btn-primary {
-    background: linear-gradient(135deg, var(--brand-600) 0%, var(--brand-500) 52%, var(--brand-400) 100%);
-    box-shadow: 0 18px 38px -14px rgba(0, 0, 0, .55);
+    background: linear-gradient(135deg, var(--h-crimson) 0%, #C9333A 52%, var(--h-coral) 100%);
+    border-color: rgba(255, 255, 255, .16);
+    box-shadow: 0 16px 36px -14px rgba(240, 90, 85, .62), inset 0 1px 0 rgba(255, 255, 255, .22);
 }
 
 .adv-hero .adv-btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 26px 48px -16px rgba(0, 0, 0, .65);
+    transform: translateY(-4px);
+    box-shadow: 0 26px 50px -16px rgba(240, 90, 85, .74), inset 0 1px 0 rgba(255, 255, 255, .3);
 }
 
 .adv-hero .adv-btn-ghost {
-    background: rgba(255, 255, 255, .94);
-    color: var(--brand-800);
-    border-color: rgba(255, 255, 255, .7);
+    background: rgba(255, 255, 255, .96);
+    color: #6B0A12;
+    border-color: rgba(255, 255, 255, .8);
+    box-shadow: 0 12px 30px -16px rgba(0, 0, 0, .6);
 }
 
 .adv-hero .adv-btn-ghost:hover {
-    transform: translateY(-3px);
+    transform: translateY(-4px);
     background: #fff;
-    color: var(--brand-700);
-    box-shadow: 0 22px 42px -18px rgba(0, 0, 0, .5);
+    color: var(--h-crimson);
+    box-shadow: 0 24px 46px -18px rgba(0, 0, 0, .66);
 }
 
 .adv-hero .adv-btn:focus-visible,
@@ -350,30 +369,50 @@
     position: relative;
     justify-self: end;
     width: 100%;
-    max-width: 460px;
+    max-width: 470px;
 }
 
+/* outer translucent shell */
 .adv-visual-card {
     position: relative;
     margin: 0;
-    padding: 14px;
-    border-radius: 28px;
-    background: rgba(255, 255, 255, .1);
-    border: 1px solid rgba(255, 255, 255, .2);
-    box-shadow: 0 30px 64px -28px rgba(0, 0, 0, .65);
+    padding: 15px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, .11);
+    border: 1px solid rgba(255, 255, 255, .26);
+    box-shadow:
+        0 40px 78px -32px rgba(0, 0, 0, .78),
+        inset 0 1px 0 rgba(255, 255, 255, .3);
+    -webkit-backdrop-filter: blur(16px);
+    backdrop-filter: blur(16px);
+    animation: advVisualFloat 9s ease-in-out infinite;
+    transition: transform .45s cubic-bezier(.22, .68, .3, 1), box-shadow .45s ease;
 }
 
-/* A light plate inside the frame. The source illustrations range from
-   1:1 to 2.47:1, so they are contained rather than cropped, and the plate
-   gives the white-background artwork something to sit on. */
+@keyframes advVisualFloat {
+    0%, 100% { transform: translateY(0); }
+    50%      { transform: translateY(-10px); }
+}
+
+.adv-visual-card:hover {
+    animation-play-state: paused;
+    transform: translateY(-8px);
+    box-shadow:
+        0 54px 92px -34px rgba(0, 0, 0, .82),
+        inset 0 1px 0 rgba(255, 255, 255, .36);
+}
+
+/* clean white inner frame. The source illustrations run from 1:1 to 2.47:1,
+   so they are contained rather than cropped. */
 .adv-visual-plate {
     display: grid;
     place-items: center;
     aspect-ratio: 4 / 3;
-    padding: 20px;
-    border-radius: 18px;
+    padding: 22px;
+    border-radius: 19px;
     overflow: hidden;
-    background: linear-gradient(158deg, #fff 0%, var(--brand-050) 62%, #FCEDE7 100%);
+    background: linear-gradient(158deg, #fff 0%, #FFF7F4 58%, #FDEDE7 100%);
+    box-shadow: inset 0 0 0 1px rgba(74, 5, 11, .06);
 }
 
 .adv-visual-plate img {
@@ -383,6 +422,11 @@
     width: auto;
     height: auto;
     object-fit: contain;
+    transition: transform .55s cubic-bezier(.22, .68, .3, 1);
+}
+
+.adv-visual-card:hover .adv-visual-plate img {
+    transform: scale(1.035);
 }
 
 /* ============================ 2. INTRODUCTION ============================ */
@@ -1209,15 +1253,20 @@
 @media (max-width: 1024px) {
     .adv-hero {
         min-height: 0;
+        padding-top: clamp(132px, 15vw, 160px);
     }
 
     .adv-hero-grid {
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
-        gap: 32px;
+        grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+        gap: 34px;
     }
 
     .adv-hero-visual {
-        max-width: 360px;
+        max-width: 372px;
+    }
+
+    .adv-hero h1 {
+        font-size: clamp(2.1rem, 5vw, 2.9rem);
     }
 
     .adv-intro-grid,
@@ -1262,7 +1311,13 @@
     .adv-hero-visual {
         order: 2;
         justify-self: center;
-        max-width: 420px;
+        max-width: 430px;
+    }
+
+    /* comfortable tap targets */
+    .adv-hero .adv-btn {
+        min-height: 52px;
+        padding: 15px 26px;
     }
 
     .adv-hero-acts .adv-btn,
@@ -1299,6 +1354,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .adv-visual-card {
+        animation: none !important;
+    }
+
     .advd *,
     .advd *::before,
     .advd *::after {
@@ -1501,4 +1560,91 @@
     .adv-foot-grid {
         grid-template-columns: 1fr;
     }
+}
+
+/* ===================================================================
+   Light hero: the burgundy band is gone, so the page ground shows
+   through. Everything that sat on the dark colour is re-inked here.
+   =================================================================== */
+.adv-hero {
+    background: none;
+    min-height: 0;
+    padding: clamp(136px, 14vw, 176px) 0 clamp(56px, 7vw, 92px);
+}
+
+.adv-hero h1 {
+    color: #22160F;
+}
+
+.adv-hero .adv-hero-sub {
+    color: #5C4642;
+}
+
+/* badge: glass on dark reads as a soft outline chip on light */
+.adv-hero .adv-eyebrow {
+    background: #FFFFFF;
+    border: 1px solid #F1DDD7;
+    color: #9E1F2B;
+    box-shadow: 0 10px 22px -16px rgba(96, 40, 38, .55);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+.adv-hero .adv-eyebrow i {
+    color: #E9A23B;
+}
+
+.adv-crumbs {
+    color: #96736C;
+}
+
+.adv-crumbs a {
+    color: #9E1F2B;
+}
+
+.adv-crumbs a:hover {
+    color: #C0303C;
+}
+
+/* the ghost button needs a real border once it is white on white */
+.adv-hero .adv-btn-ghost {
+    background: #FFFFFF;
+    color: #6B0A12;
+    border-color: #F1DDD7;
+    box-shadow: 0 12px 26px -18px rgba(96, 40, 38, .6);
+}
+
+.adv-hero .adv-btn-ghost:hover {
+    background: #FFFFFF;
+    color: #C0303C;
+    border-color: #E5BFB6;
+}
+
+.adv-hero .adv-btn-primary {
+    border-color: transparent;
+    box-shadow: 0 16px 34px -18px rgba(169, 29, 42, .85);
+}
+
+.adv-hero .adv-btn:focus-visible,
+.adv-crumbs a:focus-visible {
+    outline-color: #9E1F2B;
+}
+
+/* visual shell: translucent white over dark becomes a soft card on light */
+.adv-visual-card {
+    background: rgba(255, 255, 255, .72);
+    border: 1px solid #F1DDD7;
+    box-shadow:
+        0 34px 66px -34px rgba(96, 40, 38, .45),
+        inset 0 1px 0 rgba(255, 255, 255, .9);
+}
+
+.adv-visual-card:hover {
+    box-shadow:
+        0 44px 80px -36px rgba(96, 40, 38, .5),
+        inset 0 1px 0 rgba(255, 255, 255, .95);
+}
+
+.adv-visual-plate {
+    box-shadow: inset 0 0 0 1px rgba(74, 5, 11, .08);
 }

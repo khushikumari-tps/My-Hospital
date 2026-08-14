@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620"
+     role="img" aria-labelledby="gbTitle gbDesc">
+  <title id="gbTitle">Anatomy of the gallbladder and the biliary tree</title>
+  <desc id="gbDesc">Anatomical illustration of the gallbladder beneath the liver, with the cystic duct joining the
+    common hepatic duct to form the common bile duct, which passes behind the pancreas and drains into the
+    duodenum at the ampulla.</desc>
+
+  <defs>
+    <linearGradient id="gbBody" x1="0.12" y1="0" x2="0.88" y2="1">
+      <stop offset="0"    stop-color="#C6D68C"/>
+      <stop offset="0.36" stop-color="#9FB265"/>
+      <stop offset="1"    stop-color="#6C7C3C"/>
+    </linearGradient>
+    <linearGradient id="gbSheen" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.55"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gbDuct" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#D9C88E"/>
+      <stop offset="0.5" stop-color="#BFA765"/>
+      <stop offset="1"   stop-color="#8E7A3E"/>
+    </linearGradient>
+    <linearGradient id="gbLiver" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"   stop-color="#A8494A"/>
+      <stop offset="0.5" stop-color="#83262E"/>
+      <stop offset="1"   stop-color="#5C1821"/>
+    </linearGradient>
+    <linearGradient id="gbGut" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#F0B0A4"/>
+      <stop offset="0.5" stop-color="#DC8B78"/>
+      <stop offset="1"   stop-color="#B15E4C"/>
+    </linearGradient>
+    <linearGradient id="gbPnc" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"   stop-color="#F0C9A8"/>
+      <stop offset="0.5" stop-color="#DDA478"/>
+      <stop offset="1"   stop-color="#B8804F"/>
+    </linearGradient>
+    <radialGradient id="gbGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#9FB265" stop-opacity="0.16"/>
+      <stop offset="1"   stop-color="#9FB265" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="860" height="620" fill="#ffffff"/>
+  <ellipse cx="330" cy="330" rx="300" ry="215" fill="url(#gbGlow)"/>
+
+  <!-- ===================== liver, secondary and above ===================== -->
+  <g opacity="0.9">
+    <path d="M74 214 C120 142 236 100 366 108 C468 114 548 142 574 180
+             C592 208 566 234 512 232 C420 228 292 232 200 250
+             C130 264 62 250 74 214 Z" fill="url(#gbLiver)" opacity="0.5"/>
+    <path d="M120 176 C176 140 268 124 356 128" fill="none" stroke="#ffffff"
+          stroke-width="14" stroke-linecap="round" opacity="0.18"/>
+  </g>
+
+  <!-- =========================== the biliary tree =========================== -->
+  <!-- right and left hepatic ducts converging into the common hepatic duct -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M296 236 C330 258 356 274 374 292" stroke="#8E7A3E" stroke-width="17" opacity="0.4"/>
+    <path d="M452 236 C420 258 396 274 380 292" stroke="#8E7A3E" stroke-width="15" opacity="0.4"/>
+    <path d="M296 236 C330 258 356 274 374 292" stroke="url(#gbDuct)" stroke-width="13"/>
+    <path d="M452 236 C420 258 396 274 380 292" stroke="url(#gbDuct)" stroke-width="11"/>
+
+    <!-- common hepatic duct, then common bile duct behind the pancreas -->
+    <path d="M377 292 C388 336 400 388 414 432 C426 470 446 494 470 508"
+          stroke="#8E7A3E" stroke-width="24" opacity="0.4"/>
+    <path d="M377 292 C388 336 400 388 414 432 C426 470 446 494 470 508"
+          stroke="url(#gbDuct)" stroke-width="19"/>
+    <path d="M372 300 C382 340 393 386 406 428"
+          stroke="#ffffff" stroke-width="5" opacity="0.34"/>
+
+    <!-- cystic duct: the gallbladder's own drainage, with its spiral valve -->
+    <path d="M282 356 C316 344 348 330 372 316" stroke="#8E7A3E" stroke-width="18" opacity="0.4"/>
+    <path d="M282 356 C316 344 348 330 372 316" stroke="url(#gbDuct)" stroke-width="14"/>
+    <g stroke="#8E7A3E" stroke-width="2.4" opacity="0.45">
+      <path d="M298 344 C302 352 302 358 298 364"/>
+      <path d="M318 336 C322 344 322 350 318 356"/>
+      <path d="M338 328 C342 336 342 342 338 348"/>
+    </g>
+  </g>
+
+  <!-- =============================== gallbladder =============================== -->
+  <!-- fundus lower-left, body, neck rising to meet the cystic duct -->
+  <path d="M284 352
+           C232 330 168 344 140 396
+           C112 448 138 512 194 528
+           C250 544 300 500 312 442
+           C320 404 306 372 292 352 Z"
+        fill="url(#gbBody)" stroke="#5E6B33" stroke-width="2.5" stroke-opacity="0.45"/>
+  <path d="M176 386 C210 366 250 366 278 382" fill="none" stroke="url(#gbSheen)"
+        stroke-width="22" stroke-linecap="round"/>
+  <g stroke="#5E6B33" stroke-width="2" fill="none" opacity="0.16" stroke-linecap="round">
+    <path d="M164 456 C196 438 234 436 268 450"/>
+    <path d="M172 488 C202 472 238 470 270 482"/>
+  </g>
+
+  <!-- ============================ pancreas & duodenum ============================ -->
+  <g opacity="0.55">
+    <path d="M436 452 C486 428 560 414 632 406 C660 402 668 424 646 436
+             C588 466 512 486 452 494 C436 496 428 470 436 452 Z"
+          fill="url(#gbPnc)"/>
+  </g>
+  <g fill="none" stroke-linecap="round" opacity="0.62">
+    <path d="M470 508 C520 528 566 566 578 610" stroke="#B15E4C" stroke-width="40"/>
+    <path d="M470 508 C520 528 566 566 578 610" stroke="url(#gbGut)" stroke-width="34"/>
+    <path d="M480 512 C522 532 560 566 572 602" stroke="#ffffff" stroke-width="6" opacity="0.3"/>
+  </g>
+  <!-- ampulla: where bile finally enters the bowel -->
+  <circle cx="470" cy="508" r="9" fill="#EFD6AF" stroke="#8E7A3E" stroke-width="2.5"/>
+
+  <!-- ================================= labels ================================= -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
+    <g stroke="#C9A79E" stroke-width="1.4" fill="none">
+      <path d="M196 452 L120 508 L96 508"/>
+      <path d="M330 336 L330 268 L306 256"/>
+      <path d="M404 400 L520 400 L544 388"/>
+      <path d="M300 176 L300 96 L276 84"/>
+      <path d="M492 516 L600 542 L624 542"/>
+    </g>
+    <g fill="#C9A79E">
+      <circle cx="196" cy="452" r="3.4"/>
+      <circle cx="330" cy="336" r="3.4"/>
+      <circle cx="404" cy="400" r="3.4"/>
+      <circle cx="300" cy="176" r="3.4"/>
+      <circle cx="492" cy="516" r="3.4"/>
+    </g>
+
+    <text x="90" y="504" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Gallbladder</text>
+    <text x="90" y="526" font-size="15" text-anchor="end">Stores and concentrates bile</text>
+
+    <text x="300" y="80" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Liver</text>
+    <text x="300" y="102" font-size="15" text-anchor="end">Makes the bile continuously</text>
+
+    <text x="300" y="252" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Cystic duct</text>
+    <text x="300" y="274" font-size="15" text-anchor="end">Where a stone most often lodges</text>
+
+    <text x="550" y="394" font-size="21" font-weight="600" fill="#4A322E">Common bile duct</text>
+    <text x="550" y="416" font-size="15">Carries bile down to the bowel</text>
+
+    <text x="630" y="536" font-size="21" font-weight="600" fill="#4A322E">Ampulla</text>
+    <text x="630" y="558" font-size="15">Shared outlet with the pancreas</text>
+  </g>
+</svg>

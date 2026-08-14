@@ -129,6 +129,15 @@ body.hv-light .navbar {
     background: rgba(255, 255, 255, .12);
     border: 1px solid rgba(255, 255, 255, .22);
     font-weight: 700 !important;
+    /* the emergency number is the one thing on this bar people look for */
+    font-size: .92rem;
+    letter-spacing: .01em;
+}
+
+/* the "24×7 Emergency" label stays quieter than the number beside it */
+.hv-tb-sos .hv-tb-txt {
+    font-size: .84rem;
+    font-weight: 600;
 }
 
 .hv-tb-sos:hover {

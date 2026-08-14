@@ -2546,192 +2546,253 @@ img {
 }
 
 /* ===================================================================
-   Related Disease mega menu (main navbar, every page)
-   Opens on hover at desktop width and collapses to an accordion inside
-   the mobile drawer. Prefixed .advmega- so it never collides with the
-   Clinical Services .mega menu above.
+   Related Disease menu (main navbar, every page)
+   Two levels: six diseases on the left, the matching condition pages
+   revealed on the right. Each submenu is a child of its own row, so
+   hovering it keeps the row hovered and the panel stays open.
    =================================================================== */
 .dropdown.advmega {
-    position: static;
+    position: relative;
 }
 
 .advmega-panel {
-    left: 50%;
-    transform: translateX(-50%);
-    width: min(880px, calc(100vw - 4rem));
-    padding: 1.6rem 1.75rem 1.5rem;
-    border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
+    min-width: 286px;
+    margin-top: 12px;
+    padding: 8px;
     border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.98);
+    box-shadow: 0 20px 44px -18px rgba(120, 60, 55, 0.3), 0 2px 8px -4px rgba(120, 60, 55, 0.12);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    /* submenus escape the panel, so this must never be clipped */
+    overflow: visible;
 }
 
-/* declared after .dropdown-content.show so the block layout wins */
 .advmega-panel.show,
 .dropdown.advmega:hover .advmega-panel {
     display: block;
+    animation: advMegaIn 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-/* Invisible bridge across the 14px gap under the trigger. Without it the
-   pointer leaves .advmega on the way down and the panel snaps shut. */
+@keyframes advMegaIn {
+    from { opacity: 0; transform: translateY(-7px); }
+    to   { opacity: 1; transform: none; }
+}
+
+/* bridge across the gap under the trigger */
 .advmega-panel::before {
     content: '';
     position: absolute;
     left: 0;
     right: 0;
-    top: -18px;
-    height: 18px;
+    top: -16px;
+    height: 16px;
 }
 
-.advmega-head {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
-    gap: 6px 14px;
-    margin-bottom: 1.1rem;
-    padding-bottom: .9rem;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.advmega-head strong {
-    font-family: var(--font-heading);
-    font-size: .74rem;
-    font-weight: 700;
-    letter-spacing: .16em;
-    text-transform: uppercase;
-    color: #9E1F2B;
-}
-
-.advmega-head span {
-    font-size: .86rem;
-    color: var(--text-muted);
-}
-
-.advmega-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: .35rem .75rem;
-}
-
-/* each row: label left, animated + right, accent bar slides in on hover */
-.advmega-list a {
+/* ------------------------------ left column ------------------------------ */
+.advmega-item {
     position: relative;
+}
+
+.advmega-panel .advmega-link {
     display: flex !important;
     align-items: center;
     justify-content: space-between;
-    gap: 12px;
-    padding: .72rem .9rem .72rem 1rem;
-    border-radius: var(--radius-md);
-    font-size: .93rem;
+    gap: 14px;
+    padding: 11px 14px;
+    border-radius: 10px;
+    border-left: 3px solid transparent;
+    font-size: 0.94rem;
     font-weight: 500;
     line-height: 1.35;
     color: var(--text-main);
     text-decoration: none;
-    transition: background-color .28s ease, color .28s ease, padding-left .28s ease;
+    transition: background-color 0.18s ease, color 0.18s ease, border-color 0.18s ease;
 }
 
-.advmega-list a::before {
-    content: '';
-    position: absolute;
-    left: 0;
-    top: 50%;
-    width: 3px;
-    height: 0;
-    border-radius: 3px;
-    background: linear-gradient(180deg, #9E1F2B, #E06050);
-    transform: translateY(-50%);
-    transition: height .32s cubic-bezier(.22, .61, .36, 1);
+/* the sign flips from + to x on the row being hovered */
+.advmega-sign {
+    flex: 0 0 auto;
+    width: 18px;
+    text-align: center;
+    font-size: 0.95rem;
+    line-height: 1;
+    color: var(--text-muted);
+    opacity: 0.65;
+    transition: color 0.18s ease, opacity 0.18s ease, transform 0.18s ease;
 }
 
-.advmega-list a:hover,
-.advmega-list a:focus-visible {
-    background-color: #FDF6F3;
-    color: #9E1F2B;
-    padding-left: 1.35rem;
+.advmega-sign::before {
+    content: '+';
+}
+
+.advmega-item:hover > .advmega-link,
+.advmega-panel .advmega-link:focus-visible {
+    background-color: #FDF2EF;
+    color: var(--primary-dark);
+    padding-left: 14px;
     outline: none;
 }
 
-.advmega-list a:hover::before,
-.advmega-list a:focus-visible::before {
-    height: 62%;
+.advmega-item:hover > .advmega-link .advmega-sign,
+.advmega-panel .advmega-link:focus-visible .advmega-sign {
+    color: var(--primary);
+    opacity: 1;
+    transform: scale(1.05);
 }
 
-.advmega-plus {
-    flex: 0 0 auto;
-    width: 22px;
-    height: 22px;
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-    border: 1px solid var(--border-color);
-    color: var(--text-muted);
-    font-size: .72rem;
-    line-height: 1;
-    transition: transform .38s cubic-bezier(.22, .61, .36, 1), background-color .3s, border-color .3s, color .3s;
+.advmega-item:hover > .advmega-link .advmega-sign::before,
+.advmega-panel .advmega-link:focus-visible .advmega-sign::before {
+    content: '\00D7';
 }
 
-.advmega-plus::before {
-    content: '\002B';
-}
-
-.advmega-list a:hover .advmega-plus,
-.advmega-list a:focus-visible .advmega-plus {
-    transform: rotate(90deg) scale(1.12);
-    background: #9E1F2B;
-    border-color: #9E1F2B;
-    color: #fff;
-}
-
-.advmega-foot {
-    margin-top: 1.1rem;
-    padding-top: .9rem;
-    border-top: 1px solid var(--border-color);
-    font-size: .86rem;
-    color: var(--text-muted);
-}
-
-.advmega-foot a {
-    color: #9E1F2B;
+/* the page you are currently on */
+.advmega-panel .advmega-link.is-current {
+    background-color: #FDF2EF;
+    border-left-color: var(--primary);
+    color: var(--primary);
     font-weight: 600;
+}
+
+/* ------------------------------ right pane ------------------------------ */
+/* transparent shell; its left padding is the hover bridge across the gap */
+.advmega-sub {
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: -9px;
+    z-index: 62;
+    padding-left: 10px;
+}
+
+.advmega-item:hover > .advmega-sub,
+.advmega-item:focus-within > .advmega-sub {
+    display: block;
+    animation: advSubIn 0.18s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+@keyframes advSubIn {
+    from { opacity: 0; transform: translateX(-6px); }
+    to   { opacity: 1; transform: none; }
+}
+
+.advmega-sub-inner {
+    min-width: 262px;
+    max-width: 310px;
+    padding: 8px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 20px 44px -18px rgba(120, 60, 55, 0.3), 0 2px 8px -4px rgba(120, 60, 55, 0.12);
+}
+
+.advmega-panel .advmega-sub-inner a {
+    display: block;
+    padding: 10px 13px;
+    border-radius: 9px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.4;
+    color: var(--text-main);
     text-decoration: none;
+    transition: background-color 0.18s ease, color 0.18s ease, padding-left 0.18s ease;
 }
 
-.advmega-foot a:hover {
-    text-decoration: underline;
+.advmega-panel .advmega-sub-inner a:hover,
+.advmega-panel .advmega-sub-inner a:focus-visible {
+    background-color: #FDF2EF;
+    color: var(--primary-dark);
+    padding-left: 17px;
+    outline: none;
 }
 
-/* ---- mobile drawer: the same markup becomes an accordion ---- */
+/* ---- mobile drawer: taps, not hover; both levels become an accordion ---- */
 @media (max-width: 992px) {
-    /* hover must not open the panel on touch; the click toggle drives it */
     .dropdown.advmega:hover .advmega-panel:not(.show) {
         display: none;
     }
 
     .nav-links.open .advmega-panel {
         width: 100%;
-        padding: 0 0 .5rem 1rem;
+        min-width: 0;
+        margin-top: 0;
+        padding: 0 0 0.5rem 1rem;
         border: none;
+        border-radius: 0;
+        background: transparent;
         box-shadow: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
     }
 
-    .nav-links.open .advmega-list {
-        grid-template-columns: 1fr;
-        gap: 0;
+    .nav-links.open .advmega-panel .advmega-link {
+        min-height: 46px;
+        padding: 0.7rem 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        font-size: 1rem;
     }
 
-    .nav-links.open .advmega-head,
-    .nav-links.open .advmega-foot {
+    /* hover does nothing here — .is-open, set on tap, drives the submenu */
+    .nav-links.open .advmega-item:hover > .advmega-link {
+        background: transparent;
+        color: var(--text-main);
+    }
+
+    .nav-links.open .advmega-item:hover > .advmega-sub {
         display: none;
     }
 
-    .nav-links.open .advmega-list a {
-        padding-left: 0;
-        min-height: 46px;
-        font-size: 1rem;
-        border-bottom: 1px solid var(--border-color);
-        border-radius: 0;
+    .nav-links.open .advmega-item.is-open > .advmega-link {
+        color: var(--primary);
     }
 
-    .nav-links.open .advmega-list a:hover {
-        padding-left: .4rem;
+    .nav-links.open .advmega-item.is-open > .advmega-link .advmega-sign {
+        color: var(--primary);
+        opacity: 1;
+    }
+
+    .nav-links.open .advmega-item.is-open > .advmega-link .advmega-sign::before {
+        content: '\00D7';
+    }
+
+    .nav-links.open .advmega-item.is-open > .advmega-sub {
+        display: block;
+        position: static;
+        padding: 0 0 0 1rem;
+        animation: none;
+    }
+
+    .nav-links.open .advmega-sub-inner {
+        min-width: 0;
+        max-width: none;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .nav-links.open .advmega-sub-inner a {
+        min-height: 44px;
+        padding: 0.62rem 0;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        font-size: 0.95rem;
+    }
+
+    .nav-links.open .advmega-sub-inner a:hover {
+        padding-left: 0.4rem;
+        background: transparent;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .advmega-panel.show,
+    .dropdown.advmega:hover .advmega-panel,
+    .advmega-item:hover > .advmega-sub {
+        animation: none;
     }
 }

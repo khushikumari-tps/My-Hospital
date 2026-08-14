@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonials | Advitya Healthcares</title>
     <meta name="description" content="Real stories from patients who found world-class surgical and cancer care close to home with Advitya Healthcares.">
-    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="style.css?v=19">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -192,9 +192,9 @@
             position: relative;
             padding: clamp(130px, 15vw, 175px) 0 clamp(70px, 8vw, 110px);
             background:
-                radial-gradient(1100px 620px at 82% 12%, #FCEBE5 0%, rgba(227, 243, 248, 0) 62%),
-                radial-gradient(820px 520px at 8% 88%, #FDF1EC 0%, rgba(234, 246, 250, 0) 60%),
-                linear-gradient(180deg, #FFFCFB 0%, #FDF6F3 100%);
+                radial-gradient(1100px 620px at 82% 12%, #F6D3C8 0%, rgba(246, 211, 200, 0) 62%),
+                radial-gradient(820px 520px at 8% 88%, #F7DACF 0%, rgba(247, 218, 207, 0) 60%),
+                linear-gradient(180deg, #FDF3EF 0%, #F6DFD7 100%);
             overflow: hidden;
         }
 
@@ -204,7 +204,7 @@
             inset: 0;
             /* Rays radiating from the top, echoing the sunburst above the mark */
             background: repeating-conic-gradient(from -97deg at 50% -14%,
-                    rgba(158, 31, 43, .07) 0deg 1.1deg,
+                    rgba(158, 31, 43, .1) 0deg 1.1deg,
                     transparent 1.1deg 14deg);
             mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
             -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 0%, #000 0%, transparent 74%);
@@ -1400,196 +1400,527 @@
                 transform: none;
             }
         }
-        /* ---------- testimonials ---------- */
-        .pc-testi-grid {
+        /* ---------- written testimonials ---------- */
+        .ts {
+            background:
+                radial-gradient(760px 440px at 88% 4%, rgba(253, 242, 239, .85), transparent 60%),
+                linear-gradient(180deg, #fff 0%, #FFFCFB 60%, #fff 100%);
+        }
+
+        .ts-head {
+            max-width: 720px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .ts-badge {
+            display: inline-block;
+            padding: 7px 18px;
+            border-radius: 999px;
+            background: #fff;
+            border: 1px solid var(--accent-200);
+            color: var(--brand-700);
+            font-family: var(--font-heading);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .ts-head h2 {
+            font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.18;
+            color: #22160F;
+            margin: 20px 0 14px;
+            text-wrap: balance;
+        }
+
+        .ts-head p {
+            font-size: clamp(1rem, 1.2vw, 1.06rem);
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .ts-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 22px;
+            align-items: start;
         }
 
-        .pc-testi {
+        .ts-card {
             position: relative;
+            display: flex;
+            flex-direction: column;
             margin: 0;
             padding: 34px 30px 28px;
-            border-radius: var(--r-lg);
+            border-radius: 24px;
             background: #fff;
             border: 1px solid var(--line);
-            box-shadow: var(--sh-xs);
+            box-shadow: 0 1px 2px rgba(90, 10, 14, .05);
             overflow: hidden;
-            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
         }
 
-        .pc-testi::before {
-            content: '\201C';
+        /* gradient hairline that fills in on hover */
+        .ts-card::after {
+            content: '';
             position: absolute;
-            top: -18px;
-            right: 18px;
+            inset: 0 0 auto 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s var(--ease);
+        }
+
+        .ts-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-200);
+            box-shadow: 0 20px 42px -18px rgba(90, 10, 14, .3);
+        }
+
+        .ts-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .ts-mark {
+            position: absolute;
+            top: -26px;
+            right: 20px;
             font-family: var(--font-heading);
             font-size: 8rem;
             line-height: 1;
             color: var(--accent-100);
             pointer-events: none;
+            transition: color .3s ease;
         }
 
-        .pc-testi:hover {
-            transform: translateY(-7px);
-            border-color: var(--accent-200);
-            box-shadow: var(--sh-md);
+        .ts-card:hover .ts-mark {
+            color: var(--accent-200);
         }
 
-        .pc-stars {
+        .ts-stars {
             display: flex;
             gap: 4px;
             margin-bottom: 18px;
             color: var(--brand-500);
-            font-size: .95rem;
+            font-size: .92rem;
         }
 
-        .pc-testi blockquote {
+        .ts-card blockquote {
             margin: 0;
             position: relative;
         }
 
-        .pc-testi blockquote p {
+        .ts-card blockquote p {
             font-size: 1rem;
-            line-height: 1.78;
+            line-height: 1.8;
             color: var(--ink-soft);
             margin: 0;
         }
 
-        .pc-testi figcaption {
-            margin-top: 22px;
-            padding-top: 18px;
-            border-top: 1px solid var(--line);
+        .ts-card figcaption {
+            margin-top: auto;
+            padding-top: 22px;
         }
 
-        .pc-testi-tag {
+        .ts-tag {
             display: inline-block;
-            padding: 6px 14px;
+            padding: 7px 15px;
             border-radius: 999px;
             background: var(--accent-050);
             border: 1px solid var(--line);
             color: var(--brand-700);
             font-family: var(--font-heading);
-            font-size: .78rem;
+            font-size: .76rem;
             font-weight: 700;
             letter-spacing: .08em;
             text-transform: uppercase;
+            transition: background-color .25s ease, border-color .25s ease;
         }
 
-        .pc-testi-note {
+        .ts-card:hover .ts-tag {
+            background: #fff;
+            border-color: var(--accent-200);
+        }
+
+        .ts-note {
             max-width: 640px;
-            margin: 44px auto 0;
+            margin: 46px auto 0;
             text-align: center;
             font-size: .9rem;
             line-height: 1.7;
             color: var(--ink-mute);
         }
 
-        /* ---------- video testimonials ---------- */
-        .pc-vid-head {
-            max-width: 720px;
-            margin: 0 auto 40px;
+        @media (prefers-reduced-motion: reduce) {
+            .ts-card,
+            .ts-card:hover,
+            .ts-card::after {
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ---------- patient video stories ---------- */
+        .vs {
+            background:
+                radial-gradient(900px 500px at 12% 0%, rgba(253, 242, 239, .9), transparent 62%),
+                radial-gradient(700px 420px at 92% 12%, rgba(255, 245, 238, .8), transparent 58%),
+                linear-gradient(180deg, #fff 0%, #FFFCFB 100%);
+        }
+
+        .vs-head {
+            max-width: 780px;
+            margin: 0 auto 30px;
             text-align: center;
         }
 
-        .pc-vid-head h2 {
-            margin: 0 0 12px;
+        .vs-badge {
+            display: inline-block;
+            padding: 7px 18px;
+            border-radius: 999px;
+            background: #fff;
+            border: 1px solid var(--accent-200);
+            color: var(--brand-700);
             font-family: var(--font-heading);
-            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .vs-head h2 {
+            font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.18;
+            color: #22160F;
+            margin: 20px 0 14px;
+            text-wrap: balance;
+        }
+
+        .vs-head p {
+            font-size: clamp(1rem, 1.2vw, 1.06rem);
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        /* ------------------------------ filters ------------------------------ */
+        .vs-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 40px;
+        }
+
+        .vs-filter {
+            padding: 10px 20px;
+            border-radius: 999px;
+            border: 1px solid var(--line);
+            background: #fff;
+            color: var(--ink-soft);
+            font-family: var(--font-heading);
+            font-size: .88rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s var(--ease);
+        }
+
+        .vs-filter:hover:not(:disabled) {
+            transform: translateY(-2px);
+            border-color: var(--accent-200);
             color: var(--brand-700);
         }
 
-        .pc-vid-head p {
-            margin: 0;
-            font-size: .98rem;
-            line-height: 1.75;
-            color: var(--ink-soft);
+        .vs-filter.is-active {
+            background: linear-gradient(135deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
         }
 
-        .pc-vid-grid {
+        .vs-filter:disabled {
+            opacity: .38;
+            cursor: not-allowed;
+        }
+
+        .vs-filter:focus-visible {
+            outline: 2px solid var(--brand-600);
+            outline-offset: 3px;
+        }
+
+        /* ------------------------------- stage ------------------------------- */
+        /* desktop: one large story beside a grid of smaller ones */
+        .vs-stage {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 22px;
         }
 
-        .pc-vid {
+        .vs-card {
+            min-width: 0;
+        }
+
+        .vs-card[hidden] {
+            display: none;
+        }
+
+        .vs-open {
+            display: block;
+            width: 100%;
+            padding: 0;
+            border: 0;
+            background: transparent;
+            text-align: left;
+            cursor: pointer;
+        }
+
+        .vs-shot {
+            position: relative;
+            display: block;
+            aspect-ratio: 9 / 16;
+            border-radius: 22px;
+            overflow: hidden;
+            background: #1b0d0c;
+            box-shadow: 0 12px 30px -14px rgba(90, 10, 14, .38);
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .vs-shot img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .35s ease, filter .25s ease;
+        }
+
+        /* glass veil, so white type and the play button always read */
+        .vs-veil {
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(180deg, rgba(20, 8, 8, .16) 0%, rgba(20, 8, 8, 0) 34%,
+                    rgba(20, 8, 8, .32) 74%, rgba(20, 8, 8, .62) 100%);
+            transition: background-color .25s ease;
+        }
+
+        .vs-open:hover .vs-shot,
+        .vs-open:focus-visible .vs-shot {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 30px 56px -18px rgba(90, 10, 14, .5);
+        }
+
+        .vs-open:hover .vs-veil,
+        .vs-open:focus-visible .vs-veil {
+            background-color: rgba(20, 8, 8, .18);
+        }
+
+        .vs-open:hover img {
+            transform: scale(1.06);
+        }
+
+        .vs-open:focus-visible {
+            outline: 2px solid var(--brand-600);
+            outline-offset: 4px;
+            border-radius: 24px;
+        }
+
+        .vs-play {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 82px;
+            height: 82px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .22);
+            border: 1px solid rgba(255, 255, 255, .5);
+            box-shadow: 0 14px 34px -10px rgba(0, 0, 0, .55);
+            -webkit-backdrop-filter: blur(9px);
+            backdrop-filter: blur(9px);
+            color: #fff;
+            font-size: 1.35rem;
+            padding-left: 5px;
+            transition: transform .25s ease, background-color .25s ease;
+        }
+
+        .vs-open:hover .vs-play,
+        .vs-open:focus-visible .vs-play {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: rgba(255, 255, 255, .34);
+        }
+
+        .vs-info {
+            display: block;
+            padding: 16px 4px 0;
+        }
+
+        .vs-title {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1rem;
+            font-weight: 600;
+            line-height: 1.35;
+            color: #22160F;
+        }
+
+        .vs-meta {
+            display: block;
+            margin-top: 4px;
+            font-size: .86rem;
+            color: var(--ink-mute);
+        }
+
+        .vs-empty {
+            margin: 34px 0 0;
+            text-align: center;
+            color: var(--ink-mute);
+        }
+
+        /* ------------------------------- modal ------------------------------- */
+        .vs-modal {
+            position: fixed;
+            inset: 0;
+            z-index: 2000;
+            display: grid;
+            place-items: center;
+            padding: 20px;
+        }
+
+        .vs-modal[hidden] {
+            display: none;
+        }
+
+        .vs-modal-backdrop {
+            position: absolute;
+            inset: 0;
+            background: rgba(24, 8, 10, .78);
+            -webkit-backdrop-filter: blur(6px);
+            backdrop-filter: blur(6px);
+            animation: vsFade .22s ease;
+        }
+
+        .vs-modal-box {
+            position: relative;
+            width: min(420px, 92vw);
+            animation: vsPop .26s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        @keyframes vsFade {
+            from { opacity: 0; }
+            to   { opacity: 1; }
+        }
+
+        @keyframes vsPop {
+            from { opacity: 0; transform: translateY(14px) scale(.97); }
+            to   { opacity: 1; transform: none; }
+        }
+
+        .vs-modal-frame {
             position: relative;
             aspect-ratio: 9 / 16;
-            margin: 0;
-            border-radius: var(--r-lg);
+            max-height: 78vh;
+            margin-inline: auto;
+            border-radius: 22px;
             overflow: hidden;
-            background: #0b0b0b;
-            border: 1px solid var(--line);
-            box-shadow: var(--sh-xs);
-            cursor: pointer;
-            transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .4s;
+            background: #000;
+            box-shadow: 0 40px 80px -30px rgba(0, 0, 0, .8);
         }
 
-        .pc-vid:hover,
-        .pc-vid:focus-visible {
-            transform: translateY(-7px);
-            border-color: var(--accent-200);
-            box-shadow: var(--sh-md);
-            outline: none;
-        }
-
-        .pc-vid img,
-        .pc-vid iframe {
+        .vs-modal-frame iframe {
             position: absolute;
             inset: 0;
             width: 100%;
             height: 100%;
             border: 0;
-            display: block;
         }
 
-        .pc-vid img {
-            object-fit: cover;
-            transition: transform .6s var(--ease), filter .4s;
+        .vs-modal-title {
+            margin: 0 0 14px;
+            padding-right: 52px;
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: #fff;
         }
 
-        .pc-vid:hover img {
-            transform: scale(1.05);
-            filter: brightness(.82);
-        }
-
-        .pc-vid-play {
+        .vs-modal-close {
             position: absolute;
-            inset: 0;
+            top: -6px;
+            right: 0;
+            width: 42px;
+            height: 42px;
             display: grid;
             place-items: center;
-            pointer-events: none;
-        }
-
-        .pc-vid-play span {
-            width: 64px;
-            height: 64px;
             border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: rgba(255, 255, 255, .92);
-            color: var(--brand-700);
-            font-size: 1.25rem;
-            padding-left: 4px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, .35);
-            transition: transform .4s var(--ease), background .4s;
+            border: 1px solid rgba(255, 255, 255, .3);
+            background: rgba(255, 255, 255, .14);
+            color: #fff;
+            font-size: 1.05rem;
+            cursor: pointer;
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            transition: background-color .25s ease, transform .25s ease;
         }
 
-        .pc-vid:hover .pc-vid-play span {
-            transform: scale(1.12);
-            background: #fff;
+        .vs-modal-close:hover {
+            background: rgba(255, 255, 255, .28);
+            transform: rotate(90deg);
         }
 
-        .pc-vid.is-playing {
-            cursor: default;
-            transform: none;
+        .vs-modal-close:focus-visible {
+            outline: 2px solid #fff;
+            outline-offset: 3px;
         }
 
-        .pc-vid.is-playing .pc-vid-play,
-        .pc-vid.is-playing img {
-            display: none;
+        /* ----------------------------- responsive ----------------------------- */
+        @media (max-width: 1100px) {
+            .vs-stage {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
+
+        /* below this the grid becomes a swipe carousel */
+        @media (max-width: 860px) {
+            .vs-stage {
+                display: flex;
+                gap: 16px;
+                overflow-x: auto;
+                scroll-snap-type: x mandatory;
+                -webkit-overflow-scrolling: touch;
+                scrollbar-width: none;
+                padding-bottom: 8px;
+                /* let cards reach the viewport edge without a horizontal page scroll */
+                margin-inline: calc(50% - 50vw);
+                padding-inline: calc(50vw - 50%);
+            }
+
+            .vs-stage::-webkit-scrollbar {
+                display: none;
+            }
+
+            .vs-card {
+                flex: 0 0 min(262px, 68vw);
+                scroll-snap-align: center;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .vs-shot,
+            .vs-shot img,
+            .vs-play,
+            .vs-modal-backdrop,
+            .vs-modal-box {
+                transition: none !important;
+                animation: none !important;
+            }
+        }
+
     </style>
 </head>
 
@@ -1618,23 +1949,74 @@
                 <div class="dropdown advmega">
                     <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content advmega-panel">
-                        <div class="advmega-head">
-                            <strong>Conditions We Treat</strong>
-                            <span>Nine areas of hepato-pancreato-biliary and gastrointestinal care.</span>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/pancreas/">Pancreas<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="diseases/pancreas/">Pancreatitis &amp; Pancreatic Disease</a>
+                                    <a href="diseases/pancreatic-cancer/">Pancreatic Cancer</a>
+                                    <a href="understanding-the-normal-pancreas.html">Understanding the Normal Pancreas</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="advmega-list">
-                            <a href="diseases/gall-bladder/">Gall Bladder<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/biliary-disease/">Biliary Disease<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/liver/">Liver<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/colon-rectum/">Colon and Rectum<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/stomach/">Stomach<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/esophagus/">Esophagus<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/pancreas/">Pancreas<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/pancreatic-cancer/">Pancreatic Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/gall-bladder-cancer/">Gall Bladder Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/gall-bladder/">Gall Bladder<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="gallbladder-benign-disease.html">Benign Disease</a>
+                                    <a href="gallbladder-cancers.html">Cancers</a>
+                                    <a href="gallbladder-cancer-and-gallstone-disease.html">Gallbladder cancer and gallstone disease</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="advmega-foot">
-                            Not sure which applies to you? <a href="index.html#contactModal">Send us your reports</a> and a specialist will review them.
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/biliary-disease/">Biliary Disease<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-biliary-diseases.html">Benign Disease</a>
+                                    <a href="surgery-for-bile-duct-injury.html">Surgery for Bile Duct Injury</a>
+                                    <a href="bile-duct-cancers.html">Cancers</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/liver/">Liver<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-diseases-of-the-liver.html">Benign Disease</a>
+                                    <a href="liver-cancers.html">Cancers</a>
+                                    <a href="liver-surgery.html">Liver Surgery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/colon-rectum/">Colon and Rectum<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-colorectal-disease.html">Benign Disease</a>
+                                    <a href="colorectal-cancer.html">Cancers</a>
+                                    <a href="rectal-cancer-surgery.html">Rectal Cancer Surgery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/stomach/">Stomach<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-diseases-of-the-stomach.html">Benign Disease</a>
+                                    <a href="gastric-cancer.html">Cancers</a>
+                                    <a href="gastric-cancer-surgery.html">Gastric Cancer Surgery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/esophagus/">Esophagus<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-diseases-of-the-esophagus.html">Benign Disease</a>
+                                    <a href="esophageal-cancers.html">Cancers</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1723,39 +2105,236 @@
         </section>
 
         <!-- ==================== 2 · VIDEO TESTIMONIALS ==================== -->
-        <section id="video-stories">
+        <section id="video-stories" class="vs">
             <div class="pc-wrap">
-                <div class="pc-vid-head" data-aos="fade-up">
-                    <h2>Real stories from those who found world-class care close to home</h2>
+
+                <div class="vs-head" data-aos="fade-up">
+                    <span class="vs-badge">Patient Stories</span>
+                    <h2>Real Stories from Those Who Found World-Class Care Close to Home</h2>
                     <p>Patients and families share their Advitya experience. Tap any story to play.</p>
                 </div>
 
-                <div class="pc-vid-grid" id="pcVidGrid">
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="mKL9KXqrJPA" aria-label="Play patient video testimonial 1" data-aos="fade-up"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="mxm96DbSlDQ" aria-label="Play patient video testimonial 2" data-aos="fade-up" data-aos-delay="60"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="5HHAxJXpa5E" aria-label="Play patient video testimonial 3" data-aos="fade-up" data-aos-delay="120"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="cOT_eeSU0V8" aria-label="Play patient video testimonial 4" data-aos="fade-up" data-aos-delay="180"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="KCdRLodzI1s" aria-label="Play patient video testimonial 5" data-aos="fade-up"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="eF1ghQoLrHo" aria-label="Play patient video testimonial 6" data-aos="fade-up" data-aos-delay="60"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="bzAncKsKvVo" aria-label="Play patient video testimonial 7" data-aos="fade-up" data-aos-delay="120"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="FR4_2fQnSyM" aria-label="Play patient video testimonial 8" data-aos="fade-up" data-aos-delay="180"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="LH7ysXtexKg" aria-label="Play patient video testimonial 9" data-aos="fade-up"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="z1AOOP05dhU" aria-label="Play patient video testimonial 10" data-aos="fade-up" data-aos-delay="60"></figure>
-                    <figure class="pc-vid" role="button" tabindex="0" data-yt="2grCE5UYHj4" aria-label="Play patient video testimonial 11" data-aos="fade-up" data-aos-delay="120"></figure>
+                <div class="vs-filters" role="tablist" aria-label="Filter stories by care area" data-aos="fade-up">
+                        <button type="button" class="vs-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
+                        <button type="button" class="vs-filter" data-filter="gallbladder" disabled aria-disabled="true" role="tab" aria-selected="false">Gallbladder</button>
+                        <button type="button" class="vs-filter" data-filter="liver" disabled aria-disabled="true" role="tab" aria-selected="false">Liver</button>
+                        <button type="button" class="vs-filter" data-filter="pancreas" disabled aria-disabled="true" role="tab" aria-selected="false">Pancreas</button>
+                        <button type="button" class="vs-filter" data-filter="biliary" disabled aria-disabled="true" role="tab" aria-selected="false">Biliary Disease</button>
+                        <button type="button" class="vs-filter" data-filter="cancer" disabled aria-disabled="true" role="tab" aria-selected="false">Cancer Care</button>
                 </div>
+
+                <!-- To label a story, set title / meta / cat in this markup.
+                     cat values: gallbladder | liver | pancreas | biliary | cancer
+                     A filter enables itself as soon as one video carries its value. -->
+                <div class="vs-stage" id="vsStage">
+                    <article class="vs-card" data-cat="" data-aos="fade-up">
+                        <button type="button" class="vs-open" data-yt="mKL9KXqrJPA" data-title="Patient Story 01"
+                                aria-label="Play video: Patient Story 01">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/mKL9KXqrJPA/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/mKL9KXqrJPA/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 01</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="60">
+                        <button type="button" class="vs-open" data-yt="mxm96DbSlDQ" data-title="Patient Story 02"
+                                aria-label="Play video: Patient Story 02">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/mxm96DbSlDQ/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/mxm96DbSlDQ/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 02</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="120">
+                        <button type="button" class="vs-open" data-yt="5HHAxJXpa5E" data-title="Patient Story 03"
+                                aria-label="Play video: Patient Story 03">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/5HHAxJXpa5E/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/5HHAxJXpa5E/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 03</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="180">
+                        <button type="button" class="vs-open" data-yt="cOT_eeSU0V8" data-title="Patient Story 04"
+                                aria-label="Play video: Patient Story 04">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/cOT_eeSU0V8/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/cOT_eeSU0V8/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 04</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                        <button type="button" class="vs-open" data-yt="KCdRLodzI1s" data-title="Patient Story 05"
+                                aria-label="Play video: Patient Story 05">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/KCdRLodzI1s/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/KCdRLodzI1s/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 05</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                        <button type="button" class="vs-open" data-yt="eF1ghQoLrHo" data-title="Patient Story 06"
+                                aria-label="Play video: Patient Story 06">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/eF1ghQoLrHo/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/eF1ghQoLrHo/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 06</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                        <button type="button" class="vs-open" data-yt="bzAncKsKvVo" data-title="Patient Story 07"
+                                aria-label="Play video: Patient Story 07">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/bzAncKsKvVo/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/bzAncKsKvVo/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 07</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                        <button type="button" class="vs-open" data-yt="FR4_2fQnSyM" data-title="Patient Story 08"
+                                aria-label="Play video: Patient Story 08">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/FR4_2fQnSyM/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/FR4_2fQnSyM/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 08</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                        <button type="button" class="vs-open" data-yt="LH7ysXtexKg" data-title="Patient Story 09"
+                                aria-label="Play video: Patient Story 09">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/LH7ysXtexKg/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/LH7ysXtexKg/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 09</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                        <button type="button" class="vs-open" data-yt="z1AOOP05dhU" data-title="Patient Story 10"
+                                aria-label="Play video: Patient Story 10">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/z1AOOP05dhU/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/z1AOOP05dhU/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 10</span>
+                            </span>
+                        </button>
+                    </article>
+
+                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                        <button type="button" class="vs-open" data-yt="2grCE5UYHj4" data-title="Patient Story 11"
+                                aria-label="Play video: Patient Story 11">
+                            <span class="vs-shot">
+                                <img src="https://i.ytimg.com/vi/2grCE5UYHj4/hqdefault.jpg"
+                                     data-hi="https://i.ytimg.com/vi/2grCE5UYHj4/maxresdefault.jpg"
+                                     alt="" width="480" height="360" loading="lazy" decoding="async">
+                                <span class="vs-veil" aria-hidden="true"></span>
+                                <span class="vs-play" aria-hidden="true"><i class="fa-solid fa-play"></i></span>
+                            </span>
+                            <span class="vs-info">
+                                <span class="vs-title">Patient Story 11</span>
+                            </span>
+                        </button>
+                    </article>
+                </div>
+
+                <p class="vs-empty" id="vsEmpty" hidden>No stories in this category yet.</p>
             </div>
         </section>
 
-        <!-- ==================== 3 · TESTIMONIALS ==================== -->
-        <section id="stories">
-            <div class="pc-wrap">
-                <div class="pc-testi-grid">
+        <!-- video modal -->
+        <div class="vs-modal" id="vsModal" hidden>
+            <div class="vs-modal-backdrop" data-close></div>
+            <div class="vs-modal-box" role="dialog" aria-modal="true" aria-labelledby="vsModalTitle">
+                <button type="button" class="vs-modal-close" data-close aria-label="Close video">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+                <h3 class="vs-modal-title" id="vsModalTitle">Patient story</h3>
+                <div class="vs-modal-frame" id="vsModalFrame"></div>
+            </div>
+        </div>
 
-                    <figure class="pc-testi" data-aos="fade-up">
-                        <div class="pc-stars" aria-label="Rated 5 out of 5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
+        <!-- ==================== 3 · TESTIMONIALS ==================== -->
+        <section id="stories" class="ts">
+            <div class="pc-wrap">
+
+                <div class="ts-head" data-aos="fade-up">
+                    <span class="ts-badge">In Their Words</span>
+                    <h2>Written Stories from Patients and Families</h2>
+                    <p>What people told us after treatment &mdash; in their own words, unedited.</p>
+                </div>
+
+                <div class="ts-grid">
+                    <figure class="ts-card" data-aos="fade-up">
+                        <span class="ts-mark" aria-hidden="true">&ldquo;</span>
+                        <div class="ts-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <blockquote>
                             <p>When I was diagnosed with pancreatic cancer, I thought I'd have to leave my family for
@@ -1764,14 +2343,13 @@
                                 home with my loved ones. The expertise was exceptional, and most importantly, my family
                                 stayed together during the most challenging time of our lives.</p>
                         </blockquote>
-                        <figcaption><span class="pc-testi-tag">Pancreatic cancer</span></figcaption>
+                        <figcaption><span class="ts-tag">Pancreatic cancer</span></figcaption>
                     </figure>
 
-                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="70">
-                        <div class="pc-stars" aria-label="Rated 5 out of 5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
+                    <figure class="ts-card" data-aos="fade-up" data-aos-delay="70">
+                        <span class="ts-mark" aria-hidden="true">&ldquo;</span>
+                        <div class="ts-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <blockquote>
                             <p>We couldn't afford treatment in a metropolitan hospital for my father's liver condition.
@@ -1780,14 +2358,13 @@
                                 explained everything in our local language, and my father made a complete recovery
                                 without us having to sacrifice our savings.</p>
                         </blockquote>
-                        <figcaption><span class="pc-testi-tag">Liver condition</span></figcaption>
+                        <figcaption><span class="ts-tag">Liver condition</span></figcaption>
                     </figure>
 
-                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="140">
-                        <div class="pc-stars" aria-label="Rated 5 out of 5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
+                    <figure class="ts-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="ts-mark" aria-hidden="true">&ldquo;</span>
+                        <div class="ts-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <blockquote>
                             <p>I never expected such advanced laparoscopic surgery in our small city. The precision and
@@ -1796,14 +2373,13 @@
                                 meticulous, and I'm completely back to normal life. Excellent healthcare truly doesn't
                                 require leaving home.</p>
                         </blockquote>
-                        <figcaption><span class="pc-testi-tag">Laparoscopic surgery</span></figcaption>
+                        <figcaption><span class="ts-tag">Laparoscopic surgery</span></figcaption>
                     </figure>
 
-                    <figure class="pc-testi" data-aos="fade-up">
-                        <div class="pc-stars" aria-label="Rated 5 out of 5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
+                    <figure class="ts-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="ts-mark" aria-hidden="true">&ldquo;</span>
+                        <div class="ts-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <blockquote>
                             <p>When my wife was diagnosed with gastric cancer, we prepared to sell everything for big
@@ -1812,14 +2388,13 @@
                                 again. We're grateful that families like ours can access exceptional care without
                                 leaving our community.</p>
                         </blockquote>
-                        <figcaption><span class="pc-testi-tag">Gastric cancer</span></figcaption>
+                        <figcaption><span class="ts-tag">Gastric cancer</span></figcaption>
                     </figure>
 
-                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="70">
-                        <div class="pc-stars" aria-label="Rated 5 out of 5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
+                    <figure class="ts-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="ts-mark" aria-hidden="true">&ldquo;</span>
+                        <div class="ts-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <blockquote>
                             <p>As a healthcare professional, I was initially skeptical about local surgery over
@@ -1828,14 +2403,13 @@
                                 coordination between visiting specialists and local staff created true excellence and my
                                 recovery had no complications.</p>
                         </blockquote>
-                        <figcaption><span class="pc-testi-tag">Healthcare professional</span></figcaption>
+                        <figcaption><span class="ts-tag">Healthcare professional</span></figcaption>
                     </figure>
 
-                    <figure class="pc-testi" data-aos="fade-up" data-aos-delay="140">
-                        <div class="pc-stars" aria-label="Rated 5 out of 5">
-                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
-                                class="fa-solid fa-star"></i>
+                    <figure class="ts-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="ts-mark" aria-hidden="true">&ldquo;</span>
+                        <div class="ts-stars" aria-label="Rated 5 out of 5">
+                            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
                         </div>
                         <blockquote>
                             <p>Beyond the medical excellence, it was the human touch that impressed me most. Dealing
@@ -1844,19 +2418,17 @@
                                 state-of-the-art technology. Six months later, I'm healthier than ever, all while
                                 staying close to my support system.</p>
                         </blockquote>
-                        <figcaption><span class="pc-testi-tag">Intestinal condition</span></figcaption>
+                        <figcaption><span class="ts-tag">Intestinal condition</span></figcaption>
                     </figure>
-
                 </div>
 
-                <p class="pc-testi-note" data-aos="fade-up">
+                <p class="ts-note" data-aos="fade-up">
                     Patient testimonials shared with informed consent. Individual treatment outcomes and results may
                     vary.
                 </p>
             </div>
         </section>
 
-        <!-- ==================== 3 · FINAL CTA ==================== -->
         <section class="pc-final">
             <div class="pc-wrap">
                 <div class="pc-final-card" data-aos="fade-up">
@@ -1952,74 +2524,88 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="nav.js?v=5"></script>
+    <script src="nav.js?v=6"></script>
     <script src="contact-modal.js?v=1"></script>
     <script>
         AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });
 
-        /* ---- YouTube facade: thumbnail first, iframe only on click ---- */
+        /* ---- patient stories: filters, and a modal that only mounts the
+               iframe on open so nothing loads from YouTube until asked ---- */
         (function () {
-            var grid = document.getElementById('pcVidGrid');
-            if (!grid) return;
+            var stage = document.getElementById('vsStage');
+            var modal = document.getElementById('vsModal');
+            if (!stage || !modal) return;
 
-            var cards = grid.querySelectorAll('.pc-vid');
+            var frame = document.getElementById('vsModalFrame');
+            var titleEl = document.getElementById('vsModalTitle');
+            var empty = document.getElementById('vsEmpty');
+            var cards = Array.prototype.slice.call(stage.querySelectorAll('.vs-card'));
+            var lastFocus = null;
 
-            cards.forEach(function (card) {
-                var id = card.dataset.yt;
-
-                var img = document.createElement('img');
-                img.loading = 'lazy';
-                img.alt = '';
-                img.src = 'https://i.ytimg.com/vi/' + id + '/maxresdefault.jpg';
-                img.onerror = function () {
-                    this.onerror = null;
-                    this.src = 'https://i.ytimg.com/vi/' + id + '/hqdefault.jpg';
-                };
-
-                var play = document.createElement('div');
-                play.className = 'pc-vid-play';
-                play.innerHTML = '<span><i class="fa-solid fa-play"></i></span>';
-
-                card.appendChild(img);
-                card.appendChild(play);
+            /* upgrade to the larger thumbnail only when one exists */
+            stage.querySelectorAll('.vs-shot img').forEach(function (img) {
+                var hi = new Image();
+                hi.onload = function () { if (hi.naturalWidth > 320) img.src = img.dataset.hi; };
+                hi.src = img.dataset.hi;
             });
 
-            function play(card) {
-                if (card.classList.contains('is-playing')) return;
+            /* ---------------- filters ---------------- */
+            stage.closest('.pc-wrap').querySelectorAll('.vs-filter').forEach(function (btn) {
+                btn.addEventListener('click', function () {
+                    if (btn.disabled) return;
+                    var key = btn.dataset.filter;
 
-                var params = [
-                    'autoplay=1',
-                    'rel=0',            // related videos limited to same channel
-                    'modestbranding=1',
-                    'controls=1',
-                    'playsinline=1',
-                    'iv_load_policy=3', // no annotation overlays
-                    'color=white'
-                ].join('&');
+                    btn.parentElement.querySelectorAll('.vs-filter').forEach(function (b) {
+                        b.classList.toggle('is-active', b === btn);
+                        b.setAttribute('aria-selected', String(b === btn));
+                    });
 
-                var frame = document.createElement('iframe');
-                frame.src = 'https://www.youtube-nocookie.com/embed/' + card.dataset.yt + '?' + params;
-                frame.title = card.getAttribute('aria-label') || 'Patient video testimonial';
-                frame.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
-                frame.allowFullscreen = true;
+                    var shown = 0;
+                    cards.forEach(function (c) {
+                        var match = key === 'all' || c.dataset.cat === key;
+                        c.hidden = !match;
+                        if (match) shown++;
+                    });
+                    if (empty) empty.hidden = shown > 0;
+                });
+            });
 
-                card.classList.add('is-playing');
-                card.removeAttribute('role');
-                card.removeAttribute('tabindex');
-                card.appendChild(frame);
+            /* ---------------- modal ---------------- */
+            function open(btn) {
+                lastFocus = btn;
+                titleEl.textContent = btn.dataset.title || 'Patient story';
+
+                var iframe = document.createElement('iframe');
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + btn.dataset.yt +
+                    '?autoplay=1&rel=0&playsinline=1&iv_load_policy=3&color=white';
+                iframe.title = btn.dataset.title || 'Patient video story';
+                iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+                iframe.allowFullscreen = true;
+                frame.appendChild(iframe);
+
+                modal.hidden = false;
+                document.body.style.overflow = 'hidden';
+                modal.querySelector('.vs-modal-close').focus();
             }
 
-            grid.addEventListener('click', function (e) {
-                var card = e.target.closest('.pc-vid');
-                if (card) play(card);
+            function close() {
+                modal.hidden = true;
+                frame.innerHTML = '';          // removing the iframe stops playback
+                document.body.style.overflow = '';
+                if (lastFocus) lastFocus.focus();
+            }
+
+            stage.addEventListener('click', function (e) {
+                var btn = e.target.closest('.vs-open');
+                if (btn) open(btn);
             });
 
-            grid.addEventListener('keydown', function (e) {
-                if (e.key !== 'Enter' && e.key !== ' ') return;
-                var card = e.target.closest('.pc-vid');
-                if (!card) return;
-                e.preventDefault();
-                play(card);
+            modal.addEventListener('click', function (e) {
+                if (e.target.closest('[data-close]')) close();
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && !modal.hidden) close();
             });
         })();
     </script>

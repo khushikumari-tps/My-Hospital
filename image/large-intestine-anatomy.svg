@@ -1,0 +1,146 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620"
+     role="img" aria-labelledby="colTitle colDesc">
+  <title id="colTitle">Anatomy of the large intestine: caecum, colon, sigmoid and rectum</title>
+  <desc id="colDesc">Anatomical illustration of the large intestine framing the abdomen — caecum and appendix,
+    ascending colon, transverse colon, descending colon, sigmoid colon and rectum — with the haustral
+    segmentation of the wall. A cutaway on the descending colon shows a small polyp on the lining.</desc>
+
+  <defs>
+    <linearGradient id="colTube" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"    stop-color="#F3BEB1"/>
+      <stop offset="0.42" stop-color="#E29C8B"/>
+      <stop offset="1"    stop-color="#BE7261"/>
+    </linearGradient>
+    <linearGradient id="colLumen" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0"   stop-color="#F8DED2"/>
+      <stop offset="1"   stop-color="#E2B7A3"/>
+    </linearGradient>
+    <linearGradient id="polyp" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0"   stop-color="#F0AE9C"/>
+      <stop offset="1"   stop-color="#C3705C"/>
+    </linearGradient>
+    <radialGradient id="colGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#E29C8B" stop-opacity="0.14"/>
+      <stop offset="1"   stop-color="#E29C8B" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="860" height="620" fill="#ffffff"/>
+  <ellipse cx="430" cy="320" rx="360" ry="230" fill="url(#colGlow)"/>
+
+  <!-- ============================ the colonic frame ============================ -->
+  <!-- one continuous path: caecum, ascending, transverse, descending, sigmoid -->
+  <g fill="none" stroke-linecap="round">
+    <path id="colonPath"
+          d="M228 470 C214 420 218 356 220 296
+             C222 246 230 206 268 186
+             C324 158 400 172 452 200
+             C512 232 570 210 606 190
+             C644 168 664 200 664 248
+             C664 312 662 380 656 430
+             C650 480 604 512 548 508
+             C494 504 466 528 452 560"
+          stroke="#A85340" stroke-width="58" stroke-opacity="0.32"/>
+    <path d="M228 470 C214 420 218 356 220 296
+             C222 246 230 206 268 186
+             C324 158 400 172 452 200
+             C512 232 570 210 606 190
+             C644 168 664 200 664 248
+             C664 312 662 380 656 430
+             C650 480 604 512 548 508
+             C494 504 466 528 452 560"
+          stroke="url(#colTube)" stroke-width="50"/>
+
+    <!-- haustral folds: short dark bands set along the tube -->
+    <path d="M228 470 C214 420 218 356 220 296
+             C222 246 230 206 268 186
+             C324 158 400 172 452 200
+             C512 232 570 210 606 190
+             C644 168 664 200 664 248
+             C664 312 662 380 656 430
+             C650 480 604 512 548 508
+             C494 504 466 528 452 560"
+          stroke="#A85340" stroke-width="50" stroke-opacity="0.22"
+          stroke-dasharray="3 44" stroke-linecap="butt"/>
+
+    <!-- taenia coli: the pale longitudinal band -->
+    <path d="M228 470 C214 420 218 356 220 296
+             C222 246 230 206 268 186
+             C324 158 400 172 452 200
+             C512 232 570 210 606 190
+             C644 168 664 200 664 248
+             C664 312 662 380 656 430
+             C650 480 604 512 548 508
+             C494 504 466 528 452 560"
+          stroke="#F6D9CC" stroke-width="7" stroke-opacity="0.75"/>
+  </g>
+
+  <!-- ================================ caecum ================================ -->
+  <ellipse cx="232" cy="492" rx="46" ry="42" fill="url(#colTube)"
+           stroke="#A85340" stroke-width="2" stroke-opacity="0.3"/>
+  <path d="M206 470 C204 486 208 502 218 514" fill="none" stroke="#ffffff"
+        stroke-width="7" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- appendix -->
+  <path d="M244 528 C254 560 250 586 232 600" fill="none" stroke="#C3705C"
+        stroke-width="13" stroke-linecap="round"/>
+  <path d="M244 528 C254 560 250 586 232 600" fill="none" stroke="#EFB3A2"
+        stroke-width="7" stroke-linecap="round"/>
+
+  <!-- ================================ rectum ================================ -->
+  <path d="M452 560 C450 586 448 602 446 612" fill="none" stroke="#B96A57"
+        stroke-width="46" stroke-linecap="round"/>
+  <path d="M440 566 C438 588 437 600 436 610" fill="none" stroke="#ffffff"
+        stroke-width="7" stroke-linecap="round" opacity="0.26"/>
+
+  <!-- ===================== cutaway: a polyp on the lining ===================== -->
+  <g>
+    <clipPath id="colCut"><circle cx="660" cy="330" r="70"/></clipPath>
+    <g clip-path="url(#colCut)">
+      <rect x="586" y="256" width="150" height="150" fill="url(#colLumen)"/>
+      <!-- inner wall surfaces top and bottom of the opened segment -->
+      <path d="M586 268 C620 278 700 278 736 268" fill="none" stroke="#C08670" stroke-width="6"/>
+      <path d="M586 396 C620 386 700 386 736 396" fill="none" stroke="#C08670" stroke-width="6"/>
+      <!-- a single small pedunculated polyp -->
+      <path d="M652 380 L652 350" stroke="#C3705C" stroke-width="8" stroke-linecap="round"/>
+      <circle cx="652" cy="338" r="17" fill="url(#polyp)" stroke="#A85340"
+              stroke-width="1.8" stroke-opacity="0.6"/>
+      <circle cx="646" cy="332" r="5" fill="#ffffff" opacity="0.35"/>
+    </g>
+    <circle cx="660" cy="330" r="70" fill="none" stroke="#ffffff" stroke-width="5" opacity="0.75"/>
+    <circle cx="660" cy="330" r="70" fill="none" stroke="#C9A79E" stroke-width="2"/>
+  </g>
+
+  <!-- ================================= labels ================================= -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
+    <g stroke="#C9A79E" stroke-width="1.4" fill="none">
+      <path d="M220 300 L128 300 L104 288"/>
+      <path d="M380 178 L380 96 L356 84"/>
+      <path d="M186 492 L120 512 L96 512"/>
+      <path d="M500 528 L500 566 L524 578"/>
+      <path d="M730 330 L784 330"/>
+    </g>
+    <g fill="#C9A79E">
+      <circle cx="220" cy="300" r="3.4"/>
+      <circle cx="380" cy="178" r="3.4"/>
+      <circle cx="186" cy="492" r="3.4"/>
+      <circle cx="500" cy="528" r="3.4"/>
+    </g>
+
+    <text x="98" y="284" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Ascending colon</text>
+    <text x="98" y="306" font-size="15" text-anchor="end">Water is reclaimed here</text>
+
+    <text x="350" y="80" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Transverse colon</text>
+    <text x="350" y="102" font-size="15" text-anchor="end">Crosses the upper abdomen</text>
+
+    <text x="90" y="508" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Caecum &amp; appendix</text>
+    <text x="90" y="530" font-size="15" text-anchor="end">Where the small bowel joins</text>
+
+    <text x="530" y="574" font-size="21" font-weight="600" fill="#4A322E">Sigmoid &amp; rectum</text>
+    <text x="530" y="596" font-size="15">The final stretch</text>
+
+    <text x="792" y="324" font-size="21" font-weight="600" fill="#4A322E">Polyp</text>
+    <text x="792" y="346" font-size="15">Removed at colonoscopy,</text>
+    <text x="792" y="366" font-size="15">before it can ever change</text>
+  </g>
+</svg>

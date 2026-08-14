@@ -1,0 +1,154 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620"
+     role="img" aria-labelledby="pncTitle pncDesc">
+  <title id="pncTitle">Anatomy of the pancreas: head, body, tail and pancreatic duct</title>
+  <desc id="pncDesc">Anatomical illustration with the pancreas as the dominant structure, showing the head
+    nestled in the C-shaped loop of the duodenum, the body sweeping across, the tail tapering away, and the
+    pancreatic duct running the length of the gland. The stomach is shown faintly behind for orientation.</desc>
+
+  <defs>
+    <!-- pancreatic tissue: paler and more golden than bowel, lit from upper left -->
+    <linearGradient id="pnc" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"    stop-color="#F5CDAE"/>
+      <stop offset="0.38" stop-color="#E3A87C"/>
+      <stop offset="1"    stop-color="#BC7D53"/>
+    </linearGradient>
+
+    <linearGradient id="pncHi" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.52"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- duodenum: pinker, so it reads as a separate organ -->
+    <linearGradient id="duo" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#F2B3A6"/>
+      <stop offset="0.5" stop-color="#DE8E7E"/>
+      <stop offset="1"   stop-color="#BC6A5A"/>
+    </linearGradient>
+
+    <linearGradient id="duct" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#FBF0DC"/>
+      <stop offset="1"   stop-color="#EFD6AF"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#E3A87C" stop-opacity="0.16"/>
+      <stop offset="1"   stop-color="#E3A87C" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="860" height="620" fill="#ffffff"/>
+
+  <!-- soft halo so the gland reads as the subject of the image -->
+  <ellipse cx="470" cy="340" rx="360" ry="200" fill="url(#glow)"/>
+
+  <!-- =============== stomach, faint, purely for orientation =============== -->
+  <g opacity="0.15">
+    <path d="M300 176 C 300 106, 372 66, 460 70 C 566 74, 662 118, 690 186
+             C 706 226, 682 254, 640 250 C 566 244, 470 226, 396 232
+             C 340 236, 300 216, 300 176 Z"
+          fill="#C98F80"/>
+    <path d="M356 92 C 340 62, 344 40, 366 26" fill="none" stroke="#C98F80"
+          stroke-width="26" stroke-linecap="round"/>
+  </g>
+  <text x="300" y="130" font-family="Inter, 'Segoe UI', sans-serif" font-size="15"
+        fill="#B49A92" opacity="0.85">Stomach (shown behind)</text>
+
+  <!-- ================= duodenum: the C-loop around the head ================= -->
+  <path d="M352 176 C 288 194, 246 246, 244 312 C 242 380, 274 440, 328 476 C 352 492, 380 500, 408 502"
+        fill="none" stroke="#B05B4C" stroke-width="42" stroke-linecap="round" opacity="0.35"/>
+  <path d="M352 176 C 288 194, 246 246, 244 312 C 242 380, 274 440, 328 476 C 352 492, 380 500, 408 502"
+        fill="none" stroke="url(#duo)" stroke-width="36" stroke-linecap="round"/>
+  <path d="M348 190 C 296 206, 262 250, 258 306"
+        fill="none" stroke="#ffffff" stroke-width="9" stroke-linecap="round" opacity="0.28"/>
+
+  <!-- ====================== pancreas: the hero shape ====================== -->
+  <!-- head bulges into the duodenal C, neck narrows, body sweeps up, tail tapers -->
+  <path d="M318 288
+           C 330 254, 372 240, 406 252
+           C 442 266, 470 280, 508 276
+           C 566 270, 636 248, 700 218
+           C 722 208, 738 220, 730 238
+           C 696 272, 632 300, 562 320
+           C 508 336, 456 344, 420 352
+           C 402 356, 390 368, 384 386
+           C 376 414, 362 438, 336 448
+           C 304 460, 278 444, 270 412
+           C 260 372, 294 334, 318 288 Z"
+        fill="url(#pnc)" stroke="#A9704B" stroke-width="2.5" stroke-opacity="0.4"/>
+
+  <!-- upper-edge sheen -->
+  <path d="M336 278 C 356 252, 392 248, 418 260 C 470 282, 552 274, 646 240"
+        fill="none" stroke="url(#pncHi)" stroke-width="14" stroke-linecap="round"/>
+
+  <!-- lobulation: the gland's characteristic scalloped texture -->
+  <g fill="#A9704B" opacity="0.16">
+    <circle cx="330" cy="404" r="17"/>
+    <circle cx="366" cy="418" r="13"/>
+    <circle cx="300" cy="392" r="13"/>
+    <circle cx="440" cy="336" r="13"/>
+    <circle cx="500" cy="318" r="12"/>
+    <circle cx="560" cy="302" r="11"/>
+    <circle cx="620" cy="278" r="10"/>
+    <circle cx="672" cy="252" r="9"/>
+  </g>
+  <g stroke="#A9704B" stroke-width="2" fill="none" opacity="0.2" stroke-linecap="round">
+    <path d="M404 268 C 408 292, 406 316, 400 340"/>
+    <path d="M470 274 C 474 296, 472 314, 466 330"/>
+    <path d="M536 268 C 540 288, 538 302, 532 314"/>
+    <path d="M604 250 C 608 268, 606 280, 600 290"/>
+  </g>
+
+  <!-- ================= pancreatic duct, tail to ampulla ================= -->
+  <g stroke="url(#duct)" fill="none" stroke-linecap="round">
+    <path d="M710 232 C 640 264, 566 288, 494 304 C 452 314, 416 322, 398 340
+             C 380 358, 372 384, 360 402 C 350 418, 340 424, 330 424"
+          stroke-width="9"/>
+  </g>
+  <g stroke="#D9B98A" fill="none" stroke-linecap="round" stroke-width="4" opacity="0.85">
+    <path d="M636 250 L 626 226"/>
+    <path d="M600 264 L 592 240"/>
+    <path d="M560 278 L 554 254"/>
+    <path d="M520 290 L 516 266"/>
+    <path d="M478 302 L 476 278"/>
+    <path d="M440 314 L 440 292"/>
+    <path d="M604 268 L 614 290"/>
+    <path d="M556 282 L 564 304"/>
+    <path d="M508 296 L 514 316"/>
+    <path d="M462 308 L 466 328"/>
+  </g>
+  <!-- ampulla: where the duct drains into the duodenum -->
+  <circle cx="330" cy="424" r="7" fill="#EFD6AF" stroke="#C79A6B" stroke-width="2"/>
+
+  <!-- ============================== labels ============================== -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
+    <g stroke="#C9A79E" stroke-width="1.4" fill="none">
+      <path d="M700 226 L 700 178 L 726 166"/>
+      <path d="M470 300 L 470 214 L 448 202"/>
+      <path d="M330 440 L 330 528 L 306 542"/>
+      <path d="M508 322 L 508 528 L 532 542"/>
+      <path d="M288 470 L 214 502 L 190 502"/>
+    </g>
+    <g fill="#C9A79E">
+      <circle cx="700" cy="226" r="3.4"/>
+      <circle cx="470" cy="300" r="3.4"/>
+      <circle cx="330" cy="440" r="3.4"/>
+      <circle cx="508" cy="322" r="3.4"/>
+      <circle cx="288" cy="470" r="3.4"/>
+    </g>
+
+    <text x="732" y="162" font-size="21" font-weight="600" fill="#4A322E">Tail</text>
+    <text x="732" y="184" font-size="15">Tapers towards the spleen</text>
+
+    <text x="442" y="198" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Pancreatic duct</text>
+    <text x="442" y="220" font-size="15" text-anchor="end">Carries enzymes to the duodenum</text>
+
+    <text x="300" y="546" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Head</text>
+    <text x="300" y="568" font-size="15" text-anchor="end">Sits within the duodenal loop</text>
+
+    <text x="538" y="546" font-size="21" font-weight="600" fill="#4A322E">Body</text>
+    <text x="538" y="568" font-size="15">Crosses the midline behind the stomach</text>
+
+    <text x="184" y="498" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Duodenum</text>
+    <text x="184" y="520" font-size="15" text-anchor="end">Receives the pancreatic enzymes</text>
+  </g>
+</svg>

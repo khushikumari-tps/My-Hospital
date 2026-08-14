@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 460" width="600" height="460"
+     role="img" aria-labelledby="t d">
+  <title id="t">Gallstones within the gallbladder</title>
+  <desc id="d">Several hard, faceted stones lying loose inside the gallbladder lumen.</desc>
+  <defs>
+    <linearGradient id="wall" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"    stop-color="#F6C4B4"/>
+      <stop offset="0.36" stop-color="#E39A85"/>
+      <stop offset="1"    stop-color="#B96A54"/>
+    </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0.6" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.62"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="lumen" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0"   stop-color="#F0E4C4"/>
+      <stop offset="1"   stop-color="#D3BE86"/>
+    </linearGradient>
+    <linearGradient id="stone" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0"   stop-color="#F6EBD2"/>
+      <stop offset="0.5" stop-color="#DCC48E"/>
+      <stop offset="1"   stop-color="#A98A52"/>
+    </linearGradient>
+    <linearGradient id="sludge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#CFB877" stop-opacity="0.55"/>
+      <stop offset="0.35" stop-color="#B79E5E"/>
+      <stop offset="1"   stop-color="#8A7238"/>
+    </linearGradient>
+    <linearGradient id="mass" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0"   stop-color="#D8BEC4"/>
+      <stop offset="0.5" stop-color="#B994A0"/>
+      <stop offset="1"   stop-color="#8C6C79"/>
+    </linearGradient>
+    <radialGradient id="inflame" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.45" stop-color="#E4553F" stop-opacity="0.34"/>
+      <stop offset="1"    stop-color="#E4553F" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ground" cx="0.5" cy="0.45" r="0.6">
+      <stop offset="0"   stop-color="#FBF3EF"/>
+      <stop offset="1"   stop-color="#FFFFFF"/>
+    </radialGradient>
+    <clipPath id="gbClip"><path d="M370 200 C300 168 210 176 168 236 C128 292 148 366 214 386 C268 402 322 356 348 300 C362 270 372 232 370 200 Z"/></clipPath>
+    <clipPath id="cutClip"><ellipse cx="258" cy="292" rx="112" ry="104"/></clipPath>
+  </defs>
+  <rect width="600" height="460" fill="url(#ground)"/>
+  <g opacity="0.14">
+    <path d="M96 176 C150 108 268 78 386 96 C452 106 508 130 522 164
+             C534 194 500 214 452 210 C356 202 246 198 168 214 C118 224 88 206 96 176 Z"
+          fill="#9E2F2B"/>
+  </g>
+
+  <!-- cystic duct -->
+  <path d="M368 202 C400 178 432 158 470 142" fill="none" stroke="#B96A54"
+        stroke-width="26" stroke-linecap="round" opacity="0.5"/>
+  <path d="M368 202 C400 178 432 158 470 142" fill="none" stroke="url(#wall)"
+        stroke-width="20" stroke-linecap="round"/>
+  <path d="M374 198 C402 178 430 160 462 146" fill="none" stroke="#ffffff"
+        stroke-width="5" stroke-linecap="round" opacity="0.34"/>
+  <path d="M370 200 C300 168 210 176 168 236 C128 292 148 366 214 386 C268 402 322 356 348 300 C362 270 372 232 370 200 Z" fill="url(#wall)" stroke="#A25640" stroke-width="2.5" stroke-opacity="0.4"/>
+  <path d="M196 214 C232 186 288 180 330 196" fill="none" stroke="url(#sheen)"
+        stroke-width="17" stroke-linecap="round"/>
+  <g clip-path="url(#gbClip)">
+    <g transform="rotate(-12 228 318)"><path d="M202 318 L215 294 L244 297 L254 327 L220 342 Z" fill="url(#stone)" stroke="#8F7340" stroke-width="1.6" stroke-opacity="0.55"/><path d="M211 313 L222 299 L234 307 Z" fill="#ffffff" opacity="0.34"/></g>
+    <g transform="rotate(18 280 300)"><path d="M260 300 L270 281 L292 284 L300 307 L274 319 Z" fill="url(#stone)" stroke="#8F7340" stroke-width="1.6" stroke-opacity="0.55"/><path d="M267 296 L276 285 L284 292 Z" fill="#ffffff" opacity="0.34"/></g>
+    <g transform="rotate(30 206 268)"><path d="M189 268 L197 252 L216 254 L223 274 L200 284 Z" fill="url(#stone)" stroke="#8F7340" stroke-width="1.6" stroke-opacity="0.55"/><path d="M195 264 L202 255 L210 261 Z" fill="#ffffff" opacity="0.34"/></g>
+    <g transform="rotate(-24 262 348)"><path d="M247 348 L254 334 L271 336 L277 353 L257 362 Z" fill="url(#stone)" stroke="#8F7340" stroke-width="1.6" stroke-opacity="0.55"/><path d="M252 345 L259 337 L265 342 Z" fill="#ffffff" opacity="0.34"/></g>
+    <g transform="rotate(8 312 322)"><path d="M299 322 L305 310 L320 311 L325 326 L308 334 Z" fill="url(#stone)" stroke="#8F7340" stroke-width="1.6" stroke-opacity="0.55"/><path d="M303 319 L309 312 L315 316 Z" fill="#ffffff" opacity="0.34"/></g>
+    <g transform="rotate(44 238 232)"><path d="M226 232 L232 220 L245 222 L250 236 L234 243 Z" fill="url(#stone)" stroke="#8F7340" stroke-width="1.6" stroke-opacity="0.55"/><path d="M230 229 L235 223 L240 227 Z" fill="#ffffff" opacity="0.34"/></g>
+  </g>
+</svg>

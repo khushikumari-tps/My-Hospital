@@ -49,15 +49,31 @@
             });
         });
 
-        // The Related Disease mega menu opens on hover at desktop width, so a
-        // stale .show left by an earlier click would pin it open. Clear it
-        // whenever the pointer leaves the item.
+        // Related Disease menu. Desktop opening is pure CSS hover; the only
+        // things needed here are clearing a stale .show left by a click, and
+        // turning the second level into a tap accordion inside the drawer.
+        var isDrawer = function () { return window.matchMedia('(max-width: 992px)').matches; };
+
         document.querySelectorAll('.dropdown.advmega').forEach(function (menu) {
             menu.addEventListener('mouseleave', function () {
-                if (window.matchMedia('(min-width: 993px)').matches) {
-                    var panel = menu.querySelector('.advmega-panel');
-                    if (panel) panel.classList.remove('show');
-                }
+                if (isDrawer()) return;
+                var panel = menu.querySelector('.advmega-panel');
+                if (panel) panel.classList.remove('show');
+            });
+
+            menu.querySelectorAll('.advmega-item > .advmega-link').forEach(function (link) {
+                link.addEventListener('click', function (e) {
+                    if (!isDrawer()) return;      // desktop: follow the link
+                    var item = link.parentElement;
+                    var open = item.classList.contains('is-open');
+                    e.preventDefault();
+                    e.stopPropagation();
+                    // one disease expanded at a time
+                    menu.querySelectorAll('.advmega-item.is-open').forEach(function (o) {
+                        if (o !== item) o.classList.remove('is-open');
+                    });
+                    item.classList.toggle('is-open', !open);
+                });
             });
         });
 
@@ -75,10 +91,12 @@
                 setIcon(navLinks.classList.toggle('open'));
             });
 
-            // Close the drawer once a real link is followed
+            // Close the drawer once a real link is followed. Rows that expand
+            // rather than navigate must not close it.
             navLinks.querySelectorAll('a:not(.dropbtn)').forEach(function (link) {
                 link.addEventListener('click', function () {
                     if (this.closest('.dropdown-submenu') && this.nextElementSibling) return;
+                    if (this.classList.contains('advmega-link') && isDrawer()) return;
                     navLinks.classList.remove('open');
                     setIcon(false);
                 });
@@ -87,9 +105,12 @@
 
         // Click outside closes any open panel
         window.addEventListener('click', function (e) {
-            if (!e.target.closest('.dropbtn') && !e.target.closest('.dropdown-submenu')) {
+            if (!e.target.closest('.dropbtn') && !e.target.closest('.dropdown-submenu')
+                && !e.target.closest('.advmega-panel')) {
                 document.querySelectorAll('.dropdown-content.show, .dropdown-submenu-content.show')
                     .forEach(function (d) { d.classList.remove('show'); });
+                document.querySelectorAll('.advmega-item.is-open')
+                    .forEach(function (d) { d.classList.remove('is-open'); });
             }
         });
 

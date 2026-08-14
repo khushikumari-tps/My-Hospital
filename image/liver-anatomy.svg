@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620"
+     role="img" aria-labelledby="livTitle livDesc">
+  <title id="livTitle">Anatomy of the liver: right and left lobes, gallbladder and portal inflow</title>
+  <desc id="livDesc">Anatomical illustration with the liver as the dominant structure, showing the larger right
+    lobe and smaller left lobe divided by the falciform ligament, the gallbladder tucked beneath the right lobe,
+    and the portal vein, hepatic artery and bile duct meeting at the hilum. A dashed plane on the left lobe marks
+    a resection, with the removed portion ghosted to indicate that the remnant regenerates.</desc>
+
+  <defs>
+    <!-- liver parenchyma: deep red-brown, lit from the upper left -->
+    <linearGradient id="livBody" x1="0.12" y1="0" x2="0.88" y2="1">
+      <stop offset="0"    stop-color="#A8494A"/>
+      <stop offset="0.32" stop-color="#8C2F35"/>
+      <stop offset="0.72" stop-color="#6E1F27"/>
+      <stop offset="1"    stop-color="#54141C"/>
+    </linearGradient>
+    <linearGradient id="livLeft" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"   stop-color="#9C4044"/>
+      <stop offset="0.5" stop-color="#7C262E"/>
+      <stop offset="1"   stop-color="#5C1821"/>
+    </linearGradient>
+    <linearGradient id="livSheen" x1="0" y1="0" x2="0.45" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.4"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="gbGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#B7C285"/>
+      <stop offset="0.5" stop-color="#93A15F"/>
+      <stop offset="1"   stop-color="#6C7840"/>
+    </linearGradient>
+    <radialGradient id="livGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#9E2F2B" stop-opacity="0.13"/>
+      <stop offset="1"   stop-color="#9E2F2B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="regen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#C9736F" stop-opacity="0.34"/>
+      <stop offset="1"   stop-color="#C9736F" stop-opacity="0.10"/>
+    </linearGradient>
+
+    <clipPath id="livClip">
+      <path d="M132 306 C120 240 180 178 272 160 C384 138 524 142 624 170
+               C690 189 720 220 710 254 C700 288 642 310 568 318
+               C502 326 454 320 416 310 C382 302 352 324 318 342
+               C262 372 178 362 150 332 C138 320 133 314 132 306 Z"/>
+    </clipPath>
+  </defs>
+
+  <rect width="860" height="620" fill="#ffffff"/>
+  <ellipse cx="430" cy="270" rx="380" ry="190" fill="url(#livGlow)"/>
+
+  <!-- ================ rib cage: the liver sits under the ribs ================ -->
+  <g fill="none" stroke="#C9B6AE" stroke-width="7" stroke-linecap="round" opacity="0.5">
+    <path d="M64 210 C120 152 220 112 330 96"/>
+    <path d="M60 262 C122 198 232 154 350 138"/>
+    <path d="M64 314 C130 246 244 200 366 184"/>
+  </g>
+
+  <!-- ============ stomach and bowel, faint, for orientation only ============ -->
+  <g opacity="0.11">
+    <path d="M560 330 C632 330 682 366 686 414 C690 458 646 486 592 480
+             C540 474 508 440 512 396 C516 358 528 330 560 330 Z" fill="#B8756A"/>
+    <path d="M236 404 C300 388 372 396 424 424 C472 450 470 500 418 512
+             C352 528 268 508 232 470 C210 446 214 410 236 404 Z" fill="#C08878"/>
+  </g>
+
+  <!-- ========================= portal inflow / outflow ========================= -->
+  <!-- vessels arriving from the gut and the duct leaving toward the duodenum -->
+  <g stroke-linecap="round" fill="none">
+    <path d="M430 306 C428 356 420 400 400 442" stroke="#5E4A66" stroke-width="19"/>
+    <path d="M448 306 C456 350 462 392 476 430" stroke="#B23A38" stroke-width="11"/>
+    <path d="M410 308 C398 352 380 386 352 412" stroke="#8FA15C" stroke-width="9"/>
+    <path d="M430 316 C428 358 422 396 406 434" stroke="#ffffff" stroke-width="4" opacity="0.24"/>
+  </g>
+
+  <!-- ================================= liver ================================= -->
+  <path d="M132 306 C120 240 180 178 272 160 C384 138 524 142 624 170
+           C690 189 720 220 710 254 C700 288 642 310 568 318
+           C502 326 454 320 416 310 C382 302 352 324 318 342
+           C262 372 178 362 150 332 C138 320 133 314 132 306 Z"
+        fill="url(#livBody)"/>
+
+  <!-- left lobe rendered slightly differently so the division reads clearly -->
+  <g clip-path="url(#livClip)">
+    <path d="M488 130 C560 132 640 152 700 180 C740 200 744 264 700 292
+             C650 322 566 330 500 322 Z" fill="url(#livLeft)"/>
+    <!-- falciform ligament dividing the lobes -->
+    <path d="M492 142 C486 200 482 258 478 318" stroke="#E8CFC4" stroke-width="9"
+          fill="none" opacity="0.75" stroke-linecap="round"/>
+    <path d="M492 142 C486 200 482 258 478 318" stroke="#ffffff" stroke-width="3"
+          fill="none" opacity="0.5" stroke-linecap="round"/>
+    <!-- capsule sheen along the dome -->
+    <path d="M196 224 C250 182 336 164 430 164" fill="none" stroke="url(#livSheen)"
+          stroke-width="26" stroke-linecap="round"/>
+    <!-- surface vessels, very faint -->
+    <g stroke="#D08A82" stroke-width="2.4" fill="none" opacity="0.22" stroke-linecap="round">
+      <path d="M240 300 C280 268 322 250 372 244"/>
+      <path d="M262 322 C296 296 330 282 368 274"/>
+      <path d="M560 268 C600 250 640 240 676 240"/>
+    </g>
+  </g>
+
+  <!-- ============ resection plane and the regenerating remnant ============ -->
+  <g>
+    <path d="M614 152 C610 208 606 262 598 316" stroke="#F0D9CE" stroke-width="3"
+          stroke-dasharray="10 9" fill="none" stroke-linecap="round" opacity="0.95"/>
+    <path d="M614 152 C660 158 700 178 712 208 C724 240 704 282 660 302
+             C640 311 618 315 598 316 C606 262 610 208 614 152 Z"
+          fill="url(#regen)" stroke="#C9736F" stroke-width="2"
+          stroke-dasharray="7 7" stroke-opacity="0.7"/>
+    <!-- regrowth arrow: remnant expanding back toward the plane -->
+    <path d="M566 356 C610 348 648 336 672 318" fill="none" stroke="#B5544F"
+          stroke-width="3.4" stroke-linecap="round" opacity="0.8"/>
+    <path d="M662 310 L678 314 L668 328" fill="none" stroke="#B5544F"
+          stroke-width="3.4" stroke-linejoin="round" stroke-linecap="round" opacity="0.8"/>
+  </g>
+
+  <!-- ============ gallbladder: secondary, beneath the right lobe ============ -->
+  <path d="M352 332 C338 356 330 384 340 404 C350 424 378 428 392 410
+           C406 392 404 358 392 336 Z"
+        fill="url(#gbGrad)" stroke="#5F6B38" stroke-width="2" stroke-opacity="0.5"/>
+  <path d="M356 344 C348 362 344 382 348 396" fill="none" stroke="#ffffff"
+        stroke-width="5" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- ================================ labels ================================ -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
+    <g stroke="#C9A79E" stroke-width="1.4" fill="none">
+      <path d="M250 230 L250 108 L226 96"/>
+      <path d="M660 214 L760 214 L784 226"/>
+      <path d="M366 414 L366 500 L342 514"/>
+      <path d="M430 430 L430 528 L454 542"/>
+      <path d="M652 322 L740 356 L764 356"/>
+    </g>
+    <g fill="#C9A79E">
+      <circle cx="250" cy="230" r="3.4"/>
+      <circle cx="660" cy="214" r="3.4"/>
+      <circle cx="366" cy="414" r="3.4"/>
+      <circle cx="430" cy="430" r="3.4"/>
+      <circle cx="652" cy="322" r="3.4"/>
+    </g>
+
+    <text x="220" y="92" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Right lobe</text>
+    <text x="220" y="114" font-size="15" text-anchor="end">The larger of the two, under the ribs</text>
+
+    <text x="790" y="210" font-size="21" font-weight="600" fill="#4A322E">Left lobe</text>
+    <text x="790" y="232" font-size="15">Divided by the falciform ligament</text>
+
+    <text x="336" y="518" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Gallbladder</text>
+    <text x="336" y="540" font-size="15" text-anchor="end">Stores the bile the liver makes</text>
+
+    <text x="460" y="546" font-size="21" font-weight="600" fill="#4A322E">Portal inflow</text>
+    <text x="460" y="568" font-size="15">Blood arriving from the gut</text>
+
+    <text x="770" y="352" font-size="21" font-weight="600" fill="#4A322E">Regeneration</text>
+    <text x="770" y="374" font-size="15">The remnant regrows after resection</text>
+  </g>
+</svg>

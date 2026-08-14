@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallbladder &amp; Biliary Care | Advitya Healthcares</title>
     <meta name="description" content="Expert gallbladder and biliary care — gallstones, cholecystitis, polyps, gallbladder cancer, bile duct injuries and cholangiocarcinoma. Laparoscopic and robotic surgery, ERCP, MRCP and specialist bile duct reconstruction.">
-    <link rel="stylesheet" href="style.css?v=17">
+    <link rel="stylesheet" href="style.css?v=19">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -1346,6 +1346,10 @@
 
         /* ============================ responsive ============================ */
         @media (max-width: 1024px) {
+            .pc-intro-grid {
+                grid-template-columns: 1fr;
+            }
+
             .pc-hero-grid {
                 grid-template-columns: 1fr;
                 gap: 48px;
@@ -1400,6 +1404,429 @@
                 transform: none;
             }
         }
+
+        .pc-intro-grid {
+            display: grid;
+            grid-template-columns: .95fr 1.05fr;
+            gap: clamp(32px, 5vw, 70px);
+            align-items: center;
+        }
+
+        .pc-intro-media {
+            position: relative;
+            border-radius: var(--r-xl);
+            overflow: hidden;
+            border: 1px solid var(--line);
+            background: linear-gradient(160deg, #FDF8F6, #EAF5F9);
+            box-shadow: var(--sh-md);
+        }
+
+        .pc-intro-media img {
+            display: block;
+            width: 100%;
+            height: auto;
+            mix-blend-mode: multiply;
+        }
+
+        .pc-facts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin-top: 32px;
+        }
+
+        .pc-fact {
+            padding: 20px 18px;
+            border-radius: var(--r-md);
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+        }
+
+        .pc-fact:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--sh-sm);
+        }
+
+        .pc-fact strong {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brand-700);
+            line-height: 1;
+            margin-bottom: 7px;
+        }
+
+        .pc-fact span {
+            font-size: .84rem;
+            color: var(--ink-mute);
+            line-height: 1.45;
+            display: block;
+        }
+
+        /* ---------- gallbladder symptoms (this page only) ---------- */
+        .sy {
+            background:
+                radial-gradient(760px 440px at 12% 0%, rgba(253, 242, 239, .9), transparent 60%),
+                linear-gradient(180deg, #fff 0%, #FFFCFB 100%);
+        }
+
+        .sy-head {
+            max-width: 760px;
+            margin: 0 auto 48px;
+            text-align: center;
+        }
+
+        .sy-badge {
+            display: inline-block;
+            padding: 7px 18px;
+            border-radius: 999px;
+            background: #fff;
+            border: 1px solid var(--accent-200);
+            color: var(--brand-700);
+            font-family: var(--font-heading);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+        }
+
+        .sy-head h2 {
+            font-size: clamp(1.75rem, 3.2vw, 2.5rem);
+            font-weight: 700;
+            line-height: 1.18;
+            color: #22160F;
+            margin: 20px 0 14px;
+            text-wrap: balance;
+        }
+
+        .sy-head p {
+            font-size: clamp(1rem, 1.2vw, 1.06rem);
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .sy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 22px;
+        }
+
+        .sy-card {
+            position: relative;
+            padding: 30px 28px;
+            border-radius: 22px;
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 2px rgba(90, 10, 14, .05);
+            overflow: hidden;
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .sy-card::after {
+            content: '';
+            position: absolute;
+            inset: auto 0 0 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--brand-700), var(--accent-400));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .35s var(--ease);
+        }
+
+        .sy-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--accent-200);
+            box-shadow: 0 20px 42px -18px rgba(90, 10, 14, .3);
+        }
+
+        .sy-card:hover::after {
+            transform: scaleX(1);
+        }
+
+        .sy-icon {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            margin-bottom: 20px;
+            border-radius: 16px;
+            font-size: 1.12rem;
+            color: var(--brand-700);
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            transition: background-color .3s ease, color .3s ease, transform .3s var(--ease);
+        }
+
+        .sy-card:hover .sy-icon {
+            transform: rotate(-6deg) scale(1.06);
+            background: linear-gradient(135deg, var(--brand-700), var(--accent-400));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .sy-card h3 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            line-height: 1.32;
+            color: #22160F;
+            margin: 0 0 10px;
+        }
+
+        .sy-card p {
+            font-size: .95rem;
+            line-height: 1.72;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        /* the one place this section raises its voice */
+        .sy-alert {
+            display: flex;
+            align-items: flex-start;
+            gap: 22px;
+            margin-top: 34px;
+            padding: 34px 32px;
+            border-radius: 24px;
+            color: #fff;
+            background:
+                radial-gradient(600px 320px at 12% 0%, rgba(240, 128, 96, .38), transparent 62%),
+                linear-gradient(140deg, var(--brand-900), var(--brand-700));
+            box-shadow: var(--sh-lg);
+        }
+
+        .sy-alert-icon {
+            flex: 0 0 auto;
+            width: 54px;
+            height: 54px;
+            display: grid;
+            place-items: center;
+            border-radius: 16px;
+            font-size: 1.2rem;
+            color: #fff;
+            background: rgba(255, 255, 255, .14);
+            border: 1px solid rgba(255, 255, 255, .24);
+        }
+
+        .sy-alert h3 {
+            color: #fff;
+            font-size: 1.24rem;
+            font-weight: 700;
+            margin: 4px 0 10px;
+        }
+
+        .sy-alert p {
+            color: rgba(253, 238, 234, .9);
+            font-size: 1rem;
+            line-height: 1.75;
+            margin: 0;
+            max-width: 70ch;
+        }
+
+        .sy-alert-acts {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        @media (max-width: 640px) {
+            .sy-alert {
+                flex-direction: column;
+                gap: 18px;
+                padding: 28px 24px;
+            }
+
+            .sy-alert-acts .pc-btn {
+                flex: 1 1 100%;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .sy-card,
+            .sy-card:hover,
+            .sy-card::after,
+            .sy-icon {
+                transform: none;
+                transition: none;
+            }
+        }
+
+        /* ---------- Gallbladder condition cards (this page only) ---------- */
+        .gb-head {
+            max-width: 780px;
+            margin: 0 auto 52px;
+            text-align: center;
+        }
+
+        .gb-label {
+            display: inline-block;
+            padding: 7px 18px;
+            border-radius: 999px;
+            background: #fff;
+            border: 1px solid var(--accent-200);
+            color: var(--brand-700);
+            font-family: var(--font-heading);
+            font-size: .73rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+        }
+
+        .gb-head h2 {
+            font-size: clamp(1.8rem, 3.3vw, 2.65rem);
+            font-weight: 700;
+            line-height: 1.15;
+            color: #22160F;
+            margin: 20px 0 16px;
+            text-wrap: balance;
+        }
+
+        .gb-head p {
+            font-size: clamp(1rem, 1.25vw, 1.08rem);
+            line-height: 1.8;
+            color: var(--ink-soft);
+            margin: 0;
+        }
+
+        .gb-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .gb-card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            padding: 26px 24px 24px;
+            border-radius: 24px;
+            background: #fff;
+            border: 1px solid var(--line);
+            box-shadow: 0 1px 2px rgba(90, 10, 14, .05);
+            overflow: hidden;
+            transition: transform .28s var(--ease), box-shadow .28s var(--ease), border-color .28s var(--ease);
+        }
+
+        .gb-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-200);
+            box-shadow: 0 18px 38px -18px rgba(90, 10, 14, .3);
+        }
+
+        .gb-num {
+            align-self: flex-start;
+            min-width: 38px;
+            padding: 6px 12px;
+            border-radius: 999px;
+            background: var(--accent-050);
+            border: 1px solid var(--line);
+            color: var(--brand-700);
+            font-family: var(--font-heading);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-align: center;
+            transition: background-color .28s ease, color .28s ease, border-color .28s ease;
+        }
+
+        .gb-card:hover .gb-num {
+            background: linear-gradient(135deg, var(--brand-700), var(--brand-500));
+            border-color: transparent;
+            color: #fff;
+        }
+
+        .gb-viz {
+            margin: 18px 0 20px;
+            border-radius: 18px;
+            overflow: hidden;
+            background: linear-gradient(158deg, #fff 0%, var(--accent-050) 100%);
+            border: 1px solid var(--line);
+        }
+
+        .gb-viz img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 600 / 460;
+            object-fit: contain;
+            transition: transform .35s var(--ease);
+        }
+
+        .gb-card:hover .gb-viz img {
+            transform: scale(1.045);
+        }
+
+        .gb-card h3 {
+            font-size: 1.12rem;
+            font-weight: 600;
+            line-height: 1.3;
+            color: #22160F;
+            margin: 0 0 9px;
+        }
+
+        .gb-card h3 span {
+            display: block;
+            font-size: .88rem;
+            font-weight: 500;
+            color: var(--ink-mute);
+        }
+
+        .gb-card p {
+            font-size: .94rem;
+            line-height: 1.7;
+            color: var(--ink-soft);
+            margin: 0 0 18px;
+        }
+
+        .gb-more {
+            margin-top: auto;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-heading);
+            font-size: .87rem;
+            font-weight: 600;
+            color: var(--brand-600);
+            text-decoration: none;
+            transition: gap .28s var(--ease), color .28s ease;
+        }
+
+        .gb-more:hover {
+            gap: 13px;
+            color: var(--brand-800);
+        }
+
+        .gb-more:focus-visible {
+            outline: 2px solid var(--brand-600);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 900px) {
+            .gb-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+        }
+
+        @media (max-width: 560px) {
+            .gb-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .gb-card,
+            .gb-card:hover,
+            .gb-viz img,
+            .gb-card:hover .gb-viz img {
+                transform: none;
+                transition: none;
+            }
+        }
     </style>
 </head>
 
@@ -1428,23 +1855,74 @@
                 <div class="dropdown advmega">
                     <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content advmega-panel">
-                        <div class="advmega-head">
-                            <strong>Conditions We Treat</strong>
-                            <span>Nine areas of hepato-pancreato-biliary and gastrointestinal care.</span>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/pancreas/">Pancreas<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="diseases/pancreas/">Pancreatitis &amp; Pancreatic Disease</a>
+                                    <a href="diseases/pancreatic-cancer/">Pancreatic Cancer</a>
+                                    <a href="understanding-the-normal-pancreas.html">Understanding the Normal Pancreas</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="advmega-list">
-                            <a href="diseases/gall-bladder/">Gall Bladder<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/biliary-disease/">Biliary Disease<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/liver/">Liver<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/colon-rectum/">Colon and Rectum<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/stomach/">Stomach<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/esophagus/">Esophagus<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/pancreas/">Pancreas<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/pancreatic-cancer/">Pancreatic Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
-                            <a href="diseases/gall-bladder-cancer/">Gall Bladder Cancer<span class="advmega-plus" aria-hidden="true"></span></a>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/gall-bladder/">Gall Bladder<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="gallbladder-benign-disease.html">Benign Disease</a>
+                                    <a href="gallbladder-cancers.html">Cancers</a>
+                                    <a href="gallbladder-cancer-and-gallstone-disease.html">Gallbladder cancer and gallstone disease</a>
+                                </div>
+                            </div>
                         </div>
-                        <div class="advmega-foot">
-                            Not sure which applies to you? <a href="index.html#contactModal">Send us your reports</a> and a specialist will review them.
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/biliary-disease/">Biliary Disease<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-biliary-diseases.html">Benign Disease</a>
+                                    <a href="surgery-for-bile-duct-injury.html">Surgery for Bile Duct Injury</a>
+                                    <a href="bile-duct-cancers.html">Cancers</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/liver/">Liver<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-diseases-of-the-liver.html">Benign Disease</a>
+                                    <a href="liver-cancers.html">Cancers</a>
+                                    <a href="liver-surgery.html">Liver Surgery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/colon-rectum/">Colon and Rectum<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-colorectal-disease.html">Benign Disease</a>
+                                    <a href="colorectal-cancer.html">Cancers</a>
+                                    <a href="rectal-cancer-surgery.html">Rectal Cancer Surgery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/stomach/">Stomach<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-diseases-of-the-stomach.html">Benign Disease</a>
+                                    <a href="gastric-cancer.html">Cancers</a>
+                                    <a href="gastric-cancer-surgery.html">Gastric Cancer Surgery</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="advmega-item">
+                            <a class="advmega-link" href="diseases/esophagus/">Esophagus<span class="advmega-sign" aria-hidden="true"></span></a>
+                            <div class="advmega-sub">
+                                <div class="advmega-sub-inner">
+                                    <a href="benign-diseases-of-the-esophagus.html">Benign Disease</a>
+                                    <a href="esophageal-cancers.html">Cancers</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1476,10 +1954,10 @@
                 <a href="careers.html">Careers</a>
                 <a href="gallery.html">Gallery</a>
                 <div class="dropdown">
-                    <a href="faqs.html" class="dropbtn">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <a href="faqs.html" class="dropbtn active">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content">
                         <a href="pancreas.html">Pancreas</a>
-                        <a href="gallbladder.html" class="active">GallBladder</a>
+                        <a href="gallbladder.html">GallBladder</a>
                         <a href="liver.html">Liver</a>
                         <a href="large-intestine.html">Large Intestine</a>
                         <a href="stomach.html">Stomach</a>
@@ -1549,268 +2027,212 @@
             </div>
         </section>
 
-        <!-- ==================== 2 · CONDITIONS ==================== -->
+        <!-- ==================== 2 · INTRODUCTION ==================== -->
+        <section id="about-gallbladder">
+            <div class="pc-wrap">
+                <div class="pc-intro-grid">
+                    <div class="pc-intro-media" data-aos="fade-right">
+                        <img src="image/gallbladder-anatomy.svg"
+                            alt="Anatomical illustration of the gallbladder beneath the liver, with the cystic duct joining the common hepatic duct to form the common bile duct, which drains into the duodenum at the ampulla" width="860" height="620" loading="lazy" decoding="async">
+                    </div>
+
+                    <div data-aos="fade-left" data-aos-delay="80">
+                        <span class="pc-eyebrow"><i class="fa-solid fa-circle-nodes"></i> The Programme</span>
+                        <h2 style="font-size: clamp(1.9rem, 3.4vw, 2.7rem); font-weight: 700; margin: 18px 0 16px;">
+                            A storage organ you can live perfectly well without</h2>
+                        <p>The gallbladder is a small, pear-shaped reservoir tucked beneath the liver. It does not make
+                            bile &mdash; the liver does that, continuously. The gallbladder simply concentrates it and
+                            releases a portion when a meal containing fat arrives. It is plumbing, not manufacturing,
+                            which is why life continues comfortably after it is removed.</p>
+                        <p style="margin-top: 14px;">Trouble begins when bile falls out of balance and forms stones, or
+                            when the outlet blocks. A stone wedged in the cystic duct produces biliary colic: a hard,
+                            gripping pain under the right ribs that builds over an hour and often follows a rich meal.
+                            If the blockage holds, the wall inflames and infects, and the picture turns from painful to
+                            urgent.</p>
+                        <p style="margin-top: 14px;"><strong style="color: var(--ink);">Not every stone needs an
+                            operation.</strong> Stones found by chance, causing nothing, are usually watched. Stones
+                            that have caused pain tend to cause it again &mdash; and there, removing the gallbladder is
+                            the definitive answer, done through four keyhole incisions with most patients home the same
+                            day.</p>
+
+                        <div class="pc-facts">
+                            <div class="pc-fact">
+                                <strong>4</strong><span>Keyhole incisions in a standard cholecystectomy</span>
+                            </div>
+                            <div class="pc-fact">
+                                <strong>1</strong><span>Day &mdash; the usual stay for planned surgery</span>
+                            </div>
+                            <div class="pc-fact">
+                                <strong>0</strong><span>Long-term restrictions for most patients afterwards</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3 · CONDITIONS ==================== -->
         <section class="pc-soft" id="conditions">
             <div class="pc-wrap">
-                <div class="pc-head is-center" data-aos="fade-up">
-                    <span class="pc-eyebrow"><i class="fa-solid fa-notes-medical"></i> Conditions We Treat</span>
-                    <h2>The full spectrum of gallbladder and biliary disease</h2>
-                    <p>From a single stone to complex bile duct reconstruction &mdash; managed by one specialist team
-                        working from a single shared plan.</p>
+                <div class="gb-head" data-aos="fade-up">
+                    <span class="gb-label">Gallbladder &amp; Biliary Care</span>
+                    <h2>The Full Spectrum of Gallbladder and Biliary Disease</h2>
+                    <p>From common gallstones and biliary sludge to inflammation, structural changes and tumours,
+                        our specialists provide comprehensive evaluation and personalised care across the full
+                        spectrum of gallbladder and biliary conditions.</p>
                 </div>
 
-                <div class="pc-grid-3">
-                    <article class="pc-card" data-aos="fade-up">
-                        <div class="pc-card-viz is-photo">
-                            <img src="image/image%20copy%2034.png" alt="Three-dimensional illustration of a gallbladder packed with gallstones, seen against the liver" loading="lazy">
+                <div class="gb-grid">
+                    <article class="gb-card" data-aos="fade-up" data-aos-delay="0">
+                        <span class="gb-num" aria-hidden="true">01</span>
+                        <div class="gb-viz">
+                            <img src="image/gb/gallstones.svg" alt="Anatomical illustration of a gallbladder containing several discrete, faceted gallstones lying free within the lumen"
+                                width="600" height="460" loading="lazy" decoding="async">
                         </div>
-                        <h3>Gallstones (Cholelithiasis)</h3>
-                        <p>Hardened deposits of bile or cholesterol. Often silent, but when one blocks the cystic duct it causes biliary colic &mdash; sharp upper-right pain after a fatty meal.</p>
-                        <span class="pc-tag">Most common</span>
+                        <h3>Gallstones
+                            <span>(Cholelithiasis)</span></h3>
+                        <p>Hardened deposits that form inside the gallbladder and can block the flow of bile.</p>
+                        <a class="gb-more" href="gallbladder-benign-disease.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="pc-card" data-aos="fade-up" data-aos-delay="60">
-                        <div class="pc-card-viz is-photo">
-                            <img src="image/image%20copy%2038.png" alt="Three-dimensional illustration of a gallbladder filled with clustered cholesterol deposits, shown against the liver" loading="lazy">
+                    <article class="gb-card" data-aos="fade-up" data-aos-delay="60">
+                        <span class="gb-num" aria-hidden="true">02</span>
+                        <div class="gb-viz">
+                            <img src="image/gb/biliary-sludge.svg" alt="Anatomical illustration of a gallbladder containing thick, cloudy biliary sludge settled towards the dependent lower portion, with no discrete stones"
+                                width="600" height="460" loading="lazy" decoding="async">
                         </div>
                         <h3>Biliary Sludge</h3>
-                        <p>A collection of microscopic cholesterol and bile particles that settles in the gallbladder. Can resolve on its own, or thicken into stones over time.</p>
-                        <span class="pc-tag">Early change</span>
+                        <p>Thickened, particulate bile that settles inside the gallbladder before any stone forms.</p>
+                        <a class="gb-more" href="gallbladder-benign-disease.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="pc-card" data-aos="fade-up" data-aos-delay="120">
-                        <div class="pc-card-viz is-photo">
-                            <img src="image/image%20copy%2036.png" alt="Cutaway three-dimensional illustration of an inflamed gallbladder with a thickened wall, packed with gallstones, tucked under the liver" loading="lazy">
+                    <article class="gb-card" data-aos="fade-up" data-aos-delay="120">
+                        <span class="gb-num" aria-hidden="true">03</span>
+                        <div class="gb-viz">
+                            <img src="image/gb/cholecystitis.svg" alt="Anatomical illustration of an inflamed gallbladder with a swollen, thickened wall and a stone impacted at the neck"
+                                width="600" height="460" loading="lazy" decoding="async">
                         </div>
                         <h3>Cholecystitis</h3>
-                        <p>Inflammation of the gallbladder, almost always caused by a stone blocking the cystic duct. Brings fever, chills and constant pain &mdash; and needs same-day assessment.</p>
-                        <span class="pc-tag">Urgent</span>
+                        <p>Inflammation of the gallbladder, almost always triggered by a stone blocking the outlet.</p>
+                        <a class="gb-more" href="gallbladder-benign-disease.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="pc-card" data-aos="fade-up">
-                        <div class="pc-card-viz">
-                            <svg viewBox="0 0 220 130" role="img" aria-label="Thickened gallbladder wall with small pockets">
-                                <defs>
-                                    <linearGradient id="gg4" x1="0" y1="0" x2=".6" y2="1">
-                                        <stop offset="0" stop-color="#F5AC92" />
-                                        <stop offset=".42" stop-color="#E06050" />
-                                        <stop offset="1" stop-color="#9E1F2B" />
-                                    </linearGradient>
-                                    <linearGradient id="gs4" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
-                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                                    </linearGradient>
-
-                                </defs>
-                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg4)" />
-                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs4)" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
-                                <path d="M82 62c12-9 32-11 48-6 21 7 32 21 29 35-3 14-22 20-42 17-19-3-33-14-36-27-2-8 0-14 1-19Z"
-                                    fill="none" stroke="#FFD9C6" stroke-width="6" opacity=".85" />
-                                <g fill="#FFF3EC" opacity=".9">
-                                    <circle class="viz-twinkle" cx="92" cy="70" r="3" />
-                                    <circle class="viz-twinkle-b" cx="150" cy="80" r="2.6" />
-                                    <circle class="viz-twinkle" cx="120" cy="106" r="2.8" />
-                                </g>
-                                <text class="viz-label" x="62" y="124">Wall thickening</text>
-                            </svg>
+                    <article class="gb-card" data-aos="fade-up" data-aos-delay="180">
+                        <span class="gb-num" aria-hidden="true">04</span>
+                        <div class="gb-viz">
+                            <img src="image/gb/wall-thickening.svg" alt="Cutaway anatomical illustration of a gallbladder showing a markedly thickened wall on one side compared with a thin wall on the other"
+                                width="600" height="460" loading="lazy" decoding="async">
                         </div>
-                        <h3>Adenomyomatosis</h3>
-                        <p>Non-cancerous thickening of the gallbladder wall, thought to follow chronic inflammation. Usually found incidentally on ultrasound and monitored rather than removed.</p>
-                        <span class="pc-tag">Monitored</span>
+                        <h3>Wall Thickening</h3>
+                        <p>A cutaway view showing the gallbladder wall thickened well beyond its normal calibre.</p>
+                        <a class="gb-more" href="gallbladder-benign-disease.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="pc-card" data-aos="fade-up" data-aos-delay="60">
-                        <div class="pc-card-viz">
-                            <svg viewBox="0 0 220 130" role="img" aria-label="Polyps growing from the gallbladder lining">
-                                <defs>
-                                    <linearGradient id="gg5" x1="0" y1="0" x2=".6" y2="1">
-                                        <stop offset="0" stop-color="#F5AC92" />
-                                        <stop offset=".42" stop-color="#E06050" />
-                                        <stop offset="1" stop-color="#9E1F2B" />
-                                    </linearGradient>
-                                    <linearGradient id="gs5" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
-                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                                    </linearGradient>
-
-                                </defs>
-                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg5)" />
-                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs5)" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
-                                <g fill="#FFE8DC" stroke="#E8B9A6" stroke-width="1.2">
-                                    <ellipse class="viz-drift" cx="106" cy="62" rx="7" ry="5.5" />
-                                    <ellipse class="viz-drift-b" cx="140" cy="72" rx="5.5" ry="4.5" />
-                                    <ellipse class="viz-drift" cx="150" cy="94" rx="5" ry="4" />
-                                </g>
-                                <g stroke="#FFD9C6" stroke-width="1.6" fill="none">
-                                    <path d="M106 68v5M140 77v4M150 99v4" />
-                                </g>
-                                <text class="viz-label" x="62" y="124">Polyps</text>
-                            </svg>
+                    <article class="gb-card" data-aos="fade-up" data-aos-delay="180">
+                        <span class="gb-num" aria-hidden="true">05</span>
+                        <div class="gb-viz">
+                            <img src="image/gb/polyps.svg" alt="Cutaway anatomical illustration of the inner gallbladder lining with small polyps attached to the wall by stalks"
+                                width="600" height="460" loading="lazy" decoding="async">
                         </div>
-                        <h3>Gallbladder Polyps</h3>
-                        <p>Small growths in the lining. Most are harmless cholesterol polyps, but anything larger than 1&nbsp;cm carries a real cancer risk and is usually removed.</p>
-                        <span class="pc-tag">Size matters</span>
+                        <h3>Polyps</h3>
+                        <p>Small growths attached to the lining by a stalk &mdash; fixed to the wall, unlike stones.</p>
+                        <a class="gb-more" href="gallbladder-benign-disease.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="pc-card" data-aos="fade-up" data-aos-delay="120">
-                        <div class="pc-card-viz">
-                            <svg viewBox="0 0 220 130" role="img" aria-label="A gallbladder contracting abnormally">
-                                <defs>
-                                    <linearGradient id="gg6" x1="0" y1="0" x2=".6" y2="1">
-                                        <stop offset="0" stop-color="#F5AC92" />
-                                        <stop offset=".42" stop-color="#E06050" />
-                                        <stop offset="1" stop-color="#9E1F2B" />
-                                    </linearGradient>
-                                    <linearGradient id="gs6" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
-                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                                    </linearGradient>
-
-                                </defs>
-                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg6)" />
-                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs6)" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
-                                <g class="viz-pulse" fill="none" stroke="#FFE0D0" stroke-width="3" stroke-linecap="round">
-                                    <path d="M92 66c-5 8-5 18 0 26" />
-                                    <path d="M150 66c5 8 5 18 0 26" />
-                                </g>
-                                <g fill="#FFF3EC" opacity=".9">
-                                    <path class="viz-drift" d="M116 62l7 10h-14Z" />
-                                    <path class="viz-drift-b" d="M126 100l-7-10h14Z" />
-                                </g>
-                                <text class="viz-label" x="62" y="124">Poor emptying</text>
-                            </svg>
+                    <article class="gb-card" data-aos="fade-up" data-aos-delay="180">
+                        <span class="gb-num" aria-hidden="true">06</span>
+                        <div class="gb-viz">
+                            <img src="image/gb/poor-emptying.svg" alt="Anatomical illustration of a distended gallbladder still full of bile, with a weak outflow at the neck compared with the expected flow"
+                                width="600" height="460" loading="lazy" decoding="async">
                         </div>
-                        <h3>Biliary Dyskinesia</h3>
-                        <p>Abnormal gallbladder function without any stones &mdash; the organ simply fails to empty properly. Diagnosed with a HIDA scan measuring ejection fraction.</p>
-                        <span class="pc-tag">Functional</span>
+                        <h3>Poor Emptying</h3>
+                        <p>The gallbladder contracts weakly, so bile is retained instead of draining after a meal.</p>
+                        <a class="gb-more" href="gallbladder-benign-disease.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
 
-                    <article class="pc-card" data-aos="fade-up">
-                        <div class="pc-card-viz">
-                            <svg viewBox="0 0 220 130" role="img" aria-label="A tumour growing in the gallbladder wall">
-                                <defs>
-                                    <linearGradient id="gg7" x1="0" y1="0" x2=".6" y2="1">
-                                        <stop offset="0" stop-color="#F5AC92" />
-                                        <stop offset=".42" stop-color="#E06050" />
-                                        <stop offset="1" stop-color="#9E1F2B" />
-                                    </linearGradient>
-                                    <linearGradient id="gs7" x1="0" y1="0" x2="0" y2="1">
-                                        <stop offset="0" stop-color="#fff" stop-opacity=".5" />
-                                        <stop offset="1" stop-color="#fff" stop-opacity="0" />
-                                    </linearGradient>
-                                    <radialGradient id="gh7"><stop offset="0" stop-color="#4A0709" stop-opacity=".92"/><stop offset="1" stop-color="#4A0709" stop-opacity=".18"/></radialGradient>
-                                </defs>
-                                <path d="M74 56c14-12 38-14 58-8 26 8 40 26 36 44-4 18-28 26-52 22-24-4-42-18-46-34-2-10 0-18 4-24Z" fill="url(#gg7)" />
-                                <path d="M84 58c12-8 30-10 46-6-14 0-30 4-40 10-4 2-6 0-6-4Z" fill="url(#gs7)" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#C04050" stroke-width="7" stroke-linecap="round" />
-                                <path d="M74 56C64 48 56 42 46 38" fill="none" stroke="#F5AC92" stroke-width="3" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#C04050" stroke-width="6" stroke-linecap="round" />
-                                <path d="M46 38C40 52 42 70 48 86" fill="none" stroke="#F5AC92" stroke-width="2.4" stroke-linecap="round" />
-                                <circle class="viz-pulse-slow" cx="132" cy="82" r="26" fill="none" stroke="#5A0A0E"
-                                    stroke-width="1.6" opacity=".55" />
-                                <path d="M112 68c12-6 26-4 34 6 8 10 6 24-4 30-12 7-28 3-34-8-6-12-2-24 4-28Z"
-                                    fill="url(#gh7)" />
-                                <g fill="#3E0507" opacity=".5">
-                                    <circle cx="126" cy="78" r="3.2" />
-                                    <circle cx="136" cy="86" r="3.8" />
-                                    <circle cx="128" cy="92" r="2.6" />
-                                </g>
-                                <text class="viz-label" x="62" y="124">Tumour</text>
-                            </svg>
+                    <article class="gb-card" data-aos="fade-up" data-aos-delay="180">
+                        <span class="gb-num" aria-hidden="true">07</span>
+                        <div class="gb-viz">
+                            <img src="image/gb/tumour.svg" alt="Cutaway anatomical illustration of a gallbladder with a broad-based mass arising from and continuous with the wall"
+                                width="600" height="460" loading="lazy" decoding="async">
                         </div>
-                        <h3>Gallbladder Cancer</h3>
-                        <p>A malignant tumour of the gallbladder lining, most often adenocarcinoma. Notably more common in India than in most of the world, and curable when caught early.</p>
-                        <span class="pc-tag">Surgical oncology</span>
+                        <h3>Tumour</h3>
+                        <p>An abnormal mass growing from the gallbladder wall itself, rather than lying loose inside.</p>
+                        <a class="gb-more" href="gallbladder-cancers.html">Learn more <i class="fa-solid fa-arrow-right"></i></a>
                     </article>
-
                 </div>
             </div>
         </section>
-        <!-- ==================== 3 · WARNING SIGNS ==================== -->
-        <section id="warning-signs">
+
+        <!-- ==================== 4 · SYMPTOMS ==================== -->
+        <section id="warning-signs" class="sy">
             <div class="pc-wrap">
-                <div class="pc-head is-center" data-aos="fade-up">
-                    <span class="pc-eyebrow"><i class="fa-solid fa-triangle-exclamation"></i> Warning Signs</span>
-                    <h2>Six symptoms worth a specialist opinion</h2>
-                    <p>Gallstones are often silent. These are the signs that they have stopped being silent &mdash; and
-                        that a scan is overdue.</p>
+
+                <div class="sy-head" data-aos="fade-up">
+                    <span class="sy-badge">Common Symptoms</span>
+                    <h2>Common Gallbladder Symptoms</h2>
+                    <p>Recognizing the early signs of gallbladder problems can help you seek timely medical care.
+                        Explore the common symptoms associated with gallbladder conditions.</p>
                 </div>
 
-                <div class="pc-signs">
-                    <div class="pc-sign" data-aos="fade-up">
-                        <i class="fa-solid fa-hand-holding-heart"></i>
-                        <div>
-                            <h4>Upper-right abdominal pain</h4>
-                            <p>Persistent pain below the right ribs, typically after a fatty meal &mdash; biliary
-                                colic.</p>
-                        </div>
-                    </div>
+                <div class="sy-grid">
+                    <article class="sy-card" data-aos="fade-up">
+                        <span class="sy-icon" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+                        <h3>Biliary Colic</h3>
+                        <p>Sudden or intense pain, usually felt in the upper-right abdomen, which may occur when gallstones temporarily block the bile ducts.</p>
+                    </article>
 
-                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="60">
-                        <i class="fa-solid fa-eye"></i>
-                        <div>
-                            <h4>Jaundice</h4>
-                            <p>Yellowing of the skin or eyes, with dark urine and pale stools &mdash; a blocked bile
-                                duct.</p>
-                        </div>
-                    </div>
+                    <article class="sy-card" data-aos="fade-up" data-aos-delay="70">
+                        <span class="sy-icon" aria-hidden="true"><i class="fa-solid fa-face-dizzy"></i></span>
+                        <h3>Nausea &amp; Vomiting</h3>
+                        <p>Persistent nausea or vomiting may accompany gallbladder pain, particularly after consuming a heavy or fatty meal.</p>
+                    </article>
 
-                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="120">
-                        <i class="fa-solid fa-temperature-high"></i>
-                        <div>
-                            <h4>Fever and chills</h4>
-                            <p>With abdominal pain, this suggests infection &mdash; cholecystitis or cholangitis.</p>
-                        </div>
-                    </div>
+                    <article class="sy-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="sy-icon" aria-hidden="true"><i class="fa-solid fa-temperature-high"></i></span>
+                        <h3>Fever &amp; Chills</h3>
+                        <p>Fever accompanied by chills can indicate inflammation or infection and should not be ignored.</p>
+                    </article>
 
-                    <div class="pc-sign" data-aos="fade-up">
-                        <i class="fa-solid fa-utensils"></i>
-                        <div>
-                            <h4>Fatty food intolerance</h4>
-                            <p>Bloating, indigestion or nausea that reliably follows rich or greasy meals.</p>
-                        </div>
-                    </div>
+                    <article class="sy-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="sy-icon" aria-hidden="true"><i class="fa-solid fa-eye"></i></span>
+                        <h3>Jaundice</h3>
+                        <p>Yellowing of the eyes or skin may occur when a gallstone blocks the normal flow of bile.</p>
+                    </article>
 
-                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="60">
-                        <i class="fa-solid fa-weight-scale"></i>
-                        <div>
-                            <h4>Unexplained weight loss</h4>
-                            <p>Losing weight without trying, particularly alongside a palpable abdominal lump.</p>
-                        </div>
-                    </div>
+                    <article class="sy-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="sy-icon" aria-hidden="true"><i class="fa-solid fa-utensils"></i></span>
+                        <h3>Fatty Food Intolerance</h3>
+                        <p>Difficulty digesting fatty or greasy foods may cause bloating, discomfort, nausea, or abdominal pain.</p>
+                    </article>
 
-                    <div class="pc-sign" data-aos="fade-up" data-aos-delay="120">
-                        <i class="fa-solid fa-arrows-rotate"></i>
-                        <div>
-                            <h4>Recurrent attacks</h4>
-                            <p>Repeated episodes of colic mean the next one may not settle on its own.</p>
-                        </div>
-                    </div>
+                    <article class="sy-card" data-aos="fade-up" data-aos-delay="140">
+                        <span class="sy-icon" aria-hidden="true"><i class="fa-solid fa-arrows-rotate"></i></span>
+                        <h3>Recurrent Right-Sided Discomfort</h3>
+                        <p>Repeated discomfort or pain beneath the right rib cage can be a common warning sign of gallbladder problems.</p>
+                    </article>
                 </div>
 
-                <div class="pc-alert" data-aos="fade-up">
-                    <i class="fa-solid fa-circle-exclamation"></i>
-                    <p><strong>Severe abdominal pain with fever, vomiting or jaundice needs to be seen the same
-                            day.</strong> Call <a href="tel:+919211221551"
-                            style="color: #A45E0A; font-weight: 600;">+91 9211221551</a> rather than waiting for an
-                        appointment &mdash; an infected bile duct is a medical emergency.</p>
-                </div>
+                <aside class="sy-alert" data-aos="fade-up">
+                    <span class="sy-alert-icon" aria-hidden="true"><i class="fa-solid fa-triangle-exclamation"></i></span>
+                    <div>
+                        <h3>When to Seek Medical Attention</h3>
+                        <p>If symptoms are severe, persistent, recurrent, or accompanied by fever, jaundice, or intense
+                            abdominal pain, consult a qualified healthcare professional promptly.</p>
+                        <div class="sy-alert-acts">
+                            <a href="index.html#contactModal" class="pc-btn pc-btn-light">
+                                <i class="fa-regular fa-calendar-check"></i> Book a Consultation
+                            </a>
+                            <a href="tel:+919211221551" class="pc-btn pc-btn-outline-light">
+                                <i class="fa-solid fa-phone"></i> Talk to a Specialist
+                            </a>
+                        </div>
+                    </div>
+                </aside>
             </div>
         </section>
 
-        <!-- ==================== 4 · ADVANCED DIAGNOSIS ==================== -->
+        <!-- ==================== 5 · ADVANCED DIAGNOSIS ==================== -->
         <section class="pc-soft" id="diagnosis">
             <div class="pc-wrap">
                 <div class="pc-head is-center" data-aos="fade-up">
@@ -1855,7 +2277,7 @@
             </div>
         </section>
 
-        <!-- ==================== 5 · TREATMENT & SURGERY ==================== -->
+        <!-- ==================== 6 · TREATMENT & SURGERY ==================== -->
         <section id="treatments">
             <div class="pc-wrap">
                 <div class="pc-head is-center" data-aos="fade-up">
@@ -1925,7 +2347,7 @@
             </div>
         </section>
 
-        <!-- ==================== 6 · WHY CHOOSE ==================== -->
+        <!-- ==================== 7 · WHY CHOOSE ==================== -->
         <section class="pc-why" id="why-pancreacare">
             <div class="pc-wrap">
                 <div class="pc-head is-center" data-aos="fade-up">
@@ -1974,7 +2396,7 @@
             </div>
         </section>
 
-        <!-- ==================== 7 · TREATMENT JOURNEY ==================== -->
+        <!-- ==================== 8 · TREATMENT JOURNEY ==================== -->
         <section id="journey">
             <div class="pc-wrap">
                 <div class="pc-head is-center" data-aos="fade-up">
@@ -2021,7 +2443,7 @@
             </div>
         </section>
 
-        <!-- ==================== 8 · PATIENT EDUCATION ==================== -->
+        <!-- ==================== 9 · PATIENT EDUCATION ==================== -->
         <section class="pc-soft" id="education">
             <div class="pc-wrap">
                 <div class="pc-head is-center" data-aos="fade-up">
@@ -2066,7 +2488,7 @@
             </div>
         </section>
 
-        <!-- ==================== 9 · FAQ ==================== -->
+        <!-- ==================== 10 · FAQ ==================== -->
         <section id="faq">
             <div class="pc-wrap">
                 <div class="pc-head is-center" data-aos="fade-up">
@@ -2171,7 +2593,7 @@
             </div>
         </section>
 
-        <!-- ==================== 10 · COMPLETE GUIDE ==================== -->
+        <!-- ==================== 11 · COMPLETE GUIDE ==================== -->
         <section class="pc-soft" id="guide">
             <div class="pc-wrap">
                 <div class="pc-head is-center" data-aos="fade-up">
@@ -3036,7 +3458,7 @@
             </div>
         </section>
 
-        <!-- ==================== 11 · FINAL CTA ==================== -->
+        <!-- ==================== 12 · FINAL CTA ==================== -->
         <section class="pc-final">
             <div class="pc-wrap">
                 <div class="pc-final-card" data-aos="fade-up">
@@ -3133,7 +3555,7 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="nav.js?v=5"></script>
+    <script src="nav.js?v=6"></script>
     <script src="contact-modal.js?v=1"></script>
     <script>
         AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });

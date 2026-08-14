@@ -1,0 +1,167 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620"
+     role="img" aria-labelledby="stoTitle stoDesc">
+  <title id="stoTitle">Anatomy of the stomach: fundus, body, antrum and the protective mucus layer</title>
+  <desc id="stoDesc">Anatomical illustration of the stomach with the oesophagus entering at the cardia and the
+    duodenum leaving at the pylorus. A cutaway reveals the folded rugae of the inner lining, and a magnified
+    detail shows the mucus layer that protects the wall from its own acid.</desc>
+
+  <defs>
+    <linearGradient id="stoWall" x1="0.15" y1="0" x2="0.85" y2="1">
+      <stop offset="0"    stop-color="#F3B6A6"/>
+      <stop offset="0.38" stop-color="#DF8E7B"/>
+      <stop offset="1"    stop-color="#B25F4D"/>
+    </linearGradient>
+    <linearGradient id="stoTube" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#EFAC9C"/>
+      <stop offset="0.5" stop-color="#DC8B78"/>
+      <stop offset="1"   stop-color="#B15E4C"/>
+    </linearGradient>
+    <linearGradient id="stoSheen" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="stoLumen" x1="0.2" y1="0" x2="0.8" y2="1">
+      <stop offset="0"   stop-color="#F7DCCE"/>
+      <stop offset="1"   stop-color="#E0B49F"/>
+    </linearGradient>
+    <linearGradient id="mucus" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#EAF3F6"/>
+      <stop offset="1"   stop-color="#C6DCE6"/>
+    </linearGradient>
+    <radialGradient id="stoGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#DF8E7B" stop-opacity="0.15"/>
+      <stop offset="1"   stop-color="#DF8E7B" stop-opacity="0"/>
+    </radialGradient>
+
+    <clipPath id="stoClip">
+      <path d="M318 156 C392 140 486 156 540 208 C596 262 606 350 566 424
+               C528 494 448 528 382 508 C322 490 292 434 296 372
+               C300 318 316 282 312 250 C310 224 306 190 318 156 Z"/>
+    </clipPath>
+    <clipPath id="stoCut"><ellipse cx="440" cy="330" rx="106" ry="112"/></clipPath>
+  </defs>
+
+  <rect width="860" height="620" fill="#ffffff"/>
+  <ellipse cx="420" cy="330" rx="330" ry="230" fill="url(#stoGlow)"/>
+
+  <!-- ===================== oesophagus entering the cardia ===================== -->
+  <path d="M298 44 C296 88 300 128 312 158" fill="none" stroke="#9E4E3D"
+        stroke-width="46" stroke-linecap="round" opacity="0.35"/>
+  <path d="M298 44 C296 88 300 128 312 158" fill="none" stroke="url(#stoTube)"
+        stroke-width="40" stroke-linecap="round"/>
+  <path d="M288 56 C286 94 290 126 300 152" fill="none" stroke="#ffffff"
+        stroke-width="8" stroke-linecap="round" opacity="0.3"/>
+
+  <!-- ============================ pylorus & duodenum ============================ -->
+  <path d="M566 424 C620 448 654 496 650 552" fill="none" stroke="#9E4E3D"
+        stroke-width="40" stroke-linecap="round" opacity="0.35"/>
+  <path d="M566 424 C620 448 654 496 650 552" fill="none" stroke="url(#stoTube)"
+        stroke-width="34" stroke-linecap="round"/>
+  <path d="M576 428 C620 452 646 494 644 540" fill="none" stroke="#ffffff"
+        stroke-width="6" stroke-linecap="round" opacity="0.28"/>
+
+  <!-- ================================= stomach ================================= -->
+  <path d="M318 156 C392 140 486 156 540 208 C596 262 606 350 566 424
+           C528 494 448 528 382 508 C322 490 292 434 296 372
+           C300 318 316 282 312 250 C310 224 306 190 318 156 Z"
+        fill="url(#stoWall)" stroke="#9E4E3D" stroke-width="2.5" stroke-opacity="0.4"/>
+
+  <g clip-path="url(#stoClip)">
+    <!-- capsule sheen over the fundus -->
+    <path d="M356 190 C420 174 486 196 522 244" fill="none" stroke="url(#stoSheen)"
+          stroke-width="26" stroke-linecap="round"/>
+    <!-- faint serosal vessels -->
+    <g stroke="#A2503F" stroke-width="2.2" fill="none" opacity="0.18" stroke-linecap="round">
+      <path d="M330 300 C372 276 420 268 470 276"/>
+      <path d="M336 360 C382 336 432 328 486 338"/>
+      <path d="M346 420 C390 400 436 396 484 406"/>
+    </g>
+  </g>
+
+  <!-- ====================== cutaway: the folded inner lining ====================== -->
+  <g clip-path="url(#stoCut)">
+    <path d="M318 156 C392 140 486 156 540 208 C596 262 606 350 566 424
+             C528 494 448 528 382 508 C322 490 292 434 296 372
+             C300 318 316 282 312 250 C310 224 306 190 318 156 Z"
+          fill="url(#stoLumen)"/>
+    <!-- rugae -->
+    <g fill="none" stroke="#C1836C" stroke-width="7" stroke-linecap="round" opacity="0.55">
+      <path d="M344 250 C372 288 380 336 366 386"/>
+      <path d="M386 238 C416 280 424 334 410 390"/>
+      <path d="M428 236 C458 280 466 334 452 392"/>
+      <path d="M470 244 C498 286 506 336 494 388"/>
+      <path d="M512 262 C534 300 540 342 530 384"/>
+    </g>
+    <g fill="none" stroke="#ffffff" stroke-width="2.6" stroke-linecap="round" opacity="0.35">
+      <path d="M348 258 C374 294 382 338 370 382"/>
+      <path d="M432 244 C460 286 468 334 456 386"/>
+      <path d="M516 270 C536 304 542 342 532 380"/>
+    </g>
+  </g>
+  <ellipse cx="440" cy="330" rx="106" ry="112" fill="none" stroke="#ffffff"
+           stroke-width="4" opacity="0.6"/>
+  <ellipse cx="440" cy="330" rx="106" ry="112" fill="none" stroke="#9E4E3D"
+           stroke-width="1.6" stroke-opacity="0.35"/>
+
+  <!-- ============== magnified detail: the mucus barrier over the wall ============== -->
+  <g>
+    <line x1="524" y1="252" x2="676" y2="196" stroke="#C9A79E" stroke-width="1.4"/>
+    <circle cx="722" cy="180" r="62" fill="#fff" stroke="#E4CFC7" stroke-width="2"/>
+    <g transform="translate(660,118)">
+      <clipPath id="lensClip"><circle cx="62" cy="62" r="60"/></clipPath>
+      <g clip-path="url(#lensClip)">
+        <rect x="0" y="0" width="124" height="46" fill="url(#mucus)"/>
+        <rect x="0" y="46" width="124" height="30" fill="#E9A98F"/>
+        <rect x="0" y="76" width="124" height="48" fill="#C4785F"/>
+        <g stroke="#ffffff" stroke-width="2" opacity="0.5">
+          <path d="M0 46 L124 46"/>
+        </g>
+        <g fill="#B7D2DE" opacity="0.8">
+          <circle cx="24" cy="18" r="5"/><circle cx="58" cy="28" r="4"/>
+          <circle cx="94" cy="14" r="4.5"/><circle cx="76" cy="38" r="3"/>
+        </g>
+        <g stroke="#A85F46" stroke-width="2" opacity="0.45">
+          <path d="M16 46 L16 76"/><path d="M40 46 L40 76"/><path d="M64 46 L64 76"/>
+          <path d="M88 46 L88 76"/><path d="M112 46 L112 76"/>
+        </g>
+      </g>
+    </g>
+    <circle cx="722" cy="180" r="62" fill="none" stroke="#C9A79E" stroke-width="2.5"/>
+  </g>
+
+  <!-- ================================= labels ================================= -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
+    <g stroke="#C9A79E" stroke-width="1.4" fill="none">
+      <path d="M300 100 L196 100 L172 88"/>
+      <path d="M372 196 L268 196 L244 208"/>
+      <path d="M440 470 L440 552 L416 566"/>
+      <path d="M612 500 L700 500 L724 512"/>
+      <path d="M394 330 L246 330 L222 342"/>
+    </g>
+    <g fill="#C9A79E">
+      <circle cx="300" cy="100" r="3.4"/>
+      <circle cx="372" cy="196" r="3.4"/>
+      <circle cx="440" cy="470" r="3.4"/>
+      <circle cx="612" cy="500" r="3.4"/>
+      <circle cx="394" cy="330" r="3.4"/>
+    </g>
+
+    <text x="166" y="84" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Esophagus</text>
+    <text x="166" y="106" font-size="15" text-anchor="end">Enters at the cardia</text>
+
+    <text x="238" y="204" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Fundus</text>
+    <text x="238" y="226" font-size="15" text-anchor="end">The upper dome</text>
+
+    <text x="216" y="338" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Rugae</text>
+    <text x="216" y="360" font-size="15" text-anchor="end">Folds that let the stomach expand</text>
+
+    <text x="410" y="570" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Antrum</text>
+    <text x="410" y="592" font-size="15" text-anchor="end">Grinds and empties in portions</text>
+
+    <text x="730" y="508" font-size="21" font-weight="600" fill="#4A322E">Pylorus</text>
+    <text x="730" y="530" font-size="15">The valve into the duodenum</text>
+
+    <text x="722" y="272" font-size="19" font-weight="600" fill="#4A322E" text-anchor="middle">Mucus barrier</text>
+    <text x="722" y="292" font-size="14" text-anchor="middle">Protects the wall from its own acid</text>
+  </g>
+</svg>
