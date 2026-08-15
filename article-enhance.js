@@ -177,7 +177,7 @@
                                 '<span aria-hidden="true">&bull;</span>' + p.read + ' min read</div>' +
                             '<h3><a href="' + p.url + '">' + p.title + '</a></h3>' +
                             '<p>' + p.excerpt + '</p>' +
-                            '<span class="ax-also-more">Read More <i class="fa-solid fa-arrow-right"></i></span>' +
+                            '<a class="ax-also-more" href="' + p.url + '">Read More <i class="fa-solid fa-arrow-right"></i></a>' +
                         '</div>' +
                     '</article>';
                 }).join('') +

@@ -1129,15 +1129,21 @@
     border-radius: 22px;
     overflow: hidden;
     border: 1px solid #F1DDD7;
+    background: #FFFBFA;
+    display: grid;
+    place-items: center;
     box-shadow: 0 22px 48px -30px rgba(96, 40, 38, .5);
 }
 
+/* Many lead images are infographics with headline and caption text at the
+   very top and bottom edges. Scale the whole image down to fit the height
+   cap instead of cropping to it, or those lines get sliced off. */
 .ar-lead-img img {
     display: block;
-    width: 100%;
+    width: auto;
+    max-width: 100%;
     height: auto;
-    max-height: 520px;
-    object-fit: cover;
+    max-height: 560px;
 }
 
 .ar-rich .ar-sec h3 {
@@ -1239,11 +1245,13 @@
 
 .ar-fig img {
     display: block;
-    width: 100%;
+    /* portrait uploads would otherwise run a full screen tall, but the cap
+       has to shrink the image, not crop it — figures carry text too */
+    width: auto;
+    max-width: 100%;
     height: auto;
-    /* portrait uploads would otherwise run a full screen tall */
     max-height: 560px;
-    object-fit: cover;
+    margin-inline: auto;
 }
 
 .ar-fig figcaption,
