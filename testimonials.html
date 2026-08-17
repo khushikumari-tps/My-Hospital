@@ -7,6 +7,8 @@
     <title>Testimonials | Advitya Healthcares</title>
     <meta name="description" content="Real stories from patients who found world-class surgical and cancer care close to home with Advitya Healthcares.">
     <link rel="stylesheet" href="style.css?v=19">
+    <link rel="stylesheet" href="site-search.css?v=1">
+    <link rel="stylesheet" href="lang-select.css?v=1">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -1607,50 +1609,6 @@
             margin: 0;
         }
 
-        /* ------------------------------ filters ------------------------------ */
-        .vs-filters {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 10px;
-            margin: 0 auto 40px;
-        }
-
-        .vs-filter {
-            padding: 10px 20px;
-            border-radius: 999px;
-            border: 1px solid var(--line);
-            background: #fff;
-            color: var(--ink-soft);
-            font-family: var(--font-heading);
-            font-size: .88rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s var(--ease);
-        }
-
-        .vs-filter:hover:not(:disabled) {
-            transform: translateY(-2px);
-            border-color: var(--accent-200);
-            color: var(--brand-700);
-        }
-
-        .vs-filter.is-active {
-            background: linear-gradient(135deg, var(--brand-700), var(--brand-500));
-            border-color: transparent;
-            color: #fff;
-        }
-
-        .vs-filter:disabled {
-            opacity: .38;
-            cursor: not-allowed;
-        }
-
-        .vs-filter:focus-visible {
-            outline: 2px solid var(--brand-600);
-            outline-offset: 3px;
-        }
-
         /* ------------------------------- stage ------------------------------- */
         /* desktop: one large story beside a grid of smaller ones */
         .vs-stage {
@@ -1773,12 +1731,6 @@
             display: block;
             margin-top: 4px;
             font-size: .86rem;
-            color: var(--ink-mute);
-        }
-
-        .vs-empty {
-            margin: 34px 0 0;
-            text-align: center;
             color: var(--ink-mute);
         }
 
@@ -2114,20 +2066,9 @@
                     <p>Patients and families share their Advitya experience. Tap any story to play.</p>
                 </div>
 
-                <div class="vs-filters" role="tablist" aria-label="Filter stories by care area" data-aos="fade-up">
-                        <button type="button" class="vs-filter is-active" data-filter="all" role="tab" aria-selected="true">All</button>
-                        <button type="button" class="vs-filter" data-filter="gallbladder" disabled aria-disabled="true" role="tab" aria-selected="false">Gallbladder</button>
-                        <button type="button" class="vs-filter" data-filter="liver" disabled aria-disabled="true" role="tab" aria-selected="false">Liver</button>
-                        <button type="button" class="vs-filter" data-filter="pancreas" disabled aria-disabled="true" role="tab" aria-selected="false">Pancreas</button>
-                        <button type="button" class="vs-filter" data-filter="biliary" disabled aria-disabled="true" role="tab" aria-selected="false">Biliary Disease</button>
-                        <button type="button" class="vs-filter" data-filter="cancer" disabled aria-disabled="true" role="tab" aria-selected="false">Cancer Care</button>
-                </div>
-
-                <!-- To label a story, set title / meta / cat in this markup.
-                     cat values: gallbladder | liver | pancreas | biliary | cancer
-                     A filter enables itself as soon as one video carries its value. -->
+                <!-- To label a story, set title / meta in this markup. -->
                 <div class="vs-stage" id="vsStage">
-                    <article class="vs-card" data-cat="" data-aos="fade-up">
+                    <article class="vs-card" data-aos="fade-up">
                         <button type="button" class="vs-open" data-yt="mKL9KXqrJPA" data-title="Patient Story 01"
                                 aria-label="Play video: Patient Story 01">
                             <span class="vs-shot">
@@ -2143,7 +2084,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="60">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="60">
                         <button type="button" class="vs-open" data-yt="mxm96DbSlDQ" data-title="Patient Story 02"
                                 aria-label="Play video: Patient Story 02">
                             <span class="vs-shot">
@@ -2159,7 +2100,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="120">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="120">
                         <button type="button" class="vs-open" data-yt="5HHAxJXpa5E" data-title="Patient Story 03"
                                 aria-label="Play video: Patient Story 03">
                             <span class="vs-shot">
@@ -2175,7 +2116,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="180">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="180">
                         <button type="button" class="vs-open" data-yt="cOT_eeSU0V8" data-title="Patient Story 04"
                                 aria-label="Play video: Patient Story 04">
                             <span class="vs-shot">
@@ -2191,7 +2132,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="240">
                         <button type="button" class="vs-open" data-yt="KCdRLodzI1s" data-title="Patient Story 05"
                                 aria-label="Play video: Patient Story 05">
                             <span class="vs-shot">
@@ -2207,7 +2148,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="240">
                         <button type="button" class="vs-open" data-yt="eF1ghQoLrHo" data-title="Patient Story 06"
                                 aria-label="Play video: Patient Story 06">
                             <span class="vs-shot">
@@ -2223,7 +2164,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="240">
                         <button type="button" class="vs-open" data-yt="bzAncKsKvVo" data-title="Patient Story 07"
                                 aria-label="Play video: Patient Story 07">
                             <span class="vs-shot">
@@ -2239,7 +2180,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="240">
                         <button type="button" class="vs-open" data-yt="FR4_2fQnSyM" data-title="Patient Story 08"
                                 aria-label="Play video: Patient Story 08">
                             <span class="vs-shot">
@@ -2255,7 +2196,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="240">
                         <button type="button" class="vs-open" data-yt="LH7ysXtexKg" data-title="Patient Story 09"
                                 aria-label="Play video: Patient Story 09">
                             <span class="vs-shot">
@@ -2271,7 +2212,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="240">
                         <button type="button" class="vs-open" data-yt="z1AOOP05dhU" data-title="Patient Story 10"
                                 aria-label="Play video: Patient Story 10">
                             <span class="vs-shot">
@@ -2287,7 +2228,7 @@
                         </button>
                     </article>
 
-                    <article class="vs-card" data-cat="" data-aos="fade-up" data-aos-delay="240">
+                    <article class="vs-card" data-aos="fade-up" data-aos-delay="240">
                         <button type="button" class="vs-open" data-yt="2grCE5UYHj4" data-title="Patient Story 11"
                                 aria-label="Play video: Patient Story 11">
                             <span class="vs-shot">
@@ -2304,7 +2245,6 @@
                     </article>
                 </div>
 
-                <p class="vs-empty" id="vsEmpty" hidden>No stories in this category yet.</p>
             </div>
         </section>
 
@@ -2525,6 +2465,10 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="nav.js?v=6"></script>
+    <script src="search-index.js?v=1"></script>
+    <script src="site-search.js?v=1"></script>
+    <script src="mail-link.js?v=1"></script>
+    <script src="lang-select.js?v=2"></script>
     <script src="contact-modal.js?v=1"></script>
     <script>
         AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });
@@ -2538,7 +2482,6 @@
 
             var frame = document.getElementById('vsModalFrame');
             var titleEl = document.getElementById('vsModalTitle');
-            var empty = document.getElementById('vsEmpty');
             var cards = Array.prototype.slice.call(stage.querySelectorAll('.vs-card'));
             var lastFocus = null;
 
@@ -2547,27 +2490,6 @@
                 var hi = new Image();
                 hi.onload = function () { if (hi.naturalWidth > 320) img.src = img.dataset.hi; };
                 hi.src = img.dataset.hi;
-            });
-
-            /* ---------------- filters ---------------- */
-            stage.closest('.pc-wrap').querySelectorAll('.vs-filter').forEach(function (btn) {
-                btn.addEventListener('click', function () {
-                    if (btn.disabled) return;
-                    var key = btn.dataset.filter;
-
-                    btn.parentElement.querySelectorAll('.vs-filter').forEach(function (b) {
-                        b.classList.toggle('is-active', b === btn);
-                        b.setAttribute('aria-selected', String(b === btn));
-                    });
-
-                    var shown = 0;
-                    cards.forEach(function (c) {
-                        var match = key === 'all' || c.dataset.cat === key;
-                        c.hidden = !match;
-                        if (match) shown++;
-                    });
-                    if (empty) empty.hidden = shown > 0;
-                });
             });
 
             /* ---------------- modal ---------------- */

@@ -1,0 +1,218 @@
+/* ===================================================================
+   site-search.css — the search overlay.
+
+   Nothing sits in the navbar: the panel is opened by keyboard, or by
+   anything that calls window.ADV_SEARCH_OPEN(). One centred layout serves
+   desktop and phone alike, rather than two.
+   =================================================================== */
+
+/* ---- overlay ---- */
+.as-veil {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: clamp(70px, 12vh, 140px) 20px 40px;
+    background: rgba(43, 26, 24, .42);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .22s ease, visibility .22s ease;
+}
+
+.as-veil.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.as-panel {
+    width: min(620px, 100%);
+    max-height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    border-radius: 18px;
+    box-shadow: 0 30px 70px rgba(43, 26, 24, .28);
+    overflow: hidden;
+    transform: translateY(-12px) scale(.98);
+    transition: transform .22s cubic-bezier(.22, .61, .36, 1);
+}
+
+.as-veil.is-open .as-panel {
+    transform: none;
+}
+
+.as-field {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 20px;
+    border-bottom: 1px solid var(--border-color, #F0E4E0);
+    flex: 0 0 auto;
+}
+
+.as-field > i {
+    color: var(--primary, #E4574E);
+    font-size: 1rem;
+}
+
+.as-input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+    padding: 20px 0;
+    font-family: inherit;
+    font-size: 1.05rem;
+    color: var(--text-main, #2B2B2B);
+}
+
+.as-input::placeholder {
+    color: var(--text-muted, #6F6F6F);
+}
+
+.as-esc {
+    flex: 0 0 auto;
+    border: 1px solid var(--border-color, #F0E4E0);
+    border-radius: 6px;
+    background: none;
+    padding: 3px 8px;
+    font: inherit;
+    font-size: .72rem;
+    letter-spacing: .04em;
+    color: var(--text-muted, #6F6F6F);
+    cursor: pointer;
+}
+
+.as-list {
+    margin: 0;
+    padding: 8px;
+    list-style: none;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+}
+
+.as-hit {
+    display: block;
+    padding: 10px 12px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: var(--text-main, #2B2B2B);
+    cursor: pointer;
+}
+
+.as-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 14px;
+}
+
+/* The title has to stay one run of text: the highlight wraps parts of it in
+   <mark>, and those would become flex items of their own if the flex row
+   were the title element itself. */
+.as-hit strong {
+    display: block;
+    min-width: 0;
+    font-size: .98rem;
+    font-weight: 600;
+    line-height: 1.35;
+}
+
+/* which part of the site the row belongs to, on the row itself rather than
+   as a group heading the relevance order would keep breaking */
+.as-hit em {
+    flex: 0 0 auto;
+    font-style: normal;
+    font-size: .64rem;
+    font-weight: 700;
+    letter-spacing: .13em;
+    text-transform: uppercase;
+    color: var(--primary-dark, #C94239);
+    opacity: .7;
+    white-space: nowrap;
+}
+
+.as-sub {
+    display: block;
+    margin-top: 2px;
+    font-size: .82rem;
+    color: var(--text-muted, #6F6F6F);
+    /* one line, whatever the length of the description behind it */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.as-hit mark {
+    background: rgba(255, 179, 71, .38);
+    color: inherit;
+    border-radius: 2px;
+    padding: 0 1px;
+}
+
+/* Keyboard selection and pointer hover are the same state, so arrowing down
+   and moving the mouse never leave two rows looking chosen at once. */
+.as-hit.is-on {
+    background: var(--bg-light, #FDF2EF);
+}
+
+.as-empty {
+    padding: 26px 20px 30px;
+    text-align: center;
+    color: var(--text-muted, #6F6F6F);
+    font-size: .92rem;
+}
+
+.as-empty a {
+    color: var(--primary-dark, #C94239);
+    font-weight: 600;
+}
+
+.as-foot {
+    flex: 0 0 auto;
+    display: flex;
+    gap: 18px;
+    padding: 10px 20px;
+    border-top: 1px solid var(--border-color, #F0E4E0);
+    background: var(--bg-wash, #FDF7F5);
+    font-size: .74rem;
+    color: var(--text-muted, #6F6F6F);
+}
+
+.as-foot kbd {
+    font: inherit;
+    font-weight: 600;
+    background: #fff;
+    border: 1px solid var(--border-color, #F0E4E0);
+    border-radius: 4px;
+    padding: 1px 5px;
+}
+
+@media (max-width: 640px) {
+    .as-veil {
+        padding: 0;
+    }
+
+    .as-panel {
+        width: 100%;
+        height: 100%;
+        max-height: none;
+        border-radius: 0;
+    }
+
+    .as-foot {
+        display: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .as-veil,
+    .as-panel {
+        transition: none;
+    }
+}

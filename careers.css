@@ -69,26 +69,40 @@
     overflow: hidden;
     isolation: isolate;
     padding: clamp(128px, 12vw, 156px) 0 clamp(56px, 6vw, 84px);
+    /* The band grows with the viewport, so a wide screen throws away less of
+       a photo that is only 2.5 times as wide as it is tall. */
+    min-height: clamp(460px, 30vw, 640px);
     background: linear-gradient(180deg, #43121D 0%, #66202E 52%, #45131E 100%);
     color: #fff;
 }
 
+/* The photo is composed for exactly this layout — the ward runs off to the
+   right and the left third is near-empty light — so it carries at full
+   strength and the copy sits in the space the picture already leaves. */
 .cr-hero-photo {
     position: absolute;
     inset: 0;
     z-index: -2;
-    background: url('image/blog-hero.jpg') center center / cover no-repeat;
-    opacity: .44;
-    filter: saturate(.85);
+    /* Anchored near the top, not centred: the frame is always wider than the
+       photo is proportionally tall, so something gets cropped — and it has to
+       be the empty floor at the bottom rather than the nurse's head. */
+    background: url('image/image%20copy%2039.png') 72% 6% / cover no-repeat;
 }
 
+/* Maroon only where the words are. It fades out well before the nurse, so
+   the right-hand half of the photo is seen rather than tinted. */
 .cr-hero-veil {
     position: absolute;
     inset: 0;
     z-index: -1;
     background:
-        radial-gradient(70% 60% at 14% 6%, rgba(176, 40, 54, .42) 0%, transparent 62%),
-        linear-gradient(180deg, rgba(46, 13, 21, .62) 0%, rgba(58, 17, 26, .5) 46%, rgba(42, 12, 19, .74) 100%);
+        linear-gradient(96deg,
+            rgba(46, 13, 21, .95) 0%,
+            rgba(58, 17, 26, .88) 34%,
+            rgba(70, 21, 32, .55) 56%,
+            rgba(70, 21, 32, .12) 72%,
+            transparent 84%),
+        linear-gradient(180deg, rgba(46, 13, 21, .3) 0%, transparent 34%);
 }
 
 .cr-hero-inner {
@@ -545,6 +559,16 @@
     .cr-job-title { flex: 1 1 100%; order: 3; }
     .cr-job-panel { padding: 4px 20px 24px; }
     .cr-hero h1 { max-width: none; }
+
+    /* The copy spans the full width here, so the veil has to as well. A
+       2.5:1 photo in a portrait frame is mostly crop whatever you do, so it
+       is framed on the window light behind the nurse rather than on her. */
+    .cr-hero-photo { background-position: 62% 28%; }
+
+    .cr-hero-veil {
+        background:
+            linear-gradient(180deg, rgba(46, 13, 21, .5) 0%, rgba(52, 15, 24, .78) 40%, rgba(42, 12, 19, .9) 100%);
+    }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -245,6 +245,10 @@ img {
     justify-content: space-between;
     align-items: center;
     height: 96px;
+    /* Wider than the 1200px body container: eleven menu items, both action
+       buttons and the language selector need about 1600px between them, and
+       anything narrower pushes the last of them off the right edge. */
+    max-width: 1620px;
 }
 
 .logo {
@@ -262,13 +266,14 @@ img {
     display: flex;
     align-items: center;
     /* Pull past the container's 1.5rem padding, toward the viewport edge.
-       Only safe while the viewport is wider than the 1200px container. */
+       Only safe while the viewport is wider than the 1560px nav container. */
     margin-left: -6rem;
 }
 
-/* Below ~1300px the container hits the viewport, so a 6rem pull would
-   push the logo off-screen. Ease it back to the padding edge. */
-@media (max-width: 1300px) {
+/* The pull is only safe once the viewport clears the 1620px nav container by
+   more than the pull itself — about 1900px. Below that it would take the logo
+   off the left edge, so it eases back to the padding edge. */
+@media (max-width: 1900px) {
     .logo-link {
         margin-left: -1.5rem;
     }
@@ -1717,9 +1722,30 @@ img {
     box-shadow: 0 15px 25px rgba(187, 26, 52, 0.4);
 }
 
+/* Between 1300 and the full 1620px container the bar is over-subscribed, so
+   the menu tightens and the Locations pill steps aside — the drawer and the
+   hero both carry that link anyway. */
+@media (min-width: 1301px) and (max-width: 1620px) {
+    .nav-links {
+        gap: .5rem;
+        margin: 0 .5rem;
+    }
+
+    .nav-links a,
+    .nav-links .dropbtn {
+        font-size: .86rem;
+    }
+
+    .location-btn {
+        display: none;
+    }
+}
+
 /* Mobile navbar drawer (kept last so it wins over the earlier duplicate media blocks).
-   Breakpoint is 1100px, not 768px: ten menu items + the CTA stop fitting below that. */
-@media (max-width: 1100px) {
+   Breakpoint is 1300px, not 768px: eleven menu items plus both action buttons
+   stop fitting inside the bar below that, and the last of them was being
+   pushed off the right edge. */
+@media (max-width: 1300px) {
     .nav-links {
         display: none;
     }

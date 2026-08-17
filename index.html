@@ -8,7 +8,9 @@
     <meta name="description"
         content="Advitya Healthcares provides 24/7 emergency services, modern equipment, and experienced doctors. Book an appointment today.">
     <link rel="stylesheet" href="style.css?v=19">
-    <link rel="stylesheet" href="home-v2.css?v=9">
+    <link rel="stylesheet" href="home-v2.css?v=13">
+    <link rel="stylesheet" href="site-search.css?v=1">
+    <link rel="stylesheet" href="lang-select.css?v=1">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -120,31 +122,48 @@
         </div>
         <div class="container hv-hero-inner">
             <div class="hv-hero-grid">
-                <div class="hv-hero-copy">
-                    <span class="hv-kicker" data-aos="fade-up">Science for Humanity</span>
-                    <h1 data-aos="fade-up" data-aos-delay="60">Advitya brings to you
-                        <span>PancreaCare</span></h1>
-                    <p class="hv-lede" data-aos="fade-up" data-aos-delay="120">At PancreaCare, we specialize in
+                <!-- The copy is staged by home-v2.css off .hv-anim / .is-in,
+                     which hero-motion.js sets from an IntersectionObserver, so
+                     the sequence runs once and to a known clock. The wrapper
+                     spans exist only to give each line its own timing; they
+                     carry no styling of their own. -->
+                <div class="hv-hero-copy hv-anim">
+                    <noscript>
+                        <style>.hv-hero-copy.hv-anim * { opacity: 1 !important; }</style>
+                    </noscript>
+                    <span class="hv-kicker">Science for Humanity</span>
+                    <h1><span class="hv-h1-lead">Advitya brings to you</span>
+                        <span class="hv-brand">PancreaCare</span></h1>
+                    <p class="hv-lede">At PancreaCare, we specialize in
                         advanced pancreatic and GI surgeries, delivering world-class treatment with the latest surgical
                         techniques and a compassionate, patient-centered approach.</p>
 
-                    <div class="hv-cta" data-aos="fade-up" data-aos-delay="180">
+                    <div class="hv-cta">
                         <a href="#" onclick="openContactModal(); return false;" class="btn btn-premium">
                             <i class="fa-regular fa-calendar-check"></i> Book an Appointment</a>
                         <a href="our-team.html" class="hv-ghost"><i class="fa-solid fa-user-doctor"></i> Find a
                             Doctor</a>
                     </div>
 
-                    <div class="hv-assure" data-aos="fade-up" data-aos-delay="220">
-                        <span><i class="fa-solid fa-check"></i> Reports reviewed before you travel</span>
-                        <span><i class="fa-solid fa-check"></i> Four centres across Jharkhand</span>
-                        <span><i class="fa-solid fa-check"></i> 24&times;7 emergency line</span>
+                    <div class="hv-assure">
+                        <span><i class="fa-solid fa-check"></i> <span class="hv-a-t">Reports reviewed before you
+                            travel</span></span>
+                        <span><i class="fa-solid fa-check"></i> <span class="hv-a-t">Four centres across
+                            Jharkhand</span></span>
+                        <span><i class="fa-solid fa-check"></i> <span class="hv-a-t">24&times;7 emergency
+                            line</span></span>
                     </div>
                 </div>
 
-                <div class="hv-hero-media" data-aos="fade-left" data-aos-delay="160">
+                <!-- Entrance is owned by home-v2.css, not AOS: the badges, the
+                     name and the sheen are staged against the card's own clock,
+                     and AOS revealed the wrapper too late for that to read. -->
+                <div class="hv-hero-media">
+                    <span class="hv-motes" aria-hidden="true"></span>
                     <div class="hv-portrait">
                         <img src="image/dr_deeksha_portrait.png" alt="Dr. Deeksha Kapoor, CEO and Medical Head">
+                        <!-- one slow pass of light over the coat and the embroidered logo -->
+                        <span class="hv-portrait-sheen" aria-hidden="true"></span>
                         <div class="hv-portrait-cap">
                             <strong>Dr. Deeksha Kapoor</strong>
                             <span>CEO &amp; Medical Head &middot; PancreaCare Initiative</span>
@@ -1200,7 +1219,12 @@
         })();
 
     </script>
+    <script src="hero-motion.js?v=3"></script>
     <script src="nav.js?v=6"></script>
+    <script src="search-index.js?v=1"></script>
+    <script src="site-search.js?v=1"></script>
+    <script src="mail-link.js?v=1"></script>
+    <script src="lang-select.js?v=2"></script>
     <script src="contact-modal.js?v=1"></script>
 </body>
 

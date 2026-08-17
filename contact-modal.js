@@ -163,9 +163,14 @@
                 f.get('message')
             ].join('\n');
 
-            window.location.href = 'mailto:info@advityahealthcares.com'
+            var url = 'mailto:info@advityahealthcares.com'
                 + '?subject=' + encodeURIComponent('Appointment request - ' + f.get('name'))
                 + '&body=' + encodeURIComponent(body);
+
+            // goes through mail-link.js so a visitor with no mail app still
+            // gets somewhere to send it, rather than nothing happening
+            if (window.ADV_MAILTO) window.ADV_MAILTO(url);
+            else window.location.href = url;
 
             form.innerHTML = '' +
                 '<div class="form-sent">' +
