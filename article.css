@@ -1379,12 +1379,15 @@
 
 .ar-rich .ar-table { margin-top: 0; }
 
-/* related / also-like cards carrying real photography */
+/* Related / also-like cards carry the same designed covers as the blog
+   index — headline along the top, contact strip along the bottom. They are
+   fitted whole rather than cropped to fill, so those edges survive; only
+   the anatomy SVGs keep the multiply blend that drops their white ground. */
 .ax-rel-art.is-photo img,
 .ax-also-art.is-photo img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     mix-blend-mode: normal;
 }
 

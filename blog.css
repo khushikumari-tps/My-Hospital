@@ -763,20 +763,29 @@
 .bx-arrow:disabled { opacity: .35; cursor: default; }
 
 .bx-rail {
+    --bx-gap: clamp(18px, 2vw, 26px);
+    --bx-cols: 3;
     display: flex;
-    gap: clamp(18px, 2vw, 26px);
+    gap: var(--bx-gap);
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     scroll-behavior: smooth;
     scrollbar-width: none;
     padding: 6px 2px 10px;
+    /* the 2px side padding lets card shadows breathe; snapping has to skip it
+       or every card lands 2px short of the edge */
+    scroll-padding-inline: 2px;
     margin: 0 -2px;
 }
 
 .bx-rail::-webkit-scrollbar { display: none; }
 
+/* Cards take an exact fraction of the rail, so a full row of them ends flush
+   with the rail's edge. A fixed max width left slack the scroll could not
+   absorb, and the rail finished its travel showing a clipped stub of the
+   previous card beside the last three. */
 .bx-rail .bc-card {
-    flex: 0 0 clamp(272px, 30%, 350px);
+    flex: 0 0 calc((100% - (var(--bx-cols) - 1) * var(--bx-gap)) / var(--bx-cols));
     scroll-snap-align: start;
 }
 
@@ -1044,7 +1053,7 @@
     .bg-grid { grid-template-columns: repeat(2, 1fr); }
     .bt-grid { grid-template-columns: repeat(2, 1fr); }
     .be-grid { grid-template-columns: repeat(2, 1fr); }
-    .bx-rail .bc-card { flex-basis: clamp(258px, 46%, 330px); }
+    .bx-rail { --bx-cols: 2; }
 }
 
 @media (max-width: 900px) {
@@ -1060,7 +1069,7 @@
     .bg-grid { grid-template-columns: 1fr; }
     .bt-grid { grid-template-columns: 1fr; }
     .be-grid { grid-template-columns: 1fr; }
-    .bx-rail .bc-card { flex-basis: min(84vw, 330px); }
+    .bx-rail { --bx-cols: 1; }
     .bw-form button { flex: 1 1 100%; justify-content: center; }
 }
 

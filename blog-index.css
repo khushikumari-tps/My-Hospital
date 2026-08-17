@@ -1,0 +1,614 @@
+/* ===================================================================
+   blog-index.css — editorial blog index for Advitya Healthcares
+
+   One reading column: large image, article beside it, hairline rule, next
+   article. Deliberately no cards, no shadows, no tint — whitespace and the
+   rules carry the structure, which is what separates a publication from a
+   card grid.
+
+   Motion notes: everything animated here is transform or opacity, so the
+   page stays on the compositor. The divider "draws" with scaleX rather than
+   width for the same reason — animating width would relayout on every frame.
+   Hover-only effects sit behind @media (hover: hover) so a touch device
+   never gets stuck showing a hover state it cannot dismiss.
+   =================================================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+.ob {
+    --ob-max: 1200px;
+    --ob-maroon: #8B1014;
+    --ob-brand: #C94239;
+    --ob-body: #52403E;
+    --ob-muted: #8C7A77;
+    --ob-rule: #EFE1DC;
+    --ob-beige: #FAF4F1;
+    --ob-ease: cubic-bezier(.22, .61, .36, 1);
+    --ob-rise: 35px;
+
+    background: #fff;
+    color: var(--ob-body);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.ob-wrap {
+    max-width: var(--ob-max);
+    margin: 0 auto;
+    padding: 0 clamp(20px, 4vw, 40px);
+}
+
+/* ==================================================================
+   1. page header — flourish, then title, then subtitle
+   ================================================================== */
+.ob-head {
+    text-align: center;
+    padding: clamp(64px, 8vw, 104px) 0 clamp(34px, 4vw, 48px);
+}
+
+.ob-eyebrow {
+    display: inline-block;
+    font-size: .74rem;
+    font-weight: 600;
+    letter-spacing: .26em;
+    text-transform: uppercase;
+    color: var(--ob-brand);
+    margin-bottom: 18px;
+}
+
+.ob-head h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.3rem, 4.6vw, 3.3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+    color: var(--ob-maroon);
+    margin: 0;
+}
+
+.ob-head p {
+    max-width: 62ch;
+    margin: 18px auto 0;
+    font-size: clamp(1rem, 1.4vw, 1.1rem);
+    line-height: 1.7;
+    color: var(--ob-body);
+}
+
+/* the decorative rule: a short gradient bar with a diamond centred on it */
+.ob-flourish {
+    position: relative;
+    width: 132px;
+    height: 1px;
+    margin: 30px auto 0;
+    background: linear-gradient(90deg, transparent, var(--ob-brand), transparent);
+}
+
+.ob-flourish::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    background: var(--ob-brand);
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+/* The header reveals in its own order: rule, heading, subtitle, pills.
+   .ob-lead elements start hidden and are released by .ob-ready on <body>,
+   which the script sets on the first frame after load. */
+.ob-lead {
+    opacity: 0;
+    translate: 0 22px;
+    transition: opacity .8s var(--ob-ease), translate .8s var(--ob-ease);
+    transition-delay: var(--d, 0s);
+}
+
+.ob-flourish.ob-lead {
+    translate: 0 0;
+    scale: 0 1;
+    transition: opacity .7s var(--ob-ease), scale .8s var(--ob-ease);
+}
+
+.ob-ready .ob-lead {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.ob-ready .ob-flourish.ob-lead {
+    scale: 1 1;
+}
+
+/* ==================================================================
+   2. category pills
+   ================================================================== */
+.ob-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-bottom: clamp(44px, 5vw, 64px);
+}
+
+.ob-pill {
+    appearance: none;
+    font: inherit;
+    font-size: .88rem;
+    font-weight: 500;
+    color: var(--ob-body);
+    background: #fff;
+    border: 1px solid var(--ob-rule);
+    border-radius: 50px;
+    padding: .6rem 1.35rem;
+    cursor: pointer;
+    transition: color .35s ease, background-color .35s ease,
+                border-color .35s ease, transform .35s var(--ob-ease);
+}
+
+.ob-pill.is-on {
+    color: #fff;
+    background: var(--ob-maroon);
+    border-color: var(--ob-maroon);
+}
+
+/* ==================================================================
+   3. the article column
+   ================================================================== */
+.ob-post {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 48fr) minmax(0, 48fr);
+    gap: clamp(38px, 5vw, 68px);
+    align-items: center;
+    color: inherit;
+    padding: clamp(30px, 3.6vw, 52px) 0;
+    transition: transform .35s var(--ob-ease);
+}
+
+.ob-post + .ob-post {
+    margin-top: clamp(24px, 3vw, 38px);
+}
+
+/* The divider. A pseudo-element rather than a border, so it can draw itself
+   across with scaleX when the article below it comes into view. */
+.ob-post + .ob-post::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--ob-rule);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .8s var(--ob-ease);
+}
+
+.ob-post.is-in::before {
+    transform: scaleX(1);
+}
+
+/* ---- scroll reveal ----
+   The article and each of its parts fade up together but on a short ladder:
+   image, title, description, metadata, Read More. --s is the per-post base
+   delay the script sets, so a screenful arriving at once still staggers. */
+.ob-post .ob-media,
+.ob-post .ob-body > * {
+    opacity: 0;
+    translate: 0 var(--ob-rise);
+    /* Colour rides along here because this selector outranks `.ob-post h2`,
+       and a transition shorthand replaces rather than merges — leaving it out
+       would make the title's hover colour snap instead of fade. The reveal
+       delay is written per property so hover colour stays instant. */
+    --rd: calc(var(--s, 0s) + var(--i, 0) * 120ms);
+    transition: opacity .8s var(--ob-ease) var(--rd),
+                translate .8s var(--ob-ease) var(--rd),
+                color .35s ease 0s;
+}
+
+.ob-post.is-in .ob-media,
+.ob-post.is-in .ob-body > * {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.ob-media {
+    position: relative;
+    overflow: hidden;
+    border-radius: 3px;
+    height: clamp(300px, 27vw, 410px);
+    background: var(--ob-beige);
+}
+
+/* Every cover on this blog is a designed graphic, not a photograph: the
+   headline runs across the top edge and a contact strip along the bottom,
+   and the aspect ratios range from square to 2.3:1 banners. Cropping any of
+   them to fill the frame sliced the words off, so covers are fitted whole
+   and the leftover frame is filled with a blurred, dimmed copy of the cover
+   rather than a flat block of beige. */
+.ob-media::before {
+    content: '';
+    position: absolute;
+    inset: -10%;
+    background-image: var(--ob-bg, none);
+    background-size: cover;
+    background-position: center;
+    filter: blur(26px) saturate(1.3);
+    opacity: .48;
+}
+
+.ob-media img {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+    transition: transform .5s var(--ob-ease);
+}
+
+/* The one illustrated post ships as an SVG on white — it needs air inside
+   the frame, and a blurred copy of white is just a grey wash, so the
+   backdrop stays off and the beige ground shows through. */
+.ob-media.is-art::before {
+    display: none;
+}
+
+.ob-media.is-art img {
+    padding: 5%;
+}
+
+.ob-body {
+    min-width: 0;
+}
+
+.ob-post h2 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.5rem, 2.1vw, 1.95rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -.015em;
+    color: var(--ob-maroon);
+    margin: 0 0 18px;
+    transition: color .35s ease;
+}
+
+/* the underline grows under the words themselves, not the whole column */
+.ob-post h2 .ob-t {
+    background-image: linear-gradient(var(--ob-brand), var(--ob-brand));
+    background-repeat: no-repeat;
+    background-position: 0 100%;
+    background-size: 0 1.5px;
+    transition: background-size .35s var(--ob-ease);
+    padding-bottom: 3px;
+}
+
+.ob-excerpt {
+    font-size: clamp(1rem, 1.15vw, 1.08rem);
+    line-height: 1.6;
+    color: var(--ob-body);
+    margin: 0 0 20px;
+    /* four lines, then a real ellipsis rather than a hand-typed one */
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.ob-meta {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 9px;
+    font-size: .84rem;
+}
+
+.ob-date {
+    color: var(--ob-muted);
+}
+
+.ob-cat {
+    color: var(--ob-maroon);
+    font-weight: 600;
+    transition: color .35s ease;
+}
+
+.ob-dot {
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background: var(--ob-muted);
+    opacity: .7;
+}
+
+.ob-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 22px;
+    font-family: 'Outfit', sans-serif;
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--ob-maroon);
+}
+
+.ob-more i {
+    font-size: .82em;
+    transition: transform .35s var(--ob-ease);
+}
+
+/* ---- hover, pointer devices only ---- */
+@media (hover: hover) {
+    .ob-post:hover {
+        transform: translateY(-3px);
+    }
+
+    .ob-post:hover .ob-media img {
+        transform: scale(1.035);
+    }
+
+    .ob-post:hover h2 {
+        color: var(--ob-brand);
+    }
+
+    .ob-post:hover h2 .ob-t {
+        background-size: 100% 1.5px;
+    }
+
+    .ob-post:hover .ob-cat {
+        color: var(--ob-brand);
+    }
+
+    .ob-post:hover .ob-more i {
+        transform: translateX(5px);
+    }
+
+    .ob-pill:hover {
+        color: var(--ob-maroon);
+        border-color: rgba(139, 16, 20, .32);
+        background: var(--ob-beige);
+        transform: translateY(-2px);
+    }
+
+    .ob-page:hover:not(:disabled):not(.is-on) {
+        color: var(--ob-maroon);
+        border-color: rgba(139, 16, 20, .32);
+        background: var(--ob-beige);
+        transform: translateY(-2px);
+    }
+
+    .ob-page.ob-step:hover:not(:disabled) i {
+        transform: translateX(4px);
+    }
+
+    .ob-page.ob-prev:hover:not(:disabled) i {
+        transform: translateX(-4px);
+    }
+}
+
+/* ==================================================================
+   4. pagination
+   ================================================================== */
+.ob-foot {
+    position: relative;
+    padding: clamp(46px, 6vw, 74px) 0 clamp(76px, 9vw, 118px);
+    margin-top: clamp(24px, 3vw, 38px);
+    text-align: center;
+}
+
+.ob-foot::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: var(--ob-rule);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .8s var(--ob-ease);
+}
+
+.ob-foot.is-in::before {
+    transform: scaleX(1);
+}
+
+.ob-count {
+    font-size: .84rem;
+    color: var(--ob-muted);
+    margin: 0 0 22px;
+}
+
+.ob-pager {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.ob-page {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Outfit', sans-serif;
+    font-size: .93rem;
+    font-weight: 600;
+    color: var(--ob-body);
+    background: #fff;
+    border: 1px solid var(--ob-rule);
+    border-radius: 3px;
+    min-width: 42px;
+    padding: .62rem .7rem;
+    justify-content: center;
+    cursor: pointer;
+    transition: color .35s ease, background-color .35s ease,
+                border-color .35s ease, transform .35s var(--ob-ease);
+}
+
+.ob-page i {
+    font-size: .78em;
+    transition: transform .35s var(--ob-ease);
+}
+
+.ob-page.is-on {
+    color: #fff;
+    background: var(--ob-maroon);
+    border-color: var(--ob-maroon);
+    cursor: default;
+}
+
+.ob-page.ob-step {
+    padding-inline: 1.15rem;
+}
+
+.ob-page:disabled {
+    opacity: .38;
+    cursor: default;
+}
+
+.ob-gap {
+    color: var(--ob-muted);
+    padding: 0 4px;
+    user-select: none;
+}
+
+.ob-empty {
+    text-align: center;
+    padding: clamp(48px, 7vw, 88px) 0;
+    color: var(--ob-muted);
+}
+
+/* ==================================================================
+   5. reading progress — a hairline on the right edge
+   ================================================================== */
+.ob-progress {
+    position: fixed;
+    top: 22vh;
+    right: 18px;
+    width: 2px;
+    height: 56vh;
+    z-index: 40;
+    background: rgba(139, 16, 20, .1);
+    border-radius: 2px;
+    opacity: 0;
+    transition: opacity .5s ease;
+    pointer-events: none;
+}
+
+.ob-progress.is-on {
+    opacity: 1;
+}
+
+.ob-progress span {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(180deg, var(--ob-brand, #C94239), var(--ob-maroon, #8B1014));
+    transform: scaleY(0);
+    transform-origin: top center;
+}
+
+/* ==================================================================
+   6. responsive
+   ================================================================== */
+@media (max-width: 900px) {
+    .ob-post {
+        grid-template-columns: minmax(0, 46fr) minmax(0, 50fr);
+        gap: clamp(26px, 3.5vw, 38px);
+    }
+
+    .ob-media {
+        height: clamp(230px, 30vw, 300px);
+    }
+
+    .ob-excerpt {
+        -webkit-line-clamp: 3;
+        line-clamp: 3;
+    }
+
+    .ob-more {
+        margin-top: 18px;
+    }
+}
+
+@media (max-width: 640px) {
+    .ob {
+        /* shorter travel reads better on a small screen */
+        --ob-rise: 20px;
+    }
+
+    .ob-post {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 28px 0;
+    }
+
+    .ob-post + .ob-post {
+        margin-top: 12px;
+    }
+
+    .ob-media {
+        height: 230px;
+    }
+
+    .ob-post h2 {
+        font-size: 1.42rem;
+        margin-bottom: 12px;
+    }
+
+    .ob-excerpt {
+        font-size: .97rem;
+        margin-bottom: 16px;
+    }
+
+    .ob-page {
+        min-width: 38px;
+        padding: .55rem .6rem;
+        font-size: .88rem;
+    }
+
+    /* the rail crowds a narrow screen and duplicates the browser's own cue */
+    .ob-progress {
+        display: none;
+    }
+}
+
+/* ==================================================================
+   7. reduced motion — content still arrives, it just does not travel
+   ================================================================== */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    .ob-lead,
+    .ob-post,
+    .ob-post .ob-media,
+    .ob-post .ob-body > *,
+    .ob-media img,
+    .ob-more i,
+    .ob-page,
+    .ob-page i,
+    .ob-pill {
+        transition: none;
+        animation: none;
+        opacity: 1;
+        translate: none;
+        scale: none;
+        transform: none;
+    }
+
+    .ob-post + .ob-post::before,
+    .ob-foot::before {
+        transition: none;
+        transform: scaleX(1);
+    }
+
+    .ob-progress {
+        display: none;
+    }
+}

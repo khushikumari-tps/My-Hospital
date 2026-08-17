@@ -570,6 +570,126 @@ body.hv-light .btn-premium:hover {
     right: -30px;
 }
 
+/* ==========================================================================
+   Hero motion
+   Everything here animates transform, opacity, background-position or
+   box-shadow only, so the whole hero stays on the compositor. Periods are
+   long and mutually prime, which keeps the layers from ever beating in sync
+   and reading as a loop. The reduced-motion block at the end of this file
+   switches all of it off.
+   ========================================================================== */
+
+/* The kicker's dot breathes a ring outward, like a live status light */
+.hv-kicker::before {
+    animation: hvDotPulse 3.2s cubic-bezier(.2, .6, .35, 1) infinite;
+}
+
+@keyframes hvDotPulse {
+    0% { box-shadow: 0 0 0 0 rgba(255, 138, 76, .5); }
+    60% { box-shadow: 0 0 0 10px rgba(255, 138, 76, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(255, 138, 76, 0); }
+}
+
+/* The brand gradient drifts across "PancreaCare" instead of sitting still.
+   Oversizing the gradient is what gives it somewhere to travel. */
+.hv-hero h1 span {
+    background-size: 220% 100%;
+    animation: hvBrandDrift 11s ease-in-out infinite alternate;
+}
+
+@keyframes hvBrandDrift {
+    from { background-position: 0% 50%; }
+    to { background-position: 100% 50%; }
+}
+
+/* A warm bloom behind the portrait, breathing slowly. z-index -1 keeps it
+   under the card but inside .hv-hero-inner's stacking context. */
+.hv-hero-media::before {
+    content: '';
+    position: absolute;
+    inset: 8% -7% -5%;
+    z-index: -1;
+    border-radius: 36px;
+    background: radial-gradient(58% 54% at 50% 45%, rgba(228, 87, 78, .26), transparent 72%);
+    filter: blur(40px);
+    will-change: transform, opacity;
+    animation: hvMediaGlow 13s ease-in-out infinite alternate;
+}
+
+@keyframes hvMediaGlow {
+    from { transform: scale(.94); opacity: .75; }
+    to { transform: scale(1.06); opacity: 1; }
+}
+
+/* Slow push into the portrait, matching the background's Ken Burns pace */
+.hv-portrait img {
+    will-change: transform;
+    animation: hvPortraitDrift 28s ease-in-out infinite alternate;
+}
+
+@keyframes hvPortraitDrift {
+    from { transform: scale(1); }
+    to { transform: scale(1.06); }
+}
+
+/* Chips drift on their own clocks. Hover pauses the drift and lifts via the
+   `scale` property, which composes with the animated transform instead of
+   fighting it. */
+.hv-chip {
+    will-change: transform;
+    animation: hvChipFloat 7.5s ease-in-out infinite alternate;
+    transition: scale .35s var(--ease), box-shadow .35s var(--ease), border-color .35s ease;
+}
+
+.hv-chip-2 {
+    animation-duration: 9.5s;
+    animation-delay: -4s;
+}
+
+@keyframes hvChipFloat {
+    from { transform: translate3d(0, 5px, 0); }
+    to { transform: translate3d(0, -7px, 0); }
+}
+
+.hv-chip:hover {
+    animation-play-state: paused;
+    scale: 1.035;
+    box-shadow: var(--lift-3);
+    border-color: rgba(201, 66, 57, .34);
+}
+
+/* A light sweeps across the primary button on hover, once per pass */
+body.hv-light .btn-premium {
+    position: relative;
+    overflow: hidden;
+    transition: transform .3s var(--ease), box-shadow .3s var(--ease);
+}
+
+body.hv-light .btn-premium > * {
+    position: relative;
+    z-index: 1;
+}
+
+body.hv-light .btn-premium::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: -45%;
+    width: 32%;
+    pointer-events: none;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .45), transparent);
+    transform: translate3d(0, 0, 0);
+}
+
+body.hv-light .btn-premium:hover::after {
+    animation: hvSheen .9s var(--ease);
+}
+
+@keyframes hvSheen {
+    to { transform: translate3d(460%, 0, 0); }
+}
+
 /* ----------  Finder bar  ---------- */
 .hv-finder {
     display: grid;
@@ -2189,11 +2309,34 @@ body.hv-light .swiper-pagination-bullet-active {
     /* Hero keeps its colour, loses its motion */
     .hv-hero-bg img,
     .hv-hero::before,
-    .hv-hero::after {
+    .hv-hero::after,
+    .hv-kicker::before,
+    .hv-hero h1 span,
+    .hv-hero-media::before,
+    .hv-portrait img,
+    .hv-chip,
+    body.hv-light .btn-premium:hover::after {
         animation: none;
     }
 
     .hv-hero-bg img {
         transform: scale(1.08);
+    }
+
+    /* park the animated layers on their resting frame */
+    .hv-chip {
+        transform: none;
+    }
+
+    .hv-hero h1 span {
+        background-size: 100% 100%;
+    }
+
+    .hv-chip:hover {
+        scale: 1;
+    }
+
+    body.hv-light .btn-premium:hover {
+        transform: none;
     }
 }
