@@ -65,7 +65,7 @@ def bucket(url, title):
 
 def main():
     posts = {}
-    src = io.open('blog-data.js', encoding='utf-8').read()
+    src = io.open('js/blog-data.js', encoding='utf-8').read()
     # blog-data.js is a plain array of object literals; pull url + excerpt pairs
     for block in re.findall(r'\{\s*url:[\s\S]*?\n    \}', src):
         u = re.search(r'url:\s*"([^"]+)"', block)
@@ -128,14 +128,14 @@ def main():
     )
     js = (
         '/* ===================================================================\n'
-        '   search-index.js \u2014 what the header search box searches.\n\n'
+        '   js/search-index.js \u2014 what the header search box searches.\n\n'
         '   Generated from the site\'s own pages, so every entry points at a URL\n'
         '   that exists. t = title, u = url, s = section, k = extra keywords.\n'
         '   Regenerate after adding or renaming a page.\n'
         '   =================================================================== */\n'
         'window.ADV_SEARCH_INDEX = [\n' + body + '\n];\n'
     )
-    io.open('search-index.js', 'w', encoding='utf-8').write(js)
+    io.open('js/search-index.js', 'w', encoding='utf-8').write(js)
     print('entries:', len(out))
     from collections import Counter
     for k, v in Counter(e['s'] for e in out).most_common():
