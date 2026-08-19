@@ -11,7 +11,9 @@
    widget loads, so every subsequent page comes up already translated instead
    of flashing English first.
 
-   The markup is built here rather than pasted into 98 pages.
+   The pill is in each page's source; this file adopts it and builds the
+   dropdown panel behind it. It used to build both, which is why the selector
+   was missing in production — see whenHeader() below for what went wrong.
    =================================================================== */
 (function () {
     'use strict';
@@ -69,12 +71,43 @@
         });
     }
 
-    function ready(fn) {
-        if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', fn);
-        } else {
+    /* ---- waiting for the header, not for the document ----
+       This file is loaded async from the head, so it can run before the header
+       has been parsed. Waiting on DOMContentLoaded would be the obvious answer
+       and it is the wrong one: DOMContentLoaded does not fire while the parser
+       is stalled on a foot-of-page script, which is exactly the case this
+       whole change exists to survive. The header is at the top of the
+       document and is parsed within a few milliseconds either way, so watch
+       for it directly and take DOMContentLoaded only as a backstop. */
+    function whenHeader(fn) {
+        function present() {
+            return document.querySelector('.als') || document.querySelector('.nav-actions');
+        }
+
+        if (present()) return fn();
+
+        var done = false;
+        var obs, timer;
+
+        function go() {
+            if (done) return;
+            done = true;
+            if (obs) obs.disconnect();
+            clearInterval(timer);
+            document.removeEventListener('DOMContentLoaded', go);
             fn();
         }
+
+        function look() {
+            if (present()) go();
+        }
+
+        obs = new MutationObserver(look);
+        obs.observe(document.documentElement, { childList: true, subtree: true });
+        timer = setInterval(look, 50);
+
+        // the header may genuinely not be there at all; stop waiting then
+        document.addEventListener('DOMContentLoaded', go);
     }
 
     /* ---- waiting for the widget ----
@@ -166,49 +199,83 @@
     // the cookie has to exist before the widget script reads it
     var current = readCookie();
 
-    ready(function () {
+    whenHeader(function () {
         var actions = document.querySelector('.nav-actions');
-        if (!actions || document.querySelector('.als')) return;
+
+        /* The pill itself is in the page source now. It used to be built here
+           and only here, which is why it went missing in production: this file
+           is the sixth of seven scripts at the foot of the document, behind
+           Swiper and AOS on two third-party CDNs. When one of those is slow —
+           or is stalled by a carrier proxy or a blocker rather than failing
+           outright — the parser never reaches this script, and the header
+           renders complete except for the language selector. On localhost the
+           CDNs answer from cache, so it always looked fine in development.
+           So: markup in the HTML, wiring here. */
+        var wrap = document.querySelector('.als');
+        var adopted = !!wrap;
+
+        if (!actions && !wrap) return;
 
         /* the element the widget renders into — kept in the document because
            the <select> it builds is what performs the translation */
-        var mount = document.createElement('div');
-        mount.id = 'als-gt';
-        document.body.appendChild(mount);
-
-        var wrap = document.createElement('div');
-        /* notranslate: the point of a language menu is that it reads the same
-           whatever the page is showing. Without it Google rewrites the native
-           names and the code on the pill. */
-        wrap.className = 'als notranslate';
-        wrap.setAttribute('translate', 'no');
+        if (!document.getElementById('als-gt')) {
+            var mount = document.createElement('div');
+            mount.id = 'als-gt';
+            document.body.appendChild(mount);
+        }
 
         var label = function (code) {
             var l = LANGS.filter(function (x) { return x.code === code; })[0];
             return l ? l.code.toUpperCase() : 'EN';
         };
 
-        wrap.innerHTML =
-            '<button class="als-btn" type="button" aria-haspopup="listbox" aria-expanded="false"' +
-            '        aria-label="Choose a language">' +
-            '  <span class="als-globe" aria-hidden="true">🌐</span>' +
-            '  <span class="als-code">' + esc(label(current)) + '</span>' +
-            '  <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>' +
-            '</button>' +
-            '<ul class="als-panel" role="listbox" aria-label="Language">' +
-            LANGS.map(function (l) {
+        if (!wrap) {
+            wrap = document.createElement('div');
+            /* notranslate: the point of a language menu is that it reads the
+               same whatever the page is showing. Without it Google rewrites
+               the native names and the code on the pill. */
+            wrap.className = 'als notranslate';
+            wrap.setAttribute('translate', 'no');
+            wrap.innerHTML =
+                '<button class="als-btn" type="button" aria-haspopup="listbox" aria-expanded="false"' +
+                '        aria-label="Choose a language">' +
+                '  <span class="als-globe" aria-hidden="true">🌐</span>' +
+                '  <span class="als-code">' + esc(label(current)) + '</span>' +
+                '  <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>' +
+                '</button>';
+            actions.insertBefore(wrap, actions.firstChild);
+        }
+
+        /* The panel is the half nobody can see until they click, so it stays
+           script-built — ten rows of native spellings in every one of the 96
+           pages would be a lot of duplicated markup for no visible gain. */
+        if (!wrap.querySelector('.als-panel')) {
+            var list = document.createElement('ul');
+            list.className = 'als-panel';
+            list.setAttribute('role', 'listbox');
+            list.setAttribute('aria-label', 'Language');
+            list.innerHTML = LANGS.map(function (l) {
                 return '<li role="presentation">' +
                     '<button class="als-opt" type="button" role="option" data-code="' + l.code + '"' +
                     ' aria-selected="' + (l.code === current) + '">' +
                     '<span>' + esc(l.name) + '</span>' +
                     (l.native ? '<span class="als-native">' + esc(l.native) + '</span>' : '') +
                     '</button></li>';
-            }).join('') +
-            '</ul>';
-
-        actions.insertBefore(wrap, actions.firstChild);
+            }).join('');
+            wrap.appendChild(list);
+        }
 
         var btn = wrap.querySelector('.als-btn');
+        if (!btn) return;
+
+        /* The static pill ships reading EN. A visitor arriving with a language
+           already chosen has it in the cookie, so correct the label before the
+           first paint the visitor can act on. */
+        if (adopted) {
+            var staticCode = wrap.querySelector('.als-code');
+            if (staticCode) staticCode.textContent = label(current);
+        }
+
         var code = wrap.querySelector('.als-code');
         var panel = wrap.querySelector('.als-panel');
         var opts = Array.prototype.slice.call(wrap.querySelectorAll('.als-opt'));

@@ -7,9 +7,13 @@
     <title>The Story of PancreaCare | Advitya Healthcares</title>
     <meta name="description"
         content="Our journey: from pancreatic specialists to comprehensive digestive care">
-    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/style.css?v=21">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
+    <link rel="stylesheet" href="css/erp-nav.css?v=1">
+    <!-- async, and ahead of the third-party bundles: the header must not
+         wait on a CDN to get its language selector wired up -->
+    <script src="js/lang-select.js?v=5" async></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -25,7 +29,7 @@
             text-align: center;
         }
         .inner-hero h1 {
-            font-size: 4.5rem;
+            font-size: clamp(2.1rem, 8vw, 4.5rem);
             margin-bottom: 20px;
             font-weight: 700;
         }
@@ -141,6 +145,9 @@
             line-height: 1.6;
         }
     </style>
+<!-- last stylesheet on purpose: mobile fixes must win over the
+     CDN sheets above, never fight them for the cascade -->
+<link rel="stylesheet" href="css/responsive.css?v=1">
 </head>
 
 <body>
@@ -155,7 +162,6 @@
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="pancrea-care.html#functions">The Pancreas</a>
                 <div class="dropdown advmega">
                     <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content advmega-panel">
@@ -234,11 +240,19 @@
                 <a href="index.html#contactModal">Contact</a>
             </nav>
             <div class="nav-actions">
+                <div class="als notranslate" translate="no">
+                    <button class="als-btn" type="button" aria-haspopup="listbox" aria-expanded="false"
+                            aria-label="Choose a language">
+                        <span class="als-globe" aria-hidden="true">🌐</span>
+                        <span class="als-code">EN</span>
+                        <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>
+                    </button>
+                </div>
                 <a href="index.html#location" class="location-btn">
                     <i class="fa-solid fa-location-dot"></i> Our Locations
                 </a>
-                <a href="index.html#contactModal" class="appointment-btn">
-                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                <a href="https://erp.advityahealthcares.in/login" target="_blank" rel="noopener noreferrer" class="erp-login-btn" aria-label="ERP Login (opens in a new tab)">
+                    <i class="fa-solid fa-right-to-bracket"></i> ERP Login
                 </a>
                 <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
                     <i class="fa-solid fa-bars"></i>
@@ -263,9 +277,9 @@
         <div class="container">
             <div style="display: flex; gap: 40px; align-items: center; flex-wrap: wrap;">
                 <!-- Text Column -->
-                <div style="flex: 1; min-width: 300px;">
+                <div style="flex: 1; min-width: min(300px, 100%);">
                     <div class="section-title left-align" style="margin-bottom: 30px;">
-                        <h2 style="font-size: 2.5rem; color: #000; font-weight: 700;">About PancreaCare+</h2>
+                        <h2 style="font-size: clamp(1.5rem, 5.5vw, 2.5rem); color: #000; font-weight: 700;">About PancreaCare+</h2>
                     </div>
                     <div style="font-size: 1.15rem; line-height: 1.8; color: #444;">
                         <p style="margin-bottom: 20px;">PancreaCare+ was founded with a steadfast commitment to creating a world-class centre of excellence dedicated entirely to pancreatic health. The "Pancrea" in our name reflects our unwavering focus on pancreatic diseases, while "Care" embodies the compassionate values that drive us. The "+" symbolises our ambition to grow and create a meaningful impact within the specialised field of pancreatic healthcare.</p>
@@ -273,7 +287,7 @@
                     </div>
                 </div>
                 <!-- Image Column -->
-                <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; background-color: #e5e5e5; padding: 40px; border-radius: 8px;">
+                <div style="flex: 1; min-width: min(300px, 100%); display: flex; justify-content: center; align-items: center; background-color: #e5e5e5; padding: 40px; border-radius: 8px;">
                     <img src="images/pancreas_illustration.png" alt="Pancreas Illustration" style="width: 100%; max-width: 450px; mix-blend-mode: multiply;">
                 </div>
             </div>
@@ -331,10 +345,10 @@
             </div>
             
             <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
-                <div style="flex: 1; min-width: 300px;">
+                <div style="flex: 1; min-width: min(300px, 100%);">
                     <img src="images/dr_diksha_updated.jpg" alt="Dr. Deeksha Kapoor" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 </div>
-                <div style="flex: 2; min-width: 300px;">
+                <div style="flex: 2; min-width: min(300px, 100%);">
                     <h3 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 5px;">Dr. Deeksha Kapoor</h3>
                     <h5 style="font-size: 1.2rem; color: #666; margin-bottom: 20px; font-weight: 500;">Pancreato-Biliary & Gastrointestinal Surgery</h5>
                     <p style="font-size: 1.1rem; line-height: 1.7; color: #444;">Welcome to PancreaCare+, where expertise meets compassion in treating pancreato-biliary and gastrointestinal diseases. I am Dr Deeksha Kapoor, an accomplished pancreato-biliary and gastrointestinal surgeon with a strong foundation in advanced surgical oncology and minimally invasive procedures. With extensive training and experience from premier institutions in India and abroad, I am committed to providing world-class, patient-centered care.</p>
@@ -459,7 +473,7 @@
     <!-- Call to Action Section -->
     <section class="bg-primary text-white" style="padding: 60px 0; text-align: center;">
         <div class="container">
-            <h2 style="margin-bottom: 15px; font-size: 2.5rem;">To Book an Appointment, Please Contact:</h2>
+            <h2 style="margin-bottom: 15px; font-size: clamp(1.5rem, 5.5vw, 2.5rem);">To Book an Appointment, Please Contact:</h2>
             <h3 style="margin-bottom: 30px; font-size: 2rem;">+91 9711669119, +91 9355661973, +91 7042410785</h3>
             <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact us for any query !</p>
             <a href="index.html#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; font-weight: 600;">Contact Us</a>
@@ -485,7 +499,7 @@
                         <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
                     </div>
-                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
+                    <p class="foot-updated">Website Updated as of March 3, 2026</p>
                 </div>
                 
                 <!-- Column 2 -->
@@ -511,7 +525,8 @@
 
             <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
 
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+            <div class="footer-legal"
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                 <div style="margin-bottom: 10px;">
                     <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
                     <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
@@ -556,7 +571,6 @@
     <script src="js/search-index.js?v=1"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>
-    <script src="js/lang-select.js?v=4"></script>
     <script src="js/contact-modal.js?v=1"></script>
 </body>
 </html>

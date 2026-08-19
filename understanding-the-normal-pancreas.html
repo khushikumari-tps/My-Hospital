@@ -7,9 +7,13 @@
     <title>Understanding the Normal Pancreas | Advitya Healthcares</title>
     <meta name="description"
         content="What a healthy pancreas does and why it matters. Understanding the Normal Pancreas: A Q&A Guide.">
-    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/style.css?v=21">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
+    <link rel="stylesheet" href="css/erp-nav.css?v=1">
+    <!-- async, and ahead of the third-party bundles: the header must not
+         wait on a CDN to get its language selector wired up -->
+    <script src="js/lang-select.js?v=5" async></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -26,7 +30,7 @@
             text-align: center;
         }
         .inner-hero h1 {
-            font-size: 4.5rem;
+            font-size: clamp(2.1rem, 8vw, 4.5rem);
             margin-bottom: 20px;
             font-weight: 700;
         }
@@ -114,6 +118,9 @@
             margin-bottom: 0;
         }
     </style>
+<!-- last stylesheet on purpose: mobile fixes must win over the
+     CDN sheets above, never fight them for the cascade -->
+<link rel="stylesheet" href="css/responsive.css?v=1">
 </head>
 
 <body>
@@ -128,7 +135,6 @@
             <nav class="nav-links">
                 <a href="index.html">Home</a>
                 <a href="about.html">About Us</a>
-                <a href="pancrea-care.html#functions">The Pancreas</a>
                 <div class="dropdown advmega">
                     <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content advmega-panel">
@@ -207,11 +213,19 @@
                 <a href="index.html#contactModal">Contact</a>
             </nav>
             <div class="nav-actions">
+                <div class="als notranslate" translate="no">
+                    <button class="als-btn" type="button" aria-haspopup="listbox" aria-expanded="false"
+                            aria-label="Choose a language">
+                        <span class="als-globe" aria-hidden="true">🌐</span>
+                        <span class="als-code">EN</span>
+                        <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>
+                    </button>
+                </div>
                 <a href="index.html#location" class="location-btn">
                     <i class="fa-solid fa-location-dot"></i> Our Locations
                 </a>
-                <a href="index.html#contactModal" class="appointment-btn">
-                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                <a href="https://erp.advityahealthcares.in/login" target="_blank" rel="noopener noreferrer" class="erp-login-btn" aria-label="ERP Login (opens in a new tab)">
+                    <i class="fa-solid fa-right-to-bracket"></i> ERP Login
                 </a>
                 <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
                     <i class="fa-solid fa-bars"></i>
@@ -236,12 +250,12 @@
         <div class="container" style="max-width: 1000px;">
             <div style="display: flex; gap: 50px; align-items: center; flex-wrap: wrap; margin-bottom: 40px;">
                 <!-- Image Column (Left) -->
-                <div style="flex: 1; min-width: 300px; display: flex; justify-content: center; align-items: center; background-color: #e5e5e5; padding: 40px; border-radius: 8px;">
+                <div style="flex: 1; min-width: min(300px, 100%); display: flex; justify-content: center; align-items: center; background-color: #e5e5e5; padding: 40px; border-radius: 8px;">
                     <img src="images/pancreas_illustration.png" alt="Normal Pancreas Illustration" style="width: 100%; max-width: 450px; mix-blend-mode: multiply;">
                 </div>
                 <!-- Text Column (Right) -->
-                <div style="flex: 1; min-width: 300px;">
-                    <h2 style="font-size: 2.5rem; color: #000; font-weight: 700; margin-bottom: 20px; line-height: 1.2;">Understanding the Normal Pancreas: A Q&A Guide</h2>
+                <div style="flex: 1; min-width: min(300px, 100%);">
+                    <h2 style="font-size: clamp(1.5rem, 5.5vw, 2.5rem); color: #000; font-weight: 700; margin-bottom: 20px; line-height: 1.2;">Understanding the Normal Pancreas: A Q&A Guide</h2>
                     <div style="font-size: 1.15rem; line-height: 1.8; color: #444;">
                         <p>The pancreas is an incredible organ essential for digestion and maintaining blood sugar balance. This Q&A-style guide will help you understand its functions, importance, and how to keep it healthy.</p>
                     </div>
@@ -379,7 +393,7 @@
     <!-- Call to Action Section -->
     <section class="bg-primary text-white" style="padding: 60px 0; text-align: center;">
         <div class="container">
-            <h2 style="margin-bottom: 15px; font-size: 2.5rem;">To Book an Appointment, Please Contact:</h2>
+            <h2 style="margin-bottom: 15px; font-size: clamp(1.5rem, 5.5vw, 2.5rem);">To Book an Appointment, Please Contact:</h2>
             <h3 style="margin-bottom: 30px; font-size: 2rem;">+91 9711669119, +91 9355661973, +91 7042410785</h3>
             <p style="font-size: 1.2rem; margin-bottom: 30px;">Contact us for any query !</p>
             <a href="index.html#contactModal" onclick="document.getElementById('contactModal').style.display='flex'; return false;" class="btn" style="background: white; color: var(--primary); padding: 15px 40px; font-size: 1.2rem; border-radius: 30px; font-weight: 600;">Contact Us</a>
@@ -405,7 +419,7 @@
                         <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-instagram"></i></a>
                         <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i class="fa-brands fa-youtube"></i></a>
                     </div>
-                    <p style="font-size: 12px;">Website Updated as of March 3, 2026</p>
+                    <p class="foot-updated">Website Updated as of March 3, 2026</p>
                 </div>
                 
                 <!-- Column 2 -->
@@ -431,7 +445,8 @@
 
             <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
 
-            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+            <div class="footer-legal"
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                 <div style="margin-bottom: 10px;">
                     <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
                     <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
@@ -476,7 +491,6 @@
     <script src="js/search-index.js?v=1"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>
-    <script src="js/lang-select.js?v=4"></script>
     <script src="js/contact-modal.js?v=1"></script>
 </body>
 </html>

@@ -1,0 +1,208 @@
+/* ===================================================================
+   erp-nav.css — the header bar on narrow screens.
+
+   The ERP Login pill replaced Book Appointment in the bar, and below about
+   480px the row is four things fighting over the width: logo, language pill,
+   ERP pill, hamburger. The rules that size those live in three different
+   stylesheets (style.css, home-v2.css, lang-select.css) at three different
+   specificities, so tuning them from any one of those files means either
+   losing the cascade or writing selectors heavy enough to win it everywhere.
+   They are collected here instead, and this file is linked last.
+
+   Two things shape the numbers:
+
+   1. The logo is 234x200, so it renders 1.17 times as wide as it is tall.
+      Every height below is chosen for the width it costs, not how it looks.
+   2. The floor is the JioPhone class of device — 240px of viewport, KaiOS,
+      Gecko 48. That browser has no flex `gap` (Gecko 63) and no
+      :focus-visible, and it is driven by a D-pad rather than a finger. The
+      fallbacks for the first two are in style.css next to the pill itself;
+      what this file does is make the row fit in 240px with the label intact.
+   =================================================================== */
+
+/* ---------- 480px and down: the large-phone step ---------- */
+@media (max-width: 480px) {
+    /* header row only — body sections keep their 1.5rem gutter */
+    .nav-container {
+        padding: 0 1rem;
+    }
+
+    .logo img,
+    .navbar.scrolled .logo img,
+    body.hv-light .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        height: 52px;
+    }
+
+    .nav-actions > * + * {
+        margin-left: 0.5rem;
+    }
+
+    @supports (gap: 0.5rem) {
+        .nav-actions {
+            gap: 0.5rem;
+        }
+
+        .nav-actions > * + * {
+            margin-left: 0;
+        }
+    }
+
+    .erp-login-btn {
+        padding: 0.55rem 0.95rem;
+        font-size: 0.82rem;
+    }
+
+    .als-btn {
+        height: 36px;
+        padding: 0 9px;
+    }
+}
+
+/* ---------- 380px and down: the 360-class phone ----------
+   The icon goes first. It is decorative; the label is not. */
+@media (max-width: 380px) {
+    .nav-container {
+        padding: 0 0.7rem;
+    }
+
+    /* If a future logo is wider than today's, it gives up width here rather
+       than shoving the pill off the right edge. */
+    .logo,
+    .logo-link {
+        min-width: 0;
+        flex-shrink: 1;
+    }
+
+    .logo img,
+    .navbar.scrolled .logo img,
+    body.hv-light .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        height: 44px;
+    }
+
+    .nav-actions > * + * {
+        margin-left: 0.4rem;
+    }
+
+    @supports (gap: 0.4rem) {
+        .nav-actions {
+            gap: 0.4rem;
+        }
+
+        .nav-actions > * + * {
+            margin-left: 0;
+        }
+    }
+
+    .erp-login-btn {
+        padding: 0.5rem 0.8rem;
+        font-size: 0.78rem;
+        min-height: 40px;
+    }
+
+    .erp-login-btn i {
+        display: none;
+    }
+
+    .als-btn {
+        height: 34px;
+        padding: 0 8px;
+        font-size: 0.78rem;
+    }
+
+    /* Font Awesome's own .fa-solid display rule is linked after this file, so
+       the caret needs the extra class to be hidden at all. */
+    .als-btn .als-caret {
+        display: none;
+    }
+
+    .mobile-menu {
+        font-size: 1.3rem;
+    }
+}
+
+/* ---------- 330px and down: JioPhone and the 240px KaiOS screens ----------
+   Measured at 240px: 0.4rem of gutter leaves 227px, and logo 42 + language 52
+   + pill 84 + hamburger 19 + three 0.3rem gaps comes to 211px, so the row
+   fits with the label still on the pill. There is no touch here — it is
+   D-pad focus — so the 44px tap floor is dropped, and that is what buys the
+   last of the room. */
+@media (max-width: 330px) {
+    .nav-container {
+        padding: 0 0.4rem;
+    }
+
+    .logo img,
+    .navbar.scrolled .logo img,
+    body.hv-light .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        height: 36px;
+    }
+
+    .nav-actions > * + * {
+        margin-left: 0.3rem;
+    }
+
+    @supports (gap: 0.3rem) {
+        .nav-actions {
+            gap: 0.3rem;
+        }
+
+        .nav-actions > * + * {
+            margin-left: 0;
+        }
+    }
+
+    .erp-login-btn {
+        padding: 0.42rem 0.65rem;
+        font-size: 0.72rem;
+        min-height: 0;
+        /* a 14px blur under a 30px pill is invisible and costs a paint the
+           KaiOS compositor does not have to spare */
+        box-shadow: none;
+    }
+
+    .als-btn {
+        height: 30px;
+        padding: 0 6px;
+        font-size: 0.72rem;
+    }
+
+    .als-globe {
+        font-size: 0.85rem;
+    }
+
+    .mobile-menu {
+        font-size: 1.15rem;
+    }
+}
+
+/* ---------- below anything measured ----------
+   Last-resort guard so the pill is never the thing that overflows. */
+@media (max-width: 260px) {
+    .logo img,
+    .navbar.scrolled .logo img,
+    body.hv-light .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        height: 30px;
+    }
+
+    .erp-login-btn {
+        padding: 0.4rem 0.55rem;
+        font-size: 0.68rem;
+    }
+}
+
+/* ---------- Gecko 48 / KaiOS: the language pill's own gap ----------
+   Same story as the ERP pill — without this the globe sits against the
+   language code on a JioPhone. */
+.als-btn > * + * {
+    margin-left: 8px;
+}
+
+@supports (gap: 8px) {
+    .als-btn > * + * {
+        margin-left: 0;
+    }
+}

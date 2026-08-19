@@ -6,16 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | From Inception to Realization | Advitya Healthcares</title>
     <meta name="description" content="The journey of Advitya Healthcares — from hospital corridors to the Alliance Model that carries surgical and cancer care to second- and third-tier cities.">
-    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/style.css?v=21">
     <link rel="stylesheet" href="css/home-v2.css?v=9">
     <link rel="stylesheet" href="css/inner-v2.css?v=1">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
+    <link rel="stylesheet" href="css/erp-nav.css?v=1">
+    <!-- async, and ahead of the third-party bundles: the header must not
+         wait on a CDN to get its language selector wired up -->
+    <script src="js/lang-select.js?v=5" async></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<!-- last stylesheet on purpose: mobile fixes must win over the
+     CDN sheets above, never fight them for the cascade -->
+<link rel="stylesheet" href="css/responsive.css?v=1">
 </head>
 
 <body class="hv-light">
@@ -171,11 +178,19 @@
                 <a href="index.html#contactModal">Contact us</a>
             </nav>
             <div class="nav-actions">
+                <div class="als notranslate" translate="no">
+                    <button class="als-btn" type="button" aria-haspopup="listbox" aria-expanded="false"
+                            aria-label="Choose a language">
+                        <span class="als-globe" aria-hidden="true">🌐</span>
+                        <span class="als-code">EN</span>
+                        <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>
+                    </button>
+                </div>
                 <a href="index.html#location" class="location-btn">
                     <i class="fa-solid fa-location-dot"></i> Our Locations
                 </a>
-                <a href="index.html#contactModal" class="appointment-btn">
-                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                <a href="https://erp.advityahealthcares.in/login" target="_blank" rel="noopener noreferrer" class="erp-login-btn" aria-label="ERP Login (opens in a new tab)">
+                    <i class="fa-solid fa-right-to-bracket"></i> ERP Login
                 </a>
                 <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
                     <i class="fa-solid fa-bars"></i>
@@ -428,7 +443,7 @@
                         <a href="https://wa.me/919211221551" aria-label="WhatsApp"><i
                                 class="fa-brands fa-whatsapp"></i></a>
                     </div>
-                    <p style="font-size:.76rem; opacity:.7;">Website updated as of March 3, 2026</p>
+                    <p class="foot-updated">Website updated as of March 3, 2026</p>
                 </div>
 
                 <div class="hv-foot-col">
@@ -512,7 +527,6 @@
     <script src="js/search-index.js?v=1"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>
-    <script src="js/lang-select.js?v=4"></script>
     <script src="js/contact-modal.js?v=1"></script>
 </body>
 

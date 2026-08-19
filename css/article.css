@@ -455,7 +455,7 @@
 .ar-road.is-good li i { color: #F2A493; }
 
 /* what it finds */
-.ar-conds { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-top: 24px; }
+.ar-conds { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 16px; margin-top: 24px; }
 
 .ar-cond {
     padding: 24px 22px;
@@ -575,7 +575,7 @@
     margin: 0;
     padding: 0;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
     gap: 11px 24px;
 }
 

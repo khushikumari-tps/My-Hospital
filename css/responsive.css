@@ -1,0 +1,491 @@
+/* ===================================================================
+   responsive.css — mobile correctness, loaded last.
+
+   Linked immediately before </head> on every page, after the CDN
+   stylesheets, so a fix here never has to fight AOS, Swiper or Font
+   Awesome for the cascade.
+
+   `body { overflow-x: hidden }` used to live in style.css and was hiding
+   real overflow rather than fixing it. It is gone. Everything below
+   removes a cause instead.
+   =================================================================== */
+
+/* -------------------------------------------------------------------
+   1. AOS horizontal reveals
+
+   AOS parks a not-yet-revealed element 100px to the side:
+       [data-aos=fade-left]  { transform: translate3d( 100px,0,0) }
+       [data-aos=fade-right] { transform: translate3d(-100px,0,0) }
+
+   Those 100px stick out past the viewport whenever the page gutter is
+   narrower than 100px — every phone, every tablet, and any laptop under
+   about 1300px. The page then scrolls sideways, and because the meta
+   viewport is width=device-width, the layout viewport widens to match,
+   which is what dragged the fixed header wider than the screen too.
+
+   The reveal is kept; only its direction changes, to the vertical one
+   the other 1402 elements on the site already use.
+
+   The cutoff is 1560px, not a phone breakpoint, because the widest
+   container on the site is `.milestone .container` at 1340px: its gutter
+   only reaches 100px once the viewport passes 1540. Above that the
+   offset fits and the desktop reveal is left exactly as designed.
+   ------------------------------------------------------------------- */
+@media (max-width: 1560px) {
+
+    [data-aos="fade-left"]:not(.aos-animate),
+    [data-aos="fade-right"]:not(.aos-animate) {
+        transform: translate3d(0, 60px, 0);
+    }
+
+    [data-aos="fade-up-left"]:not(.aos-animate),
+    [data-aos="fade-up-right"]:not(.aos-animate) {
+        transform: translate3d(0, 100px, 0);
+    }
+
+    [data-aos="fade-down-left"]:not(.aos-animate),
+    [data-aos="fade-down-right"]:not(.aos-animate) {
+        transform: translate3d(0, -100px, 0);
+    }
+
+    [data-aos="zoom-in-left"]:not(.aos-animate),
+    [data-aos="zoom-in-right"]:not(.aos-animate) {
+        transform: translate3d(0, 60px, 0) scale(.6);
+    }
+
+    [data-aos="zoom-out-left"]:not(.aos-animate),
+    [data-aos="zoom-out-right"]:not(.aos-animate) {
+        transform: translate3d(0, 60px, 0) scale(1.2);
+    }
+
+    [data-aos="slide-left"]:not(.aos-animate),
+    [data-aos="slide-right"]:not(.aos-animate) {
+        transform: translate3d(0, 100%, 0);
+    }
+}
+
+
+/* -------------------------------------------------------------------
+   2. Grid and flex items that refuse to shrink
+
+   A grid track's default minimum is `auto`, which means min-content —
+   the widest thing inside it. A row of stat cards or a long email
+   address therefore pushes the track wider than its own container, and
+   the container cannot hold it back. That is the "grid blowout", and it
+   is what widened the organ pages and the About contact cards.
+
+   Two halves to the fix: let the items shrink, and give the rows that
+   are hard-coded to N columns somewhere to go on a narrow screen.
+   ------------------------------------------------------------------- */
+
+/* Let the item shrink to the track instead of the track growing to the item */
+.pc-intro-grid > *,
+.pc-hero-grid > *,
+.pc-facts > *,
+.contact-cards > *,
+.contact-card > *,
+.ms-grid > *,
+.values > * {
+    min-width: 0;
+}
+
+/* .pc-facts is `repeat(3, 1fr)` with no narrow case, so three stat cards
+   set a 372px floor — wider than a 320px phone. Two up, then one. */
+@media (max-width: 620px) {
+    .pc-facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 380px) {
+    .pc-facts {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* .contact-cards goes 3 -> 2 columns and stops. A card is an icon plus a
+   block of phone numbers, so two-up still cannot fit a small phone. */
+@media (max-width: 620px) {
+    .contact-cards {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* -------------------------------------------------------------------
+   3. Strings with nowhere to break
+
+   Email addresses and run-together phone lists have no space to wrap at,
+   so they set a min-content width of their own. Breaking them is the
+   fix; the alternative is the whole page scrolling sideways for one
+   address.
+   ------------------------------------------------------------------- */
+.contact-card p,
+.contact-card a,
+.cm-row p,
+.cm-row a,
+.footer-contact a,
+.ar-rich a {
+    overflow-wrap: anywhere;
+}
+
+/* -------------------------------------------------------------------
+   4. Tables
+
+   .ar-fig is `overflow: hidden` for its rounded corners, which quietly
+   cut the wide comparison tables off instead of letting them scroll.
+   A figure holding a table scrolls on its own, so the table stays whole
+   and the page still does not.
+   ------------------------------------------------------------------- */
+.ar-fig:has(table) {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.ar-fig table {
+    min-width: 30rem;      /* below this the columns are unreadable anyway */
+}
+
+/* -------------------------------------------------------------------
+   5. The contact / appointment modal
+
+   Its two panes are flex children pinned at min-width 300px and 350px.
+   On any phone that is wider than the screen before the form is even
+   drawn. `min()` keeps the desktop floor and lets the pane shrink to the
+   viewport below it.
+   ------------------------------------------------------------------- */
+.contact-modal-left {
+    min-width: min(300px, 100%);
+}
+
+.contact-modal-right {
+    min-width: min(350px, 100%);
+}
+
+@media (max-width: 620px) {
+
+    /* stacked, and the padding comes down with the width */
+    .contact-modal-left,
+    .contact-modal-right {
+        padding: 26px 20px;
+    }
+
+    /* a select or input at less than 16px makes iOS zoom the page on focus,
+       which leaves the layout scrolled sideways after the keyboard closes */
+    .premium-form input,
+    .premium-form select,
+    .premium-form textarea {
+        font-size: 16px;
+    }
+}
+
+
+/* -------------------------------------------------------------------
+   6. Layouts that never reach one column
+
+   `.pillars` collapses to a single column at 640px, but `.pillars.is-4`
+   is a two-class selector and therefore outranks it at every width — so
+   the four-up variant stayed four-up on a 320px phone, at 62px a card.
+   Same specificity here, so the narrow case can finally win.
+   ------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+    .pillars.is-4 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 640px) {
+    .pillars.is-4 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* -------------------------------------------------------------------
+   7. Flex rows that turn into columns
+
+   .service-block is `flex-direction: row` with `align-items: flex-start`
+   so the image and the copy sit at the top of the row. Below 720px it
+   flips to a column — and flex-start now sizes the children to their
+   max-content across, instead of stretching them to the block. The copy
+   went 289px wide inside a 197px block. Stretch is what a column wants.
+   ------------------------------------------------------------------- */
+@media (max-width: 720px) {
+    .service-block {
+        align-items: stretch;
+    }
+}
+
+/* -------------------------------------------------------------------
+   8. Inline-flex pills
+
+   .pc-eyebrow is an inline-flex badge holding an icon and a phrase. An
+   inline flex line does not wrap, so the badge sets a min-content width
+   of the whole phrase and pushes past a small screen.
+   ------------------------------------------------------------------- */
+.pc-eyebrow {
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+/* -------------------------------------------------------------------
+   9. Long words
+
+   A single token longer than the column — a compound brand name, an
+   email address, a URL in body copy — cannot be wrapped by the normal
+   rules and simply hangs out of the box. `break-word` only takes effect
+   in exactly that case, so ordinary text is unaffected.
+   ------------------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+}
+
+
+/* -------------------------------------------------------------------
+   10. Service blocks on a phone
+
+   Two things together, not one: 35px of padding on each side takes 70px
+   off a 320px screen before any content is drawn, and the block heading
+   is a flex row at a fixed 1.9rem — "Gastroenterology" alone is 250px at
+   that size, so the row's min-content was 289px inside a 196px column.
+
+   Note `overflow-wrap: break-word` does NOT help here: it stops a word
+   painting outside its box but leaves the intrinsic min-content size
+   unchanged, which is the number flex and grid actually lay out from.
+   The size has to come down and the row has to be allowed to wrap.
+   ------------------------------------------------------------------- */
+.service-block h2 {
+    flex-wrap: wrap;
+    font-size: clamp(1.25rem, 5.6vw, 1.9rem);
+}
+
+@media (max-width: 560px) {
+    .service-block {
+        padding: 22px 18px;
+    }
+
+    .service-block > p {
+        font-size: 1rem;
+    }
+}
+
+
+/* -------------------------------------------------------------------
+   11. Touch targets
+
+   Measured at 375px: the hamburger was an 18x33 hit area, the language
+   pill 63x34, the pagination and filter chips 37-38px tall. A finger
+   pad is about 9mm, which is why 44px is the usual floor.
+
+   Scoped to coarse pointers so a mouse-driven desktop keeps its
+   proportions exactly as designed.
+   ------------------------------------------------------------------- */
+@media (pointer: coarse) {
+
+    /* the drawer toggle: the icon stays its size, the hit area grows */
+    .mobile-menu {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 44px;
+        min-height: 44px;
+        margin-right: -8px;     /* keeps the icon on the same optical edge */
+    }
+
+    .als-btn {
+        min-height: 40px;
+    }
+
+    /* blog pagination, gallery filters, copy buttons */
+    .ob-page,
+    .agy-chip,
+    .cr-copy {
+        min-height: 44px;
+    }
+
+    .ob-page {
+        min-width: 44px;
+    }
+
+    /* carousel dots are decorative but still driven by touch */
+    .swiper-pagination-bullet {
+        width: 12px;
+        height: 12px;
+        margin: 0 7px !important;
+    }
+
+    /* stacked footer links need room between them, not just inside them */
+    .hv-foot-legal a,
+    .footer-links a,
+    .footer-bottom a,
+    .footer-legal a {
+        display: inline-block;
+        padding: 11px 0;
+    }
+}
+
+/* -------------------------------------------------------------------
+   12. Readable body text
+
+   12px copyright and 13.4px counters are below what is comfortable on a
+   phone. Nudged to 14px and up; the desktop sizes are left alone.
+   ------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    .hv-foot-bottom,
+    .hv-foot-bottom p,
+    .footer-bottom p,
+    .footer-bottom,
+    .ob-count,
+    .form-note {
+        font-size: .875rem;
+        line-height: 1.6;
+    }
+
+    /* the legal row wraps to its own line rather than squeezing the address */
+    .hv-foot-bottom {
+        justify-content: flex-start;
+    }
+}
+
+/* -------------------------------------------------------------------
+   13. Form fields
+
+   iOS Safari zooms the page whenever a focused field is under 16px, and
+   it does not zoom back out — the visitor is left on a page that now
+   scrolls sideways. 16px on the field is the whole fix.
+   ------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    input:not([type="checkbox"]):not([type="radio"]),
+    select,
+    textarea,
+    .hv-field input,
+    .hv-field select,
+    .premium-form input,
+    .premium-form select,
+    .premium-form textarea {
+        font-size: 16px;
+        max-width: 100%;
+    }
+
+    /* the home page finder bar is three columns of controls */
+    .hv-finder {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+
+/* -------------------------------------------------------------------
+   14. The legacy footer strip
+
+   81 pages carry this strip with `font-size: 12px` as an inline style,
+   which no stylesheet can reach. The size now lives on .footer-legal —
+   same 12px on desktop as before — so the phone case can be stated here
+   instead of being unreachable.
+   ------------------------------------------------------------------- */
+.footer-legal {
+    font-size: 12px;
+}
+
+@media (max-width: 768px) {
+    .footer-legal {
+        font-size: .875rem;
+        line-height: 1.6;
+    }
+
+    .footer-legal a {
+        display: inline-block;
+        padding: 11px 0;
+    }
+}
+
+
+/* the "website updated" stamp: de-emphasised, but not to the point of
+   being unreadable on a phone */
+/* doubled class: the inline style this replaced beat the footer's own
+   `p` rule, so the class has to as well or the caption gets bigger than
+   it was on desktop */
+.foot-updated.foot-updated {
+    font-size: .76rem;
+    opacity: .7;
+}
+
+@media (max-width: 768px) {
+    .foot-updated.foot-updated {
+        font-size: .8125rem;
+    }
+}
+
+
+/* -------------------------------------------------------------------
+   15. Footer link columns
+
+   The columns are inline-styled flex stacks with a 10px gap and no
+   padding on the links, so each target is a 22px-tall strip. Six px of
+   padding takes the box to 34px and, with the gap, the pitch between
+   two targets to 44px — which is the number that matters when targets
+   sit in a row. Padding rather than min-height, so the column does not
+   suddenly grow half a screen taller.
+   ------------------------------------------------------------------- */
+@media (pointer: coarse) {
+    footer a {
+        display: inline-block;
+        padding: 6px 0;
+    }
+}
+
+
+/* -------------------------------------------------------------------
+   16. Last pass: inline CTAs, icon links, small captions
+
+   These are the leftovers from the tap audit at 375px — text links that
+   act as calls to action but were only 24-26px tall, footer icon links
+   at 38px, and a caption at 13.8px.
+   ------------------------------------------------------------------- */
+@media (pointer: coarse) {
+
+    .hv-textlink,
+    .pc-link {
+        padding: 8px 0;
+    }
+
+    /* footer social icons */
+    .hv-foot-soc a,
+    .social-icons a,
+    footer .fa-brands {
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    .hv-foot-soc a,
+    .social-icons a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .hv-loc-inset p {
+        font-size: .9rem;
+    }
+}
+
+
+/* -------------------------------------------------------------------
+   17. Fixed heights that were sized for a desktop column
+
+   The locations map is 620px tall — most of a phone screen for one
+   element, and a lot of scrolling to get past it. Proportionate below
+   the tablet breakpoint; the desktop value is untouched.
+
+   (The other fixed heights in the codebase, .hero at 100vh and
+   .why-image at 500px, are on classes no page actually uses, so they
+   are left alone rather than given dead overrides.)
+   ------------------------------------------------------------------- */
+@media (max-width: 768px) {
+
+    .loc-map,
+    body.hv-light .loc-map {
+        height: 340px;
+    }
+}

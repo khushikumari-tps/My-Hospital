@@ -6,9 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallbladder &amp; Biliary Care | Advitya Healthcares</title>
     <meta name="description" content="Expert gallbladder and biliary care — gallstones, cholecystitis, polyps, gallbladder cancer, bile duct injuries and cholangiocarcinoma. Laparoscopic and robotic surgery, ERCP, MRCP and specialist bile duct reconstruction.">
-    <link rel="stylesheet" href="css/style.css?v=20">
+    <link rel="stylesheet" href="css/style.css?v=21">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
+    <link rel="stylesheet" href="css/erp-nav.css?v=1">
+    <!-- async, and ahead of the third-party bundles: the header must not
+         wait on a CDN to get its language selector wired up -->
+    <script src="js/lang-select.js?v=5" async></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
@@ -313,7 +317,7 @@
 
         .pc-grid-3 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
             gap: 22px;
             margin-top: 52px;
         }
@@ -457,7 +461,7 @@
         /* ============================ 4. WARNING SIGNS ============================ */
         .pc-signs {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
             gap: 18px;
             margin-top: 52px;
         }
@@ -602,7 +606,7 @@
         /* ============================ 6. TREATMENTS ============================ */
         .pc-grid-4 {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
             gap: 20px;
             margin-top: 52px;
         }
@@ -689,7 +693,7 @@
 
         .pc-why-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
             gap: 18px;
             margin-top: 52px;
         }
@@ -841,7 +845,7 @@
         /* ============================ 10. EDUCATION ============================ */
         .pc-articles {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
             gap: 22px;
             margin-top: 52px;
         }
@@ -1035,7 +1039,7 @@
         /* ============================ COMPLETE GUIDE ============================ */
         .pc-index {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(230px, 100%), 1fr));
             gap: 12px;
             margin-top: 46px;
         }
@@ -1512,7 +1516,7 @@
 
         .sy-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
             gap: 22px;
         }
 
@@ -1695,7 +1699,7 @@
 
         .gb-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(258px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(min(258px, 100%), 1fr));
             gap: 22px;
             align-items: stretch;
         }
@@ -1810,7 +1814,7 @@
 
         @media (max-width: 900px) {
             .gb-grid {
-                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
             }
         }
 
@@ -1830,6 +1834,9 @@
             }
         }
     </style>
+<!-- last stylesheet on purpose: mobile fixes must win over the
+     CDN sheets above, never fight them for the cascade -->
+<link rel="stylesheet" href="css/responsive.css?v=1">
 </head>
 
 <body class="pancreacare">
@@ -1970,11 +1977,19 @@
                 <a href="index.html#contactModal">Contact us</a>
             </nav>
             <div class="nav-actions">
+                <div class="als notranslate" translate="no">
+                    <button class="als-btn" type="button" aria-haspopup="listbox" aria-expanded="false"
+                            aria-label="Choose a language">
+                        <span class="als-globe" aria-hidden="true">🌐</span>
+                        <span class="als-code">EN</span>
+                        <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>
+                    </button>
+                </div>
                 <a href="index.html#location" class="location-btn">
                     <i class="fa-solid fa-location-dot"></i> Our Locations
                 </a>
-                <a href="index.html#contactModal" class="appointment-btn">
-                    <i class="fa-regular fa-calendar-check"></i> Book Appointment
+                <a href="https://erp.advityahealthcares.in/login" target="_blank" rel="noopener noreferrer" class="erp-login-btn" aria-label="ERP Login (opens in a new tab)">
+                    <i class="fa-solid fa-right-to-bracket"></i> ERP Login
                 </a>
                 <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
                     <i class="fa-solid fa-bars"></i>
@@ -3536,7 +3551,8 @@
             <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
 
             <div
-                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; font-size: 12px;">
+                class="footer-legal"
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                 <div style="margin-bottom: 10px;">
                     <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
                         Courtyard, Sector 50, Gurugram 122018</p>
@@ -3561,7 +3577,6 @@
     <script src="js/search-index.js?v=1"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>
-    <script src="js/lang-select.js?v=4"></script>
     <script src="js/contact-modal.js?v=1"></script>
     <script>
         AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic', offset: 90 });
