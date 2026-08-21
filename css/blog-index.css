@@ -20,7 +20,7 @@ html {
 .ob {
     --ob-max: 1200px;
     --ob-maroon: #8B1014;
-    --ob-brand: #C94239;
+    --ob-brand: #8E1B2E;
     --ob-body: #52403E;
     --ob-muted: #8C7A77;
     --ob-rule: #EFE1DC;
@@ -507,7 +507,7 @@ html {
     width: 100%;
     height: 100%;
     border-radius: 2px;
-    background: linear-gradient(180deg, var(--ob-brand, #C94239), var(--ob-maroon, #8B1014));
+    background: linear-gradient(180deg, var(--ob-brand, #8E1B2E), var(--ob-maroon, #8B1014));
     transform: scaleY(0);
     transform-origin: top center;
 }

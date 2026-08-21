@@ -10,7 +10,7 @@
     --blog-body: #5C4642;
     --blog-muted: #8A6F69;
     --blog-line: #F1DDD7;
-    --blog-brand: #9E1F2B;
+    --blog-brand: #8E1B2E;
     --blog-brand-soft: #FDF3EF;
     --blog-radius: 22px;
     --blog-shadow: 0 22px 48px -26px rgba(96, 40, 38, .34);
@@ -33,11 +33,11 @@
 .bc-cover--gi          { background: linear-gradient(140deg, #FDEEE8 0%, #F6D9CD 100%); }
 .bc-cover--cancer      { background: linear-gradient(140deg, #F9E6E4 0%, #EFC8C4 100%); }
 .bc-cover--pancreas    { background: linear-gradient(140deg, #FCF0DE 0%, #F2DBBE 100%); }
-.bc-cover--gallbladder { background: linear-gradient(140deg, #F0F4EC 0%, #DCE7D6 100%); }
+.bc-cover--gallbladder { background: linear-gradient(140deg, #FBF2EC 0%, #EEDCCE 100%); }
 .bc-cover--liver       { background: linear-gradient(140deg, #F7EAE4 0%, #E9D2C7 100%); }
-.bc-cover--surgery     { background: linear-gradient(140deg, #EEF1F6 0%, #DCE1EC 100%); }
+.bc-cover--surgery     { background: linear-gradient(140deg, #F7EFEE 0%, #E7D5D3 100%); }
 .bc-cover--stories     { background: linear-gradient(140deg, #FBEDEF 0%, #F1D5DA 100%); }
-.bc-cover--updates     { background: linear-gradient(140deg, #F1F2F0 0%, #E0E4DE 100%); }
+.bc-cover--updates     { background: linear-gradient(140deg, #F5F1EF 0%, #E4DBD6 100%); }
 
 /* ====================== 1. HERO ====================== */
 .bh {
@@ -105,7 +105,7 @@
 }
 
 .bh-crumbs a { color: rgba(247, 219, 213, .82); }
-.bh-crumbs a:hover { color: #F0A090; }
+.bh-crumbs a:hover { color: #EFB6A6; }
 .bh-crumbs span[aria-hidden] { opacity: .45; }
 
 .bh-badge {
@@ -126,7 +126,7 @@
     color: #F6CDC6;
 }
 
-.bh-badge i { color: #E9A23B; font-size: .84rem; }
+.bh-badge i { color: #CE7B34; font-size: .84rem; }
 
 .bh h1 {
     font-size: clamp(2.3rem, 5.4vw, 4rem);
@@ -140,7 +140,7 @@
 
 .bh h1 em {
     font-style: normal;
-    background: linear-gradient(100deg, #F6C9C2 0%, #E9A23B 60%, #F0A090 100%);
+    background: linear-gradient(100deg, #F6C9C2 0%, #CE7B34 60%, #EFB6A6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -175,7 +175,7 @@
 }
 
 .bh-btn-primary {
-    background: linear-gradient(120deg, #C0303C 0%, #9E1F2B 100%);
+    background: linear-gradient(120deg, #A32236 0%, #8E1B2E 100%);
     color: #fff;
     box-shadow: 0 16px 34px -16px rgba(192, 48, 60, .9);
 }
@@ -288,7 +288,7 @@
     text-transform: uppercase;
 }
 
-.bf-flag i { color: #E9A23B; }
+.bf-flag i { color: #CE7B34; }
 
 .bf-body {
     padding: clamp(30px, 4vw, 52px);
@@ -444,7 +444,7 @@
 .bn-pill:hover { background: #FDF3EF; color: var(--blog-brand); }
 
 .bn-pill.is-active {
-    background: linear-gradient(120deg, #C0303C 0%, #9E1F2B 100%);
+    background: linear-gradient(120deg, #A32236 0%, #8E1B2E 100%);
     border-color: transparent;
     color: #fff;
     box-shadow: 0 12px 24px -14px rgba(158, 31, 43, .85);
@@ -488,7 +488,7 @@
 .bn-search input::placeholder { color: #B29A94; }
 
 .bn-search input:focus {
-    border-color: #E08A84;
+    border-color: #EBB9AE;
     box-shadow: 0 0 0 4px rgba(224, 138, 132, .14);
 }
 
@@ -686,7 +686,7 @@
     display: block;
     height: 100%;
     border-radius: 999px;
-    background: linear-gradient(90deg, #C0303C, #E9A23B);
+    background: linear-gradient(90deg, #A32236, #CE7B34);
     transition: width .5s cubic-bezier(.22, .68, .3, 1);
 }
 
@@ -707,7 +707,7 @@
 }
 
 .bg-load:hover {
-    background: linear-gradient(120deg, #C0303C 0%, #9E1F2B 100%);
+    background: linear-gradient(120deg, #A32236 0%, #8E1B2E 100%);
     border-color: transparent;
     color: #fff;
     transform: translateY(-3px);
@@ -754,7 +754,7 @@
 }
 
 .bx-arrow:hover:not(:disabled) {
-    background: linear-gradient(120deg, #C0303C 0%, #9E1F2B 100%);
+    background: linear-gradient(120deg, #A32236 0%, #8E1B2E 100%);
     color: #fff;
     transform: translateY(-2px);
     border-color: transparent;
@@ -919,7 +919,7 @@
     font-weight: 600;
     letter-spacing: .14em;
     text-transform: uppercase;
-    color: #E9A23B;
+    color: #CE7B34;
 }
 
 .be-body p {
@@ -989,7 +989,7 @@
 }
 
 .bw-form input:focus {
-    border-color: #E08A84;
+    border-color: #EBB9AE;
     box-shadow: 0 0 0 4px rgba(224, 138, 132, .14);
 }
 
@@ -1001,7 +1001,7 @@
     padding: 16px 32px;
     border: 0;
     border-radius: 999px;
-    background: linear-gradient(120deg, #C0303C 0%, #9E1F2B 100%);
+    background: linear-gradient(120deg, #A32236 0%, #8E1B2E 100%);
     color: #fff;
     font-family: var(--font-heading);
     font-size: .95rem;
@@ -1025,7 +1025,7 @@
     border-radius: 16px;
     background: #FFFFFF;
     border: 1px solid var(--blog-line);
-    color: #3F7A4E;
+    color: #8E1B2E;
     font-size: .92rem;
 }
 
@@ -1152,7 +1152,7 @@
     height: 3px;
     margin: 22px auto 0;
     border-radius: 999px;
-    background: linear-gradient(90deg, #C0303C 0%, #E9A23B 100%);
+    background: linear-gradient(90deg, #A32236 0%, #CE7B34 100%);
 }
 
 /* ------------------------------ grid ------------------------------ */

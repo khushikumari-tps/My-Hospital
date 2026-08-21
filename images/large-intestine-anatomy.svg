@@ -114,11 +114,11 @@
   <!-- ================================= labels ================================= -->
   <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
     <g stroke="#C9A79E" stroke-width="1.4" fill="none">
-      <path d="M220 300 L128 300 L104 288"/>
+      <path d="M220 300 L206 300 L196 288"/>
       <path d="M380 178 L380 96 L356 84"/>
-      <path d="M186 492 L120 512 L96 512"/>
+      <path d="M186 492 L196 512 L204 512"/>
       <path d="M500 528 L500 566 L524 578"/>
-      <path d="M730 330 L784 330"/>
+      <path d="M730 330 L752 330"/>
     </g>
     <g fill="#C9A79E">
       <circle cx="220" cy="300" r="3.4"/>
@@ -127,20 +127,24 @@
       <circle cx="500" cy="528" r="3.4"/>
     </g>
 
-    <text x="98" y="284" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Ascending colon</text>
-    <text x="98" y="306" font-size="15" text-anchor="end">Water is reclaimed here</text>
+    <text x="190" y="284" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Ascending colon</text>
+    <text x="190" y="306" font-size="15" text-anchor="end">Water is reclaimed here</text>
 
     <text x="350" y="80" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Transverse colon</text>
     <text x="350" y="102" font-size="15" text-anchor="end">Crosses the upper abdomen</text>
 
-    <text x="90" y="508" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Caecum &amp; appendix</text>
-    <text x="90" y="530" font-size="15" text-anchor="end">Where the small bowel joins</text>
+    <!-- wrapped and pulled in: both lines ran past the left edge -->
+    <text x="212" y="508" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Caecum &amp; appendix</text>
+    <text x="212" y="530" font-size="15" text-anchor="end">Where the small</text>
+    <text x="212" y="548" font-size="15" text-anchor="end">bowel joins</text>
 
     <text x="530" y="574" font-size="21" font-weight="600" fill="#4A322E">Sigmoid &amp; rectum</text>
     <text x="530" y="596" font-size="15">The final stretch</text>
 
-    <text x="792" y="324" font-size="21" font-weight="600" fill="#4A322E">Polyp</text>
-    <text x="792" y="346" font-size="15">Removed at colonoscopy,</text>
-    <text x="792" y="366" font-size="15">before it can ever change</text>
+    <text x="758" y="324" font-size="21" font-weight="600" fill="#4A322E">Polyp</text>
+    <text x="758" y="346" font-size="15">Removed at</text>
+    <text x="758" y="364" font-size="15">colonoscopy,</text>
+    <text x="758" y="382" font-size="15">before it</text>
+    <text x="758" y="400" font-size="15">changes</text>
   </g>
 </svg>

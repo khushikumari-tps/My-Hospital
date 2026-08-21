@@ -1,0 +1,1665 @@
+/* ===================================================================
+   lp.css — Advitya Healthcares Google Ads surgical landing pages.
+
+   One system, six pages. Kept separate from style.css so a landing page
+   loads only what it needs, but the palette is now the same warm crimson
+   the main site uses, sampled from the logo - see the token block below.
+   An earlier revision of these pages ran a navy / medical-blue palette;
+   that is gone, and no blue remains anywhere in this file.
+
+   Section order follows the brief's wireframe: header, hero, trust strip,
+   condition, symptoms, diagnosis, treatment, visual, surgery, doctor,
+   journey, hospital, FAQ, final CTA, footer, sticky mobile bar.
+   =================================================================== */
+
+:root {
+    /* Every colour below is sampled from the Advitya logo, which is a
+       crimson mark: hue 348 through the reds, hue 6-25 for the coral and
+       orange of the rays. The token names are the ones the rest of this
+       file already references, so only the values have moved.
+
+       Red is the brand, but it is not the surface. The page is white; the
+       crimson carries the buttons, the CTA band and the footer, and the
+       coral is kept for small marks. That is what separates a specialist
+       hospital from an emergency banner. */
+
+    --lp-navy: #8E1B2E;
+    /* deep crimson: secondary-button text, skip link, light-button text */
+    --lp-navy-soft: #7A1626;
+    --lp-blue: #A32236;
+    /* primary action, gradient start */
+    --lp-blue-dark: #7C1526;
+    /* primary action gradient end, and the link colour */
+    --lp-sky: #FBF0EE;
+    --lp-sky-deep: #F2DFDB;
+    --lp-red: #B92D3C;
+    /* primary red: section labels and icons, lighter than the CTA crimson */
+    --lp-accent: #D9694F;
+    /* the coral of the rays, for single words, ticks and short rules */
+    --lp-orange: #CE7B34;
+
+    --lp-ink: #241A1B;
+    --lp-body: #55494A;
+    --lp-muted: #7C6E6F;
+    --lp-line: #ECDFDC;
+    --lp-bg: #FDF9F8;
+    --lp-card: #FFFFFF;
+
+    /* Elevation is burgundy-tinted rather than neutral, which sits better on
+       a warm white than grey does. */
+    --lp-shadow-sm: 0 1px 2px rgba(94, 16, 25, .05);
+    --lp-shadow: 0 10px 24px -12px rgba(94, 16, 25, .18), 0 2px 6px -3px rgba(94, 16, 25, .08);
+    --lp-shadow-lg: 0 26px 60px -24px rgba(94, 16, 25, .28), 0 8px 20px -10px rgba(94, 16, 25, .12);
+
+    --lp-radius: 18px;
+    --lp-radius-lg: 26px;
+
+    --lp-head: 'Manrope', 'Inter', system-ui, sans-serif;
+    --lp-sans: 'Inter', system-ui, sans-serif;
+
+    /* one easing and one duration scale for the whole page, so nothing
+       animates faster or snappier than anything else */
+    --lp-ease: cubic-bezier(.22, .61, .36, 1);
+    --lp-t: .55s;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Every in-page target sits below a sticky header, so give them all the
+   header's height as scroll margin - otherwise a jump to #appointment
+   lands with the heading hidden behind it. */
+body.lp :target,
+body.lp [id] {
+    scroll-margin-top: 88px;
+}
+
+body.lp {
+    margin: 0;
+    font-family: var(--lp-sans);
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--lp-body);
+    background: var(--lp-card);
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+}
+
+body.lp h1,
+body.lp h2,
+body.lp h3,
+body.lp h4 {
+    font-family: var(--lp-head);
+    color: var(--lp-ink);
+    line-height: 1.18;
+    letter-spacing: -.02em;
+    margin: 0 0 14px;
+}
+
+body.lp p {
+    margin: 0 0 16px;
+}
+
+/* Wrapped in :where() so this contributes no specificity at all. Written
+   plainly as `body.lp a` it scores higher than a single-class component
+   rule, which meant .lp-btn-primary lost the cascade and the primary
+   button rendered dark-blue-on-blue. Every component that colours its own
+   links now wins by default. */
+:where(body.lp a) {
+    color: var(--lp-blue-dark);
+    text-decoration: none;
+}
+
+body.lp img,
+body.lp svg {
+    max-width: 100%;
+}
+
+.lp-wrap {
+    width: min(1180px, 100% - 40px);
+    margin-inline: auto;
+}
+
+.lp-sec {
+    padding: 92px 0;
+}
+
+.lp-sec.is-tint {
+    background: var(--lp-bg);
+    border-block: 1px solid var(--lp-line);
+}
+
+.lp-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 14px;
+    padding: 7px 15px;
+    border-radius: 999px;
+    background: var(--lp-sky);
+    color: var(--lp-red);
+    font-family: var(--lp-head);
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.lp-h2 {
+    font-size: clamp(1.6rem, 3.1vw, 2.3rem);
+}
+
+.lp-lede {
+    font-size: 1.06rem;
+    max-width: 65ch;
+}
+
+.lp-head-c {
+    text-align: center;
+}
+
+.lp-head-c .lp-lede {
+    margin-inline: auto;
+}
+
+/* --------------------------- skip link ---------------------------- */
+/* Off-screen until it is tabbed to. A keyboard visitor should not have to
+   walk the header on every page to reach the content. */
+.lp-skip {
+    position: absolute;
+    left: 16px;
+    top: -100px;
+    z-index: 100;
+    padding: 12px 20px;
+    border-radius: 0 0 14px 14px;
+    background: var(--lp-navy);
+    color: #fff !important;
+    font-family: var(--lp-head);
+    font-weight: 700;
+    transition: top .2s var(--lp-ease);
+}
+
+.lp-skip:focus {
+    top: 0;
+}
+
+/* ----------------------------- header ----------------------------- */
+.lp-head {
+    position: sticky;
+    top: 0;
+    z-index: 60;
+    background: rgba(255, 255, 255, .92);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    backdrop-filter: saturate(180%) blur(12px);
+    border-bottom: 1px solid var(--lp-line);
+}
+
+.lp-head-in {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    min-height: 72px;
+}
+
+.lp-logo img {
+    display: block;
+    height: 42px;
+    width: auto;
+}
+
+.lp-head-name {
+    font-family: var(--lp-head);
+    font-weight: 700;
+    font-size: .95rem;
+    color: var(--lp-ink);
+    padding-left: 18px;
+    margin-right: auto;
+    border-left: 1px solid var(--lp-line);
+    /* two of the six pages carry a long official name here; it truncates
+       rather than pushing the Call and Book buttons out of the header */
+    min-width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.lp-head-acts {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* ----------------------------- buttons ---------------------------- */
+.lp-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: 999px;
+    font-family: var(--lp-head);
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform var(--lp-t) var(--lp-ease), box-shadow var(--lp-t) var(--lp-ease),
+        background-color .3s ease, color .3s ease, border-color .3s ease;
+}
+
+.lp-btn-primary {
+    background: linear-gradient(135deg, var(--lp-blue) 0%, var(--lp-blue-dark) 100%);
+    color: #fff;
+    box-shadow: 0 14px 26px -14px rgba(124, 21, 38, .9);
+}
+
+.lp-btn-primary:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 34px -14px rgba(124, 21, 38, 1);
+}
+
+.lp-btn-ghost {
+    background: #fff;
+    color: var(--lp-navy);
+    border-color: var(--lp-line);
+}
+
+.lp-btn-ghost:hover {
+    border-color: var(--lp-blue);
+    color: var(--lp-blue-dark);
+    transform: translateY(-2px);
+}
+
+.lp-btn-wa {
+    background: #fff;
+    color: #8E1B2E;
+    border-color: #EBD3C6;
+}
+
+.lp-btn-wa:hover {
+    background: #F1FBF5;
+    color: #7C1526;
+    transform: translateY(-2px);
+}
+
+.lp-btn-light {
+    background: #fff;
+    color: var(--lp-navy);
+}
+
+.lp-btn-light:hover {
+    color: var(--lp-blue-dark);
+    transform: translateY(-2px);
+}
+
+.lp-btn-line-light {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255, 255, 255, .5);
+}
+
+.lp-btn-line-light:hover {
+    background: rgba(255, 255, 255, .12);
+    border-color: #fff;
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* ------------------------------ hero ------------------------------ */
+.lp-hero {
+    position: relative;
+    overflow: hidden;
+    padding: 74px 0 84px;
+    background:
+        radial-gradient(60% 70% at 88% 8%, rgba(217, 105, 79, .13), transparent 62%),
+        radial-gradient(50% 60% at 4% 92%, rgba(224, 138, 78, .10), transparent 64%),
+        linear-gradient(180deg, #FFFFFF 0%, var(--lp-bg) 100%);
+}
+
+.lp-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.02fr) minmax(0, .98fr);
+    gap: 54px;
+    align-items: center;
+}
+
+.lp-hero h1 {
+    font-size: clamp(2rem, 4.6vw, 3.25rem);
+    letter-spacing: -.032em;
+    margin-bottom: 18px;
+}
+
+.lp-hero-sub {
+    font-size: 1.12rem;
+    max-width: 54ch;
+    margin-bottom: 24px;
+}
+
+/* the surgeon line, immediately under the promise, because the brief
+   ranks trust above everything else on these pages */
+/* Where the consultation actually happens, said in the hero rather than
+   only in the footer - a campaign visitor decides on distance as much as on
+   specialty. */
+.lp-hero-where {
+    display: flex;
+    align-items: baseline;
+    gap: 9px;
+    max-width: 460px;
+    margin: 0 0 16px;
+    font-size: .93rem;
+    color: var(--lp-muted);
+}
+
+.lp-hero-where i {
+    color: var(--lp-blue);
+}
+
+.lp-hero-doc {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    max-width: 460px;
+    margin: 0 0 26px;
+    padding: 12px 16px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: #fff;
+    box-shadow: var(--lp-shadow-sm);
+}
+
+.lp-hero-doc img {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    flex-shrink: 0;
+}
+
+.lp-hero-doc b {
+    display: block;
+    font-family: var(--lp-head);
+    color: var(--lp-ink);
+    font-size: .98rem;
+}
+
+.lp-hero-doc span {
+    display: block;
+    font-size: .86rem;
+    color: var(--lp-muted);
+    line-height: 1.45;
+}
+
+/* The address line under the surgeon's name. Smaller than the designation
+   and allowed to wrap to two lines on a phone rather than being truncated —
+   a partial address is worse than a tall chip. */
+.lp-hero-doc-addr {
+    margin-top: 4px;
+    font-size: .78rem !important;
+}
+
+.lp-hero-doc-addr i {
+    color: var(--lp-blue);
+    margin-right: 4px;
+}
+
+.lp-hero-doc-addr a {
+    color: var(--lp-blue);
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.lp-hero-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.lp-hero-note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 20px 0 0;
+    font-size: .9rem;
+    color: var(--lp-muted);
+}
+
+.lp-hero-note i {
+    color: var(--lp-accent);
+}
+
+/* --------------------- the medical visual stage -------------------- */
+.lp-stage {
+    position: relative;
+    padding: 22px;
+    border-radius: var(--lp-radius-lg);
+    border: 1px solid var(--lp-line);
+    background: linear-gradient(165deg, #fff 0%, var(--lp-sky) 100%);
+    box-shadow: var(--lp-shadow-lg);
+}
+
+/* The halo bleeds above the card but not sideways. With a -12% horizontal
+   inset it reached past the section it sits in — clipped out of sight by
+   the hero's own overflow, but on the condition section it added 64px of
+   document width at tablet size, which is a horizontal scrollbar. */
+.lp-stage::before {
+    content: '';
+    position: absolute;
+    inset: -18% 0 auto 0;
+    height: 70%;
+    z-index: -1;
+    background: radial-gradient(58% 60% at 50% 40%, rgba(163, 34, 54, .16), transparent 72%);
+    filter: blur(10px);
+}
+
+.lp-stage img,
+.lp-stage svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: var(--lp-radius);
+    /* the file is drawn on white; the radius has to clip it */
+    background: #fff;
+}
+
+/* A portrait in the stage rather than a diagram. The photograph is 2:3, and
+   at full width beside a paragraph of copy it makes the hero twice as tall as
+   it needs to be, with the text floating in the middle of the empty half.
+   Framing it to 4:5 and cropping from the top keeps the face large and the
+   two columns in proportion. */
+.lp-stage.is-portrait img {
+    aspect-ratio: 4 / 5;
+    max-height: 540px;
+    object-fit: cover;
+    object-position: top center;
+    margin-inline: auto;
+}
+
+@media (max-width: 860px) {
+    .lp-stage.is-portrait img {
+        aspect-ratio: 3 / 2;
+        max-height: 340px;
+    }
+}
+
+/* Slow drift plus a breathing halo. This is the "3D feel" the brief asks
+   for, done with two transforms instead of a WebGL payload — nothing to
+   download, nothing to block the LCP, and it degrades to a still image
+   the moment a visitor prefers reduced motion. */
+.lp-stage.is-float img,
+.lp-stage.is-float svg {
+    animation: lpFloat 9s var(--lp-ease) infinite;
+}
+
+@keyframes lpFloat {
+
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+
+    50% {
+        transform: translate3d(0, -12px, 0) rotate(-.5deg);
+    }
+}
+
+.lp-stage-pulse {
+    position: absolute;
+    width: 132px;
+    height: 132px;
+    border-radius: 50%;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(163, 34, 54, .22), rgba(163, 34, 54, 0) 68%);
+    animation: lpPulse 4.5s ease-in-out infinite;
+}
+
+@keyframes lpPulse {
+
+    0%,
+    100% {
+        transform: scale(.86);
+        opacity: .55;
+    }
+
+    50% {
+        transform: scale(1.12);
+        opacity: 1;
+    }
+}
+
+.lp-stage-cap {
+    margin: 14px 4px 0;
+    font-size: .84rem;
+    color: var(--lp-muted);
+    text-align: center;
+}
+
+/* --------------------------- trust strip -------------------------- */
+.lp-trust {
+    background: var(--lp-navy);
+    color: #fff;
+    padding: 26px 0;
+}
+
+.lp-trust-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.lp-trust-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.lp-trust-item i {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .1);
+    color: #F2B9A6;
+    font-size: .95rem;
+}
+
+.lp-trust-item b {
+    display: block;
+    font-family: var(--lp-head);
+    font-size: .95rem;
+    color: #fff;
+}
+
+.lp-trust-item span {
+    display: block;
+    font-size: .84rem;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .72);
+}
+
+/* ------------------------- two-column split ------------------------ */
+.lp-split {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 54px;
+    align-items: center;
+}
+
+.lp-split.is-reverse .lp-split-art {
+    order: -1;
+}
+
+/* A split whose art side is a timeline is much taller than its intro, so
+   centring the intro drops it into the middle of a column of white. Pin it
+   to the top instead, and let it ride down beside the steps on a screen
+   wide enough for two columns. */
+.lp-split:has(.lp-timeline) {
+    align-items: start;
+}
+
+@media (min-width: 861px) {
+    .lp-split:has(.lp-timeline) > div:not(.lp-split-art):not(.lp-timeline) {
+        position: sticky;
+        top: 104px;
+    }
+}
+
+/* ------------------------------ cards ----------------------------- */
+.lp-grid {
+    display: grid;
+    gap: 22px;
+    margin-top: 42px;
+}
+
+.lp-grid.cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.lp-grid.cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.lp-card {
+    padding: 28px 26px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: var(--lp-card);
+    box-shadow: var(--lp-shadow-sm);
+    transition: transform var(--lp-t) var(--lp-ease), box-shadow var(--lp-t) var(--lp-ease),
+        border-color .4s ease;
+}
+
+.lp-card:hover {
+    transform: translateY(-5px);
+    border-color: #EBC9C1;
+    box-shadow: var(--lp-shadow);
+}
+
+.lp-card h3 {
+    font-size: 1.08rem;
+    margin-bottom: 8px;
+}
+
+.lp-card p {
+    margin: 0;
+    font-size: .98rem;
+}
+
+.lp-ico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 16px;
+    border-radius: 14px;
+    font-size: 1.05rem;
+    color: var(--lp-blue-dark);
+    background: var(--lp-sky);
+    transition: transform var(--lp-t) var(--lp-ease), background-color .4s ease, color .4s ease;
+}
+
+.lp-card:hover .lp-ico {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, var(--lp-blue), var(--lp-blue-dark));
+    color: #fff;
+}
+
+/* ------------------------------ lists ----------------------------- */
+.lp-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 12px;
+}
+
+.lp-list li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: 1rem;
+}
+
+.lp-list li::before {
+    content: '\f00c';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    margin-top: .2em;
+    border-radius: 50%;
+    font-size: .62rem;
+    color: var(--lp-accent);
+    background: rgba(217, 105, 79, .12);
+}
+
+/* ---------------------------- timeline ---------------------------- */
+.lp-timeline {
+    position: relative;
+    margin-top: 46px;
+    padding-left: 34px;
+}
+
+.lp-timeline::before {
+    content: '';
+    position: absolute;
+    left: 11px;
+    top: 6px;
+    bottom: 6px;
+    width: 2px;
+    background: linear-gradient(180deg, var(--lp-blue), rgba(163, 34, 54, .12));
+}
+
+.lp-step {
+    position: relative;
+    padding: 0 0 30px;
+}
+
+.lp-step:last-child {
+    padding-bottom: 0;
+}
+
+.lp-step::before {
+    content: '';
+    position: absolute;
+    left: -34px;
+    top: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid var(--lp-blue);
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(163, 34, 54, .1);
+}
+
+.lp-step h3 {
+    font-size: 1.04rem;
+    margin-bottom: 4px;
+}
+
+.lp-step p {
+    margin: 0;
+    font-size: .97rem;
+}
+
+.lp-step-n {
+    display: inline-block;
+    margin-bottom: 4px;
+    font-family: var(--lp-head);
+    font-size: .74rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    color: var(--lp-blue);
+}
+
+/* --------------------------- doctor card -------------------------- */
+.lp-doc {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    gap: 46px;
+    align-items: stretch;
+    padding: 34px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius-lg);
+    background: var(--lp-card);
+    box-shadow: var(--lp-shadow);
+}
+
+/* The frame is pinned to the photograph's own 681x1024 ratio rather than
+   being stretched to the height of the text beside it. Stretching made the
+   box narrower than the image whenever the bio ran long, and object-fit:
+   cover then trimmed about a tenth off each side - which is exactly where
+   the Advitya badge on the coat sits, so it was the first thing cut.
+   Matching the ratio leaves cover nothing to crop. */
+.lp-doc-photo {
+    margin: 0;
+    align-self: start;
+    aspect-ratio: 681 / 1024;
+    border-radius: var(--lp-radius);
+    overflow: hidden;
+    background: var(--lp-sky);
+}
+
+.lp-doc-photo picture {
+    display: block;
+    height: 100%;
+}
+
+.lp-doc-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform 1s var(--lp-ease);
+}
+
+.lp-doc:hover .lp-doc-photo img {
+    transform: scale(1.03);
+}
+
+.lp-doc-role {
+    font-family: var(--lp-head);
+    font-weight: 700;
+    color: var(--lp-blue-dark);
+    margin-bottom: 12px;
+}
+
+.lp-cred {
+    list-style: none;
+    margin: 0 0 22px;
+    padding: 0;
+    display: grid;
+    gap: 9px;
+    font-size: .97rem;
+}
+
+.lp-cred li {
+    display: flex;
+    gap: 11px;
+    align-items: flex-start;
+}
+
+.lp-cred i {
+    color: var(--lp-blue);
+    margin-top: .28em;
+    font-size: .8rem;
+}
+
+/* --------------------------- hospital ----------------------------- */
+.lp-venues {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.lp-venue {
+    padding: 24px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: #fff;
+    box-shadow: var(--lp-shadow-sm);
+}
+
+.lp-venue h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.lp-venue address {
+    font-style: normal;
+    font-size: .94rem;
+    color: var(--lp-body);
+    margin-bottom: 12px;
+}
+
+/* A directions link is a call to action, not body copy: 19px of line box
+   is not a tap target, so it carries its own height. */
+.lp-venue a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    font-weight: 600;
+    font-size: .94rem;
+}
+
+/* ------------------------------ FAQ ------------------------------- */
+.lp-faq {
+    margin-top: 40px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: #fff;
+    overflow: hidden;
+}
+
+.lp-faq details {
+    border-bottom: 1px solid var(--lp-line);
+}
+
+.lp-faq details:last-child {
+    border-bottom: 0;
+}
+
+.lp-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    cursor: pointer;
+    list-style: none;
+    font-family: var(--lp-head);
+    font-weight: 700;
+    color: var(--lp-ink);
+    transition: background-color .3s ease, color .3s ease;
+}
+
+.lp-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.lp-faq summary::after {
+    content: '\002B';
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background: var(--lp-sky);
+    color: var(--lp-blue-dark);
+    font-weight: 700;
+    transition: transform .4s var(--lp-ease), background-color .3s ease;
+}
+
+.lp-faq details[open] summary::after {
+    content: '\2212';
+    transform: rotate(180deg);
+}
+
+.lp-faq summary:hover {
+    background: var(--lp-bg);
+}
+
+.lp-faq-body {
+    padding: 0 24px 22px;
+    font-size: .99rem;
+}
+
+.lp-faq-body p:last-child {
+    margin-bottom: 0;
+}
+
+/* ---------------------- appointment / final CTA -------------------- */
+.lp-cta {
+    position: relative;
+    overflow: hidden;
+    color: #fff;
+    background:
+        radial-gradient(45% 60% at 12% 10%, rgba(163, 34, 54, .55), transparent 60%),
+        radial-gradient(40% 55% at 92% 4%, rgba(217, 105, 79, .34), transparent 62%),
+        linear-gradient(140deg, #7A1626 0%, #4A0C14 100%);
+}
+
+.lp-cta h2,
+.lp-cta h3 {
+    color: #fff;
+}
+
+.lp-cta-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+    gap: 50px;
+    align-items: start;
+}
+
+/* The band is dark, so its paragraphs are near-white — but the appointment
+   form sits inside the same section on a white card, and its paragraphs are
+   not on the dark ground. Excluded here rather than patched afterwards. */
+.lp-cta p:not(.lp-form p) {
+    color: rgba(255, 255, 255, .82);
+}
+
+.lp-cta-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 26px;
+}
+
+.lp-cta-meta {
+    margin-top: 30px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255, 255, 255, .16);
+    font-size: .93rem;
+    color: rgba(255, 255, 255, .74);
+}
+
+.lp-cta-meta b {
+    color: #fff;
+}
+
+.lp-form {
+    padding: 28px;
+    border-radius: var(--lp-radius-lg);
+    background: #fff;
+    box-shadow: var(--lp-shadow-lg);
+}
+
+.lp-form h3 {
+    font-size: 1.2rem;
+}
+
+.lp-form-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.lp-field {
+    margin-bottom: 14px;
+}
+
+.lp-field label {
+    display: block;
+    margin-bottom: 6px;
+    font-size: .84rem;
+    font-weight: 600;
+    color: var(--lp-ink);
+}
+
+.lp-field input,
+.lp-field select,
+.lp-field textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid var(--lp-line);
+    border-radius: 12px;
+    background: #fff;
+    font-family: inherit;
+    font-size: .97rem;
+    color: var(--lp-ink);
+    transition: border-color .25s ease, box-shadow .25s ease;
+}
+
+.lp-field textarea {
+    min-height: 96px;
+    resize: vertical;
+}
+
+.lp-field input:focus,
+.lp-field select:focus,
+.lp-field textarea:focus {
+    outline: none;
+    border-color: var(--lp-blue);
+    box-shadow: 0 0 0 4px rgba(163, 34, 54, .13);
+}
+
+.lp-consent {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 4px 0 18px;
+    font-size: .84rem;
+    color: var(--lp-muted);
+}
+
+.lp-consent input {
+    margin-top: .25em;
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.lp-form .lp-btn {
+    width: 100%;
+}
+
+/* clear of the submit button's shadow, which was falling across it */
+body.lp .lp-form-note {
+    position: relative;
+    margin: 20px 0 0;
+    font-size: .8rem;
+    color: var(--lp-muted);
+    text-align: center;
+}
+
+/* ------------------------- statement note ------------------------- */
+/* For the one or two sentences on a page that a visitor must not skim
+   past - that symptoms are not a diagnosis, that a named operation is not
+   what every patient needs. Styled as the page speaking rather than as
+   another card, so it reads differently from the content around it. */
+.lp-note {
+    display: flex;
+    gap: 14px;
+    align-items: flex-start;
+    margin-top: 34px;
+    padding: 22px 24px;
+    border: 1px solid var(--lp-sky-deep);
+    border-left: 3px solid var(--lp-blue);
+    border-radius: 14px;
+    background: var(--lp-sky);
+}
+
+.lp-note i {
+    flex: none;
+    margin-top: 5px;
+    color: var(--lp-blue);
+}
+
+.lp-note p {
+    margin: 0;
+    font-size: .95rem;
+}
+
+.lp-note b {
+    color: var(--lp-ink);
+}
+
+/* The clinical name of a procedure, under the plain-English heading. */
+.lp-h2-sub {
+    margin: -6px 0 14px;
+    font-family: var(--lp-head);
+    font-size: clamp(1rem, 1.8vw, 1.15rem);
+    font-weight: 600;
+    letter-spacing: .01em;
+    color: var(--lp-accent);
+}
+
+/* Key for an illustration that distinguishes two states. Repeated in HTML
+   rather than left inside the drawing alone, so it is readable at the size
+   a phone renders the figure at. */
+.lp-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    margin: 16px 4px 0;
+}
+
+.lp-key span {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: .86rem;
+    color: var(--lp-muted);
+}
+
+.lp-key i {
+    flex: none;
+    width: 24px;
+    height: 15px;
+    border: 1px solid var(--lp-line);
+    border-radius: 4px;
+}
+
+/* --------------------------- disclaimer --------------------------- */
+.lp-disclaimer {
+    padding: 22px 24px;
+    margin-top: 46px;
+    border: 1px solid var(--lp-line);
+    border-left: 3px solid var(--lp-accent);
+    border-radius: 14px;
+    background: var(--lp-bg);
+    font-size: .9rem;
+    color: var(--lp-muted);
+}
+
+.lp-disclaimer b {
+    color: var(--lp-ink);
+}
+
+/* The closing disclaimer follows the maroon appointment band. It needs enough
+   top padding not to butt against the dark block, and no more: the full 92px
+   section rhythm left an empty gap before the footer. */
+.lp-sec-note {
+    padding: 28px 0 32px;
+}
+
+/* ------------------------------ map ------------------------------- */
+/* A facade, not an embed: the iframe is only created when the visitor asks
+   for the map, so Google's frame never competes with the hero for the
+   first paint of a page that is paying for its traffic. */
+.lp-map {
+    margin-top: 26px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: var(--lp-card);
+    overflow: hidden;
+}
+
+.lp-map-face {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+}
+
+.lp-map-face > div {
+    margin-right: auto;
+}
+
+.lp-map-face b {
+    display: block;
+    font-family: var(--lp-head);
+    color: var(--lp-ink);
+}
+
+.lp-map-face span {
+    font-size: .92rem;
+    color: var(--lp-muted);
+}
+
+.lp-map iframe {
+    display: block;
+    width: 100%;
+    height: 340px;
+    border: 0;
+}
+
+@media (max-width: 620px) {
+    .lp-map-face {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .lp-map-face .lp-btn {
+        width: 100%;
+    }
+
+    .lp-map iframe {
+        height: 260px;
+    }
+}
+
+/* -------------------------- legal pages --------------------------- */
+/* Privacy and terms are read, not scanned, so the measure is narrower
+   than a landing-page section and the headings get room above them. */
+.lp-legal {
+    max-width: 780px;
+}
+
+.lp-legal h1 {
+    font-size: clamp(1.9rem, 4vw, 2.6rem);
+    margin-bottom: 16px;
+}
+
+.lp-legal .lp-h2 {
+    margin-top: 44px;
+    font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+}
+
+.lp-legal p,
+.lp-legal li {
+    max-width: 68ch;
+}
+
+.lp-legal ul {
+    margin: 0 0 16px;
+    padding-left: 20px;
+}
+
+.lp-legal li {
+    margin-bottom: 8px;
+}
+
+/* ----------------------------- footer ----------------------------- */
+.lp-foot {
+    padding: 46px 0 34px;
+    background: #4A0C14;
+    color: rgba(255, 255, 255, .72);
+    font-size: .92rem;
+}
+
+.lp-foot-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 30px;
+}
+
+/* body.lp h4 scores (0,1,2) and this rule scored (0,1,1), so the generic
+   dark heading colour won and the footer column headings rendered near-black
+   on the dark footer — invisible. Scoped through body.lp to outrank it. */
+body.lp .lp-foot h4 {
+    color: #fff;
+    font-size: .98rem;
+    margin-bottom: 12px;
+}
+
+.lp-foot a {
+    color: rgba(255, 255, 255, .82);
+}
+
+.lp-foot a:hover {
+    color: #fff;
+}
+
+.lp-foot-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 18px;
+    padding-top: 22px;
+    margin-top: 28px;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+    font-size: .86rem;
+}
+
+/* Footer links are the last contact point on the page and are tapped with
+   a thumb like everything else here. Only on touch, so a mouse-driven
+   desktop keeps the tighter footer it was designed with. */
+@media (pointer: coarse) {
+
+    .lp-foot a,
+    .lp-foot-links a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    /* The phone number in the closing CTA panel and under the form is a
+       conversion, not decoration - a thumb should not have to find an 18px
+       line of text. The links inside running sentences elsewhere are left
+       alone; padding them out would break the paragraph. */
+    .lp-cta-meta a[href^="tel:"],
+    .lp-cta-meta a[href^="mailto:"],
+    .lp-form-note a[href^="tel:"] {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+}
+
+/* ------------------------ sticky mobile bar ----------------------- */
+.lp-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 70;
+    display: none;
+    background: rgba(255, 255, 255, .97);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    border-top: 1px solid var(--lp-line);
+    box-shadow: 0 -8px 24px -14px rgba(74, 12, 20, .35);
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px));
+}
+
+.lp-sticky-in {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+}
+
+.lp-sticky a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    min-height: 52px;
+    border-radius: 14px;
+    font-family: var(--lp-head);
+    font-size: .78rem;
+    font-weight: 700;
+    border: 1px solid var(--lp-line);
+    color: var(--lp-navy);
+    background: #fff;
+}
+
+.lp-sticky a i {
+    font-size: 1rem;
+}
+
+.lp-sticky a.is-call {
+    color: var(--lp-blue-dark);
+}
+
+.lp-sticky a.is-wa {
+    color: #8E1B2E;
+}
+
+.lp-sticky a.is-book {
+    border-color: transparent;
+    color: #fff;
+    background: linear-gradient(135deg, var(--lp-blue), var(--lp-blue-dark));
+}
+
+/* --------------------------- reveal ------------------------------- */
+/* Scroll-triggered reveal, driven by an IntersectionObserver in lp.js.
+   The hidden state is applied by that script, never in the stylesheet —
+   if the script fails to load, the content is simply visible. */
+.lp-reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity .8s var(--lp-ease), transform .8s var(--lp-ease);
+}
+
+.lp-reveal.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+/* ------------------------- pending details ------------------------ */
+/* A block that says out loud what has not been supplied yet. Dashed, muted
+   and clearly not part of the finished page, so nobody mistakes a
+   placeholder for a claim - and so it is obvious at a glance when it is
+   still sitting on a page that has gone live. */
+.lp-tbc {
+    margin-top: 28px;
+    padding: 20px 22px;
+    border: 1px dashed var(--lp-line);
+    border-left: 3px solid var(--lp-accent);
+    border-radius: 14px;
+    background: var(--lp-bg);
+    font-size: .92rem;
+    color: var(--lp-muted);
+}
+
+.lp-tbc b {
+    display: block;
+    margin-bottom: 10px;
+    font-family: var(--lp-head);
+    color: var(--lp-ink);
+}
+
+.lp-tbc ul {
+    margin: 0 0 12px;
+    padding-left: 20px;
+}
+
+.lp-tbc li {
+    margin-bottom: 6px;
+}
+
+.lp-tbc span {
+    display: block;
+    font-size: .86rem;
+}
+
+/* --------------------------- form errors -------------------------- */
+/* Validation messages are rendered by lp.js next to the field they belong
+   to and tied to it with aria-describedby, so the message reaches a screen
+   reader as part of the field rather than as loose text on the page. */
+.lp-err {
+    margin: 6px 0 0;
+    font-size: .86rem;
+    color: #B3261E;
+}
+
+.lp-field input[aria-invalid="true"],
+.lp-field select[aria-invalid="true"],
+.lp-field textarea[aria-invalid="true"] {
+    border-color: #B3261E;
+    background: #FEF6F5;
+}
+
+.lp-consent input[aria-invalid="true"] {
+    outline: 2px solid #B3261E;
+    outline-offset: 2px;
+}
+
+.lp-btn[aria-busy="true"] {
+    opacity: .7;
+    pointer-events: none;
+}
+
+/* ----------------------------- icons ------------------------------ */
+/* Font Awesome is fetched off the critical path, so the glyphs can arrive
+   after first paint. Reserving a square em for each one means the label
+   beside it never moves when they do - the icons fade in, the layout does
+   not shift. */
+body.lp .fa-solid,
+body.lp .fa-regular,
+body.lp .fa-brands {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    line-height: 1;
+    text-align: center;
+    font-style: normal;
+}
+
+/* ---------------------------- focus ------------------------------- */
+/* Keyboard users get one ring, drawn the same way on every control. Only
+   :focus-visible, so a mouse click on a button does not leave a ring
+   behind it. The outline follows the pill radius of .lp-btn, so nothing
+   here has to know a component's shape. */
+body.lp a:focus-visible,
+body.lp button:focus-visible,
+body.lp summary:focus-visible,
+body.lp input:focus-visible,
+body.lp select:focus-visible,
+body.lp textarea:focus-visible,
+body.lp [tabindex]:focus-visible {
+    outline: 3px solid var(--lp-blue);
+    outline-offset: 3px;
+}
+
+/* On the navy final-CTA panel and in the footer a blue ring disappears
+   into the background, so those get a white one. */
+.lp-cta a:focus-visible,
+.lp-cta button:focus-visible,
+.lp-foot a:focus-visible {
+    outline-color: #ffffff;
+}
+
+/* ============================ responsive =========================== */
+@media (max-width: 1080px) {
+    .lp-sec {
+        padding: 74px 0;
+    }
+
+    .lp-hero-grid,
+    .lp-split,
+    .lp-cta-grid {
+        gap: 40px;
+    }
+
+    .lp-trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lp-grid.cols-3 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lp-venues {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 860px) {
+
+    .lp-hero-grid,
+    .lp-split,
+    .lp-cta-grid,
+    .lp-doc {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    /* the visual leads on a phone: it explains the page before the copy */
+    .lp-split.is-reverse .lp-split-art {
+        order: 0;
+    }
+
+    .lp-doc {
+        gap: 28px;
+        padding: 24px;
+    }
+
+    .lp-doc-photo {
+        max-width: 320px;
+    }
+
+    .lp-doc-photo img {
+        height: auto;
+    }
+
+    .lp-head-name {
+        display: none;
+    }
+
+    /* the header keeps one button; the rest of the conversion surface is
+       the sticky bar at the bottom of the screen */
+    .lp-head-acts .lp-btn-ghost {
+        display: none;
+    }
+
+    .lp-sticky {
+        display: block;
+    }
+
+    body.lp {
+        padding-bottom: 76px;
+    }
+}
+
+@media (max-width: 620px) {
+    .lp-wrap {
+        width: min(1180px, 100% - 28px);
+    }
+
+    .lp-sec {
+        padding: 56px 0;
+    }
+
+    .lp-hero {
+        padding: 44px 0 58px;
+    }
+
+    .lp-grid.cols-3,
+    .lp-grid.cols-2,
+    .lp-venues,
+    .lp-form-row,
+    .lp-foot-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lp-trust-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 14px;
+    }
+
+    .lp-card {
+        padding: 22px 20px;
+    }
+
+    .lp-stage {
+        padding: 14px;
+    }
+
+    .lp-form {
+        padding: 22px 18px;
+    }
+
+    .lp-faq summary {
+        padding: 17px 18px;
+        font-size: .97rem;
+    }
+
+    .lp-faq-body {
+        padding: 0 18px 18px;
+    }
+
+    /* full-width taps on a phone rather than three stubs in a row */
+    .lp-hero-acts .lp-btn,
+    .lp-cta-acts .lp-btn {
+        width: 100%;
+    }
+}
+
+/* Motion is decoration here — the drift, the pulse and the reveal all
+   stop, and nothing on the page depends on any of them having run. */
+@media (prefers-reduced-motion: reduce) {
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    .lp-stage.is-float img,
+    .lp-stage.is-float svg,
+    .lp-stage-pulse {
+        animation: none;
+    }
+
+    .lp-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .lp-card,
+    .lp-btn,
+    .lp-ico,
+    .lp-doc-photo img {
+        transition: none;
+    }
+
+    .lp-card:hover,
+    .lp-btn:hover,
+    .lp-card:hover .lp-ico,
+    .lp-doc:hover .lp-doc-photo img {
+        transform: none;
+    }
+}

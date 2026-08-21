@@ -7,10 +7,10 @@
     <title>The Story of PancreaCare | Advitya Healthcares</title>
     <meta name="description"
         content="Our journey: from pancreatic specialists to comprehensive digestive care">
-    <link rel="stylesheet" href="css/style.css?v=21">
+    <link rel="stylesheet" href="css/style.css?v=24">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
-    <link rel="stylesheet" href="css/erp-nav.css?v=1">
+    <link rel="stylesheet" href="css/erp-nav.css?v=2">
     <!-- async, and ahead of the third-party bundles: the header must not
          wait on a CDN to get its language selector wired up -->
     <script src="js/lang-select.js?v=5" async></script>
@@ -39,6 +39,64 @@
             font-weight: 500;
         }
         
+        /* The plate beside About PancreaCare+. It holds the pancreas chart on
+           the card frame the What We Do page uses - same radius, same border,
+           same wash behind it - so the illustration reads as part of the page
+           rather than as a picture dropped into it. */
+        .story-plate {
+            /* 1.25 rather than 1: the copy beside it runs two paragraphs deep,
+               and at an even split the plate read as the smaller half of the
+               row. The cap is for the eye, not the file - the chart is vector
+               and stays sharp at any width, but past about 660px it starts to
+               crowd the paragraphs beside it. */
+            flex: 1.25 1 0;
+            max-width: 660px;
+            /* The plate wraps under the copy rather than sharing a 768px row
+               with it: at that width both columns land near 340px, which left
+               the illustration's labels too small to read and the paragraph
+               breaking every four or five words. 420px is the narrowest the
+               chart stays legible at, and it makes the row break between the
+               tablet and small-laptop sizes rather than inside the tablet. */
+            min-width: min(420px, 100%);
+            margin: 0 auto;
+            padding: 16px;
+            border-radius: 26px;
+            border: 1px solid var(--border-color);
+            background: linear-gradient(165deg, #fff 0%, var(--bg-light) 100%);
+            box-shadow: var(--shadow-lg);
+            overflow: hidden;
+        }
+
+        /* width and height on the tag give the box its ratio up front, so
+           nothing below shifts while the chart is still loading */
+        .story-plate img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 16px;
+            transition: transform .6s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .story-plate:hover img {
+            transform: scale(1.03);
+        }
+
+        @media (max-width: 620px) {
+            .story-plate {
+                padding: 14px;
+                border-radius: 20px;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            .story-plate img,
+            .story-plate:hover img {
+                transition: none;
+                transform: none;
+            }
+        }
+
         .story-section {
             padding: 60px 0;
         }
@@ -147,23 +205,26 @@
     </style>
 <!-- last stylesheet on purpose: mobile fixes must win over the
      CDN sheets above, never fight them for the cascade -->
-<link rel="stylesheet" href="css/responsive.css?v=1">
+<link rel="stylesheet" href="css/responsive.css?v=7">
+    <!-- PancreaCare pages only: the wordmark is a different shape to the
+         Advitya mark and has to be sized by width, not height -->
+    <link rel="stylesheet" href="css/pcare-brand.css?v=2">
 </head>
 
 <body>
     <!-- Navbar -->
     <header class="navbar navbar-pancreas">
         <div class="container nav-container">
-            <div class="logo">
+            <div class="logo logo-pcare">
                 <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
-                    <img src="images/advitya_logo_nav.png" alt="Advitya Healthcares">
+                    <img src="images/image.png" alt="PancreaCare by Advitya Healthcares">
                 </a>
             </div>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
+                <a href="pancrea-care.html">Home</a>
+                <a href="the-story-of-pancreacare.html" class="active">About Us</a>
                 <div class="dropdown advmega">
-                    <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <a href="related-diseases.html" class="dropbtn" data-follow-link>Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content advmega-panel">
                         <div class="advmega-item">
                             <a class="advmega-link" href="diseases/pancreas/">Pancreas<span class="advmega-sign" aria-hidden="true"></span></a>
@@ -237,7 +298,7 @@
                     </div>
                 </div>
                 <a href="what-we-do.html">What We Do</a>
-                <a href="index.html#contactModal">Contact</a>
+                <a href="index.html#contactModal">Contact Us</a>
             </nav>
             <div class="nav-actions">
                 <div class="als notranslate" translate="no">
@@ -287,9 +348,16 @@
                     </div>
                 </div>
                 <!-- Image Column -->
-                <div style="flex: 1; min-width: min(300px, 100%); display: flex; justify-content: center; align-items: center; background-color: #e5e5e5; padding: 40px; border-radius: 8px;">
-                    <img src="images/pancreas_illustration.png" alt="Pancreas Illustration" style="width: 100%; max-width: 450px; mix-blend-mode: multiply;">
-                </div>
+                <!-- The chart that used to sit here was a watermarked stock comp,
+                     and a whole-body organ diagram at that - on a page about a
+                     unit built around one organ. This is the pancreas plate the
+                     site draws itself: vector, so it stays sharp at any width,
+                     licence-free, and in the same illustration language as the
+                     rest of the medical artwork. -->
+                <figure class="story-plate">
+                    <img src="images/pancreas-anatomy.svg" width="860" height="620" loading="lazy" decoding="async"
+                        alt="Anatomical illustration of the pancreas: the head sitting within the loop of the duodenum, the body crossing the midline behind the stomach, the tail tapering towards the spleen, and the pancreatic duct running the length of the gland.">
+                </figure>
             </div>
         </div>
     </section>
@@ -346,7 +414,7 @@
             
             <div style="display: flex; gap: 40px; align-items: flex-start; flex-wrap: wrap;">
                 <div style="flex: 1; min-width: min(300px, 100%);">
-                    <img src="images/dr_diksha_updated.jpg" alt="Dr. Deeksha Kapoor" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                    <img src="images/dr_deeksha_updated.jpg" alt="Dr. Deeksha Kapoor" style="width: 100%; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
                 </div>
                 <div style="flex: 2; min-width: min(300px, 100%);">
                     <h3 style="font-size: 2.2rem; color: var(--primary-dark); margin-bottom: 5px;">Dr. Deeksha Kapoor</h3>
@@ -539,7 +607,7 @@
             </div>
         </div>
         
-        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #8E1B2E; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </footer>
@@ -567,7 +635,7 @@
         }
 
     </script>
-    <script src="js/nav.js?v=6"></script>
+    <script src="js/nav.js?v=9"></script>
     <script src="js/search-index.js?v=1"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>

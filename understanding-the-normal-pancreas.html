@@ -7,10 +7,10 @@
     <title>Understanding the Normal Pancreas | Advitya Healthcares</title>
     <meta name="description"
         content="What a healthy pancreas does and why it matters. Understanding the Normal Pancreas: A Q&A Guide.">
-    <link rel="stylesheet" href="css/style.css?v=21">
+    <link rel="stylesheet" href="css/style.css?v=24">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
-    <link rel="stylesheet" href="css/erp-nav.css?v=1">
+    <link rel="stylesheet" href="css/erp-nav.css?v=2">
     <!-- async, and ahead of the third-party bundles: the header must not
          wait on a CDN to get its language selector wired up -->
     <script src="js/lang-select.js?v=5" async></script>
@@ -120,23 +120,26 @@
     </style>
 <!-- last stylesheet on purpose: mobile fixes must win over the
      CDN sheets above, never fight them for the cascade -->
-<link rel="stylesheet" href="css/responsive.css?v=1">
+<link rel="stylesheet" href="css/responsive.css?v=7">
+    <!-- PancreaCare pages only: the wordmark is a different shape to the
+         Advitya mark and has to be sized by width, not height -->
+    <link rel="stylesheet" href="css/pcare-brand.css?v=2">
 </head>
 
 <body>
     <!-- Navbar -->
     <header class="navbar navbar-pancreas">
         <div class="container nav-container">
-            <div class="logo">
+            <div class="logo logo-pcare">
                 <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
-                    <img src="images/advitya_logo_nav.png" alt="Advitya Healthcares">
+                    <img src="images/image.png" alt="PancreaCare by Advitya Healthcares">
                 </a>
             </div>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About Us</a>
+                <a href="pancrea-care.html">Home</a>
+                <a href="the-story-of-pancreacare.html">About Us</a>
                 <div class="dropdown advmega">
-                    <a href="#" class="dropbtn">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <a href="related-diseases.html" class="dropbtn" data-follow-link>Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content advmega-panel">
                         <div class="advmega-item">
                             <a class="advmega-link" href="diseases/pancreas/">Pancreas<span class="advmega-sign" aria-hidden="true"></span></a>
@@ -210,7 +213,7 @@
                     </div>
                 </div>
                 <a href="what-we-do.html">What We Do</a>
-                <a href="index.html#contactModal">Contact</a>
+                <a href="index.html#contactModal">Contact Us</a>
             </nav>
             <div class="nav-actions">
                 <div class="als notranslate" translate="no">
@@ -460,7 +463,7 @@
         </div>
         
         <!-- WhatsApp Icon -->
-        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+        <a href="https://wa.me/919211221551" style="position: fixed; bottom: 20px; right: 20px; background-color: #8E1B2E; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </footer>
@@ -487,7 +490,7 @@
         });
 
     </script>
-    <script src="js/nav.js?v=6"></script>
+    <script src="js/nav.js?v=9"></script>
     <script src="js/search-index.js?v=1"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>

@@ -137,7 +137,10 @@
     </g>
 
     <text x="732" y="162" font-size="21" font-weight="600" fill="#4A322E">Tail</text>
-    <text x="732" y="184" font-size="15">Tapers towards the spleen</text>
+    <!-- split over two lines: on one line this ran past the 860 viewBox and
+         was clipped at the right edge wherever the file is displayed -->
+    <text x="732" y="184" font-size="15">Tapers towards</text>
+    <text x="732" y="202" font-size="15">the spleen</text>
 
     <text x="442" y="198" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Pancreatic duct</text>
     <text x="442" y="220" font-size="15" text-anchor="end">Carries enzymes to the duodenum</text>
@@ -149,6 +152,7 @@
     <text x="538" y="568" font-size="15">Crosses the midline behind the stomach</text>
 
     <text x="184" y="498" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Duodenum</text>
-    <text x="184" y="520" font-size="15" text-anchor="end">Receives the pancreatic enzymes</text>
+    <text x="184" y="520" font-size="15" text-anchor="end">Receives the</text>
+    <text x="184" y="538" font-size="15" text-anchor="end">pancreatic enzymes</text>
   </g>
 </svg>

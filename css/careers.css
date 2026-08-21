@@ -7,7 +7,7 @@
     --cr-body: #5C4642;
     --cr-muted: #8A6F69;
     --cr-line: #F1DDD7;
-    --cr-brand: #9E1F2B;
+    --cr-brand: #8E1B2E;
     --cr-radius: 22px;
     --cr-shadow: 0 22px 48px -26px rgba(96, 40, 38, .34);
 }
@@ -40,7 +40,7 @@
 }
 
 .cr-btn-primary {
-    background: linear-gradient(120deg, #C0303C 0%, #9E1F2B 100%);
+    background: linear-gradient(120deg, #A32236 0%, #8E1B2E 100%);
     color: #fff;
     box-shadow: 0 16px 34px -16px rgba(192, 48, 60, .9);
 }
@@ -58,7 +58,7 @@
 .cr-btn-wa {
     background: #fff;
     border-color: var(--cr-line);
-    color: #128C4A;
+    color: #8E1B2E;
 }
 
 .cr-btn-wa:hover { transform: translateY(-3px); background: #F3FBF6; }
@@ -126,7 +126,7 @@
     color: #F6CDC6;
 }
 
-.cr-badge i { color: #E9A23B; }
+.cr-badge i { color: #CE7B34; }
 
 .cr-hero h1 {
     font-size: clamp(2.2rem, 4.8vw, 3.5rem);
@@ -140,7 +140,7 @@
 
 .cr-hero h1 em {
     font-style: normal;
-    background: linear-gradient(100deg, #F6C9C2 0%, #E9A23B 60%, #F0A090 100%);
+    background: linear-gradient(100deg, #F6C9C2 0%, #CE7B34 60%, #EFB6A6 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -256,7 +256,7 @@
 .cr-pill:hover { border-color: #E5BFB6; color: var(--cr-brand); transform: translateY(-2px); }
 
 .cr-pill.is-active {
-    background: linear-gradient(120deg, #C0303C 0%, #9E1F2B 100%);
+    background: linear-gradient(120deg, #A32236 0%, #8E1B2E 100%);
     border-color: transparent;
     color: #fff;
     box-shadow: 0 12px 24px -14px rgba(158, 31, 43, .85);
@@ -369,7 +369,7 @@
     padding: 16px 20px;
     border-radius: 16px;
     background: #FFFBFA;
-    border-left: 3px solid #C04050;
+    border-left: 3px solid #A32236;
     font-size: 1rem;
     line-height: 1.75;
     color: #4E3A36;
@@ -416,7 +416,7 @@
     width: 7px;
     height: 7px;
     border-radius: 50%;
-    background: #C04050;
+    background: #A32236;
 }
 
 .cr-job-acts { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
@@ -524,7 +524,7 @@
 }
 
 .cr-copy:hover { background: #FDF3EF; color: var(--cr-brand); border-color: #E5BFB6; }
-.cr-copy.is-done { background: #EEF7F0; border-color: #CFE6D6; color: #3F7A4E; }
+.cr-copy.is-done { background: #FBF3EF; border-color: #EBD9CF; color: #8E1B2E; }
 
 .cr-contact strong {
     font-family: var(--font-heading);

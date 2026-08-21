@@ -7,11 +7,14 @@
     <title>Related Disease | Advitya Healthcares</title>
     <meta name="description"
         content="The gallbladder, biliary, liver, colorectal, gastric and oesophageal conditions treated by the Advitya HPB and GI surgical team.">
-    <link rel="stylesheet" href="css/style.css?v=21">
+    <link rel="stylesheet" href="css/style.css?v=24">
     <link rel="stylesheet" href="css/rd-article.css?v=4">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
-    <link rel="stylesheet" href="css/erp-nav.css?v=1">
+    <link rel="stylesheet" href="css/erp-nav.css?v=2">
+    <!-- PancreaCare pages only: the wordmark is a different shape to the
+         Advitya mark and has to be sized by width, not height -->
+    <link rel="stylesheet" href="css/pcare-brand.css?v=2">
     <!-- async, and ahead of the third-party bundles: the header must not
          wait on a CDN to get its language selector wired up -->
     <script src="js/lang-select.js?v=5" async></script>
@@ -22,32 +25,22 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <!-- last stylesheet on purpose: mobile fixes must win over the
      CDN sheets above, never fight them for the cascade -->
-<link rel="stylesheet" href="css/responsive.css?v=1">
+<link rel="stylesheet" href="css/responsive.css?v=7">
 </head>
 
 <body class="pancreacare">
-    <header class="navbar">
+    <header class="navbar navbar-pancreas">
         <div class="container nav-container">
-            <div class="logo">
+            <div class="logo logo-pcare">
                 <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
-                    <img src="images/advitya_logo_nav.png" alt="Advitya Healthcares">
+                    <img src="images/image.png" alt="PancreaCare by Advitya Healthcares">
                 </a>
             </div>
             <nav class="nav-links">
-                <a href="index.html">Home</a>
-                <div class="dropdown">
-                    <a href="about.html" class="dropbtn">About Us <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="about.html">The Journey of Advitya</a>
-                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
-                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
-                        <a href="vision-mission.html">Vision &amp; Mission</a>
-                        <a href="our-team.html">Our Team</a>
-                    </div>
-                </div>
-                <a href="pancrea-care.html">Pancrea Care</a>
+                <a href="pancrea-care.html">Home</a>
+                <a href="the-story-of-pancreacare.html">About Us</a>
                 <div class="dropdown advmega">
-                    <a href="#" class="dropbtn active">Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <a href="related-diseases.html" class="dropbtn active" data-follow-link>Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
                     <div class="dropdown-content advmega-panel">
                         <div class="advmega-item">
                             <a class="advmega-link" href="diseases/pancreas/">Pancreas<span class="advmega-sign" aria-hidden="true"></span></a>
@@ -120,46 +113,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="dropdown mega">
-                    <a href="#" class="dropbtn">Clinical Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content mega-content">
-                        <div class="mega-col">
-                            <h4>Digestive Care</h4>
-                            <a href="clinical-services.html#gastroenterology">Gastroenterology</a>
-                            <a href="clinical-services.html#pancreatic-disorders">Pancreatic Disorders</a>
-                            <a href="clinical-services.html#liver-care">Liver Care</a>
-                        </div>
-                        <div class="mega-col">
-                            <h4>Procedures</h4>
-                            <a href="clinical-services.html#endoscopy">Endoscopy</a>
-                            <a href="clinical-services.html#gi-surgery">GI Surgery</a>
-                            <a href="clinical-services.html#colonoscopy">Colonoscopy</a>
-                        </div>
-                        <div class="mega-col">
-                            <h4>Wellness</h4>
-                            <a href="clinical-services.html#nutrition">Nutrition &amp; Dietetics</a>
-                            <a href="clinical-services.html#preventive-health">Preventive Health Checkups</a>
-                            <a href="clinical-services.html#emergency-care">Emergency Care</a>
-                        </div>
-                    </div>
-                </div>
-                <a href="index.html#location" class="nav-loc">Locations</a>
-                <a href="testimonials.html">Testimonials</a>
-                <a href="careers.html">Careers</a>
-                <a href="gallery.html">Gallery</a>
-                <div class="dropdown">
-                    <a href="faqs.html" class="dropbtn">FAQs <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content">
-                        <a href="pancreas.html">Pancreas</a>
-                        <a href="gallbladder.html">GallBladder</a>
-                        <a href="liver.html">Liver</a>
-                        <a href="large-intestine.html">Large Intestine</a>
-                        <a href="stomach.html">Stomach</a>
-                        <a href="esophagus.html">Esophagus</a>
-                    </div>
-                </div>
-                <a href="blogs.html">Blogs</a>
-                <a href="index.html#contactModal">Contact us</a>
+                <a href="what-we-do.html">What We Do</a>
+                <a href="index.html#contactModal">Contact Us</a>
             </nav>
             <div class="nav-actions">
                 <div class="als notranslate" translate="no">
@@ -440,12 +395,12 @@
         </div>
 
         <a href="https://wa.me/919211221551" aria-label="WhatsApp us"
-            style="position: fixed; bottom: 88px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+            style="position: fixed; bottom: 88px; right: 20px; background-color: #8E1B2E; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </footer>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/nav.js?v=6"></script>
+    <script src="js/nav.js?v=9"></script>
     <script src="js/search-index.js?v=1"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>

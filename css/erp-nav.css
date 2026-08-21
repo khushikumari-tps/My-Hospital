@@ -59,9 +59,14 @@
     }
 }
 
-/* ---------- 380px and down: the 360-class phone ----------
-   The icon goes first. It is decorative; the label is not. */
-@media (max-width: 380px) {
+/* ---------- 404px and down: the 360-to-390-class phone ----------
+   The icon goes first. It is decorative; the label is not.
+
+   This step used to begin at 380. The tier above it needs 405px of viewport
+   to lay out, so 381-404 — which is where the 390 and 393 widths most
+   current handsets report land — was left holding a row that did not fit
+   and pushing the hamburger past the right edge. */
+@media (max-width: 404px) {
     .nav-container {
         padding: 0 0.7rem;
     }

@@ -1,0 +1,135 @@
+/* ===================================================================
+   pcare-brand.css — the PancreaCare+ header mark.
+
+   Linked only on the four PancreaCare pages; every other page keeps the
+   Advitya logo untouched.
+
+   The two marks are not interchangeable shapes:
+
+       advitya_logo_nav.png   234 x 200   1.17:1   tall, squarish
+       image.png (PancreaCare) 381 x  90   4.23:1   long wordmark
+
+   The site sizes its logo by height (80px on desktop, stepping down to
+   30px on a 240px phone). Feeding a 4.23:1 wordmark through those same
+   height rules would render it 339px wide on desktop and shove the nav
+   off the bar. So this mark is sized by WIDTH instead, with height left
+   to `auto` so the aspect ratio is exactly preserved — no stretching,
+   no cropping. The widths below are picked to give the wordmark the
+   same optical weight in the bar that the Advitya mark has.
+   =================================================================== */
+
+.logo-pcare img {
+    width: 250px;
+    height: auto;
+    max-width: 100%;
+}
+
+/* the bar tightens on scroll; the mark comes with it */
+.navbar.scrolled .logo-pcare img {
+    width: 215px;
+    height: auto;
+}
+
+/* Below the drawer breakpoint the bar is logo + language pill + ERP pill
+   + hamburger, so the mark gives back width in the same steps the rest of
+   the header does in erp-nav.css. */
+@media (max-width: 1360px) {
+
+    .logo-pcare img,
+    .navbar.scrolled .logo-pcare img {
+        width: 175px;
+        height: auto;
+    }
+}
+
+/* 600px and down the four header items start competing for the row in
+   earnest, so the mark steps down ahead of the phone breakpoints. */
+@media (max-width: 600px) {
+
+    .logo-pcare img,
+    .navbar.scrolled .logo-pcare img {
+        width: 150px;
+        height: auto;
+    }
+}
+
+/* 132px is the largest mark that clears the ERP pill, and it needs 405px of
+   viewport to do it. The step below used to start at 380, which left every
+   phone between 381 and 404 — the 390 and 393 logical widths that most
+   current handsets report — holding the 132px mark in a row too narrow for
+   it, with the hamburger pushed 15px past the right edge. */
+@media (max-width: 480px) {
+
+    .logo-pcare img,
+    .navbar.scrolled .logo-pcare img {
+        width: 132px;
+        height: auto;
+    }
+}
+
+@media (max-width: 404px) {
+
+    .logo-pcare img,
+    .navbar.scrolled .logo-pcare img {
+        width: 112px;
+        height: auto;
+    }
+}
+
+/* 86px, not the 96px this step used to carry: the 44px tap floor the
+   hamburger picks up on a touch screen is 15px wider than the bare icon the
+   original number was measured against, and at 320px that was enough to put
+   the hamburger 2px off the edge. */
+@media (max-width: 330px) {
+
+    .logo-pcare img,
+    .navbar.scrolled .logo-pcare img {
+        width: 86px;
+        height: auto;
+    }
+}
+
+@media (max-width: 260px) {
+
+    .logo-pcare img,
+    .navbar.scrolled .logo-pcare img {
+        width: 84px;
+        height: auto;
+    }
+}
+
+
+/* ===================================================================
+   Menu typography — these four pages only.
+
+   The PancreaCare header carries five top-level items (Home, About Us,
+   Related Disease, What We Do, Contact) where the main site header
+   carries eleven or twelve. Measured at 17px with a 28px gap: these
+   pages finish 24px clear of the container at 1366, 1440, 1621 and
+   1920, while faqs/blogs/about/clinical-services blow past the edge by
+   200-300px at the same settings. So the larger type lives here, and
+   the shared header in style.css stays at the size that fits everywhere.
+
+   Scoped by direct child on purpose: `.nav-links a` would also catch the
+   links inside the Related Disease panel and widen it.
+   =================================================================== */
+
+.nav-links {
+    gap: 28px;
+}
+
+.nav-links > a,
+.nav-links > .dropdown > .dropbtn {
+    font-size: 17px;
+    letter-spacing: 0.3px;
+}
+
+/* The drawer keeps its own size (1.1rem) and its own vertical rhythm from
+   style.css; it only picks up the tracking so the two states match. */
+@media (max-width: 1360px) {
+
+    .nav-links.open > a,
+    .nav-links.open .dropbtn {
+        letter-spacing: 0.3px;
+    }
+}

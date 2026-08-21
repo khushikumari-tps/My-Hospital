@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620"
+     role="img" aria-labelledby="hpbTitle hpbDesc">
+  <title id="hpbTitle">The hepato-pancreato-biliary organs</title>
+  <desc id="hpbDesc">Anatomical illustration of the organs treated together in HPB surgery: the liver with its right
+    and left lobes, the gallbladder beneath it, the bile ducts draining from the liver down to the bowel, and the
+    pancreas lying across the back of the abdomen with its head inside the loop of the duodenum.</desc>
+
+  <defs>
+    <linearGradient id="hpLiver" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"    stop-color="#B9585A"/>
+      <stop offset="0.45" stop-color="#8C2C34"/>
+      <stop offset="1"    stop-color="#5C1821"/>
+    </linearGradient>
+    <linearGradient id="hpLiverL" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"   stop-color="#A8494A"/>
+      <stop offset="1"   stop-color="#6E1E27"/>
+    </linearGradient>
+    <linearGradient id="hpGb" x1="0.12" y1="0" x2="0.88" y2="1">
+      <stop offset="0"    stop-color="#C6D68C"/>
+      <stop offset="0.4"  stop-color="#9FB265"/>
+      <stop offset="1"    stop-color="#6C7C3C"/>
+    </linearGradient>
+    <linearGradient id="hpDuct" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#D9C88E"/>
+      <stop offset="0.5" stop-color="#BFA765"/>
+      <stop offset="1"   stop-color="#8E7A3E"/>
+    </linearGradient>
+    <linearGradient id="hpPnc" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"   stop-color="#F3D2B2"/>
+      <stop offset="0.5" stop-color="#DDA478"/>
+      <stop offset="1"   stop-color="#B8804F"/>
+    </linearGradient>
+    <linearGradient id="hpGut" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#F0B0A4"/>
+      <stop offset="0.5" stop-color="#DC8B78"/>
+      <stop offset="1"   stop-color="#B15E4C"/>
+    </linearGradient>
+    <linearGradient id="hpSheen" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="hpGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#8C2C34" stop-opacity="0.12"/>
+      <stop offset="1"   stop-color="#8C2C34" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="860" height="620" fill="#ffffff"/>
+  <ellipse cx="400" cy="330" rx="310" ry="220" fill="url(#hpGlow)"/>
+
+  <!-- ==================================== liver ====================================
+       Kept to the top third of the frame so the ducts, the pancreas and the duodenum
+       below it each have room of their own, and so every label sits on white. -->
+  <!-- right lobe: the bulk of the organ, under the right ribs -->
+  <path d="M146 232
+           C142 176 206 130 300 120
+           C382 112 444 132 470 164
+           C486 184 480 212 462 232
+           C438 258 396 272 352 278
+           C330 268 306 266 288 272
+           C266 280 250 288 236 292
+           C196 288 150 268 146 232 Z"
+        fill="url(#hpLiver)"/>
+  <!-- left lobe: smaller, crossing to the other side of the midline -->
+  <path d="M474 166 C512 152 570 152 602 172 C632 190 628 220 596 234
+           C560 250 508 248 480 234 C462 224 458 180 474 166 Z"
+        fill="url(#hpLiverL)" opacity="0.94"/>
+  <!-- falciform ligament: the fold that marks the division between the two -->
+  <path d="M476 146 C470 180 470 208 480 240" fill="none" stroke="#F0DDD4"
+        stroke-width="6" stroke-linecap="round" opacity="0.72"/>
+  <path d="M182 178 C232 148 296 140 352 146" fill="none" stroke="url(#hpSheen)"
+        stroke-width="18" stroke-linecap="round"/>
+
+  <!-- ================================== bile ducts ==================================
+       Right and left hepatic ducts leave the liver at the hilum, join, and run down
+       as the common bile duct behind the head of the pancreas. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M310 282 C340 300 366 312 382 326" stroke="#8E7A3E" stroke-width="15" opacity="0.38"/>
+    <path d="M310 282 C340 300 366 312 382 326" stroke="url(#hpDuct)" stroke-width="11"/>
+    <path d="M470 250 C440 276 408 306 386 326" stroke="#8E7A3E" stroke-width="13" opacity="0.38"/>
+    <path d="M470 250 C440 276 408 306 386 326" stroke="url(#hpDuct)" stroke-width="9"/>
+
+    <path d="M384 326 C394 366 402 408 416 442 C426 462 450 482 474 490"
+          stroke="#8E7A3E" stroke-width="22" opacity="0.38"/>
+    <path d="M384 326 C394 366 402 408 416 442 C426 462 450 482 474 490"
+          stroke="url(#hpDuct)" stroke-width="17"/>
+    <path d="M380 334 C390 372 398 410 410 440"
+          stroke="#ffffff" stroke-width="4.5" opacity="0.3"/>
+
+    <!-- cystic duct: the gallbladder's own drainage into the common duct -->
+    <path d="M296 424 C336 396 366 350 380 330" stroke="#8E7A3E" stroke-width="15" opacity="0.38"/>
+    <path d="M296 424 C336 396 366 350 380 330" stroke="url(#hpDuct)" stroke-width="11"/>
+  </g>
+
+  <!-- ================================== gallbladder ================================== -->
+  <path d="M320 344
+           C306 334 288 338 272 350
+           C240 374 214 400 214 434
+           C214 466 244 486 278 476
+           C314 466 338 424 340 392
+           C341 368 332 352 320 344 Z"
+        fill="url(#hpGb)" stroke="#5E6B33" stroke-width="2.2" stroke-opacity="0.42"/>
+  <path d="M240 406 C262 380 292 360 314 356" fill="none" stroke="url(#hpSheen)"
+        stroke-width="15" stroke-linecap="round"/>
+
+  <!-- ==================================== pancreas ====================================
+       Head sitting against the duodenum, body and tail sweeping away to the left of the
+       body — to the right as this is drawn. -->
+  <g>
+    <path d="M474 520 C468 490 490 470 522 474
+             C556 476 616 464 684 436 C714 424 740 418 752 426
+             C766 436 756 456 730 470 C662 506 586 532 520 546
+             C500 552 480 548 474 520 Z"
+          fill="url(#hpPnc)"/>
+    <path d="M492 494 C540 490 606 470 672 444" fill="none" stroke="#ffffff"
+          stroke-width="7" stroke-linecap="round" opacity="0.28"/>
+    <!-- pancreatic duct, running the length of the gland to the shared outlet -->
+    <path d="M486 512 C540 506 610 486 706 450" fill="none" stroke="#C9A24A"
+          stroke-width="3.6" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- ==================================== duodenum ==================================== -->
+  <g fill="none" stroke-linecap="round" opacity="0.62">
+    <path d="M436 420 C500 420 534 456 534 496 C534 534 502 558 458 562
+             C424 564 404 584 396 610" stroke="#B15E4C" stroke-width="36"/>
+    <path d="M436 420 C500 420 534 456 534 496 C534 534 502 558 458 562
+             C424 564 404 584 396 610" stroke="url(#hpGut)" stroke-width="30"/>
+    <path d="M446 428 C500 430 526 460 526 496 C526 528 496 550 458 554"
+          stroke="#ffffff" stroke-width="5" opacity="0.26"/>
+  </g>
+  <!-- ampulla: bile and pancreatic juice share this outlet into the bowel -->
+  <circle cx="482" cy="494" r="8.5" fill="#EFD6AF" stroke="#8E7A3E" stroke-width="2.4"/>
+
+  <!-- ===================================== labels =====================================
+       Each block sits in empty space and is anchored so that its longest line stays
+       inside the 860-wide frame. -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
+    <g stroke="#C9A79E" stroke-width="1.4" fill="none">
+      <path d="M262 152 L262 96 L246 88"/>
+      <path d="M232 400 L168 428 L152 428"/>
+      <path d="M410 430 L300 486 L286 486"/>
+      <path d="M652 452 L642 386 L658 378"/>
+      <path d="M470 572 L556 568 L578 562"/>
+    </g>
+    <g fill="#C9A79E">
+      <circle cx="262" cy="152" r="3.4"/>
+      <circle cx="232" cy="400" r="3.4"/>
+      <circle cx="410" cy="430" r="3.4"/>
+      <circle cx="652" cy="452" r="3.4"/>
+      <circle cx="470" cy="572" r="3.4"/>
+    </g>
+
+    <text x="240" y="62" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Liver</text>
+    <text x="240" y="84" font-size="15" text-anchor="end">Right and left lobes, divided</text>
+    <text x="240" y="102" font-size="15" text-anchor="end">by the falciform ligament</text>
+
+    <text x="146" y="422" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Gallbladder</text>
+    <text x="146" y="444" font-size="15" text-anchor="end">Holds the bile</text>
+    <text x="146" y="462" font-size="15" text-anchor="end">the liver makes</text>
+
+    <text x="280" y="480" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Bile ducts</text>
+    <text x="280" y="502" font-size="15" text-anchor="end">Carry bile from the</text>
+    <text x="280" y="520" font-size="15" text-anchor="end">liver down to the bowel</text>
+
+    <text x="664" y="372" font-size="21" font-weight="600" fill="#4A322E">Pancreas</text>
+    <text x="664" y="394" font-size="15">Head, body and tail,</text>
+    <text x="664" y="412" font-size="15">with its own duct</text>
+
+    <text x="606" y="554" font-size="21" font-weight="600" fill="#4A322E">Duodenum</text>
+    <text x="606" y="576" font-size="15">Bile and pancreatic</text>
+    <text x="606" y="594" font-size="15">juice share this outlet</text>
+  </g>
+</svg>

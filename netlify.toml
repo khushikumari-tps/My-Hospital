@@ -29,3 +29,73 @@
   for = "/js/*"
   [headers.values]
     Cache-Control = "public, max-age=604800"
+
+# ---------------------------------------------------------------------------
+# Google Ads landing pages.
+#
+# The campaign briefs name clean URLs (/hernia-surgery), while the site is
+# flat .html files. These rewrites serve the file at the clean path with a
+# 200 rather than a redirect, so the URL in the ad, the URL in the address
+# bar and the canonical tag all agree — a mismatch there costs Ads quality
+# score and splits analytics between two paths.
+# ---------------------------------------------------------------------------
+[[redirects]]
+  from = "/hernia-surgery"
+  to = "/hernia-surgery.html"
+  status = 200
+
+[[redirects]]
+  from = "/gallbladder-stone-surgery"
+  to = "/gallbladder-stone-surgery.html"
+  status = 200
+
+[[redirects]]
+  from = "/colorectal-cancer-surgery"
+  to = "/colorectal-cancer-surgery.html"
+  status = 200
+
+[[redirects]]
+  from = "/liver-cancer-hpb-surgery"
+  to = "/liver-cancer-hpb-surgery.html"
+  status = 200
+
+[[redirects]]
+  from = "/pancreatic-cancer-surgery"
+  to = "/pancreatic-cancer-surgery.html"
+  status = 200
+
+[[redirects]]
+  from = "/gallbladder-cancer-surgery"
+  to = "/gallbladder-cancer-surgery.html"
+  status = 200
+
+[[redirects]]
+  from = "/thank-you"
+  to = "/thank-you.html"
+  status = 200
+
+# The two legal pages the landing pages link to, on the same clean paths their
+# canonical tags claim.
+[[redirects]]
+  from = "/privacy-policy"
+  to = "/privacy-policy.html"
+  status = 200
+
+[[redirects]]
+  from = "/terms"
+  to = "/terms.html"
+  status = 200
+
+# Fonts are served cross-origin by nothing, but the preload in each page is a
+# CORS request, so they need the header even same-origin.
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# The specialist profile the surgical pages link to.
+[[redirects]]
+  from = "/pancreas-specialist"
+  to = "/pancreas-specialist.html"
+  status = 200

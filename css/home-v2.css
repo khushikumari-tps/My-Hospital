@@ -1,49 +1,62 @@
 /* ==========================================================================
    Advitya Healthcares — premium light front page
-   Palette taken straight from the logo: deep maroon body, brand red mark,
-   and the orange-gold of the rays, laid on pearl and blush surfaces.
+
+   Palette taken straight from the logo: burgundy and deep crimson from the
+   mark, coral and warm orange from the rays, on a white ground.
+
+   The mix matters more than the colours. Red is the brand but not the
+   surface: the page is white, deep crimson carries the actions, the CTA
+   band and the footer, and the coral and orange appear only at the size of
+   an icon or a rule. Headings are charcoal rather than red, which is what
+   stops a specialist hospital reading as an emergency banner.
+
    Everything here is scoped to body.hv-light so the other pages are untouched.
    ========================================================================== */
 
 body.hv-light {
-    /* Logo-derived accents */
-    --ink: #40100F;
-    --ink-2: #5C2320;
-    --maroon: #8B1014;
-    --brand: #C94239;
-    --brand-red: #E4574E;
-    --ember: #FF8A4C;
-    --gold: #E9A23B;
-    --gold-deep: #9A6A16;
-    --gold-soft: #FBE3C2;
+    /* Every value here now comes from css/brand.css, which is sampled from
+       the logo. Kept as local aliases so the existing rules in this file
+       (and the five pages that use them) go on reading --brand, --gold and
+       the rest without a rename sweep. Change the theme in brand.css. */
 
-    /* Surfaces */
-    --pearl: #FFFCFB;
-    --blush: #FDF3F0;
-    --blush-deep: #F9E6E1;
-    --line: #F1D9D4;
-    --line-soft: #F7E8E4;
+    --ink: var(--adv-ink);
+    --ink-2: var(--adv-ink-2);
+    --ink-body: var(--adv-ink-body);
 
-    --ink-body: #524644;
+    /* Brand, darkest first */
+    --maroon: var(--adv-crimson-900);
+    --brand: var(--adv-crimson-700);
+    --brand-red: var(--adv-crimson-600);
+    --ember: var(--adv-ember-500);
+    --gold: var(--adv-warm-300);
+    --gold-deep: var(--adv-warm-deep);
+    --gold-soft: var(--adv-warm-soft);
 
-    /* Rose-tinted elevation reads softer than neutral grey on a blush base */
-    --lift-1: 0 1px 2px rgba(120, 60, 55, .05);
-    --lift-2: 0 10px 24px -12px rgba(120, 60, 55, .22), 0 2px 6px -3px rgba(120, 60, 55, .08);
-    --lift-3: 0 26px 56px -22px rgba(120, 60, 55, .28), 0 8px 18px -10px rgba(120, 60, 55, .12);
+    /* Surfaces: white, then warm neutrals faint enough to read as warmth
+       rather than as pink */
+    --pearl: var(--adv-white);
+    --blush: var(--adv-blush);
+    --blush-deep: var(--adv-blush-deep);
+    --line: var(--adv-line);
+    --line-soft: var(--adv-line-soft);
 
-    --grad-brand: linear-gradient(120deg, var(--maroon) 0%, var(--brand) 52%, var(--ember) 100%);
-    --ease: cubic-bezier(.22, .61, .36, 1);
+    --lift-1: var(--adv-lift-1);
+    --lift-2: var(--adv-lift-2);
+    --lift-3: var(--adv-lift-3);
+
+    --grad-brand: var(--adv-grad-brand);
+    --ease: var(--adv-ease);
 }
 
 body.hv-light {
     background-color: var(--pearl);
     background-image:
-        radial-gradient(1200px 640px at 8% -6%, rgba(255, 214, 205, .5), transparent 60%),
-        radial-gradient(940px 520px at 96% 2%, rgba(255, 226, 208, .45), transparent 58%);
+        radial-gradient(1200px 640px at 8% -6%, rgba(240, 216, 210, .40), transparent 60%),
+        radial-gradient(940px 520px at 96% 2%, rgba(243, 226, 214, .34), transparent 58%);
 }
 
 body.hv-light ::selection {
-    background: rgba(201, 66, 57, .16);
+    background: rgba(142, 27, 46, .14);
 }
 
 /* ==========================  Header: utility bar  ======================== */
@@ -60,7 +73,7 @@ body.hv-light .navbar {
 }
 
 .hv-topbar {
-    background: linear-gradient(100deg, var(--ink) 0%, var(--maroon) 58%, #A2201C 100%);
+    background: linear-gradient(100deg, var(--ink) 0%, var(--maroon) 58%, #8E1B2E 100%);
     color: rgba(255, 255, 255, .92);
     font-size: .8rem;
     transition: max-height .4s var(--ease), opacity .3s ease;
@@ -168,12 +181,14 @@ body.hv-light .navbar.scrolled .logo img {
 }
 
 body.hv-light .nav-links {
-    gap: 1.05rem;
+    gap: 1.1rem;
 }
 
+/* same size as every other page's menu, so the two headers read alike */
 body.hv-light .nav-links>a,
 body.hv-light .nav-links .dropbtn {
-    font-size: .93rem;
+    font-size: .95rem;
+    letter-spacing: 0.012em;
 }
 
 /* Actions */
@@ -280,8 +295,8 @@ body.hv-light .nav-links .dropbtn {
     position: absolute;
     inset: 0;
     background:
-        radial-gradient(820px 460px at 78% 8%, rgba(255, 138, 76, .18), transparent 62%),
-        linear-gradient(102deg, rgba(255, 252, 251, .985) 0%, rgba(255, 252, 251, .95) 40%, rgba(253, 243, 240, .86) 70%, rgba(249, 230, 225, .78) 100%);
+        radial-gradient(820px 460px at 78% 8%, rgba(217, 105, 79, .14), transparent 62%),
+        linear-gradient(102deg, rgba(255, 255, 255, .985) 0%, rgba(255, 255, 255, .95) 40%, rgba(251, 245, 243, .87) 70%, rgba(245, 232, 228, .80) 100%);
 }
 
 /* Aurora: two soft brand-coloured clouds drifting behind the copy.
@@ -1731,7 +1746,7 @@ body.hv-light .loc-map {
 
 /* ==========================  Testimonials  ============================== */
 .hv-testi {
-    padding: 76px 0 86px;
+    padding: var(--adv-sec-y) 0 calc(var(--adv-sec-y) + 10px);
     background:
         radial-gradient(700px 380px at 82% 0%, rgba(255, 138, 76, .12), transparent 62%),
         var(--pearl);
@@ -1826,8 +1841,8 @@ body.hv-light .swiper-pagination-bullet-active {
 /* ==========================  Closing CTA  =============================== */
 .hv-cta-band {
     position: relative;
-    padding: 74px 0;
-    background: linear-gradient(112deg, var(--ink) 0%, var(--maroon) 52%, #B32A22 100%);
+    padding: var(--adv-sec-y) 0;
+    background: linear-gradient(112deg, var(--ink) 0%, var(--maroon) 52%, #8E1B2E 100%);
     color: #fff;
     overflow: hidden;
 }
@@ -1910,7 +1925,10 @@ body.hv-light .swiper-pagination-bullet-active {
 /* =============================  Footer  ================================= */
 .hv-footer {
     position: relative;
-    background: linear-gradient(165deg, #6E0B0E 0%, #520609 62%, #3C0406 100%);
+    /* Lighter red than the near-black burgundy it was: the ramp now starts at
+       the brand crimson and only reaches the deep tone at the very bottom, so
+       the footer reads as brand colour rather than as a dark slab. */
+    background: linear-gradient(165deg, #9E2233 0%, #7A1626 58%, #5E1019 100%);
     color: rgba(255, 255, 255, .8);
     padding: 62px 0 26px;
 }
@@ -2019,6 +2037,164 @@ body.hv-light .swiper-pagination-bullet-active {
     margin-top: .25em;
 }
 
+/* ---------------------------  Campaign promo  ---------------------------
+   Six dedicated landing pages (hernia, gallstones, colorectal, liver/HPB,
+   pancreatic, gallbladder cancer) share one slot at the top of the footer.
+
+   They were six full-width banners with an illustration each, which measured
+   2181px on desktop and 4444px on a phone — three quarters of the footer,
+   scrolled past before the footer's own links appear. One tile per campaign
+   instead: icon, name, one line, one link. Same slot, a quarter of the
+   height, all six visible at once rather than found by scrolling.
+
+   Colours come from brand.css: the block sits on the deep crimson footer, so
+   its plate is a light wash over that ground and the accents are the logo's
+   warm orange. Each landing page keeps its own palette once the visitor
+   arrives. Nothing is claimed here that the landing pages do not carry. */
+.hv-promos {
+    margin-bottom: 44px;
+    padding: 28px 30px 30px;
+    /* A white plate on the red ground. The campaign block is the one part of
+       the footer meant to read as an advertisement, and white separates it
+       from the footer's own links far more plainly than another tinted panel
+       on the same hue did. */
+    border: 1px solid var(--adv-line);
+    border-radius: var(--adv-radius-lg);
+    background: var(--adv-white);
+    box-shadow: 0 26px 56px -28px rgba(56, 8, 16, .55);
+}
+
+.hv-promos-head {
+    max-width: 74ch;
+    margin-bottom: 22px;
+}
+
+.hv-promo-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: var(--adv-eyebrow-size);
+    font-weight: 700;
+    letter-spacing: var(--adv-eyebrow-track);
+    text-transform: uppercase;
+    /* The lighter red of the ramp, not the deep one — on white the deep tone
+       goes almost brown at this size. */
+    color: var(--adv-crimson-600);
+    margin-bottom: 10px;
+}
+
+.hv-promos-head h3 {
+    font-family: var(--adv-font-head);
+    font-size: var(--adv-h3);
+    line-height: 1.25;
+    color: var(--adv-ink);
+    margin: 0 0 8px;
+}
+
+.hv-promos-head p {
+    font-size: var(--adv-text-sm);
+    line-height: 1.7;
+    color: var(--adv-ink-body);
+    margin: 0;
+}
+
+.hv-promos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+/* The whole tile is the link, so the target is the card and not four words
+   of it — the same reason the landing pages make their cards clickable. */
+.hv-promo-tile {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    padding: 18px 18px 16px;
+    border: 1px solid var(--adv-line);
+    border-radius: var(--adv-radius);
+    background: var(--adv-blush);
+    color: var(--adv-ink);
+    transition: transform var(--adv-dur) var(--adv-ease), background var(--adv-dur) ease,
+        border-color var(--adv-dur) ease, box-shadow var(--adv-dur) ease;
+}
+
+.hv-promo-tile:hover,
+.hv-promo-tile:focus-visible {
+    color: var(--adv-ink);
+    transform: translateY(-3px);
+    background: var(--adv-white);
+    border-color: var(--adv-coral-500);
+    box-shadow: var(--adv-lift-2);
+}
+
+.hv-promo-tile-ico {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 2px;
+    border-radius: 11px;
+    background: rgba(228, 108, 96, .14);
+    color: var(--adv-crimson-600);
+    font-size: 1rem;
+}
+
+.hv-promo-tile b {
+    font-family: var(--adv-font-head);
+    font-size: .99rem;
+    line-height: 1.3;
+    color: var(--adv-ink);
+}
+
+.hv-promo-tile-txt {
+    font-size: .82rem;
+    line-height: 1.6;
+    color: var(--adv-ink-body);
+}
+
+.hv-promo-tile-cta {
+    margin-top: auto;
+    padding-top: 6px;
+    font-size: .8rem;
+    font-weight: 600;
+    color: var(--adv-crimson-600);
+}
+
+.hv-promo-tile-cta i {
+    font-size: .72rem;
+    margin-left: 5px;
+    transition: transform var(--adv-dur) var(--adv-ease);
+}
+
+.hv-promo-tile:hover .hv-promo-tile-cta i {
+    transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+    .hv-promos {
+        padding: 24px 20px 26px;
+    }
+
+    /* Two columns rather than one: six single-file tiles is the stacked
+       banner problem again, in miniature. */
+    .hv-promos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+}
+
+@media (max-width: 420px) {
+    .hv-promo-tile {
+        padding: 15px 14px 14px;
+    }
+
+    .hv-promo-tile-txt {
+        font-size: .78rem;
+    }
+}
+
 .hv-foot-bottom {
     border-top: 1px solid rgba(255, 255, 255, .14);
     padding-top: 22px;
@@ -2056,10 +2232,10 @@ body.hv-light .swiper-pagination-bullet-active {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: #25D366;
+    background: #8E1B2E;
     color: #fff;
     font-size: 1.5rem;
-    box-shadow: 0 10px 26px -8px rgba(37, 211, 102, .7);
+    box-shadow: 0 10px 26px -8px rgba(142, 27, 46, .5);
     transition: transform .3s var(--ease);
 }
 
@@ -2076,7 +2252,7 @@ body.hv-light .swiper-pagination-bullet-active {
 
     body.hv-light .nav-links>a,
     body.hv-light .nav-links .dropbtn {
-        font-size: .88rem;
+        font-size: .9rem;
     }
 
     .hv-act-loc span {
@@ -2154,13 +2330,33 @@ body.hv-light .swiper-pagination-bullet-active {
     }
 }
 
-/* The drawer lives inside the fixed header block, so it can simply flow
-   below the bar instead of guessing at a fixed offset. */
+/* The drawer hangs off the bottom of the header rather than guessing at a
+   fixed offset, because the header changes height — the topbar collapses on
+   scroll and the logo steps down twice below 760px.
+
+   It cannot simply be `position: static` and flow below the bar: `.nav-links`
+   is a flex child of `.nav-container`, so in normal flow it becomes a third
+   column in the header row, wedged between the logo and the action pills.
+   That is what it did — a 91px sliver of a menu, scrolled halfway out of the
+   top of the bar with the language and ERP pills sitting on top of it.
+
+   Absolute against the header instead. `top: 100%` puts it exactly under the
+   bar at whatever height the bar currently is, and `.navbar` is only made a
+   containing block on these pages, where it is `position: static`; every
+   other page's header is already `position: fixed` and positions the drawer
+   itself. */
 @media (max-width: 1360px) {
+    body.hv-light .navbar {
+        position: relative;
+    }
+
     body.hv-light .nav-links.open {
-        position: static;
-        width: 100%;
-        max-height: calc(100vh - 130px);
+        position: absolute;
+        top: calc(100% + 8px);
+        left: auto;
+        right: 12px;
+        width: min(214px, calc(100vw - 32px));
+        max-height: min(62vh, calc(100vh - 130px));
     }
 }
 
@@ -2200,7 +2396,7 @@ body.hv-light .swiper-pagination-bullet-active {
     }
 
     body.hv-light .nav-links.open {
-        max-height: calc(100vh - 84px);
+        max-height: min(62vh, calc(100vh - 84px));
     }
 
     body.hv-light .nav-container {

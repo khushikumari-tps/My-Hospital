@@ -89,16 +89,29 @@
     min-width: 0;
 }
 
-/* .pc-facts is `repeat(3, 1fr)` with no narrow case, so three stat cards
-   set a 372px floor — wider than a 320px phone. Two up, then one. */
+/* `.pc-facts` names two different components.
+
+   Six organ pages use `div.pc-facts`: three stat cards at `repeat(3, 1fr)`,
+   which sets a 372px floor and overflows a phone. Those still need stepping
+   down, two up and then one.
+
+   pancrea-care.html uses `ul.pc-facts`: three full sentences, with no
+   columns declared at all, so it is a single column at every width
+   including on a desktop. It was being caught by the same rules and
+   stepped *up* to two columns below 620px — the one thing on that page
+   that was narrower on a phone than on a monitor, each sentence reflowed
+   into a 165px ribbon six words tall.
+
+   Hence the element selectors: the grid steps down, the list is left
+   alone. */
 @media (max-width: 620px) {
-    .pc-facts {
+    div.pc-facts {
         grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 }
 
-@media (max-width: 380px) {
-    .pc-facts {
+@media (max-width: 480px) {
+    div.pc-facts {
         grid-template-columns: minmax(0, 1fr);
     }
 }
@@ -278,7 +291,13 @@ h1, h2, h3, h4, h5, h6 {
    Scoped to coarse pointers so a mouse-driven desktop keeps its
    proportions exactly as designed.
    ------------------------------------------------------------------- */
-@media (pointer: coarse) {
+/* The hamburger rule carries `display`, so it has to stop where the drawer
+   stops. Unbounded, it put the toggle back on screen at every width on a
+   touch device — a touchscreen laptop or a tablet in landscape at 1440 drew
+   the full desktop menu AND the hamburger, and the hamburger was pushed 54px
+   off the right edge. Above 1360 there is no drawer to toggle, so there is
+   nothing to give a tap target to. */
+@media (pointer: coarse) and (max-width: 1360px) {
 
     /* the drawer toggle: the icon stays its size, the hit area grows */
     .mobile-menu {
@@ -288,6 +307,17 @@ h1, h2, h3, h4, h5, h6 {
         min-width: 44px;
         min-height: 44px;
         margin-right: -8px;     /* keeps the icon on the same optical edge */
+    }
+}
+
+/* The pull above is 8px, and it only has room to be spent while the header
+   gutter is wider than that. erp-nav.css takes the gutter down to 0.4rem
+   below 330px, so from there the box hung 2px off the right of the screen
+   and the hamburger came back clipped on every 320px phone. The icon gives
+   up its optical alignment rather than the screen edge. */
+@media (pointer: coarse) and (max-width: 330px) {
+    .mobile-menu {
+        margin-right: 0;
     }
 
     .als-btn {
@@ -487,5 +517,242 @@ h1, h2, h3, h4, h5, h6 {
     .loc-map,
     body.hv-light .loc-map {
         height: 340px;
+    }
+}
+
+/* -------------------------------------------------------------------
+   18. The floating WhatsApp button
+
+   It is written inline on every page — 50px, 20px clear of two edges,
+   position: fixed — so there is no class to hang a rule on and no way to
+   beat an inline declaration except !important. The attribute selector
+   matches the inline style itself, which keeps the rule off the pages
+   that place the same link somewhere other than the corner.
+
+   On a 320px screen a 50px disc 20px in from the edge lands on top of
+   the hero's second call to action. Tucking it into the corner and
+   taking it down to 46px clears the button while leaving the target
+   comfortably above the 44px floor.
+   ------------------------------------------------------------------- */
+@media (max-width: 480px) {
+
+    a[href*="wa.me"][style*="position: fixed"] {
+        width: 46px !important;
+        height: 46px !important;
+        font-size: 22px !important;
+        right: 10px !important;
+    }
+
+    /* Only the disc that is actually anchored to the corner moves down. The
+       25 pages that carry a sticky call bar lift theirs off the bottom with
+       an inline offset of their own, and flattening every button to the same
+       12px dropped those straight back inside the bar. */
+    a[href*="wa.me"][style*="bottom: 20px"] {
+        bottom: 12px !important;
+    }
+}
+
+/* Those 25 pages: the bar is 74px tall while its two buttons sit on one row,
+   and 99px once they wrap, which they do below 400px. The inline `bottom:
+   88px` was measured against the shorter of the two, so on a phone the disc
+   already overlapped the bar by 11px before anything here touched it. */
+@media (max-width: 768px) {
+
+    a[href*="wa.me"][style*="bottom: 88px"] {
+        bottom: 86px !important;
+    }
+}
+
+@media (max-width: 400px) {
+
+    a[href*="wa.me"][style*="bottom: 88px"] {
+        bottom: 111px !important;
+    }
+}
+
+/* At 320 the hero's second button reaches 265px and the disc starts at 264.
+   Two more pixels of corner and the two stop touching. */
+@media (max-width: 360px) {
+
+    a[href*="wa.me"][style*="position: fixed"] {
+        right: 8px !important;
+    }
+}
+
+/* The disc is fixed, so the end of the document scrolls underneath it and
+   the last footer line can finish behind it. A little room at the bottom
+   means the page always ends above the button rather than under it. */
+@media (max-width: 768px) {
+
+    footer {
+        padding-bottom: 72px;
+    }
+}
+
+/* -------------------------------------------------------------------
+   19. Decorative glow behind the organ illustrations
+
+   The seven organ pages sit their hero image on `.pc-visual-stage`, and
+   a blurred radial glow is painted behind it with
+
+       .pc-visual-stage::after { position: absolute; inset: -22%; }
+
+   -22% is a bleed on all four sides. On a desktop the container's own
+   margins absorb it. On a phone the stage is as wide as the container,
+   so 22% of 359px puts 79px of glow past the right edge — and because
+   the meta viewport is width=device-width, the layout viewport widens to
+   match, taking the fixed header out past the screen with it. Measured
+   on gallbladder.html: 27px of sideways scroll at 390, 43px at 320.
+
+   The vertical bleed is what gives the glow its lift, so it stays. Only
+   the horizontal bleed goes, and only on phones — the glow is blurred
+   46px and sits behind the card at z-index -1, so there is nothing to
+   see at the edge it no longer reaches.
+   ------------------------------------------------------------------- */
+@media (max-width: 767px) {
+
+    .pc-visual-stage::after {
+        inset: -22% 0;
+    }
+}
+
+/* -------------------------------------------------------------------
+   20. The drawer's second and third levels, up to the width the drawer
+   actually starts at
+
+   The hamburger takes over at 1360px (section 18 above), but the rules
+   that turn the Related Disease mega panel into an accordion inside it
+   were written against `max-width: 992px`. Between 993 and 1360 — an
+   iPad in landscape, a small laptop — the drawer opened and the panel
+   inside it was still the desktop floating card: absolutely positioned
+   off a 214px column, so it hung off the side of the screen, and its
+   second level only appeared on hover, which a touchscreen has none of.
+   The same rules are restated here at the drawer's own breakpoint. They
+   are all scoped to `.nav-links.open`, so nothing outside an open drawer
+   can see them, and below 992 they are identical to what style.css
+   already sets.
+
+   `white-space` is the other half: `.nav-links a` is nowrap for the bar,
+   where every label is one line by design. In the drawer the same rule
+   clipped "Gallbladder cancer and gallstone disease" mid-word at the
+   panel edge. Rows in the drawer wrap instead, and the panel is given
+   the width to make that a second line rather than five.
+   ------------------------------------------------------------------- */
+@media (max-width: 1360px) {
+
+    /* A phone has the room; the 214px cap was sized for the labels on the
+       first level only, and the third level sits two indents inside it. */
+    .nav-links.open {
+        width: min(300px, calc(100vw - 20px));
+    }
+
+    .nav-links.open a,
+    .nav-links.open .dropbtn {
+        white-space: normal;
+        overflow-wrap: break-word;
+    }
+
+    /* Panels flow inline rather than floating off the row above */
+    .nav-links.open .advmega-panel {
+        width: 100%;
+        min-width: 0;
+        margin-top: 0;
+        padding: 0 0 0.5rem 0.75rem;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+        -webkit-backdrop-filter: none;
+        backdrop-filter: none;
+    }
+
+    .nav-links.open .advmega-panel .advmega-link {
+        min-height: 46px;
+        padding: 0.7rem 0;
+        border-left: 0;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        font-size: 1rem;
+    }
+
+    /* Hover is not a gesture here — `.is-open`, set on tap, is */
+    .nav-links.open .advmega-item:hover > .advmega-link {
+        background: transparent;
+        color: var(--text-main);
+    }
+
+    .nav-links.open .advmega-item:hover > .advmega-sub {
+        display: none;
+    }
+
+    .nav-links.open .advmega-item.is-open > .advmega-link {
+        color: var(--primary);
+    }
+
+    .nav-links.open .advmega-item.is-open > .advmega-link .advmega-sign {
+        color: var(--primary);
+        opacity: 1;
+    }
+
+    /* the + on the row turns into a x while its list is open */
+    .nav-links.open .advmega-item.is-open > .advmega-link .advmega-sign::before {
+        content: '\00D7';
+    }
+
+    .nav-links.open .advmega-item.is-open > .advmega-sub {
+        display: block;
+        position: static;
+        padding: 0 0 0 0.75rem;
+        animation: none;
+    }
+
+    .nav-links.open .advmega-sub-inner {
+        min-width: 0;
+        max-width: none;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+    }
+
+    .nav-links.open .advmega-sub-inner a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        padding: 0.62rem 0;
+        border-bottom: 1px solid var(--border-color);
+        border-radius: 0;
+        font-size: 0.95rem;
+    }
+
+    .nav-links.open .advmega-sub-inner a:hover {
+        padding-left: 0.4rem;
+        background: transparent;
+    }
+
+    /* Every first-level row a full 44px tall, the panel rows included:
+       they were 39px, which is under the size a thumb is aimed at. */
+    .nav-links.open > a,
+    .nav-links.open .dropbtn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+    }
+}
+
+/* -------------------------------------------------------------------
+   21. Header controls on a touch screen
+
+   The language pill and the ERP button are 30px and 27px tall — sized
+   as text next to a menu that is read with a mouse. On a phone they are
+   the only two controls in the bar besides the hamburger, and both were
+   under the 44px a tap is aimed at.
+   ------------------------------------------------------------------- */
+@media (pointer: coarse) and (max-width: 1360px) {
+
+    .als-btn,
+    .erp-login-btn {
+        min-height: 44px;
     }
 }

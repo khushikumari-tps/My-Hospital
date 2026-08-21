@@ -1,0 +1,132 @@
+/* ==========================================================================
+   Advitya Healthcares — brand tokens
+
+   ONE source of truth for colour, type, radius, elevation and motion. Every
+   other stylesheet consumes these rather than restating hex values, so the
+   theme is changed here and nowhere else.
+
+   ---------------------------------------------------------------------------
+   Where the colours come from
+
+   Sampled from images/advitya_logo_nav.png — 8081 chromatic pixels, every one
+   of them between hue 348 and hue 20. The mark is a warm gradient and nothing
+   else: deep crimson in the wordmark, crimson-rose through its middle, coral
+   on the triangle, warm orange on the rays. There is no blue in the logo, so
+   there is no blue in the system.
+
+     #780C0C  wordmark base, triangle shadow   -> --adv-crimson-900
+     #9C2430  wordmark mid                     -> --adv-crimson-700
+     #B43C54  wordmark rose                    -> --adv-rose-600
+     #E46C60  triangle face                    -> --adv-coral-500
+     #F09060  rays                             -> --adv-warm-400
+
+   ---------------------------------------------------------------------------
+   How they are meant to be used
+
+   Red is the brand, not the surface. The page is white or a warm off-white;
+   deep crimson carries actions, the CTA band, the header and the footer; coral
+   and warm orange appear only at the size of an icon, an eyebrow or a rule.
+   Headings stay charcoal. That restraint is what keeps a specialist hospital
+   from reading as an emergency banner — the palette is warm, the page is calm.
+
+   Load this file FIRST, before every other stylesheet.
+   ========================================================================== */
+
+:root {
+
+    /* ---- brand ramp, darkest first ---------------------------------- */
+    --adv-crimson-900: #5E1019;
+    /* deepest ground: footer, CTA band                                  */
+    --adv-crimson-800: #780C0C;
+    /* logo wordmark base                                                */
+    --adv-crimson-700: #8E1B2E;
+    /* THE brand colour: primary buttons, links, active nav              */
+    --adv-crimson-600: #B92D3C;
+    /* hover and pressed states                                          */
+    --adv-rose-600: #B43C54;
+    /* the rose in the wordmark gradient                                 */
+    --adv-ember-500: #D9694F;
+    /* gradient partner, never a flat fill                               */
+    --adv-coral-500: #E46C60;
+    /* icons, highlights, small marks                                    */
+    --adv-warm-400: #F09060;
+    /* eyebrows, rays, badges — the lightest accent                      */
+    --adv-warm-300: #E08A4E;
+    /* the warm mid used on dark grounds                                 */
+    --adv-warm-deep: #B4652C;
+    /* the same, legible on white                                        */
+    --adv-warm-soft: #F7DCC9;
+    /* tint for chips and soft fills                                     */
+
+    /* ---- ink and surfaces ------------------------------------------- */
+    --adv-ink: #241A1B;
+    /* headings — charcoal with a red cast, not black                    */
+    --adv-ink-2: #3A2A2B;
+    --adv-ink-body: #55494A;
+    --adv-ink-muted: #6F6260;
+
+    --adv-white: #FFFFFF;
+    --adv-blush: #FBF5F3;
+    /* the warm off-white used for alternating sections                  */
+    --adv-blush-deep: #F5E8E4;
+    --adv-line: #ECDFDC;
+    --adv-line-soft: #F5EBE8;
+
+    /* ---- gradients --------------------------------------------------- */
+    --adv-grad-brand: linear-gradient(120deg, var(--adv-crimson-900) 0%, var(--adv-crimson-700) 52%, var(--adv-ember-500) 100%);
+    --adv-grad-deep: linear-gradient(165deg, #6E0B0E 0%, #520609 62%, #3C0406 100%);
+    /* the logo's own gradient direction, for marks and rules            */
+    --adv-grad-mark: linear-gradient(135deg, var(--adv-crimson-800) 0%, var(--adv-rose-600) 55%, var(--adv-warm-400) 100%);
+
+    /* ---- elevation --------------------------------------------------
+       Burgundy-tinted rather than neutral grey: a grey shadow on a warm
+       white reads as dirt, a tinted one reads as depth. */
+    --adv-lift-1: 0 1px 2px rgba(94, 16, 25, .05);
+    --adv-lift-2: 0 10px 24px -12px rgba(94, 16, 25, .22), 0 2px 6px -3px rgba(94, 16, 25, .08);
+    --adv-lift-3: 0 26px 56px -22px rgba(94, 16, 25, .28), 0 8px 18px -10px rgba(94, 16, 25, .12);
+
+    /* ---- type -------------------------------------------------------
+       Two families, no more. Outfit sets headings and anything that
+       behaves like a label; Inter carries body copy at every size. */
+    --adv-font-head: 'Outfit', 'Manrope', system-ui, sans-serif;
+    --adv-font-sans: 'Inter', system-ui, sans-serif;
+
+    /* A fluid scale, so a heading is one token rather than a clamp()
+       written out again on every page. */
+    --adv-text-xs: .78rem;
+    --adv-text-sm: .88rem;
+    --adv-text-base: 1rem;
+    --adv-text-lg: 1.12rem;
+    --adv-h4: clamp(1.05rem, 1.4vw, 1.2rem);
+    --adv-h3: clamp(1.2rem, 1.8vw, 1.45rem);
+    --adv-h2: clamp(1.6rem, 3vw, 2.5rem);
+    --adv-h1: clamp(2.1rem, 4.6vw, 3.4rem);
+
+    /* The eyebrow above a section heading, used often enough to be a
+       token instead of five near-identical rules. */
+    --adv-eyebrow-size: .72rem;
+    --adv-eyebrow-track: .16em;
+
+    /* ---- geometry ---------------------------------------------------- */
+    --adv-radius-sm: 10px;
+    --adv-radius: 16px;
+    --adv-radius-lg: 22px;
+    --adv-radius-pill: 999px;
+
+    /* Section rhythm. Sections that set their own padding drift apart by
+       10-20px each and the page loses its beat; these keep them in step. */
+    --adv-sec-y: clamp(52px, 5.3vw, 76px);
+    --adv-gap: clamp(16px, 2vw, 28px);
+
+    /* ---- motion ------------------------------------------------------ */
+    --adv-ease: cubic-bezier(.22, .61, .36, 1);
+    --adv-dur: .3s;
+}
+
+/* Motion is decoration here; anyone who has asked the OS to stop it gets a
+   still page rather than a slower one. */
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --adv-dur: .01ms;
+    }
+}

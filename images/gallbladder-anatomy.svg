@@ -111,7 +111,7 @@
   <!-- ================================= labels ================================= -->
   <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
     <g stroke="#C9A79E" stroke-width="1.4" fill="none">
-      <path d="M196 452 L120 508 L96 508"/>
+      <path d="M196 452 L172 508 L160 508"/>
       <path d="M330 336 L330 268 L306 256"/>
       <path d="M404 400 L520 400 L544 388"/>
       <path d="M300 176 L300 96 L276 84"/>
@@ -125,8 +125,10 @@
       <circle cx="492" cy="516" r="3.4"/>
     </g>
 
-    <text x="90" y="504" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Gallbladder</text>
-    <text x="90" y="526" font-size="15" text-anchor="end">Stores and concentrates bile</text>
+    <text x="154" y="504" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Gallbladder</text>
+    <!-- two lines: on one it ran off the left edge of the viewBox -->
+    <text x="154" y="526" font-size="15" text-anchor="end">Stores and</text>
+    <text x="154" y="544" font-size="15" text-anchor="end">concentrates bile</text>
 
     <text x="300" y="80" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Liver</text>
     <text x="300" y="102" font-size="15" text-anchor="end">Makes the bile continuously</text>
@@ -138,6 +140,7 @@
     <text x="550" y="416" font-size="15">Carries bile down to the bowel</text>
 
     <text x="630" y="536" font-size="21" font-weight="600" fill="#4A322E">Ampulla</text>
-    <text x="630" y="558" font-size="15">Shared outlet with the pancreas</text>
+    <text x="630" y="558" font-size="15">Shared outlet with</text>
+    <text x="630" y="576" font-size="15">the pancreas</text>
   </g>
 </svg>

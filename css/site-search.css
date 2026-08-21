@@ -55,7 +55,7 @@
 }
 
 .as-field > i {
-    color: var(--primary, #E4574E);
+    color: var(--primary, #A32236);
     font-size: 1rem;
 }
 
@@ -132,7 +132,7 @@
     font-weight: 700;
     letter-spacing: .13em;
     text-transform: uppercase;
-    color: var(--primary-dark, #C94239);
+    color: var(--primary-dark, #8E1B2E);
     opacity: .7;
     white-space: nowrap;
 }
@@ -169,7 +169,7 @@
 }
 
 .as-empty a {
-    color: var(--primary-dark, #C94239);
+    color: var(--primary-dark, #8E1B2E);
     font-weight: 600;
 }
 

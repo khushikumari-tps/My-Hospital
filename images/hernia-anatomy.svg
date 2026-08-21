@@ -1,0 +1,176 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 620" width="860" height="620"
+     role="img" aria-labelledby="hrnTitle hrnDesc">
+  <title id="hrnTitle">Anatomy of a hernia: a weak spot in the abdominal wall through which tissue pushes out</title>
+  <desc id="hrnDesc">Cross-section of the abdominal wall drawn in layers — skin and fatty tissue on the
+    outside, the muscle wall beneath, and the lining of the abdomen inside. A gap in the muscle layer lets a
+    sac of lining and a loop of bowel push outwards, producing the bulge that is felt under the skin. Drawn
+    to match the other anatomy illustrations on this site.</desc>
+
+  <defs>
+    <linearGradient id="hSkin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#F6DCCB"/>
+      <stop offset="1"   stop-color="#E7C0A8"/>
+    </linearGradient>
+
+    <linearGradient id="hFat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#FBEDC8"/>
+      <stop offset="1"   stop-color="#F0D79A"/>
+    </linearGradient>
+
+    <linearGradient id="hMus" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#E58B7C"/>
+      <stop offset="0.55" stop-color="#C95F51"/>
+      <stop offset="1"   stop-color="#A94636"/>
+    </linearGradient>
+
+    <linearGradient id="hPer" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0"   stop-color="#F3F6FA"/>
+      <stop offset="1"   stop-color="#DCE4EE"/>
+    </linearGradient>
+
+    <linearGradient id="hBowel" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#F2B3A6"/>
+      <stop offset="0.5" stop-color="#DE8E7E"/>
+      <stop offset="1"   stop-color="#BC6A5A"/>
+    </linearGradient>
+
+    <radialGradient id="hGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#C95F51" stop-opacity="0.16"/>
+      <stop offset="1"   stop-color="#C95F51" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- the defect is drawn by cutting the muscle band with this mask -->
+    <mask id="hDefect">
+      <rect width="860" height="620" fill="#fff"/>
+      <path d="M372 236 C 392 214, 470 214, 490 236 L 490 330 C 470 352, 392 352, 372 330 Z" fill="#000"/>
+    </mask>
+  </defs>
+
+  <rect width="860" height="620" fill="#ffffff"/>
+
+  <!-- halo, so the bulge reads as the subject -->
+  <ellipse cx="432" cy="250" rx="250" ry="170" fill="url(#hGlow)"/>
+
+  <!-- =========================== outer layers =========================== -->
+  <!-- skin -->
+  <path d="M120 168 C 240 156, 320 156, 372 158
+           C 392 194, 396 214, 400 232
+           C 412 168, 452 150, 486 176
+           C 506 192, 502 218, 492 236
+           C 540 158, 620 154, 740 166
+           L 740 206 C 620 194, 548 198, 500 268
+           C 486 288, 462 296, 432 296
+           C 402 296, 380 286, 368 262
+           C 340 210, 250 198, 120 208 Z"
+        fill="url(#hSkin)" stroke="#D2A98E" stroke-width="2"/>
+
+  <!-- fatty tissue -->
+  <path d="M120 208 C 250 198, 340 210, 368 262
+           C 380 286, 402 296, 432 296
+           C 462 296, 486 288, 500 268
+           C 548 198, 620 194, 740 206
+           L 740 246 C 626 236, 566 240, 522 300
+           C 500 330, 468 344, 432 344
+           C 396 344, 366 330, 346 300
+           C 320 262, 244 244, 120 250 Z"
+        fill="url(#hFat)" stroke="#DCC084" stroke-width="2"/>
+
+  <!-- ======================= muscle wall, with the gap ================== -->
+  <g mask="url(#hDefect)">
+    <path d="M120 250 C 244 244, 320 262, 346 300
+             C 366 330, 396 344, 432 344
+             C 468 344, 500 330, 522 300
+             C 566 240, 626 236, 740 246
+             L 740 330 C 628 320, 574 322, 540 366
+             C 512 402, 474 420, 432 420
+             C 390 420, 352 402, 326 366
+             C 296 324, 236 316, 120 330 Z"
+          fill="url(#hMus)" stroke="#8F3A2C" stroke-width="2"/>
+
+    <!-- muscle striations -->
+    <g stroke="#7E3125" stroke-width="2" opacity="0.22" stroke-linecap="round">
+      <path d="M160 262 C 168 292, 168 316, 160 340"/>
+      <path d="M204 262 C 212 292, 212 318, 204 342"/>
+      <path d="M248 268 C 256 296, 256 320, 248 344"/>
+      <path d="M292 282 C 300 308, 300 330, 292 352"/>
+      <path d="M576 258 C 584 288, 584 314, 576 338"/>
+      <path d="M620 252 C 628 284, 628 310, 620 334"/>
+      <path d="M664 250 C 672 282, 672 308, 664 332"/>
+      <path d="M708 248 C 716 280, 716 306, 708 330"/>
+    </g>
+  </g>
+
+  <!-- cut edges of the defect, so the gap reads as an opening not a paint gap -->
+  <g stroke="#8F3A2C" stroke-width="3.5" fill="none" stroke-linecap="round">
+    <path d="M376 268 C 384 292, 386 314, 380 336"/>
+    <path d="M488 262 C 480 288, 478 310, 484 332"/>
+  </g>
+
+  <!-- ===================== lining of the abdomen ======================= -->
+  <path d="M120 330 C 236 316, 296 324, 326 366
+           C 352 402, 390 420, 432 420
+           C 474 420, 512 402, 540 366
+           C 574 322, 628 320, 740 330
+           L 740 366 C 630 356, 586 358, 560 396
+           C 528 442, 484 462, 432 462
+           C 380 462, 338 442, 306 396
+           C 282 360, 228 352, 120 366 Z"
+        fill="url(#hPer)" stroke="#C3CEDC" stroke-width="2"/>
+
+  <!-- ================== the sac and its contents ======================= -->
+  <!-- sac: the lining pushed out through the gap -->
+  <path d="M380 336 C 372 288, 386 236, 432 224
+           C 478 236, 492 288, 484 336
+           C 476 372, 452 388, 432 388
+           C 412 388, 388 372, 380 336 Z"
+        fill="url(#hPer)" stroke="#B9C6D6" stroke-width="2.5"/>
+
+  <!-- a loop of bowel inside the sac -->
+  <path d="M404 322 C 396 288, 410 262, 432 262 C 454 262, 468 288, 460 322
+           C 454 346, 442 356, 432 356 C 422 356, 410 346, 404 322 Z"
+        fill="url(#hBowel)" stroke="#B05B4C" stroke-width="2.5"/>
+  <path d="M416 300 C 412 282, 420 272, 430 272"
+        fill="none" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- the bulge as it is felt from outside -->
+  <path d="M398 232 C 404 196, 420 178, 432 178 C 444 178, 460 196, 466 232"
+        fill="none" stroke="#D2A98E" stroke-width="2.5" stroke-dasharray="7 7" opacity="0.8"/>
+
+  <!-- ============================== labels ============================= -->
+  <!-- Labels are kept inside the 860x620 box on purpose: anything that runs
+       past the viewBox is clipped wherever the file is displayed, and these
+       run to the very edges of the drawing. Long captions break over two
+       lines rather than reaching for room that is not there. -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#5B4E58">
+    <g stroke="#C4B2BC" stroke-width="1.4" fill="none">
+      <path d="M432 186 L 432 118 L 470 106"/>
+      <path d="M376 300 L 296 292 L 276 282"/>
+      <path d="M432 300 L 432 512 L 470 524"/>
+      <path d="M664 288 L 690 282 L 706 276"/>
+      <path d="M300 400 L 282 424 L 268 430"/>
+    </g>
+    <g fill="#C4B2BC">
+      <circle cx="432" cy="186" r="3.4"/>
+      <circle cx="376" cy="300" r="3.4"/>
+      <circle cx="432" cy="300" r="3.4"/>
+      <circle cx="664" cy="288" r="3.4"/>
+      <circle cx="300" cy="400" r="3.4"/>
+    </g>
+
+    <text x="476" y="102" font-size="21" font-weight="600" fill="#3D3038">Bulge under the skin</text>
+    <text x="476" y="124" font-size="15">What is usually noticed first</text>
+
+    <text x="268" y="266" font-size="21" font-weight="600" fill="#3D3038" text-anchor="end">Gap in the muscle</text>
+    <text x="268" y="288" font-size="15" text-anchor="end">The weak point tissue</text>
+    <text x="268" y="306" font-size="15" text-anchor="end">passes through</text>
+
+    <text x="476" y="528" font-size="21" font-weight="600" fill="#3D3038">Hernia sac and contents</text>
+    <text x="476" y="550" font-size="15">Lining, and sometimes bowel</text>
+
+    <text x="712" y="266" font-size="21" font-weight="600" fill="#3D3038">Muscle wall</text>
+    <text x="712" y="288" font-size="15">Intact either side</text>
+
+    <text x="262" y="424" font-size="21" font-weight="600" fill="#3D3038" text-anchor="end">Abdominal lining</text>
+    <text x="262" y="446" font-size="15" text-anchor="end">Behind the muscle</text>
+  </g>
+</svg>

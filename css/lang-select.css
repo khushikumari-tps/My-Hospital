@@ -29,7 +29,7 @@
     font-family: inherit;
     font-size: .86rem;
     font-weight: 600;
-    color: var(--primary-dark, #C94239);
+    color: var(--primary-dark, #8E1B2E);
     line-height: 1;
     cursor: pointer;
     transition: border-color .25s ease, box-shadow .25s ease, background-color .25s ease;
@@ -37,7 +37,7 @@
 
 .als-btn:hover,
 .als-btn:focus-visible {
-    border-color: var(--primary, #E4574E);
+    border-color: var(--primary, #A32236);
     box-shadow: 0 6px 16px -8px rgba(139, 16, 20, .5);
     outline: none;
 }
@@ -128,7 +128,7 @@
 
 .als-opt[aria-selected="true"] {
     background: var(--bg-wash, #FDF7F5);
-    color: var(--primary-dark, #C94239);
+    color: var(--primary-dark, #8E1B2E);
     font-weight: 600;
 }
 

@@ -23,10 +23,27 @@
             window.addEventListener('scroll', setScrolled);
         }
 
+        // Wide enough for the bar, or narrow enough that the menu is a drawer.
+        // 1360 is where style.css hides .nav-links and shows the hamburger;
+        // at 992 this said "desktop" for the whole 993-1360 band, so inside
+        // the drawer a tap on Related Disease followed its href instead of
+        // opening the panel, and the diseases under it needed a hover.
+        var isDrawer = function () { return window.matchMedia('(max-width: 1360px)').matches; };
+
         // Dropdowns + mega menu
         document.querySelectorAll('.dropdown > .dropbtn').forEach(function (btn) {
-            btn.setAttribute('href', '#');
+            /* Most of these are labels rather than links — their href is
+               decorative and the click belongs to the panel, so it is pinned
+               to '#'. One that opts in with data-follow-link has a page of
+               its own and keeps its href: on the bar the panel opens on
+               hover, which leaves the click free to navigate. In the drawer
+               there is no hover, so the tap still has to open the panel or
+               every row underneath becomes unreachable. */
+            var follows = btn.hasAttribute('data-follow-link');
+            if (!follows) btn.setAttribute('href', '#');
+
             btn.addEventListener('click', function (e) {
+                if (follows && !isDrawer()) return;
                 e.preventDefault();
                 var content = this.nextElementSibling;
                 var wasOpen = content.classList.contains('show');
@@ -52,8 +69,6 @@
         // Related Disease menu. Desktop opening is pure CSS hover; the only
         // things needed here are clearing a stale .show left by a click, and
         // turning the second level into a tap accordion inside the drawer.
-        var isDrawer = function () { return window.matchMedia('(max-width: 992px)').matches; };
-
         document.querySelectorAll('.dropdown.advmega').forEach(function (menu) {
             menu.addEventListener('mouseleave', function () {
                 if (isDrawer()) return;
@@ -89,6 +104,23 @@
             mobileMenu.addEventListener('click', function (e) {
                 e.stopPropagation();
                 setIcon(navLinks.classList.toggle('open'));
+            });
+
+            /* The menu is a panel over the page rather than a screen of its
+               own, so the page around it is still there to be tapped — and a
+               tap outside a dropdown is how a dropdown is dismissed. */
+            document.addEventListener('click', function (e) {
+                if (!navLinks.classList.contains('open')) return;
+                if (navLinks.contains(e.target) || mobileMenu.contains(e.target)) return;
+                navLinks.classList.remove('open');
+                setIcon(false);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key !== 'Escape' || !navLinks.classList.contains('open')) return;
+                navLinks.classList.remove('open');
+                setIcon(false);
+                mobileMenu.focus();
             });
 
             // Close the drawer once a real link is followed. Rows that expand

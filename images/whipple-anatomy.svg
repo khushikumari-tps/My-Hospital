@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 700" width="860" height="700"
+     role="img" aria-labelledby="whTitle whDesc">
+  <title id="whTitle">What a Whipple procedure removes</title>
+  <desc id="whDesc">Schematic illustration of the organs involved in a Whipple procedure
+    (pancreaticoduodenectomy). The head of the pancreas, the duodenum that curves around it, the
+    gallbladder and the lower part of the bile duct are shaded and outlined in red: they are removed
+    together as one block. The liver, the bile duct above the line of division and the body and tail
+    of the pancreas are drawn in plain colour, because they remain and are joined to the small
+    intestine during the reconstruction. Solid red lines mark where the surgeon divides the pancreas,
+    the bile duct and the bowel.</desc>
+
+  <defs>
+    <linearGradient id="whLiver" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"    stop-color="#B9585A"/>
+      <stop offset="0.45" stop-color="#8C2C34"/>
+      <stop offset="1"    stop-color="#5C1821"/>
+    </linearGradient>
+    <linearGradient id="whGb" x1="0.12" y1="0" x2="0.88" y2="1">
+      <stop offset="0"    stop-color="#C6D68C"/>
+      <stop offset="0.4"  stop-color="#9FB265"/>
+      <stop offset="1"    stop-color="#6C7C3C"/>
+    </linearGradient>
+    <linearGradient id="whDuct" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0"   stop-color="#D9C88E"/>
+      <stop offset="0.5" stop-color="#BFA765"/>
+      <stop offset="1"   stop-color="#8E7A3E"/>
+    </linearGradient>
+    <linearGradient id="whPnc" x1="0.1" y1="0" x2="0.9" y2="1">
+      <stop offset="0"   stop-color="#F3D2B2"/>
+      <stop offset="0.5" stop-color="#DDA478"/>
+      <stop offset="1"   stop-color="#B8804F"/>
+    </linearGradient>
+    <linearGradient id="whGut" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0"   stop-color="#F0B0A4"/>
+      <stop offset="0.5" stop-color="#DC8B78"/>
+      <stop offset="1"   stop-color="#B15E4C"/>
+    </linearGradient>
+    <linearGradient id="whSheen" x1="0" y1="0" x2="0.5" y2="1">
+      <stop offset="0"   stop-color="#FFFFFF" stop-opacity="0.5"/>
+      <stop offset="1"   stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <radialGradient id="whGlow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0"   stop-color="#8C2C34" stop-opacity="0.1"/>
+      <stop offset="1"   stop-color="#8C2C34" stop-opacity="0"/>
+    </radialGradient>
+
+    <!-- The shading that marks the resection specimen. Hatching rather than a
+         flat wash, so the organ colour underneath stays readable and the two
+         states still separate in a greyscale print. -->
+    <pattern id="whHatch" width="13" height="13" patternUnits="userSpaceOnUse"
+             patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="13" stroke="#C0392B" stroke-width="4" opacity="0.34"/>
+    </pattern>
+  </defs>
+
+  <rect width="860" height="700" fill="#ffffff"/>
+  <ellipse cx="420" cy="380" rx="330" ry="240" fill="url(#whGlow)"/>
+
+  <!-- ================================ liver: remains ================================ -->
+  <path d="M160 210
+           C155 148 218 100 310 94
+           C398 88 462 112 486 148
+           C502 172 494 202 474 220
+           C448 246 400 258 356 262
+           C330 254 300 254 282 260
+           C254 268 240 276 226 280
+           C190 276 164 250 160 210 Z"
+        fill="url(#whLiver)"/>
+  <path d="M196 168 C240 138 300 130 352 136" fill="none" stroke="url(#whSheen)"
+        stroke-width="18" stroke-linecap="round"/>
+
+  <!-- ===================== bile ducts: upper remains, lower removed =====================
+       The ducts leaving the liver and the first part of the common duct stay behind.
+       The duct below the line of division runs behind the head of the pancreas, so it
+       leaves with the specimen. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M300 262 C316 280 330 292 344 302" stroke="#8E7A3E" stroke-width="15" opacity="0.38"/>
+    <path d="M300 262 C316 280 330 292 344 302" stroke="url(#whDuct)" stroke-width="11"/>
+    <path d="M404 258 C384 276 360 292 348 302" stroke="#8E7A3E" stroke-width="13" opacity="0.38"/>
+    <path d="M404 258 C384 276 360 292 348 302" stroke="url(#whDuct)" stroke-width="9"/>
+
+    <!-- common bile duct, above the line of division -->
+    <path d="M346 302 C356 330 366 356 376 380" stroke="#8E7A3E" stroke-width="21" opacity="0.38"/>
+    <path d="M346 302 C356 330 366 356 376 380" stroke="url(#whDuct)" stroke-width="16"/>
+
+    <!-- lower bile duct: part of the specimen -->
+    <path d="M382 396 C392 424 406 448 430 464" stroke="#8E7A3E" stroke-width="21" opacity="0.38"/>
+    <path d="M382 396 C392 424 406 448 430 464" stroke="url(#whDuct)" stroke-width="16"/>
+    <path d="M382 396 C392 424 406 448 430 464" stroke="url(#whHatch)" stroke-width="16"/>
+
+    <!-- cystic duct: part of the specimen -->
+    <path d="M300 302 C318 308 332 306 344 302" stroke="#8E7A3E" stroke-width="14" opacity="0.38"/>
+    <path d="M300 302 C318 308 332 306 344 302" stroke="url(#whDuct)" stroke-width="10"/>
+    <path d="M300 302 C318 308 332 306 344 302" stroke="url(#whHatch)" stroke-width="10"/>
+  </g>
+
+  <!-- ============================ gallbladder: removed ============================ -->
+  <g>
+    <path d="M296 300 C282 288 262 290 244 302 C214 322 190 350 190 384
+             C190 414 218 434 250 424 C284 412 308 372 310 340 C311 320 306 308 296 300 Z"
+          fill="url(#whGb)"/>
+    <path d="M296 300 C282 288 262 290 244 302 C214 322 190 350 190 384
+             C190 414 218 434 250 424 C284 412 308 372 310 340 C311 320 306 308 296 300 Z"
+          fill="url(#whHatch)"/>
+    <path d="M296 300 C282 288 262 290 244 302 C214 322 190 350 190 384
+             C190 414 218 434 250 424 C284 412 308 372 310 340 C311 320 306 308 296 300 Z"
+          fill="none" stroke="#C0392B" stroke-width="2.8" stroke-dasharray="10 7"/>
+    <path d="M216 360 C238 336 268 316 290 312" fill="none" stroke="url(#whSheen)"
+          stroke-width="14" stroke-linecap="round"/>
+  </g>
+
+  <!-- ============================== duodenum: removed ==============================
+       Drawn before the head of the pancreas so that the gland sits inside the curve,
+       which is the relationship that decides the operation. -->
+  <g fill="none" stroke-linecap="round">
+    <path d="M430 378 C510 384 566 424 568 480 C570 536 522 578 456 588 C424 593 400 606 386 624"
+          stroke="#B15E4C" stroke-width="40" opacity="0.6"/>
+    <path d="M430 378 C510 384 566 424 568 480 C570 536 522 578 456 588 C424 593 400 606 386 624"
+          stroke="url(#whGut)" stroke-width="34"/>
+    <path d="M430 378 C510 384 566 424 568 480 C570 536 522 578 456 588 C424 593 400 606 386 624"
+          stroke="url(#whHatch)" stroke-width="34"/>
+    <path d="M430 378 C510 384 566 424 568 480 C570 536 522 578 456 588 C424 593 400 606 386 624"
+          stroke="#C0392B" stroke-width="2.6" stroke-dasharray="10 7" opacity="0.9"/>
+  </g>
+
+  <!-- ==================== pancreas: head removed, body and tail remain ==================== -->
+  <g>
+    <path d="M420 420 C452 400 500 406 524 432 C548 458 546 506 522 532
+             C496 560 448 560 422 534 C398 510 396 442 420 420 Z"
+          fill="url(#whPnc)"/>
+    <path d="M420 420 C452 400 500 406 524 432 C548 458 546 506 522 532
+             C496 560 448 560 422 534 C398 510 396 442 420 420 Z"
+          fill="url(#whHatch)"/>
+    <path d="M420 420 C452 400 500 406 524 432 C548 458 546 506 522 532
+             C496 560 448 560 422 534 C398 510 396 442 420 420 Z"
+          fill="none" stroke="#C0392B" stroke-width="2.8" stroke-dasharray="10 7"/>
+    <g fill="#A9704B" opacity="0.14">
+      <circle cx="446" cy="452" r="14"/>
+      <circle cx="482" cy="436" r="11"/>
+      <circle cx="460" cy="504" r="13"/>
+      <circle cx="502" cy="484" r="10"/>
+    </g>
+  </g>
+
+  <path d="M516 430 C548 414 592 392 640 366 C690 340 740 312 772 294
+           C788 285 800 300 790 314 C766 344 716 376 664 404
+           C620 428 578 450 552 466 C534 456 520 444 516 430 Z"
+        fill="url(#whPnc)"/>
+  <path d="M542 442 C592 416 664 378 744 330" fill="none" stroke="#ffffff"
+        stroke-width="7" stroke-linecap="round" opacity="0.26"/>
+  <path d="M548 452 C598 426 668 388 752 340" fill="none" stroke="#C9A24A"
+        stroke-width="3.6" stroke-linecap="round" opacity="0.7"/>
+
+  <!-- ampulla: bile and pancreatic juice share this outlet into the bowel, which is
+       why the duct and the duodenum leave with the head of the gland -->
+  <circle cx="554" cy="494" r="8" fill="#EFD6AF" stroke="#8E7A3E" stroke-width="2.4"/>
+
+  <!-- ===================== where the surgeon divides the tissue =====================
+       Four lines of division: the neck of the pancreas, the bile duct above the
+       specimen, and the bowel at each end of the duodenum. -->
+  <g stroke="#C0392B" stroke-width="3.6" stroke-linecap="round" fill="none">
+    <path d="M522 398 L 550 450"/>
+    <path d="M359 396 L 399 380"/>
+    <path d="M430 352 L 430 402"/>
+    <path d="M371 602 L 409 630"/>
+  </g>
+
+  <!-- ==================================== labels ==================================== -->
+  <g font-family="Inter, 'Segoe UI', sans-serif" fill="#6B534F">
+    <g stroke="#C9A79E" stroke-width="1.4" fill="none">
+      <path d="M264 108 L 264 76"/>
+      <path d="M200 352 L 176 330 L 162 330"/>
+      <path d="M402 432 L 330 470 L 312 476"/>
+      <path d="M470 552 L 470 636"/>
+      <path d="M568 522 L 654 546 L 672 546"/>
+      <path d="M736 316 L 700 274 L 686 268"/>
+    </g>
+    <g fill="#C9A79E">
+      <circle cx="264" cy="108" r="3.4"/>
+      <circle cx="200" cy="352" r="3.4"/>
+      <circle cx="402" cy="432" r="3.4"/>
+      <circle cx="470" cy="552" r="3.4"/>
+      <circle cx="568" cy="522" r="3.4"/>
+      <circle cx="736" cy="316" r="3.4"/>
+    </g>
+
+    <text x="150" y="46" font-size="21" font-weight="600" fill="#4A322E">Liver</text>
+    <text x="150" y="68" font-size="15">Stays in place; the bile duct above</text>
+    <text x="212" y="86" font-size="15" text-anchor="end">the division is reconnected</text>
+
+    <text x="152" y="326" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Gallbladder</text>
+    <text x="152" y="348" font-size="15" text-anchor="end">Removed</text>
+
+    <text x="302" y="472" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Lower bile duct</text>
+    <text x="302" y="494" font-size="15" text-anchor="end">The part running behind the</text>
+    <text x="302" y="512" font-size="15" text-anchor="end">head of the gland is removed</text>
+
+    <text x="470" y="660" font-size="21" font-weight="600" fill="#4A322E" text-anchor="middle">Head of the pancreas</text>
+    <text x="470" y="682" font-size="15" text-anchor="middle">Removed; the gland is divided at the neck</text>
+
+    <text x="682" y="542" font-size="21" font-weight="600" fill="#4A322E">Duodenum</text>
+    <text x="682" y="564" font-size="15">Removed with the head,</text>
+    <text x="682" y="582" font-size="15">whose blood supply</text>
+    <text x="682" y="600" font-size="15">it shares</text>
+
+    <text x="676" y="264" font-size="21" font-weight="600" fill="#4A322E" text-anchor="end">Body and tail</text>
+    <text x="676" y="286" font-size="15" text-anchor="end">Remain, and are joined</text>
+    <text x="676" y="304" font-size="15" text-anchor="end">to the small intestine</text>
+  </g>
+
+</svg>

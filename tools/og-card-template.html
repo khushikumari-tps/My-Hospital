@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Social share card template</title>
+    <!-- Build-time only: this file renders the social share cards for the six
+         landing pages and is deleted once they are generated. It carries no
+         content of its own beyond each page's own heading. -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            width: 1200px;
+            height: 630px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            padding: 64px;
+            background: linear-gradient(120deg, #FFFFFF 0%, #F2F7FD 58%, #E4EFFB 100%);
+            font-family: 'Inter', system-ui, sans-serif;
+            color: #0E1B2E;
+            overflow: hidden;
+        }
+
+        .copy { width: 560px; flex-shrink: 0; }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 34px;
+        }
+
+        .brand img { height: 58px; width: auto; }
+
+        .brand span {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 700;
+            font-size: 19px;
+            letter-spacing: .04em;
+            text-transform: uppercase;
+            color: #0B2545;
+            padding-left: 14px;
+            border-left: 1px solid #C9D9EC;
+        }
+
+        h1 {
+            font-family: 'Manrope', sans-serif;
+            font-weight: 800;
+            font-size: 62px;
+            line-height: 1.06;
+            letter-spacing: -.03em;
+            color: #0B2545;
+        }
+
+        p {
+            margin-top: 22px;
+            font-size: 24px;
+            line-height: 1.45;
+            color: #4A5A6E;
+        }
+
+        .rule {
+            width: 88px;
+            height: 6px;
+            border-radius: 3px;
+            background: #1E6FD9;
+            margin-top: 30px;
+        }
+
+        figure {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+        }
+
+        figure img {
+            max-width: 100%;
+            max-height: 500px;
+            border-radius: 22px;
+            box-shadow: 0 24px 60px -28px rgba(11, 37, 69, .45);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="copy">
+        <div class="brand">
+            <img src="../images/advitya_logo_nav.png" alt="">
+            <span>Advitya Healthcares</span>
+        </div>
+        <h1 id="title">Surgery</h1>
+        <p id="sub">Specialist surgical consultation</p>
+        <div class="rule"></div>
+    </div>
+    <figure><img id="art" src="../images/hernia-anatomy.svg" alt=""></figure>
+
+    <script>
+        var q = new URLSearchParams(location.search);
+        document.getElementById('title').textContent = q.get('title') || 'Surgery';
+        document.getElementById('sub').textContent = q.get('sub') || 'Specialist surgical consultation';
+        document.getElementById('art').src = q.get('art') || '../images/hernia-anatomy.svg';
+    </script>
+</body>
+
+</html>

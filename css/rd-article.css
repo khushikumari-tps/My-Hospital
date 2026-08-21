@@ -7,9 +7,9 @@
 .pcare {
     --brand-900: #5A0A0E;
     --brand-800: #7C1218;
-    --brand-700: #9E1F2B;
-    --brand-600: #C04050;
-    --brand-500: #E06050;
+    --brand-700: #8E1B2E;
+    --brand-600: #A32236;
+    --brand-500: #C4523F;
     --accent-400: #F08060;
     --accent-200: #F4CDC3;
     --accent-100: #FBE5DE;
@@ -66,8 +66,8 @@
     position: relative;
     padding: clamp(126px, 14vw, 164px) 0 clamp(44px, 5vw, 64px);
     background:
-        radial-gradient(1100px 620px at 82% 12%, #FCEBE5 0%, rgba(227, 243, 248, 0) 62%),
-        radial-gradient(820px 520px at 8% 88%, #FDF1EC 0%, rgba(234, 246, 250, 0) 60%),
+        radial-gradient(1100px 620px at 82% 12%, #FCEBE5 0%, rgba(252, 235, 229, 0) 62%),
+        radial-gradient(820px 520px at 8% 88%, #FDF1EC 0%, rgba(253, 241, 236, 0) 60%),
         linear-gradient(180deg, #FFFCFB 0%, #FDF6F3 100%);
     overflow: hidden;
 }

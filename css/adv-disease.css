@@ -8,11 +8,11 @@
 .advd {
     --brand-900: #5A0A0E;
     --brand-800: #7C1218;
-    --brand-700: #9E1F2B;
+    --brand-700: #8E1B2E;
     --brand-600: #B84050;
-    --brand-500: #C94239;
-    --brand-400: #E06050;
-    --brand-300: #F2A493;
+    --brand-500: #8E1B2E;
+    --brand-400: #C4523F;
+    --brand-300: #EFB6A6;
     --brand-100: #FBE0D9;
     --brand-050: #FDF6F3;
 
@@ -1584,14 +1584,14 @@
 .adv-hero .adv-eyebrow {
     background: #FFFFFF;
     border: 1px solid #F1DDD7;
-    color: #9E1F2B;
+    color: #8E1B2E;
     box-shadow: 0 10px 22px -16px rgba(96, 40, 38, .55);
     -webkit-backdrop-filter: none;
     backdrop-filter: none;
 }
 
 .adv-hero .adv-eyebrow i {
-    color: #E9A23B;
+    color: #CE7B34;
 }
 
 .adv-crumbs {
@@ -1599,11 +1599,11 @@
 }
 
 .adv-crumbs a {
-    color: #9E1F2B;
+    color: #8E1B2E;
 }
 
 .adv-crumbs a:hover {
-    color: #C0303C;
+    color: #A32236;
 }
 
 /* the ghost button needs a real border once it is white on white */
@@ -1616,7 +1616,7 @@
 
 .adv-hero .adv-btn-ghost:hover {
     background: #FFFFFF;
-    color: #C0303C;
+    color: #A32236;
     border-color: #E5BFB6;
 }
 
@@ -1627,7 +1627,7 @@
 
 .adv-hero .adv-btn:focus-visible,
 .adv-crumbs a:focus-visible {
-    outline-color: #9E1F2B;
+    outline-color: #8E1B2E;
 }
 
 /* visual shell: translucent white over dark becomes a soft card on light */
