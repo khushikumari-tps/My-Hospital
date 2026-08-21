@@ -57,8 +57,8 @@
 
 .cr-btn-wa {
     background: #fff;
-    border-color: var(--cr-line);
-    color: #8E1B2E;
+    border-color: #CFE9D8;
+    color: var(--adv-wa-deep);
 }
 
 .cr-btn-wa:hover { transform: translateY(-3px); background: #F3FBF6; }

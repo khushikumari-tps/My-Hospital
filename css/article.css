@@ -212,12 +212,12 @@
 }
 
 .hx-btn-wa {
-    background: #8E1B2E;
+    background: var(--adv-wa);
     color: #fff;
-    box-shadow: 0 14px 32px -14px rgba(142, 27, 46, .55);
+    box-shadow: 0 14px 32px -14px rgba(37, 211, 102, .55);
 }
 
-.hx-btn-wa:hover { background: #7C1526; color: #fff; }
+.hx-btn-wa:hover { background: var(--adv-wa-dark); color: #fff; }
 
 .hx-btn-line {
     background: transparent;
@@ -855,11 +855,11 @@
 
 .ax-sbtn:hover { transform: translateY(-3px); color: #fff; border-color: transparent; }
 /* Share buttons hover in the brand crimson rather than each platform's own
-   blue. The icon still identifies the network - the same reasoning applied
-   to the WhatsApp button, so no page carries an off-palette colour. */
+   blue - except WhatsApp, which keeps its green. Sharing to WhatsApp is the
+   one people look for by colour. */
 .ax-sbtn.is-li:hover { background: #8E1B2E; }
 .ax-sbtn.is-fb:hover { background: #A32236; }
-.ax-sbtn.is-wa:hover { background: #8E1B2E; }
+.ax-sbtn.is-wa:hover { background: var(--adv-wa); }
 .ax-sbtn.is-cp:hover { background: #8E1B2E; }
 
 .ax-copied {

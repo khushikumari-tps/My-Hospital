@@ -58,6 +58,16 @@
     --adv-warm-soft: #F7DCC9;
     /* tint for chips and soft fills                                     */
 
+    /* ---- WhatsApp -----------------------------------------------------
+       Deliberately outside the brand ramp. WhatsApp green is how people
+       recognise a WhatsApp button at a glance; repainting it crimson made
+       the site tidier and the button harder to identify. Use these only on
+       WhatsApp affordances, never as a general accent. */
+    --adv-wa: #25D366;
+    --adv-wa-deep: #128C7E;
+    --adv-wa-dark: #1EBE5B;
+    --adv-wa-wash: #F1FBF5;
+
     /* ---- ink and surfaces ------------------------------------------- */
     --adv-ink: #241A1B;
     /* headings — charcoal with a red cast, not black                    */

@@ -2232,10 +2232,10 @@ body.hv-light .swiper-pagination-bullet-active {
     width: 54px;
     height: 54px;
     border-radius: 50%;
-    background: #8E1B2E;
+    background: var(--adv-wa);
     color: #fff;
     font-size: 1.5rem;
-    box-shadow: 0 10px 26px -8px rgba(142, 27, 46, .5);
+    box-shadow: 0 10px 26px -8px rgba(37, 211, 102, .5);
     transition: transform .3s var(--ease);
 }
 

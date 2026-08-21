@@ -278,15 +278,17 @@ body.lp svg {
     transform: translateY(-2px);
 }
 
+/* WhatsApp green, not the brand crimson: the button is recognised by its
+   colour before its label is read. */
 .lp-btn-wa {
     background: #fff;
-    color: #8E1B2E;
-    border-color: #EBD3C6;
+    color: var(--adv-wa-deep);
+    border-color: #CFE9D8;
 }
 
 .lp-btn-wa:hover {
-    background: #F1FBF5;
-    color: #7C1526;
+    background: var(--adv-wa-wash);
+    color: #0F7A6C;
     transform: translateY(-2px);
 }
 
@@ -1376,7 +1378,7 @@ body.lp .lp-foot h4 {
 }
 
 .lp-sticky a.is-wa {
-    color: #8E1B2E;
+    color: var(--adv-wa-deep);
 }
 
 .lp-sticky a.is-book {
