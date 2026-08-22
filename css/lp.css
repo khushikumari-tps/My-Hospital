@@ -302,6 +302,13 @@ body.lp svg {
     transform: translateY(-2px);
 }
 
+/* On the dark CTA band the WhatsApp button is a white outline so it reads
+   as secondary to the call button — but its mark still carries the green. */
+.lp-btn-line-light .fa-whatsapp,
+.lp-btn-light .fa-whatsapp {
+    color: var(--adv-wa);
+}
+
 .lp-btn-line-light {
     background: transparent;
     color: #fff;

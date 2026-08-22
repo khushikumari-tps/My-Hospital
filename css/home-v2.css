@@ -132,6 +132,12 @@ body.hv-light .navbar {
     font-size: .9em;
 }
 
+/* The WhatsApp mark in the top bar keeps its own green, like every other
+   WhatsApp affordance on the site. */
+.hv-tb-right a i.fa-whatsapp {
+    color: var(--adv-wa);
+}
+
 .hv-tb-right a:hover {
     color: #fff;
 }
@@ -1992,6 +1998,19 @@ body.hv-light .swiper-pagination-bullet-active {
     color: #fff;
     font-size: .95rem;
     transition: background .3s ease, border-color .3s ease, transform .3s var(--ease);
+}
+
+/* The WhatsApp mark is the one social icon people scan for by colour, so it
+   keeps its green while Facebook, Instagram and YouTube stay monochrome. */
+.hv-social a[aria-label="WhatsApp"] {
+    color: var(--adv-wa);
+    border-color: rgba(37, 211, 102, .45);
+}
+
+.hv-social a[aria-label="WhatsApp"]:hover {
+    background: var(--adv-wa);
+    border-color: var(--adv-wa);
+    color: #fff;
 }
 
 .hv-social a:hover {

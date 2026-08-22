@@ -116,6 +116,19 @@
             };
         }
 
+        // The floating WhatsApp disc is painted at z-index 9999 against the
+        // modal's 2000, so it lands on top of the appointment form. Watching
+        // the dialog's own style attribute, rather than hooking the open and
+        // close helpers, keeps `body.modal-open` correct on index.html too,
+        // where that pair is defined in the page instead of here.
+        var syncOpenState = function () {
+            var open = window.getComputedStyle(modal).display !== 'none';
+            document.body.classList.toggle('modal-open', open);
+        };
+        syncOpenState();
+        new MutationObserver(syncOpenState)
+            .observe(modal, { attributes: true, attributeFilter: ['style', 'class'] });
+
         // Any link that pointed at the modal now opens it where the visitor is
         // standing instead of navigating to the home page first.
         document.addEventListener('click', function (e) {

@@ -67,8 +67,14 @@
    current handsets report land — was left holding a row that did not fit
    and pushing the hamburger past the right edge. */
 @media (max-width: 404px) {
+    /* 1rem, not the 0.7rem this step used to carry. Measured at 390 with the
+       132px PancreaCare mark: logo 112 + language 63 + ERP 86 + hamburger 44
+       + three 0.4rem gaps is 324px, so the row has 57px of slack and the
+       gutter can match the 16px the rest of the phone layout uses. The 330
+       step below still drops to 0.4rem, which is what keeps the 240px KaiOS
+       screen fitting its row with the ERP label intact. */
     .nav-container {
-        padding: 0 0.7rem;
+        padding: 0 1rem;
     }
 
     /* If a future logo is wider than today's, it gives up width here rather
@@ -134,8 +140,14 @@
    D-pad focus — so the 44px tap floor is dropped, and that is what buys the
    last of the room. */
 @media (max-width: 330px) {
+    /* 0.75rem down to 280px, 0.4rem below it. Measured on a 320px phone with
+       the 86px PancreaCare mark: logo 86 + language 54 + ERP 76 + hamburger
+       44 + three 0.3rem gaps is 274px, so 12px of gutter on each side still
+       leaves 22px of slack and the bar stops sitting flush against the glass.
+       The 0.4rem the whole step used to carry is what the 240px KaiOS screen
+       needs, and it keeps it. */
     .nav-container {
-        padding: 0 0.4rem;
+        padding: 0 0.75rem;
     }
 
     .logo img,
@@ -180,6 +192,13 @@
 
     .mobile-menu {
         font-size: 1.15rem;
+    }
+}
+
+/* ---------- 280px and down: back to the measured KaiOS gutter ---------- */
+@media (max-width: 280px) {
+    .nav-container {
+        padding: 0 0.4rem;
     }
 }
 

@@ -7,10 +7,13 @@
     <title>Pancrea Care | Advitya Healthcares</title>
     <meta name="description"
         content="pancreaCare+ from Advitya Healthcares: what the pancreas does, the diseases that affect it, and how our team diagnoses, operates and supports recovery.">
-    <link rel="stylesheet" href="css/style.css?v=24">
+    <!-- Brand tokens first: colour, type, radius and elevation for every
+         stylesheet below. Sampled from the logo. -->
+    <link rel="stylesheet" href="css/brand.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=26">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
-    <link rel="stylesheet" href="css/erp-nav.css?v=2">
+    <link rel="stylesheet" href="css/erp-nav.css?v=3">
     <!-- async, and ahead of the third-party bundles: the header must not
          wait on a CDN to get its language selector wired up -->
     <script src="js/lang-select.js?v=5" async></script>
@@ -495,6 +498,125 @@
             }
         }
 
+        /* ---- Large mobile and below: 767px and down --------------------
+           The 980 step above is the tablet layout. Below 768 the hero is
+           carrying 148px of padding above a stack that is only about 340px
+           tall, so more than a third of the first screen is empty burgundy
+           and the section under it starts well past the fold. The padding
+           comes down; nothing is given a height, so the hero still sizes
+           itself from its own content.
+
+           The two hero buttons are 210px wide side by side and wrap to a
+           ragged two-row block on a phone. They are stacked and matched to
+           one width instead, capped at 280px so they never run the full
+           bleed of a tablet. Every action row on the page does the same. */
+        @media (max-width: 767px) {
+            .pc-hero {
+                padding: 116px 0 64px;
+            }
+
+            .pc-hero-lede {
+                font-size: 1.05rem;
+            }
+
+            .pc-hero-acts {
+                flex-direction: column;
+                align-items: center;
+                gap: 14px;
+                margin-top: 28px;
+            }
+
+            .pc-sec {
+                padding: 56px 0;
+                /* the bar is 96px; this is what an #anchor has to clear */
+                scroll-margin-top: 104px;
+            }
+
+            .pc-hero-acts .pc-btn,
+            .pc-acts .pc-btn,
+            .pc-cta-acts .pc-btn {
+                width: min(100%, 280px);
+                min-height: 48px;
+                justify-content: center;
+            }
+
+            .pc-acts,
+            .pc-cta-acts {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .pc-cta {
+                margin-top: 40px;
+                padding: 38px 22px;
+            }
+
+            .pc-media {
+                height: 176px;
+            }
+
+            .pc-card-body {
+                padding: 22px 20px;
+            }
+
+            .pc-grid {
+                gap: 20px;
+                margin-top: 34px;
+            }
+
+            .pc-facts {
+                margin: 22px 0 24px;
+            }
+        }
+
+        /* ---- Mobile: 480px and down ------------------------------------
+           The same shape, one step tighter. The type scale is left alone —
+           the hero mark and the section titles already clamp down to a size
+           that fits 320px, and shrinking them further is what makes a page
+           read as a scaled-down desktop rather than a phone layout. */
+        @media (max-width: 480px) {
+            .pc-hero {
+                padding: 104px 0 54px;
+            }
+
+            .pc-sec {
+                padding: 48px 0;
+            }
+
+            .pc-cta {
+                margin-top: 34px;
+                padding: 32px 18px;
+                border-radius: 18px;
+            }
+        }
+
+        /* ---- Below 310px: let the button labels wrap --------------------
+           `.pc-btn` is `white-space: nowrap`, which is right everywhere the
+           label fits on one line. "The story of pancreaCare+" at .95rem plus
+           1.6rem of padding each side measures 262px, and that becomes the
+           whole document's min-content width — at 280px of viewport the page
+           laid out 286px wide and the navbar went with it. The label wraps
+           rather than the page overflowing. 320px is clear of this: the
+           buttons are 272px there and every label still sets on one line. */
+        @media (max-width: 310px) {
+            .pc-btn {
+                white-space: normal;
+                text-align: center;
+                padding: .8rem 1.05rem;
+            }
+        }
+
+        /* The kicker is 12px of caps on .24em of tracking, so it wraps to two
+           lines somewhere under 360px and the star drifts off on its own.
+           Tightening the tracking keeps it on one. */
+        @media (max-width: 380px) {
+            .pc-kicker {
+                letter-spacing: .16em;
+                padding: 7px 14px;
+                margin-bottom: 18px;
+            }
+        }
+
         @media (prefers-reduced-motion: reduce) {
 
             .pc-card:hover,
@@ -511,7 +633,7 @@
     </style>
 <!-- last stylesheet on purpose: mobile fixes must win over the
      CDN sheets above, never fight them for the cascade -->
-<link rel="stylesheet" href="css/responsive.css?v=7">
+<link rel="stylesheet" href="css/responsive.css?v=10">
     <!-- PancreaCare pages only: the wordmark is a different shape to the
          Advitya mark and has to be sized by width, not height -->
     <link rel="stylesheet" href="css/pcare-brand.css?v=2">
@@ -832,7 +954,8 @@
                 </div>
 
                 <div
-                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    class="foot-col" style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                    <h4 class="foot-col-title">Explore</h4>
                     <a href="index.html" style="color: white; text-decoration: none;">Home</a>
                     <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
                     <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
@@ -844,7 +967,8 @@
                 </div>
 
                 <div
-                    style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px; padding-top: 40px;">
+                    class="foot-col" style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                    <h4 class="foot-col-title">Group</h4>
                     <a href="pancrea-care.html" style="color: white; text-decoration: none;">PancreaCare</a>
                     <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
                     <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
@@ -870,8 +994,8 @@
             </div>
         </div>
 
-        <a href="https://wa.me/919211221551"
-            style="position: fixed; bottom: 20px; right: 20px; background-color: #8E1B2E; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;">
+        <a href="https://wa.me/919211221551" aria-label="WhatsApp us"
+            class="wa-fab">
             <i class="fa-brands fa-whatsapp"></i>
         </a>
     </footer>

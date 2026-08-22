@@ -1375,6 +1375,35 @@ img {
     padding: 5rem 0 0;
 }
 
+/* Footer link columns.
+
+   These two columns carried no heading at all — a `padding-top: 40px` stood
+   in for one, which lines the lists up with the brand block on a wide screen
+   and reads as an unexplained gap on a phone. Real headings now, on the same
+   type treatment the rest of the site gives a column label. */
+.foot-col-title {
+    margin: 0 0 4px;
+    font-family: var(--adv-font-head);
+    font-size: var(--adv-eyebrow-size);
+    font-weight: 700;
+    letter-spacing: var(--adv-eyebrow-track);
+    text-transform: uppercase;
+    color: var(--adv-warm-400);
+}
+
+/* The floating WhatsApp button is fixed 20px from the bottom, so at the end
+   of the page it sat on top of the legal links — "Disclaimer" was underneath
+   it. Reserve the button's height plus its offset below the last row. */
+.footer .footer-legal {
+    padding-bottom: 78px;
+}
+
+@media (min-width: 768px) {
+    .footer .footer-legal {
+        padding-bottom: 24px;
+    }
+}
+
 .footer-content {
     display: grid;
     grid-template-columns: 2fr 1fr 1fr;
@@ -2003,6 +2032,17 @@ img {
     align-items: flex-start;
     gap: 14px;
     margin-bottom: 22px;
+}
+
+/* The WhatsApp row keeps the platform's green; the phone, email and
+   location rows stay in the modal's own white-on-tint. */
+.cm-row .cm-icon:has(.fa-whatsapp) {
+    background: rgba(37, 211, 102, .22);
+    border-color: rgba(37, 211, 102, .55);
+}
+
+.cm-icon .fa-whatsapp {
+    color: var(--adv-wa);
 }
 
 .cm-icon {

@@ -1428,6 +1428,19 @@
     transition: transform .35s var(--ease), background-color .3s, border-color .3s;
 }
 
+/* WhatsApp keeps its own green here too; the other marks stay monochrome. */
+.adv-social a[aria-label="WhatsApp"],
+.adv-social a[aria-label="WhatsApp"] i {
+    color: var(--adv-wa);
+    border-color: rgba(37, 211, 102, .45);
+}
+
+.adv-social a[aria-label="WhatsApp"]:hover {
+    background: var(--adv-wa);
+    border-color: var(--adv-wa);
+    color: #fff;
+}
+
 .adv-social a:hover {
     transform: translateY(-3px);
     background: var(--brand-600);

@@ -857,6 +857,8 @@
 /* Share buttons hover in the brand crimson rather than each platform's own
    blue - except WhatsApp, which keeps its green. Sharing to WhatsApp is the
    one people look for by colour. */
+.ax-sbtn.is-wa { color: var(--adv-wa-deep); }
+
 .ax-sbtn.is-li:hover { background: #8E1B2E; }
 .ax-sbtn.is-fb:hover { background: #A32236; }
 .ax-sbtn.is-wa:hover { background: var(--adv-wa); }
@@ -963,6 +965,10 @@
     border: 1px solid #F1DDD7;
     background: #fff;
     color: #5C4642;
+}
+
+.ax-cta-alt .fa-whatsapp {
+    color: var(--adv-wa-deep);
 }
 
 .ax-cta-alt:hover { color: #8E1B2E; transform: translateY(-2px); }

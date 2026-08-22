@@ -756,3 +756,299 @@ h1, h2, h3, h4, h5, h6 {
         min-height: 44px;
     }
 }
+
+/* -------------------------------------------------------------------
+   22. Patient-journey connectors on the disease pages
+
+   `.adv-journey` is `repeat(auto-fit, minmax(min(230px, 100%), 1fr))` with a
+   24px gap, so four steps only fit on one row while `.adv-wrap` is at least
+   992px wide — that is 92vw, so a viewport of about 1078px. Below it the
+   grid wraps to three columns and then two, but `.adv-jstep::after` only
+   stops drawing on `:last-child`. Every step that ends a row but is not the
+   last one leaves a dashed connector pointing into the gutter at nothing.
+
+   adv-disease.css already hides the connectors at 768, where the layout is
+   a single column. The gap is the tablet range between the two, so the same
+   rule is repeated here at the width the row actually breaks.
+   ------------------------------------------------------------------- */
+@media (max-width: 1080px) {
+
+    .adv-jstep::after {
+        display: none;
+    }
+}
+
+/* -------------------------------------------------------------------
+   23. The floating WhatsApp button on the PancreaCare+ pages
+
+   Everywhere else on the site the disc is written inline, which is why
+   section 18 above has to reach it through `[style*=...]` selectors and
+   `!important`. On the five PancreaCare pages it is a class instead, so
+   the size and the offsets are declared once and the phone steps are
+   ordinary media queries rather than overrides.
+
+   Desktop is unchanged: 50px, 20px clear of both edges. Below 768 the
+   disc keeps a full 16px gutter. The inline version was pulled in to
+   10px at 480 and 8px at 360 to dodge the hero button underneath it,
+   and at those numbers the green circle reads as clipped against the
+   edge of the screen. It also clears the home indicator now, which the
+   inline `bottom: 20px` never did.
+   ------------------------------------------------------------------- */
+.wa-fab {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #25D366;
+    color: #fff;
+    font-size: 24px;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .3);
+}
+
+.wa-fab:hover,
+.wa-fab:focus {
+    color: #fff;
+}
+
+/* Section 16 above puts a 44px tap floor on `footer .fa-brands`, and section
+   15 gives every `footer a` 6px of vertical padding. The disc is a child of
+   `<footer>` on every page that carries one, so it picks up both: the glyph
+   is drawn on a 26px line box at the TOP of a 44px icon box, which lands it
+   about 9px above the centre of the circle. The disc is already 50-52px
+   across, so it is over the tap floor without the help — the icon gives the
+   minimums back and the anchor declares its padding away. The inline-styled
+   discs on the rest of the site have the same problem and the same fix. */
+.wa-fab,
+a[href*="wa.me"][style*="position: fixed"] {
+    padding: 0;
+}
+
+.wa-fab i,
+a[href*="wa.me"][style*="position: fixed"] i {
+    min-width: 0;
+    min-height: 0;
+    line-height: 1;
+}
+
+@media (max-width: 767px) {
+
+    .wa-fab {
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+        width: 52px;
+        height: 52px;
+        font-size: 26px;
+    }
+}
+
+/* related-diseases.html carries `.rda-sticky`, a bar pinned to the bottom
+   below 768 at z-index 1200 — 68px tall on one row, and taller once its
+   two buttons wrap, which they do below 400px. The disc lifts over it
+   rather than sitting behind it. The class beats the block above on
+   specificity, so the order of the two does not matter. */
+@media (max-width: 768px) {
+
+    .wa-fab.is-above-bar {
+        bottom: calc(84px + env(safe-area-inset-bottom));
+    }
+}
+
+@media (max-width: 400px) {
+
+    .wa-fab.is-above-bar {
+        bottom: calc(110px + env(safe-area-inset-bottom));
+    }
+}
+
+/* -------------------------------------------------------------------
+   24. The footer brand column below 300px
+
+   The footer's first column is written inline as `flex: 1; min-width:
+   250px`. 250px is a sensible floor for a phone and a hard one for the
+   240px KaiOS screen this site still carries steps for: it sets the whole
+   document's min-content width, so the page laid out 274px wide and the
+   fixed header went past the edge with it. Only an `!important` can reach
+   an inline declaration, and it is scoped under 300px so no phone in the
+   normal range ever sees it.
+   ------------------------------------------------------------------- */
+@media (max-width: 300px) {
+
+    footer [style*="min-width: 250px"] {
+        min-width: 0 !important;
+    }
+}
+
+/* -------------------------------------------------------------------
+   25. The appointment modal is taller than the phone it opens on
+
+   `.modal` is a fixed, full-height flex box with `overflow: visible`,
+   and `.modal-content.contact-modal` is `overflow: hidden` for its
+   rounded corners. Neither one scrolls. On a 360px screen the stacked
+   panes measure 1472px against a 780px viewport, so everything past the
+   fold — the date field, the textarea, the Send Request button and the
+   emergency note — was drawn off the bottom of the screen with no way to
+   reach it. Same at 375, 390, 414, 480 and 768; only above ~1000px did
+   the whole form fit.
+
+   Two steps. Here, at every width, the overlay itself scrolls, which
+   also covers a short desktop window. `safe center` keeps the desktop
+   centring while refusing to push the top of an over-tall dialog past
+   the top edge; the plain `flex-start` before it is the fallback for
+   browsers that do not know the keyword (Safari below 16.4), where
+   top-aligned is the correct compromise.
+   ------------------------------------------------------------------- */
+.modal {
+    align-items: flex-start;
+    align-items: safe center;
+    justify-content: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 0;
+}
+
+/* `margin: auto` on the dialog would consume the free space itself and
+   reintroduce the same clipping the alignment above just fixed. */
+.modal-content.contact-modal {
+    margin: 0;
+    max-width: min(1000px, 100%);
+}
+
+/* Step two, on a phone: the dialog becomes a full-height sheet that
+   scrolls inside itself instead of a card that runs off the screen. The
+   close disc goes sticky so it stays reachable at the bottom of a long
+   form — it is `position: absolute` on desktop, and an absolute child of
+   a scrolling box scrolls away with the content. */
+@media (max-width: 768px) {
+
+    .modal {
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .modal-content.contact-modal {
+        width: 100%;
+        max-width: 100%;
+        max-height: 100vh;
+        max-height: 100dvh;
+        border-radius: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding-bottom: env(safe-area-inset-bottom);
+    }
+
+    .contact-modal-close {
+        position: sticky;
+        top: 12px;
+        right: auto;
+        align-self: flex-end;
+        margin: 12px 12px -52px auto;
+    }
+
+    /* Neither pane may set a floor above the screen width, and neither
+       may grow past its share of the sheet. */
+    .contact-modal-left,
+    .contact-modal-right {
+        flex: 0 0 auto;
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    /* Paired fields: 180px twice plus the gap does not fit a 360px phone
+       once the pane padding is taken off, so the floor comes off and the
+       pair stacks. */
+    .form-row .form-group {
+        min-width: min(180px, 100%);
+    }
+
+    /* Every control inside the sheet, borders included, stays within the
+       pane — `width: 100%` plus 20px of side padding overflows without
+       this. */
+    .premium-form input,
+    .premium-form select,
+    .premium-form textarea,
+    .premium-form button {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .premium-form textarea {
+        min-height: 110px;
+    }
+
+    /* Long email addresses and the two phone pairs in the red pane break
+       rather than widening it. */
+    .cm-row p,
+    .cm-row a {
+        overflow-wrap: anywhere;
+    }
+}
+
+/* 360-390px: the pane padding comes down again so the form is not a
+   column of 20px gutters, and the heading stops eating a third of the
+   first screen. */
+@media (max-width: 400px) {
+
+    .contact-modal-left,
+    .contact-modal-right {
+        padding: 22px 16px;
+    }
+
+    .contact-modal-left h2 {
+        font-size: 1.75rem;
+    }
+
+    .cm-intro {
+        font-size: 0.95rem;
+        margin-bottom: 24px;
+    }
+
+    .contact-modal-right h3 {
+        font-size: 1.5rem;
+    }
+
+    .premium-form input,
+    .premium-form select,
+    .premium-form textarea {
+        padding: 13px 14px;
+    }
+
+    .btn-gradient {
+        padding: 15px 18px;
+        font-size: 1.02rem;
+    }
+}
+
+/* -------------------------------------------------------------------
+   26. The floating discs over the open modal
+
+   The WhatsApp disc sits at z-index 9999 (`.wa-fab`) or 900 (`.hv-wa`)
+   against the modal's 2000, so on the five PancreaCare pages it was
+   painted on top of the appointment form — a green circle over the
+   phone-number field, and a tap target that swallowed the tap meant for
+   the field underneath. It goes away while the dialog is open and comes
+   back when it closes. `body.modal-open` is toggled by contact-modal.js,
+   which watches the dialog rather than the button that opened it, so it
+   is correct whichever page's open/close pair ran.
+   ------------------------------------------------------------------- */
+body.modal-open .wa-fab,
+body.modal-open .hv-wa,
+body.modal-open a[href*="wa.me"][style*="position: fixed"],
+body.modal-open a[href^="tel:"][style*="position: fixed"] {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
