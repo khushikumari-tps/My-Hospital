@@ -1,0 +1,582 @@
+/* ==========================================================================
+   Doctors page: "Meet Our Experts"
+   A find-a-doctor grid: title and speciality / name search on top, then
+   photo cards with a coloured info panel and two full-width buttons.
+   "View Profile" opens a <dialog> kept inside each card with the doctor's
+   qualifications, about text and OPD date request.
+   ========================================================================== */
+
+/* ------------------------------ toolbar ------------------------------- */
+.xp-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 22px 28px;
+}
+
+.xp-title h2 {
+    margin: 0;
+    font-size: 2.1rem;
+    line-height: 1.2;
+    color: var(--brand);
+}
+
+.xp-rule {
+    display: block;
+    width: 84px;
+    height: 4px;
+    margin-top: 14px;
+    border-radius: 4px;
+    background: var(--grad-brand);
+}
+
+.xp-tools {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.xp-field {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.xp-field > i {
+    position: absolute;
+    left: 17px;
+    color: var(--brand);
+    pointer-events: none;
+}
+
+.xp-field select,
+.xp-field input {
+    min-width: 260px;
+    min-height: 52px;
+    padding: 12px 18px 12px 46px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background-color: #fff;
+    box-shadow: var(--lift-1);
+    font: inherit;
+    font-size: .98rem;
+    color: var(--ink);
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.xp-field select {
+    padding-right: 44px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' fill='none' stroke='%238E1B2E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 18px center;
+}
+
+.xp-field select:focus-visible,
+.xp-field input:focus-visible {
+    outline: 3px solid rgba(142, 27, 46, .22);
+    outline-offset: 1px;
+    border-color: var(--brand);
+}
+
+.xp-count {
+    margin: 20px 0 26px;
+    font-size: .95rem;
+    color: var(--text-muted);
+}
+
+/* -------------------------------- grid -------------------------------- */
+.xp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.xp-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #fff;
+    border: 1px solid var(--line);
+    box-shadow: var(--lift-1);
+    scroll-margin-top: 150px;
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease);
+}
+
+.xp-card[hidden] {
+    display: none !important;
+}
+
+.xp-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--lift-3);
+}
+
+/* a link such as doctors.html#dr-joydeep-mondal marks the card it points to */
+.xp-card:target {
+    outline: 3px solid rgba(233, 162, 59, .85);
+    outline-offset: 4px;
+}
+
+/* photo tile: soft brand waves behind the portrait. The portrait files are
+   circular cut-outs on an off-white square; multiply blends that square
+   into the tile so only the round portrait reads. */
+.xp-photo {
+    position: relative;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    background:
+        repeating-radial-gradient(circle at 108% -8%, rgba(142, 27, 46, .07) 0 12px, transparent 12px 30px),
+        radial-gradient(90% 70% at 0% 100%, rgba(233, 162, 59, .16), transparent 70%),
+        linear-gradient(160deg, #FFF8F8 0%, #FBE8E4 100%);
+}
+
+.xp-photo img {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 90%;
+    height: auto;
+    transform: translate(-50%, 7%);
+    mix-blend-mode: multiply;
+    transition: transform .6s var(--ease);
+}
+
+.xp-card:hover .xp-photo img {
+    transform: translate(-50%, 7%) scale(1.04);
+}
+
+.xp-photo.is-initials {
+    display: grid;
+    place-items: center;
+}
+
+.xp-initials {
+    display: grid;
+    place-items: center;
+    width: 60%;
+    aspect-ratio: 1 / 1;
+    border-radius: 50%;
+    background: linear-gradient(160deg, #FFFFFF 0%, #FBE2DD 100%);
+    box-shadow:
+        0 0 0 8px rgba(255, 255, 255, .7),
+        0 22px 34px -20px rgba(120, 60, 55, .55);
+    font-family: var(--adv-font-head, inherit);
+    font-size: 2.9rem;
+    font-weight: 700;
+    letter-spacing: .02em;
+    color: var(--brand);
+}
+
+.xp-badge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    z-index: 1;
+    padding: 5px 12px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .94);
+    box-shadow: 0 6px 14px -8px rgba(120, 60, 55, .5);
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: var(--brand);
+}
+
+/* info panel */
+.xp-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: linear-gradient(160deg, #6E1222 0%, #8E1B2E 55%, #A8302F 100%);
+    color: #fff;
+}
+
+.xp-info h3 {
+    margin: 0;
+    font-size: 1.14rem;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.xp-info h3::after {
+    content: "";
+    display: block;
+    width: 64px;
+    height: 2px;
+    margin: 12px 0;
+    background: rgba(255, 255, 255, .75);
+}
+
+.xp-info .xp-spec {
+    margin: 0 0 18px;
+    font-size: .95rem;
+    font-weight: 700;
+    line-height: 1.45;
+    color: #fff;
+}
+
+.xp-acts {
+    display: grid;
+    gap: 10px;
+    margin-top: auto;
+}
+
+.xp-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 10px 14px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+    background: #fff;
+    font: inherit;
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--brand);
+    cursor: pointer;
+    transition: background .3s ease, color .3s ease;
+}
+
+.xp-btn:hover {
+    background: var(--blush);
+    color: var(--brand);
+}
+
+.xp-btn.is-line {
+    background: transparent;
+    border-color: rgba(255, 255, 255, .7);
+    color: #fff;
+}
+
+.xp-btn.is-line:hover {
+    background: rgba(255, 255, 255, .14);
+    color: #fff;
+}
+
+.xp-btn:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+.xp-empty {
+    margin: 10px 0 0;
+    padding: 18px;
+    border: 1px dashed rgba(142, 27, 46, .3);
+    border-radius: 14px;
+    text-align: center;
+    color: var(--text-muted);
+}
+
+/* ----------------------------- profile dialog -------------------------- */
+body.xp-lock {
+    overflow: hidden;
+}
+
+.xp-dialog {
+    /* the site reset zeroes margins, which pins a modal dialog to the top-left;
+       margin: auto restores the browser's centring */
+    position: fixed;
+    inset: 0;
+    margin: auto;
+    height: fit-content;
+    width: min(760px, calc(100vw - 32px));
+    max-height: calc(100vh - 48px);
+    padding: 0;
+    border: 0;
+    border-radius: 24px;
+    background: #fff;
+    color: var(--ink);
+    box-shadow: 0 40px 80px -30px rgba(40, 10, 10, .6);
+    overflow: hidden;
+}
+
+.xp-dialog::backdrop {
+    background: rgba(30, 10, 12, .55);
+    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(3px);
+}
+
+.xp-dlg {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100vh - 48px);
+}
+
+.xp-close {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    z-index: 2;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .18);
+    color: #fff;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background .3s ease;
+}
+
+.xp-close:hover {
+    background: rgba(255, 255, 255, .3);
+}
+
+.xp-close:focus-visible {
+    outline: 3px solid #fff;
+    outline-offset: 2px;
+}
+
+.xp-dlg-head {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 26px 70px 24px 26px;
+    background: linear-gradient(160deg, #6E1222 0%, #8E1B2E 55%, #A8302F 100%);
+    color: #fff;
+}
+
+.xp-dlg-photo {
+    flex: 0 0 96px;
+    display: grid;
+    place-items: center;
+    width: 96px;
+    height: 96px;
+    overflow: hidden;
+    border-radius: 50%;
+    background: #FFF1EF;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, .35);
+    font-family: var(--adv-font-head, inherit);
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--brand);
+}
+
+.xp-dlg-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 30%;
+}
+
+.xp-dlg-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 50px;
+    background: rgba(255, 255, 255, .16);
+    font-size: .7rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+.xp-dlg-head h2 {
+    margin: 8px 0 4px;
+    font-size: 1.6rem;
+    line-height: 1.2;
+    color: #fff;
+}
+
+.xp-dlg-head .xp-spec {
+    margin: 0;
+    font-weight: 600;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, .92);
+}
+
+.xp-dlg-body {
+    display: grid;
+    gap: 20px;
+    padding: 24px 26px;
+    overflow: auto;
+}
+
+.xp-sec h4 {
+    margin: 0 0 10px;
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.xp-sec p {
+    margin: 0;
+    line-height: 1.65;
+    color: var(--ink-body);
+}
+
+.xp-sec ul {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.xp-sec li {
+    position: relative;
+    padding-left: 28px;
+    line-height: 1.55;
+    color: var(--ink-body);
+}
+
+/* style.css hides list bullets site-wide; this check mark is deliberate */
+.xp-sec li::before {
+    content: "\f00c";
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 0;
+    top: .2em;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold-soft, #FBE6C6);
+    color: var(--gold-deep, #B7791F);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: .55rem;
+}
+
+.xp-sec .tbd {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 10px 14px;
+    border: 1px dashed rgba(142, 27, 46, .25);
+    border-radius: 12px;
+    color: var(--text-muted);
+}
+
+.xp-sec .tbd i {
+    color: var(--brand);
+}
+
+.xp-opd {
+    padding: 18px;
+    border-radius: 16px;
+    background: #FBF6F4;
+}
+
+.xp-opd .doc-date {
+    margin-top: 14px;
+}
+
+.xp-dlg-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 16px 26px 22px;
+    border-top: 1px solid var(--line-soft);
+}
+
+/* ------------------------------ responsive ----------------------------- */
+@media (max-width: 1100px) {
+    .xp-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 860px) {
+    .xp-head {
+        align-items: stretch;
+    }
+
+    .xp-tools {
+        width: 100%;
+    }
+
+    .xp-field {
+        flex: 1 1 240px;
+    }
+
+    .xp-field select,
+    .xp-field input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .xp-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 18px;
+    }
+}
+
+@media (max-width: 560px) {
+    .xp-title h2 {
+        font-size: 1.7rem;
+    }
+
+    .xp-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 380px;
+        margin: 0 auto;
+    }
+
+    .xp-dialog {
+        width: calc(100vw - 20px);
+        max-height: calc(100vh - 20px);
+        border-radius: 20px;
+    }
+
+    .xp-dlg {
+        max-height: calc(100vh - 20px);
+    }
+
+    .xp-dlg-head {
+        gap: 14px;
+        padding: 22px 60px 20px 18px;
+    }
+
+    .xp-dlg-photo {
+        flex-basis: 72px;
+        width: 72px;
+        height: 72px;
+        font-size: 1.5rem;
+    }
+
+    .xp-dlg-head h2 {
+        font-size: 1.3rem;
+    }
+
+    .xp-dlg-body {
+        padding: 20px 18px;
+    }
+
+    .xp-dlg-acts {
+        padding: 14px 18px 18px;
+    }
+
+    .xp-dlg-acts > * {
+        flex: 1 1 100%;
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .xp-card,
+    .xp-photo img {
+        transition: none;
+    }
+
+    .xp-card:hover {
+        transform: none;
+    }
+
+    .xp-card:hover .xp-photo img {
+        transform: translate(-50%, 7%);
+    }
+}

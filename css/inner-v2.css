@@ -20,6 +20,11 @@
     margin-right: auto;
 }
 
+/* the action buttons follow the centred copy */
+.pg-hero.is-centered .pg-hero-acts {
+    justify-content: center;
+}
+
 /* ==========================  Our Team page  ============================= */
 /* The dedicated team page wants a tidy block: cards on one baseline, the
    consultation link pinned to the bottom of each, and every portrait cut to
@@ -869,5 +874,60 @@ body.hv-light .hv-docs.is-team-page .team-img-wrapper img {
     .value:hover,
     .contact-card:hover {
         transform: none;
+    }
+}
+
+/* =====================  Team portraits: arch frame  ======================
+   The portrait files are circular cut-outs on a pale square. Instead of a
+   circle, each photo is zoomed inside an arch (rounded top, soft bottom
+   corners) so the disc edge never shows, with an offset tint frame behind
+   it. The zoom origin sits high so the whole face stays in view. */
+body.hv-light .hv-docs.is-team-page .team-img-wrapper {
+    position: relative;
+    width: 200px;
+    height: 236px;
+    flex: 0 0 236px;
+    margin: 6px auto 30px;
+    border-radius: 100px 100px 40px 40px;
+    overflow: hidden;
+    background: linear-gradient(165deg, #FDECEA 0%, #F6D3CC 100%);
+    box-shadow:
+        12px 12px 0 0 rgba(142, 27, 46, .12),
+        0 22px 34px -20px rgba(120, 60, 55, .55);
+}
+
+body.hv-light .hv-docs.is-team-page .team-img-wrapper::before,
+body.hv-light .hv-docs.is-team-page .team-img-wrapper::after {
+    content: none;
+    display: none;
+}
+
+body.hv-light .hv-docs.is-team-page .team-card .team-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    object-fit: cover;
+    object-position: 50% 20%;
+    transform: scale(1.45);
+    transform-origin: 50% 20%;
+    filter: none;
+    transition: transform .6s var(--ease);
+}
+
+body.hv-light .hv-docs.is-team-page .team-card:hover .team-img-wrapper img {
+    transform: scale(1.52);
+    filter: none;
+}
+
+/* the lead consultant's frame in the logo's gold */
+body.hv-light .hv-docs.is-team-page .team-card.is-lead .team-img-wrapper {
+    box-shadow:
+        12px 12px 0 0 rgba(233, 162, 59, .45),
+        0 22px 34px -20px rgba(120, 60, 55, .55);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    body.hv-light .hv-docs.is-team-page .team-card:hover .team-img-wrapper img {
+        transform: scale(1.45);
     }
 }

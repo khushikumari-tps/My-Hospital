@@ -1,0 +1,622 @@
+/* ==========================================================================
+   Our Team page
+   Profile cards for consultants, compact cards for residents and nursing,
+   and a card row for management. Portrait files are circular cut-outs on a
+   pale square, so every photo is zoomed inside an arch frame that hides the
+   disc edge; the zoom origin sits high to keep the face in view.
+   ========================================================================== */
+
+.ot-team {
+    padding: 34px 0 96px;
+    background: linear-gradient(180deg, #FBF6F4 0%, #FFFFFF 70%);
+}
+
+/* ----------------------------- jump links ------------------------------ */
+.ot-jump {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ot-jump a {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 46px;
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--ink);
+    font-weight: 600;
+    font-size: .95rem;
+    box-shadow: var(--lift-1);
+    transition: background .3s ease, border-color .3s ease, color .3s ease, transform .3s var(--ease);
+}
+
+.ot-jump a i {
+    color: var(--brand);
+}
+
+.ot-jump a:hover,
+.ot-jump a:focus-visible {
+    background: var(--blush);
+    border-color: rgba(142, 27, 46, .3);
+    color: var(--brand);
+    transform: translateY(-2px);
+}
+
+/* ---------------------------- group header ----------------------------- */
+.ot-group {
+    margin-top: 70px;
+    scroll-margin-top: 140px;
+}
+
+.ot-group-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--line);
+}
+
+.ot-group-i {
+    flex: 0 0 52px;
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    border-radius: 16px;
+    background: var(--grad-brand);
+    color: #fff;
+    font-size: 1.2rem;
+    box-shadow: 0 12px 22px -12px rgba(142, 27, 46, .7);
+}
+
+.ot-group-head h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    line-height: 1.2;
+    color: var(--ink);
+}
+
+.ot-group-head p {
+    margin: 4px 0 0;
+    font-size: .98rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+/* ------------------------------ portraits ------------------------------ */
+.ot-photo {
+    position: relative;
+    width: 240px;
+    height: 284px;
+    border-radius: 120px 120px 36px 36px;
+    overflow: hidden;
+    background: linear-gradient(165deg, #FDECEA 0%, #F6D3CC 100%);
+    box-shadow:
+        14px 14px 0 0 rgba(142, 27, 46, .12),
+        0 24px 36px -22px rgba(120, 60, 55, .6);
+}
+
+.is-lead .ot-photo {
+    box-shadow:
+        14px 14px 0 0 rgba(233, 162, 59, .45),
+        0 24px 36px -22px rgba(120, 60, 55, .6);
+}
+
+.ot-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 50% 20%;
+    transform: scale(1.45);
+    transform-origin: 50% 20%;
+    transition: transform .6s var(--ease);
+}
+
+/* ------------------------------ shared text ---------------------------- */
+.ot-tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    background: var(--blush);
+    color: var(--brand);
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.ot-body h3 {
+    margin: 12px 0 6px;
+    font-size: 1.9rem;
+    line-height: 1.2;
+    color: var(--ink);
+}
+
+.ot-spec {
+    margin: 0 0 8px;
+    font-size: 1.06rem;
+    font-weight: 600;
+    line-height: 1.5;
+    color: var(--brand);
+}
+
+.ot-org {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0;
+    font-size: .95rem;
+    line-height: 1.55;
+    color: var(--text-muted);
+}
+
+.ot-org i {
+    color: var(--gold-deep, #B7791F);
+}
+
+/* --------------------------- consultant cards -------------------------- */
+.ot-profile {
+    position: relative;
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 48px;
+    align-items: center;
+    margin-bottom: 28px;
+    padding: 38px 44px 38px 38px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 28px;
+    box-shadow: var(--lift-1);
+    overflow: hidden;
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s ease;
+}
+
+.ot-profile.is-lead::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 5px;
+    background: var(--grad-brand);
+}
+
+.ot-profile:hover {
+    transform: translateY(-4px);
+    border-color: rgba(142, 27, 46, .25);
+    box-shadow: var(--lift-2);
+}
+
+.ot-profile:hover .ot-photo img,
+.ot-mini:hover .ot-photo img {
+    transform: scale(1.52);
+}
+
+.ot-creds {
+    margin-top: 22px;
+    padding: 18px 22px;
+    border-radius: 18px;
+    background: #FBF6F4;
+    border: 1px solid var(--line-soft);
+}
+
+.ot-creds h4 {
+    margin: 0 0 12px;
+    font-size: .74rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+}
+
+.ot-creds ul {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 26px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.ot-creds li {
+    position: relative;
+    padding-left: 28px;
+    font-size: .95rem;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--ink-body);
+}
+
+/* style.css hides list bullets site-wide; this check mark is deliberate */
+.ot-creds li::before {
+    content: "\f00c";
+    display: grid;
+    place-items: center;
+    position: absolute;
+    left: 0;
+    top: .15em;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: var(--gold-soft, #FBE6C6);
+    color: var(--gold-deep, #B7791F);
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: .55rem;
+}
+
+.ot-creds.is-pending p {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin: 0;
+    padding: 10px 14px;
+    border: 1px dashed rgba(142, 27, 46, .25);
+    border-radius: 12px;
+    background: #fff;
+    font-size: .95rem;
+    color: var(--text-muted);
+}
+
+.ot-creds.is-pending p i {
+    color: var(--brand);
+}
+
+.ot-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+}
+
+.ot-btn,
+.ot-btn-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    min-height: 48px;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: .96rem;
+    font-weight: 600;
+    transition: transform .3s var(--ease), box-shadow .3s ease, background .3s ease;
+}
+
+.ot-btn {
+    background: var(--grad-brand);
+    color: #fff;
+    box-shadow: 0 14px 26px -14px rgba(142, 27, 46, .75);
+}
+
+.ot-btn:hover,
+.ot-btn:focus-visible {
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.ot-btn-line {
+    border: 1px solid var(--line);
+    background: #fff;
+    color: var(--brand);
+}
+
+.ot-btn-line:hover,
+.ot-btn-line:focus-visible {
+    background: var(--blush);
+    color: var(--brand);
+}
+
+.ot-btn-line i {
+    font-size: .8rem;
+    transition: transform .3s var(--ease);
+}
+
+.ot-btn-line:hover i {
+    transform: translateX(3px);
+}
+
+/* ------------------------ residents and nursing ------------------------ */
+.ot-split {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 34px;
+}
+
+.ot-split > .ot-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.ot-mini {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 136px minmax(0, 1fr);
+    gap: 26px;
+    align-items: center;
+    padding: 26px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--lift-1);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s ease;
+}
+
+.ot-mini:hover {
+    transform: translateY(-4px);
+    border-color: rgba(142, 27, 46, .25);
+    box-shadow: var(--lift-2);
+}
+
+.ot-mini .ot-photo {
+    width: 136px;
+    height: 161px;
+    border-radius: 68px 68px 24px 24px;
+    box-shadow:
+        8px 8px 0 0 rgba(142, 27, 46, .12),
+        0 16px 26px -16px rgba(120, 60, 55, .6);
+}
+
+.ot-mini .ot-body h3 {
+    font-size: 1.35rem;
+    margin-top: 10px;
+}
+
+.ot-mini .ot-spec {
+    font-size: .96rem;
+}
+
+.ot-note {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin: 12px 0 0;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background: var(--blush);
+    font-size: .88rem;
+    line-height: 1.5;
+    color: var(--ink-body);
+}
+
+.ot-note i {
+    color: var(--brand);
+}
+
+/* ------------------------------ management ----------------------------- */
+.ot-mgmt {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.ot-mgmt-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 30px 22px 22px;
+    background: #fff;
+    border: 1px solid var(--line);
+    border-radius: 24px;
+    box-shadow: var(--lift-1);
+    color: var(--ink);
+    transition: transform .4s var(--ease), box-shadow .4s var(--ease), border-color .4s ease;
+}
+
+.ot-mgmt-card:hover,
+.ot-mgmt-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: rgba(142, 27, 46, .25);
+    box-shadow: var(--lift-2);
+    color: var(--ink);
+}
+
+.ot-mgmt-card img {
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 0 4px #fff, 0 0 0 5px var(--line), 0 12px 20px -12px rgba(120, 60, 55, .55);
+}
+
+.ot-mgmt-card b {
+    margin-top: 16px;
+    font-size: 1.1rem;
+    color: var(--ink);
+}
+
+.ot-mgmt-card span {
+    margin-top: 6px;
+    margin-bottom: 16px;
+    font-size: .9rem;
+    line-height: 1.5;
+    color: var(--text-muted);
+}
+
+.ot-mgmt-card em {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 16px;
+    border-top: 1px solid var(--line-soft);
+    font-style: normal;
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--brand);
+}
+
+.ot-mgmt-card em i {
+    font-size: .78rem;
+    transition: transform .3s var(--ease);
+}
+
+.ot-mgmt-card:hover em i {
+    transform: translateX(3px);
+}
+
+/* ------------------------------ responsive ----------------------------- */
+@media (max-width: 1100px) {
+    .ot-profile {
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 32px;
+        padding: 30px;
+    }
+
+    .ot-profile .ot-photo {
+        width: 200px;
+        height: 236px;
+        border-radius: 100px 100px 32px 32px;
+    }
+
+    .ot-creds ul {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ot-split {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0;
+    }
+}
+
+@media (max-width: 767px) {
+    .ot-team {
+        padding: 22px 0 70px;
+    }
+
+    /* centred or narrow text: keep each icon inline at the start of its line
+       instead of stranded in a flex column beside wrapped text */
+    .ot-org,
+    .ot-note {
+        display: block;
+    }
+
+    .ot-org i,
+    .ot-note i {
+        margin-right: 6px;
+    }
+
+    .ot-jump a {
+        padding: 9px 16px;
+        font-size: .9rem;
+    }
+
+    .ot-group {
+        margin-top: 50px;
+    }
+
+    .ot-group-head {
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .ot-group-i {
+        flex-basis: 44px;
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        font-size: 1rem;
+    }
+
+    .ot-group-head h2 {
+        font-size: 1.4rem;
+    }
+
+    .ot-profile {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        gap: 24px;
+        padding: 30px 20px 24px;
+        text-align: center;
+    }
+
+    .ot-body {
+        width: 100%;
+    }
+
+    .ot-body h3 {
+        font-size: 1.55rem;
+    }
+
+    .ot-org {
+        justify-content: center;
+    }
+
+    .ot-creds {
+        text-align: left;
+    }
+
+    .ot-acts {
+        justify-content: center;
+    }
+
+    .ot-btn,
+    .ot-btn-line {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ot-mini {
+        grid-template-columns: 110px minmax(0, 1fr);
+        gap: 18px;
+        padding: 20px;
+    }
+
+    .ot-mini .ot-photo {
+        width: 110px;
+        height: 130px;
+        border-radius: 55px 55px 20px 20px;
+    }
+
+    .ot-mini .ot-body h3 {
+        font-size: 1.2rem;
+    }
+
+    .ot-mgmt {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 420px) {
+    .ot-mini {
+        grid-template-columns: minmax(0, 1fr);
+        justify-items: center;
+        text-align: center;
+    }
+
+    .ot-mini .ot-org,
+    .ot-note {
+        justify-content: center;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ot-profile,
+    .ot-mini,
+    .ot-mgmt-card,
+    .ot-jump a,
+    .ot-btn,
+    .ot-photo img {
+        transition: none;
+    }
+
+    .ot-profile:hover,
+    .ot-mini:hover,
+    .ot-mgmt-card:hover,
+    .ot-jump a:hover,
+    .ot-btn:hover {
+        transform: none;
+    }
+
+    .ot-profile:hover .ot-photo img,
+    .ot-mini:hover .ot-photo img {
+        transform: scale(1.45);
+    }
+}

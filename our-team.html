@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Doctors and Team | Advitya Hospital Baruipur &amp; Advitya Healthcares</title>
+    <title>Meet Our Doctors and Team | Advitya Hospital Baruipur &amp; Advitya Healthcares</title>
     <meta name="description" content="Consultants, resident doctors, the nursing team and the management of Advitya Healthcares Pvt Ltd and Advitya Hospital Baruipur — with qualifications and the department each one works in.">
     <link rel="canonical" href="https://advityahealthcares.com/our-team.html">
     <!-- Brand tokens first: colour, type, radius and elevation for every
@@ -12,11 +12,12 @@
     <link rel="stylesheet" href="css/brand.css?v=2">
     <link rel="stylesheet" href="css/style.css?v=26">
     <link rel="stylesheet" href="css/home-v2.css?v=25">
-    <link rel="stylesheet" href="css/inner-v2.css?v=1">
+    <link rel="stylesheet" href="css/inner-v2.css?v=3">
+    <link rel="stylesheet" href="css/our-team.css?v=2">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
     <link rel="stylesheet" href="css/erp-nav.css?v=3">
-    <link rel="stylesheet" href="css/corporate.css?v=11">
+    <link rel="stylesheet" href="css/corporate.css?v=12">
     <!-- async, and ahead of the third-party bundles: the header must not
          wait on a CDN to get its language selector wired up -->
     <script src="js/lang-select.js?v=5" async></script>
@@ -158,7 +159,7 @@
     <section class="pg-hero is-centered">
         <div class="container">
             <span class="pg-eyebrow" data-aos="fade-up">Our People</span>
-            <h1 data-aos="fade-up" data-aos-delay="60">Our Doctors and <span>Team</span></h1>
+            <h1 data-aos="fade-up" data-aos-delay="60">Meet Our Doctors and <span>Team</span></h1>
             <p class="pg-lede" data-aos="fade-up" data-aos-delay="120">Consultants, resident doctors, the
                 nursing team and management are listed separately, so it is clear who you are being booked
                 with.</p>
@@ -167,97 +168,147 @@
         </div>
     </section>
 
-    <section class="hv-docs is-team-page" style="border-top: none;">
+    <section class="ot-team" id="team">
         <div class="container">
-            <h2 class="team-group-title" data-aos="fade-up">Consultants</h2>
-            <div class="team-grid">
-                <article class="team-card is-lead" data-aos="fade-up">
-                    <div class="team-img-wrapper">
+            <nav class="ot-jump" aria-label="Jump to a team group" data-aos="fade-up">
+                <a href="#consultants"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Consultants</a>
+                <a href="#residents"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> Resident Doctors</a>
+                <a href="#nursing"><i class="fa-solid fa-user-nurse" aria-hidden="true"></i> Nursing Team</a>
+                <a href="#management"><i class="fa-solid fa-briefcase" aria-hidden="true"></i> Management</a>
+            </nav>
+
+            <!-- Consultants -->
+            <div class="ot-group" id="consultants">
+                <header class="ot-group-head" data-aos="fade-up">
+                    <span class="ot-group-i"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+                    <div>
+                        <h2>Consultants</h2>
+                        <p>Senior doctors who lead your consultation and treatment.</p>
+                    </div>
+                </header>
+
+                <article class="ot-profile is-lead" data-aos="fade-up">
+                    <div class="ot-photo">
                         <img src="images/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor">
                     </div>
-                    <div class="team-info">
+                    <div class="ot-body">
+                        <span class="ot-tag">Consultant &middot; CEO &amp; Medical Head</span>
                         <h3>Dr. Deeksha Kapoor</h3>
-                        <span class="team-role">Consultant &middot; CEO &amp; Medical Head</span>
-                        <p class="team-org">Advitya Healthcares Pvt Ltd <span>&middot;</span> PancreaCare</p>
-                        <p class="team-spec">Surgical Gastroenterology and GI Surgical Oncology</p>
-                        <ul class="team-creds">
-                            <li>MBBS</li>
-                            <li>DNB (General Surgery)</li>
-                            <li>DNB (Surgical Gastroenterology) &mdash; National Gold Medalist</li>
-                            <li>Fellowship in HPB Surgical Oncology, Tata Memorial Hospital (TMH), Mumbai</li>
-                        </ul>
+                        <p class="ot-spec">Surgical Gastroenterology and GI Surgical Oncology</p>
+                        <p class="ot-org"><i class="fa-regular fa-building" aria-hidden="true"></i> Advitya Healthcares Pvt Ltd &middot; PancreaCare</p>
+                        <div class="ot-creds">
+                            <h4>Qualifications</h4>
+                            <ul>
+                                <li>MBBS</li>
+                                <li>DNB (General Surgery)</li>
+                                <li>DNB (Surgical Gastroenterology) &mdash; National Gold Medalist</li>
+                                <li>Fellowship in HPB Surgical Oncology, Tata Memorial Hospital (TMH), Mumbai</li>
+                            </ul>
+                        </div>
+                        <div class="ot-acts">
+                            <a class="ot-btn" href="contact.html#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book a consultation</a>
+                            <a class="ot-btn-line" href="from-ceos-desk.html">From the CEO&rsquo;s desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </div>
-                    <a href="contact.html#appointment" class="team-link">
-                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
-                    </a>
                 </article>
 
-                <article class="team-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="team-img-wrapper">
+                <article class="ot-profile" data-aos="fade-up">
+                    <div class="ot-photo">
                         <img src="images/team_shyamal_sen.png" alt="Dr. Shyamal Kumar Sen">
                     </div>
-                    <div class="team-info">
+                    <div class="ot-body">
+                        <span class="ot-tag">Consultant &middot; Senior Physician</span>
                         <h3>Dr. Shyamal Kumar Sen</h3>
-                        <span class="team-role">Consultant &middot; Senior Physician</span>
-                        <p class="team-org">Advitya Healthcares Pvt Ltd</p>
-                        <p class="team-spec">Internal Medicine &amp; Department of Pancreato-Biliary, Liver and
-                            Gastrointestinal Sciences</p>
+                        <p class="ot-spec">Internal Medicine &amp; Department of Pancreato-Biliary, Liver and Gastrointestinal Sciences</p>
+                        <p class="ot-org"><i class="fa-regular fa-building" aria-hidden="true"></i> Advitya Healthcares Pvt Ltd</p>
+                        <div class="ot-creds is-pending">
+                            <h4>Qualifications</h4>
+                            <p><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                        </div>
+                        <div class="ot-acts">
+                            <a class="ot-btn" href="contact.html#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book a consultation</a>
+                            <a class="ot-btn-line" href="from-directors-desk.html">From the Directors&rsquo; desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        </div>
                     </div>
-                    <a href="contact.html#appointment" class="team-link">
-                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
+                </article>
+            </div>
+
+            <div class="ot-split">
+                <!-- Resident Doctors -->
+                <div class="ot-group" id="residents">
+                    <header class="ot-group-head" data-aos="fade-up">
+                        <span class="ot-group-i"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i></span>
+                        <div>
+                            <h2>Resident Doctors</h2>
+                            <p>Ward and inpatient cover under the consultants.</p>
+                        </div>
+                    </header>
+                    <article class="ot-mini" data-aos="fade-up">
+                        <div class="ot-photo">
+                            <img src="images/team_sachin_kumar.png" alt="Dr. Sachin Kumar" loading="lazy">
+                        </div>
+                        <div class="ot-body">
+                            <span class="ot-tag">Junior Resident</span>
+                            <h3>Dr. Sachin Kumar</h3>
+                            <p class="ot-spec">Department of Pancreato-Biliary, Liver &amp; Gastrointestinal Sciences</p>
+                            <p class="ot-org"><i class="fa-regular fa-building" aria-hidden="true"></i> PancreaCare &middot; Advitya Healthcares Pvt Ltd</p>
+                            <p class="ot-note"><i class="fa-solid fa-circle-info" aria-hidden="true"></i> Resident doctors do not hold an independent OPD.</p>
+                        </div>
+                    </article>
+                </div>
+
+                <!-- Nursing Team -->
+                <div class="ot-group" id="nursing">
+                    <header class="ot-group-head" data-aos="fade-up">
+                        <span class="ot-group-i"><i class="fa-solid fa-user-nurse" aria-hidden="true"></i></span>
+                        <div>
+                            <h2>Nursing Team</h2>
+                            <p>Operation theatre nursing for GI and HPB surgery.</p>
+                        </div>
+                    </header>
+                    <article class="ot-mini" data-aos="fade-up">
+                        <div class="ot-photo">
+                            <img src="images/team_poonam_sharma.png" alt="Ms. Poonam Sharma" loading="lazy">
+                        </div>
+                        <div class="ot-body">
+                            <span class="ot-tag">Head OT Staff</span>
+                            <h3>Ms. Poonam Sharma</h3>
+                            <p class="ot-spec">GI&ndash;HPB &amp; Abdominal Surgery Specialist</p>
+                            <p class="ot-org"><i class="fa-solid fa-user-nurse" aria-hidden="true"></i> Senior OT Nurse</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Management -->
+            <div class="ot-group" id="management">
+                <header class="ot-group-head" data-aos="fade-up">
+                    <span class="ot-group-i"><i class="fa-solid fa-briefcase" aria-hidden="true"></i></span>
+                    <div>
+                        <h2>Management</h2>
+                        <p>Management roles are held by members of the clinical team above.</p>
+                    </div>
+                </header>
+                <div class="ot-mgmt">
+                    <a class="ot-mgmt-card" href="from-ceos-desk.html" data-aos="fade-up">
+                        <img src="images/team_deeksha_kapoor.png" alt="" loading="lazy">
+                        <b>Dr. Deeksha Kapoor</b>
+                        <span>CEO &amp; Medical Head &middot; Advitya Healthcares Pvt Ltd</span>
+                        <em>From the CEO&rsquo;s desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></em>
                     </a>
-                </article>
-            </div>
-
-            <h2 class="team-group-title" data-aos="fade-up">Resident Doctors</h2>
-            <div class="team-grid">
-                <article class="team-card" data-aos="fade-up">
-                    <div class="team-img-wrapper">
-                        <img src="images/team_sachin_kumar.png" alt="Dr. Sachin Kumar">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Sachin Kumar</h3>
-                        <span class="team-role">Junior Resident</span>
-                        <p class="team-org">PancreaCare <span>&middot;</span> Advitya Healthcares Pvt Ltd</p>
-                        <p class="team-spec">Department of Pancreato-Biliary, Liver &amp; Gastrointestinal Sciences
-                            &mdash; ward and inpatient cover. Resident doctors do not hold an independent OPD.</p>
-                    </div>
-                </article>
-            </div>
-
-            <h2 class="team-group-title" data-aos="fade-up">Nursing Team</h2>
-            <div class="team-grid">
-                <article class="team-card" data-aos="fade-up">
-                    <div class="team-img-wrapper">
-                        <img src="images/team_poonam_sharma.png" alt="Ms. Poonam Sharma">
-                    </div>
-                    <div class="team-info">
-                        <h3>Ms. Poonam Sharma</h3>
-                        <span class="team-role">Head OT Staff</span>
-                        <p class="team-org">Senior OT Nurse</p>
-                        <p class="team-spec">GI&ndash;HPB &amp; Abdominal Surgery Specialist</p>
-                    </div>
-                </article>
-            </div>
-
-            <h2 class="team-group-title" data-aos="fade-up">Management</h2>
-            <p class="team-mgmt-note" data-aos="fade-up">Management roles are held by members of the clinical team above.</p>
-            <div class="team-mgmt">
-                <a class="team-mgmt-row" href="from-ceos-desk.html" data-aos="fade-up" data-aos-delay="0">
-                    <img src="images/team_deeksha_kapoor.png" alt="" loading="lazy">
-                    <span class="team-mgmt-txt"><b>Dr. Deeksha Kapoor</b><span>CEO &amp; Medical Head &middot; Advitya Healthcares Pvt Ltd</span></span>
-                    <span class="team-mgmt-cta">From the CEO&rsquo;s desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </a>
-                <a class="team-mgmt-row" href="from-directors-desk.html" data-aos="fade-up" data-aos-delay="60">
-                    <img src="images/team_shyamal_sen.png" alt="" loading="lazy">
-                    <span class="team-mgmt-txt"><b>Dr. Shyamal Kumar Sen</b><span>Medical Administrator &middot; Advitya Healthcares Pvt Ltd</span></span>
-                    <span class="team-mgmt-cta">From the Directors&rsquo; desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </a>
-                <a class="team-mgmt-row" href="contact.html#appointment" data-aos="fade-up" data-aos-delay="120">
-                    <img src="images/team_poonam_sharma.png" alt="" loading="lazy">
-                    <span class="team-mgmt-txt"><b>Ms. Poonam Sharma</b><span>Patient Support Group Team Leader &middot; PancreaCare</span></span>
-                    <span class="team-mgmt-cta">Talk to patient support <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </a>
+                    <a class="ot-mgmt-card" href="from-directors-desk.html" data-aos="fade-up" data-aos-delay="60">
+                        <img src="images/team_shyamal_sen.png" alt="" loading="lazy">
+                        <b>Dr. Shyamal Kumar Sen</b>
+                        <span>Medical Administrator &middot; Advitya Healthcares Pvt Ltd</span>
+                        <em>From the Directors&rsquo; desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></em>
+                    </a>
+                    <a class="ot-mgmt-card" href="contact.html#appointment" data-aos="fade-up" data-aos-delay="120">
+                        <img src="images/team_poonam_sharma.png" alt="" loading="lazy">
+                        <b>Ms. Poonam Sharma</b>
+                        <span>Patient Support Group Team Leader &middot; PancreaCare</span>
+                        <em>Talk to patient support <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></em>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -299,8 +350,8 @@
             <div class="hv-cta-actions" data-aos="fade-left" data-aos-delay="80">
                 <a href="index.html#contactModal" class="hv-cta-solid">
                     <i class="fa-regular fa-calendar-check"></i> Book a Consultation</a>
-                <a href="tel:+919211221551" class="hv-cta-line"><i class="fa-solid fa-phone-volume"></i>
-                    +91 9211221551</a>
+                <a href="tel:+919211221552" class="hv-cta-line"><i class="fa-solid fa-phone-volume"></i>
+                    +91 9211221552</a>
             </div>
         </div>
     </section>

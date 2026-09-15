@@ -4,11 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Doctors | Advitya Hospital Baruipur</title>
+    <title>Meet Our Experts | Advitya Hospital Baruipur</title>
     <meta name="description" content="Doctors at Advitya Hospital Baruipur: Dr. Deeksha Kapoor (Surgical Gastroenterology and GI Surgical Oncology), Dr. Agniva Mukhopadhyay (General Surgery), and Dr. Joydeep Mondal, Dr. Suday Mukhopadhyay and Dr. Pradyumna Chakraborty (Orthopaedics). Book an appointment.">
     <link rel="canonical" href="https://advityahealthcares.com/doctors.html">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Our Doctors | Advitya Hospital Baruipur">
+    <meta property="og:title" content="Meet Our Experts | Advitya Hospital Baruipur">
     <meta property="og:description" content="Doctors at Advitya Hospital Baruipur: Dr. Deeksha Kapoor (Surgical Gastroenterology and GI Surgical Oncology), Dr. Agniva Mukhopadhyay (General Surgery), and Dr. Joydeep Mondal, Dr. Suday Mukhopadhyay and Dr. Pradyumna Chakraborty (Orthopaedics). Book an appointment.">
     <meta property="og:url" content="https://advityahealthcares.com/doctors.html">
     <!-- Brand tokens first: colour, type, radius and elevation for every
@@ -16,11 +16,12 @@
     <link rel="stylesheet" href="css/brand.css?v=2">
     <link rel="stylesheet" href="css/style.css?v=26">
     <link rel="stylesheet" href="css/home-v2.css?v=25">
-    <link rel="stylesheet" href="css/inner-v2.css?v=1">
+    <link rel="stylesheet" href="css/inner-v2.css?v=3">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
     <link rel="stylesheet" href="css/erp-nav.css?v=3">
-    <link rel="stylesheet" href="css/corporate.css?v=11">
+    <link rel="stylesheet" href="css/corporate.css?v=12">
+    <link rel="stylesheet" href="css/doctors.css?v=2">
     <!-- async, and ahead of the third-party bundles: the header must not
          wait on a CDN to get its language selector wired up -->
     <script src="js/lang-select.js?v=5" async></script>
@@ -178,10 +179,10 @@
     </header>
     </div>
 
-    <section class="pg-hero">
+    <section class="pg-hero is-centered">
         <div class="container">
             <span class="pg-eyebrow" data-aos="fade-up">Advitya Hospital Baruipur</span>
-            <h1 data-aos="fade-up" data-aos-delay="60">Our <span>Doctors</span></h1>
+            <h1 data-aos="fade-up" data-aos-delay="60">Meet Our <span>Experts</span></h1>
             <p class="pg-lede" data-aos="fade-up" data-aos-delay="120">Consultants at Advitya Hospital Baruipur, with
                 their speciality, qualifications and OPD schedule.</p>
             <div class="pg-hero-acts" data-aos="fade-up" data-aos-delay="180">
@@ -193,196 +194,304 @@
         </div>
     </section>
 
-    <section class="pg-sec">
+    <section class="pg-sec xp-sec-wrap">
         <div class="container">
-            <div class="doc-filter" role="group" aria-label="Filter doctors by speciality" data-aos="fade-up">
-                <button type="button" data-filter="all" aria-pressed="true">All doctors</button>
-                <button type="button" data-filter="gastro" aria-pressed="false">Surgical Gastroenterology</button>
-                <button type="button" data-filter="general" aria-pressed="false">General Surgery</button>
-                <button type="button" data-filter="ortho" aria-pressed="false">Orthopaedics</button>
+            <div class="xp-head" data-aos="fade-up">
+                <div class="xp-title">
+                    <h2>Our Experts &amp; Doctors</h2>
+                    <span class="xp-rule" aria-hidden="true"></span>
+                </div>
+                <div class="xp-tools">
+                    <label class="xp-field">
+                        <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
+                        <select id="xpSpec" aria-label="Search by speciality">
+                            <option value="all">All specialities</option>
+                            <option value="gastro">Surgical Gastroenterology</option>
+                            <option value="general">General Surgery</option>
+                            <option value="ortho">Orthopaedics</option>
+                        </select>
+                    </label>
+                    <label class="xp-field">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input type="search" id="xpName" placeholder="Search by doctor name" aria-label="Search by doctor name" autocomplete="off">
+                    </label>
+                </div>
             </div>
 
-            <div class="doc-grid">
-                <article class="doc-card is-featured" id="dr-deeksha-kapoor" data-spec="gastro">
-                    <div class="doc-top">
-                        <div class="doc-photo"><img src="images/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor" loading="lazy"></div>
-                        <div class="doc-id">
-                            <span class="doc-badge">CEO &amp; Medical Head</span><h3>Dr. Deeksha Kapoor</h3>
-                            <p class="doc-spec">Surgical Gastroenterology and GI Surgical Oncology</p>
+            <p class="xp-count" aria-live="polite">Showing 5 doctors</p>
+
+            <div class="xp-grid">
+                <!-- Dr. Deeksha Kapoor -->
+                <article class="xp-card" id="dr-deeksha-kapoor" data-spec="gastro" data-name="dr. deeksha kapoor" data-aos="fade-up">
+                    <div class="xp-photo">
+                        <span class="xp-badge">CEO &amp; Medical Head</span>
+                        <img src="images/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor" loading="lazy">
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Deeksha Kapoor</h3>
+                        <p class="xp-spec">Surgical Gastroenterology and GI Surgical Oncology</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-deeksha-kapoor"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Deeksha%20Kapoor&amp;dept=Surgical%20Gastroenterology#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
                         </div>
                     </div>
-                    <div class="doc-block">
-                        <h4>Qualifications</h4>
-                        <ul>
-                            <li>MBBS</li>
-                            <li>DNB (General Surgery)</li>
-                            <li>DNB (Surgical Gastroenterology) &mdash; National Gold Medalist</li>
-                            <li>Fellowship in HPB Surgical Oncology, Tata Memorial Hospital (TMH), Mumbai</li>
-                        </ul>
-                    </div>
-                    <div class="doc-block">
-                        <h4>About</h4>
-                        <p>Dr. Deeksha Kapoor is a surgical gastroenterologist and GI surgical oncologist, and CEO &amp; Medical Head of Advitya Healthcares Pvt Ltd. Her work covers surgery of the digestive system, including the gallbladder, liver, pancreas and cancers of the GI tract.</p>
-                    </div>
-                    <div class="doc-block doc-opd">
-                        <h4>OPD schedule</h4>
-                        <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm
-                            availability.</p>
-                        <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
-                            <input type="hidden" name="doctor" value="Dr. Deeksha Kapoor">
-                            <input type="hidden" name="dept" value="Surgical Gastroenterology">
-                            <label for="date-dr-deeksha-kapoor">Preferred date</label>
-                            <div class="doc-date-row">
-                                <input type="date" id="date-dr-deeksha-kapoor" name="date" required>
-                                <button type="submit" class="btn btn-premium">Request this date</button>
+                    <dialog class="xp-dialog" id="profile-dr-deeksha-kapoor" aria-labelledby="profile-dr-deeksha-kapoor-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo"><img src="images/team_deeksha_kapoor.png" alt="" loading="lazy"></div>
+                                <div>
+                                    <span class="xp-dlg-badge">CEO &amp; Medical Head</span>
+                                    <h2 id="profile-dr-deeksha-kapoor-title">Dr. Deeksha Kapoor</h2>
+                                    <p class="xp-spec">Surgical Gastroenterology and GI Surgical Oncology</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <ul>
+                                        <li>MBBS</li>
+                                        <li>DNB (General Surgery)</li>
+                                        <li>DNB (Surgical Gastroenterology) &mdash; National Gold Medalist</li>
+                                        <li>Fellowship in HPB Surgical Oncology, Tata Memorial Hospital (TMH), Mumbai</li>
+                                    </ul>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Deeksha Kapoor is a surgical gastroenterologist and GI surgical oncologist, and CEO &amp; Medical Head of Advitya Healthcares Pvt Ltd. Her work covers surgery of the digestive system, including the gallbladder, liver, pancreas and cancers of the GI tract.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm availability.</p>
+                                    <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
+                                        <input type="hidden" name="doctor" value="Dr. Deeksha Kapoor">
+                                        <input type="hidden" name="dept" value="Surgical Gastroenterology">
+                                        <label for="date-dr-deeksha-kapoor">Preferred date</label>
+                                        <div class="doc-date-row">
+                                            <input type="date" id="date-dr-deeksha-kapoor" name="date" required>
+                                            <button type="submit" class="btn btn-premium">Request this date</button>
+                                        </div>
+                                    </form>
+                                </section>
                             </div>
-                        </form>
-                    </div>
-                    <div class="doc-acts">
-                        <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Deeksha%20Kapoor&amp;dept=Surgical%20Gastroenterology#appointment" class="btn btn-premium">
-                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
-                        <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
-                    </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Deeksha%20Kapoor&amp;dept=Surgical%20Gastroenterology#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
                 </article>
 
-                <article class="doc-card" id="dr-agniva-mukhopadhyay" data-spec="general">
-                    <div class="doc-top">
-                        <div class="doc-photo"><span class="doc-initials" role="img" aria-label="Photo of Dr. Agniva Mukhopadhyay to be added">AM</span></div>
-                        <div class="doc-id">
-                            <h3>Dr. Agniva Mukhopadhyay</h3>
-                            <p class="doc-spec">General Surgery</p>
+                <!-- Dr. Agniva Mukhopadhyay -->
+                <article class="xp-card" id="dr-agniva-mukhopadhyay" data-spec="general" data-name="dr. agniva mukhopadhyay" data-aos="fade-up" data-aos-delay="60">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Agniva Mukhopadhyay to be added">AM</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Agniva Mukhopadhyay</h3>
+                        <p class="xp-spec">General Surgery</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-agniva-mukhopadhyay"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Agniva%20Mukhopadhyay&amp;dept=General%20and%20Laparoscopic%20Surgery#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
                         </div>
                     </div>
-                    <div class="doc-block">
-                        <h4>Qualifications</h4>
-                        <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
-                    </div>
-                    <div class="doc-block">
-                        <h4>About</h4>
-                        <p>Dr. Agniva Mukhopadhyay is a general surgeon at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
-                    </div>
-                    <div class="doc-block doc-opd">
-                        <h4>OPD schedule</h4>
-                        <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm
-                            availability.</p>
-                        <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
-                            <input type="hidden" name="doctor" value="Dr. Agniva Mukhopadhyay">
-                            <input type="hidden" name="dept" value="General and Laparoscopic Surgery">
-                            <label for="date-dr-agniva-mukhopadhyay">Preferred date</label>
-                            <div class="doc-date-row">
-                                <input type="date" id="date-dr-agniva-mukhopadhyay" name="date" required>
-                                <button type="submit" class="btn btn-premium">Request this date</button>
+                    <dialog class="xp-dialog" id="profile-dr-agniva-mukhopadhyay" aria-labelledby="profile-dr-agniva-mukhopadhyay-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">AM</div>
+                                <div>
+                                    <h2 id="profile-dr-agniva-mukhopadhyay-title">Dr. Agniva Mukhopadhyay</h2>
+                                    <p class="xp-spec">General Surgery</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Agniva Mukhopadhyay is a general surgeon at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm availability.</p>
+                                    <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
+                                        <input type="hidden" name="doctor" value="Dr. Agniva Mukhopadhyay">
+                                        <input type="hidden" name="dept" value="General and Laparoscopic Surgery">
+                                        <label for="date-dr-agniva-mukhopadhyay">Preferred date</label>
+                                        <div class="doc-date-row">
+                                            <input type="date" id="date-dr-agniva-mukhopadhyay" name="date" required>
+                                            <button type="submit" class="btn btn-premium">Request this date</button>
+                                        </div>
+                                    </form>
+                                </section>
                             </div>
-                        </form>
-                    </div>
-                    <div class="doc-acts">
-                        <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Agniva%20Mukhopadhyay&amp;dept=General%20and%20Laparoscopic%20Surgery#appointment" class="btn btn-premium">
-                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
-                        <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
-                    </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Agniva%20Mukhopadhyay&amp;dept=General%20and%20Laparoscopic%20Surgery#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
                 </article>
 
-                <article class="doc-card" id="dr-joydeep-mondal" data-spec="ortho">
-                    <div class="doc-top">
-                        <div class="doc-photo"><span class="doc-initials" role="img" aria-label="Photo of Dr. Joydeep Mondal to be added">JM</span></div>
-                        <div class="doc-id">
-                            <h3>Dr. Joydeep Mondal</h3>
-                            <p class="doc-spec">Orthopaedics</p>
+                <!-- Dr. Joydeep Mondal -->
+                <article class="xp-card" id="dr-joydeep-mondal" data-spec="ortho" data-name="dr. joydeep mondal" data-aos="fade-up" data-aos-delay="120">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Joydeep Mondal to be added">JM</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Joydeep Mondal</h3>
+                        <p class="xp-spec">Orthopaedics</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-joydeep-mondal"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Joydeep%20Mondal&amp;dept=Orthopaedics#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
                         </div>
                     </div>
-                    <div class="doc-block">
-                        <h4>Qualifications</h4>
-                        <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
-                    </div>
-                    <div class="doc-block">
-                        <h4>About</h4>
-                        <p>Dr. Joydeep Mondal is an orthopaedic doctor at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
-                    </div>
-                    <div class="doc-block doc-opd">
-                        <h4>OPD schedule</h4>
-                        <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
-                    </div>
-                    <div class="doc-acts">
-                        <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Joydeep%20Mondal&amp;dept=Orthopaedics#appointment" class="btn btn-premium">
-                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
-                        <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
-                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-joydeep-mondal" aria-labelledby="profile-dr-joydeep-mondal-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">JM</div>
+                                <div>
+                                    <h2 id="profile-dr-joydeep-mondal-title">Dr. Joydeep Mondal</h2>
+                                    <p class="xp-spec">Orthopaedics</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Joydeep Mondal is an orthopaedic doctor at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Joydeep%20Mondal&amp;dept=Orthopaedics#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
                 </article>
 
-                <article class="doc-card" id="dr-suday-mukhopadhyay" data-spec="ortho">
-                    <div class="doc-top">
-                        <div class="doc-photo"><span class="doc-initials" role="img" aria-label="Photo of Dr. Suday Mukhopadhyay to be added">SM</span></div>
-                        <div class="doc-id">
-                            <h3>Dr. Suday Mukhopadhyay</h3>
-                            <p class="doc-spec">Orthopaedics</p>
+                <!-- Dr. Suday Mukhopadhyay -->
+                <article class="xp-card" id="dr-suday-mukhopadhyay" data-spec="ortho" data-name="dr. suday mukhopadhyay" data-aos="fade-up" data-aos-delay="180">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Suday Mukhopadhyay to be added">SM</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Suday Mukhopadhyay</h3>
+                        <p class="xp-spec">Orthopaedics</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-suday-mukhopadhyay"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Suday%20Mukhopadhyay&amp;dept=Orthopaedics#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
                         </div>
                     </div>
-                    <div class="doc-block">
-                        <h4>Qualifications</h4>
-                        <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
-                    </div>
-                    <div class="doc-block">
-                        <h4>About</h4>
-                        <p>Dr. Suday Mukhopadhyay is an orthopaedic doctor at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
-                    </div>
-                    <div class="doc-block doc-opd">
-                        <h4>OPD schedule</h4>
-                        <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm
-                            availability.</p>
-                        <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
-                            <input type="hidden" name="doctor" value="Dr. Suday Mukhopadhyay">
-                            <input type="hidden" name="dept" value="Orthopaedics">
-                            <label for="date-dr-suday-mukhopadhyay">Preferred date</label>
-                            <div class="doc-date-row">
-                                <input type="date" id="date-dr-suday-mukhopadhyay" name="date" required>
-                                <button type="submit" class="btn btn-premium">Request this date</button>
+                    <dialog class="xp-dialog" id="profile-dr-suday-mukhopadhyay" aria-labelledby="profile-dr-suday-mukhopadhyay-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">SM</div>
+                                <div>
+                                    <h2 id="profile-dr-suday-mukhopadhyay-title">Dr. Suday Mukhopadhyay</h2>
+                                    <p class="xp-spec">Orthopaedics</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Suday Mukhopadhyay is an orthopaedic doctor at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm availability.</p>
+                                    <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
+                                        <input type="hidden" name="doctor" value="Dr. Suday Mukhopadhyay">
+                                        <input type="hidden" name="dept" value="Orthopaedics">
+                                        <label for="date-dr-suday-mukhopadhyay">Preferred date</label>
+                                        <div class="doc-date-row">
+                                            <input type="date" id="date-dr-suday-mukhopadhyay" name="date" required>
+                                            <button type="submit" class="btn btn-premium">Request this date</button>
+                                        </div>
+                                    </form>
+                                </section>
                             </div>
-                        </form>
-                    </div>
-                    <div class="doc-acts">
-                        <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Suday%20Mukhopadhyay&amp;dept=Orthopaedics#appointment" class="btn btn-premium">
-                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
-                        <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
-                    </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Suday%20Mukhopadhyay&amp;dept=Orthopaedics#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
                 </article>
 
-                <article class="doc-card" id="dr-pradyumna-chakraborty" data-spec="ortho">
-                    <div class="doc-top">
-                        <div class="doc-photo"><span class="doc-initials" role="img" aria-label="Photo of Dr. Pradyumna Chakraborty to be added">PC</span></div>
-                        <div class="doc-id">
-                            <h3>Dr. Pradyumna Chakraborty</h3>
-                            <p class="doc-spec">Orthopaedics</p>
+                <!-- Dr. Pradyumna Chakraborty -->
+                <article class="xp-card" id="dr-pradyumna-chakraborty" data-spec="ortho" data-name="dr. pradyumna chakraborty" data-aos="fade-up" data-aos-delay="240">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Pradyumna Chakraborty to be added">PC</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Pradyumna Chakraborty</h3>
+                        <p class="xp-spec">Orthopaedics</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-pradyumna-chakraborty"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Pradyumna%20Chakraborty&amp;dept=Orthopaedics#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
                         </div>
                     </div>
-                    <div class="doc-block">
-                        <h4>Qualifications</h4>
-                        <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
-                    </div>
-                    <div class="doc-block">
-                        <h4>About</h4>
-                        <p>Dr. Pradyumna Chakraborty is an orthopaedic doctor at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
-                    </div>
-                    <div class="doc-block doc-opd">
-                        <h4>OPD schedule</h4>
-                        <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm
-                            availability.</p>
-                        <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
-                            <input type="hidden" name="doctor" value="Dr. Pradyumna Chakraborty">
-                            <input type="hidden" name="dept" value="Orthopaedics">
-                            <label for="date-dr-pradyumna-chakraborty">Preferred date</label>
-                            <div class="doc-date-row">
-                                <input type="date" id="date-dr-pradyumna-chakraborty" name="date" required>
-                                <button type="submit" class="btn btn-premium">Request this date</button>
+                    <dialog class="xp-dialog" id="profile-dr-pradyumna-chakraborty" aria-labelledby="profile-dr-pradyumna-chakraborty-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">PC</div>
+                                <div>
+                                    <h2 id="profile-dr-pradyumna-chakraborty-title">Dr. Pradyumna Chakraborty</h2>
+                                    <p class="xp-spec">Orthopaedics</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Pradyumna Chakraborty is an orthopaedic doctor at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p>The OPD schedule is not fixed. Choose a preferred date and the hospital will confirm availability.</p>
+                                    <form class="doc-date" action="advitya-hospital-baruipur.html#appointment" method="get">
+                                        <input type="hidden" name="doctor" value="Dr. Pradyumna Chakraborty">
+                                        <input type="hidden" name="dept" value="Orthopaedics">
+                                        <label for="date-dr-pradyumna-chakraborty">Preferred date</label>
+                                        <div class="doc-date-row">
+                                            <input type="date" id="date-dr-pradyumna-chakraborty" name="date" required>
+                                            <button type="submit" class="btn btn-premium">Request this date</button>
+                                        </div>
+                                    </form>
+                                </section>
                             </div>
-                        </form>
-                    </div>
-                    <div class="doc-acts">
-                        <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Pradyumna%20Chakraborty&amp;dept=Orthopaedics#appointment" class="btn btn-premium">
-                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
-                        <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
-                    </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Pradyumna%20Chakraborty&amp;dept=Orthopaedics#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
                 </article>
             </div>
+
+            <p class="xp-empty" hidden>No doctor matches your search. Call the hospital on
+                <a href="tel:+919211221552">+91 9211221552</a> and the team will guide you.</p>
 
             <p class="dept-note">Qualifications and OPD schedules are published only after they are confirmed.
                 More doctors will be added here.</p>
@@ -401,20 +510,75 @@
     </section>
 
     <script>
-        /* speciality filter: hides the cards that do not match */
+        /* Meet Our Experts: speciality / name search and the profile dialogs */
         (function () {
-            var bar = document.querySelector('.doc-filter');
-            if (!bar) return;
-            var cards = [].slice.call(document.querySelectorAll('.doc-card[data-spec]'));
-            bar.addEventListener('click', function (e) {
-                var b = e.target.closest('button[data-filter]');
-                if (!b) return;
-                var f = b.getAttribute('data-filter');
-                [].forEach.call(bar.querySelectorAll('button'), function (x) {
-                    x.setAttribute('aria-pressed', x === b ? 'true' : 'false');
-                });
+            var spec = document.getElementById('xpSpec');
+            var name = document.getElementById('xpName');
+            var cards = [].slice.call(document.querySelectorAll('.xp-card[data-spec]'));
+            var count = document.querySelector('.xp-count');
+            var empty = document.querySelector('.xp-empty');
+
+            function apply() {
+                var s = spec ? spec.value : 'all';
+                var q = name ? name.value.trim().toLowerCase() : '';
+                var shown = 0;
                 cards.forEach(function (c) {
-                    c.hidden = !(f === 'all' || c.getAttribute('data-spec') === f);
+                    var ok = (s === 'all' || c.getAttribute('data-spec') === s) &&
+                        (!q || (c.getAttribute('data-name') || '').indexOf(q) > -1);
+                    c.hidden = !ok;
+                    if (ok) shown++;
+                });
+                if (count) count.textContent = 'Showing ' + shown + (shown === 1 ? ' doctor' : ' doctors');
+                if (empty) empty.hidden = shown > 0;
+            }
+
+            if (spec) spec.addEventListener('change', apply);
+            if (name) name.addEventListener('input', apply);
+
+            function lock(on) {
+                // modal-open also hides the floating call / WhatsApp discs and the mobile bar
+                document.body.classList.toggle('xp-lock', on);
+                document.body.classList.toggle('modal-open', on);
+            }
+
+            function openProfile(btn) {
+                var d = document.getElementById(btn.getAttribute('data-profile'));
+                if (!d) return;
+                d._opener = btn;
+                if (typeof d.showModal === 'function') d.showModal();
+                else d.setAttribute('open', '');
+                lock(true);
+            }
+
+            function closeProfile(d) {
+                if (typeof d.close === 'function') d.close();
+                else {
+                    d.removeAttribute('open');
+                    d.dispatchEvent(new Event('close'));
+                }
+            }
+
+            document.addEventListener('click', function (e) {
+                var opener = e.target.closest('[data-profile]');
+                if (opener) {
+                    openProfile(opener);
+                    return;
+                }
+                var closer = e.target.closest('[data-close]');
+                if (closer) {
+                    var d = closer.closest('dialog');
+                    if (d) closeProfile(d);
+                }
+            });
+
+            [].forEach.call(document.querySelectorAll('.xp-dialog'), function (d) {
+                // a click on the dimmed backdrop lands on the dialog element itself
+                d.addEventListener('click', function (e) {
+                    if (e.target === d) closeProfile(d);
+                });
+                d.addEventListener('close', function () {
+                    lock(false);
+                    if (d._opener) d._opener.focus();
                 });
             });
         })();
