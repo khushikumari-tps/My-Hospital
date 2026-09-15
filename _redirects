@@ -1,0 +1,33 @@
+# Advitya Healthcares — host redirect rules
+#
+# The brief asks that the site be published under the official
+# advityahealthcares.com domain rather than a hosting subdomain. The DNS and
+# the host's custom-domain setting are the other half of that change; this
+# file is the part that lives in the repository.
+#
+# Read by Netlify and by Cloudflare Pages. Other static hosts ignore it
+# harmlessly, so it is safe to keep here whichever host the site ends up on.
+
+# ---- canonical host -------------------------------------------------------
+# Anything served from a hosting subdomain is sent to the official domain,
+# path intact, with a permanent redirect so search engines transfer the
+# ranking rather than indexing two copies of the site.
+https://:project.netlify.app/*        https://advityahealthcares.com/:splat   301!
+https://:project.pages.dev/*          https://advityahealthcares.com/:splat   301!
+
+# www to the bare domain, matching every canonical tag in the HTML.
+https://www.advityahealthcares.com/*  https://advityahealthcares.com/:splat   301!
+
+# ---- clean URLs -----------------------------------------------------------
+# The brief suggests advityahealthcares.com/advitya-hospital-baruipur. The
+# page itself is a .html file like every other page on the site, so the clean
+# path is served from it rather than redirected to it — the address bar keeps
+# the short form.
+/advitya-hospital-baruipur            /advitya-hospital-baruipur.html         200
+/advitya-healthcares                  /advitya-healthcares.html               200
+/departments                          /departments.html                       200
+/doctors                              /doctors.html                           200
+/centres-of-excellence                /centres-of-excellence.html             200
+/our-network                          /our-network.html                       200
+/patient-services                     /patient-services.html                  200
+/contact                              /contact.html                           200

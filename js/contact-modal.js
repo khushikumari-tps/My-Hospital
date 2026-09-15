@@ -35,8 +35,11 @@
         '        </div>' +
         '        <div class="cm-row">' +
         '          <div class="cm-icon"><i class="fa-solid fa-location-dot"></i></div>' +
-        '          <div><h4>Centres</h4><p>Ranchi &middot; Khunti &middot; Kolkata<br>' +
-        '            <a href="index.html#location">See all locations</a></p></div>' +
+        '          <div><h4>Our centres</h4><p>' +
+        '            <b>Advitya Hospital Baruipur</b><br>Kulpi Road, Puratan Bazar, Subuddhipur,<br>Baruipur, West Bengal &ndash; 700144<br>' +
+        '            <b>Kolkata OPD</b> &mdash; Rajdanga Main Road<br>' +
+        '            Alliance centres: Ranchi &middot; Khunti<br>' +
+        '            <a href="our-network.html">See the full network</a></p></div>' +
         '        </div>' +
         '      </div>' +
         '    </div>' +
@@ -49,25 +52,25 @@
         '        </div>' +
         '        <div class="form-group"><input type="email" name="email" placeholder="Email Address" required></div>' +
         '        <div class="form-row">' +
-        '          <div class="form-group"><select name="service" required>' +
+        '          <div class="form-group"><select name="service" required aria-label="Department or service">' +
         '            <option value="" disabled selected>Service</option>' +
-        '            <option>Gastroenterology</option>' +
-        '            <option>Pancreatic Disorders</option>' +
-        '            <option>Liver Care</option>' +
-        '            <option>Endoscopy / ERCP / EUS</option>' +
-        '            <option>GI Surgery</option>' +
-        '            <option>Colonoscopy</option>' +
-        '            <option>Nutrition &amp; Dietetics</option>' +
-        '            <option>Preventive Health Checkup</option>' +
+        '            <option>Surgical Gastroenterology</option>' +
+        '            <option>GI, Liver and Pancreatic Surgery</option>' +
+        '            <option>GI Cancer Surgery</option>' +
+        '            <option>General and Laparoscopic Surgery</option>' +
+        '            <option>Urology and Andrology</option>' +
+        '            <option>Trauma Surgery and Critical Care</option>' +
+        '            <option>Preventive Health Check-up</option>' +
         '            <option>Second Opinion on Reports</option>' +
         '          </select></div>' +
-        '          <div class="form-group"><select name="centre" required>' +
+        '          <div class="form-group"><select name="centre" required aria-label="Preferred centre">' +
         '            <option value="" disabled selected>Preferred Centre</option>' +
+        '            <option>Advitya Hospital Baruipur</option>' +
+        '            <option>Advitya Kolkata OPD &mdash; Rajdanga Main Road</option>' +
         '            <option>Care Clinic, Morabadi &mdash; Ranchi</option>' +
         '            <option>Jeevah Healthcares, Bariatu Road &mdash; Ranchi</option>' +
         '            <option>Synergy Global Hospital &mdash; Ranchi</option>' +
         '            <option>Rane Hospital &mdash; Khunti</option>' +
-        '            <option>Kolkata</option>' +
         '          </select></div>' +
         '        </div>' +
         '        <div class="form-group">' +
@@ -76,7 +79,7 @@
         '        </div>' +
         '        <div class="form-group"><textarea name="message" placeholder="Your message or symptoms..." required></textarea></div>' +
         '        <button type="submit" class="btn-gradient">Send Request</button>' +
-        '        <p class="form-note">Not for emergencies. If this is urgent, call <a href="tel:+919211221551">+91 9211221551</a> now.</p>' +
+        '        <p class="form-note">Not for emergencies. If this is urgent, call <a href="tel:+919211221553">+91 9211221553</a> now.</p>' +
         '      </form>' +
         '    </div>' +
         '  </div>' +
@@ -192,5 +195,44 @@
                 '  <p>We\'ve opened your mail app with the request filled in &mdash; press send and we\'ll reply within one working day.<br>Prefer to talk? Call <a href="tel:+919211221551">+91 9211221551</a>.</p>' +
                 '</div>';
         });
+    });
+})();
+
+/* Sticky mobile contact bar: Call, WhatsApp and Appointment, always within
+ * thumb reach on a phone. Styled in css/responsive.css (hidden above 768px).
+ * The campaign landing pages already carry their own sticky bar, so this one
+ * steps aside wherever .lp-sticky exists. Numbers are the hospital's
+ * verified lines. */
+(function () {
+    'use strict';
+
+    function ready(fn) {
+        if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', fn);
+        else fn();
+    }
+
+    ready(function () {
+        if (document.querySelector('.lp-sticky, .adv-mbar')) return;
+
+        // pages under diseases/ link their stylesheets as ../../css/..., so
+        // the same prefix gets the booking link to the right place
+        var brand = document.querySelector('link[href*="css/brand.css"]');
+        var base = brand ? brand.getAttribute('href').split('css/brand.css')[0] : '';
+        var appt = document.getElementById('appointmentFormBaruipur')
+            ? '#appointment'
+            : base + 'advitya-hospital-baruipur.html#appointment';
+
+        var bar = document.createElement('nav');
+        bar.className = 'adv-mbar';
+        bar.setAttribute('aria-label', 'Quick contact');
+        bar.innerHTML =
+            '<a class="adv-mbar-call" href="tel:+919211221552">' +
+                '<i class="fa-solid fa-phone" aria-hidden="true"></i><span>Call</span></a>' +
+            '<a class="adv-mbar-wa" href="https://wa.me/919211221552" target="_blank" rel="noopener noreferrer">' +
+                '<i class="fa-brands fa-whatsapp" aria-hidden="true"></i><span>WhatsApp</span></a>' +
+            '<a class="adv-mbar-appt" href="' + appt + '">' +
+                '<i class="fa-regular fa-calendar-check" aria-hidden="true"></i><span>Appointment</span></a>';
+        document.body.appendChild(bar);
+        document.body.classList.add('has-mbar');
     });
 })();

@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pancrea Care | Advitya Healthcares</title>
-    <meta name="description"
-        content="pancreaCare+ from Advitya Healthcares: what the pancreas does, the diseases that affect it, and how our team diagnoses, operates and supports recovery.">
+    <title>PancreaCare | A Centre of Excellence for Pancreatic, Liver and GI Surgery</title>
+    <meta name="description" content="PancreaCare — A Centre of Excellence for Pancreatic, Liver and GI Surgery by Advitya Healthcares. Pancreatic cancer surgery, the Whipple procedure, pancreatitis, liver resection and bile duct reconstruction.">
+    <link rel="canonical" href="https://advityahealthcares.com/pancrea-care.html">
     <!-- Brand tokens first: colour, type, radius and elevation for every
          stylesheet below. Sampled from the logo. -->
     <link rel="stylesheet" href="css/brand.css?v=2">
@@ -24,7 +24,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
         /* ===================================================================
-           pancreaCare+ page styling. Everything is prefixed .pc- so it cannot
+           PancreaCare+ page styling. Everything is prefixed .pc- so it cannot
            collide with the shared components in style.css, and it draws only on
            the site's own custom properties so the palette stays in one place.
            =================================================================== */
@@ -101,6 +101,18 @@
         .pc-hero h1 em {
             font-style: normal;
             color: var(--accent);
+        }
+
+        /* The positioning line the brief specifies, sitting between the
+           wordmark and the lede so the mark is never read on its own. */
+        .pc-hero-sub {
+            font-family: 'Outfit', system-ui, sans-serif;
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            font-weight: 600;
+            line-height: 1.5;
+            max-width: 680px;
+            margin: 0 auto 16px;
+            color: rgba(255, 255, 255, .95);
         }
 
         .pc-hero-lede {
@@ -592,7 +604,7 @@
 
         /* ---- Below 310px: let the button labels wrap --------------------
            `.pc-btn` is `white-space: nowrap`, which is right everywhere the
-           label fits on one line. "The story of pancreaCare+" at .95rem plus
+           label fits on one line. "The story of PancreaCare+" at .95rem plus
            1.6rem of padding each side measures 262px, and that becomes the
            whole document's min-content width — at 280px of viewport the page
            laid out 286px wide and the navbar went with it. The label wraps
@@ -633,7 +645,7 @@
     </style>
 <!-- last stylesheet on purpose: mobile fixes must win over the
      CDN sheets above, never fight them for the cascade -->
-<link rel="stylesheet" href="css/responsive.css?v=10">
+<link rel="stylesheet" href="css/responsive.css?v=12">
     <!-- PancreaCare pages only: the wordmark is a different shape to the
          Advitya mark and has to be sized by width, not height -->
     <link rel="stylesheet" href="css/pcare-brand.css?v=2">
@@ -649,84 +661,85 @@
                 </a>
             </div>
             <nav class="nav-links">
-                <a href="pancrea-care.html" class="active">Home</a>
-                <a href="the-story-of-pancreacare.html">About Us</a>
-                <div class="dropdown advmega">
-                    <a href="related-diseases.html" class="dropbtn" data-follow-link>Related Disease <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
-                    <div class="dropdown-content advmega-panel">
-                        <div class="advmega-item">
-                            <a class="advmega-link" href="diseases/pancreas/">Pancreas<span class="advmega-sign" aria-hidden="true"></span></a>
-                            <div class="advmega-sub">
-                                <div class="advmega-sub-inner">
-                                    <a href="diseases/pancreas/">Pancreatitis &amp; Pancreatic Disease</a>
-                                    <a href="diseases/pancreatic-cancer/">Pancreatic Cancer</a>
-                                    <a href="understanding-the-normal-pancreas.html">Understanding the Normal Pancreas</a>
-                                </div>
-                            </div>
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="advitya-healthcares.html" class="dropbtn" data-follow-link>Advitya Healthcares <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="advitya-healthcares.html">Advitya Healthcares Pvt Ltd</a>
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                        <a href="careers.html">Careers</a>
+                    </div>
+                </div>
+                <a href="advitya-hospital-baruipur.html">Advitya Hospital Baruipur</a>
+                <div class="dropdown mega">
+                    <a href="departments.html" class="dropbtn" data-follow-link>Departments <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Surgical Specialities</h4>
+                            <a href="departments.html#surgical-gastroenterology">Surgical Gastroenterology</a>
+                            <a href="departments.html#gi-liver-pancreatic-surgery">GI, Liver and Pancreatic Surgery</a>
+                            <a href="departments.html#gi-cancer-surgery">GI Cancer Surgery</a>
                         </div>
-                        <div class="advmega-item">
-                            <a class="advmega-link" href="diseases/gall-bladder/">Gall Bladder<span class="advmega-sign" aria-hidden="true"></span></a>
-                            <div class="advmega-sub">
-                                <div class="advmega-sub-inner">
-                                    <a href="gallbladder-benign-disease.html">Benign Disease</a>
-                                    <a href="gallbladder-cancers.html">Cancers</a>
-                                    <a href="gallbladder-cancer-and-gallstone-disease.html">Gallbladder cancer and gallstone disease</a>
-                                </div>
-                            </div>
+                        <div class="mega-col">
+                            <h4>Surgery &amp; Critical Care</h4>
+                            <a href="departments.html#general-laparoscopic-surgery">General and Laparoscopic Surgery</a>
+                            <a href="departments.html#urology-andrology">Urology and Andrology</a>
+                            <a href="departments.html#trauma-surgery-critical-care">Trauma Surgery and Critical Care</a>
                         </div>
-                        <div class="advmega-item">
-                            <a class="advmega-link" href="diseases/biliary-disease/">Biliary Disease<span class="advmega-sign" aria-hidden="true"></span></a>
-                            <div class="advmega-sub">
-                                <div class="advmega-sub-inner">
-                                    <a href="benign-biliary-diseases.html">Benign Disease</a>
-                                    <a href="surgery-for-bile-duct-injury.html">Surgery for Bile Duct Injury</a>
-                                    <a href="bile-duct-cancers.html">Cancers</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="advmega-item">
-                            <a class="advmega-link" href="diseases/liver/">Liver<span class="advmega-sign" aria-hidden="true"></span></a>
-                            <div class="advmega-sub">
-                                <div class="advmega-sub-inner">
-                                    <a href="benign-diseases-of-the-liver.html">Benign Disease</a>
-                                    <a href="liver-cancers.html">Cancers</a>
-                                    <a href="liver-surgery.html">Liver Surgery</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="advmega-item">
-                            <a class="advmega-link" href="diseases/colon-rectum/">Colon and Rectum<span class="advmega-sign" aria-hidden="true"></span></a>
-                            <div class="advmega-sub">
-                                <div class="advmega-sub-inner">
-                                    <a href="benign-colorectal-disease.html">Benign Disease</a>
-                                    <a href="colorectal-cancer.html">Cancers</a>
-                                    <a href="rectal-cancer-surgery.html">Rectal Cancer Surgery</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="advmega-item">
-                            <a class="advmega-link" href="diseases/stomach/">Stomach<span class="advmega-sign" aria-hidden="true"></span></a>
-                            <div class="advmega-sub">
-                                <div class="advmega-sub-inner">
-                                    <a href="benign-diseases-of-the-stomach.html">Benign Disease</a>
-                                    <a href="gastric-cancer.html">Cancers</a>
-                                    <a href="gastric-cancer-surgery.html">Gastric Cancer Surgery</a>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="advmega-item">
-                            <a class="advmega-link" href="diseases/esophagus/">Esophagus<span class="advmega-sign" aria-hidden="true"></span></a>
-                            <div class="advmega-sub">
-                                <div class="advmega-sub-inner">
-                                    <a href="benign-diseases-of-the-esophagus.html">Benign Disease</a>
-                                    <a href="esophageal-cancers.html">Cancers</a>
-                                </div>
-                            </div>
+                        <div class="mega-col">
+                            <h4>Explore</h4>
+                            <a href="departments.html">All Departments</a>
+                            <a href="departments.html#treatments">Treatments</a>
+                            <a href="advitya-hospital-baruipur.html">Advitya Hospital Baruipur</a>
                         </div>
                     </div>
                 </div>
-                <a href="what-we-do.html">What We Do</a>
-                <a href="index.html#contactModal">Contact Us</a>
+                <a href="doctors.html">Doctors</a>
+                <div class="dropdown">
+                    <a href="centres-of-excellence.html" class="dropbtn active" data-follow-link>Centres of Excellence <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="centres-of-excellence.html">All Centres of Excellence</a>
+                        <a href="pancrea-care.html">PancreaCare</a>
+                        <a href="the-story-of-pancreacare.html">The Story of PancreaCare</a>
+                        <a href="understanding-the-normal-pancreas.html">The Normal Pancreas</a>
+                    </div>
+                </div>
+                <a href="our-network.html">Our Network</a>
+                <div class="dropdown mega">
+                    <a href="patient-services.html" class="dropbtn" data-follow-link>Patient Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Appointments &amp; Care</h4>
+                            <a href="patient-services.html">All Patient Services</a>
+                            <a href="contact.html#appointment">Book an Appointment</a>
+                            <a href="patient-services.html#health-packages">Preventive Health Packages</a>
+                            <a href="patient-services.html#insurance">Insurance, Cashless &amp; TPA</a>
+                            <a href="patient-services.html#rooms">Rooms, Wards &amp; ICU</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Patient Resources</h4>
+                            <a href="clinical-services.html">Clinical Services</a>
+                            <a href="testimonials.html">Testimonials</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="blogs.html">Blogs</a>
+                            <a href="faqs.html">FAQs</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Condition FAQs</h4>
+                            <a href="pancreas.html">Pancreas</a>
+                            <a href="gallbladder.html">Gallbladder</a>
+                            <a href="liver.html">Liver</a>
+                            <a href="large-intestine.html">Large Intestine</a>
+                            <a href="stomach.html">Stomach</a>
+                            <a href="esophagus.html">Esophagus</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="contact.html">Contact</a>
             </nav>
             <div class="nav-actions">
                 <div class="als notranslate" translate="no">
@@ -737,11 +750,8 @@
                         <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>
                     </button>
                 </div>
-                <a href="index.html#location" class="location-btn">
+                <a href="our-network.html" class="location-btn">
                     <i class="fa-solid fa-location-dot"></i> Our Locations
-                </a>
-                <a href="https://erp.advityahealthcares.in/login" target="_blank" rel="noopener noreferrer" class="erp-login-btn" aria-label="ERP Login (opens in a new tab)">
-                    <i class="fa-solid fa-right-to-bracket"></i> ERP Login
                 </a>
                 <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
                     <i class="fa-solid fa-bars"></i>
@@ -753,9 +763,11 @@
     <!-- Hero -->
     <section class="pc-hero">
         <div class="container">
-            <span class="pc-kicker" data-aos="fade-up"><i class="fa-solid fa-star-of-life"></i> A Dedicated
-                Programme</span>
+            <span class="pc-kicker" data-aos="fade-up"><i class="fa-solid fa-star-of-life"></i> A Centre of
+                Excellence by Advitya Healthcares</span>
             <h1 data-aos="fade-up" data-aos-delay="60">pancreaCare<em>+</em></h1>
+            <p class="pc-hero-sub" data-aos="fade-up" data-aos-delay="100">A Centre of Excellence for Pancreatic,
+                Liver and GI Surgery by Advitya Healthcares</p>
             <p class="pc-hero-lede" data-aos="fade-up" data-aos-delay="120">For the organ most people never think about
                 &mdash; until it goes wrong.</p>
             <div class="pc-hero-acts" data-aos="fade-up" data-aos-delay="180">
@@ -794,7 +806,7 @@
                             <i class="fa-solid fa-book-open"></i> Anatomy &amp; Function
                         </a>
                         <a href="the-story-of-pancreacare.html" class="pc-btn pc-btn-soft">
-                            <i class="fa-solid fa-heart"></i> The story of pancreaCare+
+                            <i class="fa-solid fa-heart"></i> The story of PancreaCare+
                         </a>
                     </div>
                 </div>
@@ -939,17 +951,19 @@
                         <img src="images/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
                     </div>
                     <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
-                    <p style="font-weight: bold; margin-bottom: 10px;">Contact Details:</p>
-                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221551 / 9211221552</p>
-                    <p style="font-size: 14px; margin-bottom: 8px;">+91 9211221553 / 9211221554</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Advitya Hospital Baruipur</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">Kulpi Road, Puratan Bazar, Subuddhipur,<br>Baruipur, West Bengal &ndash; 700144</p>
+                    <p style="font-size: 14px; margin-bottom: 12px;">Hospital: +91 9211221552 &middot; Emergency 24&times;7: +91 9211221553</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Kolkata OPD</p>
+                    <p style="font-size: 14px; margin-bottom: 12px;">Rajdanga Main Road, Kolkata<br>+91 9211221551</p>
                     <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
                     <div style="margin-bottom: 15px;">
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
-                                class="fa-brands fa-facebook-f"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
-                                class="fa-brands fa-instagram"></i></a>
-                        <a href="#" style="color: white; margin-right: 15px; font-size: 18px;"><i
-                                class="fa-brands fa-youtube"></i></a>
+                        <a href="https://wa.me/919211221551" aria-label="WhatsApp" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:info@advityahealthcares.com" aria-label="Email Advitya Healthcares" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-regular fa-envelope"></i></a>
+                        <a href="tel:+919211221551" aria-label="Call Advitya Healthcares" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-solid fa-phone"></i></a>
                     </div>
                 </div>
 
@@ -957,22 +971,27 @@
                     class="foot-col" style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
                     <h4 class="foot-col-title">Explore</h4>
                     <a href="index.html" style="color: white; text-decoration: none;">Home</a>
-                    <a href="about.html" style="color: white; text-decoration: none;">About Us</a>
-                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
-                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
-                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
-                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
-                    <a href="gallery.html" style="color: white; text-decoration: none;">Gallery</a>
-                    <a href="index.html#contactModal" style="color: white; text-decoration: none;">Contact Us</a>
+                    <a href="advitya-healthcares.html" style="color: white; text-decoration: none;">Advitya Healthcares</a>
+                    <a href="advitya-hospital-baruipur.html" style="color: white; text-decoration: none;">Advitya Hospital Baruipur</a>
+                    <a href="departments.html" style="color: white; text-decoration: none;">Departments</a>
+                    <a href="doctors.html" style="color: white; text-decoration: none;">Doctors</a>
+                    <a href="centres-of-excellence.html" style="color: white; text-decoration: none;">Centres of Excellence</a>
+                    <a href="our-network.html" style="color: white; text-decoration: none;">Our Network</a>
+                    <a href="patient-services.html" style="color: white; text-decoration: none;">Patient Services</a>
+                    <a href="contact.html" style="color: white; text-decoration: none;">Contact</a>
                 </div>
 
                 <div
                     class="foot-col" style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
                     <h4 class="foot-col-title">Group</h4>
+                    <a href="centres-of-excellence.html" style="color: white; text-decoration: none;">Centres of Excellence</a>
                     <a href="pancrea-care.html" style="color: white; text-decoration: none;">PancreaCare</a>
-                    <a href="#" style="color: white; text-decoration: none;">MA Pest Control LLP</a>
-                    <a href="#" style="color: white; text-decoration: none;">Glopal Management and Services</a>
-                    <a href="#" style="color: white; text-decoration: none;">Employee Email</a>
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">The Story of PancreaCare</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="https://erp.advityahealthcares.in/login" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Staff Login</a>
                 </div>
             </div>
 
@@ -982,14 +1001,14 @@
                 class="footer-legal"
                 style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
                 <div style="margin-bottom: 10px;">
-                    <p style="margin-bottom: 5px;"><strong>Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
+                    <p style="margin-bottom: 5px;"><strong>Advitya Healthcares Pvt Ltd &mdash; Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana
                         Courtyard, Sector 50, Gurugram 122018</p>
-                    <p>&copy; 2025 Advitya Healthcares. All rights reserved.</p>
+                    <p>&copy; 2026 Advitya Healthcares Pvt Ltd. All rights reserved.</p>
                 </div>
                 <div style="display: flex; gap: 15px;">
-                    <a href="#" style="color: white; text-decoration: none;">Privacy Policy</a>
-                    <a href="#" style="color: white; text-decoration: none;">Terms of Use</a>
-                    <a href="#" style="color: white; text-decoration: none;">Disclaimer</a>
+                    <a href="privacy-policy.html" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="terms.html" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="terms.html#disclaimer" style="color: white; text-decoration: none;">Disclaimer</a>
                 </div>
             </div>
         </div>
@@ -1001,11 +1020,11 @@
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="js/nav.js?v=9"></script>
-    <script src="js/search-index.js?v=1"></script>
+    <script src="js/nav.js?v=10"></script>
+    <script src="js/search-index.js?v=2"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>
-    <script src="js/contact-modal.js?v=1"></script>
+    <script src="js/contact-modal.js?v=3"></script>
     <script>
         AOS.init({ once: true, offset: 100 });
 

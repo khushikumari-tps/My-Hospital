@@ -26,20 +26,43 @@ SERVICES = [
     ('Surgical Care', 'clinical-services.html#surgical-care', 'Clinical Services', 'operation theatre surgery'),
     ('Colonoscopy', 'clinical-services.html#colonoscopy', 'Clinical Services', 'colon rectum screening scope'),
     ('Nutrition & Dietetics', 'clinical-services.html#nutrition', 'Clinical Services', 'diet dietician food plan'),
-    ('Preventive Health Checkups', 'clinical-services.html#preventive-health', 'Clinical Services', 'screening package health check'),
+    ('Preventive Health Check-ups', 'clinical-services.html#preventive-health', 'Clinical Services', 'screening package health check'),
     ('Emergency Care', 'clinical-services.html#emergency-care', 'Clinical Services', 'casualty ambulance urgent 24x7'),
 ]
 
 ANCHORS = [
-    ('Our Locations', 'index.html#location', 'Contact', 'address hospital branch kolkata ranchi bokaro baruipur map directions'),
-    ('Book an Appointment', 'index.html#contactModal', 'Contact', 'contact enquiry call booking consultation'),
+    ('Our Locations', 'our-network.html', 'Contact', 'address hospital branch kolkata ranchi khunti baruipur map directions network'),
+    ('Book an Appointment', 'contact.html#appointment', 'Contact', 'contact enquiry call booking consultation'),
+    ('Book at Advitya Hospital Baruipur', 'advitya-hospital-baruipur.html#appointment', 'Advitya Hospital Baruipur', 'registration appointment opd booking baruipur south 24 parganas'),
+    ('Emergency 24x7', 'advitya-hospital-baruipur.html#emergency', 'Advitya Hospital Baruipur', 'casualty urgent ambulance admission emergency room'),
+    ('Rooms, Wards and ICU', 'advitya-hospital-baruipur.html#rooms', 'Advitya Hospital Baruipur', 'bed private deluxe ward icu day care admission'),
+    ('Insurance, Cashless and TPA', 'advitya-hospital-baruipur.html#insurance', 'Advitya Hospital Baruipur', 'mediclaim policy reimbursement empanelled cashless'),
+    ('Preventive Health Packages', 'patient-services.html#health-packages', 'Patient Services', 'screening package health check master check'),
+    ('Kolkata OPD', 'our-network.html#kolkata-opd', 'Contact', 'rajdanga main road kolkata outpatient consultation'),
+    ('Registered Office', 'our-network.html#registered-office', 'Contact', 'gurugram corporate head office nirvana courtyard'),
+]
+
+# The multispeciality departments at Advitya Hospital Baruipur.
+DEPARTMENTS = [
+    ('Surgical Gastroenterology', 'surgical-gastroenterology', 'digestive surgery gallbladder appendix piles fistula'),
+    ('GI, Liver and Pancreatic Surgery', 'gi-liver-pancreatic-surgery', 'liver pancreas pancreatic gallbladder hpb surgery'),
+    ('GI Cancer Surgery', 'gi-cancer-surgery', 'cancer tumour oncology stomach colon liver pancreas surgery'),
+    ('General and Laparoscopic Surgery', 'general-laparoscopic-surgery', 'hernia gallbladder appendix piles fistula keyhole laparoscopic'),
+    ('Urology and Andrology', 'urology-andrology', 'kidney bladder prostate urine urological andrology'),
+    ('Trauma Surgery and Critical Care', 'trauma-surgery-critical-care', 'accident injury trauma icu critical care emergency surgery'),
+    ('Treatments', 'treatments', 'gallbladder hernia appendix piles fistula pancreatic liver cancer urological trauma'),
 ]
 
 BUCKET = [
+    (re.compile(r'^doctors\.html$'), 'Doctors'),
+    (re.compile(r'^treatment-'), 'Treatments'),
     (re.compile(r'^diseases/'), 'Disease Library'),
     (re.compile(r'^(pancreas|gallbladder|liver|large-intestine|stomach|esophagus)\.html$'), 'FAQs'),
-    (re.compile(r'^(about|from-ceos-desk|from-directors-desk|vision-mission|our-team|what-we-do|the-story-of-pancreacare)\.html$'), 'About Us'),
-    (re.compile(r'^(clinical-services|pancrea-care|related-diseases)\.html$'), 'Clinical Services'),
+    (re.compile(r'^advitya-hospital-baruipur\.html$'), 'Advitya Hospital Baruipur'),
+    (re.compile(r'^departments\.html$'), 'Departments'),
+    (re.compile(r'^(advitya-healthcares|about|from-ceos-desk|from-directors-desk|vision-mission|our-team|what-we-do|our-network)\.html$'), 'Advitya Healthcares'),
+    (re.compile(r'^(centres-of-excellence|pancrea-care|the-story-of-pancreacare|understanding-the-normal-pancreas)\.html$'), 'Centres of Excellence'),
+    (re.compile(r'^(patient-services|clinical-services|related-diseases)\.html$'), 'Patient Services'),
     (re.compile(r'^(careers|gallery|testimonials|faqs|blogs|contact)\.html$'), 'Advitya Healthcares'),
 ]
 
@@ -112,15 +135,20 @@ def main():
         seen.add(url)
         out.append({'t': title, 'u': url, 's': bucket(url, title), 'k': keys})
 
-    for t, u, s_, k in SERVICES + ANCHORS:
+    depts = [(name, 'departments.html#' + slug, 'Departments', keys)
+             for name, slug, keys in DEPARTMENTS]
+
+    for t, u, s_, k in SERVICES + ANCHORS + depts:
         if u not in seen:
             seen.add(u)
             out.append({'t': t, 'u': u, 's': s_, 'k': k})
 
     # A page the reader is most likely hunting for should not sit behind a
     # blog post that happens to share a word, so section order breaks ties.
-    rank = {'Clinical Services': 0, 'Contact': 1, 'About Us': 2, 'FAQs': 3,
-            'Disease Library': 4, 'Advitya Healthcares': 5, 'Blog': 6}
+    rank = {'Advitya Hospital Baruipur': 0, 'Doctors': 0, 'Treatments': 1, 'Departments': 1, 'Patient Services': 2,
+            'Clinical Services': 3, 'Contact': 4, 'Centres of Excellence': 5,
+            'About Us': 6, 'FAQs': 7, 'Disease Library': 8,
+            'Advitya Healthcares': 9, 'Blog': 10}
     out.sort(key=lambda e: (rank.get(e['s'], 9), e['t'].lower()))
 
     body = ',\n'.join(

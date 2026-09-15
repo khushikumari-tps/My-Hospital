@@ -49,12 +49,6 @@
     var meta = document.createElement('div');
     meta.className = 'ax-meta';
     meta.innerHTML =
-        '<nav class="ax-crumbs" aria-label="Breadcrumb">' +
-            '<a href="index.html">Home</a><span aria-hidden="true">/</span>' +
-            '<a href="blogs.html">Blog</a><span aria-hidden="true">/</span>' +
-            '<a href="blogs.html?cat=' + (post ? post.primary : 'all') + '">' + catLabel + '</a>' +
-            '<span aria-hidden="true">/</span><span aria-current="page">' + pageTitle + '</span>' +
-        '</nav>' +
         '<div class="ax-meta-row">' +
             '<span class="ax-badge">' + catLabel + '</span>' +
             (post ? '<span><i class="fa-regular fa-calendar"></i> Published: <time datetime="' + post.date + '">' + post.dateLabel + '</time></span>' : '') +
@@ -72,11 +66,18 @@
         var h3s = Array.prototype.slice.call(main.querySelectorAll('.ar-sec h3'));
         if (h3s.length > heads.length) heads = h3s;
     }
+    /* Slugs are derived from heading text, so two headings that read the same
+       — or one whose slug collides with an id already in the page, such as
+       the article wrapper's own — used to produce duplicate ids, and every
+       table-of-contents link after the first jumped to the wrong section.
+       Collisions get a numeric suffix instead. */
     heads.forEach(function (h, i) {
-        if (!h.id) {
-            h.id = (h.textContent || 'section').toLowerCase()
-                .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48) || ('section-' + i);
-        }
+        if (h.id) return;
+        var base = (h.textContent || 'section').toLowerCase()
+            .replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48) || ('section-' + i);
+        var id = base, n = 2;
+        while (document.getElementById(id)) id = base + '-' + n++;
+        h.id = id;
     });
 
     var blocks = [];
