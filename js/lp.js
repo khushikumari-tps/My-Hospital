@@ -401,3 +401,27 @@
         });
     });
 })();
+
+/* Floating emergency call disc (same as the main site); sits above the
+ * sticky contact bar on phones. */
+(function () {
+    "use strict";
+
+    function ready(fn) {
+        if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+        else fn();
+    }
+
+    ready(function () {
+        if (document.querySelector(".adv-emg")) return;
+        var a = document.createElement("a");
+        a.className = "adv-emg";
+        a.href = "tel:+919211221553";
+        a.setAttribute("aria-label", "Emergency call +91 9211221553");
+        a.setAttribute("data-cta", "emergency-fab");
+        a.innerHTML =
+            "<i class=\"fa-solid fa-phone-volume\" aria-hidden=\"true\"></i>" +
+            "<span class=\"adv-emg-tip\" aria-hidden=\"true\">Emergency 24&times;7<b>+91 9211221553</b></span>";
+        document.body.appendChild(a);
+    });
+})();

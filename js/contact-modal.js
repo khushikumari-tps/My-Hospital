@@ -236,3 +236,29 @@
         document.body.classList.add('has-mbar');
     });
 })();
+
+/* Floating emergency call disc, styled like the WhatsApp disc and stacked
+ * above it when the page carries one. Number: hospital emergency line. */
+(function () {
+    "use strict";
+
+    function ready(fn) {
+        if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+        else fn();
+    }
+
+    ready(function () {
+        if (document.querySelector(".adv-emg")) return;
+        var a = document.createElement("a");
+        a.className = "adv-emg";
+        a.href = "tel:+919211221553";
+        a.setAttribute("aria-label", "Emergency call +91 9211221553");
+        a.innerHTML =
+            "<i class=\"fa-solid fa-phone-volume\" aria-hidden=\"true\"></i>" +
+            "<span class=\"adv-emg-tip\" aria-hidden=\"true\">Emergency 24&times;7<b>+91 9211221553</b></span>";
+        if (document.querySelector(".hv-wa, .wa-fab, a[href*=\"wa.me\"][style*=\"position: fixed\"]")) {
+            a.classList.add("has-wa");
+        }
+        document.body.appendChild(a);
+    });
+})();

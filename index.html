@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <!-- last stylesheet on purpose: mobile fixes must win over the
      CDN sheets above, never fight them for the cascade -->
-<link rel="stylesheet" href="css/responsive.css?v=12">
+<link rel="stylesheet" href="css/responsive.css?v=13">
 </head>
 
 <body class="hv-light">
@@ -209,7 +209,7 @@
                         <style>.hv-hero-copy.hv-anim * { opacity: 1 !important; }</style>
                     </noscript>
                     <span class="hv-kicker">Science for Humanity</span>
-                    <h1><span class="hv-h1-lead">Advitya Healthcares</span>
+                    <h1><span class="hv-h1-lead" data-cms-endpoint="home" data-cms-field="title" data-cms-hide=".hv-hero h1 .hv-brand">Advitya Healthcares</span>
                         <span class="hv-brand">Pvt Ltd</span></h1>
                     <p class="hv-lede">We operate <b>Advitya Hospital Baruipur</b> &mdash; a multispeciality hospital
                         for Baruipur and South 24 Parganas &mdash; an OPD in Kolkata, and <b>PancreaCare</b>, our
@@ -239,7 +239,7 @@
                 <div class="hv-hero-media">
                     <span class="hv-motes" aria-hidden="true"></span>
                     <div class="hv-portrait">
-                        <img src="images/dr_deeksha_portrait.png" alt="Dr. Deeksha Kapoor, CEO and Medical Head">
+                        <img src="images/dr_deeksha_portrait.png" alt="Dr. Deeksha Kapoor, CEO and Medical Head" data-cms-endpoint="home-page-doctor-image/home-page-doctor-image" data-cms-field="image.url">
                         <!-- one slow pass of light over the coat and the embroidered logo -->
                         <span class="hv-portrait-sheen" aria-hidden="true"></span>
                         <div class="hv-portrait-cap">
@@ -598,111 +598,6 @@
                         <a href="clinical-services.html#liver-care">View <i class="fa-solid fa-arrow-right"></i></a>
                     </div>
                 </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- Our people, grouped by role -->
-    <section class="hv-docs" id="hv-doctors">
-        <div class="container">
-            <span class="hv-eyebrow" data-aos="fade-up">Our People</span>
-            <h2 class="hv-title" data-aos="fade-up" data-aos-delay="60">Meet Our Team</h2>
-            <p class="hv-sub" data-aos="fade-up" data-aos-delay="120">Consultants, resident doctors, the nursing team
-                and management are listed separately, so it is clear who you are being booked with.</p>
-
-            <h3 class="team-group-title" data-aos="fade-up">Consultants</h3>
-            <div class="team-grid">
-                <article class="team-card is-lead" data-aos="fade-up">
-                    <div class="team-img-wrapper">
-                        <img src="images/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Deeksha Kapoor</h3>
-                        <span class="team-role">Consultant &middot; CEO &amp; Medical Head</span>
-                        <p class="team-org">Advitya Healthcares Pvt Ltd <span>&middot;</span> PancreaCare</p>
-                        <p class="team-spec">Surgical Gastroenterology and GI Surgical Oncology</p>
-                        <ul class="team-creds">
-                            <li>MBBS</li>
-                            <li>DNB (General Surgery)</li>
-                            <li>DNB (Surgical Gastroenterology) &mdash; National Gold Medalist</li>
-                            <li>Fellowship in HPB Surgical Oncology, Tata Memorial Hospital (TMH), Mumbai</li>
-                        </ul>
-                    </div>
-                    <a href="contact.html#appointment" class="team-link" onclick="openContactModal(); return false;">
-                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </article>
-
-                <article class="team-card" data-aos="fade-up" data-aos-delay="80">
-                    <div class="team-img-wrapper">
-                        <img src="images/team_shyamal_sen.png" alt="Dr. Shyamal Kumar Sen">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Shyamal Kumar Sen</h3>
-                        <span class="team-role">Consultant &middot; Senior Physician</span>
-                        <p class="team-org">Advitya Healthcares Pvt Ltd</p>
-                        <p class="team-spec">Internal Medicine &amp; Department of Pancreato-Biliary, Liver and
-                            Gastrointestinal Sciences</p>
-                    </div>
-                    <a href="contact.html#appointment" class="team-link" onclick="openContactModal(); return false;">
-                        Book a consultation <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                </article>
-            </div>
-
-            <h3 class="team-group-title" data-aos="fade-up">Resident Doctors</h3>
-            <div class="team-grid">
-                <article class="team-card" data-aos="fade-up">
-                    <div class="team-img-wrapper">
-                        <img src="images/team_sachin_kumar.png" alt="Dr. Sachin Kumar">
-                    </div>
-                    <div class="team-info">
-                        <h3>Dr. Sachin Kumar</h3>
-                        <span class="team-role">Junior Resident</span>
-                        <p class="team-org">PancreaCare <span>&middot;</span> Advitya Healthcares Pvt Ltd</p>
-                        <p class="team-spec">Department of Pancreato-Biliary, Liver &amp; Gastrointestinal Sciences
-                            &mdash; ward and inpatient cover</p>
-                    </div>
-                </article>
-            </div>
-
-            <h3 class="team-group-title" data-aos="fade-up">Nursing Team</h3>
-            <div class="team-grid">
-                <article class="team-card" data-aos="fade-up">
-                    <div class="team-img-wrapper">
-                        <img src="images/team_poonam_sharma.png" alt="Ms. Poonam Sharma">
-                    </div>
-                    <div class="team-info">
-                        <h3>Ms. Poonam Sharma</h3>
-                        <span class="team-role">Head OT Staff</span>
-                        <p class="team-org">Senior OT Nurse</p>
-                        <p class="team-spec">GI&ndash;HPB &amp; Abdominal Surgery Specialist</p>
-                    </div>
-                </article>
-            </div>
-
-            <h3 class="team-group-title" data-aos="fade-up">Management</h3>
-            <p class="team-mgmt-note" data-aos="fade-up">Management roles are held by members of the clinical team above.</p>
-            <div class="team-mgmt">
-                <a class="team-mgmt-row" href="from-ceos-desk.html" data-aos="fade-up" data-aos-delay="0">
-                    <img src="images/team_deeksha_kapoor.png" alt="" loading="lazy">
-                    <span class="team-mgmt-txt"><b>Dr. Deeksha Kapoor</b><span>CEO &amp; Medical Head &middot; Advitya Healthcares Pvt Ltd</span></span>
-                    <span class="team-mgmt-cta">From the CEO&rsquo;s desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </a>
-                <a class="team-mgmt-row" href="from-directors-desk.html" data-aos="fade-up" data-aos-delay="60">
-                    <img src="images/team_shyamal_sen.png" alt="" loading="lazy">
-                    <span class="team-mgmt-txt"><b>Dr. Shyamal Kumar Sen</b><span>Medical Administrator &middot; Advitya Healthcares Pvt Ltd</span></span>
-                    <span class="team-mgmt-cta">From the Directors&rsquo; desk <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </a>
-                <a class="team-mgmt-row" href="contact.html#appointment" onclick="openContactModal(); return false;" data-aos="fade-up" data-aos-delay="120">
-                    <img src="images/team_poonam_sharma.png" alt="" loading="lazy">
-                    <span class="team-mgmt-txt"><b>Ms. Poonam Sharma</b><span>Patient Support Group Team Leader &middot; PancreaCare</span></span>
-                    <span class="team-mgmt-cta">Talk to patient support <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span>
-                </a>
-            </div>
-
-            <div class="hv-docs-more" data-aos="fade-up">
-                <a href="our-team.html" class="btn btn-premium">View the full team</a>
             </div>
         </div>
     </section>
@@ -1404,7 +1299,9 @@
     <script src="js/search-index.js?v=2"></script>
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>
-    <script src="js/contact-modal.js?v=3"></script>
+    <script src="js/contact-modal.js?v=4"></script>
+    <script src="js/cms-config.js?v=5"></script>
+    <script src="js/cms.js?v=7"></script>
 </body>
 
 </html>

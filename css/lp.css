@@ -1672,3 +1672,106 @@ body.lp [tabindex]:focus-visible {
         transform: none;
     }
 }
+
+/* ------------------- floating emergency call disc ------------------ */
+/* Injected by lp.js. Mirrors the main-site disc; on phones it sits just
+   above the sticky contact bar when the page carries one. */
+.adv-emg {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 71;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: #D62828;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 10px 26px -8px rgba(214, 40, 40, .6);
+    transition: transform .3s ease;
+}
+
+.adv-emg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #D62828;
+    z-index: -1;
+    animation: adv-emg-pulse 2s ease-out infinite;
+}
+
+.adv-emg:hover,
+.adv-emg:focus-visible {
+    transform: scale(1.06);
+    color: #fff;
+}
+
+.adv-emg:focus-visible {
+    outline: 3px solid #fff;
+    box-shadow: 0 0 0 6px #D62828;
+}
+
+.adv-emg-tip {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 7px 12px;
+    border-radius: 10px;
+    background: #fff;
+    color: #B01E1E;
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    box-shadow: 0 8px 22px -8px rgba(0, 0, 0, .35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease;
+    pointer-events: none;
+}
+
+.adv-emg-tip b {
+    display: block;
+    color: #1F2937;
+    font-size: .95rem;
+}
+
+.adv-emg:hover .adv-emg-tip,
+.adv-emg:focus-visible .adv-emg-tip {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes adv-emg-pulse {
+    0% { transform: scale(1); opacity: .55; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .adv-emg::before {
+        animation: none;
+        opacity: 0;
+    }
+}
+
+@media (max-width: 860px) {
+    .adv-emg {
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .lp-sticky ~ .adv-emg {
+        bottom: calc(86px + env(safe-area-inset-bottom, 0px));
+    }
+
+    .adv-emg-tip {
+        display: none;
+    }
+}

@@ -1185,3 +1185,131 @@ body.modal-open a[href^="tel:"][style*="position: fixed"] {
         display: none;
     }
 }
+
+/* -------------------------------------------------------------------
+   Floating emergency call disc (injected by contact-modal.js)
+
+   Same size and shape as the WhatsApp disc, in emergency red, stacked
+   directly above it when the page carries one. A soft pulse ring marks
+   it as urgent; the ring stops for visitors who prefer reduced motion.
+   On desktop, hovering shows the number. On phones the WhatsApp disc
+   is hidden behind the quick-contact bar, so this disc sits just above
+   the bar instead.
+   ------------------------------------------------------------------- */
+.adv-emg {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 901;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    padding: 0;
+    border-radius: 50%;
+    background: #D62828;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 10px 26px -8px rgba(214, 40, 40, .6);
+    transition: transform .3s ease;
+}
+
+.adv-emg.has-wa {
+    bottom: 90px;
+}
+
+.adv-emg::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: #D62828;
+    z-index: -1;
+    animation: adv-emg-pulse 2s ease-out infinite;
+}
+
+.adv-emg i {
+    min-width: 0;
+    min-height: 0;
+    line-height: 1;
+}
+
+.adv-emg:hover,
+.adv-emg:focus-visible {
+    transform: scale(1.06);
+    color: #fff;
+}
+
+.adv-emg:focus-visible {
+    outline: 3px solid #fff;
+    box-shadow: 0 0 0 6px #D62828;
+}
+
+.adv-emg-tip {
+    position: absolute;
+    right: calc(100% + 12px);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 7px 12px;
+    border-radius: 10px;
+    background: #fff;
+    color: #B01E1E;
+    font-size: .8rem;
+    font-weight: 700;
+    line-height: 1.3;
+    white-space: nowrap;
+    box-shadow: 0 8px 22px -8px rgba(0, 0, 0, .35);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease;
+    pointer-events: none;
+}
+
+.adv-emg-tip b {
+    display: block;
+    color: #1F2937;
+    font-size: .95rem;
+}
+
+.adv-emg:hover .adv-emg-tip,
+.adv-emg:focus-visible .adv-emg-tip {
+    opacity: 1;
+    visibility: visible;
+}
+
+@keyframes adv-emg-pulse {
+    0% { transform: scale(1); opacity: .55; }
+    100% { transform: scale(1.6); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .adv-emg::before {
+        animation: none;
+        opacity: 0;
+    }
+}
+
+body.modal-open .adv-emg {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+@media (max-width: 768px) {
+    .adv-emg,
+    .adv-emg.has-wa {
+        right: 16px;
+        bottom: calc(16px + env(safe-area-inset-bottom));
+    }
+
+    body.has-mbar .adv-emg {
+        bottom: calc(92px + env(safe-area-inset-bottom));
+    }
+
+    .adv-emg-tip {
+        display: none;
+    }
+}
