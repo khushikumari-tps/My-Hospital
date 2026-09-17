@@ -21,9 +21,17 @@
     var config = window.ADV_CMS_CONFIG || {};
     var cache = {};
 
+    // A key may be scoped to one content type, so keys can be set per type in
+    // ADV_CMS_CONFIG.keys ("home-page": "so_live_..."); apiKey is the fallback.
+    function keyFor(endpoint) {
+        var type = String(endpoint).replace(/^\/+/, "").split("/")[0];
+        var keys = config.keys || {};
+        return keys[type] || config.apiKey || "";
+    }
+
     function buildUrl(endpoint, params) {
         var base = String(config.apiBase || "").replace(/\/+$/, "");
-        var query = ["key=" + encodeURIComponent(config.apiKey || "")];
+        var query = ["key=" + encodeURIComponent(keyFor(endpoint))];
         Object.keys(params || {}).forEach(function (name) {
             query.push(encodeURIComponent(name) + "=" + encodeURIComponent(params[name]));
         });

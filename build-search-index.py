@@ -62,7 +62,7 @@ BUCKET = [
     (re.compile(r'^departments\.html$'), 'Departments'),
     (re.compile(r'^(advitya-healthcares|about|from-ceos-desk|from-directors-desk|vision-mission|our-team|what-we-do|our-network)\.html$'), 'Advitya Healthcares'),
     (re.compile(r'^(centres-of-excellence|pancrea-care|the-story-of-pancreacare|understanding-the-normal-pancreas)\.html$'), 'Centres of Excellence'),
-    (re.compile(r'^(patient-services|clinical-services|related-diseases)\.html$'), 'Patient Services'),
+    (re.compile(r'^(patient-services|clinical-services|related-diseases|opd-schedule)\.html$'), 'Patient Services'),
     (re.compile(r'^(careers|gallery|testimonials|faqs|blogs|contact)\.html$'), 'Advitya Healthcares'),
 ]
 

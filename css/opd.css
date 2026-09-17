@@ -1,0 +1,179 @@
+/* ==========================================================================
+   OPD Schedule page
+   A simple schedule in the style of a hospital OPD listing: a coloured title
+   banner, one intro paragraph, and a fully bordered table (group row, then
+   Department | Name | Days | Time) with centred cells. The department cell
+   spans its doctors. On phones the table keeps its columns and scrolls
+   sideways inside its own box.
+   ========================================================================== */
+
+/* ------------------------------- banner ------------------------------- */
+.pg-hero.opd-hero {
+    padding-bottom: 46px;
+    border-bottom: 0;
+    background: linear-gradient(120deg, #6E1222 0%, #8E1B2E 55%, #B0413A 100%);
+}
+
+.pg-hero.opd-hero::before,
+.pg-hero.opd-hero::after {
+    content: none;
+    display: none;
+}
+
+/* margin: 0 auto, not 0 — the centred-hero rule centres this 760px block
+   with auto side margins, and a plain 0 pinned it to the left */
+.pg-hero.opd-hero h1 {
+    margin: 0 auto;
+    color: #fff;
+}
+
+/* --------------------------------- intro ------------------------------ */
+.opd-page {
+    padding-top: 50px;
+}
+
+.opd-lead {
+    margin: 0 0 30px;
+    font-size: 1.02rem;
+    line-height: 1.8;
+    color: var(--ink-body);
+}
+
+.opd-lead a,
+.opd-foot a {
+    font-weight: 600;
+    color: var(--brand);
+}
+
+.opd-lead a:hover,
+.opd-foot a:hover {
+    text-decoration: underline;
+}
+
+/* --------------------------------- table ------------------------------ */
+.opd-table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.opd-table {
+    width: 100%;
+    min-width: 640px;
+    border-collapse: collapse;
+    background: #fff;
+    font-size: .98rem;
+}
+
+.opd-table th,
+.opd-table td {
+    padding: 13px 16px;
+    border: 1px solid #D9A08F;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 1.5;
+}
+
+.opd-table td {
+    color: var(--ink-body);
+}
+
+.opd-table thead th {
+    background: #FDF1EC;
+    font-weight: 700;
+    color: var(--ink);
+}
+
+.opd-table thead th.opd-group {
+    background: #FBE3DA;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--brand);
+}
+
+/* the full-width department rows are for phones only; wider screens show the
+   department in the spanning first-column cell instead */
+.opd-table tr.opd-dept-row {
+    display: none;
+}
+
+.opd-table td a {
+    font-weight: 500;
+    color: var(--brand);
+}
+
+.opd-table td a:hover {
+    text-decoration: underline;
+}
+
+/* caption kept for screen readers only; the group row is the visible title */
+.opd-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+.opd-foot {
+    margin: 22px 0 0;
+    font-size: .95rem;
+    line-height: 1.7;
+    color: var(--text-muted);
+}
+
+/* the centred-hero rule makes h1 a centred 760px block; centre its text too */
+.pg-hero.opd-hero h1 {
+    text-align: center;
+}
+
+/* ------------------------------ responsive ----------------------------- */
+@media (max-width: 767px) {
+    .pg-hero.opd-hero {
+        padding-bottom: 34px;
+    }
+
+    .opd-page {
+        padding-top: 34px;
+    }
+
+    .opd-lead {
+        font-size: .98rem;
+    }
+
+    /* Days and Time are what patients need, so they must not sit off-screen
+       behind a sideways scroll. The department moves out of its column into a
+       full-width row above its doctors, leaving three columns that fit a phone
+       without breaking words. */
+    .opd-table {
+        min-width: 0;
+        font-size: .9rem;
+    }
+
+    .opd-table th,
+    .opd-table td {
+        padding: 10px 8px;
+        line-height: 1.4;
+    }
+
+    .opd-table thead th:first-child:not(.opd-group),
+    .opd-table td.opd-dept {
+        display: none;
+    }
+
+    .opd-table tr.opd-dept-row {
+        display: table-row;
+    }
+
+    .opd-table tr.opd-dept-row th {
+        padding: 9px 12px;
+        background: #FFF8F5;
+        font-weight: 700;
+        text-align: left;
+        color: var(--ink);
+    }
+
+    .opd-table thead th.opd-group {
+        letter-spacing: .08em;
+    }
+}

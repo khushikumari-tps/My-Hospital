@@ -27,6 +27,7 @@ https://www.advityahealthcares.com/*  https://advityahealthcares.com/:splat   30
 /advitya-healthcares                  /advitya-healthcares.html               200
 /departments                          /departments.html                       200
 /doctors                              /doctors.html                           200
+/opd-schedule                         /opd-schedule.html                      200
 /centres-of-excellence                /centres-of-excellence.html             200
 /our-network                          /our-network.html                       200
 /patient-services                     /patient-services.html                  200
