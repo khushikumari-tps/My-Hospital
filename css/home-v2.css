@@ -90,7 +90,7 @@ body.hv-light .navbar {
 .hv-topbar-in {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     gap: 20px;
     height: 46px;
     max-width: 1560px;
@@ -167,11 +167,11 @@ body.hv-light .navbar {
 /* Wider than the 1200px body container — the nav simply needs the room. */
 body.hv-light .nav-container {
     max-width: 1560px;
-    height: 84px;
+    height: 126px;
 }
 
 body.hv-light .navbar.scrolled .nav-container {
-    height: 74px;
+    height: 108px;
 }
 
 body.hv-light .logo-link {
@@ -179,11 +179,11 @@ body.hv-light .logo-link {
 }
 
 body.hv-light .logo img {
-    height: 62px;
+    height: 110px;
 }
 
 body.hv-light .navbar.scrolled .logo img {
-    height: 54px;
+    height: 92px;
 }
 
 body.hv-light .nav-links {
@@ -548,6 +548,52 @@ body.hv-light .btn-premium:hover {
     font-size: .84rem;
     color: rgba(255, 255, 255, .82);
     margin-top: 3px;
+}
+
+/* Explore button under the portrait card: opens the full profile page */
+.hv-explore {
+    position: relative;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    margin-top: 18px;
+    padding: 14px 22px;
+    border-radius: 999px;
+    background: linear-gradient(100deg, var(--ink) 0%, var(--maroon) 58%, #8E1B2E 100%);
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: .95rem;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 14px 30px -14px rgba(94, 16, 25, .55);
+    transition: transform .3s cubic-bezier(.22, .61, .36, 1), box-shadow .3s;
+}
+
+.hv-explore i {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    color: var(--maroon);
+    font-size: .8rem;
+    transition: transform .3s cubic-bezier(.22, .61, .36, 1);
+}
+
+.hv-explore:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 20px 38px -16px rgba(94, 16, 25, .65);
+}
+
+.hv-explore:hover i {
+    transform: translateX(4px);
 }
 
 /* Floating credential chips */

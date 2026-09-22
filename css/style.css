@@ -260,7 +260,7 @@ img {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 96px;
+    height: 126px;
     /* Wider than the 1200px body container: eleven menu items, both action
        buttons and the language selector need about 1600px between them, and
        anything narrower pushes the last of them off the right edge. */
@@ -289,10 +289,10 @@ img {
     margin-left: 0;
 }
 
-/* Square logo: cap by height so it never overflows the 96px bar */
+/* Square logo: cap by height so it never overflows the 126px bar */
 .logo img {
     display: block;
-    height: 80px;
+    height: 110px;
     width: auto;
     max-width: 100%;
     object-fit: contain;
@@ -300,7 +300,27 @@ img {
 }
 
 .navbar.scrolled .logo img {
-    height: 68px;
+    height: 92px;
+}
+
+/* Below 1360px the bar drops back to its previous size; the phone sizes
+   in erp-nav.css take over from there. */
+@media (max-width: 1360px) {
+    .nav-container {
+        height: 96px;
+    }
+
+    .logo img {
+        height: 80px;
+    }
+
+    .navbar.scrolled .logo img {
+        height: 68px;
+    }
+
+    .hero {
+        padding-top: 96px;
+    }
 }
 
 .logo i {
@@ -628,7 +648,7 @@ img {
     min-height: 100vh;
     display: flex;
     align-items: flex-start;
-    padding-top: 96px;
+    padding-top: 126px;
     /* navbar height */
     overflow: hidden;
 }

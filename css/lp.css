@@ -210,7 +210,7 @@ body.lp svg {
 
 .lp-logo img {
     display: block;
-    height: 42px;
+    height: 60px;
     width: auto;
 }
 
@@ -1539,6 +1539,10 @@ body.lp [tabindex]:focus-visible {
 }
 
 @media (max-width: 860px) {
+
+    .lp-logo img {
+        height: 50px;
+    }
 
     .lp-hero-grid,
     .lp-split,

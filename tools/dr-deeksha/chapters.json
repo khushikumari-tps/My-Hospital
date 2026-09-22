@@ -1,0 +1,87 @@
+[
+ {
+  "year": "2025",
+  "chapters": [
+   {
+    "title": "Nonvariceal Upper Gastrointestinal Bleeding",
+    "book": "Roshan Lal Gupta’s Recent Advances in Surgery",
+    "publisher": "",
+    "details": "",
+    "authors": ""
+   }
+  ]
+ },
+ {
+  "year": "2024",
+  "chapters": [
+   {
+    "title": "Management of the Open Abdomen",
+    "book": "Textbook of Laparoscopic, Endoscopic and Robotic Surgery",
+    "publisher": "Jaypee Brothers Medical Publishers Pvt Limited",
+    "details": "Published: 30 Jan 2024",
+    "authors": ""
+   }
+  ]
+ },
+ {
+  "year": "2023",
+  "chapters": [
+   {
+    "title": "Evaluation of Sarcopenia in Critical Illness",
+    "book": "Textbook of Critical Care Nutrition",
+    "publisher": "Jaypee Brothers Medical Publishers",
+    "details": "",
+    "authors": ""
+   },
+   {
+    "title": "Nutrition in Acute Severe Pancreatitis",
+    "book": "Textbook of Critical Care Nutrition",
+    "publisher": "Jaypee Brothers Medical Publishers",
+    "details": "",
+    "authors": ""
+   },
+   {
+    "title": "Hand-assisted laparoscopic surgery",
+    "book": "Textbook of Laparoscopic, Endoscopic and Robotic Surgery",
+    "publisher": "Jaypee Brothers Medical Publishers",
+    "details": "",
+    "authors": ""
+   }
+  ]
+ },
+ {
+  "year": "2020",
+  "chapters": [
+   {
+    "title": "Hand-Assisted Laparoscopic Colorectal Surgery",
+    "book": "Laparoscopic Colorectal Surgery (1st ed.)",
+    "publisher": "CRC Press",
+    "authors": "Kapoor D, Singh A, Chaudhary A.",
+    "editor": "Sanjiv H",
+    "details": "p. 230–5. [cited 2020 Nov 27]",
+    "link": "https://www.taylorfrancis.com/books/9781000201888/chapters/10.1201/9780429330377-35"
+   }
+  ]
+ },
+ {
+  "year": "2019",
+  "chapters": [
+   {
+    "title": "New Surgical Modalities in the Management of Rectal Cancer",
+    "book": "GI Surgery Annual",
+    "publisher": "Springer Singapore",
+    "authors": "Kapoor D, Singh A, Chaudhary A.",
+    "editor": "Sahni P, Pal S",
+    "details": "p. 121–37 [cited 2020 Jan 20]"
+   },
+   {
+    "title": "Surgery in Ulcerative Colitis",
+    "book": "Surgical Gastroenterology (2019th ed.)",
+    "publisher": "Paras Medical Publisher",
+    "authors": "Kapoor D, Chaudhary A.",
+    "editor": "In: Haribhakti S.",
+    "details": ""
+   }
+  ]
+ }
+]
