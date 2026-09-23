@@ -1,0 +1,1048 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Social Service | Free Camps and Outreach | Advitya Healthcares</title>
+    <meta name="description" content="Advitya Healthcares runs free GI screening camps in rural Jharkhand, community outreach and health awareness sessions, at no cost to those who attend.">
+    <link rel="canonical" href="https://advityahealthcares.com/social-service">
+    <!-- Brand tokens first: colour, type, radius and elevation for every
+         stylesheet below. Sampled from the logo. -->
+    <link rel="stylesheet" href="css/brand.css?v=2">
+    <link rel="stylesheet" href="css/style.css?v=32">
+    <link rel="stylesheet" href="css/site-search.css?v=1">
+    <link rel="stylesheet" href="css/lang-select.css?v=4">
+    <link rel="stylesheet" href="css/erp-nav.css?v=3">
+    <link rel="stylesheet" href="css/social-service.css?v=10">
+    <!-- async, and ahead of the third-party bundles: the header must not
+         wait on a CDN to get its language selector wired up -->
+    <script src="js/lang-select.js?v=5" async></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* ===================================================================
+           Gallery. Everything is prefixed .agy- so it cannot collide with the
+           shared components in style.css. The palette is taken straight from
+           the logo: deep maroon through red, with the sunburst gold as the
+           highlight, so the page matches the navbar and footer.
+           =================================================================== */
+        :root {
+            --agy-brand: var(--primary-dark);
+            --agy-brand-deep: #8B1014;
+            --agy-brand-light: var(--primary);
+            --agy-gold: var(--accent);
+            --agy-ink: var(--text-main);
+            --agy-muted: var(--text-muted);
+            --agy-line: var(--border-color);
+            --agy-radius: 16px;
+        }
+
+        body {
+            background: #fff;
+        }
+
+        /* ----------------------------- Header ---------------------------- */
+        .agy-head {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+            padding: 108px 0 48px;
+            text-align: center;
+        }
+
+        /* Two slow-drifting washes: enough movement to feel alive, never
+           enough to compete with the photographs. */
+        .agy-head::before,
+        .agy-head::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .agy-head::before {
+            width: 460px;
+            height: 460px;
+            top: -190px;
+            left: -120px;
+            background: radial-gradient(circle, rgba(255, 179, 71, .26), transparent 70%);
+            animation: agy-drift 17s ease-in-out infinite;
+        }
+
+        .agy-head::after {
+            width: 400px;
+            height: 400px;
+            top: -140px;
+            right: -110px;
+            background: radial-gradient(circle, rgba(201, 66, 57, .16), transparent 70%);
+            animation: agy-drift 21s ease-in-out infinite reverse;
+        }
+
+        @keyframes agy-drift {
+            0%, 100% { transform: translate3d(0, 0, 0) scale(1); }
+            50% { transform: translate3d(28px, 26px, 0) scale(1.08); }
+        }
+
+        .agy-head .container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .agy-eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: var(--font-heading);
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .24em;
+            text-transform: uppercase;
+            color: var(--agy-brand);
+            margin-bottom: 18px;
+        }
+
+        .agy-eyebrow::before,
+        .agy-eyebrow::after {
+            content: '';
+            width: 30px;
+            height: 1.5px;
+            border-radius: 2px;
+            background: linear-gradient(90deg, transparent, var(--agy-brand-light));
+        }
+
+        .agy-eyebrow::after {
+            background: linear-gradient(90deg, var(--agy-brand-light), transparent);
+        }
+
+        .agy-head h1 {
+            font-size: clamp(2.2rem, 4.6vw, 3.5rem);
+            line-height: 1.08;
+            letter-spacing: -.03em;
+            font-weight: 800;
+            color: var(--agy-ink);
+            margin-bottom: 18px;
+        }
+
+        .agy-head h1 em {
+            font-style: normal;
+            background: linear-gradient(120deg, var(--agy-brand), var(--agy-brand-light));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .agy-head p {
+            font-size: 1.08rem;
+            line-height: 1.8;
+            color: var(--agy-muted);
+            max-width: 68ch;
+            margin: 0 auto;
+        }
+
+        .agy-rule {
+            width: 62px;
+            height: 3px;
+            margin: 26px auto 0;
+            border-radius: 3px;
+            background: linear-gradient(90deg, var(--agy-brand), var(--agy-brand-light));
+        }
+
+        /* ----------------------------- Filters --------------------------- */
+        .agy-filterbar {
+            position: sticky;
+            top: 76px;
+            z-index: 30;
+            padding: 16px 0 14px;
+            background: rgba(255, 255, 255, .88);
+            -webkit-backdrop-filter: saturate(150%) blur(12px);
+            backdrop-filter: saturate(150%) blur(12px);
+            border-bottom: 1px solid var(--agy-line);
+        }
+
+        .agy-filters {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .agy-chip {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: .6rem 1.15rem;
+            border-radius: 50px;
+            border: 1px solid var(--agy-line);
+            background: #fff;
+            color: var(--agy-muted);
+            font-family: var(--font-heading);
+            font-size: .9rem;
+            font-weight: 600;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: color .3s ease, border-color .3s ease, background .3s ease, box-shadow .3s ease, transform .3s ease;
+        }
+
+        .agy-chip:hover {
+            color: var(--agy-brand-deep);
+            border-color: rgba(201, 66, 57, .38);
+            transform: translateY(-2px);
+        }
+
+        .agy-chip.is-active {
+            color: #fff;
+            border-color: transparent;
+            background: linear-gradient(120deg, var(--agy-brand-deep), var(--agy-brand-light));
+            box-shadow: 0 12px 24px -14px rgba(139, 16, 20, .9);
+        }
+
+        .agy-chip-n {
+            font-size: .72rem;
+            font-weight: 700;
+            padding: 2px 7px;
+            border-radius: 20px;
+            background: rgba(201, 66, 57, .1);
+            color: var(--agy-brand-deep);
+        }
+
+        .agy-chip.is-active .agy-chip-n {
+            background: rgba(255, 255, 255, .22);
+            color: #fff;
+        }
+
+        /* ------------------------------ Grid ----------------------------- */
+        .agy-wrap {
+            padding: 46px 0 90px;
+        }
+
+        /* The grid breaks out of the 1200px site container so the tiles can
+           run close to their 1177px native width on a large screen. */
+        .agy-wrap .container {
+            max-width: 1560px;
+        }
+
+        /* Uniform tiles: one 3:4 frame for every card, so each row lines up
+           edge to edge like the source site. */
+        .agy-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(420px, 100%), 1fr));
+            gap: 26px;
+        }
+
+        .agy-card {
+            margin: 0;
+            opacity: 0;
+            transform: translateY(22px);
+            transition: opacity .7s ease, transform .7s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .agy-card.is-in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* Filtered-out cards fade before they leave the flow, so the grid
+           reflow reads as a transition rather than a jump. */
+        .agy-card.is-out {
+            opacity: 0;
+            transform: scale(.96);
+        }
+
+        .agy-card.is-gone {
+            display: none;
+        }
+
+        .agy-open {
+            position: relative;
+            display: block;
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            padding: 0;
+            border: 0;
+            border-radius: var(--agy-radius);
+            overflow: hidden;
+            background: var(--bg-light);
+            cursor: zoom-in;
+            box-shadow: 0 2px 6px rgba(120, 60, 55, .08), 0 12px 26px -20px rgba(120, 60, 55, .45);
+            transition: box-shadow .45s ease, transform .45s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .agy-open:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 14px rgba(120, 60, 55, .12), 0 26px 46px -24px rgba(120, 60, 55, .55);
+        }
+
+        .agy-open:focus-visible {
+            outline: 3px solid var(--agy-brand-light);
+            outline-offset: 3px;
+        }
+
+        /* The frame owns the size; the photo fills it from the centre. */
+        .agy-card img {
+            display: block;
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform .8s cubic-bezier(.22, .61, .36, 1);
+        }
+
+
+        .agy-veil,
+        .agy-cap,
+        .agy-zoom {
+            z-index: 2;
+        }
+
+        .agy-open:hover img {
+            transform: scale(1.06);
+        }
+
+        /* A permanent whisper of a scrim keeps the standing label legible on
+           pale photos; hover deepens it for the full caption. */
+        .agy-veil {
+            position: absolute;
+            inset: 0;
+            opacity: .35;
+            background: linear-gradient(to top, rgba(46, 10, 10, .9) 0%, rgba(46, 10, 10, .48) 42%, rgba(46, 10, 10, .05) 100%);
+            transition: opacity .45s ease;
+        }
+
+        .agy-open:hover .agy-veil,
+        .agy-open:focus-visible .agy-veil {
+            opacity: 1;
+        }
+
+        .agy-cap {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 20px;
+            text-align: center;
+            color: #fff;
+        }
+
+        /* The category sits on every tile at rest, as a solid plate so the
+           maroon stays readable whatever the photo behind it is doing. */
+        .agy-cap-eyebrow {
+            display: inline-block;
+            font-family: var(--font-heading);
+            font-size: .68rem;
+            font-weight: 800;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--agy-brand-deep);
+            background: rgba(255, 255, 255, .95);
+            padding: 7px 13px;
+            border-radius: 50px;
+            box-shadow: 0 6px 16px -8px rgba(46, 10, 10, .65);
+        }
+
+        .agy-zoom {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            width: 38px;
+            height: 38px;
+            display: grid;
+            place-items: center;
+            border-radius: 50%;
+            font-size: .85rem;
+            color: var(--agy-brand-deep);
+            background: rgba(255, 255, 255, .94);
+            opacity: 0;
+            transform: scale(.8);
+            transition: opacity .4s ease, transform .4s cubic-bezier(.22, .61, .36, 1);
+        }
+
+        .agy-open:hover .agy-zoom,
+        .agy-open:focus-visible .agy-zoom {
+            opacity: 1;
+            transform: none;
+        }
+
+        .agy-empty {
+            display: none;
+            text-align: center;
+            color: var(--agy-muted);
+            padding: 40px 0;
+        }
+
+        /* ---------------------------- Lightbox --------------------------- */
+        .agy-lb {
+            position: fixed;
+            inset: 0;
+            z-index: 3000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 18px 92px;
+            background: rgba(40, 8, 10, .94);
+            -webkit-backdrop-filter: blur(8px);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity .32s ease;
+        }
+
+        .agy-lb.is-open {
+            display: flex;
+        }
+
+        .agy-lb.is-visible {
+            opacity: 1;
+        }
+
+        .agy-lb-fig {
+            margin: 0;
+            max-width: min(1180px, 92vw);
+            transform: scale(.94);
+            opacity: 0;
+            transition: transform .38s cubic-bezier(.22, .61, .36, 1), opacity .38s ease;
+        }
+
+        .agy-lb.is-visible .agy-lb-fig {
+            transform: none;
+            opacity: 1;
+        }
+
+        .agy-lb-fig img {
+            display: block;
+            max-width: 100%;
+            max-height: 78vh;
+            width: auto;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            box-shadow: 0 30px 80px -30px rgba(0, 0, 0, .9);
+        }
+
+        .agy-lb-meta {
+            margin-top: 16px;
+            text-align: center;
+            color: #fff;
+        }
+
+        .agy-lb-meta .cat {
+            display: block;
+            font-family: var(--font-heading);
+            font-size: .7rem;
+            font-weight: 700;
+            letter-spacing: .22em;
+            text-transform: uppercase;
+            color: var(--agy-gold);
+            margin-bottom: 6px;
+        }
+
+        .agy-lb-meta .title {
+            font-family: var(--font-heading);
+            font-size: 1.05rem;
+            font-weight: 600;
+        }
+
+        .agy-lb-btn {
+            position: absolute;
+            display: grid;
+            place-items: center;
+            width: 52px;
+            height: 52px;
+            border: 1px solid rgba(255, 255, 255, .28);
+            border-radius: 50%;
+            background: rgba(255, 255, 255, .1);
+            color: #fff;
+            font-size: 1.05rem;
+            cursor: pointer;
+            transition: background .3s ease, border-color .3s ease, transform .3s ease;
+        }
+
+        .agy-lb-btn:hover {
+            background: rgba(255, 255, 255, .2);
+            border-color: rgba(255, 255, 255, .55);
+            transform: scale(1.06);
+        }
+
+        .agy-lb-prev { left: 24px; top: 50%; margin-top: -26px; }
+        .agy-lb-next { right: 24px; top: 50%; margin-top: -26px; }
+        .agy-lb-close { top: 22px; right: 24px; }
+
+        .agy-lb-count {
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-family: var(--font-heading);
+            font-size: .82rem;
+            letter-spacing: .12em;
+            color: rgba(255, 255, 255, .75);
+        }
+
+        /* --------------------------- Responsive -------------------------- */
+        @media (max-width: 1200px) {
+            .agy-grid { grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr)); }
+        }
+
+        @media (max-width: 900px) {
+            .agy-grid { grid-template-columns: repeat(2, 1fr); }
+            .agy-head { padding: 96px 0 38px; }
+            .agy-filterbar { top: 68px; }
+            .agy-lb { padding: 18px 10px 86px; }
+            .agy-lb-btn { width: 46px; height: 46px; }
+            .agy-lb-prev { left: 10px; }
+            .agy-lb-next { right: 10px; }
+        }
+
+        @media (max-width: 560px) {
+            .agy-grid { grid-template-columns: 1fr; gap: 14px; }
+            .agy-chip { padding: .5rem .85rem; font-size: .82rem; }
+            .agy-lb-fig img { max-height: 68vh; }
+            .agy-veil { background: linear-gradient(to top, rgba(46, 10, 10, .82) 0%, rgba(46, 10, 10, .2) 46%, transparent 78%); }
+        }
+
+
+        @media (prefers-reduced-motion: reduce) {
+            .agy-card,
+            .agy-open,
+            .agy-card img,
+            .agy-lb,
+            .agy-lb-fig {
+                transition: none;
+                animation: none;
+            }
+
+            .agy-head::before,
+            .agy-head::after {
+                animation: none;
+            }
+
+            .agy-card {
+                opacity: 1;
+                transform: none;
+            }
+        }
+    </style>
+<!-- last stylesheet on purpose: mobile fixes must win over the
+     CDN sheets above, never fight them for the cascade -->
+<link rel="stylesheet" href="css/responsive.css?v=13">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link" aria-label="Advitya Healthcares home">
+                    <img src="images/advitya_logo_nav.png" alt="Advitya Healthcares">
+                </a>
+            </div>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <div class="dropdown">
+                    <a href="advitya-healthcares.html" class="dropbtn" data-follow-link>Advitya Healthcares <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="advitya-healthcares.html">Advitya Healthcares Pvt Ltd</a>
+                        <a href="about.html">The Journey of Advitya</a>
+                        <a href="from-ceos-desk.html">From CEO&rsquo;s Desk</a>
+                        <a href="from-directors-desk.html">From Directors&rsquo; Desk</a>
+                        <a href="vision-mission.html">Vision &amp; Mission</a>
+                        <a href="our-team.html">Our Team</a>
+                        <a href="careers.html">Careers</a>
+                    </div>
+                </div>
+                <a href="advitya-hospital-baruipur.html">Advitya Hospital Baruipur</a>
+                <div class="dropdown mega">
+                    <a href="departments.html" class="dropbtn" data-follow-link>Departments <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Surgical Specialities</h4>
+                            <a href="departments.html#surgical-gastroenterology">Surgical Gastroenterology</a>
+                            <a href="departments.html#gi-liver-pancreatic-surgery">GI, Liver and Pancreatic Surgery</a>
+                            <a href="departments.html#gi-cancer-surgery">GI Cancer Surgery</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Surgery &amp; Critical Care</h4>
+                            <a href="departments.html#general-laparoscopic-surgery">General and Laparoscopic Surgery</a>
+                            <a href="departments.html#urology-andrology">Urology and Andrology</a>
+                            <a href="departments.html#trauma-surgery-critical-care">Trauma Surgery and Critical Care</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Explore</h4>
+                            <a href="departments.html">All Departments</a>
+                            <a href="departments.html#treatments">Treatments</a>
+                            <a href="advitya-hospital-baruipur.html">Advitya Hospital Baruipur</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="doctors.html">Doctors</a>
+                <div class="dropdown">
+                    <a href="centres-of-excellence.html" class="dropbtn" data-follow-link>Centres of Excellence <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content">
+                        <a href="centres-of-excellence.html">All Centres of Excellence</a>
+                        <a href="pancrea-care.html">PancreaCare</a>
+                        <a href="the-story-of-pancreacare.html">The Story of PancreaCare</a>
+                        <a href="understanding-the-normal-pancreas.html">The Normal Pancreas</a>
+                    </div>
+                </div>
+                <a href="our-network.html">Our Network</a>
+                <div class="dropdown mega">
+                    <a href="patient-services.html" class="dropbtn" data-follow-link>Patient Services <i class="fa-solid fa-chevron-down" style="font-size: 0.8em; margin-left: 5px;"></i></a>
+                    <div class="dropdown-content mega-content">
+                        <div class="mega-col">
+                            <h4>Appointments &amp; Care</h4>
+                            <a href="patient-services.html">All Patient Services</a>
+<a href="patient-services.html#health-packages">Preventive Health Packages</a>
+                            <a href="patient-services.html#insurance">Insurance, Cashless &amp; TPA</a>
+                            <a href="patient-services.html#rooms">Rooms, Wards &amp; ICU</a>
+                            <a href="opd-schedule.html">OPD Schedule</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Patient Resources</h4>
+                            <a href="clinical-services.html">Clinical Services</a>
+                            <a href="testimonials.html">Testimonials</a>
+                            <a href="gallery.html">Gallery</a>
+                            <a href="blogs.html">Blogs</a>
+                            <a href="faqs.html">FAQs</a>
+                        </div>
+                        <div class="mega-col">
+                            <h4>Condition FAQs</h4>
+                            <a href="pancreas.html">Pancreas</a>
+                            <a href="gallbladder.html">Gallbladder</a>
+                            <a href="liver.html">Liver</a>
+                            <a href="large-intestine.html">Large Intestine</a>
+                            <a href="stomach.html">Stomach</a>
+                            <a href="esophagus.html">Esophagus</a>
+                        </div>
+                    </div>
+                </div>
+                <a href="gallery.html">Gallery</a>
+                <a href="social-service.html" class="active">Social Service</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+            <div class="nav-actions">
+                <div class="als notranslate" translate="no">
+                    <button class="als-btn" type="button" aria-haspopup="listbox" aria-expanded="false"
+                            aria-label="Choose a language">
+                        <span class="als-globe" aria-hidden="true">🌐</span>
+                        <span class="als-code">EN</span>
+                        <i class="fa-solid fa-chevron-down als-caret" aria-hidden="true"></i>
+                    </button>
+                </div>
+                <a href="our-network.html" class="location-btn">
+                    <i class="fa-solid fa-location-dot"></i> Our Locations
+                </a>
+                <div class="mobile-menu" aria-label="Toggle menu" role="button" tabindex="0">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="npf-hero">
+        <div class="container npf-hero-in">
+            <div class="npf-hero-copy">
+                <span class="npf-eyebrow">Advitya Healthcares &middot; Community Work</span>
+                <h1>Our Social <em>Service</em></h1>
+                <p class="npf-sub">Free screening camps, outreach and health awareness, at no cost to those who attend.</p>
+                <p>Advitya Healthcares runs free screening camps and outreach programmes in places where a
+                    specialist opinion normally means a long journey and a day's lost wages. The work is carried
+                    out by the same surgical team that operates at the hospital.</p>
+                <div class="npf-hero-acts">
+                    <a class="btn btn-premium" href="#programmes"><i class="fa-solid fa-hand-holding-heart" aria-hidden="true"></i> What we do</a>
+                    <a class="hv-ghost" href="#partner"><i class="fa-solid fa-handshake" aria-hidden="true"></i> Partner with us</a>
+                </div>
+                <ul class="npf-facts">
+                    <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ghaghra, Jharkhand</li>
+                    <li><i class="fa-solid fa-indian-rupee-sign" aria-hidden="true"></i> Free for everyone who attends</li>
+                    <li><i class="fa-solid fa-user-doctor" aria-hidden="true"></i> Run by the hospital's own surgical team</li>
+                </ul>
+            </div>
+            <figure class="npf-hero-art">
+                <img src="images/gallery/gi-camp-03.jpeg" width="1280" height="720"
+                    alt="Free GI screening camp run by Advitya Healthcares at Ghaghra, Jharkhand" fetchpriority="high" decoding="async">
+            </figure>
+        </div>
+    </section>
+
+    <!-- Programmes -->
+    <section class="npf-sec" id="programmes">
+        <div class="container">
+            <header class="npf-head">
+                <span class="npf-label">What we do</span>
+                <h2>The work, as it stands today</h2>
+                <p>Four strands, all run without charge to the people who attend.</p>
+            </header>
+            <div class="npf-prog">
+                <article class="npf-card">
+                    <span class="npf-ic"><i class="fa-solid fa-tent-arrows-down" aria-hidden="true"></i></span>
+                    <h3><span class="npf-group-ic"><i class="fa-solid fa-tent-arrows-down" aria-hidden="true"></i></span> Free GI screening camps</h3>
+                    <p>Camps in rural Jharkhand, including Ghaghra, where villagers are examined for digestive and
+                        liver complaints by our surgical team, at no cost.</p>
+                </article>
+                <article class="npf-card">
+                    <span class="npf-ic"><i class="fa-solid fa-people-roof" aria-hidden="true"></i></span>
+                    <h3><span class="npf-group-ic"><i class="fa-solid fa-people-roof" aria-hidden="true"></i></span> Community outreach</h3>
+                    <p>Visits to neighbourhoods and partner organisations, taking consultations and basic checks to
+                        people who would otherwise travel a long way for them.</p>
+                </article>
+                <article class="npf-card">
+                    <span class="npf-ic"><i class="fa-solid fa-comments" aria-hidden="true"></i></span>
+                    <h3>Health awareness</h3>
+                    <p>Sessions on digestive health and the early signs of GI cancer, so a symptom is checked
+                        rather than waited out.</p>
+                </article>
+                <article class="npf-card">
+                    <span class="npf-ic"><i class="fa-solid fa-route" aria-hidden="true"></i></span>
+                    <h3>Referral support</h3>
+                    <p>Anyone found at a camp to need surgery is guided to the right department, so a diagnosis in
+                        a village does not end there.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- How a camp runs -->
+    <section class="npf-sec is-alt">
+        <div class="container">
+            <header class="npf-head">
+                <span class="npf-label">The day itself</span>
+                <h2>How a camp runs</h2>
+                <p>From the first phone call to the follow-up, this is what a camp day looks like.</p>
+            </header>
+            <ol class="npf-steps">
+                <li>
+                    <span class="npf-step-n">1</span>
+                    <h3>A host invites us</h3>
+                    <p>A panchayat, school, employer or voluntary body asks for a camp and provides a hall or
+                        a block office for the day.</p>
+                </li>
+                <li>
+                    <span class="npf-step-n">2</span>
+                    <h3>The team travels</h3>
+                    <p>Surgeons and staff travel with registration desks, basic equipment and medicines.</p>
+                </li>
+                <li>
+                    <span class="npf-step-n">3</span>
+                    <h3>People are seen</h3>
+                    <p>Each person is registered, examined and counselled about what the symptom means and what to
+                        do next.</p>
+                </li>
+                <li>
+                    <span class="npf-step-n">4</span>
+                    <h3>Care continues</h3>
+                    <p>Those who need tests or surgery are guided to the hospital, so the visit leads somewhere.</p>
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Why we do it -->
+    <section class="npf-quote">
+        <div class="container">
+            <blockquote>
+                <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
+                <p>Affordable, ethical care, so that no family feels forced to leave their city for the proper
+                    treatment.</p>
+                <cite>Dr. Deeksha Kapoor &middot; CEO &amp; Medical Head, Advitya Healthcares</cite>
+            </blockquote>
+        </div>
+    </section>
+
+    <!-- Photographs -->
+    <section class="npf-sec" id="photographs">
+        <div class="container">
+            <header class="npf-head">
+                <span class="npf-label">Photographs</span>
+                <h2>From the field</h2>
+                <p>Every photograph from our camps at Ghaghra in Jharkhand and from outreach visits.</p>
+            </header>
+            <section class="npf-group is-camps">
+                <header class="npf-group-head">
+                    <h3><span class="npf-group-ic"><i class="fa-solid fa-tent-arrows-down" aria-hidden="true"></i></span> Free GI screening camps</h3>
+                    <span class="npf-group-meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Ghaghra, Jharkhand &middot; 13 photographs</span>
+                </header>
+                <div class="npf-tiles">
+                    <button class="npf-tile npf-reveal" type="button" data-i="0" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-01.jpeg" width="1280" height="960" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="1" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-02.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="2" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-03.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="3" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-04.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="4" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-05.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="5" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-06.jpeg" width="1280" height="960" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="6" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-07.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="7" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-08.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="8" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-09.jpeg" width="720" height="1280" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="9" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-10.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="10" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-11.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="11" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-12.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="12" aria-label="Enlarge: GI screening camp at Ghaghra, Jharkhand">
+                        <img src="images/gallery/gi-camp-13.jpeg" width="1280" height="720" alt="GI screening camp at Ghaghra, Jharkhand" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">GI screening camp at Ghaghra, Jharkhand</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </div>
+            </section>
+            <section class="npf-group is-outreach">
+                <header class="npf-group-head">
+                    <h3><span class="npf-group-ic"><i class="fa-solid fa-people-roof" aria-hidden="true"></i></span> Community outreach</h3>
+                    <span class="npf-group-meta"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Advitya Healthcares &middot; 5 photographs</span>
+                </header>
+                <div class="npf-tiles">
+                    <button class="npf-tile npf-reveal" type="button" data-i="13" aria-label="Enlarge: Community outreach programme">
+                        <img src="images/gallery/outreach-01.webp" width="1040" height="780" alt="Community outreach programme" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">Community outreach programme</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="14" aria-label="Enlarge: Community outreach programme">
+                        <img src="images/gallery/outreach-02.webp" width="1599" height="899" alt="Community outreach programme" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">Community outreach programme</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="15" aria-label="Enlarge: Community outreach programme">
+                        <img src="images/gallery/outreach-03.webp" width="1599" height="899" alt="Community outreach programme" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">Community outreach programme</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="16" aria-label="Enlarge: Community outreach programme">
+                        <img src="images/gallery/outreach-04.webp" width="1599" height="899" alt="Community outreach programme" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">Community outreach programme</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                    <button class="npf-tile npf-reveal" type="button" data-i="17" aria-label="Enlarge: Community outreach programme">
+                        <img src="images/gallery/outreach-05.webp" width="1599" height="899" alt="Community outreach programme" loading="lazy" decoding="async">
+                        <span class="npf-tile-cap">Community outreach programme</span>
+                        <span class="npf-tile-zoom" aria-hidden="true"><i class="fa-solid fa-expand"></i></span>
+                    </button>
+                </div>
+            </section>
+        </div>
+    </section>
+
+    <!-- Partner -->
+    <section class="npf-partner" id="partner">
+        <div class="container">
+            <div class="npf-partner-in">
+                <div>
+                    <h2>Bring a camp to your area</h2>
+                    <p>Panchayats, schools, employers and voluntary organisations can ask for a screening camp or an
+                        awareness session. Tell us where, and how many people you expect, and the hospital team will
+                        take it from there.</p>
+                    <div class="npf-partner-acts">
+                        <a class="btn btn-premium" href="tel:+919211221552"><i class="fa-solid fa-phone-volume" aria-hidden="true"></i> +91 9211221552</a>
+                        <a class="hv-ghost" href="contact.html"><i class="fa-regular fa-envelope" aria-hidden="true"></i> Write to us</a>
+                    </div>
+                </div>
+                <ul class="npf-ask">
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> A hall, school or block office for the day</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Word passed around the village beforehand</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> A few volunteers to help with registration</li>
+                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Nothing paid by anyone who attends</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer" style="background: linear-gradient(160deg, #8b1014 0%, #6b0b0e 60%, #520609 100%); color: white; padding: 40px 0 20px; position: relative;">
+        <div class="container">
+            <div style="display: flex; flex-wrap: wrap; justify-content: space-between; margin-bottom: 30px;">
+                <!-- Column 1 -->
+                <div style="flex: 1; min-width: 250px; margin-bottom: 20px;">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <img src="images/advitya_logo.png" alt="Advitya Healthcares" style="height: 130px;">
+                    </div>
+                    <p style="font-weight: bold; margin-bottom: 15px;">Science for Humanity</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Advitya Hospital Baruipur</p>
+                    <p style="font-size: 14px; margin-bottom: 8px;">Kulpi Road, Puratan Bazar, Subuddhipur,<br>Baruipur, West Bengal &ndash; 700144</p>
+                    <p style="font-size: 14px; margin-bottom: 12px;">Hospital: +91 9211221552 &middot; Emergency 24&times;7: +91 9211221553</p>
+                    <p style="font-weight: bold; margin-bottom: 10px;">Kolkata OPD</p>
+                    <p style="font-size: 14px; margin-bottom: 12px;">Rajdanga Main Road, Kolkata<br>+91 9211221551</p>
+                    <p style="font-size: 14px; margin-bottom: 15px;">info@advityahealthcares.com</p>
+                    <div style="margin-bottom: 15px;">
+                        <a href="https://wa.me/919211221551" aria-label="WhatsApp" style="color: white; margin-right: 15px; font-size: 18px;" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="mailto:info@advityahealthcares.com" aria-label="Email Advitya Healthcares" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-regular fa-envelope"></i></a>
+                        <a href="tel:+919211221551" aria-label="Call Advitya Healthcares" style="color: white; margin-right: 15px; font-size: 18px;"><i
+                                class="fa-solid fa-phone"></i></a>
+                    </div>
+                    <p class="foot-updated">Website Updated as of March 3, 2026</p>
+                </div>
+                
+                <!-- Column 2 -->
+                <div class="foot-col" style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                    <h4 class="foot-col-title">Explore</h4>
+                    <a href="index.html" style="color: white; text-decoration: none;">Home</a>
+                    <a href="advitya-healthcares.html" style="color: white; text-decoration: none;">Advitya Healthcares</a>
+                    <a href="advitya-hospital-baruipur.html" style="color: white; text-decoration: none;">Advitya Hospital Baruipur</a>
+                    <a href="departments.html" style="color: white; text-decoration: none;">Departments</a>
+                    <a href="doctors.html" style="color: white; text-decoration: none;">Doctors</a>
+                    <a href="centres-of-excellence.html" style="color: white; text-decoration: none;">Centres of Excellence</a>
+                    <a href="our-network.html" style="color: white; text-decoration: none;">Our Network</a>
+                    <a href="patient-services.html" style="color: white; text-decoration: none;">Patient Services</a>
+                    <a href="contact.html" style="color: white; text-decoration: none;">Contact</a>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="foot-col" style="flex: 1; min-width: 200px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; font-size: 14px;">
+                    <h4 class="foot-col-title">Group</h4>
+                    <a href="centres-of-excellence.html" style="color: white; text-decoration: none;">Centres of Excellence</a>
+                    <a href="pancrea-care.html" style="color: white; text-decoration: none;">PancreaCare</a>
+                    <a href="the-story-of-pancreacare.html" style="color: white; text-decoration: none;">The Story of PancreaCare</a>
+                    <a href="clinical-services.html" style="color: white; text-decoration: none;">Clinical Services</a>
+                    <a href="careers.html" style="color: white; text-decoration: none;">Careers</a>
+                    <a href="blogs.html" style="color: white; text-decoration: none;">Blogs</a>
+                    <a href="faqs.html" style="color: white; text-decoration: none;">FAQs</a>
+                    <a href="https://erp.advityahealthcares.in/login" target="_blank" rel="noopener noreferrer" style="color: white; text-decoration: none;">Staff Login</a>
+                </div>
+            </div>
+
+            <hr style="border-color: rgba(255,255,255,0.2); margin-bottom: 20px;">
+
+            <div class="footer-legal"
+                style="display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;">
+                <div style="margin-bottom: 10px;">
+                    <p style="margin-bottom: 5px;"><strong>Advitya Healthcares Pvt Ltd &mdash; Registered Office:</strong> 603, Tower C, 6th Floor, Nirvana Courtyard, Sector 50, Gurugram 122018</p>
+                    <p>&copy; 2026 Advitya Healthcares Pvt Ltd. All rights reserved.</p>
+                </div>
+                <div style="display: flex; gap: 15px;">
+                    <a href="privacy-policy.html" style="color: white; text-decoration: none;">Privacy Policy</a>
+                    <a href="terms.html" style="color: white; text-decoration: none;">Terms of Use</a>
+                    <a href="terms.html#disclaimer" style="color: white; text-decoration: none;">Disclaimer</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- WhatsApp Icon -->
+        <a href="https://wa.me/919211221551" aria-label="Chat on WhatsApp" style="position: fixed; bottom: 20px; right: 20px; background-color: #25D366; color: white; border-radius: 50%; width: 50px; height: 50px; display: flex; justify-content: center; align-items: center; font-size: 24px; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; text-decoration: none;" target="_blank" rel="noopener noreferrer">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </footer>
+
+        <script src="js/nav.js?v=10"></script>
+    <script src="js/search-index.js?v=2"></script>
+    <script src="js/site-search.js?v=1"></script>
+    <script src="js/mail-link.js?v=2"></script>
+    <script src="js/contact-modal.js?v=4"></script>
+
+    <!-- Photo viewer -->
+    <div class="npf-lb" id="npfLb" role="dialog" aria-modal="true" aria-label="Photograph viewer" hidden>
+        <button class="npf-lb-close" type="button" id="npfClose" aria-label="Close"><i class="fa-solid fa-xmark"></i></button>
+        <button class="npf-lb-nav is-prev" type="button" id="npfPrev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+        <button class="npf-lb-nav is-next" type="button" id="npfNext" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+        <figure class="npf-lb-fig">
+            <img id="npfLbImg" src="" alt="">
+            <figcaption><span id="npfLbCap"></span><span class="npf-lb-count" id="npfLbCount"></span></figcaption>
+        </figure>
+    </div>
+
+    <script>
+    (function () {
+        /* photographs settle in as they reach the viewport */
+        var tiles = document.querySelectorAll('.npf-reveal');
+        if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            var io = new IntersectionObserver(function (es) {
+                es.forEach(function (e) {
+                    if (!e.isIntersecting) return;
+                    e.target.classList.add('is-in');
+                    io.unobserve(e.target);
+                });
+            }, { rootMargin: '0px 0px -8% 0px' });
+            tiles.forEach(function (t, i) { t.style.transitionDelay = (i % 4) * 70 + 'ms'; io.observe(t); });
+        } else {
+            tiles.forEach(function (t) { t.classList.add('is-in'); });
+        }
+    })();
+    </script>
+
+    <script>
+    (function () {
+        var SHOTS = [{"src": "images/gallery/gi-camp-01.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-02.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-03.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-04.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-05.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-06.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-07.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-08.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-09.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-10.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-11.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-12.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/gi-camp-13.jpeg", "cap": "GI screening camp at Ghaghra, Jharkhand", "group": "Free GI screening camps"}, {"src": "images/gallery/outreach-01.webp", "cap": "Community outreach programme", "group": "Community outreach"}, {"src": "images/gallery/outreach-02.webp", "cap": "Community outreach programme", "group": "Community outreach"}, {"src": "images/gallery/outreach-03.webp", "cap": "Community outreach programme", "group": "Community outreach"}, {"src": "images/gallery/outreach-04.webp", "cap": "Community outreach programme", "group": "Community outreach"}, {"src": "images/gallery/outreach-05.webp", "cap": "Community outreach programme", "group": "Community outreach"}];
+        var lb = document.getElementById('npfLb'), img = document.getElementById('npfLbImg');
+        var cap = document.getElementById('npfLbCap'), count = document.getElementById('npfLbCount');
+        var at = 0;
+
+        function show(i) {
+            at = (i + SHOTS.length) % SHOTS.length;
+            img.src = SHOTS[at].src;
+            img.alt = SHOTS[at].cap;
+            cap.textContent = SHOTS[at].cap;
+            count.textContent = (at + 1) + ' / ' + SHOTS.length;
+        }
+        function open(i) { show(i); lb.hidden = false; document.body.style.overflow = 'hidden'; }
+        function close() { lb.hidden = true; document.body.style.overflow = ''; }
+
+        document.querySelectorAll('.npf-tile').forEach(function (t) {
+            t.addEventListener('click', function () { open(parseInt(t.dataset.i, 10)); });
+        });
+        document.getElementById('npfClose').addEventListener('click', close);
+        document.getElementById('npfPrev').addEventListener('click', function () { show(at - 1); });
+        document.getElementById('npfNext').addEventListener('click', function () { show(at + 1); });
+        lb.addEventListener('click', function (e) { if (e.target === lb) close(); });
+        document.addEventListener('keydown', function (e) {
+            if (lb.hidden) return;
+            if (e.key === 'Escape') close();
+            if (e.key === 'ArrowLeft') show(at - 1);
+            if (e.key === 'ArrowRight') show(at + 1);
+        });
+    })();
+    </script>
+</body>
+
+</html>

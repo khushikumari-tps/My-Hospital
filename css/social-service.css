@@ -1,0 +1,926 @@
+/* ===================================================================
+   social-service.css — the social service page: hero, programme cards,
+   the four-step camp explainer, the field photographs and the partner
+   band. Consumes the brand tokens from brand.css.
+   =================================================================== */
+
+/* ---------------- hero ---------------- */
+.npf-hero {
+    background: linear-gradient(180deg, #fff 0%, var(--adv-blush) 100%);
+    padding: clamp(36px, 5vw, 72px) 0 clamp(30px, 4vw, 56px);
+    border-bottom: 1px solid var(--adv-line);
+}
+
+.npf-hero-in {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    gap: clamp(26px, 4vw, 56px);
+    align-items: center;
+}
+
+.npf-eyebrow {
+    display: inline-block;
+    margin-bottom: 14px;
+    font-family: var(--adv-font-head);
+    font-weight: 700;
+    font-size: var(--adv-eyebrow-size);
+    letter-spacing: var(--adv-eyebrow-track);
+    text-transform: uppercase;
+    color: var(--adv-crimson-700);
+}
+
+.npf-hero h1 {
+    margin: 0 0 16px;
+    font-family: var(--adv-font-head);
+    font-size: var(--adv-h1);
+    font-weight: 700;
+    line-height: 1.12;
+    color: var(--adv-ink);
+}
+
+.npf-hero h1 em {
+    font-style: normal;
+    color: var(--adv-crimson-700);
+}
+
+.npf-hero p {
+    margin: 0 0 24px;
+    max-width: 58ch;
+    font-size: 1.02rem;
+    line-height: 1.75;
+    color: var(--adv-ink-body);
+}
+
+.npf-hero-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.npf-hero-art {
+    margin: 0;
+    border-radius: var(--adv-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--adv-lift-3);
+}
+
+.npf-hero-art img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+}
+
+/* ---------------- section frame ---------------- */
+.npf-sec {
+    padding: var(--adv-sec-y) 0;
+}
+
+.npf-sec.is-alt {
+    background: var(--adv-blush);
+    border-block: 1px solid var(--adv-line);
+}
+
+.npf-head {
+    max-width: 62ch;
+    margin-bottom: clamp(24px, 3vw, 38px);
+}
+
+.npf-head h2 {
+    margin: 0 0 8px;
+    font-family: var(--adv-font-head);
+    font-size: var(--adv-h2);
+    font-weight: 700;
+    color: var(--adv-ink);
+    line-height: 1.15;
+}
+
+.npf-head p {
+    margin: 0;
+    color: var(--adv-ink-muted);
+    font-size: .98rem;
+}
+
+/* ---------------- programme cards ---------------- */
+.npf-prog {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.npf-card {
+    padding: 26px 24px;
+    border-radius: var(--adv-radius-lg);
+    background: #fff;
+    border: 1px solid var(--adv-line);
+    box-shadow: var(--adv-lift-1);
+    transition: transform var(--adv-dur) var(--adv-ease), box-shadow var(--adv-dur) var(--adv-ease), border-color var(--adv-dur);
+}
+
+.npf-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(142, 27, 46, .2);
+    box-shadow: var(--adv-lift-2);
+}
+
+.npf-ic {
+    display: grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+    border-radius: var(--adv-radius);
+    background: var(--adv-grad-brand);
+    color: #fff;
+    font-size: 1.15rem;
+    box-shadow: 0 10px 20px -12px rgba(120, 12, 12, .6);
+}
+
+.npf-card h3 {
+    margin: 0 0 8px;
+    font-family: var(--adv-font-head);
+    font-size: 1.08rem;
+    font-weight: 700;
+    color: var(--adv-ink);
+}
+
+.npf-card p {
+    margin: 0;
+    font-size: .92rem;
+    line-height: 1.65;
+    color: var(--adv-ink-body);
+}
+
+/* ---------------- four steps ---------------- */
+.npf-steps {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: none;
+}
+
+.npf-steps li {
+    position: relative;
+    padding-top: 22px;
+    border-top: 2px solid var(--adv-line);
+}
+
+.npf-step-n {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    margin-bottom: 12px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid var(--adv-crimson-700);
+    color: var(--adv-crimson-700);
+    font-family: var(--adv-font-head);
+    font-weight: 700;
+}
+
+.npf-steps h3 {
+    margin: 0 0 6px;
+    font-family: var(--adv-font-head);
+    font-size: 1.02rem;
+    font-weight: 700;
+    color: var(--adv-ink);
+}
+
+.npf-steps p {
+    margin: 0;
+    font-size: .92rem;
+    line-height: 1.65;
+    color: var(--adv-ink-body);
+}
+
+/* ---------------- field photographs ---------------- */
+.npf-group + .npf-group {
+    margin-top: clamp(28px, 3.4vw, 46px);
+}
+
+.npf-group-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid var(--adv-line);
+}
+
+.npf-group-head h3 {
+    margin: 0;
+    font-family: var(--adv-font-head);
+    font-size: 1.22rem;
+    font-weight: 700;
+    color: var(--adv-ink);
+}
+
+.npf-group-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--adv-ink-muted);
+}
+
+.npf-group-meta i {
+    color: var(--adv-crimson-700);
+}
+
+/* masonry columns: photographs keep their own proportions and an odd
+   count leaves no hole and stretches nothing */
+.npf-tiles {
+    columns: 4;
+    column-gap: 14px;
+}
+
+.npf-tiles > .npf-tile {
+    width: 100%;
+    margin: 0 0 14px;
+    break-inside: avoid;
+}
+
+.npf-tile {
+    position: relative;
+    display: block;
+    padding: 0;
+    border: 0;
+    border-radius: var(--adv-radius);
+    overflow: hidden;
+    background: #2A0508;
+    cursor: zoom-in;
+    box-shadow: var(--adv-lift-1);
+    transition: transform var(--adv-dur) var(--adv-ease), box-shadow var(--adv-dur) var(--adv-ease);
+}
+
+.npf-tile:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--adv-lift-2);
+}
+
+.npf-tile img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform .6s var(--adv-ease);
+}
+
+.npf-tile:hover img {
+    transform: scale(1.06);
+}
+
+.npf-tile-cap {
+    position: absolute;
+    inset: auto 0 0 0;
+    padding: 28px 12px 10px;
+    background: linear-gradient(180deg, transparent, rgba(36, 6, 8, .85));
+    color: #fff;
+    font-size: .76rem;
+    line-height: 1.35;
+    text-align: left;
+    opacity: 0;
+    transform: translateY(6px);
+    transition: opacity var(--adv-dur), transform var(--adv-dur) var(--adv-ease);
+}
+
+.npf-tile:hover .npf-tile-cap,
+.npf-tile:focus-visible .npf-tile-cap {
+    opacity: 1;
+    transform: none;
+}
+
+.npf-tile-zoom {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, .92);
+    color: var(--adv-crimson-700);
+    font-size: .8rem;
+    opacity: 0;
+    transform: scale(.9);
+    transition: opacity var(--adv-dur), transform var(--adv-dur) var(--adv-ease);
+}
+
+.npf-tile:hover .npf-tile-zoom,
+.npf-tile:focus-visible .npf-tile-zoom {
+    opacity: 1;
+    transform: none;
+}
+
+@media (pointer: coarse) {
+    .npf-tile-cap {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ---------------- photo viewer ---------------- */
+.npf-lb {
+    position: fixed;
+    inset: 0;
+    z-index: 1200;
+    display: grid;
+    place-items: center;
+    padding: clamp(16px, 4vw, 48px);
+    background: rgba(24, 4, 6, .93);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.npf-lb[hidden] {
+    display: none;
+}
+
+.npf-lb-fig {
+    margin: 0;
+    max-width: min(1100px, 92vw);
+    text-align: center;
+}
+
+.npf-lb-fig img {
+    max-width: 100%;
+    max-height: 76vh;
+    border-radius: var(--adv-radius);
+    box-shadow: 0 30px 70px -30px rgba(0, 0, 0, .8);
+}
+
+.npf-lb-fig figcaption {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 14px;
+    color: rgba(255, 255, 255, .85);
+    font-size: .9rem;
+}
+
+.npf-lb-count {
+    padding: 4px 10px;
+    border-radius: var(--adv-radius-pill);
+    background: rgba(255, 255, 255, .12);
+    font-size: .78rem;
+    letter-spacing: .06em;
+}
+
+.npf-lb-close,
+.npf-lb-nav {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .25);
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background var(--adv-dur), transform var(--adv-dur);
+}
+
+.npf-lb-close:hover,
+.npf-lb-nav:hover {
+    background: rgba(255, 255, 255, .2);
+}
+
+.npf-lb-close {
+    top: 20px;
+    right: 20px;
+}
+
+.npf-lb-nav.is-prev {
+    left: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.npf-lb-nav.is-next {
+    right: 18px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* ---------------- partner band ---------------- */
+.npf-partner {
+    padding: 0 0 var(--adv-sec-y);
+}
+
+.npf-partner-in {
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, .85fr);
+    gap: clamp(24px, 4vw, 48px);
+    align-items: center;
+    padding: clamp(28px, 4vw, 48px);
+    border-radius: var(--adv-radius-lg);
+    background: var(--adv-grad-deep);
+    color: rgba(255, 255, 255, .85);
+}
+
+.npf-partner-in h2 {
+    margin: 0 0 10px;
+    font-family: var(--adv-font-head);
+    font-size: var(--adv-h2);
+    font-weight: 700;
+    color: #fff;
+}
+
+.npf-partner-in p {
+    margin: 0 0 22px;
+    max-width: 56ch;
+    line-height: 1.75;
+}
+
+.npf-partner-acts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.npf-partner-acts .hv-ghost {
+    border-color: rgba(255, 255, 255, .35);
+    color: #fff;
+}
+
+.npf-partner-acts .hv-ghost:hover {
+    background: rgba(255, 255, 255, .12);
+}
+
+.npf-ask {
+    margin: 0;
+    padding: 22px 24px;
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    border-radius: var(--adv-radius);
+    background: rgba(255, 255, 255, .08);
+    border: 1px solid rgba(255, 255, 255, .16);
+}
+
+.npf-ask li {
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+    font-size: .94rem;
+    color: #fff;
+}
+
+.npf-ask i {
+    margin-top: 4px;
+    color: #7CE0A6;
+    font-size: .82rem;
+}
+
+/* ---------------- responsive ---------------- */
+@media (max-width: 1100px) {
+    .npf-tiles {
+        columns: 3;
+    }
+}
+
+@media (max-width: 1000px) {
+    .npf-hero-in,
+    .npf-partner-in {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .npf-prog,
+    .npf-steps,
+    .npf-shots {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 720px) {
+    .npf-tiles {
+        columns: 2;
+    }
+}
+
+@media (max-width: 560px) {
+    .npf-prog,
+    .npf-steps,
+    .npf-shots {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .npf-shot.is-wide {
+        grid-column: auto;
+    }
+}
+
+/* the standfirst under the page title */
+.npf-sub {
+    margin: -4px 0 14px !important;
+    font-family: var(--adv-font-head);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: var(--adv-crimson-700);
+    max-width: 52ch;
+}
+
+/* ===================================================================
+   Finishing pass: hero facts, section labels, the quote band, and a
+   firmer hand on the cards and the four steps.
+   =================================================================== */
+
+/* hero */
+.npf-hero {
+    padding-top: clamp(44px, 6vw, 84px);
+}
+
+.npf-hero h1 {
+    letter-spacing: -.02em;
+}
+
+.npf-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin: 26px 0 0;
+    padding: 18px 0 0;
+    list-style: none;
+    border-top: 1px solid var(--adv-line);
+}
+
+.npf-facts li {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    font-size: .88rem;
+    font-weight: 600;
+    color: var(--adv-ink-body);
+}
+
+.npf-facts i {
+    color: var(--adv-crimson-700);
+    font-size: .82rem;
+}
+
+.npf-hero-art {
+    position: relative;
+}
+
+.npf-hero-art::after {
+    content: "";
+    position: absolute;
+    inset: -14px -14px 14px 14px;
+    border: 1px solid rgba(142, 27, 46, .22);
+    border-radius: var(--adv-radius-lg);
+    z-index: -1;
+}
+
+/* section labels */
+.npf-label {
+    display: inline-block;
+    margin-bottom: 10px;
+    font-family: var(--adv-font-head);
+    font-weight: 700;
+    font-size: var(--adv-eyebrow-size);
+    letter-spacing: var(--adv-eyebrow-track);
+    text-transform: uppercase;
+    color: var(--adv-crimson-700);
+}
+
+.npf-head h2 {
+    letter-spacing: -.01em;
+}
+
+/* programme cards: a crimson edge that draws in on hover */
+.npf-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.npf-card::before {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 0;
+    width: 3px;
+    background: var(--adv-grad-mark);
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform .45s var(--adv-ease);
+}
+
+.npf-card:hover::before {
+    transform: scaleY(1);
+}
+
+/* the four steps, joined by a line */
+.npf-steps {
+    position: relative;
+}
+
+.npf-steps::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 37px;
+    height: 1px;
+    background: repeating-linear-gradient(90deg, rgba(142, 27, 46, .28) 0 6px, transparent 6px 12px);
+}
+
+.npf-steps li {
+    position: relative;
+    border-top: 0;
+    padding-top: 0;
+}
+
+.npf-step-n {
+    position: relative;
+    z-index: 1;
+    background: var(--adv-blush);
+}
+
+/* quote band */
+.npf-quote {
+    padding: clamp(40px, 5vw, 76px) 0;
+    background: #fff;
+    border-bottom: 1px solid var(--adv-line);
+}
+
+.npf-quote blockquote {
+    margin: 0 auto;
+    max-width: 62ch;
+    text-align: center;
+}
+
+.npf-quote i {
+    display: inline-grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: var(--adv-blush);
+    color: var(--adv-crimson-700);
+}
+
+.npf-quote p {
+    margin: 0 0 14px;
+    font-family: var(--adv-font-head);
+    font-size: clamp(1.15rem, 2.2vw, 1.6rem);
+    font-weight: 600;
+    line-height: 1.45;
+    color: var(--adv-ink);
+}
+
+.npf-quote cite {
+    font-style: normal;
+    font-size: .82rem;
+    font-weight: 700;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--adv-ink-muted);
+}
+
+@media (max-width: 1000px) {
+    .npf-steps::before {
+        display: none;
+    }
+
+    .npf-step-n {
+        background: transparent;
+    }
+
+    .npf-hero-art::after {
+        display: none;
+    }
+}
+
+/* ===================================================================
+   From the field: each programme sits in its own panel, the tiles are
+   framed and lift on hover, and they settle in as they are scrolled to.
+   =================================================================== */
+.npf-group {
+    padding: clamp(20px, 2.6vw, 30px);
+    border-radius: var(--adv-radius-lg);
+    border: 1px solid var(--adv-line);
+    background: #fff;
+    box-shadow: var(--adv-lift-1);
+}
+
+.npf-group.is-camps {
+    background: linear-gradient(180deg, #fff 0%, var(--adv-blush) 100%);
+}
+
+.npf-group-head {
+    border-bottom-style: dashed;
+}
+
+.npf-group-head h3 {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.npf-group-ic {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: var(--adv-grad-brand);
+    color: #fff;
+    font-size: .95rem;
+    box-shadow: 0 8px 16px -10px rgba(120, 12, 12, .7);
+}
+
+.npf-group-meta {
+    padding: 6px 13px;
+    border-radius: var(--adv-radius-pill);
+    background: #fff;
+    border: 1px solid var(--adv-line);
+}
+
+/* framed tiles */
+.npf-tile {
+    border: 1px solid rgba(94, 16, 25, .1);
+    outline: 0;
+}
+
+.npf-tile::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5);
+    pointer-events: none;
+    transition: box-shadow var(--adv-dur);
+}
+
+.npf-tile:hover::after,
+.npf-tile:focus-visible::after {
+    box-shadow: inset 0 0 0 2px rgba(142, 27, 46, .55);
+}
+
+.npf-tile:focus-visible {
+    box-shadow: 0 0 0 4px rgba(142, 27, 46, .22);
+}
+
+/* settle-in */
+.npf-reveal {
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity .6s var(--adv-ease), transform .6s var(--adv-ease), box-shadow var(--adv-dur);
+}
+
+.npf-reveal.is-in {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .npf-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+/* larger photographs: fewer columns means each one is wider */
+.npf-tiles {
+    columns: 3;
+    column-gap: 18px;
+}
+
+.npf-tiles > .npf-tile {
+    margin-bottom: 18px;
+}
+
+.npf-tile-cap {
+    padding: 34px 16px 14px;
+    font-size: .84rem;
+}
+
+.npf-tile-zoom {
+    width: 38px;
+    height: 38px;
+    font-size: .9rem;
+}
+
+@media (max-width: 1100px) {
+    .npf-tiles {
+        columns: 2;
+    }
+}
+
+@media (max-width: 720px) {
+    .npf-tiles {
+        columns: 1;
+    }
+}
+
+/* ===================================================================
+   No holes: an even three-column grid rather than masonry columns.
+   Every tile keeps one shape, and the last photograph in each group
+   widens to fill whatever is left of its row.
+   =================================================================== */
+.npf-tiles {
+    columns: auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.npf-tiles > .npf-tile {
+    margin-bottom: 0;
+    aspect-ratio: 4 / 3;
+}
+
+.npf-tile img {
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 13 photographs: the last one takes the whole final row */
+.npf-group.is-camps .npf-tile:last-child {
+    grid-column: span 3;
+    aspect-ratio: 21 / 8;
+}
+
+/* 5 photographs: the last one takes the two remaining columns */
+.npf-group.is-outreach .npf-tile:last-child {
+    grid-column: span 2;
+    aspect-ratio: 16 / 7;
+}
+
+@media (max-width: 1100px) {
+    .npf-tiles {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .npf-group.is-camps .npf-tile:last-child {
+        grid-column: span 2;
+        aspect-ratio: 16 / 7;
+    }
+}
+
+@media (max-width: 720px) {
+    .npf-tiles {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .npf-group.is-camps .npf-tile:last-child,
+    .npf-group.is-outreach .npf-tile:last-child {
+        grid-column: auto;
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* ===================================================================
+   Page width. The shared .container caps at 1200px while this site's
+   header runs to 1560px, so the page read as a narrow column inside a
+   wide frame. These sections follow the header instead.
+   =================================================================== */
+.npf-hero .container,
+.npf-sec .container,
+.npf-quote .container,
+.npf-partner .container {
+    max-width: 1560px;
+}
+
+/* with more width the grid can hold another column without shrinking
+   each photograph */
+@media (min-width: 1400px) {
+    .npf-tiles {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .npf-group.is-camps .npf-tile:last-child {
+        grid-column: span 4;
+        aspect-ratio: 24 / 7;
+    }
+
+    .npf-group.is-outreach .npf-tile:last-child {
+        grid-column: span 1;
+        aspect-ratio: 4 / 3;
+    }
+}
+
+/* the hero photograph grows with the wider column */
+@media (min-width: 1400px) {
+    .npf-hero h1 {
+        font-size: clamp(2.6rem, 4.4vw, 4rem);
+    }
+
+    .npf-hero p {
+        max-width: 64ch;
+    }
+}

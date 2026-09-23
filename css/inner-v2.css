@@ -130,6 +130,17 @@ body.hv-light .hv-docs.is-team-page .team-img-wrapper img {
     padding: 8px 20px;
     margin-bottom: 20px;
     box-shadow: var(--lift-1);
+    white-space: nowrap;
+    max-width: 100%;
+}
+
+@media (max-width: 520px) {
+    .pg-eyebrow {
+        font-size: .62rem;
+        letter-spacing: .12em;
+        gap: 7px;
+        padding: 7px 14px;
+    }
 }
 
 .pg-eyebrow::before {
@@ -148,6 +159,13 @@ body.hv-light .hv-docs.is-team-page .team-img-wrapper img {
     color: var(--ink);
     margin-bottom: 18px;
     max-width: 18ch;
+}
+
+/* hero headings that must never break to a second line */
+.pg-hero h1.pg-h1-oneline {
+    max-width: none;
+    white-space: nowrap;
+    font-size: clamp(1.5rem, 6.1vw, 3.2rem);
 }
 
 .pg-hero h1 span {

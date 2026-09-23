@@ -166,7 +166,11 @@ body.hv-light .navbar {
 /* ==========================  Header: main bar  =========================== */
 /* Wider than the 1200px body container — the nav simply needs the room. */
 body.hv-light .nav-container {
-    max-width: 1560px;
+    /* full width: the logo sits near the left edge and the actions near
+       the right, rather than both floating in from a centred column */
+    max-width: none;
+    padding-left: clamp(24px, 4.5vw, 86px);
+    padding-right: clamp(16px, 2.2vw, 40px);
     height: 126px;
 }
 
@@ -193,7 +197,8 @@ body.hv-light .nav-links {
 /* same size as every other page's menu, so the two headers read alike */
 body.hv-light .nav-links>a,
 body.hv-light .nav-links .dropbtn {
-    font-size: .95rem;
+    font-size: 1rem;
+    font-weight: 600;
     letter-spacing: 0.012em;
 }
 

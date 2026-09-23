@@ -117,3 +117,79 @@
 #dr-deeksha-kapoor:hover .xp-photo img {
     transform: translate(-50%, 0) scale(1.04);
 }
+
+/* Dr. Agniva Mukhopadhyay: same treatment as Dr. Deeksha Kapoor -- the
+   portrait is contained in the square and centred, so nothing is clipped.
+   The ground stays sampled from the photo's own white backdrop. */
+#dr-agniva-mukhopadhyay .xp-photo {
+    background: linear-gradient(160deg, #F4F6FA 0%, #FCFBFE 45%, #E7EBF2 100%);
+}
+
+#dr-agniva-mukhopadhyay .xp-photo img {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    object-fit: contain;
+    object-position: 50% 50%;
+    transform: translate(-50%, 0);
+}
+
+#dr-agniva-mukhopadhyay:hover .xp-photo img {
+    transform: translate(-50%, 0) scale(1.04);
+}
+
+/* Dr. Ratan Naskar: same treatment as Dr. Deeksha Kapoor -- portrait contained and
+   centred in the square tile, on a ground sampled from its white backdrop. */
+#dr-ratan-naskar .xp-photo {
+    background: linear-gradient(160deg, #F4F6FA 0%, #FCFBFE 45%, #E7EBF2 100%);
+}
+
+#dr-ratan-naskar .xp-photo img {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    object-fit: contain;
+    object-position: 50% 50%;
+    transform: translate(-50%, 0);
+}
+
+#dr-ratan-naskar:hover .xp-photo img {
+    transform: translate(-50%, 0) scale(1.04);
+}
+
+/* Dr. Alapan Halder: same treatment as the other white-ground cut-outs --
+   portrait contained and centred so the square tile never clips the head. */
+#dr-alapan-halder .xp-photo {
+    background: linear-gradient(160deg, #F4F6FA 0%, #FCFBFE 45%, #E7EBF2 100%);
+}
+
+#dr-alapan-halder .xp-photo img {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    object-fit: contain;
+    object-position: 50% 50%;
+    transform: translate(-50%, 0);
+}
+
+#dr-alapan-halder:hover .xp-photo img {
+    transform: translate(-50%, 0) scale(1.04);
+}
+
+/* Dr. Soman Mayur: same treatment as the other white-ground cut-outs. */
+#dr-soman-mayur .xp-photo {
+    background: linear-gradient(160deg, #F4F6FA 0%, #FCFBFE 45%, #E7EBF2 100%);
+}
+
+#dr-soman-mayur .xp-photo img {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    object-fit: contain;
+    object-position: 50% 50%;
+    transform: translate(-50%, 0);
+}
+
+#dr-soman-mayur:hover .xp-photo img {
+    transform: translate(-50%, 0) scale(1.04);
+}

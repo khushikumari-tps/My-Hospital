@@ -261,10 +261,14 @@ img {
     justify-content: space-between;
     align-items: center;
     height: 126px;
-    /* Wider than the 1200px body container: eleven menu items, both action
-       buttons and the language selector need about 1600px between them, and
-       anything narrower pushes the last of them off the right edge. */
-    max-width: 1620px;
+    /* The bar spans the window: the logo sits at the left edge and the
+       actions at the right, with a gutter rather than a centred column.
+       Eleven menu items, both action buttons and the language selector
+       need the room. */
+    max-width: none;
+    /* a wider gutter on the left so the logo clears the window edge */
+    padding-left: clamp(24px, 4.5vw, 86px);
+    padding-right: clamp(16px, 2.2vw, 40px);
 }
 
 .logo {
@@ -351,8 +355,8 @@ img {
    and still lands ~14px clear; anything past 0.96rem pushes the ERP
    button off the right edge on that page. */
 .nav-links a {
-    font-weight: 500;
-    font-size: 0.95rem;
+    font-weight: 600;
+    font-size: 1rem;
     letter-spacing: 0.012em;
     color: var(--text-main);
     position: relative;

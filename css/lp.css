@@ -448,7 +448,8 @@ body.lp svg {
 /* --------------------- the medical visual stage -------------------- */
 .lp-stage {
     position: relative;
-    padding: 22px;
+    /* a thinner frame lets the illustration itself run larger */
+    padding: 14px;
     border-radius: var(--lp-radius-lg);
     border: 1px solid var(--lp-line);
     background: linear-gradient(165deg, #fff 0%, var(--lp-sky) 100%);
@@ -1777,5 +1778,26 @@ body.lp [tabindex]:focus-visible {
 
     .adv-emg-tip {
         display: none;
+    }
+}
+
+/* ===================================================================
+   The condition illustration reads better larger: on a wide screen the
+   art column takes more of the split, and the figure is allowed to grow
+   past the text column's height.
+   =================================================================== */
+@media (min-width: 861px) {
+    .lp-split:not(:has(.lp-timeline)) {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.25fr);
+        align-items: center;
+    }
+
+    .lp-split.is-reverse:not(:has(.lp-timeline)) {
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    }
+
+    .lp-split-art .lp-stage img {
+        width: 100%;
+        height: auto;
     }
 }
