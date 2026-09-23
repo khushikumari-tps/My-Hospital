@@ -27,7 +27,7 @@
         '        </div>' +
         '        <div class="cm-row">' +
         '          <div class="cm-icon"><i class="fa-brands fa-whatsapp"></i></div>' +
-        '          <div><h4>WhatsApp</h4><p><a href="https://wa.me/919211221551">+91 9211221551</a></p></div>' +
+        '          <div><h4>WhatsApp</h4><p><a href="https://wa.me/919211221551" target="_blank" rel="noopener noreferrer">+91 9211221551</a></p></div>' +
         '        </div>' +
         '        <div class="cm-row">' +
         '          <div class="cm-icon"><i class="fa-solid fa-envelope"></i></div>' +

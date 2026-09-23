@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/erp-nav.css?v=3">
     <link rel="stylesheet" href="css/corporate.css?v=12">
     <link rel="stylesheet" href="css/doctors.css?v=2">
+    <link rel="stylesheet" href="css/doctors-dept.css?v=8">
     <!-- async, and ahead of the third-party bundles: the header must not
          wait on a CDN to get its language selector wired up -->
     <script src="js/lang-select.js?v=5" async></script>
@@ -64,7 +65,7 @@
                 <div class="hv-tb-right">
                     <a href="tel:+919211221553" class="hv-tb-sos"><i class="fa-solid fa-phone-volume"></i>
                         <span class="hv-tb-txt">24&times;7 Emergency</span> +91 9211221553</a>
-                    <a href="https://wa.me/919211221551"><i class="fa-brands fa-whatsapp"></i>
+                    <a href="https://wa.me/919211221551" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-whatsapp"></i>
                         <span class="hv-tb-txt">WhatsApp</span></a>
                     <a href="mailto:info@advityahealthcares.com"><i class="fa-regular fa-envelope"></i>
                         <span class="hv-tb-txt">info@advityahealthcares.com</span></a>
@@ -134,8 +135,7 @@
                         <div class="mega-col">
                             <h4>Appointments &amp; Care</h4>
                             <a href="patient-services.html">All Patient Services</a>
-                            <a href="contact.html#appointment">Book an Appointment</a>
-                            <a href="patient-services.html#health-packages">Preventive Health Packages</a>
+<a href="patient-services.html#health-packages">Preventive Health Packages</a>
                             <a href="patient-services.html#insurance">Insurance, Cashless &amp; TPA</a>
                             <a href="patient-services.html#rooms">Rooms, Wards &amp; ICU</a>
                             <a href="opd-schedule.html">OPD Schedule</a>
@@ -184,13 +184,14 @@
     <section class="pg-hero is-centered">
         <div class="container">
             <span class="pg-eyebrow" data-aos="fade-up">Advitya Hospital Baruipur</span>
-            <h1 data-aos="fade-up" data-aos-delay="60">Meet Our <span>Experts</span></h1>
+            <nav class="xp-crumb" aria-label="Breadcrumb" data-aos="fade-up">
+                <a href="index.html">Home</a> <i class="fa-solid fa-angle-right" aria-hidden="true"></i> <span>Find a Doctor</span>
+            </nav>
+            <h1 data-aos="fade-up" data-aos-delay="60">Find a <span>Doctor</span></h1>
             <p class="pg-lede" data-aos="fade-up" data-aos-delay="120">Consultants at Advitya Hospital Baruipur, with
                 their speciality, qualifications and OPD schedule.</p>
             <div class="pg-hero-acts" data-aos="fade-up" data-aos-delay="180">
-                <a href="advitya-hospital-baruipur.html#appointment" class="btn btn-premium">
-                    <i class="fa-regular fa-calendar-check"></i> Book an Appointment</a>
-                <a href="tel:+919211221552" class="hv-ghost">
+<a href="tel:+919211221552" class="hv-ghost">
                     <i class="fa-solid fa-phone"></i> Call +91 9211221552</a>
             </div>
         </div>
@@ -200,34 +201,46 @@
         <div class="container">
             <div class="xp-head" data-aos="fade-up">
                 <div class="xp-title">
-                    <h2>Our Experts &amp; Doctors</h2>
+                    <h2>Our Experts / Doctors</h2>
                     <span class="xp-rule" aria-hidden="true"></span>
                 </div>
                 <div class="xp-tools">
-                    <label class="xp-field">
+                    <label class="xp-field is-lead">
+                        <span class="xp-field-label">Search by Speciality</span>
                         <i class="fa-solid fa-stethoscope" aria-hidden="true"></i>
                         <select id="xpSpec" aria-label="Search by speciality">
                             <option value="all">All specialities</option>
-                            <option value="gastro">Surgical Gastroenterology</option>
+                            <option value="anaes">Anaesthesia</option>
+                            <option value="cardio">Cardiology</option>
+                            <option value="ent">ENT</option>
                             <option value="general">General Surgery</option>
+                            <option value="gyn">Gynaecology</option>
+                            <option value="medicine">Internal Medicine</option>
+                            <option value="nephro">Nephrology</option>
+                            <option value="medgastro">Medical Gastroenterology</option>
+                            <option value="onco">Medical Oncology</option>
                             <option value="ortho">Orthopaedics</option>
+                            <option value="paedsurg">Paediatric Surgery</option>
+                            <option value="plastic">Plastic Surgery</option>
+                            <option value="gastro">Surgical Gastroenterology &amp; GI Surgery</option>
+                            <option value="uro">Urology</option>
                         </select>
                     </label>
                     <label class="xp-field">
+                        <span class="xp-field-label">Search by Doctor</span>
                         <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
                         <input type="search" id="xpName" placeholder="Search by doctor name" aria-label="Search by doctor name" autocomplete="off">
                     </label>
                 </div>
             </div>
 
-            <p class="xp-count" aria-live="polite">Showing 5 doctors</p>
+            <p class="xp-count" aria-live="polite">Showing 19 doctors</p>
 
             <div class="xp-grid">
-                <!-- Dr. Deeksha Kapoor -->
                 <article class="xp-card" id="dr-deeksha-kapoor" data-spec="gastro" data-name="dr. deeksha kapoor" data-aos="fade-up">
                     <div class="xp-photo">
                         <span class="xp-badge">CEO &amp; Medical Head</span>
-                        <img src="images/team_deeksha_kapoor.png" alt="Dr. Deeksha Kapoor" loading="lazy">
+                        <img src="images/dr-deeksha-kapoor-1024.webp" width="1023" height="1537" alt="Dr. Deeksha Kapoor" loading="lazy">
                     </div>
                     <div class="xp-info">
                         <h3>Dr. Deeksha Kapoor</h3>
@@ -241,7 +254,7 @@
                         <div class="xp-dlg">
                             <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
                             <header class="xp-dlg-head">
-                                <div class="xp-dlg-photo"><img src="images/team_deeksha_kapoor.png" alt="" loading="lazy"></div>
+                                <div class="xp-dlg-photo"><img src="images/dr-deeksha-kapoor-1024.webp" alt="" loading="lazy"></div>
                                 <div>
                                     <span class="xp-dlg-badge">CEO &amp; Medical Head</span>
                                     <h2 id="profile-dr-deeksha-kapoor-title">Dr. Deeksha Kapoor</h2>
@@ -283,8 +296,6 @@
                         </div>
                     </dialog>
                 </article>
-
-                <!-- Dr. Agniva Mukhopadhyay -->
                 <article class="xp-card" id="dr-agniva-mukhopadhyay" data-spec="general" data-name="dr. agniva mukhopadhyay" data-aos="fade-up" data-aos-delay="60">
                     <div class="xp-photo is-initials">
                         <span class="xp-initials" role="img" aria-label="Photo of Dr. Agniva Mukhopadhyay to be added">AM</span>
@@ -337,8 +348,307 @@
                         </div>
                     </dialog>
                 </article>
-
-                <!-- Dr. Joydeep Mondal -->
+                <article class="xp-card" id="dr-ratan" data-spec="general" data-name="dr. ratan" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Ratan to be added">R</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Ratan</h3>
+                        <p class="xp-spec">General Surgery</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-ratan"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Ratan&amp;dept=General%20Surgery#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-ratan" aria-labelledby="profile-dr-ratan-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">R</div>
+                                <div>
+                                    <h2 id="profile-dr-ratan-title">Dr. Ratan</h2>
+                                    <p class="xp-spec">General Surgery</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Ratan consults in General Surgery at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Ratan&amp;dept=General%20Surgery#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-soumen" data-spec="general" data-name="dr. soumen" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Soumen to be added">S</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Soumen</h3>
+                        <p class="xp-spec">General Surgery</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-soumen"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Soumen&amp;dept=General%20Surgery#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-soumen" aria-labelledby="profile-dr-soumen-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">S</div>
+                                <div>
+                                    <h2 id="profile-dr-soumen-title">Dr. Soumen</h2>
+                                    <p class="xp-spec">General Surgery</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Soumen consults in General Surgery at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Soumen&amp;dept=General%20Surgery#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-abhishek-sinha" data-spec="medgastro" data-name="dr. abhishek sinha" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Abhishek Sinha to be added">AS</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Abhishek Sinha</h3>
+                        <p class="xp-spec">Medical Gastroenterology</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-abhishek-sinha"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Abhishek%20Sinha&amp;dept=Medical%20Gastroenterology#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-abhishek-sinha" aria-labelledby="profile-dr-abhishek-sinha-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">AS</div>
+                                <div>
+                                    <h2 id="profile-dr-abhishek-sinha-title">Dr. Abhishek Sinha</h2>
+                                    <p class="xp-spec">Medical Gastroenterology</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Abhishek Sinha consults in Medical Gastroenterology at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Abhishek%20Sinha&amp;dept=Medical%20Gastroenterology#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-suman-meyur" data-spec="onco" data-name="dr. suman meyur" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Suman Meyur to be added">SM</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Suman Meyur</h3>
+                        <p class="xp-spec">Medical Oncology</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-suman-meyur"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Suman%20Meyur&amp;dept=Medical%20Oncology#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-suman-meyur" aria-labelledby="profile-dr-suman-meyur-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">SM</div>
+                                <div>
+                                    <h2 id="profile-dr-suman-meyur-title">Dr. Suman Meyur</h2>
+                                    <p class="xp-spec">Medical Oncology</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Suman Meyur consults in Medical Oncology at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Suman%20Meyur&amp;dept=Medical%20Oncology#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-anik-ghosh" data-spec="uro" data-name="dr. anik ghosh" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Anik Ghosh to be added">AG</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Anik Ghosh</h3>
+                        <p class="xp-spec">Urology</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-anik-ghosh"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Anik%20Ghosh&amp;dept=Urology#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-anik-ghosh" aria-labelledby="profile-dr-anik-ghosh-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">AG</div>
+                                <div>
+                                    <h2 id="profile-dr-anik-ghosh-title">Dr. Anik Ghosh</h2>
+                                    <p class="xp-spec">Urology</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Anik Ghosh consults in Urology at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Anik%20Ghosh&amp;dept=Urology#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-prabir-basu" data-spec="uro" data-name="dr. prabir basu" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Prabir Basu to be added">PB</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Prabir Basu</h3>
+                        <p class="xp-spec">Urology</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-prabir-basu"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Prabir%20Basu&amp;dept=Urology#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-prabir-basu" aria-labelledby="profile-dr-prabir-basu-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">PB</div>
+                                <div>
+                                    <h2 id="profile-dr-prabir-basu-title">Dr. Prabir Basu</h2>
+                                    <p class="xp-spec">Urology</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Prabir Basu consults in Urology at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Prabir%20Basu&amp;dept=Urology#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-abhishek-naskar" data-spec="cardio" data-name="dr. abhishek naskar" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Abhishek Naskar to be added">AN</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Abhishek Naskar</h3>
+                        <p class="xp-spec">Cardiology</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-abhishek-naskar"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Abhishek%20Naskar&amp;dept=Cardiology#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-abhishek-naskar" aria-labelledby="profile-dr-abhishek-naskar-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">AN</div>
+                                <div>
+                                    <h2 id="profile-dr-abhishek-naskar-title">Dr. Abhishek Naskar</h2>
+                                    <p class="xp-spec">Cardiology</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Abhishek Naskar consults in Cardiology at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Abhishek%20Naskar&amp;dept=Cardiology#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
                 <article class="xp-card" id="dr-joydeep-mondal" data-spec="ortho" data-name="dr. joydeep mondal" data-aos="fade-up" data-aos-delay="120">
                     <div class="xp-photo is-initials">
                         <span class="xp-initials" role="img" aria-label="Photo of Dr. Joydeep Mondal to be added">JM</span>
@@ -382,8 +692,6 @@
                         </div>
                     </dialog>
                 </article>
-
-                <!-- Dr. Suday Mukhopadhyay -->
                 <article class="xp-card" id="dr-suday-mukhopadhyay" data-spec="ortho" data-name="dr. suday mukhopadhyay" data-aos="fade-up" data-aos-delay="180">
                     <div class="xp-photo is-initials">
                         <span class="xp-initials" role="img" aria-label="Photo of Dr. Suday Mukhopadhyay to be added">SM</span>
@@ -436,8 +744,6 @@
                         </div>
                     </dialog>
                 </article>
-
-                <!-- Dr. Pradyumna Chakraborty -->
                 <article class="xp-card" id="dr-pradyumna-chakraborty" data-spec="ortho" data-name="dr. pradyumna chakraborty" data-aos="fade-up" data-aos-delay="240">
                     <div class="xp-photo is-initials">
                         <span class="xp-initials" role="img" aria-label="Photo of Dr. Pradyumna Chakraborty to be added">PC</span>
@@ -490,13 +796,315 @@
                         </div>
                     </dialog>
                 </article>
+                <article class="xp-card" id="dr-akanksh" data-spec="ortho" data-name="dr. akanksh" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Akanksh to be added">A</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Akanksh</h3>
+                        <p class="xp-spec">Orthopaedics</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-akanksh"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Akanksh&amp;dept=Orthopaedics#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-akanksh" aria-labelledby="profile-dr-akanksh-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">A</div>
+                                <div>
+                                    <h2 id="profile-dr-akanksh-title">Dr. Akanksh</h2>
+                                    <p class="xp-spec">Orthopaedics</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Akanksh consults in Orthopaedics at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Akanksh&amp;dept=Orthopaedics#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-alapan" data-spec="gyn" data-name="dr. alapan" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Alapan to be added">A</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Alapan</h3>
+                        <p class="xp-spec">Gynaecology</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-alapan"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Alapan&amp;dept=Gynaecology#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-alapan" aria-labelledby="profile-dr-alapan-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">A</div>
+                                <div>
+                                    <h2 id="profile-dr-alapan-title">Dr. Alapan</h2>
+                                    <p class="xp-spec">Gynaecology</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Alapan consults in Gynaecology at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Alapan&amp;dept=Gynaecology#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-debjyoti" data-spec="ent" data-name="dr. debjyoti" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Debjyoti to be added">D</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Debjyoti</h3>
+                        <p class="xp-spec">ENT</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-debjyoti"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Debjyoti&amp;dept=ENT#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-debjyoti" aria-labelledby="profile-dr-debjyoti-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">D</div>
+                                <div>
+                                    <h2 id="profile-dr-debjyoti-title">Dr. Debjyoti</h2>
+                                    <p class="xp-spec">ENT</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Debjyoti consults in ENT at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Debjyoti&amp;dept=ENT#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-m-m-mondal" data-spec="medicine" data-name="dr. m m mondal" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. M M Mondal to be added">MM</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. M M Mondal</h3>
+                        <p class="xp-spec">Internal Medicine</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-m-m-mondal"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20M%20M%20Mondal&amp;dept=Internal%20Medicine#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-m-m-mondal" aria-labelledby="profile-dr-m-m-mondal-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">MM</div>
+                                <div>
+                                    <h2 id="profile-dr-m-m-mondal-title">Dr. M M Mondal</h2>
+                                    <p class="xp-spec">Internal Medicine</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. M M Mondal consults in Internal Medicine at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20M%20M%20Mondal&amp;dept=Internal%20Medicine#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-sabir-ahmed" data-spec="medicine" data-name="dr. sabir ahmed" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Sabir Ahmed to be added">SA</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Sabir Ahmed</h3>
+                        <p class="xp-spec">Internal Medicine</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-sabir-ahmed"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Sabir%20Ahmed&amp;dept=Internal%20Medicine#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-sabir-ahmed" aria-labelledby="profile-dr-sabir-ahmed-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">SA</div>
+                                <div>
+                                    <h2 id="profile-dr-sabir-ahmed-title">Dr. Sabir Ahmed</h2>
+                                    <p class="xp-spec">Internal Medicine</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Sabir Ahmed consults in Internal Medicine at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Sabir%20Ahmed&amp;dept=Internal%20Medicine#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-joydeb-roy" data-spec="anaes" data-name="dr. joydeb roy" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Joydeb Roy to be added">JR</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Joydeb Roy</h3>
+                        <p class="xp-spec">Anaesthesia</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-joydeb-roy"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Joydeb%20Roy&amp;dept=Anaesthesia#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-joydeb-roy" aria-labelledby="profile-dr-joydeb-roy-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">JR</div>
+                                <div>
+                                    <h2 id="profile-dr-joydeb-roy-title">Dr. Joydeb Roy</h2>
+                                    <p class="xp-spec">Anaesthesia</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Joydeb Roy consults in Anaesthesia at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Joydeb%20Roy&amp;dept=Anaesthesia#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
+                <article class="xp-card" id="dr-saikat" data-spec="paedsurg" data-name="dr. saikat" data-aos="fade-up">
+                    <div class="xp-photo is-initials">
+                        <span class="xp-initials" role="img" aria-label="Photo of Dr. Saikat to be added">S</span>
+                    </div>
+                    <div class="xp-info">
+                        <h3>Dr. Saikat</h3>
+                        <p class="xp-spec">Paediatric Surgery</p>
+                        <div class="xp-acts">
+                            <button type="button" class="xp-btn is-line" data-profile="profile-dr-saikat"><i class="fa-regular fa-id-card" aria-hidden="true"></i> View Profile</button>
+                            <a class="xp-btn" href="advitya-hospital-baruipur.html?doctor=Dr.%20Saikat&amp;dept=Paediatric%20Surgery#appointment"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Appointment</a>
+                        </div>
+                    </div>
+                    <dialog class="xp-dialog" id="profile-dr-saikat" aria-labelledby="profile-dr-saikat-title">
+                        <div class="xp-dlg">
+                            <button type="button" class="xp-close" data-close aria-label="Close profile"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+                            <header class="xp-dlg-head">
+                                <div class="xp-dlg-photo" aria-hidden="true">S</div>
+                                <div>
+                                    <h2 id="profile-dr-saikat-title">Dr. Saikat</h2>
+                                    <p class="xp-spec">Paediatric Surgery</p>
+                                </div>
+                            </header>
+                            <div class="xp-dlg-body">
+                                <section class="xp-sec">
+                                    <h4>Qualifications</h4>
+                                    <p class="tbd"><i class="fa-regular fa-clock" aria-hidden="true"></i> Qualifications will be updated soon</p>
+                                </section>
+                                <section class="xp-sec">
+                                    <h4>About</h4>
+                                    <p>Dr. Saikat consults in Paediatric Surgery at Advitya Hospital Baruipur. A detailed profile will be added once it is confirmed.</p>
+                                </section>
+                                <section class="xp-sec xp-opd">
+                                    <h4>OPD schedule</h4>
+                                    <p class="tbd"><i class="fa-regular fa-calendar" aria-hidden="true"></i> OPD schedule will be published soon</p>
+                                </section>
+                            </div>
+                            <footer class="xp-dlg-acts">
+                                <a href="advitya-hospital-baruipur.html?doctor=Dr.%20Saikat&amp;dept=Paediatric%20Surgery#appointment" class="btn btn-premium"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book appointment</a>
+                                <a href="tel:+919211221552" class="hv-ghost"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call hospital</a>
+                            </footer>
+                        </div>
+                    </dialog>
+                </article>
             </div>
 
             <p class="xp-empty" hidden>No doctor matches your search. Call the hospital on
                 <a href="tel:+919211221552">+91 9211221552</a> and the team will guide you.</p>
 
             <p class="dept-note">Qualifications and OPD schedules are published only after they are confirmed.
-                More doctors will be added here.</p>
+                Nephrology and Plastic Surgery consultants will be listed here once their details are confirmed.
+                For help choosing a doctor, call <a href="tel:+919211221552">+91 9211221552</a>.</p>
         </div>
     </section>
 
@@ -532,10 +1140,12 @@
                 });
                 if (count) count.textContent = 'Showing ' + shown + (shown === 1 ? ' doctor' : ' doctors');
                 if (empty) empty.hidden = shown > 0;
+
             }
 
             if (spec) spec.addEventListener('change', apply);
             if (name) name.addEventListener('input', apply);
+
 
             function lock(on) {
                 // modal-open also hides the floating call / WhatsApp discs and the mobile bar
@@ -643,7 +1253,7 @@
                     <p>Advitya Healthcares Pvt Ltd builds accessible specialist and hospital care through owned
                         facilities, clinical programmes and healthcare partnerships.</p>
                     <div class="hv-social">
-                        <a href="https://wa.me/919211221551" aria-label="WhatsApp"><i
+                        <a href="https://wa.me/919211221551" aria-label="WhatsApp" target="_blank" rel="noopener noreferrer"><i
                                 class="fa-brands fa-whatsapp"></i></a>
                         <a href="mailto:info@advityahealthcares.com" aria-label="Email Advitya Healthcares"><i
                                 class="fa-regular fa-envelope"></i></a>
@@ -722,7 +1332,7 @@
         </div>
     </footer>
 
-    <a href="https://wa.me/919211221551" class="hv-wa" aria-label="Chat on WhatsApp">
+    <a href="https://wa.me/919211221551" class="hv-wa" aria-label="Chat on WhatsApp" target="_blank" rel="noopener noreferrer">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
@@ -744,6 +1354,8 @@
     <script src="js/site-search.js?v=1"></script>
     <script src="js/mail-link.js?v=2"></script>
     <script src="js/contact-modal.js?v=4"></script>
+    <script src="js/crm-config.js?v=1"></script>
+    <script src="js/crm-lead.js?v=1"></script>
     <script src="js/appointment-form.js?v=1"></script>
 </body>
 

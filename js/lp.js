@@ -254,6 +254,40 @@
                 window.setTimeout(toThankYou, 900);
             }
 
+            /* The CRM (js/crm-lead.js, keyed in js/crm-config.js) is tried
+               first. Only if it is switched off or unreachable does the
+               enquiry fall back to the custom endpoint or to mail, so a
+               lead is never dropped. */
+            function sendToCRM(p, button) {
+                if (button) {
+                    button.disabled = true;
+                    button.setAttribute('aria-busy', 'true');
+                }
+                return window.AdvCRM.post({
+                    name: p.name,
+                    phone: p.phone,
+                    email: p.email,
+                    city: CFG.city || '',
+                    product: p.service || p.condition,
+                    title: 'Consultation request',
+                    lines: {
+                        'Service': p.service,
+                        'Page': p.slug || p.page_url,
+                        'Condition': p.condition,
+                        'Preferred date': p.preferred_date,
+                        'Preferred time': p.preferred_time,
+                        'Message': p.message,
+                        'Consent to contact': p.consent ? 'Yes' : 'No'
+                    }
+                }).then(function (ok) {
+                    if (button) {
+                        button.disabled = false;
+                        button.removeAttribute('aria-busy');
+                    }
+                    return ok;
+                });
+            }
+
             function sendToEndpoint(p, button) {
                 if (button) {
                     button.disabled = true;
@@ -288,14 +322,23 @@
                 if (!validate()) return;
 
                 var data = payload(new FormData(form));
+                var button = form.querySelector('button[type="submit"]');
+                var usingCRM = !!(window.AdvCRM && window.AdvCRM.enabled());
                 var usingEndpoint = !!(CFG.formEndpoint && CFG.formEndpoint.length);
-                var method = usingEndpoint ? 'endpoint' : 'email';
+                var method = usingCRM ? 'crm' : (usingEndpoint ? 'endpoint' : 'email');
 
                 push('generate_lead', { form_id: 'appointment', method: method });
                 push('form_submit', { form_id: 'appointment', method: method });
 
-                if (usingEndpoint) {
-                    sendToEndpoint(data, form.querySelector('button[type="submit"]'));
+                if (usingCRM) {
+                    sendToCRM(data, button).then(function (ok) {
+                        if (ok) { toThankYou(); return; }
+                        push('form_endpoint_error', { form_id: 'appointment', error: 'crm' });
+                        if (usingEndpoint) sendToEndpoint(data, button);
+                        else sendByMail(data);
+                    });
+                } else if (usingEndpoint) {
+                    sendToEndpoint(data, button);
                 } else {
                     sendByMail(data);
                 }

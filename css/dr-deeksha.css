@@ -4878,3 +4878,1178 @@ body.dk .dk-quick a:hover .dk-quick-ic {
         gap: 0;
     }
 }
+
+/* ---------------- awards & distinctions ---------------- */
+.dk-award-sub {
+    margin: 6px 0 10px !important;
+    font-family: var(--dk-head);
+    font-weight: 700;
+    color: #F4DC9A;
+    font-size: .95rem;
+}
+
+.dk-award-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 4px;
+}
+
+.dk-award-when {
+    font-family: var(--dk-serif);
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--dk-brand);
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1;
+    white-space: nowrap;
+}
+
+.dk-award-rank {
+    display: inline-grid;
+    place-items: center;
+    min-width: 34px;
+    height: 26px;
+    padding: 0 9px;
+    border-radius: 999px;
+    background: #FFF7E3;
+    border: 1px solid #F0DFA8;
+    color: #8A6A1C;
+    font-family: var(--dk-head);
+    font-weight: 800;
+    font-size: .74rem;
+}
+
+.dk-award-where {
+    margin: 0 !important;
+    font-weight: 600;
+    color: var(--dk-body);
+    font-size: .88rem;
+}
+
+.dk-award-topic {
+    margin: 6px 0 0 !important;
+    font-size: .84rem;
+    color: var(--dk-muted);
+    line-height: 1.55;
+}
+
+.dk-award-topic span {
+    font-family: var(--dk-head);
+    font-weight: 700;
+    color: var(--dk-brand);
+}
+
+/* academic foundation */
+.dk-acad {
+    margin-top: 28px;
+    padding: 26px 28px;
+    border-radius: 16px;
+    background: var(--dk-ivory, #FBF7F2);
+    border: 1px dashed rgba(142, 27, 46, .22);
+}
+
+.dk-acad > h3 {
+    font-size: .78rem;
+    font-weight: 800;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--dk-muted);
+    margin-bottom: 18px;
+}
+
+.dk-acad-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.dk-acad-card h4 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+.dk-acad-card h4 i {
+    color: var(--dk-brand);
+}
+
+.dk-acad-card ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 8px;
+}
+
+.dk-acad-card li {
+    position: relative;
+    padding-left: 20px;
+    font-size: .92rem;
+    color: var(--dk-body);
+}
+
+.dk-acad-card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55em;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--dk-accent);
+}
+
+@media (max-width: 720px) {
+    .dk-acad-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* group label rule must not reach the card titles inside it */
+.dk-award-group > h3 {
+    font-size: .76rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--dk-muted);
+    margin-bottom: 14px;
+}
+
+.dk-award-grid .dk-award h3 {
+    font-size: 1.02rem;
+    font-weight: 800;
+    letter-spacing: -.005em;
+    text-transform: none;
+    color: var(--dk-ink);
+    margin-bottom: 6px;
+}
+
+/* ---------------- book chapters ---------------- */
+.dk-chap2 {
+    grid-template-columns: auto minmax(0, 1fr);
+    gap: 16px;
+    padding: 24px;
+    transition: transform .3s var(--dk-ease), box-shadow .3s var(--dk-ease), border-color .3s;
+}
+
+.dk-chap2:hover {
+    transform: translateY(-3px);
+    border-color: rgba(142, 27, 46, .2);
+    box-shadow: 0 20px 38px -24px rgba(94, 16, 25, .45);
+}
+
+.dk-chap-ic {
+    flex: none;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    background: #FBEDEE;
+    color: var(--dk-brand);
+    font-size: 1.05rem;
+}
+
+.dk-chapters .dk-chap2 h3 {
+    font-size: 1.05rem;
+    font-weight: 800;
+    line-height: 1.35;
+    margin-bottom: 10px;
+}
+
+.dk-chap-in,
+.dk-chap-line {
+    margin: 0 0 4px !important;
+    font-size: .88rem;
+    line-height: 1.55;
+    color: var(--dk-muted);
+}
+
+.dk-chap-in {
+    color: var(--dk-body);
+    font-weight: 600;
+}
+
+.dk-chap-in span,
+.dk-chap-line span {
+    font-family: var(--dk-head);
+    font-weight: 700;
+    color: var(--dk-brand);
+}
+
+@media (max-width: 720px) {
+    .dk-chap2 {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 12px;
+    }
+}
+
+/* ===================================================================
+   Navbar: crimson topline, monogram wordmark, centred pill menu,
+   Contact Me button. Replaces the old header + sticky section menu.
+   =================================================================== */
+.dk-topline {
+    height: 6px;
+    background: var(--adv-grad-brand);
+}
+
+.dk-head,
+.dk-head.is-scrolled {
+    background: rgba(255, 255, 255, .97);
+    border-bottom: 1px solid var(--dk-line);
+}
+
+.dk-head-in {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 74px;
+}
+
+/* wordmark */
+.dk-brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    flex: none;
+}
+
+.dk-brand img {
+    width: 34px;
+    height: auto;
+}
+
+body.dk .dk-brand span {
+    font-family: var(--dk-serif);
+    font-weight: 700;
+    font-size: clamp(1.25rem, 1.8vw, 1.6rem);
+    letter-spacing: -.01em;
+    color: var(--dk-brand);
+    white-space: nowrap;
+}
+
+/* pill menu */
+.dk-nav ul {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    margin: 0;
+    padding: 5px;
+    list-style: none;
+    border-radius: 999px;
+    background: #FFF8F6;
+    border: 1px solid var(--dk-line);
+    overflow-x: auto;
+    scrollbar-width: none;
+    max-width: 100%;
+}
+
+.dk-nav ul::-webkit-scrollbar {
+    display: none;
+}
+
+body.dk .dk-nav a {
+    position: relative;
+    display: block;
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-family: var(--dk-sans);
+    font-weight: 600;
+    font-size: .92rem;
+    color: var(--dk-ink);
+    white-space: nowrap;
+    transition: background .25s, color .25s;
+}
+
+body.dk .dk-nav a:hover {
+    color: var(--dk-brand);
+}
+
+body.dk .dk-nav a.is-active {
+    background: #FBEDEE;
+    color: var(--dk-brand);
+}
+
+body.dk .dk-nav a.is-active::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 3px;
+    width: 4px;
+    height: 4px;
+    margin-left: -2px;
+    border-radius: 50%;
+    background: var(--dk-brand);
+}
+
+/* contact button */
+body.dk .dk-contact-btn {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 12px 22px;
+    border-radius: 999px;
+    background: var(--adv-grad-brand);
+    color: #fff;
+    font-family: var(--dk-head);
+    font-weight: 700;
+    font-size: .92rem;
+    box-shadow: 0 10px 22px -12px rgba(120, 12, 12, .6);
+    transition: transform .25s var(--dk-ease), box-shadow .25s;
+}
+
+body.dk .dk-contact-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 16px 28px -14px rgba(120, 12, 12, .7);
+}
+
+/* anchor offsets follow the single bar */
+html {
+    scroll-padding-top: 100px;
+}
+
+@media (max-width: 1180px) {
+    body.dk .dk-nav a {
+        padding: 9px 12px;
+        font-size: .86rem;
+    }
+
+    body.dk .dk-brand span {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 980px) {
+    .dk-head-in {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding-bottom: 10px;
+    }
+
+    .dk-nav {
+        order: 3;
+        width: 100%;
+    }
+
+    .dk-nav ul {
+        justify-content: flex-start;
+    }
+
+    html {
+        scroll-padding-top: 150px;
+    }
+}
+
+@media (max-width: 520px) {
+    body.dk .dk-brand span {
+        font-size: 1.05rem;
+    }
+
+    body.dk .dk-contact-btn {
+        padding: 10px 16px;
+        font-size: .84rem;
+    }
+}
+
+/* ===================================================================
+   Footer: gold topline, maroon ground, monogram wordmark, gold serif
+   headings, bulleted nav, visits pill and gold back-to-top.
+   =================================================================== */
+.dk-foot {
+    position: relative;
+    background: #3A0007;
+    border-top: 6px solid #FFD600;
+    padding: 56px 0 0;
+}
+
+.dk-foot-grid {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1.1fr) minmax(0, 1fr);
+    gap: 40px;
+    padding-bottom: 44px;
+}
+
+.dk-foot-mark {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: #fff;
+    flex: none;
+}
+
+.dk-foot-mark img {
+    width: 24px;
+    height: auto;
+}
+
+.dk-foot-brand b {
+    font-family: var(--dk-head);
+    font-weight: 800;
+    font-size: 1.22rem;
+    letter-spacing: -.01em;
+}
+
+.dk-foot-brand span {
+    color: #FFD600;
+    font-family: var(--dk-head);
+    font-weight: 700;
+    font-size: .72rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    margin-top: 3px;
+}
+
+.dk-foot-about p {
+    margin-top: 18px;
+    color: rgba(255, 255, 255, .72);
+}
+
+.dk-foot-col h4 {
+    font-family: var(--dk-serif);
+    font-weight: 700;
+    font-size: 1.35rem;
+    letter-spacing: 0;
+    text-transform: none;
+    color: #FFD600;
+    margin-bottom: 18px;
+}
+
+.dk-foot-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 22px;
+}
+
+.dk-foot-nav li {
+    position: relative;
+    padding-left: 16px;
+}
+
+.dk-foot-nav li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .55em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #D9A441;
+}
+
+body.dk .dk-foot-mail {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: rgba(255, 255, 255, .82);
+    font-size: .92rem;
+    overflow-wrap: anywhere;
+}
+
+body.dk .dk-foot-mail i {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+    display: grid;
+    place-items: center;
+    background: rgba(255, 255, 255, .08);
+    color: #fff;
+    flex: none;
+}
+
+body.dk .dk-foot-mail:hover {
+    color: #fff;
+}
+
+.dk-foot-copy {
+    margin-top: 0;
+    padding: 20px 0 24px;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    align-items: center;
+}
+
+.dk-visits {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: rgba(0, 0, 0, .35);
+    border: 1px solid rgba(255, 255, 255, .1);
+    color: rgba(255, 255, 255, .7);
+    font-size: .78rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.dk-visits i {
+    color: #FFD600;
+}
+
+.dk-visits b {
+    color: #fff;
+    font-size: .95rem;
+    letter-spacing: 0;
+}
+
+/* back to top: gold ring, sits by the footer bar */
+.dk-top {
+    background: #4A0A10;
+    border: 2px solid #FFD600;
+    color: #FFD600;
+    box-shadow: 0 14px 30px -12px rgba(0, 0, 0, .6);
+}
+
+@media (max-width: 900px) {
+    .dk-foot-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 30px;
+    }
+
+    .dk-foot-about {
+        grid-column: auto;
+    }
+}
+
+@media (max-width: 520px) {
+    .dk-foot-nav {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/* footer monogram: fill the white disc instead of floating small inside it */
+.dk-foot-mark {
+    width: 54px;
+    height: 54px;
+    padding: 7px;
+    box-shadow: 0 0 0 2px rgba(255, 214, 0, .35);
+}
+
+.dk-foot-mark img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* navbar monogram a touch larger to match the wordmark */
+.dk-brand img {
+    width: 40px;
+}
+
+/* ===================================================================
+   One voice for headings: the serif used for her name now carries every
+   heading and card title on the page. Body copy, labels, buttons and
+   small caps stay in the sans faces, which read better at small sizes.
+   =================================================================== */
+body.dk h1,
+body.dk h2,
+body.dk h3,
+body.dk h4,
+body.dk .dk-sec-head h2,
+body.dk .dk-edu-card h3,
+body.dk .dk-globe2 h3,
+body.dk .dk-award h3,
+body.dk .dk-role h3,
+body.dk .dk-chapters .dk-chap2 h3,
+body.dk .dk-pub h3,
+body.dk .dk-panel > h3,
+body.dk .dk-vis-card h3,
+body.dk .dk-acad-card h4,
+body.dk .dk-tl h3,
+body.dk .dk-appt-card h3,
+body.dk .dk-foot-brand b {
+    font-family: var(--dk-serif);
+    letter-spacing: -.005em;
+}
+
+/* the serif runs lighter than Manrope, so headings gain a little weight
+   and size to hold the same presence */
+body.dk .dk-edu-card h3,
+body.dk .dk-globe2 h3,
+body.dk .dk-award h3,
+body.dk .dk-role h3,
+body.dk .dk-chapters .dk-chap2 h3,
+body.dk .dk-pub h3,
+body.dk .dk-vis-card h3,
+body.dk .dk-tl h3,
+body.dk .dk-appt-card h3 {
+    font-weight: 700;
+    font-size: 1.22rem;
+    line-height: 1.25;
+}
+
+body.dk .dk-panel > h3,
+body.dk .dk-acad-card h4 {
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
+body.dk .dk-foot-brand b {
+    font-size: 1.4rem;
+}
+
+/* numerals inside serif headings stay aligned rather than old-style */
+body.dk h1,
+body.dk h2,
+body.dk h3,
+body.dk h4 {
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1;
+}
+
+/* ===================================================================
+   Whole page in the serif. Everything, body copy, labels, buttons and
+   navigation included, uses Cormorant Garamond. The face runs light
+   and small for its point size, so body text is stepped up and small
+   uppercase labels keep a heavier weight to stay legible.
+   =================================================================== */
+body.dk,
+body.dk button,
+body.dk input,
+body.dk select,
+body.dk textarea {
+    font-family: var(--dk-serif);
+}
+
+body.dk {
+    font-size: 1.16rem;
+    line-height: 1.6;
+    font-variant-numeric: lining-nums;
+    font-feature-settings: "lnum" 1;
+}
+
+/* anything that was set in the sans faces by name */
+body.dk [class^="dk-"],
+body.dk [class*=" dk-"],
+body.dk .dk-btn,
+body.dk .dk-nav a,
+body.dk .dk-contact-btn,
+body.dk .dk-more,
+body.dk .dk-quick b,
+body.dk .dk-ed-creds-list li,
+body.dk .dk-ed-role,
+body.dk .dk-lede,
+body.dk .dk-hero .dk-ed-lede {
+    font-family: var(--dk-serif);
+}
+
+/* body copy: the serif needs more size and weight than Inter did */
+body.dk p,
+body.dk li,
+body.dk dd,
+body.dk .dk-lede,
+body.dk .dk-hero .dk-ed-lede,
+body.dk .dk-edu-where,
+body.dk .dk-edu-note,
+body.dk .dk-globe2 p,
+body.dk .dk-vis-card p,
+body.dk .dk-chap-in,
+body.dk .dk-chap-line,
+body.dk .dk-award-where,
+body.dk .dk-award-topic,
+body.dk .dk-pub-meta,
+body.dk .dk-talks span,
+body.dk .dk-foot-about p {
+    font-size: 1.08rem;
+    line-height: 1.62;
+    font-weight: 500;
+}
+
+body.dk .dk-hero .dk-ed-lede {
+    font-size: 1.24rem;
+}
+
+/* small uppercase labels: heavier and wider, or the serif disappears */
+body.dk .dk-tag,
+body.dk .dk-edu-tag,
+body.dk .dk-quick b,
+body.dk .dk-aff-sub,
+body.dk .dk-aff-verified,
+body.dk .dk-visits,
+body.dk .dk-foot-brand span,
+body.dk .dk-award-group > h3,
+body.dk .dk-acad > h3,
+body.dk .dk-early h3,
+body.dk .dk-talks-sub,
+body.dk .dk-pub-type,
+body.dk .dk-focus span,
+body.dk .dk-ed-stats span,
+body.dk .dk-chap-in span,
+body.dk .dk-chap-line span,
+body.dk .dk-ribbon-track span {
+    font-weight: 700;
+    letter-spacing: .1em;
+}
+
+/* buttons and links that act like buttons */
+body.dk .dk-btn,
+body.dk .dk-contact-btn,
+body.dk .dk-more,
+body.dk .dk-ed-link,
+body.dk .dk-nav a,
+body.dk .dk-sticky a,
+body.dk .dk-foot-mail,
+body.dk .dk-pub-links a,
+body.dk .dk-featured-meta a {
+    font-weight: 700;
+    font-size: 1.02rem;
+}
+
+body.dk .dk-nav a {
+    font-size: 1.05rem;
+}
+
+/* credential lines and card body in the hero */
+body.dk .dk-ed-creds-list li {
+    font-size: 1.14rem;
+    font-weight: 700;
+}
+
+/* ===================================================================
+   Legibility pass for the serif. The face is light by design, so the
+   page needs more weight, a darker ink and a little more size before it
+   reads as cleanly as the sans did.
+   =================================================================== */
+:root {
+    --dk-body: #3A2A2B;
+    --dk-muted: #5C4D4E;
+}
+
+body.dk {
+    font-size: 1.22rem;
+    line-height: 1.65;
+    font-weight: 500;
+    color: var(--dk-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body.dk p,
+body.dk li,
+body.dk dd,
+body.dk .dk-lede,
+body.dk .dk-edu-where,
+body.dk .dk-edu-note,
+body.dk .dk-globe2 p,
+body.dk .dk-vis-card p,
+body.dk .dk-chap-in,
+body.dk .dk-chap-line,
+body.dk .dk-award-where,
+body.dk .dk-award-topic,
+body.dk .dk-pub-meta,
+body.dk .dk-talks span,
+body.dk .dk-pres li span.dk-pres-at,
+body.dk .dk-foot-about p {
+    font-size: 1.14rem;
+    line-height: 1.62;
+    font-weight: 600;
+    color: var(--dk-body);
+}
+
+body.dk .dk-hero .dk-ed-lede {
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+/* secondary lines keep their lighter tone, but not so light that the
+   thin serif strokes disappear */
+body.dk .dk-edu-note,
+body.dk .dk-award-topic,
+body.dk .dk-pub-meta,
+body.dk .dk-talks span,
+body.dk .dk-chap-line {
+    color: var(--dk-muted);
+    font-weight: 600;
+}
+
+/* card titles and headings gain weight to match */
+body.dk h1,
+body.dk h2,
+body.dk h3,
+body.dk h4 {
+    font-weight: 700;
+}
+
+body.dk .dk-edu-card h3,
+body.dk .dk-globe2 h3,
+body.dk .dk-award h3,
+body.dk .dk-role h3,
+body.dk .dk-chapters .dk-chap2 h3,
+body.dk .dk-pub h3,
+body.dk .dk-vis-card h3,
+body.dk .dk-tl h3,
+body.dk .dk-appt-card h3 {
+    font-size: 1.3rem;
+}
+
+body.dk .dk-talks b,
+body.dk .dk-pres li b,
+body.dk .dk-aff-name,
+body.dk .dk-kc-list li,
+body.dk .dk-early-row b,
+body.dk .dk-acad-card li,
+body.dk .dk-ed-creds-list li {
+    font-weight: 700;
+    font-size: 1.16rem;
+}
+
+/* small uppercase labels: the serif needs the extra weight at this size */
+body.dk .dk-tag,
+body.dk .dk-edu-tag,
+body.dk .dk-quick b,
+body.dk .dk-aff-sub,
+body.dk .dk-aff-verified,
+body.dk .dk-visits,
+body.dk .dk-foot-brand span,
+body.dk .dk-award-group > h3,
+body.dk .dk-acad > h3,
+body.dk .dk-early h3,
+body.dk .dk-talks-sub,
+body.dk .dk-pub-type,
+body.dk .dk-focus span,
+body.dk .dk-ed-stats span,
+body.dk .dk-ribbon-track span,
+body.dk .dk-panel > h3 small {
+    font-weight: 700;
+    font-size: .92rem;
+}
+
+/* navigation and buttons */
+body.dk .dk-nav a,
+body.dk .dk-contact-btn,
+body.dk .dk-btn,
+body.dk .dk-more,
+body.dk .dk-ed-link,
+body.dk .dk-foot-col a,
+body.dk .dk-foot-mail,
+body.dk .dk-pub-links a {
+    font-weight: 700;
+    font-size: 1.08rem;
+}
+
+body.dk .dk-foot-col a,
+body.dk .dk-foot-about p {
+    color: rgba(255, 255, 255, .86);
+}
+
+/* publication summary: one paragraph, so no list marker */
+body.dk .dk-pub-sum {
+    margin: 0 0 14px !important;
+    font-size: 1.1rem;
+    line-height: 1.62;
+    font-weight: 600;
+    color: var(--dk-body);
+}
+
+/* ===================================================================
+   Sharpness. Three things were softening the text:
+
+     1. -webkit-font-smoothing: antialiased thins every stroke on macOS,
+        which reads as blur on an already light serif. Back to the
+        browser's own subpixel rendering.
+     2. The navbar's backdrop blur puts the whole bar on its own
+        composited layer, and text on such a layer is resampled. The bar
+        is opaque enough not to need it.
+     3. The hero's pop-out portrait and the marquee keep their own
+        layers, so they are given explicit backface/rendering hints
+        rather than dragging text layers with them.
+   =================================================================== */
+body.dk {
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+    text-rendering: optimizeLegibility;
+}
+
+.dk-head,
+.dk-head.is-scrolled {
+    background: #FBF7F2;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+/* keep whole-pixel positions: half-pixel offsets blur glyph edges */
+.dk-wrap,
+.dk-sec,
+.dk-edu-card,
+.dk-globe-card,
+.dk-award,
+.dk-role,
+.dk-panel,
+.dk-pub,
+.dk-chap,
+.dk-vis-card,
+.dk-tl,
+.dk-appt-card {
+    transform: none;
+}
+
+/* the animated layers name themselves, so the browser does not promote
+   their text-bearing neighbours */
+.dk-ed-photo img,
+.dk-ribbon-track {
+    will-change: transform;
+    backface-visibility: hidden;
+}
+
+/* ===================================================================
+   Back to the site's own voice: Inter for reading text, Manrope for
+   labels and buttons, exactly as the rest of advityahealthcares.com.
+   The serif is kept for her name and the section headings only, where
+   a display face belongs.
+   =================================================================== */
+body.dk,
+body.dk p,
+body.dk li,
+body.dk dd,
+body.dk dt,
+body.dk span,
+body.dk b,
+body.dk strong,
+body.dk small,
+body.dk a,
+body.dk button,
+body.dk input,
+body.dk select,
+body.dk textarea,
+body.dk figcaption,
+body.dk blockquote cite {
+    font-family: var(--dk-sans);
+}
+
+body.dk {
+    font-size: 1rem;
+    line-height: 1.65;
+    font-weight: 400;
+    color: var(--dk-body);
+}
+
+/* reading text */
+body.dk p,
+body.dk li,
+body.dk dd,
+body.dk .dk-lede,
+body.dk .dk-pub-sum,
+body.dk .dk-edu-where,
+body.dk .dk-edu-note,
+body.dk .dk-globe2 p,
+body.dk .dk-vis-card p,
+body.dk .dk-chap-in,
+body.dk .dk-chap-line,
+body.dk .dk-award-where,
+body.dk .dk-award-topic,
+body.dk .dk-pub-meta,
+body.dk .dk-talks span,
+body.dk .dk-pres li span.dk-pres-at,
+body.dk .dk-foot-about p {
+    font-size: .96rem;
+    line-height: 1.7;
+    font-weight: 400;
+}
+
+body.dk .dk-hero .dk-ed-lede {
+    font-size: 1.06rem;
+    font-weight: 400;
+    line-height: 1.75;
+}
+
+/* card titles and sub-headings: Manrope, the site's heading sans */
+body.dk .dk-edu-card h3,
+body.dk .dk-globe2 h3,
+body.dk .dk-award h3,
+body.dk .dk-role h3,
+body.dk .dk-chapters .dk-chap2 h3,
+body.dk .dk-pub h3,
+body.dk .dk-vis-card h3,
+body.dk .dk-tl h3,
+body.dk .dk-appt-card h3,
+body.dk .dk-panel > h3,
+body.dk .dk-acad-card h4,
+body.dk .dk-foot-col h4,
+body.dk .dk-foot-brand b,
+body.dk .dk-ed-creds-list li,
+body.dk .dk-talks b,
+body.dk .dk-pres li b,
+body.dk .dk-aff-name,
+body.dk .dk-kc-list li,
+body.dk .dk-early-row b,
+body.dk .dk-acad-card li {
+    font-family: var(--dk-head);
+    font-weight: 700;
+}
+
+body.dk .dk-edu-card h3,
+body.dk .dk-globe2 h3,
+body.dk .dk-award h3,
+body.dk .dk-role h3,
+body.dk .dk-chapters .dk-chap2 h3,
+body.dk .dk-pub h3,
+body.dk .dk-vis-card h3,
+body.dk .dk-tl h3,
+body.dk .dk-appt-card h3 {
+    font-size: 1.06rem;
+    line-height: 1.35;
+}
+
+body.dk .dk-panel > h3,
+body.dk .dk-acad-card h4 {
+    font-size: 1.1rem;
+}
+
+body.dk .dk-ed-creds-list li,
+body.dk .dk-talks b,
+body.dk .dk-pres li b,
+body.dk .dk-aff-name,
+body.dk .dk-kc-list li,
+body.dk .dk-early-row b,
+body.dk .dk-acad-card li {
+    font-size: .96rem;
+    font-weight: 600;
+}
+
+body.dk .dk-acad-card li {
+    font-weight: 400;
+}
+
+/* small uppercase labels */
+body.dk .dk-tag,
+body.dk .dk-edu-tag,
+body.dk .dk-quick b,
+body.dk .dk-aff-sub,
+body.dk .dk-aff-verified,
+body.dk .dk-visits,
+body.dk .dk-foot-brand span,
+body.dk .dk-award-group > h3,
+body.dk .dk-acad > h3,
+body.dk .dk-early h3,
+body.dk .dk-talks-sub,
+body.dk .dk-pub-type,
+body.dk .dk-focus span,
+body.dk .dk-ed-stats span,
+body.dk .dk-ribbon-track span,
+body.dk .dk-panel > h3 small {
+    font-family: var(--dk-head);
+    font-weight: 700;
+    font-size: .72rem;
+    letter-spacing: .12em;
+}
+
+/* buttons, navigation and links */
+body.dk .dk-nav a,
+body.dk .dk-contact-btn,
+body.dk .dk-btn,
+body.dk .dk-more,
+body.dk .dk-ed-link,
+body.dk .dk-foot-col a,
+body.dk .dk-foot-mail,
+body.dk .dk-pub-links a,
+body.dk .dk-quick b,
+body.dk .dk-sticky a {
+    font-family: var(--dk-head);
+    font-weight: 700;
+    font-size: .92rem;
+}
+
+body.dk .dk-nav a {
+    font-size: .93rem;
+}
+
+/* the display face stays where it earns its place */
+body.dk .dk-ed-name,
+body.dk .dk-sec-head h2,
+body.dk .dk-contact h2,
+body.dk .dk-quoteband blockquote,
+body.dk .dk-ed-stats b,
+body.dk .dk-edu-when,
+body.dk .dk-reg-no,
+body.dk .dk-brand span,
+body.dk .dk-award-when,
+body.dk .dk-chap-year,
+body.dk .dk-pub-year {
+    font-family: var(--dk-serif);
+}
+
+/* the earlier blanket rule on [class^="dk-"] outranks plain element
+   selectors, so the sans is re-asserted at the same strength here */
+body.dk [class^="dk-"],
+body.dk [class*=" dk-"] {
+    font-family: var(--dk-sans);
+}
+
+/* Manrope for headings, labels, buttons */
+body.dk [class^="dk-"]:is(h1, h2, h3, h4),
+body.dk [class*=" dk-"]:is(h1, h2, h3, h4),
+body.dk .dk-tag,
+body.dk .dk-edu-tag,
+body.dk .dk-quick b,
+body.dk .dk-aff-sub,
+body.dk .dk-aff-verified,
+body.dk .dk-visits,
+body.dk .dk-foot-brand b,
+body.dk .dk-foot-brand span,
+body.dk .dk-award-group > h3,
+body.dk .dk-acad > h3,
+body.dk .dk-early h3,
+body.dk .dk-talks-sub,
+body.dk .dk-pub-type,
+body.dk .dk-focus span,
+body.dk .dk-ed-stats span,
+body.dk .dk-ribbon-track span,
+body.dk .dk-nav a,
+body.dk .dk-contact-btn,
+body.dk .dk-btn,
+body.dk .dk-more,
+body.dk .dk-ed-link,
+body.dk .dk-foot-col a,
+body.dk .dk-foot-mail,
+body.dk .dk-pub-links a,
+body.dk .dk-sticky a,
+body.dk .dk-ed-creds-list li,
+body.dk .dk-talks b,
+body.dk .dk-pres li b,
+body.dk .dk-aff-name,
+body.dk .dk-kc-list li,
+body.dk .dk-early-row b {
+    font-family: var(--dk-head);
+}
+
+/* and the display serif only on the pieces that carry the page's voice */
+body.dk .dk-ed-name,
+body.dk .dk-sec-head h2,
+body.dk .dk-contact h2,
+body.dk .dk-quoteband blockquote,
+body.dk .dk-ed-stats b,
+body.dk .dk-edu-when,
+body.dk .dk-reg-no,
+body.dk .dk-brand span,
+body.dk .dk-award-when,
+body.dk .dk-chap-year,
+body.dk .dk-pub-year,
+body.dk .dk-foot-col h4 {
+    font-family: var(--dk-serif);
+}
+
+/* her name stays the display serif, and the hero paragraph reads in the
+   body sans: both need to outrank the rules above */
+body.dk h1.dk-ed-name,
+body.dk h1.dk-ed-name em,
+body.dk .dk-hero h1.dk-ed-name {
+    font-family: var(--dk-serif);
+}
+
+body.dk h1.dk-ed-name small {
+    font-family: var(--dk-head);
+}
+
+body.dk .dk-hero p.dk-ed-lede,
+body.dk .dk-hero .dk-ed-copy p {
+    font-family: var(--dk-sans);
+}

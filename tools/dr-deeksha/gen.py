@@ -137,7 +137,11 @@ def pub_card(p, extra=False):
         links.append(f'<a href="{e(p["pubmed"])}" target="_blank" rel="noopener"><i class="fa-solid fa-book-medical" aria-hidden="true"></i> PubMed</a>')
     if p.get("researchgate"):
         links.append(f'<a href="{e(p["researchgate"])}" target="_blank" rel="noopener"><i class="fa-brands fa-researchgate" aria-hidden="true"></i> ResearchGate</a>')
-    summ = "".join(f"<li>{e(s.split('. ',1)[1] if s[:2].rstrip('.').isdigit() and '. ' in s else s)}</li>" for s in p.get("summary", []))
+    first = p.get("summary", [])
+    first = first[0] if first else ""
+    first = first.split(". ", 1)[1] if first[:2].rstrip(".").isdigit() and ". " in first else first
+    first = first.lstrip("1.\t ")
+    summ = f'<p class="dk-pub-sum">{e(first)}</p>' if first else ""
     meta = f'<em>{e(p["journal"])}</em>'
     if p.get("authors"): meta += f' · {e(p["authors"])}'
     if p.get("date"): meta += f' · {e(p["date"])}'
@@ -153,7 +157,7 @@ def pub_card(p, extra=False):
                 <span class="dk-pub-type">{e(p.get("type") or "Article")}</span>
             </summary>
             <div class="dk-pub-body">
-                <ol>{summ}</ol>
+                {summ}
                 <div class="dk-pub-links">{"".join(links)}</div>
             </div>
         </details>'''
@@ -168,19 +172,21 @@ n_chap = 0
 for grp in chaps:
     for c in grp["chapters"]:
         n_chap += 1
-        bits = [f"<b>In:</b> {e(c['book'])}"]
-        if c.get("editor"): bits.append(f"<b>Editor(s):</b> {e(c['editor'].replace('In: ',''))}")
-        if c.get("publisher"): bits.append(e(c["publisher"]))
-        if c.get("authors"): bits.append(e(c["authors"]))
-        if c.get("details"): bits.append(e(c["details"]))
-        link = f'<a href="{e(c["link"])}" target="_blank" rel="noopener"><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i> View chapter</a>' if c.get("link") else ""
+        lines = [f'<p class="dk-chap-in"><span>In:</span> {e(c["book"])}</p>']
+        if c.get("authors"):
+            lines.append(f'<p class="dk-chap-line">{e(c["authors"])}</p>')
+        if c.get("editor"):
+            lines.append(f'<p class="dk-chap-line"><span>Editor(s):</span> {e(c["editor"].replace("In: ", ""))}</p>')
+        if c.get("publisher"):
+            lines.append(f'<p class="dk-chap-line">{e(c["publisher"])}</p>')
+        if c.get("details"):
+            lines.append(f'<p class="dk-chap-line">{e(c["details"])}</p>')
         chap_html += f'''
-        <article class="dk-chap dk-reveal">
-            <div class="dk-chap-year">{e(grp["year"])}</div>
+        <article class="dk-chap dk-chap2 dk-reveal">
+            <span class="dk-chap-ic"><i class="fa-solid fa-book-bookmark" aria-hidden="true"></i></span>
             <div>
                 <h3>{e(c["title"])}</h3>
-                <p>{" · ".join(bits)}</p>
-                {link}
+                {"".join(lines)}
             </div>
         </article>'''
 
@@ -270,7 +276,7 @@ page = f'''<!DOCTYPE html>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="css/dr-deeksha.css?v=58">
+    <link rel="stylesheet" href="css/dr-deeksha.css?v=74">
     <script>document.documentElement.classList.add('js');</script>
 
     <script type="application/ld+json">{{"@context":"https://schema.org","@type":"Physician","name":"Dr. Deeksha Kapoor","image":"https://advityahealthcares.com/images/dr-deeksha/portrait.webp","url":"https://advityahealthcares.com/dr-deeksha-kapoor.html","jobTitle":"CEO & Medical Head","medicalSpecialty":["Surgical Gastroenterology","Hepato-Pancreato-Biliary Surgery","GI Surgical Oncology"],"email":"deekshakapoor@advityahealthcares.com","telephone":"{TEL}","worksFor":{{"@type":"MedicalClinic","name":"Advitya Healthcares","url":"https://advityahealthcares.com"}},"alumniOf":[{{"@type":"CollegeOrUniversity","name":"Maulana Azad Medical College, New Delhi"}},{{"@type":"Hospital","name":"Bangalore Baptist Hospital"}},{{"@type":"Hospital","name":"Medanta – The Medicity, Gurugram"}},{{"@type":"Hospital","name":"Tata Memorial Hospital, Mumbai"}}],"memberOf":[{{"@type":"Organization","name":"International Hepato-Pancreato-Biliary Association"}},{{"@type":"Organization","name":"The Society for Surgery of the Alimentary Tract"}},{{"@type":"Organization","name":"Association of Surgeons of India"}},{{"@type":"Organization","name":"Indian Association of Surgical Gastroenterology"}}],"award":["Dr. B. Ramamurthi National Gold Medal, DNB General Surgery (June 2014)","Young Investigator’s Travel Grant Award, APA/IAP/CPA/JPS Hawaii 2024","Ethicon Fellow 2023"]}}</script>
@@ -280,20 +286,25 @@ page = f'''<!DOCTYPE html>
 
     <a class="dk-skip" href="#top">Skip to content</a>
 
-    <!-- ============================ header ============================ -->
+    <!-- ============================ navbar =========================== -->
+    <div class="dk-topline" aria-hidden="true"></div>
     <header class="dk-head">
         <div class="dk-wrap dk-head-in">
-            <a class="dk-logo" href="index.html" aria-label="Advitya Healthcares home">
-                <picture>
-                    <source srcset="images/advitya-logo-nav-120.webp" type="image/webp">
-                    <img src="images/advitya_logo_nav.png" width="140" height="120" alt="Advitya Healthcares">
-                </picture>
+            <a class="dk-brand" href="#home">
+                <img src="images/dr-deeksha/monogram.svg" width="80" height="88" alt="">
+                <span>Dr. Deeksha Kapoor</span>
             </a>
-            <span class="dk-head-name">Dr. Deeksha Kapoor<small>Surgical Gastroenterologist · HPB &amp; GI Onco-surgeon</small></span>
-            <div class="dk-head-acts">
-                <a class="dk-btn dk-btn-ghost" href="tel:{TEL}"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
-                <a class="dk-btn dk-btn-primary" href="#contact"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book Consultation</a>
-            </div>
+            <nav class="dk-nav" aria-label="Page sections">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#roles">Academic Roles</a></li>
+                    <li><a href="#lectures">Lectures</a></li>
+                    <li><a href="#awards">Awards &amp; Distinctions</a></li>
+                    <li><a href="#publications">Publications &amp; Paper</a></li>
+                    <li><a href="#chapters">Book Chapter</a></li>
+                </ul>
+            </nav>
+            <a class="dk-contact-btn" href="contact.html"><i class="fa-solid fa-phone" aria-hidden="true"></i> Contact Me</a>
         </div>
     </header>
 
@@ -303,7 +314,6 @@ page = f'''<!DOCTYPE html>
     <section class="dk-hero dk-ed" id="home">
         <div class="dk-wrap dk-ed-grid">
             <div class="dk-ed-copy">
-                <p class="dk-ed-kicker"><span class="dk-ed-dot" aria-hidden="true"></span> CEO &amp; Medical Head · Advitya Healthcares</p>
                 <h1 class="dk-ed-name"><small>Dr.</small> Deeksha <em>Kapoor</em></h1>
                 <ul class="dk-ed-creds-list">
                     <li>MBBS, DNB General Surgery, DNB Surgical Gastroenterology</li>
@@ -312,7 +322,6 @@ page = f'''<!DOCTYPE html>
                 </ul>
                 <p class="dk-ed-lede">A leading Surgical Gastroenterologist and HPB &amp; GI Surgical Oncologist, known for combining high-end surgical precision with ethical, outcome-driven, and patient-friendly care. She completed her MBBS, went on to do DNB General Surgery, and later specialised through DNB Surgical Gastroenterology. She also completed a highly competitive HPB &amp; GI Surgical Oncology Fellowship, and is console-trained in robotic surgery on the Da Vinci Xi platform.</p>
                 <div class="dk-ed-acts">
-                    <a class="dk-btn dk-btn-primary" href="#contact"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book a Consultation</a>
                     <a class="dk-ed-link" href="#publications">View Publications <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
                 <nav class="dk-quick" aria-label="Profile highlights">
@@ -360,31 +369,11 @@ page = f'''<!DOCTYPE html>
         </div>
     </div>
 
-    <!-- ============================ sub nav =========================== -->
-    <nav class="dk-subnav" aria-label="Page sections">
-        <div class="dk-wrap">
-            <ul>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#global">Global Training</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#affiliations">Affiliations</a></li>
-                <li><a href="#vision">Vision</a></li>
-                <li><a href="#awards">Awards</a></li>
-                <li><a href="#roles">Academic Roles</a></li>
-                <li><a href="#lectures">Lectures</a></li>
-                <li><a href="#publications">Publications</a></li>
-                <li><a href="#chapters">Book Chapters</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </div>
-    </nav>
-
     <!-- =========================== education ========================== -->
     <section class="dk-sec dk-sec-alt" id="education">
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>01</b> Education</span>
                     <h2>Education &amp; <em>Credentials</em></h2>
                 </div>
                 <p class="dk-lede">Gained knowledge and achieved academic excellence at esteemed institutions</p>
@@ -413,7 +402,6 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>02</b> Global Exposure</span>
                     <h2>Global Exposure &amp; <em>Advanced Learning</em></h2>
                 </div>
                 <p class="dk-lede">Aligned with global best practices through focused mentorships at world-renowned centers</p>
@@ -428,7 +416,6 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>03</b> Experience</span>
                     <h2>Professional &amp; <em>Clinical Experience</em></h2>
                 </div>
                 <p class="dk-lede">A trajectory defined by high-volume surgical units and specialized oncology care</p>
@@ -480,7 +467,6 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>04</b> Affiliations</span>
                     <h2>Affiliations and <em>Memberships</em></h2>
                 </div>
                 <p class="dk-lede">Professional recognition and commitments</p>
@@ -518,7 +504,6 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>05</b> Present Engagement</span>
                     <h2>Present Engagement in <em>Advitya &amp; PancreaCare</em></h2>
                 </div>
                 <p class="dk-lede">Dedication to excellence and contribution to society</p>
@@ -578,36 +563,112 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>06</b> Excellence in Surgery</span>
                     <h2>Awards &amp; <em>Distinctions</em></h2>
                 </div>
-                <p class="dk-lede">Recognition of commitment to surgical precision, academic research, and clinical excellence on national and international platforms.</p>
+                <p class="dk-lede">Recognition of commitment to surgical precision, academic research, and clinical excellence on both national and international platforms</p>
             </div>
+
             <div class="dk-award-hero dk-reveal">
                 <div class="dk-medal"><i class="fa-solid fa-medal" aria-hidden="true"></i></div>
                 <div>
                     <span class="dk-tag">National Level Recognition</span>
                     <h3>Dr. B. Ramamurthi National Gold Medal</h3>
-                    <p><strong style="color:#fff">DNB General Surgery — Batch of June 2014.</strong> Awarded for securing the highest marks nationally in the Diplomate of National Board examinations, marking a benchmark of academic and surgical excellence.</p>
+                    <p class="dk-award-sub">DNB General Surgery — Batch of June 2014</p>
+                    <p>Awarded for securing the highest marks nationally in the Diplomate of National Board examinations, marking a benchmark of academic and surgical excellence.</p>
                 </div>
             </div>
+
             <div class="dk-award-group dk-reveal">
                 <h3>International Travel &amp; Research Grants</h3>
                 <div class="dk-award-grid">
-                    <article class="dk-award"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i><h3>Young Investigator’s Travel Grant Award</h3><p><strong>APA/IAP/CPA/JPS, Hawaii · Dec 2024</strong><br>Topic: Real World Evidence of Portal Vein Resections with Pancreatectomy – Multicentre Indian Study (PVR-IM)</p></article>
-                    <article class="dk-award"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i><h3>E-Poster Travel Grant Award</h3><p><strong>HBP Surgery Week, Korea (Virtual)</strong><br>Topic: Can we predict the need of supplemental nutrition after pancreatoduodenectomy?</p></article>
-                    <article class="dk-award"><i class="fa-solid fa-plane-departure" aria-hidden="true"></i><h3>KSSMN Travel Grant Award</h3><p><strong>Korean Society for Surgical Metabolism and Nutrition</strong><br>Paper: Impact of psoas muscle area and density on postoperative outcomes following pancreatoduodenectomy</p></article>
+                    <article class="dk-award">
+                        <div class="dk-award-top">
+                            <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
+                            <span class="dk-award-when">Dec 2024</span>
+                        </div>
+                        <h3>Young Investigator’s Travel Grant Award</h3>
+                        <p class="dk-award-where">Young Investigator’s Travel Grant Award – APA/IAP/CPA/JPS, Hawaii</p>
+                        <p class="dk-award-topic"><span>Topic:</span> Real World Evidence of Portal Vein Resections with Pancreatectomy – Multicentre Indian Study (PVR-IM)</p>
+                    </article>
+                    <article class="dk-award">
+                        <div class="dk-award-top">
+                            <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
+                            <span class="dk-award-when">2021</span>
+                        </div>
+                        <h3>E-Poster Travel Grant Award</h3>
+                        <p class="dk-award-where">HBP Surgery Week, Korea (Virtual)</p>
+                        <p class="dk-award-topic"><span>Topic:</span> Can we predict the need of supplemental nutrition after pancreatoduodenectomy?</p>
+                    </article>
+                    <article class="dk-award">
+                        <div class="dk-award-top">
+                            <i class="fa-solid fa-plane-departure" aria-hidden="true"></i>
+                            <span class="dk-award-when">2021</span>
+                        </div>
+                        <h3>KSSMN Travel Grant Award</h3>
+                        <p class="dk-award-where">Korean Society for Surgical Metabolism and Nutrition</p>
+                        <p class="dk-award-topic"><span>Paper:</span> Impact of psoas muscle area and density on postoperative outcomes following pancreatoduodenectomy</p>
+                    </article>
                 </div>
             </div>
+
             <div class="dk-award-group dk-reveal">
                 <h3>Professional Accolades</h3>
                 <div class="dk-award-grid">
-                    <article class="dk-award"><i class="fa-solid fa-trophy" aria-hidden="true"></i><h3>Best Poster Award</h3><p><strong>IASG 2016</strong><br>“Asymptomatic leaks following anterior resection”</p></article>
-                    <article class="dk-award"><i class="fa-solid fa-user-graduate" aria-hidden="true"></i><h3>Best Outgoing Surgical Trainee</h3><p><strong>Bangalore Baptist Hospital</strong></p></article>
-                    <article class="dk-award"><i class="fa-solid fa-microphone" aria-hidden="true"></i><h3>Best Oral Presentation</h3><p><strong>Surgical Society of Bangalore, 2014</strong><br>Topic: Blunt Abdominal Trauma</p></article>
-                    <article class="dk-award"><i class="fa-solid fa-file-lines" aria-hidden="true"></i><h3>Paper Presentation Prize</h3><p><strong>State Meetings of Surgical Society, 2013</strong></p></article>
-                    <article class="dk-award"><i class="fa-solid fa-medal" aria-hidden="true"></i><h3>Gold Medal in Paediatrics</h3><p><strong>MBBS, Final Year</strong><br>Highest marks in Pathology · Distinction in Physiology</p></article>
-                    <article class="dk-award"><i class="fa-solid fa-star" aria-hidden="true"></i><h3>Ethicon Fellow 2023</h3><p><strong>Tata Memorial Hospital, Mumbai</strong><br>Fellowship in HPB Surgical Oncology</p></article>
+                    <article class="dk-award">
+                        <div class="dk-award-top">
+                            <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                            <span class="dk-award-when">IASG 2016</span>
+                        </div>
+                        <h3>Best Poster Award</h3>
+                        <p class="dk-award-topic">“Asymptomatic leaks following anterior resection”</p>
+                    </article>
+                    <article class="dk-award">
+                        <div class="dk-award-top">
+                            <i class="fa-solid fa-user-graduate" aria-hidden="true"></i>
+                            <span class="dk-award-when">2014</span>
+                        </div>
+                        <h3>Best Outgoing Surgical Trainee</h3>
+                        <p class="dk-award-where">Bangalore Baptist Hospital</p>
+                    </article>
+                    <article class="dk-award">
+                        <div class="dk-award-top">
+                            <i class="fa-solid fa-microphone" aria-hidden="true"></i>
+                            <span class="dk-award-rank">1st</span>
+                        </div>
+                        <h3>Best Oral Presentation</h3>
+                        <p class="dk-award-where">Surgical Society of Bangalore, 2014</p>
+                        <p class="dk-award-topic"><span>Topic:</span> Blunt Abdominal Trauma</p>
+                    </article>
+                    <article class="dk-award">
+                        <div class="dk-award-top">
+                            <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                            <span class="dk-award-rank">1st</span>
+                        </div>
+                        <h3>Paper Presentation Prize</h3>
+                        <p class="dk-award-where">State Meetings of Surgical Society, 2013</p>
+                    </article>
+                </div>
+            </div>
+
+            <div class="dk-acad dk-reveal">
+                <h3>Academic Foundation</h3>
+                <div class="dk-acad-grid">
+                    <div class="dk-acad-card">
+                        <h4><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> MBBS Training</h4>
+                        <ul>
+                            <li>Gold Medal in Paediatrics (Final Year)</li>
+                            <li>Highest marks in Pathology</li>
+                            <li>Distinction in Physiology</li>
+                        </ul>
+                    </div>
+                    <div class="dk-acad-card">
+                        <h4><i class="fa-solid fa-school" aria-hidden="true"></i> Early Education</h4>
+                        <ul>
+                            <li>Top Three in School — Class 12 Boards</li>
+                            <li>Top Three in School — Class 10 Boards</li>
+                            <li>Awarded Academic Proficiency throughout school tenure</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -618,7 +679,6 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>07</b> Leadership &amp; Service</span>
                     <h2>Academic <em>Roles</em></h2>
                 </div>
                 <p class="dk-lede">Fostering research integrity, mentoring the next generation of surgeons, and contributing to the global scientific community through editorial leadership.</p>
@@ -663,7 +723,6 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>08</b> Academic Portfolio</span>
                     <h2>Lectures &amp; <em>Presentations</em></h2>
                 </div>
                 <p class="dk-lede">A comprehensive record of talks and lectures delivered, participation in national and international conferences, and scientific and research paper and poster presentations</p>
@@ -705,23 +764,10 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>09</b> Scientific Contribution</span>
                     <h2>Publications &amp; <em>Papers</em></h2>
                 </div>
-                <p class="dk-lede">Advancing surgical gastroenterology through rigorous clinical studies, real-world evidence, and predictive modeling for better patient outcomes.</p>
+                <p class="dk-lede">Advancing surgical gastroenterology through rigorous clinical studies, real-world evidence, and predictive modeling for better patient outcomes</p>
             </div>
-            <div class="dk-featured dk-reveal">
-                <div class="dk-featured-tag"><i class="fa-solid fa-star" aria-hidden="true"></i> Featured · Annals of Surgery</div>
-                <h3>Validation and Optimisation of the ISGPS Risk Classification for Postoperative Pancreatic Fistula after Pancreatoduodenectomy</h3>
-                <p>A retrospective analysis of 1,422 consecutive pancreatoduodenectomies (2014–2023) that externally validated the ISGPS “high-risk pancreas” classification and proposed a site-specific score that improves prediction of clinically relevant pancreatic fistula in periampullary tumours.</p>
-                <div class="dk-featured-meta">
-                    <span><i class="fa-solid fa-users" aria-hidden="true"></i> Kapoor D, Desiraju Y, Chaudhari VA, et al.</span>
-                    <span><i class="fa-regular fa-calendar" aria-hidden="true"></i> Aug 2024</span>
-                    <a href="https://doi.org/10.1097/SLA.0000000000006485" target="_blank" rel="noopener"><i class="fa-solid fa-link" aria-hidden="true"></i> DOI</a>
-                    <a href="https://pubmed.ncbi.nlm.nih.gov/39140617/" target="_blank" rel="noopener"><i class="fa-solid fa-book-medical" aria-hidden="true"></i> PubMed</a>
-                </div>
-            </div>
-            <div class="dk-filters dk-reveal" role="group" aria-label="Filter publications by year">{filter_html}</div>
             <div class="dk-pubs dk-collapse" id="dk-pubs">{pub_html}
             </div>
             <div class="dk-more-row">{more_btn("dk-pubs", len(pubs), "publications")}</div>
@@ -733,33 +779,11 @@ page = f'''<!DOCTYPE html>
         <div class="dk-wrap">
             <div class="dk-sec-head dk-reveal">
                 <div>
-                    <span class="dk-eyebrow"><b>10</b> Publications</span>
                     <h2>Book <em>Chapters</em></h2>
                 </div>
-                <p class="dk-lede">A comprehensive list of authored chapters in prominent medical textbooks and surgical journals.</p>
+                <p class="dk-lede">A comprehensive list of authored chapters in prominent medical textbooks and surgical journals</p>
             </div>
             <div class="dk-chapters">{chap_html}
-            </div>
-        </div>
-    </section>
-
-    <!-- ============================ contact =========================== -->
-    <section class="dk-sec dk-contact" id="contact">
-        <div class="dk-wrap dk-contact-in">
-            <div class="dk-reveal">
-                <span class="dk-eyebrow">Get in Touch</span>
-                <h2>Consult Dr. Deeksha Kapoor</h2>
-                <p>For appointments, second opinions on pancreatic, liver, biliary or GI cancer surgery, or academic collaboration, reach out directly. You can also send your emails with your queries.</p>
-                <div class="dk-hero-acts">
-                    <a class="dk-btn dk-btn-white" href="contact.html"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book an Appointment</a>
-                    <a class="dk-btn dk-btn-light" href="tel:{TEL}"><i class="fa-solid fa-phone" aria-hidden="true"></i> {TEL_H}</a>
-                </div>
-            </div>
-            <div class="dk-contact-cards dk-reveal">
-                <a class="dk-contact-card" href="mailto:deekshakapoor@advityahealthcares.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i><div><b>deekshakapoor@advityahealthcares.com</b><span>Hospital email</span></div></a>
-                <a class="dk-contact-card" href="mailto:dr.deeksha.kapoor@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i><div><b>dr.deeksha.kapoor@gmail.com</b><span>Academic &amp; research correspondence</span></div></a>
-                <a class="dk-contact-card is-wa" href="{WA}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i><div><b>WhatsApp {TEL_H}</b><span>Advitya Healthcares helpline</span></div></a>
-                <a class="dk-contact-card" href="https://advityahealthcares.com" target="_blank" rel="noopener"><i class="fa-solid fa-hospital" aria-hidden="true"></i><div><b>Advitya Healthcares</b><span>Shree Durga Palace, Morabadi, Ranchi · Advitya Hospital Baruipur</span></div></a>
             </div>
         </div>
     </section>
@@ -772,44 +796,30 @@ page = f'''<!DOCTYPE html>
             <div class="dk-foot-grid">
                 <div class="dk-foot-col dk-foot-about">
                     <div class="dk-foot-brand">
-                        <img src="images/advitya_logo.png" width="150" height="150" alt="Advitya Healthcares" loading="lazy">
-                        <div><b>Dr. Deeksha Kapoor</b><span>Surgical Gastroenterologist · HPB &amp; GI Surgical Oncologist</span></div>
+                        <span class="dk-foot-mark"><img src="images/dr-deeksha/monogram.svg" width="80" height="88" alt=""></span>
+                        <div><b>Dr. Deeksha Kapoor</b><span>Academic Portfolio</span></div>
                     </div>
-                    <p>CEO &amp; Medical Head, Advitya Healthcares. Dedicated to advancing medical knowledge through research, academic excellence, and clinical practice.</p>
-                    <div class="dk-foot-social">
-                        <a href="https://pubmed.ncbi.nlm.nih.gov/?term=Kapoor+D+pancreatoduodenectomy" target="_blank" rel="noopener" aria-label="PubMed"><i class="fa-solid fa-book-medical" aria-hidden="true"></i></a>
-                        <a href="https://www.researchgate.net/search/publication?q=Deeksha%20Kapoor" target="_blank" rel="noopener" aria-label="ResearchGate"><i class="fa-brands fa-researchgate" aria-hidden="true"></i></a>
-                        <a href="{WA}" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i></a>
-                        <a href="mailto:deekshakapoor@advityahealthcares.com" aria-label="Email"><i class="fa-regular fa-envelope" aria-hidden="true"></i></a>
-                    </div>
+                    <p>Dedicated to advancing medical knowledge through research, academic excellence, and clinical practice.</p>
                 </div>
                 <div class="dk-foot-col">
-                    <h4>Profile</h4>
-                    <a href="#home">Overview</a>
-                    <a href="#education">Education</a>
-                    <a href="#experience">Experience</a>
-                    <a href="#awards">Awards</a>
-                    <a href="#publications">Publications</a>
+                    <h4>Quick Navigation</h4>
+                    <ul class="dk-foot-nav">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#roles">Academic Roles</a></li>
+                        <li><a href="#lectures">Lectures</a></li>
+                        <li><a href="#awards">Awards &amp; Distinctions</a></li>
+                        <li><a href="#publications">Publications &amp; Paper</a></li>
+                        <li><a href="#chapters">Book Chapter</a></li>
+                    </ul>
                 </div>
                 <div class="dk-foot-col">
-                    <h4>Advitya Healthcares</h4>
-                    <a href="index.html">Main website</a>
-                    <a href="the-story-of-pancreacare.html">PancreaCare</a>
-                    <a href="our-team.html">Our Team</a>
-                    <a href="clinical-services.html">Clinical services</a>
-                    <a href="contact.html">Contact</a>
-                </div>
-                <div class="dk-foot-col">
-                    <h4>Contact</h4>
-                    <a href="tel:{TEL}"><i class="fa-solid fa-phone" aria-hidden="true"></i> {TEL_H}</a>
-                    <a href="mailto:deekshakapoor@advityahealthcares.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> deekshakapoor@advityahealthcares.com</a>
-                    <a href="mailto:dr.deeksha.kapoor@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> dr.deeksha.kapoor@gmail.com</a>
-                    <a class="dk-foot-cta" href="#contact"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book a Consultation</a>
+                    <h4>Contact &amp; Connect</h4>
+                    <a class="dk-foot-mail" href="mailto:dr.deeksha.kapoor@gmail.com"><i class="fa-regular fa-envelope" aria-hidden="true"></i> dr.deeksha.kapoor@gmail.com</a>
                 </div>
             </div>
             <div class="dk-foot-copy">
                 <span>&copy; <span id="dk-year">2026</span> Dr. Deeksha Kapoor. All rights reserved.</span>
-                <span><a href="privacy-policy.html">Privacy</a> · <a href="terms.html">Terms</a> · A unit of Advitya Healthcares Pvt Ltd</span>
+                <span class="dk-visits"><i class="fa-regular fa-eye" aria-hidden="true"></i> <b id="dk-visits">1</b> Visits</span>
             </div>
         </div>
     </footer>
@@ -819,7 +829,7 @@ page = f'''<!DOCTYPE html>
         <div class="dk-sticky-in">
             <a class="is-call" href="tel:{TEL}"><i class="fa-solid fa-phone" aria-hidden="true"></i> Call</a>
             <a class="is-wa" href="{WA}" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</a>
-            <a class="is-book" href="#contact"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book</a>
+            <a class="is-book" href="contact.html"><i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Book</a>
         </div>
     </nav>
 
@@ -828,6 +838,15 @@ page = f'''<!DOCTYPE html>
     <script>
     (function () {{
         document.getElementById('dk-year').textContent = new Date().getFullYear();
+
+        /* visit count for this browser, kept locally */
+        try {{
+            var vk = 'dk-visits', vn = parseInt(localStorage.getItem(vk) || '0', 10) + 1;
+            localStorage.setItem(vk, vn);
+            document.getElementById('dk-visits').textContent = vn;
+        }} catch (err) {{
+            document.getElementById('dk-visits').textContent = '1';
+        }}
 
         /* header shadow + back-to-top visibility */
         var head = document.querySelector('.dk-head'), top = document.querySelector('.dk-top');
@@ -884,26 +903,9 @@ page = f'''<!DOCTYPE html>
             }});
         }});
 
-        /* publication year filter: a single year always shows every paper from it */
-        var btns = document.querySelectorAll('.dk-filters button');
-        var pubs = document.querySelectorAll('.dk-pub');
-        var pubBox = document.getElementById('dk-pubs');
-        var pubMore = document.querySelector('[data-more="dk-pubs"]');
-        btns.forEach(function (b) {{
-            b.addEventListener('click', function () {{
-                btns.forEach(function (x) {{ x.classList.remove('is-on'); }});
-                b.classList.add('is-on');
-                var y = b.getAttribute('data-year');
-                pubs.forEach(function (p) {{
-                    p.hidden = !(y === 'all' || p.getAttribute('data-year') === y);
-                }});
-                pubBox.classList.toggle('is-filtered', y !== 'all');
-                pubMore.parentNode.hidden = y !== 'all';
-            }});
-        }});
 
         /* sub nav active state */
-        var links = document.querySelectorAll('.dk-subnav a');
+        var links = document.querySelectorAll('.dk-nav a');
         var secs = [];
         links.forEach(function (a) {{
             var s = document.querySelector(a.getAttribute('href'));
@@ -915,7 +917,7 @@ page = f'''<!DOCTYPE html>
             links.forEach(function (a) {{ a.classList.remove('is-active'); }});
             if (cur) {{
                 cur.a.classList.add('is-active');
-                var box = cur.a.parentNode.parentNode;
+                var box = cur.a.closest('ul');
                 var left = cur.a.offsetLeft - box.clientWidth / 2 + cur.a.clientWidth / 2;
                 box.scrollTo({{ left: left, behavior: 'smooth' }});
             }}

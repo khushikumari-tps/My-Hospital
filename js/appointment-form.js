@@ -196,6 +196,35 @@
             box.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
 
+        /* The lead itself goes to the CRM (js/crm-lead.js, keyed in
+           js/crm-config.js). The Netlify post stays because it is what
+           carries the uploaded report; if both fail the request is handed
+           to the visitor's mail app as before. */
+        function toCRM(fd, ref) {
+            if (!window.AdvCRM || !AdvCRM.enabled()) return Promise.resolve(false);
+            var up = file && file.files && file.files[0];
+            return AdvCRM.post({
+                name: fd.get('name'),
+                phone: fd.get('mobile'),
+                email: fd.get('email'),
+                city: 'Baruipur',
+                product: fd.get('department'),
+                title: 'Appointment request',
+                lines: {
+                    'Reference': ref,
+                    'Centre': fd.get('centre') || 'Advitya Hospital Baruipur',
+                    'Age': fd.get('age'),
+                    'Gender': fd.get('gender'),
+                    'Department': fd.get('department'),
+                    'Preferred doctor': fd.get('doctor') || 'No preference',
+                    'Preferred date': fd.get('date'),
+                    'Symptoms': fd.get('symptoms'),
+                    'Report attached': up ? up.name : 'None',
+                    'Consent to contact': fd.get('consent') ? 'Yes' : 'No'
+                }
+            });
+        }
+
         form.addEventListener('submit', function (e) {
             e.preventDefault();
             if (err) err.hidden = true;
@@ -209,14 +238,20 @@
             if (btn) { btn.disabled = true; btn.textContent = 'Sending your request...'; }
 
             var fd = new FormData(form);
+            var crm = toCRM(fd, ref);
+
             fetch(form.getAttribute('action') || location.pathname, { method: 'POST', body: fd })
                 .then(function (r) {
                     if (!r.ok) throw new Error('HTTP ' + r.status);
-                    confirmation(fd, ref, false);
+                    return true;
                 })
-                .catch(function () {
-                    mailFallback(fd, ref);
-                    confirmation(fd, ref, true);
+                .catch(function () { return false; })
+                .then(function (filed) {
+                    return crm.then(function (sent) {
+                        if (filed || sent) { confirmation(fd, ref, false); return; }
+                        mailFallback(fd, ref);
+                        confirmation(fd, ref, true);
+                    });
                 });
         });
     });
