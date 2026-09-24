@@ -3035,3 +3035,138 @@ body.hv-light .btn-premium:hover i {
         transform: none;
     }
 }
+
+/* ==========================================================================
+   Specialised treatment pages (five landing pages, before the footer)
+   Three across on desktop; the last row centres its two cards so the grid
+   never ends with an orphan hanging on the left.
+   ========================================================================== */
+body.hv-light .hv-lp {
+    padding: clamp(56px, 7vw, 96px) 0;
+    background: linear-gradient(180deg, #fff 0%, var(--adv-cream, #fdf7f5) 100%);
+}
+
+body.hv-light .hv-lp-grid {
+    /* Six columns, each card two wide: that is what lets the final row of two
+       sit centred under the row of three instead of hanging on the left. */
+    display: grid;
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+    gap: clamp(16px, 1.8vw, 26px);
+    margin-top: clamp(28px, 3.4vw, 46px);
+}
+
+body.hv-light .hv-lp-card {
+    grid-column: span 2;
+}
+
+body.hv-light .hv-lp-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+body.hv-light .hv-lp-card:nth-child(5) {
+    grid-column: 4 / span 2;
+}
+
+body.hv-light .hv-lp-card {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: clamp(22px, 2.2vw, 30px);
+    border: 1px solid rgba(154, 26, 38, .12);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 2px 10px rgba(24, 12, 14, .05);
+    text-decoration: none;
+    color: inherit;
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+body.hv-light .hv-lp-card:hover,
+body.hv-light .hv-lp-card:focus-visible {
+    transform: translateY(-4px);
+    border-color: rgba(154, 26, 38, .28);
+    box-shadow: 0 16px 38px rgba(24, 12, 14, .12);
+}
+
+body.hv-light .hv-lp-ico {
+    display: inline-grid;
+    place-items: center;
+    width: 46px;
+    height: 46px;
+    border-radius: 13px;
+    background: rgba(154, 26, 38, .08);
+    color: var(--adv-crimson-700, #9a1a26);
+    font-size: 1.05rem;
+}
+
+body.hv-light .hv-lp-card h3 {
+    margin: 6px 0 0;
+    font-size: clamp(1.05rem, 1.25vw, 1.2rem);
+    font-weight: 700;
+    line-height: 1.3;
+    color: #1b1113;
+}
+
+body.hv-light .hv-lp-card p {
+    margin: 0;
+    font-size: .95rem;
+    line-height: 1.6;
+    color: #5b4e50;
+}
+
+body.hv-light .hv-lp-more {
+    margin-top: auto;
+    padding-top: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--adv-crimson-700, #9a1a26);
+}
+
+body.hv-light .hv-lp-more i {
+    font-size: .78rem;
+    transition: transform .25s ease;
+}
+
+body.hv-light .hv-lp-card:hover .hv-lp-more i {
+    transform: translateX(3px);
+}
+
+@media (max-width: 980px) {
+    body.hv-light .hv-lp-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    /* Two across: the fifth card is the odd one out, so it centres instead. */
+    body.hv-light .hv-lp-card:nth-child(4) {
+        grid-column: span 2;
+    }
+
+    body.hv-light .hv-lp-card:nth-child(5) {
+        grid-column: 2 / span 2;
+    }
+}
+
+@media (max-width: 640px) {
+    body.hv-light .hv-lp-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    body.hv-light .hv-lp-card,
+    body.hv-light .hv-lp-card:nth-child(4),
+    body.hv-light .hv-lp-card:nth-child(5) {
+        grid-column: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    body.hv-light .hv-lp-card,
+    body.hv-light .hv-lp-card:hover,
+    body.hv-light .hv-lp-card .hv-lp-more i {
+        transform: none;
+        transition: box-shadow .2s ease;
+    }
+}

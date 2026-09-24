@@ -265,3 +265,21 @@
 #dr-suday-mukhopadhyay:hover .xp-photo img {
     transform: translate(-50%, 0) scale(1.04);
 }
+
+/* Dr. Pradyumna Chakraborty: same treatment as the other white-ground cut-outs. */
+#dr-pradyumna-chakraborty .xp-photo {
+    background: linear-gradient(160deg, #F4F6FA 0%, #FCFBFE 45%, #E7EBF2 100%);
+}
+
+#dr-pradyumna-chakraborty .xp-photo img {
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    object-fit: contain;
+    object-position: 50% 50%;
+    transform: translate(-50%, 0);
+}
+
+#dr-pradyumna-chakraborty:hover .xp-photo img {
+    transform: translate(-50%, 0) scale(1.04);
+}
