@@ -1353,6 +1353,7 @@ body.modal-open .adv-emg {
     body.hv-light .nav-links>a,
     body.hv-light .nav-links .dropbtn {
         padding-inline: .34rem;
+        --nav-pad: .34rem;
     }
 
     /* the pill duplicates a link the menu already carries */
@@ -1382,5 +1383,6 @@ body.modal-open .adv-emg {
     body.hv-light .nav-links>a,
     body.hv-light .nav-links .dropbtn {
         padding-inline: .45rem;
+        --nav-pad: .45rem;
     }
 }

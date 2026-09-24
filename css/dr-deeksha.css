@@ -6053,3 +6053,31 @@ body.dk .dk-hero p.dk-ed-lede,
 body.dk .dk-hero .dk-ed-copy p {
     font-family: var(--dk-sans);
 }
+
+/* ===================================================================
+   Dark panels: text colour
+   The legibility pass sets `body.dk p` to the dark body ink, and that
+   selector outranks the panel rules written earlier in this file. On the
+   two crimson cards — the gold medal and the present appointment — the
+   copy was therefore dark ink on a near-black red and read as a shadow.
+   These rules put the light tone back where the panel is dark.
+   =================================================================== */
+body.dk .dk-award-hero p,
+body.dk .dk-award-hero li,
+body.dk .dk-appt-card.is-lead p,
+body.dk .dk-appt-card.is-lead li {
+    color: rgba(255, 255, 255, .92);
+}
+
+/* the sub-line keeps its gold, one step brighter than the medal itself */
+body.dk .dk-award-hero .dk-award-sub {
+    color: #F6E2A6;
+}
+
+/* the eyebrow tag on a dark panel: gold on near-black needs the lighter
+   end of the ramp to clear 4.5:1 */
+body.dk .dk-award-hero .dk-tag,
+body.dk .dk-appt-card.is-lead .dk-tag {
+    color: #F4DC9A;
+    background: rgba(255, 255, 255, .16);
+}

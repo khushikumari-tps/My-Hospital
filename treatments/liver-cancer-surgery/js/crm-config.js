@@ -19,7 +19,7 @@ window.ADV_CRM_CONFIG = {
     /* ---- where the leads go ---- */
     domain: 'https://app.speedoone.com',
     intakePath: '/api/crm-public/intake/website/',
-    key: 'bc79cbb441bbbec4d660d5978d86b9ab38da',
+    key: 'a9107119fcdd0f8b57fa9b9d0f2fdba98a92',
 
     /* ---- defaults applied to every lead when a form does not set them ---- */
     defaultCity: 'Baruipur',

@@ -51,7 +51,7 @@
     align-items: stretch;
 }
 
-.xp-field > i {
+.xp-field>i {
     top: auto;
     bottom: 18px;
 }
@@ -176,7 +176,7 @@
     transform: translate(-50%, 0) scale(1.04);
 }
 
-/* Dr. Soman Mayur: same treatment as the other white-ground cut-outs. */
+/* Dr. Suman Meyur: same treatment as the other white-ground cut-outs. */
 #dr-soman-mayur .xp-photo {
     background: linear-gradient(160deg, #F4F6FA 0%, #FCFBFE 45%, #E7EBF2 100%);
 }

@@ -364,13 +364,16 @@ img {
     white-space: nowrap;
 }
 
+/* The rule underlines the label, not the padding around it: --nav-pad is set
+   wherever the items carry horizontal padding, so the line starts and ends
+   with the text however the bar is sized. */
 .nav-links a::after {
     content: '';
     position: absolute;
     width: 0;
     height: 2px;
     bottom: -4px;
-    left: 0;
+    left: var(--nav-pad, 0px);
     background-color: var(--primary);
     transition: var(--transition);
 }
@@ -384,7 +387,7 @@ img {
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
-    width: 100%;
+    width: calc(100% - (2 * var(--nav-pad, 0px)));
 }
 
 .nav-links a.active {
