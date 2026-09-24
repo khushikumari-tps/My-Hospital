@@ -167,3 +167,19 @@
         position: static;
     }
 }
+
+/* the site header is sticky, so the page's own heading needs clearance
+   or it starts underneath it */
+.agy-head {
+    /* the site header is fixed and 127px tall on desktop: the page's own
+       heading has to start below it */
+    padding-top: clamp(118px, 11vw, 162px);
+}
+
+/* the header is shorter on phones, but not by as much as a vw-based clamp
+   assumes, so the floor is set from its measured height */
+@media (max-width: 720px) {
+    .agy-head {
+        padding-top: 120px;
+    }
+}

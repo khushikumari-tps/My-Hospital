@@ -85,6 +85,13 @@
         flex-shrink: 1;
     }
 
+    /* the desktop nudge is dropped here -- the 1rem gutter is all the room
+       there is once the pill and language selector are in the row */
+    .logo-link,
+    body.hv-light .logo-link {
+        margin-left: 0;
+    }
+
     .logo img,
     .navbar.scrolled .logo img,
     body.hv-light .logo img,

@@ -290,7 +290,9 @@ img {
 .logo-link {
     display: flex;
     align-items: center;
-    margin-left: 0;
+    /* nudged in from the container's padding edge so the mark reads as part
+       of the bar rather than hugging it */
+    margin-left: 18px;
 }
 
 /* Square logo: cap by height so it never overflows the 126px bar */
@@ -3030,4 +3032,14 @@ img {
     .advmega-item:hover > .advmega-sub {
         animation: none;
     }
+}
+
+/* ===================================================================
+   No caret beside a menu name. The dropdowns open on hover on a desktop
+   and are expanded by the drawer on a phone, so the chevron only added
+   noise to a bar that already carries twelve items.
+   =================================================================== */
+.nav-links .dropbtn > .fa-chevron-down,
+.nav-links .dropbtn > i.fa-solid.fa-chevron-down {
+    display: none;
 }
