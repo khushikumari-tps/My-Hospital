@@ -1313,3 +1313,74 @@ body.modal-open .adv-emg {
         display: none;
     }
 }
+
+/* ==========================================================================
+   Desktop navbar fit (laptops)
+   --------------------------------------------------------------------------
+   Eleven menu items at the enlarged 1rem label size stopped fitting between
+   the logo and the language selector: measured at 1366px the last item ended
+   21px past the window and the whole actions group (language pill, Locations)
+   sat entirely off screen; at 1440 and 1728 it was worse, because the
+   Locations pill comes back above 1620.
+
+   The bar is therefore sized in two steps above the drawer breakpoint: the
+   labels tighten from 1361px up, and the Locations pill only returns once
+   there is genuinely room for it. Below 1361px the drawer takes over and
+   none of this applies.
+   ========================================================================== */
+@media (min-width: 1361px) and (max-width: 1800px) {
+
+    /* both stylesheets set this size, so both are answered here */
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: clamp(.78rem, .62vw, .92rem);
+    }
+
+    .nav-links,
+    body.hv-light .nav-links {
+        gap: .1rem;
+        margin: 0 .35rem;
+    }
+
+    /* the breathing room moves from the gap into the labels themselves, so
+       each item has a little padding around its text and a hover area that
+       matches what it reads as */
+    .nav-links>a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn {
+        padding-inline: .34rem;
+    }
+
+    /* the pill duplicates a link the menu already carries */
+    .location-btn {
+        display: none;
+    }
+}
+
+/* Above 1800 the row has room for the full-size labels and the pill. */
+@media (min-width: 1801px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: .95rem;
+    }
+
+    .nav-links,
+    body.hv-light .nav-links {
+        gap: .2rem;
+    }
+
+    .nav-links>a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn {
+        padding-inline: .45rem;
+    }
+}

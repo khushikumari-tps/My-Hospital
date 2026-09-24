@@ -169,7 +169,7 @@ body.hv-light .nav-container {
     /* full width: the logo sits near the left edge and the actions near
        the right, rather than both floating in from a centred column */
     max-width: none;
-    padding-left: clamp(24px, 4.5vw, 86px);
+    padding-left: clamp(14px, 2.4vw, 46px);
     padding-right: clamp(16px, 2.2vw, 40px);
     height: 126px;
 }
@@ -179,7 +179,7 @@ body.hv-light .navbar.scrolled .nav-container {
 }
 
 body.hv-light .logo-link {
-    margin-left: 18px;
+    margin-left: 4px;
 }
 
 body.hv-light .logo img {

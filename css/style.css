@@ -267,7 +267,7 @@ img {
        need the room. */
     max-width: none;
     /* a wider gutter on the left so the logo clears the window edge */
-    padding-left: clamp(24px, 4.5vw, 86px);
+    padding-left: clamp(14px, 2.4vw, 46px);
     padding-right: clamp(16px, 2.2vw, 40px);
 }
 
@@ -290,9 +290,8 @@ img {
 .logo-link {
     display: flex;
     align-items: center;
-    /* nudged in from the container's padding edge so the mark reads as part
-       of the bar rather than hugging it */
-    margin-left: 18px;
+    /* a small nudge only: the mark sits close to the left edge of the bar */
+    margin-left: 4px;
 }
 
 /* Square logo: cap by height so it never overflows the 126px bar */
