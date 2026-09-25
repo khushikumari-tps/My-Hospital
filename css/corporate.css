@@ -2538,3 +2538,352 @@ article.dept-card .dept-cta {
         border-radius: 39px 39px 18px 18px;
     }
 }
+
+/* The browser's own file button is grey system chrome next to the brand
+   fields. Only the button is restyled; the field itself keeps the shape
+   and spacing every other input on the form has. */
+.hosp-form input[type="file"] {
+    padding: 10px 12px;
+    cursor: pointer;
+}
+
+.hosp-form input[type="file"]::file-selector-button {
+    margin-right: 14px;
+    padding: 10px 18px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--adv-grad-brand);
+    color: var(--adv-white);
+    font-family: var(--adv-font-head);
+    font-size: var(--adv-text-sm);
+    font-weight: 600;
+    letter-spacing: .01em;
+    cursor: pointer;
+    box-shadow: 0 6px 14px -8px rgba(142, 27, 46, .75);
+    transition: filter .2s ease, box-shadow .2s ease;
+}
+
+.hosp-form input[type="file"]:hover::file-selector-button {
+    filter: brightness(1.06);
+    box-shadow: 0 8px 18px -8px rgba(142, 27, 46, .85);
+}
+
+.hosp-form input[type="file"]:focus {
+    outline: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hosp-form input[type="file"]::file-selector-button {
+        transition: none;
+    }
+}
+
+/* The sticky header covers the top of an anchored section, so the
+   appointment form's own heading has to clear it on arrival. */
+#appointment {
+    scroll-margin-top: 120px;
+}
+
+/* The address card carries the booking link as well as the route: someone
+   reading the address is as likely to want a slot as a map. It is the quiet
+   twin of the directions button above it, so the two do not compete. */
+.hosp-map-side .hosp-book-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    margin: 0 0 6px;
+    padding: 14px 20px;
+    border: 1px solid rgba(142, 27, 46, .22);
+    border-radius: 50px;
+    background: var(--adv-white);
+    font-family: var(--adv-font-head);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--adv-crimson-700);
+    text-decoration: none;
+    box-shadow: var(--adv-lift-1);
+    transition: border-color .2s ease, box-shadow .2s ease, translate .2s ease;
+}
+
+.hosp-map-side .hosp-book-btn:hover {
+    border-color: var(--adv-crimson-700);
+    box-shadow: var(--adv-lift-2);
+    translate: 0 -2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hosp-map-side .hosp-book-btn:hover {
+        translate: none;
+    }
+}
+
+/* ==========================================================================
+   Hospital page hero — premium pass (styling only, markup untouched)
+   --------------------------------------------------------------------------
+   The hero carried the right content on a flat tint: the building floated on
+   a plain card, the facts read as a bulleted list, and the five action tiles
+   were five equal boxes with no order to them. This gives the band depth, the
+   photograph a studio surface, the facts a card of their own, and the tiles a
+   hierarchy — book first, everything else supporting.
+   ========================================================================== */
+.hosp-hero {
+    position: relative;
+    padding: 170px 0 74px;
+    overflow: hidden;
+    background:
+        radial-gradient(780px 420px at 84% -12%, rgba(255, 138, 76, .18), transparent 64%),
+        radial-gradient(620px 420px at 6% 104%, rgba(142, 27, 46, .1), transparent 62%),
+        linear-gradient(168deg, #FFF6F3 0%, #FFFFFF 58%, #FDF5F2 100%);
+}
+
+/* a single wide ray across the band, at the angle the logo mark uses */
+.hosp-hero::before {
+    content: "";
+    position: absolute;
+    inset: -30% -10% auto;
+    height: 150%;
+    background: linear-gradient(104deg, transparent 38%, rgba(255, 255, 255, .55) 47%, transparent 58%);
+    pointer-events: none;
+}
+
+.hosp-hero > .container {
+    position: relative;
+    z-index: 1;
+}
+
+.hosp-hero-copy h1 {
+    letter-spacing: -.02em;
+}
+
+.hosp-hero-sub {
+    display: inline-block;
+    padding-bottom: 14px;
+    border-bottom: 2px solid rgba(142, 27, 46, .16);
+}
+
+.hosp-hero-lede {
+    max-width: 58ch;
+}
+
+/* ---- the three facts become a card, not a bullet list ------------------ */
+.hosp-hero-facts {
+    margin: 0;
+    padding: 18px 20px;
+    border: 1px solid var(--adv-line);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, .72);
+    box-shadow: var(--adv-lift-1);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+
+/* the earlier rules put the icon on an absolute pin inside a block row; the
+   card lays the row out as flex instead, so both have to be answered here */
+.hosp-hero-facts li {
+    display: flex;
+    position: relative;
+    align-items: center;
+    gap: 13px;
+    margin: 0;
+    padding: 11px 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--adv-line-soft);
+}
+
+.hosp-hero-facts li:first-child {
+    padding-top: 0;
+}
+
+.hosp-hero-facts li:last-child {
+    padding-bottom: 0;
+    border-bottom: 0;
+}
+
+.hosp-hero-facts i {
+    position: static;
+    flex: 0 0 34px;
+    height: 34px;
+    margin: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 11px;
+    background: rgba(142, 27, 46, .08);
+    font-size: .88rem;
+}
+
+.hosp-hero-facts a {
+    font-weight: 600;
+    color: var(--adv-crimson-700);
+    text-decoration: none;
+}
+
+.hosp-hero-facts a:hover {
+    text-decoration: underline;
+}
+
+/* ---- the building gets the studio surface, as on the home page --------- */
+.hosp-hero-media {
+    isolation: isolate;
+    padding: clamp(16px, 1.8vw, 26px);
+    border-radius: 26px;
+    border: 1px solid rgba(142, 27, 46, .1);
+    background:
+        radial-gradient(70% 55% at 50% 20%, rgba(255, 255, 255, .96) 0%, rgba(255, 255, 255, 0) 70%),
+        radial-gradient(120% 90% at 50% 120%, rgba(142, 27, 46, .12) 0%, rgba(142, 27, 46, 0) 60%),
+        linear-gradient(168deg, #FFF9F7 0%, #FCEFEC 52%, #F6E2DE 100%);
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, .9),
+        0 26px 64px -30px rgba(94, 16, 25, .4),
+        0 6px 18px -12px rgba(94, 16, 25, .18);
+}
+
+/* the shadow the building stands on */
+.hosp-hero-media::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: clamp(16px, 2vw, 26px);
+    width: min(66%, 420px);
+    height: 28px;
+    translate: -50% 0;
+    border-radius: 50%;
+    background: radial-gradient(ellipse at center, rgba(74, 12, 20, .24) 0%, rgba(74, 12, 20, .09) 45%, transparent 72%);
+    filter: blur(8px);
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hosp-hero-media img {
+    position: relative;
+    z-index: 1;
+    border-radius: 16px;
+    box-shadow: none;
+    filter: saturate(1.04) contrast(1.03) drop-shadow(0 16px 24px rgba(74, 12, 20, .15));
+}
+
+.hosp-hero-media .hosp-flag {
+    z-index: 2;
+    left: clamp(18px, 2vw, 28px);
+    bottom: clamp(18px, 2vw, 28px);
+    padding: 10px 17px;
+    background: rgba(255, 255, 255, .84);
+    border: 1px solid rgba(142, 27, 46, .12);
+    box-shadow: 0 10px 26px -14px rgba(94, 16, 25, .5);
+    -webkit-backdrop-filter: blur(10px) saturate(1.2);
+    backdrop-filter: blur(10px) saturate(1.2);
+}
+
+/* ---- action tiles ------------------------------------------------------ */
+.hosp-actions {
+    gap: 14px;
+    margin-top: 40px;
+}
+
+.hosp-act {
+    position: relative;
+    overflow: hidden;
+    min-height: 74px;
+    border-radius: 18px;
+    border-color: rgba(142, 27, 46, .12);
+    background: rgba(255, 255, 255, .86);
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
+}
+
+.hosp-act:hover,
+.hosp-act:focus-visible {
+    border-color: rgba(142, 27, 46, .32);
+    box-shadow: 0 18px 38px -22px rgba(94, 16, 25, .5);
+}
+
+.hosp-act > i {
+    flex-basis: 40px;
+    height: 40px;
+    border-radius: 13px;
+    background: linear-gradient(150deg, rgba(142, 27, 46, .1), rgba(255, 138, 76, .12));
+}
+
+/* five tiles across a 1440 row leave each label about 150px: the labels are
+   sized to that rather than wrapping to three lines */
+.hosp-act {
+    gap: 11px;
+    padding: 12px 14px;
+}
+
+.hosp-act b {
+    font-size: .9rem;
+    line-height: 1.25;
+}
+
+.hosp-act small {
+    font-size: .74rem;
+}
+
+/* the booking tile is the one that should be read first */
+.hosp-act.is-book {
+    box-shadow: 0 16px 34px -18px rgba(142, 27, 46, .75);
+}
+
+/* one slow pass of light over the booking tile on hover */
+.hosp-act.is-book::after {
+    content: "";
+    position: absolute;
+    inset: 0 auto 0 -60%;
+    width: 55%;
+    background: linear-gradient(100deg, transparent, rgba(255, 255, 255, .34), transparent);
+    translate: -20% 0;
+    transition: translate .7s var(--adv-ease);
+    pointer-events: none;
+}
+
+.hosp-act.is-book:hover::after {
+    translate: 320% 0;
+}
+
+.hosp-act.is-emergency {
+    border-color: rgba(185, 45, 60, .35);
+    background: linear-gradient(150deg, #FFF6F5 0%, #FFECEA 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hosp-act:hover,
+    .hosp-act:focus-visible {
+        transform: none;
+    }
+
+    .hosp-act.is-book::after {
+        display: none;
+    }
+}
+
+/* On a phone the two-up tiles left the longer labels ("Book an Appointment",
+   "WhatsApp Enquiry") on three lines, and the bottom row ran under the
+   floating call button. One tile per row reads better and clears it. */
+@media (max-width: 560px) {
+    .hosp-actions {
+        grid-template-columns: minmax(0, 1fr);
+        padding-bottom: 8px;
+    }
+
+    .hosp-act,
+    .hosp-act.is-emergency {
+        grid-column: auto;
+        min-height: 64px;
+    }
+
+    .hosp-act b {
+        font-size: .95rem;
+    }
+}
+
+/* The cutout leaves a margin of its own inside the PNG, so the building read
+   small on its panel. It is scaled up rather than the panel shrunk, so the
+   studio surface around it keeps the same proportions. */
+.hosp-hero-media img {
+    scale: 1.1;
+    transform-origin: 50% 52%;
+}

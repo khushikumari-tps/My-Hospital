@@ -46,6 +46,56 @@
         var form = document.getElementById('appointmentFormBaruipur');
         if (!form) return;   // the date pickers elsewhere submit normally to the hospital page
 
+        /* Arriving on #appointment (the "Book at Baruipur" links): the hash
+           jump happens before the photographs above the form have a height,
+           so the page keeps growing under the anchor and the visitor lands
+           short of the form — measured 668px short, on the band above it.
+           The target is therefore re-aligned as the page settles, and the
+           retries stop the moment the visitor scrolls for themselves. */
+        if (location.hash === '#appointment') {
+            (function alignToForm() {
+                var anchor = document.getElementById('appointment');
+                if (!anchor) return;
+                var owned = true;
+
+                function release() { owned = false; }
+                ['wheel', 'touchstart', 'keydown', 'mousedown'].forEach(function (ev) {
+                    window.addEventListener(ev, release, { passive: true, once: true });
+                });
+
+                function align() {
+                    if (!owned) return;
+                    // 'auto', not the page's smooth default: this is an arrival,
+                    // not a click, and each retry would otherwise restart an
+                    // animation the last one had not finished
+                    anchor.scrollIntoView({ block: 'start', behavior: 'auto' });
+                }
+
+                align();
+                [120, 350, 700, 1200, 1800].forEach(function (ms) { setTimeout(align, ms); });
+                window.addEventListener('load', align);
+
+                // any image above the form that finishes late moves it again
+                Array.prototype.forEach.call(document.images, function (img) {
+                    if (!img.complete) img.addEventListener('load', align, { once: true });
+                });
+
+                /* The page keeps growing for a while after load — late images,
+                   the carousel sizing itself, webfonts reflowing text — and
+                   each of those moves the form further down. Follow the page
+                   height rather than guessing at delays, and let go after five
+                   seconds so nothing fights a visitor who stayed put. */
+                if (window.ResizeObserver) {
+                    var ro = new ResizeObserver(function () {
+                        if (!owned) { ro.disconnect(); return; }
+                        align();
+                    });
+                    ro.observe(document.documentElement);
+                    setTimeout(function () { ro.disconnect(); owned = false; }, 5000);
+                }
+            }());
+        }
+
         var dept = form.querySelector('[name="department"]');
         var doctor = form.querySelector('[name="doctor"]');
         var date = form.querySelector('[name="date"]');
