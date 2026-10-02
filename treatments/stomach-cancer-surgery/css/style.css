@@ -1625,3 +1625,9 @@ em,i{font-style:normal}
 
 @media (max-width:900px){ .xlinks__grid{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:560px){ .xlinks__grid{grid-template-columns:1fr} }
+
+/* The anatomy figure now carries an illustration rather than an inline SVG,
+   so the image is given the figure's rounded inner edge and its own width. */
+.anatomy img{
+  display:block;width:100%;height:auto;border-radius:var(--radius-lg);
+}

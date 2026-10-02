@@ -1547,3 +1547,22 @@ body{top:0 !important}
 
 @media (max-width:900px){ .xlinks__grid{grid-template-columns:repeat(2,1fr)} }
 @media (max-width:560px){ .xlinks__grid{grid-template-columns:1fr} }
+
+/* ---------- Illustrated cards and figure ----------
+   The type cards and the "What Is Liver Cancer?" figure now carry clinical
+   illustrations rather than inline SVG, so the art is a band across the top
+   of the card and the figure holds a full-width image. */
+.type-card__art--photo{
+  width:100%;height:clamp(168px,19vw,208px);border-radius:16px;margin-bottom:20px;
+  overflow:hidden;background:linear-gradient(140deg,var(--blue-050),var(--teal-100));
+}
+.type-card__art--photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1);
+}
+.type-card:hover .type-card__art--photo img{transform:scale(1.04)}
+.anatomy img{display:block;width:100%;height:auto;border-radius:var(--radius-lg)}
+
+@media (prefers-reduced-motion:reduce){
+  .type-card:hover .type-card__art--photo img{transform:none}
+}
