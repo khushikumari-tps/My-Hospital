@@ -3059,11 +3059,14 @@ body.hv-light .hv-lp-card {
     grid-column: span 2;
 }
 
-body.hv-light .hv-lp-card:nth-child(4) {
+/* The centring below is for a five-card row only: with five cards the last
+   two would otherwise hang on the left. :nth-last-child pins the rules to
+   that count, so a sixth card simply fills the row. */
+body.hv-light .hv-lp-card:nth-child(4):nth-last-child(2) {
     grid-column: 2 / span 2;
 }
 
-body.hv-light .hv-lp-card:nth-child(5) {
+body.hv-light .hv-lp-card:nth-child(5):nth-last-child(1) {
     grid-column: 4 / span 2;
 }
 
@@ -3139,12 +3142,12 @@ body.hv-light .hv-lp-card:hover .hv-lp-more i {
         grid-template-columns: repeat(4, minmax(0, 1fr));
     }
 
-    /* Two across: the fifth card is the odd one out, so it centres instead. */
-    body.hv-light .hv-lp-card:nth-child(4) {
+    /* Two across: a fifth card with nothing beside it centres instead. */
+    body.hv-light .hv-lp-card:nth-child(4):nth-last-child(2) {
         grid-column: span 2;
     }
 
-    body.hv-light .hv-lp-card:nth-child(5) {
+    body.hv-light .hv-lp-card:nth-child(5):nth-last-child(1) {
         grid-column: 2 / span 2;
     }
 }

@@ -1,20 +1,10 @@
-/* Advitya Healthcares — Hernia Surgery page interactions */
+/* Advitya Healthcares — Liver Cancer & HPB Surgery page interactions */
 (function () {
   'use strict';
 
   var WA_NUMBER = '919211221551';
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
-
-  /* ---------- brand mark shrinks on scroll ---------- */
-  var brandmark = $('#brandmark');
-  if (brandmark) {
-    var syncBrand = function () {
-      brandmark.classList.toggle('is-compact', window.scrollY > 80);
-    };
-    window.addEventListener('scroll', syncBrand, { passive: true });
-    syncBrand();
-  }
 
   /* ---------- mobile menu drawer ---------- */
   var burger = $('#burger');
@@ -385,8 +375,7 @@
   var TIMES = ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
                '12:00', '12:30', '16:00', '16:30', '17:00', '17:30'];
 
-  var picked = { location: 'Kolkata', date: '', time: '', condition: '' };
-  var defaultCondition = null;   // the value the form ships with, kept for triggers that name no condition
+  var picked = { location: 'Kolkata', date: '', time: '' };
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function isoOf(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
@@ -502,66 +491,51 @@
   }
 
   /* ---------- appointment modal ----------
-     Same form and lead route as the Advitya landing pages: the request is
-     posted to the CRM through js/crm-lead.js (keyed in js/crm-config.js).
-     If the CRM is switched off or unreachable, the visitor is offered
-     WhatsApp with the request filled in, so no enquiry is lost. */
-  var SERVICE = 'Hernia Surgery';
-  var SLUG = 'hernia-surgery';
+     Same form and same lead as the hospital site's liver / HPB page: the
+     request goes to the CRM through js/crm-lead.js (keyed in
+     js/crm-config.js) and the visitor lands on thank-you.html. If the CRM
+     is switched off or unreachable, the request is handed to WhatsApp
+     instead, so a lead is never dropped. */
+  var SERVICE = 'HPB Surgery';
+  var SLUG = 'liver-cancer-hpb-surgery';
 
   var modal = $('#quick-modal');
-  var apptPanel = $('#appt-panel');
-  var apptDone = $('#appt-done');
   var apptForm = $('#appt-form');
-  var apptError = $('#appt-error');
+  var apptStatus = $('#appt-status');
   var lastFocus = null;
 
-  function normalisePhone(value) {
-    return String(value || '').replace(/[^0-9]/g, '').replace(/^(91|0)(?=\d{10}$)/, '');
-  }
-
   if (apptForm) {
-    var timeSelect = apptForm.elements.time;
+    var timeSelect = $('#appt-time', apptForm);
     TIMES.forEach(function (t) {
       var o = document.createElement('option');
       o.value = t;
       o.textContent = label12(t);
       timeSelect.appendChild(o);
     });
-    apptForm.elements.date.min = isoOf(new Date());
-  }
-
-  /* carry the widget's location, date and time into the form */
-  function prefill() {
-    if (!apptForm) return;
-    var f = apptForm.elements;
-    if (defaultCondition === null && f.condition) defaultCondition = f.condition.value;
-    f.location.value = picked.location || 'Kolkata';
-    if (picked.date) f.date.value = picked.date;
-    if (picked.time) f.time.value = picked.time;
-    /* a trigger can say which hernia it came from, so the team sees it on the
-       enquiry; anything else falls back to the form's own default */
-    if (f.condition) f.condition.value = picked.condition || defaultCondition || '';
-  }
-
-  function showPanel(done) {
-    if (apptPanel) apptPanel.hidden = !!done;
-    if (apptDone) apptDone.hidden = !done;
+    $('#appt-date', apptForm).min = isoOf(new Date());
   }
 
   function setStatus(text, ok) {
-    if (!apptError) return;
-    apptError.textContent = text || '';
-    apptError.classList.toggle('is-visible', !!text);
-    apptError.classList.toggle('is-ok', !!ok);
+    if (!apptStatus) return;
+    apptStatus.textContent = text || '';
+    apptStatus.classList.toggle('is-visible', !!text);
+    apptStatus.classList.toggle('is-ok', !!ok);
+  }
+
+  /* carry the widget's picks into the form, so tapping Book after choosing
+     a location, date and time does not ask for them twice */
+  function prefillFromWidget() {
+    if (!apptForm) return;
+    if (picked.location) apptForm.elements.location.value = picked.location;
+    if (picked.date) apptForm.elements.date.value = picked.date;
+    if (picked.time) apptForm.elements.time.value = picked.time;
   }
 
   function openModal(trigger) {
     if (!modal) return;
     lastFocus = trigger || document.activeElement;
-    showPanel(false);
+    prefillFromWidget();
     setStatus('');
-    prefill();
     modal.hidden = false;
     modal.classList.add('is-open');
     document.body.classList.add('modal-open');
@@ -581,135 +555,22 @@
     if (lastFocus && lastFocus.focus) lastFocus.focus();
   }
 
-  /* ----- validation: our own messages, shown under each field ----- */
-  function clearError(field) {
-    field.removeAttribute('aria-invalid');
-    var holder = field.closest('.bkf__field') || field.closest('.bkf__consent');
-    var msg = holder && holder.querySelector('.bkf__err');
-    if (msg) msg.remove();
-  }
-
-  function showError(field, text) {
-    field.setAttribute('aria-invalid', 'true');
-    var holder = field.closest('.bkf__field') || field.closest('.bkf__consent');
-    if (!holder) return;
-    var msg = holder.querySelector('.bkf__err');
-    if (!msg) {
-      msg = document.createElement('p');
-      msg.className = 'bkf__err';
-      msg.id = 'err-' + field.name;
-      holder.appendChild(msg);
+  // every "Book Appointment" on the page opens the form where the visitor is
+  document.addEventListener('click', function (e) {
+    var el = e.target.closest ? e.target.closest('[data-book], a[href="#book"]') : null;
+    if (!el || !modal) return;
+    if (el.hasAttribute('data-loc')) {
+      var value = el.getAttribute('data-loc');
+      picked.location = value;
+      var radio = $('input[name="w-location"][value="' + value + '"]');
+      if (radio) radio.checked = true;
     }
-    msg.textContent = text;
-    field.setAttribute('aria-describedby', msg.id);
-  }
-
-  function validate() {
-    var f = apptForm.elements;
-    var first = null;
-    [f.name, f.phone, f.consent].forEach(clearError);
-
-    if (!f.name.value.trim()) {
-      showError(f.name, 'Please enter your name.');
-      first = first || f.name;
-    }
-    if (!/^[6-9][0-9]{9}$/.test(normalisePhone(f.phone.value))) {
-      showError(f.phone, 'Please enter a valid 10-digit Indian mobile number.');
-      first = first || f.phone;
-    }
-    if (!f.consent.checked) {
-      showError(f.consent, 'Please confirm we may contact you about this enquiry.');
-      first = first || f.consent;
-    }
-    if (first) first.focus();
-    return !first;
-  }
-
-  function readForm() {
-    var f = apptForm.elements;
-    return {
-      name: f.name.value.trim(),
-      phone: normalisePhone(f.phone.value),
-      location: f.location.value,
-      date: f.date.value,
-      time: f.time.value ? label12(f.time.value) : '',
-      condition: f.condition.value.trim(),
-      message: f.message.value.trim(),
-      consent: f.consent.checked
-    };
-  }
-
-  function sendToCRM(p) {
-    if (!window.AdvCRM || !window.AdvCRM.enabled()) return Promise.resolve(false);
-    return window.AdvCRM.post({
-      name: p.name,
-      phone: p.phone,
-      city: p.location,
-      product: SERVICE,
-      title: 'Consultation request',
-      lines: {
-        'Service': SERVICE,
-        'Page': SLUG,
-        'Location': p.location === 'Baruipur' ? 'Advitya Hospital, Baruipur' : 'Advitya Healthcares — Kolkata',
-        'Condition': p.condition,
-        'Preferred date': p.date,
-        'Preferred time': p.time,
-        'Message': p.message,
-        'Consent to contact': p.consent ? 'Yes' : 'No'
-      }
-    });
-  }
-
-  function whatsappLink(p) {
-    var lines = [
-      'Hernia consultation request — Advitya Healthcares',
-      'Name: ' + p.name,
-      'Mobile: +91 ' + p.phone,
-      'Preferred location: ' + p.location
-    ];
-    if (p.date) lines.push('Preferred date: ' + p.date);
-    if (p.time) lines.push('Preferred time: ' + p.time);
-    if (p.condition) lines.push('Condition: ' + p.condition);
-    if (p.message) lines.push('Message: ' + p.message);
-    return 'https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n'));
-  }
-
-  function showDone(p, sent) {
-    var title = $('#appt-done-title');
-    var text = $('#appt-done-text');
-    if (sent) {
-      title.textContent = 'Thank you, ' + p.name + '.';
-      text.textContent = 'We have received your appointment request. Our team will call you on +91 ' +
-        p.phone + ' to confirm the venue and slot.';
-    } else {
-      title.textContent = 'Please send it on WhatsApp';
-      text.textContent = 'We could not reach our booking system just now. ';
-      var a = document.createElement('a');
-      a.href = whatsappLink(p);
-      a.target = '_blank';
-      a.rel = 'noopener';
-      a.textContent = 'Open WhatsApp with your request filled in';
-      text.appendChild(a);
-      text.appendChild(document.createTextNode(', or call +91 92112 21551.'));
-    }
-    showPanel(true);
-    var done = $('.modal__go', apptDone);
-    if (done) done.focus();
-  }
-
-  $$('[data-book]').forEach(function (el) {
-    el.addEventListener('click', function (e) {
-      picked.condition = el.getAttribute('data-condition') || '';
-      if (el.hasAttribute('data-loc')) {
-        var value = el.getAttribute('data-loc');
-        picked.location = value;
-        var radio = $('input[name="w-location"][value="' + value + '"]');
-        if (radio) radio.checked = true;
-      }
-      e.preventDefault();
-      openModal(el);
-    });
+    e.preventDefault();
+    openModal(el);
   });
+
+  // arriving from the thank-you page's "Book Appointment" link
+  if (modal && location.hash === '#book') openModal();
 
   if (modal) {
     $$('[data-modal-close]', modal).forEach(function (btn) {
@@ -722,9 +583,7 @@
       if (!modal.classList.contains('is-open')) return;
       if (e.key === 'Escape') { closeModal(); return; }
       if (e.key === 'Tab') {
-        var focusable = $$('button, input, select, textarea, a[href]', modal).filter(function (n) {
-          return !n.disabled && n.offsetParent !== null;
-        });
+        var focusable = $$('button, input, select, textarea, a[href]', modal).filter(function (n) { return !n.disabled; });
         if (!focusable.length) return;
         var first = focusable[0], last = focusable[focusable.length - 1];
         if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
@@ -734,30 +593,132 @@
   }
 
   if (apptForm) {
+    var clearError = function (field) {
+      field.removeAttribute('aria-invalid');
+      var holder = field.closest('.appt-field') || field.closest('.appt-consent');
+      var msg = holder && $('.appt-err', holder);
+      if (msg) msg.remove();
+      field.removeAttribute('aria-describedby');
+    };
+
+    var showError = function (field, text) {
+      field.setAttribute('aria-invalid', 'true');
+      var holder = field.closest('.appt-field') || field.closest('.appt-consent');
+      if (!holder) return;
+      var msg = $('.appt-err', holder);
+      if (!msg) {
+        msg = document.createElement('p');
+        msg.className = 'appt-err';
+        msg.id = 'err-' + (field.id || field.name);
+        holder.appendChild(msg);
+      }
+      msg.textContent = text;
+      field.setAttribute('aria-describedby', msg.id);
+    };
+
+    var messageFor = function (field) {
+      if (field.validity.valueMissing) {
+        return field.type === 'checkbox'
+          ? 'Please confirm we may contact you about this enquiry.'
+          : 'This field is needed so the team can reach you.';
+      }
+      if (field.validity.patternMismatch || field.validity.typeMismatch) {
+        return field.name === 'phone'
+          ? 'Enter a phone number we can call you back on.'
+          : 'Please check this entry.';
+      }
+      return field.validationMessage || 'Please check this entry.';
+    };
+
+    var validate = function () {
+      var first = null;
+      $$('input, select, textarea', apptForm).forEach(function (f) {
+        clearError(f);
+        if (f.checkValidity()) return;
+        showError(f, messageFor(f));
+        if (!first) first = f;
+      });
+      if (first) first.focus();
+      return !first;
+    };
+
     apptForm.addEventListener('input', function (e) {
       if (e.target && e.target.getAttribute('aria-invalid') === 'true') clearError(e.target);
     });
     apptForm.addEventListener('change', function (e) {
-      if (e.target && e.target.name === 'consent') clearError(e.target);
+      if (e.target && e.target.getAttribute('aria-invalid') === 'true') clearError(e.target);
     });
+
+    var toThankYou = function () {
+      window.location.href = 'thank-you.html?service=' + encodeURIComponent(SLUG);
+    };
+
+    var byWhatsApp = function (p) {
+      var lines = [
+        'Liver cancer / HPB surgery consultation request — Advitya Healthcares',
+        'Name: ' + p.name,
+        'Phone: ' + p.phone,
+        'Preferred location: ' + p.location
+      ];
+      if (p.date) lines.push('Preferred date: ' + p.date);
+      if (p.time) lines.push('Preferred time: ' + label12(p.time));
+      if (p.condition) lines.push('Surgery / condition: ' + p.condition);
+      if (p.message) lines.push('Message: ' + p.message);
+      window.open('https://wa.me/' + WA_NUMBER + '?text=' + encodeURIComponent(lines.join('\n')),
+        '_blank', 'noopener');
+    };
 
     apptForm.addEventListener('submit', function (e) {
       e.preventDefault();
       setStatus('');
       if (!validate()) return;
 
-      var p = readForm();
-      var btn = $('button[type="submit"]', apptForm);
-      btn.disabled = true;
-      btn.setAttribute('aria-busy', 'true');
-      btn.textContent = 'Sending your request…';
+      var fd = new FormData(apptForm);
+      var p = {
+        name: (fd.get('name') || '').trim(),
+        phone: (fd.get('phone') || '').trim(),
+        location: fd.get('location') || '',
+        date: fd.get('date') || '',
+        time: fd.get('time') || '',
+        condition: (fd.get('condition') || '').trim(),
+        message: (fd.get('message') || '').trim(),
+        consent: !!fd.get('consent')
+      };
 
-      sendToCRM(p).then(function (ok) {
-        btn.disabled = false;
-        btn.removeAttribute('aria-busy');
-        btn.textContent = 'Request appointment';
-        if (ok) apptForm.reset();
-        showDone(p, ok);
+      var button = $('button[type="submit"]', apptForm);
+      var label = button.textContent;
+      button.disabled = true;
+      button.setAttribute('aria-busy', 'true');
+      button.textContent = 'Sending your request…';
+
+      var sent = (window.AdvCRM && window.AdvCRM.enabled())
+        ? window.AdvCRM.post({
+            name: p.name,
+            phone: p.phone,
+            email: '',
+            city: p.location,
+            product: SERVICE,
+            title: 'Consultation request',
+            lines: {
+              'Service': SERVICE,
+              'Page': SLUG,
+              'Preferred location': p.location,
+              'Condition': p.condition,
+              'Preferred date': p.date,
+              'Preferred time': p.time ? label12(p.time) : '',
+              'Message': p.message,
+              'Consent to contact': p.consent ? 'Yes' : 'No'
+            }
+          })
+        : Promise.resolve(false);
+
+      sent.then(function (ok) {
+        if (ok) { toThankYou(); return; }
+        button.disabled = false;
+        button.removeAttribute('aria-busy');
+        button.textContent = label;
+        setStatus('We could not reach our booking system, so WhatsApp has opened with your request. Please press Send, or call +91 92112 21551.');
+        byWhatsApp(p);
       });
     });
   }

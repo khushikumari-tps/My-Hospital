@@ -45,9 +45,11 @@
             font-weight: 500;
         }
 
-        /* Anchor targets must clear the fixed 96px navbar */
+        /* Anchor targets must clear the sticky header, which is 126px tall at
+           rest and 108px once the page is scrolled — the old 96px figure this
+           was written for left each block's heading tucked under the bar. */
         .service-block {
-            scroll-margin-top: 120px;
+            scroll-margin-top: 150px;
             background: #fff;
             border: 1px solid #F0E4E0;
             border-left: 5px solid var(--primary);
@@ -133,7 +135,7 @@
         }
 
         .sub-block {
-            scroll-margin-top: 120px;
+            scroll-margin-top: 150px;
             background: var(--bg-light);
             border: 1px solid var(--border-color);
             border-radius: 10px;
