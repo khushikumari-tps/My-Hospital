@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=5">
+<link rel="stylesheet" href="css/style.css?v=12">
 <script>document.documentElement.className+=" js";</script>
 
 <script type="application/ld+json">
@@ -279,6 +279,7 @@
       <div class="acc__panel" id="acc-hpb" hidden>
         <a href="#what-is-hpb-surgery">What Is HPB Surgery?</a>
         <a href="#hpb">HPB Surgery</a>
+        <a href="#biliary-conditions">Gallbladder &amp; Bile Duct Conditions</a>
         <a href="#hpb">Liver Surgery</a>
         <a href="#hpb">Bile Duct Surgery</a>
         <a href="#hpb">Gallbladder &amp; Bile Duct Cancer</a>
@@ -425,12 +426,17 @@
 <!-- ============ WHAT IS HPB SURGERY ============ -->
 <section class="section" id="what-is-hpb-surgery" aria-labelledby="what-title">
   <div class="wrap split">
-    <figure class="anatomy reveal">
-      <img src="images/what-is-hpb-surgery.webp"
-           alt="Diagram of the upper abdomen labelling the liver, the bile ducts draining from it, the gallbladder, the pancreas and the duodenum"
-           width="1100" height="1100" loading="lazy" decoding="async">
-      <figcaption>Illustrative diagram only &mdash; not to anatomical scale.</figcaption>
-    </figure>
+    
+      
+  
+      <!-- Second plate: which operation applies depends on where in the pancreas
+           the disease sits, which is the clearest example of the point above. -->
+      <figure class="anatomy reveal">
+        <img src="images/pancreas-operations.webp"
+             alt="Diagram of the pancreas with the head region marked for a Whipple procedure and the body and tail marked for distal pancreatectomy"
+             width="1100" height="1100" loading="lazy" decoding="async">
+        <figcaption>Where the disease sits decides the operation &mdash; a Whipple procedure also involves nearby organs.</figcaption>
+      </figure>
 
     <div class="reveal">
       <span class="eyebrow">Patient education</span>
@@ -480,7 +486,7 @@
 
     <div class="grid-3">
       <article class="type-card reveal">
-        <div class="type-card__art"><svg viewBox="0 0 48 56" role="img" aria-label="Illustration of the liver"><use href="#liver"/></svg></div>
+        <div class="type-card__art type-card__art--photo"><img src="images/services/liver-surgery.webp" alt="Illustration of the liver with a lesion marked and the planned resection area outlined" loading="lazy" decoding="async"></div>
         <h3>Liver Surgery</h3>
         <p>Resection of primary and secondary liver tumours, benign liver lesions and liver cysts, by open or minimally invasive approach.</p>
         <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
@@ -501,21 +507,21 @@
       </article>
 
       <article class="type-card reveal">
-        <div class="type-card__art"><svg viewBox="0 0 48 56" role="img" aria-label="Illustration of the liver marking a tumour at the main bile duct"><use href="#liver"/><path d="M26 29c3 3 4 7 4 11" stroke="#7FA56E" stroke-width="2.2" stroke-linecap="round" fill="none"/><circle cx="28" cy="36" r="8.7" fill="#DF6A50" opacity=".18"/><circle cx="28" cy="36" r="4.2" fill="#DF6A50" stroke="#fff" stroke-width="1.6"/></svg></div>
+        <div class="type-card__art type-card__art--photo"><img src="images/services/bile-duct-cancer.webp" alt="Illustration of the liver, bile duct and pancreas with a tumour marked in the bile duct" loading="lazy" decoding="async"></div>
         <h3>Bile Duct Cancer Surgery</h3>
         <p>Surgery for cholangiocarcinoma of the bile ducts, which may involve removing part of the liver or pancreas together with the affected duct.</p>
         <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal">
-        <div class="type-card__art"><svg viewBox="0 0 48 56" role="img" aria-label="Illustration of the pancreas beneath the liver"><use href="#liver"/><path d="M12 42c0-3 2.5-5 6-5h4c4 0 6-2.5 10-2.5 2.6 0 4.5 1.5 4.5 3.5s-1.9 3.4-4.5 3.4h-5c-3.5 0-4.5 4-9 4-3.5 0-6-1-6-3.4Z" fill="#F3C9A3" stroke="#C99C97" stroke-width="1.5" stroke-linejoin="round"/></svg></div>
+        <div class="type-card__art type-card__art--photo"><img src="images/services/pancreatic-surgery.webp" alt="Illustration of the pancreas with the head region marked for a Whipple procedure and the body and tail for distal pancreatectomy" loading="lazy" decoding="async"></div>
         <h3>Pancreatic Surgery</h3>
         <p>Whipple procedure, distal pancreatectomy and other pancreatic resections for pancreatic cancer, cystic tumours and chronic pancreatitis.</p>
         <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal">
-        <div class="type-card__art"><svg viewBox="0 0 48 56" role="img" aria-label="Illustration of the liver marking a complex central tumour near major vessels"><use href="#liver"/><path d="M8 24c6 0 10 2 14 6M40 20c-6 1-10 3-14 8" stroke="#C24A44" stroke-width="2" stroke-linecap="round" fill="none" opacity=".7"/><circle cx="23" cy="27" r="8.9" fill="#9E2430" opacity=".18"/><circle cx="23" cy="27" r="4.4" fill="#9E2430" stroke="#fff" stroke-width="1.6"/></svg></div>
+        <div class="type-card__art type-card__art--photo"><img src="images/services/complex-hpb.webp" alt="Illustration of the liver marking a staged resection, a repeat surgery site and a vascular reconstruction" loading="lazy" decoding="async"></div>
         <h3>Complex Hepatobiliary Procedures</h3>
         <p>Two-stage liver resections, vascular resection and reconstruction, and re-do surgery for recurrent or locally advanced tumours.</p>
         <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
@@ -527,6 +533,66 @@
 </section>
 
 <!-- ============ 9. WHY CHOOSE ADVITYA ============ -->
+
+<!-- ============ GALLBLADDER & BILE DUCT CONDITIONS ============ -->
+<section class="section" id="biliary-conditions" aria-labelledby="biliary-title">
+  <div class="wrap">
+    <div class="sec-head sec-head--center reveal">
+      <span class="eyebrow">Conditions we treat</span>
+      <h2 id="biliary-title">Gallbladder &amp; Bile Duct Conditions</h2>
+      <p class="sec-sub">The biliary half of HPB surgery: what goes wrong in the gallbladder and the bile ducts, and
+        what each condition means for treatment.</p>
+    </div>
+
+    <div class="grid-3">
+      <article class="type-card reveal">
+        <div class="type-card__art type-card__art--photo"><img src="images/conditions/gallstones.webp" alt="Illustration of the gallbladder opened to show gallstones sitting in bile" loading="lazy" decoding="async"></div>
+        <h3>Gallstones</h3>
+        <p>Stones forming in the gallbladder. Many cause no trouble at all; others bring on pain after meals, and those are the ones assessed for surgery.</p>
+        <a class="type-card__link" href="#book" data-book data-condition="Gallstones">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="type-card reveal">
+        <div class="type-card__art type-card__art--photo"><img src="images/conditions/biliary-colic.webp" alt="Illustration of a gallstone temporarily blocking the neck of the gallbladder" loading="lazy" decoding="async"></div>
+        <h3>Biliary Colic</h3>
+        <p>A stone blocks the outlet for a while and then falls back. The pain comes in episodes, typically after a heavy or fatty meal.</p>
+        <a class="type-card__link" href="#book" data-book data-condition="Biliary Colic">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="type-card reveal">
+        <div class="type-card__art type-card__art--photo"><img src="images/conditions/cholecystitis.webp" alt="Illustration of an inflamed gallbladder with a thickened wall and stones inside" loading="lazy" decoding="async"></div>
+        <h3>Acute Cholecystitis</h3>
+        <p>The gallbladder becomes inflamed and its wall thickens, usually because a stone has stayed stuck. This needs prompt assessment.</p>
+        <a class="type-card__link" href="#book" data-book data-condition="Acute Cholecystitis">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="type-card reveal">
+        <div class="type-card__art type-card__art--photo"><img src="images/conditions/gallbladder-polyps.webp" alt="Illustration of the gallbladder lining carrying small polyps" loading="lazy" decoding="async"></div>
+        <h3>Gallbladder Polyps</h3>
+        <p>Growths on the gallbladder lining, usually found by chance on a scan. Size and number decide whether they are watched or removed.</p>
+        <a class="type-card__link" href="#book" data-book data-condition="Gallbladder Polyps">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="type-card reveal">
+        <div class="type-card__art type-card__art--photo"><img src="images/conditions/bile-duct-stones.webp" alt="Illustration of a gallstone blocking the common bile duct below the gallbladder" loading="lazy" decoding="async"></div>
+        <h3>Bile Duct Stones</h3>
+        <p>A stone that has passed into the common bile duct and blocks it, which can cause jaundice, pain and infection.</p>
+        <a class="type-card__link" href="#book" data-book data-condition="Bile Duct Stones">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+      </article>
+
+      <article class="type-card reveal">
+        <div class="type-card__art type-card__art--photo"><img src="images/conditions/bile-duct-stricture.webp" alt="Illustration of the common bile duct with a narrowed segment" loading="lazy" decoding="async"></div>
+        <h3>Bile Duct Stricture</h3>
+        <p>A narrowing of the bile duct, from injury, inflammation or a tumour. It obstructs bile flow and always needs investigating.</p>
+        <a class="type-card__link" href="#book" data-book data-condition="Bile Duct Stricture">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+      </article>
+    </div>
+
+    <p class="type-note">Not every condition here needs an operation. Many are managed medically or simply watched, and
+      treatment is decided only after examination and imaging.</p>
+  </div>
+</section>
+
 <section class="section why" id="why" aria-labelledby="why-title">
   <div class="wrap">
     <div class="sec-head sec-head--center reveal">

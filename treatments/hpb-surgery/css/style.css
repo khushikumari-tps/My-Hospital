@@ -1590,3 +1590,31 @@ body{top:0 !important}
    it now reads at the same size, with the line length still capped. */
 .about p{font-size:clamp(1.04rem,.45vw + .95rem,1.14rem);line-height:1.75}
 .about__toggle,.about__ask{font-size:1.02rem}
+
+/* Two of the six service cards have no illustration yet. Their icon tiles sat
+   at 88px while the others carried a full-width band, so the row read as
+   broken rather than as a set. The icon cards now use the same band, with the
+   mark centred on it, and swapping an illustration in later changes nothing
+   else about the card. */
+#hpb .type-card__art:not(.type-card__art--photo){
+  width:100%;height:clamp(168px,19vw,208px);border-radius:16px;margin-bottom:20px;
+  display:grid;place-items:center;
+}
+#hpb .type-card__art:not(.type-card__art--photo) svg{height:84px}
+
+/* These plates are single organs on a pale ground, not scenes: cropping them
+   to a letterbox cut the labels and the marked areas off at the edges. They
+   are shown whole instead, centred in a slightly taller band. The icon cards
+   in the same grid follow the same height so the row stays level. */
+#hpb .type-card__art,
+#biliary-conditions .type-card__art--photo{
+  height:clamp(200px,23vw,250px);display:grid;place-items:center;padding:8px;
+}
+#hpb .type-card__art--photo,
+#biliary-conditions .type-card__art--photo{
+  background:linear-gradient(140deg,#F4F9FF,#EAF4FC);
+}
+#hpb .type-card__art--photo img,
+#biliary-conditions .type-card__art--photo img{
+  width:100%;height:100%;object-fit:contain;
+}

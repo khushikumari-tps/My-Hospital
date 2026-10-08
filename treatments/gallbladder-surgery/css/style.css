@@ -1781,3 +1781,35 @@ em,i,cite,dfn,var,address{font-style:normal}
    it now reads at the same size, with the line length still capped. */
 .about p{font-size:clamp(1.04rem,.45vw + .95rem,1.14rem);line-height:1.75}
 .about__toggle,.about__ask{font-size:1.02rem}
+
+/* ---------- Condition cards: illustrated ----------
+   Each gallbladder condition carries its own plate, so the art is a band
+   across the top of the card rather than the 88px icon tile. The square rule
+   above still serves any card left on an icon. */
+.type-card__art--photo{
+  width:100%;height:clamp(168px,19vw,208px);border-radius:16px;margin-bottom:20px;
+  overflow:hidden;background:linear-gradient(140deg,var(--blue-050),var(--teal-100));
+}
+.type-card__art--photo img{
+  width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s cubic-bezier(.2,.7,.3,1);
+}
+.type-card:hover .type-card__art--photo img{transform:scale(1.04)}
+
+@media (prefers-reduced-motion:reduce){
+  .type-card:hover .type-card__art--photo img{transform:none}
+}
+
+/* The anatomy figure carries an illustration rather than an inline SVG. */
+.anatomy img{display:block;width:100%;height:auto;border-radius:var(--radius-lg)}
+
+/* These plates are single objects on a pale ground, not scenes: cropping them
+   to a letterbox cut the stones and the labels off at the edges. They are
+   shown whole instead, centred in a slightly taller band. */
+#conditions .type-card__art--photo{
+  height:clamp(200px,23vw,250px);display:grid;place-items:center;padding:8px;
+  background:linear-gradient(140deg,#F4F9FF,#EAF4FC);
+}
+#conditions .type-card__art--photo img{
+  width:100%;height:100%;object-fit:contain;
+}

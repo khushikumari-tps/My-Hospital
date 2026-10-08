@@ -375,7 +375,8 @@
   var TIMES = ['09:00', '09:30', '10:00', '10:30', '11:00', '11:30',
                '12:00', '12:30', '16:00', '16:30', '17:00', '17:30'];
 
-  var picked = { location: 'Kolkata', date: '', time: '' };
+  var picked = { location: 'Kolkata', date: '', time: '', condition: '' };
+  var defaultCondition = null;   // the value the form ships with, kept for triggers that name no condition
 
   function pad(n) { return (n < 10 ? '0' : '') + n; }
   function isoOf(d) { return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
@@ -526,9 +527,14 @@
      a location, date and time does not ask for them twice */
   function prefillFromWidget() {
     if (!apptForm) return;
-    if (picked.location) apptForm.elements.location.value = picked.location;
-    if (picked.date) apptForm.elements.date.value = picked.date;
-    if (picked.time) apptForm.elements.time.value = picked.time;
+    var f = apptForm.elements;
+    if (defaultCondition === null && f.condition) defaultCondition = f.condition.value;
+    if (picked.location) f.location.value = picked.location;
+    if (picked.date) f.date.value = picked.date;
+    if (picked.time) f.time.value = picked.time;
+    /* a trigger can say which condition it came from, so the team sees it on
+       the enquiry; anything else falls back to the form's own default */
+    if (f.condition) f.condition.value = picked.condition || defaultCondition || '';
   }
 
   function openModal(trigger) {
@@ -559,6 +565,7 @@
   document.addEventListener('click', function (e) {
     var el = e.target.closest ? e.target.closest('[data-book], a[href="#book"]') : null;
     if (!el || !modal) return;
+    picked.condition = el.getAttribute('data-condition') || '';
     if (el.hasAttribute('data-loc')) {
       var value = el.getAttribute('data-loc');
       picked.location = value;
