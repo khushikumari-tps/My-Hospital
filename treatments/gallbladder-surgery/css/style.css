@@ -1807,9 +1807,11 @@ em,i,cite,dfn,var,address{font-style:normal}
    to a letterbox cut the stones and the labels off at the edges. They are
    shown whole instead, centred in a slightly taller band. */
 #conditions .type-card__art--photo{
-  height:clamp(200px,23vw,250px);display:grid;place-items:center;padding:8px;
+  height:clamp(200px,23vw,250px);display:block;padding:8px;
   background:linear-gradient(140deg,#F4F9FF,#EAF4FC);
 }
 #conditions .type-card__art--photo img{
+  /* block band with a fixed height: the plate resolves against it and
+     letterboxes inside, so no label is cut off */
   width:100%;height:100%;object-fit:contain;
 }
