@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=3">
+<link rel="stylesheet" href="css/style.css?v=5">
 <script>document.documentElement.className+=" js";</script>
 
 <script type="application/ld+json">
@@ -393,6 +393,10 @@
 <!-- ============ 2. ABOUT ============ -->
 <section class="about-band" id="about" aria-labelledby="about-title">
   <div class="wrap about-band__grid">
+    <!-- Keeps the booking card's overhang clear, and only for as far as it
+         actually hangs: main.js sets --about-cutout from the measured
+         overlap, so the copy runs full width once the card has ended. -->
+    <div class="about-band__spacer" aria-hidden="true"></div>
     <div class="about">
       <h2 id="about-title">About <em>HPB Surgery at Advitya Healthcares</em></h2>
 
@@ -415,7 +419,6 @@
         </a>
       </div>
     </div>
-    <div aria-hidden="true"></div>
   </div>
 </section>
 

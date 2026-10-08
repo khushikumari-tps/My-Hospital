@@ -1631,3 +1631,27 @@ em,i{font-style:normal}
 .anatomy img{
   display:block;width:100%;height:auto;border-radius:var(--radius-lg);
 }
+
+
+/* ---------- About band: the booking card's overhang ----------
+   The band used to reserve a full-height column on the right so the hero's
+   absolutely positioned booking card could hang into it. The card only
+   overhangs by 50-140px, so the rest of that column was empty space beside
+   the text. The reserve is now a floated spacer whose height is the measured
+   overhang, and the copy wraps back to full width underneath it. */
+.about-band__grid{display:block}
+.about-band__spacer{
+  float:right;width:546px;height:var(--about-cutout,0px);
+  margin:0 0 10px 46px;pointer-events:none;
+}
+@media (max-width:1400px){
+  .about-band__spacer{width:360px}
+}
+@media (max-width:1024px){
+  .about-band__spacer{display:none}
+}
+
+/* The About copy was a step smaller than the body text elsewhere on the page;
+   it now reads at the same size, with the line length still capped. */
+.about p{font-size:clamp(1.04rem,.45vw + .95rem,1.14rem);line-height:1.75}
+.about__toggle,.about__ask{font-size:1.02rem}

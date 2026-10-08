@@ -754,3 +754,25 @@
   var year = $('#year');
   if (year) year.textContent = String(new Date().getFullYear());
 })();
+
+  /* ---- About band: how far the booking card hangs into it ----
+     The card is positioned against the hero, so the band below has to keep
+     that much room clear on the right — and no more. Measured rather than
+     guessed, because the card's height changes with the viewport. */
+  (function aboutCutout() {
+    var band = document.querySelector('.about-band');
+    var widget = document.querySelector('.widget');
+    if (!band || !widget) return;
+
+    function measure() {
+      if (window.innerWidth <= 1024) { band.style.removeProperty('--about-cutout'); return; }
+      var w = widget.getBoundingClientRect();
+      var b = band.getBoundingClientRect();
+      var overhang = Math.max(0, Math.round(w.bottom - b.top) + 18);
+      band.style.setProperty('--about-cutout', overhang + 'px');
+    }
+
+    measure();
+    window.addEventListener('load', measure);
+    window.addEventListener('resize', measure, { passive: true });
+  }());
