@@ -1852,3 +1852,86 @@ body.hv-light .logo img {
         transform: none;
     }
 }
+
+/* ---- Navbar labels: a step back down on laptops --------------------------
+   The previous step sized the labels to the very edge of the room available;
+   on a laptop that read as crowded. Each band gives back roughly 5%. */
+@media (min-width: 1900px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: .95rem;
+    }
+}
+
+@media (min-width: 1501px) and (max-width: 1899px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: clamp(.84rem, .66vw, .96rem);
+    }
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: clamp(.8rem, .6vw, .9rem);
+    }
+}
+
+/* ---- Navbar items: a little air around each label ------------------------
+   Sized per band again: at 1366 every extra 0.01rem of padding costs the bar
+   about 3.5px across eleven items, so the laptop band gets the smallest
+   share and the wide bands the most. */
+@media (min-width: 1900px) {
+
+    .nav-links>a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn {
+        padding-inline: .52rem;
+        --nav-pad: .52rem;
+    }
+
+    .nav-links,
+    body.hv-light .nav-links {
+        gap: .14rem;
+    }
+}
+
+@media (min-width: 1501px) and (max-width: 1899px) {
+
+    .nav-links>a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn {
+        padding-inline: .42rem;
+        --nav-pad: .42rem;
+    }
+
+    .nav-links,
+    body.hv-light .nav-links {
+        gap: .1rem;
+    }
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+
+    .nav-links>a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn {
+        padding-inline: .26rem;
+        --nav-pad: .26rem;
+    }
+}
