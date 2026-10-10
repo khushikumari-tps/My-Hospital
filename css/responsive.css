@@ -1328,7 +1328,7 @@ body.modal-open .adv-emg {
    there is genuinely room for it. Below 1361px the drawer takes over and
    none of this applies.
    ========================================================================== */
-@media (min-width: 1361px) and (max-width: 1800px) {
+@media (min-width: 1361px) and (max-width: 1899px) {
 
     /* both stylesheets set this size, so both are answered here */
     .nav-links a,
@@ -1362,8 +1362,8 @@ body.modal-open .adv-emg {
     }
 }
 
-/* Above 1800 the row has room for the full-size labels and the pill. */
-@media (min-width: 1801px) {
+/* Above 1899 the row has room for the full-size labels and the pill. */
+@media (min-width: 1900px) {
 
     .nav-links a,
     .nav-links .dropbtn,
@@ -1384,5 +1384,471 @@ body.modal-open .adv-emg {
     body.hv-light .nav-links .dropbtn {
         padding-inline: .45rem;
         --nav-pad: .45rem;
+    }
+}
+
+/* ==========================================================================
+   Navbar logo: fixed 209 x 116 box
+   --------------------------------------------------------------------------
+   The mark is square, so the box is given both dimensions and the image is
+   contained inside it: full height, centred, never stretched. Loaded last so
+   it answers the height rules in style.css and home-v2.css together.
+   ========================================================================== */
+.logo img,
+body.hv-light .logo img,
+.navbar.scrolled .logo img,
+body.hv-light .navbar.scrolled .logo img {
+    /* The mark is square, so the box is square too: a wider box would reserve
+       bar width the menu needs and push the language pill off screen at 1366,
+       while showing nothing extra. Height is what sets the visible size. */
+    width: 153px;
+    height: 153px;
+    max-width: 100%;
+    object-fit: contain;
+    object-position: left center;
+}
+
+/* phones: the same box, scaled down so it still clears the bar */
+@media (max-width: 768px) {
+
+    .logo img,
+    body.hv-light .logo img,
+    .navbar.scrolled .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        width: 88px;
+        height: 88px;
+    }
+}
+
+/* The bar grows with the mark so the logo still has air above and below. */
+.nav-container,
+body.hv-light .nav-container {
+    /* the bar is shorter than the 153px mark on purpose: the logo overhangs
+       it slightly rather than the bar growing and eating the hero, which was
+       pushing the hero buttons below the fold on a 1366x768 laptop */
+    height: 150px;
+}
+
+.navbar.scrolled .nav-container,
+body.hv-light .navbar.scrolled .nav-container {
+    height: 132px;
+}
+
+@media (max-width: 1360px) {
+
+    .nav-container,
+    body.hv-light .nav-container {
+        height: 120px;
+    }
+
+    .navbar.scrolled .nav-container,
+    body.hv-light .navbar.scrolled .nav-container {
+        height: 104px;
+    }
+}
+
+/* Anchored sections clear the taller bar. */
+#appointment,
+.service-block,
+.sub-block,
+.type-card[id^="svc-"] {
+    scroll-margin-top: 170px;
+}
+
+/* The 153px mark leaves the menu less room, so the labels tighten one notch
+   between the drawer breakpoint and 1500px. */
+@media (min-width: 1361px) and (max-width: 1500px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: clamp(.72rem, .55vw, .84rem);
+    }
+
+    .nav-links>a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn {
+        padding-inline: .26rem;
+        --nav-pad: .26rem;
+    }
+}
+
+/* A little of the hero's vertical rhythm comes back, so the first screen
+   still ends on the buttons rather than cutting them. */
+body.hv-light .hv-hero {
+    padding-top: 168px;
+}
+
+body.hv-light .hv-hero h1 {
+    margin-bottom: 14px;
+}
+
+body.hv-light .hv-hero p.hv-lede {
+    margin-bottom: 22px;
+}
+
+/* The first credential chip hangs off the top of the portrait. With the
+   taller bar it came within 8px of the header edge and read as if it were
+   tucked under it; it now sits clear. */
+body.hv-light .hv-chip-1 {
+    top: 64px;
+}
+
+/* The portrait card used to start flush against the header, so its rounded
+   top was lost. It now drops clear of the bar and the card reads as a card.
+   The chip rides with it, so its own offset comes back down. */
+@media (min-width: 1025px) {
+
+    /* translate, not margin: a margin grew the hero row and pushed the copy
+       column — and its buttons — back below the fold */
+    body.hv-light .hv-hero-media {
+        transform: translateY(34px);
+    }
+
+    body.hv-light .hv-chip-1 {
+        top: 34px;
+    }
+}
+
+/* ---- Navbar labels one size up -------------------------------------------
+   Sized against the bar's remaining room at each width rather than a single
+   value: at 1366 the eleven items plus the language pill have about 45px to
+   spare, so the gain there is smaller than on a wide screen. */
+@media (min-width: 1900px) {
+
+    /* the Locations pill returns here, so the labels stay just under 1rem */
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: .99rem;
+    }
+}
+
+@media (min-width: 1501px) and (max-width: 1899px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: clamp(.86rem, .66vw, 1rem);
+    }
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: clamp(.78rem, .585vw, .9rem);
+    }
+}
+
+/* ---- Navbar labels, one more step ---------------------------------------
+   The wide bands had room to spare, so they take most of the increase. The
+   1361-1500 band pays for its own by giving back gutter, item padding and
+   the gap between items — there were only 30px free at 1366. */
+@media (min-width: 1900px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        /* 1.06rem overflowed by 43px at 1920 */
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 1501px) and (max-width: 1899px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        /* .92rem min overflowed by 25px at 1512 */
+        font-size: clamp(.88rem, .70vw, 1.02rem);
+    }
+}
+
+@media (min-width: 1361px) and (max-width: 1500px) {
+
+    .nav-links a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn,
+    body.hv-light .dropbtn {
+        font-size: clamp(.84rem, .63vw, .96rem);
+    }
+
+    /* the width that pays for it */
+    .nav-container,
+    body.hv-light .nav-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .logo-link,
+    body.hv-light .logo-link {
+        margin-left: 0;
+    }
+
+    .logo img,
+    body.hv-light .logo img,
+    .navbar.scrolled .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        width: 132px;
+        height: 132px;
+    }
+
+    .nav-links,
+    body.hv-light .nav-links {
+        gap: 0;
+        margin: 0 .2rem;
+    }
+
+    .nav-links>a,
+    .nav-links .dropbtn,
+    body.hv-light .nav-links>a,
+    body.hv-light .nav-links .dropbtn {
+        padding-inline: .2rem;
+        --nav-pad: .2rem;
+    }
+}
+
+/* ---- Navbar logo: raised, not flat ---------------------------------------
+   The artwork keeps its own bevel; these two shadows give it a surface to
+   sit on. Tight and low-opacity on purpose — a wide blur reads as a glow
+   around the letters rather than relief. */
+.logo-link {
+    position: relative;
+    isolation: isolate;
+}
+
+.logo img,
+body.hv-light .logo img {
+    filter:
+        drop-shadow(0 1px 1px rgba(94, 16, 25, .28))
+        drop-shadow(0 4px 7px rgba(94, 16, 25, .16));
+    transition: filter .3s ease, transform .3s ease;
+}
+
+.logo-link:hover img,
+body.hv-light .logo-link:hover img {
+    filter:
+        drop-shadow(0 1px 1px rgba(94, 16, 25, .32))
+        drop-shadow(0 7px 13px rgba(94, 16, 25, .2));
+    transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .logo img,
+    .logo-link:hover img,
+    body.hv-light .logo img,
+    body.hv-light .logo-link:hover img {
+        transition: none;
+        transform: none;
+    }
+}
+
+/* ---- Navbar logo: the emboss catches the light ---------------------------
+   A light band crosses the mark every few seconds, masked to the artwork so
+   it travels over the letters and the pyramid rather than over a rectangle.
+   The relief shadows deepen and ease back on the same clock, which is what
+   makes the emboss read as a surface rather than a printed shadow. */
+.logo-link {
+    position: relative;
+    isolation: isolate;
+}
+
+.logo-link::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    opacity: 0;
+    background: linear-gradient(116deg,
+            transparent 38%,
+            rgba(255, 255, 255, .8) 48%,
+            rgba(255, 255, 255, .25) 55%,
+            transparent 66%);
+    -webkit-mask: url("../images/advitya_logo_nav.png?v=2") center / contain no-repeat;
+    mask: url("../images/advitya_logo_nav.png?v=2") center / contain no-repeat;
+    animation: advLogoSheen 7.5s ease-in-out 1.6s infinite;
+}
+
+.logo img,
+body.hv-light .logo img {
+    animation: advLogoRelief 7.5s ease-in-out 1.6s infinite;
+}
+
+@keyframes advLogoSheen {
+
+    0%,
+    68% {
+        opacity: 0;
+        transform: translateX(-34%);
+    }
+
+    74% {
+        opacity: 1;
+    }
+
+    90%,
+    100% {
+        opacity: 0;
+        transform: translateX(34%);
+    }
+}
+
+@keyframes advLogoRelief {
+
+    0%,
+    66%,
+    100% {
+        filter:
+            drop-shadow(0 1px 1px rgba(94, 16, 25, .28))
+            drop-shadow(0 4px 7px rgba(94, 16, 25, .16));
+    }
+
+    78% {
+        filter:
+            drop-shadow(0 2px 1px rgba(94, 16, 25, .34))
+            drop-shadow(0 7px 12px rgba(94, 16, 25, .22));
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .logo-link::after {
+        animation: none;
+        opacity: 0;
+    }
+
+    .logo img,
+    body.hv-light .logo img {
+        animation: none;
+    }
+}
+
+/* ---- Footer logo: a true circular halo -----------------------------------
+   Back to the glow, but on a square box this time: padding on an inline-flex
+   box made the circle an oval, because the mark is wider than it is tall. A
+   fixed square with the mark centred keeps the halo round. */
+.hv-foot-logo {
+    display: grid;
+    place-items: center;
+    width: clamp(168px, 14vw, 208px);
+    aspect-ratio: 1;
+    padding: 0;
+    border-radius: 50%;
+    background: none;
+    box-shadow: none;
+    position: relative;
+    isolation: isolate;
+}
+
+.hv-foot-logo::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: -1;
+    background: radial-gradient(circle at 50% 50%,
+            rgba(255, 255, 255, .97) 0%,
+            rgba(255, 255, 255, .95) 42%,
+            rgba(255, 255, 255, .70) 60%,
+            rgba(255, 255, 255, .20) 76%,
+            rgba(255, 255, 255, 0) 88%);
+    animation: advFootHalo 6.5s ease-in-out infinite alternate;
+}
+
+/* one slow pass of light across the medallion */
+.hv-foot-logo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    z-index: -1;
+    opacity: 0;
+    pointer-events: none;
+    background: linear-gradient(118deg,
+            transparent 38%,
+            rgba(255, 255, 255, .55) 48%,
+            rgba(255, 255, 255, .18) 55%,
+            transparent 65%);
+    animation: advFootSheen 9s ease-in-out 2.2s infinite;
+}
+
+.hv-foot-logo img {
+    position: relative;
+    z-index: 1;
+    height: clamp(74px, 6.4vw, 92px);
+    width: auto;
+    transition: transform .35s cubic-bezier(.2, .7, .3, 1);
+}
+
+.hv-foot-brand:hover .hv-foot-logo img {
+    transform: translateY(-2px) scale(1.02);
+}
+
+@keyframes advFootHalo {
+    from {
+        transform: scale(1);
+        opacity: .93;
+    }
+
+    to {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes advFootSheen {
+
+    0%,
+    72% {
+        opacity: 0;
+        transform: translateX(-34%);
+    }
+
+    78% {
+        opacity: .9;
+    }
+
+    94%,
+    100% {
+        opacity: 0;
+        transform: translateX(34%);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .hv-foot-logo::before {
+        animation: none;
+        transform: none;
+        opacity: 1;
+    }
+
+    .hv-foot-logo::after {
+        animation: none;
+        opacity: 0;
+    }
+
+    .hv-foot-logo img,
+    .hv-foot-brand:hover .hv-foot-logo img {
+        transition: none;
+        transform: none;
     }
 }
