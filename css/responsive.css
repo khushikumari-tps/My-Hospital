@@ -1328,7 +1328,7 @@ body.modal-open .adv-emg {
    there is genuinely room for it. Below 1361px the drawer takes over and
    none of this applies.
    ========================================================================== */
-@media (min-width: 1361px) and (max-width: 1899px) {
+@media (min-width: 1361px) and (max-width: 1699px) {
 
     /* both stylesheets set this size, so both are answered here */
     .nav-links a,
@@ -1933,5 +1933,80 @@ body.hv-light .logo img {
     body.hv-light .nav-links .dropbtn {
         padding-inline: .26rem;
         --nav-pad: .26rem;
+    }
+}
+
+/* ---- Logo between the drawer breakpoint and the phone layout -------------
+   The bar is 120px here but the mark was still 153px, so it overhung by 17px
+   at the top and ran up into the crimson utility bar. It now sits inside. */
+@media (min-width: 769px) and (max-width: 1360px) {
+
+    .logo img,
+    body.hv-light .logo img,
+    .navbar.scrolled .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        width: 104px;
+        height: 104px;
+    }
+}
+
+/* ---- Navbar: the row gathers to the left --------------------------------
+   The bar was space-between, which parked the menu in the middle and the
+   actions against the right edge. Everything now sits in one run beside the
+   logo, and the spare width falls at the right of the bar. */
+@media (min-width: 1361px) {
+
+    .nav-container,
+    body.hv-light .nav-container {
+        justify-content: flex-start;
+        gap: clamp(10px, 1.2vw, 26px);
+    }
+
+    .nav-links,
+    body.hv-light .nav-links {
+        margin-left: clamp(6px, .8vw, 18px);
+        margin-right: 0;
+    }
+
+    .nav-actions,
+    body.hv-light .nav-actions {
+        margin-left: clamp(12px, 1.4vw, 28px);
+        margin-right: 0;
+    }
+}
+
+/* ---- Logo to the corner --------------------------------------------------
+   The bar keeps only a hairline gutter on the left, so the mark sits in the
+   corner of the window; the width that frees goes to the menu. */
+.nav-container,
+body.hv-light .nav-container {
+    padding-left: 8px;
+}
+
+.logo,
+body.hv-light .logo,
+.logo-link,
+body.hv-light .logo-link {
+    margin-left: 0;
+}
+
+/* ---- Why the actions were still pinned right ----------------------------
+   .nav-links carries flex: 1 in style.css, so the menu stretched to fill the
+   bar and shoved the language pill and Locations button to the far edge,
+   leaving a gap after "Contact". The menu now takes only its own width and
+   the spare falls after the buttons. */
+@media (min-width: 1361px) {
+
+    .nav-links,
+    body.hv-light .nav-links {
+        flex: 0 0 auto;
+    }
+}
+
+/* The Locations pill comes back as soon as the row has room for its 160px —
+   measured at 1700, where 187px is free after the buttons. */
+@media (min-width: 1700px) {
+    .location-btn {
+        display: inline-flex;
     }
 }
