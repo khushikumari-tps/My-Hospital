@@ -199,7 +199,7 @@ window.ADV_POSTS = [
         slug: "gallbladder-cancer-vs-gallstones",
         url: "gallbladder-cancer-vs-gallstones.html",
         title: "Gallbladder Cancer vs. Gallstones",
-        excerpt: "In and around Ranchi , gallbladder stones are so common that many people learn to \u201clive with them.\u201d A pain episode happens, they take antacids, avoid oily food for a few days, and move on.",
+        excerpt: "In Jharkhand, gallbladder stones are so common that many people learn to \u201clive with them.\u201d A pain episode happens, they take antacids, avoid oily food for a few days, and move on.",
         cats: ["cancer", "gallbladder"],
         primary: 'cancer',
         section: 'gallbladder',
@@ -368,7 +368,7 @@ window.ADV_POSTS = [
         slug: "extra-weight-extra-risk-bmi-and-gi-cancers",
         url: "extra-weight-extra-risk-bmi-and-gi-cancers.html",
         title: "Extra Weight, Extra Risk: How Overweight ,(BMI \u226525) Fuels GI Cancers \u2013 The Hidden Risk in Our Diet and Daily Habits",
-        excerpt: "In Jharkhand \u2013 especially in growing urban pockets like Ranchi, Bokaro and nearby towns \u2013 lifestyle is changing fast.",
+        excerpt: "In Jharkhand \u2013 especially in growing urban pockets like Bokaro and nearby towns \u2013 lifestyle is changing fast.",
         cats: ["cancer", "diet", "gi-health"],
         primary: 'cancer',
         section: 'gi-health',
@@ -394,7 +394,7 @@ window.ADV_POSTS = [
         slug: "how-tobacco-damages-your-gut",
         url: "how-tobacco-damages-your-gut.html",
         title: "Not Just Lungs: How Tobacco Damages Your Gut and Causes GI Cancers in Jharkhand",
-        excerpt: "Most people in Ranchi, Bokaro and other parts of Jharkhand think of smoking as a \u201clung problem.\u201d But in reality, tobacco is a full-length GI toxin .",
+        excerpt: "Most people in Bokaro and other parts of Jharkhand think of smoking as a \u201clung problem.\u201d But in reality, tobacco is a full-length GI toxin .",
         cats: ["cancer", "diet", "gi-health"],
         primary: 'cancer',
         section: 'gi-health',
@@ -406,20 +406,20 @@ window.ADV_POSTS = [
     {
         slug: "7-signs-you-need-a-gi-specialist",
         url: "7-signs-you-need-a-gi-specialist.html",
-        title: "Stop Googling \u201cGas & Acidity\u201d: 7 Signs You Actually Need a GI Specialist in Ranchi",
-        excerpt: "If you live in Ranchi or anywhere in Jharkhand, this is a familiar story: late-night burning in the chest, uneasy stomach, a quick Google search for \u201cgas acidity home remedy\u201d, one antacid \u2013 and the same cycle\u2026",
+        title: "Stop Googling \u201cGas & Acidity\u201d: 7 Signs You Actually Need a GI Specialist",
+        excerpt: "If you live in Jharkhand, this is a familiar story: late-night burning in the chest, uneasy stomach, a quick Google search for \u201cgas acidity home remedy\u201d, one antacid \u2013 and the same cycle\u2026",
         cats: ["diet", "gi-health"],
         primary: 'diet',
         section: 'gi-health',
         date: '2025-11-28',
         dateLabel: 'November 28, 2025',
         read: 6,
-        art: { kind: 'photo', src: "images/blog/2025-11-WhatsApp-Image-2025-11-27-at-16.36.40_71245afe-1.webp", alt: "Stop Googling \u201cGas & Acidity\u201d: 7 Signs You Actually Need a GI Specialist in Ranchi", tint: 'pancreas' }
+        art: { kind: 'photo', src: "images/blog/2025-11-WhatsApp-Image-2025-11-27-at-16.36.40_71245afe-1.webp", alt: "Stop Googling \u201cGas & Acidity\u201d: 7 Signs You Actually Need a GI Specialist", tint: 'pancreas' }
     },
     {
         slug: "liver-operation-patient-booklet",
         url: "liver-operation-patient-booklet.html",
-        title: "Liver Operation Patient Information Booklet | Trusted Liver Care in Ranchi \u2013 PancreaCare By Advitya Healthcares",
+        title: "Liver Operation Patient Information Booklet | Trusted Liver Care \u2013 PancreaCare By Advitya Healthcares",
         excerpt: "We know that planning for liver surgery can feel overwhelming. It\u2019s normal to have questions, fear, or uncertainty.",
         cats: ["pancreas", "liver", "diet", "surgery", "patient-stories", "healthcare-updates", "gi-health"],
         primary: 'patient-stories',
@@ -427,7 +427,7 @@ window.ADV_POSTS = [
         date: '2025-11-22',
         dateLabel: 'November 22, 2025',
         read: 5,
-        art: { kind: 'photo', src: "images/blog/2025-11-Untitled-design-2-1-3.webp", alt: "Liver Operation Patient Information Booklet | Trusted Liver Care in Ranchi \u2013 PancreaCare By Advitya Healthcares", tint: 'stories' }
+        art: { kind: 'photo', src: "images/blog/2025-11-Untitled-design-2-1-3.webp", alt: "Liver Operation Patient Information Booklet | Trusted Liver Care \u2013 PancreaCare By Advitya Healthcares", tint: 'stories' }
     },
     {
         slug: "abdominal-pain-after-a-heavy-meal",
@@ -446,7 +446,7 @@ window.ADV_POSTS = [
         slug: "recovery-after-pancreatic-cancer",
         url: "recovery-after-pancreatic-cancer.html",
         title: "Expert Advice for Complete Recovery After Pancreatic Cancer \u2013 From PancreaCare By Advitya Healthcares",
-        excerpt: "If you or a loved one in Ranchi, Jharkhand, Bokaro is aiming for a full recovery after pancreatic cancer, a clear roadmap makes every decision easier.",
+        excerpt: "If you or a loved one in Bokaro, Jharkhand is aiming for a full recovery after pancreatic cancer, a clear roadmap makes every decision easier.",
         cats: ["cancer", "pancreas", "healthcare-updates", "gi-health"],
         primary: 'cancer',
         section: 'pancreas',
@@ -459,7 +459,7 @@ window.ADV_POSTS = [
         slug: "pancreatic-cancer-awareness-why-early-action-matters-in-jharkhand",
         url: "pancreatic-cancer-awareness-why-early-action-matters-in-jharkhand.html",
         title: "Pancreatic Cancer Awareness: Why Early Action Matters in Jharkhand",
-        excerpt: "For people living here, especially those in and around Ranchi, pancreatic cancer awareness is more than a slogan \u2013 it is a reminder to listen to your body and not ignore long-lasting symptoms.",
+        excerpt: "For people living here, pancreatic cancer awareness is more than a slogan \u2013 it is a reminder to listen to your body and not ignore long-lasting symptoms.",
         cats: ["cancer", "pancreas", "healthcare-updates"],
         primary: 'cancer',
         section: 'pancreas',
@@ -471,7 +471,7 @@ window.ADV_POSTS = [
     {
         slug: "pancreatic-cancer-awareness-ranchi",
         url: "pancreatic-cancer-awareness-ranchi.html",
-        title: "Pancreatic Cancer Awareness Month: Empowering Ranchi with The Expertise of Advitya Healthcares",
+        title: "Pancreatic Cancer Awareness Month: Empowering Communities with The Expertise of Advitya Healthcares",
         excerpt: "November is globally recognised as Pancreatic Cancer Awareness Month\u2014a crucial period focused on educating, supporting, and empowering those at risk or affected by this formidable disease.",
         cats: ["cancer", "pancreas", "healthcare-updates"],
         primary: 'cancer',
@@ -479,7 +479,7 @@ window.ADV_POSTS = [
         date: '2025-11-08',
         dateLabel: 'November 8, 2025',
         read: 4,
-        art: { kind: 'photo', src: "images/blog/2025-11-main-3.webp", alt: "Pancreatic Cancer Awareness Month: Empowering Ranchi with The Expertise of Advitya Healthcares", tint: 'cancer' }
+        art: { kind: 'photo', src: "images/blog/2025-11-main-3.webp", alt: "Pancreatic Cancer Awareness Month: Empowering Communities with The Expertise of Advitya Healthcares", tint: 'cancer' }
     },
     {
         slug: "pancreatic-cancer-awareness-month-understanding-risk-detection-and-care",

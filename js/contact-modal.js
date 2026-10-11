@@ -38,7 +38,7 @@
         '          <div><h4>Our centres</h4><p>' +
         '            <b>Advitya Hospital Baruipur</b><br>Kulpi Road, Puratan Bazar, Subuddhipur,<br>Baruipur, West Bengal &ndash; 700144<br>' +
         '            <b>Kolkata OPD</b> &mdash; Rajdanga Main Road<br>' +
-        '            Alliance centres: Ranchi &middot; Khunti<br>' +
+        '            Alliance centre: Khunti<br>' +
         '            <a href="our-network.html">See the full network</a></p></div>' +
         '        </div>' +
         '      </div>' +
@@ -67,9 +67,6 @@
         '            <option value="" disabled selected>Preferred Centre</option>' +
         '            <option>Advitya Hospital Baruipur</option>' +
         '            <option>Advitya Kolkata OPD &mdash; Rajdanga Main Road</option>' +
-        '            <option>Care Clinic, Morabadi &mdash; Ranchi</option>' +
-        '            <option>Jeevah Healthcares, Bariatu Road &mdash; Ranchi</option>' +
-        '            <option>Synergy Global Hospital &mdash; Ranchi</option>' +
         '            <option>Rane Hospital &mdash; Khunti</option>' +
         '          </select></div>' +
         '        </div>' +

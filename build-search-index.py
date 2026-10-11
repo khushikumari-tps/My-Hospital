@@ -31,7 +31,7 @@ SERVICES = [
 ]
 
 ANCHORS = [
-    ('Our Locations', 'our-network.html', 'Contact', 'address hospital branch kolkata ranchi khunti baruipur map directions network'),
+    ('Our Locations', 'our-network.html', 'Contact', 'address hospital branch kolkata khunti baruipur map directions network'),
     ('Book an Appointment', 'contact.html#appointment', 'Contact', 'contact enquiry call booking consultation'),
     ('Book at Advitya Hospital Baruipur', 'advitya-hospital-baruipur.html#appointment', 'Advitya Hospital Baruipur', 'registration appointment opd booking baruipur south 24 parganas'),
     ('Emergency 24x7', 'advitya-hospital-baruipur.html#emergency', 'Advitya Hospital Baruipur', 'casualty urgent ambulance admission emergency room'),
