@@ -1980,6 +1980,7 @@ body.hv-light .swiper-pagination-bullet-active {
 }
 
 /* =============================  Footer  ================================= */
+/* Copied to site-footer.css for pages without this sheet: change both. */
 .hv-footer {
     position: relative;
     /* Lighter red than the near-black burgundy it was: the ramp now starts at

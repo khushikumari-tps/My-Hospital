@@ -1,0 +1,200 @@
+/* ==========================================================================
+   site-footer.css — the site footer and floating WhatsApp button, for pages
+   that do not load home-v2.css.
+
+   The rules are the footer block of home-v2.css, copied as they are, so a
+   page without the home-v2 theme still gets the same footer. Change one,
+   change the other. The round logo plate and the mobile tweaks come from
+   responsive.css, which every page already loads last.
+   ========================================================================== */
+
+/* home-v2.css defines these on :root; brand.css holds the values. */
+.hv-footer,
+.hv-wa {
+    --gold: var(--adv-warm-300);
+    --ink: var(--adv-ink);
+    --ease: var(--adv-ease);
+}
+
+.hv-footer {
+    position: relative;
+    background: linear-gradient(165deg, #9E2233 0%, #7A1626 58%, #5E1019 100%);
+    color: rgba(255, 255, 255, .8);
+    padding: 62px 0 26px;
+}
+
+.hv-foot-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.1fr;
+    gap: 40px;
+    padding-bottom: 40px;
+}
+
+.hv-foot-logo {
+    display: inline-flex;
+    background: #fff;
+    border-radius: 18px;
+    padding: 10px 18px;
+    box-shadow: 0 12px 28px -16px rgba(0, 0, 0, .6);
+}
+
+.hv-foot-logo img {
+    height: 96px;
+    width: auto;
+}
+
+.hv-foot-tag {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    color: #fff;
+    letter-spacing: .04em;
+    margin: 10px 0 18px;
+}
+
+.hv-foot-brand p {
+    font-size: .88rem;
+    line-height: 1.7;
+}
+
+.hv-foot-brand a {
+    color: rgba(255, 255, 255, .85);
+}
+
+.hv-foot-brand a:hover {
+    color: var(--gold);
+}
+
+.hv-social {
+    display: flex;
+    gap: 10px;
+    margin: 18px 0 14px;
+}
+
+.hv-social a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, .22);
+    color: #fff;
+    font-size: .95rem;
+    transition: background .3s ease, border-color .3s ease, transform .3s var(--ease);
+}
+
+.hv-social a[aria-label="WhatsApp"] {
+    color: var(--adv-wa);
+    border-color: rgba(37, 211, 102, .45);
+}
+
+.hv-social a[aria-label="WhatsApp"]:hover {
+    background: var(--adv-wa);
+    border-color: var(--adv-wa);
+    color: #fff;
+}
+
+.hv-social a:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--ink);
+    transform: translateY(-2px);
+}
+
+.hv-foot-col h4 {
+    font-size: .74rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 16px;
+}
+
+.hv-foot-col ul {
+    display: grid;
+    gap: 10px;
+}
+
+.hv-foot-col a {
+    font-size: .89rem;
+    color: rgba(255, 255, 255, .78);
+}
+
+.hv-foot-col a:hover {
+    color: #fff;
+    padding-left: 4px;
+}
+
+.hv-foot-contact li {
+    display: flex;
+    gap: 12px;
+    font-size: .88rem;
+    line-height: 1.6;
+    margin-bottom: 14px;
+}
+
+.hv-foot-contact i {
+    color: var(--gold);
+    margin-top: .25em;
+}
+
+.hv-foot-bottom {
+    border-top: 1px solid rgba(255, 255, 255, .14);
+    padding-top: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: space-between;
+    align-items: center;
+    font-size: .8rem;
+}
+
+.hv-foot-bottom p {
+    margin: 0;
+    line-height: 1.7;
+}
+
+.hv-foot-legal {
+    display: flex;
+    gap: 18px;
+}
+
+.hv-foot-legal a:hover {
+    color: var(--gold);
+}
+
+/* Floating WhatsApp */
+.hv-wa {
+    position: fixed;
+    right: 22px;
+    bottom: 22px;
+    z-index: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    background: var(--adv-wa);
+    color: #fff;
+    font-size: 1.5rem;
+    box-shadow: 0 10px 26px -8px rgba(37, 211, 102, .5);
+    transition: transform .3s var(--ease);
+}
+
+.hv-wa:hover {
+    transform: scale(1.06);
+    color: #fff;
+}
+
+@media (max-width: 1100px) {
+    .hv-foot-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 32px;
+    }
+}
+
+@media (max-width: 640px) {
+    .hv-foot-grid {
+        grid-template-columns: 1fr;
+    }
+}

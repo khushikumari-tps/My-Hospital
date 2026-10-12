@@ -2010,3 +2010,29 @@ body.hv-light .logo-link {
         display: inline-flex;
     }
 }
+
+/* ---- Locations pill on laptop widths --------------------------------------
+   The pill was hidden from 1361 to 1699, so on most laptops no page showed
+   it. Measured room left in the bar with the pill hidden: 20px at 1361, 79px
+   at 1420, 155px at 1500; the labels step up at 1501, leaving none until
+   about 1540 and 79px again by 1590, 171px at 1699. The full 160px pill also
+   overflowed the bar by 4px at 1700.
+   It now comes back as a round icon button (42px, plus the 16px gap) wherever
+   that leaves at least 20px, and in full from 1720. The label stays in the
+   markup at zero size, so screen readers still announce "Our Locations". */
+@media (min-width: 1420px) and (max-width: 1500px),
+       (min-width: 1590px) and (max-width: 1719px) {
+    .location-btn {
+        display: inline-flex;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        padding: 0;
+        gap: 0;
+        font-size: 0;
+    }
+
+    .location-btn i {
+        font-size: 1rem;
+    }
+}
