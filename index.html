@@ -47,7 +47,7 @@
          radius and elevation from here. Sampled from the logo. -->
     <link rel="stylesheet" href="css/brand.css?v=2">
     <link rel="stylesheet" href="css/style.css?v=37">
-    <link rel="stylesheet" href="css/home-v2.css?v=40">
+    <link rel="stylesheet" href="css/home-v2.css?v=43">
     <link rel="stylesheet" href="css/site-search.css?v=1">
     <link rel="stylesheet" href="css/lang-select.css?v=4">
     <link rel="stylesheet" href="css/erp-nav.css?v=4">
@@ -265,16 +265,18 @@
                 </div>
             </div>
 
-            <!-- Speciality picker: jumps to the matching block on the services page -->
+            <!-- Speciality picker: jumps to the matching block on the services page,
+                 or to a treatment page of its own where the option names one -->
             <form class="hv-finder" data-aos="fade-up" data-aos-delay="240" onsubmit="return hvFind(this);">
                 <div class="hv-field">
                     <label for="hv-spec">Speciality</label>
                     <select id="hv-spec" name="spec">
+                        <option value="gi-surgery" data-url="treatments/gi-surgery/index.html">GI Surgery</option>
+                        <option value="gi-cancer-surgery" data-url="treatments/gi-cancer-surgery/index.html">GI Cancer Surgery</option>
                         <option value="gastroenterology">Gastroenterology</option>
                         <option value="pancreatic-disorders">Pancreatic Disorders</option>
                         <option value="liver-care">Liver Care</option>
                         <option value="endoscopy">Endoscopy</option>
-                        <option value="gi-surgery">GI Surgery</option>
                         <option value="colonoscopy">Colonoscopy</option>
                         <option value="nutrition">Nutrition &amp; Dietetics</option>
                         <option value="preventive-health">Preventive Health Check-ups</option>
@@ -406,12 +408,13 @@
 
             <h3 class="hv-treat-title" data-aos="fade-up">Treatments</h3>
             <div class="hv-dept-chips is-treatments" data-aos="fade-up">
+                <a class="hv-dept-chip" href="treatments/gi-surgery/index.html"><i class="fa-solid fa-stethoscope" aria-hidden="true"></i> GI surgery</a>
+                <a class="hv-dept-chip" href="treatment-gi-cancer-surgery.html"><i class="fa-solid fa-ribbon" aria-hidden="true"></i> GI cancer surgery</a>
                 <a class="hv-dept-chip" href="treatment-gallbladder-surgery.html"><i class="fa-solid fa-circle-dot" aria-hidden="true"></i> Gallbladder surgery</a>
                 <a class="hv-dept-chip" href="treatment-hernia-surgery.html"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> Hernia surgery</a>
                 <a class="hv-dept-chip" href="treatment-appendix-surgery.html"><i class="fa-solid fa-scissors" aria-hidden="true"></i> Appendix surgery</a>
                 <a class="hv-dept-chip" href="treatment-piles-fistula-care.html"><i class="fa-solid fa-notes-medical" aria-hidden="true"></i> Piles and fistula care</a>
                 <a class="hv-dept-chip" href="treatment-pancreatic-liver-surgery.html"><i class="fa-solid fa-hand-holding-medical" aria-hidden="true"></i> Pancreatic and liver surgery</a>
-                <a class="hv-dept-chip" href="treatment-gi-cancer-surgery.html"><i class="fa-solid fa-ribbon" aria-hidden="true"></i> GI cancer surgery</a>
                 <a class="hv-dept-chip" href="treatment-urological-treatment.html"><i class="fa-solid fa-droplet" aria-hidden="true"></i> Urological treatment</a>
                 <a class="hv-dept-chip" href="treatment-trauma-care.html"><i class="fa-solid fa-truck-medical" aria-hidden="true"></i> Trauma care</a>
             </div>
@@ -863,7 +866,7 @@
     </section>
 
 
-    <!-- Specialised treatment pages: five standalone landing pages, each opened
+    <!-- Specialised treatment pages: ten standalone landing pages, each opened
          in its own tab so the visitor keeps this page behind them. -->
     <section class="hv-lp" aria-labelledby="hv-lp-title">
         <div class="container">
@@ -873,7 +876,23 @@
                 symptoms, how it is assessed, the surgical options and what to expect afterwards.</p>
 
             <div class="hv-lp-grid">
-                <a class="hv-lp-card" href="treatments/hernia-surgery/index.html" data-aos="fade-up">
+                <a class="hv-lp-card" href="treatments/gi-surgery/index.html" data-aos="fade-up">
+                    <span class="hv-lp-ico"><i class="fa-solid fa-user-doctor" aria-hidden="true"></i></span>
+                    <h3>GI Surgery</h3>
+                    <p>Gastrointestinal surgery &mdash; gallbladder, hernia, colorectal, stomach, liver and pancreas, by open, laparoscopic or robotic approach.</p>
+                    <span class="hv-lp-more">Open page <i class="fa-solid fa-arrow-right"
+                            aria-hidden="true"></i></span>
+                </a>
+
+                <a class="hv-lp-card" href="treatments/gi-cancer-surgery/index.html" data-aos="fade-up" data-aos-delay="60">
+                    <span class="hv-lp-ico"><i class="fa-solid fa-microscope" aria-hidden="true"></i></span>
+                    <h3>GI Cancer Surgery</h3>
+                    <p>Cancers of the oesophagus, stomach, bowel, liver, pancreas and bile ducts &mdash; staging, surgery and coordinated treatment.</p>
+                    <span class="hv-lp-more">Open page <i class="fa-solid fa-arrow-right"
+                            aria-hidden="true"></i></span>
+                </a>
+
+                <a class="hv-lp-card" href="treatments/hernia-surgery/index.html" data-aos="fade-up" data-aos-delay="120">
                     <span class="hv-lp-ico"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i></span>
                     <h3>Hernia Surgery</h3>
                     <p>Inguinal, umbilical, incisional and recurrent hernia &mdash; open and laparoscopic repair, explained before you decide.</p>
@@ -881,7 +900,7 @@
                             aria-hidden="true"></i></span>
                 </a>
 
-                <a class="hv-lp-card" href="treatments/gallbladder-surgery/index.html" data-aos="fade-up" data-aos-delay="60">
+                <a class="hv-lp-card" href="treatments/gallbladder-surgery/index.html" data-aos="fade-up">
                     <span class="hv-lp-ico"><i class="fa-solid fa-droplet" aria-hidden="true"></i></span>
                     <h3>Gallbladder Surgery</h3>
                     <p>Gallstone disease assessed on symptoms and imaging, with laparoscopic gallbladder surgery where it is appropriate.</p>
@@ -889,7 +908,7 @@
                             aria-hidden="true"></i></span>
                 </a>
 
-                <a class="hv-lp-card" href="treatments/colorectal-surgery/index.html" data-aos="fade-up" data-aos-delay="120">
+                <a class="hv-lp-card" href="treatments/colorectal-surgery/index.html" data-aos="fade-up" data-aos-delay="60">
                     <span class="hv-lp-ico"><i class="fa-solid fa-wave-square" aria-hidden="true"></i></span>
                     <h3>Colorectal Surgery</h3>
                     <p>Colon and rectal conditions and cancer &mdash; diagnosis, staging, surgery and the follow-up that comes after.</p>
@@ -897,7 +916,7 @@
                             aria-hidden="true"></i></span>
                 </a>
 
-                <a class="hv-lp-card" href="treatments/stomach-cancer-surgery/index.html" data-aos="fade-up" data-aos-delay="180">
+                <a class="hv-lp-card" href="treatments/stomach-cancer-surgery/index.html" data-aos="fade-up" data-aos-delay="120">
                     <span class="hv-lp-ico"><i class="fa-solid fa-notes-medical" aria-hidden="true"></i></span>
                     <h3>Stomach Cancer Surgery</h3>
                     <p>Gastric cancer: symptoms, staging, the surgical options and what recovery realistically looks like.</p>
@@ -905,7 +924,7 @@
                             aria-hidden="true"></i></span>
                 </a>
 
-                <a class="hv-lp-card" href="treatments/liver-cancer-surgery/index.html" data-aos="fade-up" data-aos-delay="240">
+                <a class="hv-lp-card" href="treatments/liver-cancer-surgery/index.html" data-aos="fade-up">
                     <span class="hv-lp-ico"><i class="fa-solid fa-heart-pulse" aria-hidden="true"></i></span>
                     <h3>Liver Cancer Surgery</h3>
                     <p>Liver tumours &mdash; symptoms, the types of liver cancer, liver resection and what recovery involves.</p>
@@ -913,7 +932,23 @@
                             aria-hidden="true"></i></span>
                 </a>
 
-                <a class="hv-lp-card" href="treatments/hpb-surgery/index.html" data-aos="fade-up" data-aos-delay="300">
+                <a class="hv-lp-card" href="treatments/pancreatic-cancer-surgery/index.html" data-aos="fade-up" data-aos-delay="60">
+                    <span class="hv-lp-ico"><i class="fa-solid fa-ribbon" aria-hidden="true"></i></span>
+                    <h3>Pancreatic Cancer Surgery</h3>
+                    <p>Pancreatic tumours &mdash; symptoms, staging, the Whipple procedure and other operations, and what recovery involves.</p>
+                    <span class="hv-lp-more">Open page <i class="fa-solid fa-arrow-right"
+                            aria-hidden="true"></i></span>
+                </a>
+
+                <a class="hv-lp-card" href="treatments/biliary-surgery/index.html" data-aos="fade-up" data-aos-delay="120">
+                    <span class="hv-lp-ico"><i class="fa-solid fa-code-branch" aria-hidden="true"></i></span>
+                    <h3>Biliary Surgery</h3>
+                    <p>Bile duct stones, strictures, injuries, choledochal cysts and biliary cancers &mdash; the operations and what recovery involves.</p>
+                    <span class="hv-lp-more">Open page <i class="fa-solid fa-arrow-right"
+                            aria-hidden="true"></i></span>
+                </a>
+
+                <a class="hv-lp-card" href="treatments/hpb-surgery/index.html" data-aos="fade-up">
                     <span class="hv-lp-ico"><i class="fa-solid fa-notes-medical" aria-hidden="true"></i></span>
                     <h3>HPB Surgery</h3>
                     <p>Hepato-pancreato-biliary surgery &mdash; liver, bile ducts, gallbladder and pancreas, including complex procedures.</p>
@@ -1142,6 +1177,12 @@
         // Speciality finder: jump to the matching block on the services page.
         // Centre is carried through so the contact modal can be pre-filled later.
         function hvFind(form) {
+            // GI Surgery and GI Cancer Surgery have landing pages of their own
+            const page = form.spec.selectedOptions[0].getAttribute('data-url');
+            if (page) {
+                window.location.href = page;
+                return false;
+            }
             const spec = form.spec.value;
             const centre = form.centre.value;
             let url = 'clinical-services.html#' + spec;
