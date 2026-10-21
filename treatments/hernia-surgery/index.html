@@ -19,7 +19,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=14">
+<link rel="stylesheet" href="css/style.css?v=58">
 <script>document.documentElement.className+=" js";</script>
 
 <script type="application/ld+json">
@@ -217,9 +217,6 @@
         </ul>
       </div>
 
-  <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-    <svg><use href="#i-menu"/></svg>
-  </button>
 </div>
 
 <div class="scrim" id="scrim" hidden></div>
@@ -296,6 +293,7 @@
       <div class="phero__photo">
         <img src="images/dr-deeksha-hero.jpg" alt="Dr. Deeksha Kapoor, Pancreato-Biliary and Gastrointestinal Surgeon, Advitya Healthcares" width="800" height="1131" fetchpriority="high">
       </div>
+      <p class="sx-exp"><b>16</b><span>Years of<br>Experience</span></p>
       <!-- the surgeon's qualifications, as on her profile page -->
       <div class="sx-doccard">
         <p class="sx-doccard__name">Dr. Deeksha Kapoor</p>
@@ -305,6 +303,16 @@
           <li>Console-trained Robotic Surgeon</li>
         </ul>
         <a class="sx-doccard__link" href="../../dr-deeksha-kapoor.html" target="_blank" rel="noopener">View full profile &rarr;</a>
+      </div>
+      <!-- national recognition, as on her profile page -->
+      <div class="sx-award">
+        <span class="sx-award__medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.4 2.6h3.2L12 6.3l1.4-3.7h3.2l-2.7 6.1"/><path d="M9.9 8.7 7.4 2.6"/><circle cx="12" cy="15" r="6"/><path d="m12 11.9 1 2 2.1.3-1.5 1.5.4 2.1-2-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3Z"/></svg></span>
+        <div>
+          <span class="sx-award__tag">National Level Recognition</span>
+          <p class="sx-award__title">Dr. B. Ramamurthi National Gold Medal</p>
+          <p class="sx-award__sub">DNB General Surgery &mdash; Batch of June 2014</p>
+          <p class="sx-award__text">Awarded for securing the highest marks nationally in the Diplomate of National Board examinations, marking a benchmark of academic and surgical excellence.</p>
+        </div>
       </div>
     </div>
 
@@ -331,7 +339,7 @@
       <ul class="facts">
         <li><b>Speciality :</b> Hernia &amp; Abdominal Wall Surgery</li>
         <li><b>Surgical Team:</b> Dr. Deeksha Kapoor &mdash; Pancreato-Biliary &amp; Gastrointestinal Surgery</li>
-        <li><b>Trained at:</b> Tata Memorial Hospital, Mumbai &middot; Medanta &ndash; The Medicity &middot; BLK Max, New Delhi &middot; fellowships in Japan, Germany &amp; France &middot; Da Vinci Xi robotic console</li>
+        <li class="sx-trained"><b>Trained at:</b> Tata Memorial Hospital, Mumbai &middot; Medanta &ndash; The Medicity &middot; BLK Max, New Delhi &middot; fellowships in Japan, Germany &amp; France &middot; Da Vinci Xi robotic console</li>
         <li><b>Treatment Options:</b> Open Hernia Repair, Laparoscopic Hernia Repair</li>
         <li><b>Conditions Treated:</b> Inguinal, umbilical, paraumbilical, incisional, femoral, epigastric and recurrent hernia</li>
       </ul>
@@ -1086,7 +1094,7 @@
           <li><a href="#top">Hernia Surgery</a></li>
           <li><a href="#locations">Locations</a></li>
           <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#book">Contact</a></li>
+          <li><a href="#book" data-book>Contact</a></li>
         </ul>
       </div>
 
@@ -1217,7 +1225,6 @@ function googleTranslateElementInit(){
 
 <script src="js/crm-config.js" defer></script>
 <script src="js/crm-lead.js" defer></script>
-<script src="js/feedback.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>

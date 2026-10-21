@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=26">
+<link rel="stylesheet" href="css/style.css?v=70">
 <script>document.documentElement.className+=" js";</script>
 
 <script type="application/ld+json">
@@ -253,9 +253,6 @@
         </ul>
       </div>
 
-  <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-    <svg><use href="#i-menu"/></svg>
-  </button>
 </div>
 
 <div class="scrim" id="scrim" hidden></div>
@@ -304,7 +301,7 @@
     <a href="#insurance">Insurance &amp; Cashless</a>
     <a href="#why">Why Advitya Healthcares</a>
     <a href="#locations">Locations</a>
-    <a href="#book">Book an Appointment</a>
+    <a href="#book" data-book>Book an Appointment</a>
     <!-- the companion page: liver cancer is covered in its own right -->
     <a href="../liver-cancer-surgery/index.html">Liver Cancer Surgery</a>
     <a href="../biliary-surgery/index.html">Biliary Surgery</a>
@@ -321,6 +318,7 @@
       <div class="phero__photo">
         <img src="images/dr-deeksha-hero.jpg" alt="Dr. Deeksha Kapoor, HPB and Gastrointestinal Surgical Oncologist, Advitya Healthcares" width="800" height="1131" fetchpriority="high">
       </div>
+      <p class="sx-exp"><b>16</b><span>Years of<br>Experience</span></p>
       <!-- the surgeon's qualifications, as on her profile page -->
       <div class="sx-doccard">
         <p class="sx-doccard__name">Dr. Deeksha Kapoor</p>
@@ -330,6 +328,16 @@
           <li>Console-trained Robotic Surgeon</li>
         </ul>
         <a class="sx-doccard__link" href="../../dr-deeksha-kapoor.html" target="_blank" rel="noopener">View full profile &rarr;</a>
+      </div>
+      <!-- national recognition, as on her profile page -->
+      <div class="sx-award">
+        <span class="sx-award__medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.4 2.6h3.2L12 6.3l1.4-3.7h3.2l-2.7 6.1"/><path d="M9.9 8.7 7.4 2.6"/><circle cx="12" cy="15" r="6"/><path d="m12 11.9 1 2 2.1.3-1.5 1.5.4 2.1-2-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3Z"/></svg></span>
+        <div>
+          <span class="sx-award__tag">National Level Recognition</span>
+          <p class="sx-award__title">Dr. B. Ramamurthi National Gold Medal</p>
+          <p class="sx-award__sub">DNB General Surgery &mdash; Batch of June 2014</p>
+          <p class="sx-award__text">Awarded for securing the highest marks nationally in the Diplomate of National Board examinations, marking a benchmark of academic and surgical excellence.</p>
+        </div>
       </div>
     </div>
 
@@ -357,7 +365,7 @@
         <li>Hepato-Pancreato-Biliary surgery &mdash; operations on the liver, bile ducts, gallbladder and pancreas, planned and performed by a specialist surgical team.</li>
         <li><b>Speciality :</b> Hepato-Pancreato-Biliary (HPB) Surgery</li>
         <li><b>Surgical Team:</b> Dr. Deeksha Kapoor &mdash; HPB &amp; GI Surgical Oncology, Surgical Gastroenterology</li>
-        <li><b>Trained at:</b> Tata Memorial Hospital, Mumbai &middot; Medanta &ndash; The Medicity &middot; BLK Max, New Delhi &middot; fellowships in Japan, Germany &amp; France &middot; Da Vinci Xi robotic console</li>
+        <li class="sx-trained"><b>Trained at:</b> Tata Memorial Hospital, Mumbai &middot; Medanta &ndash; The Medicity &middot; BLK Max, New Delhi &middot; fellowships in Japan, Germany &amp; France &middot; Da Vinci Xi robotic console</li>
         <li><b>Treatment Options:</b> Liver resection, bile duct surgery, gallbladder cancer surgery, pancreatic surgery including Whipple&rsquo;s procedure, complex hepatobiliary procedures, open and minimally invasive approaches</li>
         <li><b>Conditions Treated:</b> Liver tumours and cysts, bile duct strictures and injuries, bile duct cancer, gallbladder cancer, pancreatic tumours and cysts, chronic pancreatitis requiring surgery</li>
       </ul>
@@ -617,42 +625,42 @@
         <div class="type-card__art type-card__art--photo"><img src="images/services/liver-surgery.webp" alt="Illustration of the liver with a lesion marked and the planned resection area outlined" loading="lazy" decoding="async"></div>
         <h3>Liver Surgery</h3>
         <p>Resection of primary and secondary liver tumours, benign liver lesions and liver cysts, by open or minimally invasive approach.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal" id="svc-bile-duct">
         <div class="type-card__art type-card__art--photo"><img src="images/services/bile-duct-surgery.webp" alt="Illustration of the bile duct joined to the small intestine at a reconstructed connection" loading="lazy" decoding="async"></div>
         <h3>Bile Duct Surgery</h3>
         <p>Repair and reconstruction of the bile ducts for strictures, injuries after gallbladder surgery, choledochal cysts and stones.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal" id="svc-gallbladder-cancer">
         <div class="type-card__art type-card__art--photo"><img src="images/services/gallbladder-cancer.webp" alt="Illustration of a gallbladder tumour with the adjacent liver tissue and regional lymph nodes marked for removal" loading="lazy" decoding="async"></div>
         <h3>Gallbladder Cancer Surgery</h3>
         <p>Radical cholecystectomy &mdash; removal of the gallbladder with the adjacent liver tissue and lymph nodes &mdash; for gallbladder cancer.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal" id="svc-bile-duct-cancer">
         <div class="type-card__art type-card__art--photo"><img src="images/services/bile-duct-cancer.webp" alt="Illustration of the liver, bile duct and pancreas with a tumour marked in the bile duct" loading="lazy" decoding="async"></div>
         <h3>Bile Duct Cancer Surgery</h3>
         <p>Surgery for cholangiocarcinoma of the bile ducts, which may involve removing part of the liver or pancreas together with the affected duct.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal" id="svc-pancreas">
         <div class="type-card__art type-card__art--photo"><img src="images/services/pancreatic-surgery.webp" alt="Illustration of the pancreas with the head region marked for a Whipple procedure and the body and tail for distal pancreatectomy" loading="lazy" decoding="async"></div>
         <h3>Pancreatic Surgery</h3>
         <p>Whipple procedure, distal pancreatectomy and other pancreatic resections for pancreatic cancer, cystic tumours and chronic pancreatitis.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal" id="svc-complex">
         <div class="type-card__art type-card__art--photo"><img src="images/services/complex-hpb.webp" alt="Illustration of the liver marking a staged resection, a repeat surgery site and a vascular reconstruction" loading="lazy" decoding="async"></div>
         <h3>Complex Hepatobiliary Procedures</h3>
         <p>Two-stage liver resections, vascular resection and reconstruction, and re-do surgery for recurrent or locally advanced tumours.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
     </div>
 
@@ -1007,7 +1015,7 @@
           <li><a href="../biliary-surgery/index.html">Biliary Surgery</a></li>
           <li><a href="#locations">Locations</a></li>
           <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#book">Contact</a></li>
+          <li><a href="#book" data-book>Contact</a></li>
         </ul>
       </div>
 
@@ -1025,7 +1033,7 @@
           <li><svg><use href="#i-phone"/></svg><a href="tel:+919211221551">+91 92112 21551</a></li>
           <li><svg><use href="#i-mail"/></svg><a href="mailto:info@advityahealthcares.com">info@advityahealthcares.com</a></li>
           <li><svg><use href="#i-wa"/></svg><a href="https://wa.me/919211221551" target="_blank" rel="noopener">WhatsApp us</a></li>
-          <li><svg><use href="#i-calendar"/></svg><a href="#book">Book an Appointment</a></li>
+          <li><svg><use href="#i-calendar"/></svg><a href="#book" data-book>Book an Appointment</a></li>
         </ul>
       </div>
     </div>
@@ -1126,7 +1134,6 @@ function googleTranslateElementInit(){
 
 <script src="js/crm-config.js" defer></script>
 <script src="js/crm-lead.js" defer></script>
-<script src="js/feedback.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>

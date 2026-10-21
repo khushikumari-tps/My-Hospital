@@ -40,7 +40,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
     <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
-    <link rel="stylesheet" href="css/lp.css?v=16">
+    <link rel="stylesheet" href="css/lp.css?v=21">
 
     <!-- Tracking. lp-config.js holds the container IDs and only injects GTM
          once a real one is filled in; every event is pushed to dataLayer
@@ -118,18 +118,45 @@
                 <h1 data-reveal data-reveal-delay="60">Gallbladder Cancer Surgery</h1>
                 <p class="lp-hero-sub" data-reveal data-reveal-delay="120">Specialised evaluation, staging and surgical treatment planning for gallbladder cancer, including cancer found unexpectedly after gallbladder removal.</p>
 
-                <div class="lp-hero-doc" data-reveal data-reveal-delay="180">
-                    <picture>
-                        <!-- 160px square, because the chip renders it at 52px. The
-                             full-size photograph is 209KB and used to be fetched here,
-                             above the fold, to be drawn into a circle the size of a
-                             thumbnail. -->
-                        <source srcset="images/dr-deeksha-kapoor-avatar.webp" type="image/webp">
-                        <img src="images/dr_deeksha_updated.jpg" width="192" height="192" alt="Dr. Deeksha Kapoor">
-                    </picture>
-                    <div>
-                        <b>Dr. Deeksha Kapoor</b>
-                        <span>Surgical Gastroenterology and GI Surgical Oncology &middot; Advitya Healthcares</span>
+                <!-- second opinion: for families already holding a diagnosis or a surgery plan -->
+                <div class="lp-sop" data-reveal data-reveal-delay="140">
+                    <span class="lp-sop-ico"><i class="fa-solid fa-file-medical" aria-hidden="true"></i></span>
+                    <p><b>Already diagnosed, or told you need surgery?</b> Get a second opinion from Dr. Deeksha Kapoor before you decide.</p>
+                    <div class="lp-sop-acts">
+                        <a class="lp-btn lp-btn-wa" href="https://wa.me/919211221551?text=Hello%2C%20I%20would%20like%20a%20second%20opinion%20from%20Dr.%20Deeksha%20Kapoor%20on%20my%20gallbladder%20cancer%20reports." target="_blank" rel="noopener" data-cta="second-opinion">
+                            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> Send reports on WhatsApp
+                        </a>
+                        <a class="lp-sop-alt" href="#appointment" data-cta="second-opinion">or book a consultation</a>
+                    </div>
+                </div>
+
+                <!-- surgeon block, as on the treatment pages: portrait with the years of
+                     experience beside it, the qualifications and the national gold medal -->
+                <div class="lp-docblock" data-reveal data-reveal-delay="160">
+                    <div class="lp-docblock__top">
+                        <picture class="lp-docblock__photo">
+                            <source srcset="images/dr-deeksha-kapoor-1024.webp" type="image/webp">
+                            <img src="images/dr_deeksha_updated.jpg" width="1023" height="1537" decoding="async"
+                                alt="Dr. Deeksha Kapoor, Surgical Gastroenterology and GI Surgical Oncology, Advitya Healthcares">
+                        </picture>
+                        <p class="lp-docblock__exp"><b>16</b><span>Years of<br>Experience</span></p>
+                    </div>
+                    <div class="lp-docblock__card">
+                        <p class="lp-docblock__name">Dr. Deeksha Kapoor</p>
+                        <ul>
+                            <li>MBBS, DNB General Surgery, DNB Surgical Gastroenterology</li>
+                            <li>HPB &amp; GI Surgical Oncology Fellowship &ndash; Tata Memorial Hospital</li>
+                            <li>Console-trained Robotic Surgeon</li>
+                        </ul>
+                    </div>
+                    <div class="lp-docblock__award">
+                        <span class="lp-docblock__medal"><i class="fa-solid fa-medal" aria-hidden="true"></i></span>
+                        <div>
+                            <span class="lp-docblock__tag">National Level Recognition</span>
+                            <p class="lp-docblock__title">Dr. B. Ramamurthi National Gold Medal</p>
+                            <p class="lp-docblock__sub">DNB General Surgery &mdash; Batch of June 2014</p>
+                            <p class="lp-docblock__text">Awarded for securing the highest marks nationally in the Diplomate of National Board examinations, marking a benchmark of academic and surgical excellence.</p>
+                        </div>
                     </div>
                 </div>
 
@@ -163,7 +190,7 @@
         <div class="lp-wrap lp-trust-grid">
             <div class="lp-trust-item">
                 <i class="fa-solid fa-user-doctor" aria-hidden="true"></i>
-                <div><b>Specialist surgeon</b><span>Pancreato-biliary and GI surgery, trained at Tata Memorial, Heidelberg, Tokyo and Paris.</span></div>
+                <div><b>Specialist surgeon</b><span>Trained at Tata Memorial Hospital, Mumbai and Medanta &ndash; The Medicity, with fellowships in Japan, Germany and France.</span></div>
             </div>
             <div class="lp-trust-item">
                 <i class="fa-solid fa-hospital" aria-hidden="true"></i>
@@ -176,6 +203,60 @@
             <div class="lp-trust-item">
                 <i class="fa-solid fa-clipboard-list" aria-hidden="true"></i>
                 <div><b>Personalised planning</b><span>Treatment decided on your reports and clinical assessment, not a standard package.</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================= doctor =========================== -->
+    <section class="lp-sec" id="doctor">
+        <div class="lp-wrap">
+            <div class="lp-head-c" data-reveal>
+                <span class="lp-eyebrow"><i class="fa-solid fa-award" aria-hidden="true"></i> Your surgeon</span>
+                <h2 class="lp-h2">Meet your surgeon</h2>
+            </div>
+            <div class="lp-doc" style="margin-top:38px;" data-reveal>
+                <figure class="lp-doc-photo">
+                    <picture>
+                        <source srcset="images/dr-deeksha-kapoor-1024.webp" type="image/webp">
+                        <img src="images/dr_deeksha_updated.jpg" width="1023" height="1537" loading="lazy" decoding="async"
+                            alt="Dr. Deeksha Kapoor, Surgical Gastroenterology and GI Surgical Oncology, Advitya Healthcares">
+                    </picture>
+                </figure>
+                <div>
+                    <h3 style="font-size:1.5rem;margin-bottom:4px;">Dr. Deeksha Kapoor</h3>
+                    <p class="lp-doc-role">Surgical Gastroenterology and GI Surgical Oncology</p>
+                    <p>Dr. Deeksha Kapoor is a pancreato-biliary and gastrointestinal surgeon with training in advanced surgical oncology and minimally invasive surgery, from institutions in India, Japan, Germany and France. She leads the PancreaCare+ programme at Advitya Healthcares.</p>
+                    <p>Gallbladder cancer is common in this region and unforgiving of a non-specialist operation. It is managed here within a pancreato-biliary practice, including the cases discovered only on the pathology of a routine cholecystectomy.</p>
+                    <ul class="lp-cred">
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>MBBS &mdash; Maulana Azad Medical College, New Delhi</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>DNB (General Surgery) &mdash; Bangalore Baptist Hospital, recipient of the Dr. B. Ramamurthi National Gold Medal</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>DNB (Surgical Gastroenterology) &mdash; Medanta - The Medicity, Gurugram</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>HPB and GI Surgical Oncology Fellowship &mdash; Tata Memorial Hospital, Mumbai (Ethicon Fellow 2023)</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Robotic Pancreatic Surgery Fellowship &mdash; Tokyo, Japan</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Hepato-Pancreato-Biliary Surgery &mdash; University of Heidelberg, Germany</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Laparoscopic Pancreatic Surgery &mdash; Beaujon Hospital, Paris</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Console-trained robotic surgeon &mdash; Da Vinci Xi platform</span></li>
+                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Consultant, GI Surgery, GI Oncology &amp; Minimal Access Surgery &mdash; Medanta - The Medicity (2019&ndash;2024); Senior Consultant &mdash; BLK Max Super Speciality Hospital, New Delhi</span></li>
+                    </ul>
+                    <h4 style="font-size:1rem;">Areas of expertise</h4>
+                    <ul class="lp-list" style="margin-bottom:22px;">
+                    <li>Complex pancreatic cancer surgery, including Whipple procedures and vascular resections</li>
+                    <li>Minimally invasive and robotic surgery for pancreatic and gastrointestinal diseases</li>
+                    <li>Management of acute and chronic pancreatitis</li>
+                    <li>Hepato-biliary oncology and advanced GI cancer treatments</li>
+                    <li>Postoperative outcomes and patient rehabilitation</li>
+                    </ul>
+                    <div class="lp-team">
+                        <span class="lp-ico"><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>
+                        <div>
+                            <b>A team behind every operation</b>
+                            <p>Under the PancreaCare initiative, surgeons, medical oncologists and radiologists review complex cases together, so the plan, the operation and the recovery have more than one specialist watching over them.</p>
+                        </div>
+                    </div>
+                    <a class="lp-btn lp-btn-ghost" href="pancreas-specialist.html" data-cta="doctor">
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View full doctor profile
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -372,51 +453,6 @@
         </div>
     </section>
 
-    <!-- ============================= doctor =========================== -->
-    <section class="lp-sec" id="doctor">
-        <div class="lp-wrap">
-            <div class="lp-head-c" data-reveal>
-                <span class="lp-eyebrow"><i class="fa-solid fa-award" aria-hidden="true"></i> Your surgeon</span>
-                <h2 class="lp-h2">Meet your surgeon</h2>
-            </div>
-            <div class="lp-doc" style="margin-top:38px;" data-reveal>
-                <figure class="lp-doc-photo">
-                    <picture>
-                        <source srcset="images/dr-deeksha-kapoor-1024.webp" type="image/webp">
-                        <img src="images/dr_deeksha_updated.jpg" width="1023" height="1537" loading="lazy" decoding="async"
-                            alt="Dr. Deeksha Kapoor, Surgical Gastroenterology and GI Surgical Oncology, Advitya Healthcares">
-                    </picture>
-                </figure>
-                <div>
-                    <h3 style="font-size:1.5rem;margin-bottom:4px;">Dr. Deeksha Kapoor</h3>
-                    <p class="lp-doc-role">Surgical Gastroenterology and GI Surgical Oncology</p>
-                    <p>Dr. Deeksha Kapoor is a pancreato-biliary and gastrointestinal surgeon with training in advanced surgical oncology and minimally invasive surgery, from institutions in India, Japan, Germany and France. She leads the PancreaCare+ programme at Advitya Healthcares.</p>
-                    <p>Gallbladder cancer is common in this region and unforgiving of a non-specialist operation. It is managed here within a pancreato-biliary practice, including the cases discovered only on the pathology of a routine cholecystectomy.</p>
-                    <ul class="lp-cred">
-                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>MBBS &mdash; Maulana Azad Medical College, New Delhi</span></li>
-                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>DNB (General Surgery) &mdash; Bangalore Baptist Hospital, recipient of the Dr. B. Ramamurthi National Gold Medal</span></li>
-                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>DNB (Surgical Gastroenterology) &mdash; Medanta - The Medicity, Gurugram</span></li>
-                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>HPB and GI Surgical Oncology Fellowship &mdash; Tata Memorial Hospital, Mumbai (Ethicon Fellow 2023)</span></li>
-                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Robotic Pancreatic Surgery Fellowship &mdash; Tokyo, Japan</span></li>
-                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Hepato-Pancreato-Biliary Surgery &mdash; University of Heidelberg, Germany</span></li>
-                    <li><i class="fa-solid fa-certificate" aria-hidden="true"></i><span>Laparoscopic Pancreatic Surgery &mdash; Beaujon Hospital, Paris</span></li>
-                    </ul>
-                    <h4 style="font-size:1rem;">Areas of expertise</h4>
-                    <ul class="lp-list" style="margin-bottom:22px;">
-                    <li>Complex pancreatic cancer surgery, including Whipple procedures and vascular resections</li>
-                    <li>Minimally invasive and robotic surgery for pancreatic and gastrointestinal diseases</li>
-                    <li>Management of acute and chronic pancreatitis</li>
-                    <li>Hepato-biliary oncology and advanced GI cancer treatments</li>
-                    <li>Postoperative outcomes and patient rehabilitation</li>
-                    </ul>
-                    <a class="lp-btn lp-btn-ghost" href="pancreas-specialist.html" data-cta="doctor">
-                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i> View full doctor profile
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- ========================= patient journey ====================== -->
     <section class="lp-sec is-tint" id="journey">
         <div class="lp-wrap lp-split">
@@ -464,6 +500,76 @@
                     <p>Pathology reviewed, adjuvant treatment considered, and surveillance imaging scheduled.</p>
                 </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== patient stories ===================== -->
+    <section class="lp-sec" id="stories">
+        <div class="lp-wrap">
+            <div class="lp-head-c" data-reveal>
+                <span class="lp-eyebrow"><i class="fa-solid fa-heart" aria-hidden="true"></i> Patient stories</span>
+                <h2 class="lp-h2">In their own words</h2>
+                <p class="lp-lede">What patients and families told us after their treatment.</p>
+            </div>
+            <div class="lp-quotes">
+                <figure class="lp-quote" data-reveal data-reveal-delay="0">
+                    <blockquote><p>We couldn't afford treatment in a metropolitan hospital for my father's liver condition. When Advitya's specialists came to our regional hospital, it felt like a miracle. The technology and care were outstanding, yet costs remained manageable. The surgeon explained everything in our local language, and my father made a complete recovery without us having to sacrifice our savings.</p></blockquote>
+                    <figcaption>Patient story &middot; Liver condition</figcaption>
+                </figure>
+                <figure class="lp-quote" data-reveal data-reveal-delay="80">
+                    <blockquote><p>As a healthcare professional, I was initially skeptical about local surgery over metropolitan centres. Advitya completely changed my perspective. The pre-operative evaluation, surgical techniques, and post-operative care were remarkable. The coordination between visiting specialists and local staff created true excellence and my recovery had no complications.</p></blockquote>
+                    <figcaption>Patient story &middot; Healthcare professional</figcaption>
+                </figure>
+            </div>
+            <p class="lp-quotes-note" data-reveal>Shared with the patient&rsquo;s informed consent. Individual treatment outcomes vary.
+                <a href="testimonials.html" data-cta="stories">Watch patient video stories</a></p>
+        </div>
+    </section>
+
+    <!-- ===================== insurance, cashless and TPA ================ -->
+    <!-- The accepted insurers and TPAs are not named: the hospital's own page
+         says the lists will be published once confirmed. Add them to the
+         "Check your policy" band when they are. -->
+    <section class="lp-sec is-tint" id="insurance">
+        <div class="lp-wrap">
+            <div class="lp-head-c" data-reveal>
+                <span class="lp-eyebrow"><i class="fa-solid fa-shield-heart" aria-hidden="true"></i> Paying for treatment</span>
+                <h2 class="lp-h2">Insurance, cashless and TPA support</h2>
+                <p class="lp-lede">Major surgery means a hospital stay of several days. This is how health insurance works at Advitya, so cost is not left as a guess.</p>
+            </div>
+            <div class="lp-ins-grid">
+                <article class="lp-ins-card" data-reveal data-reveal-delay="0">
+                    <span class="lp-ico"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></span>
+                    <h3>Cashless treatment</h3>
+                    <p>Where your insurance company or TPA is accepted by the hospital, the covered amount is settled directly with them after approval. Charges your policy does not cover are paid by the patient.</p>
+                </article>
+                <article class="lp-ins-card" data-reveal data-reveal-delay="60">
+                    <span class="lp-ico"><i class="fa-solid fa-file-signature" aria-hidden="true"></i></span>
+                    <h3>Help with pre-authorisation</h3>
+                    <p>Tell the hospital at admission that you have health insurance. A pre-authorisation request is sent to your insurer or TPA, and the covered amount is settled once they approve it.</p>
+                </article>
+                <article class="lp-ins-card" data-reveal data-reveal-delay="120">
+                    <span class="lp-ico"><i class="fa-solid fa-id-card" aria-hidden="true"></i></span>
+                    <h3>Documents to keep ready</h3>
+                    <ul>
+                        <li>Health insurance card or e-card</li>
+                        <li>Policy number and policy details</li>
+                        <li>Government photo ID, such as Aadhaar or Voter ID</li>
+                        <li>The doctor&rsquo;s advice for admission and relevant reports</li>
+                    </ul>
+                </article>
+                <article class="lp-ins-card" data-reveal data-reveal-delay="180">
+                    <span class="lp-ico"><i class="fa-solid fa-hospital" aria-hidden="true"></i></span>
+                    <h3>Hospital partners</h3>
+                    <p>Advitya Hospital Baruipur, with an ICU offering critical care and ventilator support, and 24&times;7 emergency cover; consultations at Advitya Kolkata &mdash; PancreaCare.</p>
+                </article>
+            </div>
+            <div class="lp-ins-check" data-reveal>
+                <p><b>Check your policy before admission.</b> The list of accepted insurance companies and TPA partners will be published once confirmed. To check yours now, call the hospital desk.</p>
+                <a class="lp-btn lp-btn-light" href="tel:+919211221552" data-cta="insurance">
+                    <i class="fa-solid fa-phone" aria-hidden="true"></i> Call +91 92112 21552
+                </a>
             </div>
         </div>
     </section>

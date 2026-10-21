@@ -1800,78 +1800,6 @@ body{top:0 !important}
   .sx-doccard__link{display:none}
 }
 
-/* ---------- feedback tab and dialog (js/feedback.js) ----------
-   A tab on the right edge, half way down, so it never meets the booking
-   card, the quick-contact bar or the floating buttons. It opens a short
-   form whose answer goes to the CRM. The star rating fills up to the
-   chosen star with :has(); browsers without it still mark the star picked. */
-.fb-tab{
-  position:fixed;right:0;top:50%;z-index:840;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;
-  padding:14px 9px;border:0;border-radius:0 10px 10px 0;background:#9E2430;color:#fff;cursor:pointer;
-  font-family:var(--font-head,inherit);font-weight:700;font-size:.82rem;letter-spacing:.08em;
-  box-shadow:6px 0 18px -8px rgba(58,10,12,.5);
-}
-.fb-tab:hover,.fb-tab:focus-visible{background:#5A1013}
-.fb-tab:focus-visible{outline:3px solid #F6C9B8;outline-offset:2px}
-body.fb-open{overflow:hidden}
-
-.fb-modal{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:16px;background:rgba(30,8,10,.55)}
-.fb-modal[hidden]{display:none}
-.fb-card{
-  position:relative;width:min(480px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:26px 24px 22px;
-  border-radius:18px;background:#fff;color:#3A2326;box-shadow:0 30px 70px -20px rgba(30,8,10,.6);
-}
-.fb-close{
-  position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;border-radius:50%;
-  background:#F7EEEC;color:#5A1013;font-size:1.5rem;line-height:1;cursor:pointer;
-}
-.fb-card h2{margin:0 0 6px;padding-right:40px;font-size:1.3rem;color:#5A1013}
-.fb-sub{margin:0 0 16px;font-size:.92rem;line-height:1.5;color:#6B5457}
-
-.fb-rate{margin:0 0 14px;padding:0;border:0}
-.fb-rate legend{margin-bottom:6px;padding:0;font-weight:700;font-size:.9rem;color:#2B1416}
-.fb-stars{display:inline-flex;gap:4px;vertical-align:middle}
-.fb-stars input{position:absolute;width:1px;height:1px;opacity:0}
-.fb-stars label{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;color:#E5D4D0;cursor:pointer}
-.fb-stars svg{width:28px;height:28px;fill:currentColor}
-.fb-stars label:hover,.fb-stars input:checked + label{color:#F2B33D}
-.fb-stars input:focus-visible + label{outline:2px solid #9E2430;outline-offset:2px}
-.fb-stars:has(#fb-r2:checked) label:nth-of-type(-n+2),
-.fb-stars:has(#fb-r3:checked) label:nth-of-type(-n+3),
-.fb-stars:has(#fb-r4:checked) label:nth-of-type(-n+4),
-.fb-stars:has(#fb-r5:checked) label:nth-of-type(-n+5){color:#F2B33D}
-.fb-rate-label{display:inline-block;margin-left:10px;vertical-align:middle;font-size:.86rem;font-weight:700;color:#9E2430}
-.fb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-
-.fb-field{display:grid;gap:6px;margin-bottom:12px;font-size:.88rem;font-weight:700;color:#2B1416}
-.fb-field i{font-style:normal;font-weight:500;color:#8A7477}
-.fb-field textarea,.fb-field input{
-  width:100%;padding:11px 12px;border:1px solid #E3D3D0;border-radius:10px;background:#fff;
-  font:inherit;font-weight:400;font-size:.95rem;color:#2B1416;
-}
-.fb-field textarea{min-height:96px;resize:vertical}
-.fb-field textarea:focus,.fb-field input:focus{border-color:#9E2430;outline:2px solid rgba(158,36,48,.25)}
-.fb-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
-.fb-consent{display:flex;align-items:flex-start;gap:10px;margin:4px 0 12px;font-size:.84rem;line-height:1.45;color:#4A3336}
-.fb-consent input{flex:none;width:18px;height:18px;margin-top:2px;accent-color:#9E2430}
-.fb-error{min-height:1.2em;margin:0 0 10px;font-size:.86rem;font-weight:600;color:#B3261E}
-.fb-send{
-  width:100%;min-height:48px;border:0;border-radius:999px;cursor:pointer;color:#fff;
-  background:linear-gradient(120deg,#5A1013,#9E2430 60%,#DF6A50);
-  font-family:var(--font-head,inherit);font-weight:800;font-size:1rem;
-}
-.fb-send:disabled{opacity:.7;cursor:progress}
-.fb-done{padding:10px 4px 2px;text-align:center}
-.fb-done-text{margin:0 0 18px;line-height:1.6}
-.fb-done-text a{font-weight:700;color:#9E2430;text-decoration:underline}
-
-@media (max-width:560px){
-  .fb-tab{padding:12px 7px;font-size:.74rem}
-  .fb-card{padding:22px 18px 18px}
-  .fb-row{grid-template-columns:1fr}
-}
-
 /* ---------- phones: the whole portrait, beside the qualifications ----------
    The 16:10 banner cut the photo down to a face. The portrait now shows in
    full at its own proportions, at just over half the width, with the
@@ -1885,4 +1813,305 @@ body.fb-open{overflow:hidden}
   .sx-doccard__name{font-size:.92rem}
   .sx-doccard__creds li{font-size:.74rem;line-height:1.38;padding-left:12px}
   .sx-doccard__creds li::before{width:6px;height:6px}
+}
+
+/* ---------- the hero additions are for phones only ----------
+   On wider screens the hero stays as it was: photo, title, facts and the
+   booking card. The qualification card, the second-opinion box and the
+   "Trained at" line show only at phone widths; the surgeon section further
+   down carries the same detail for everyone. */
+@media (min-width:761px){
+  .sx-doccard,.sx-sop,.facts .sx-trained{display:none}
+}
+
+
+/* phones: the photo-and-qualifications block sits centred in the column */
+@media (max-width:760px){
+  .sx-photocol{margin-inline:auto}
+}
+
+/* ---------- phones: the portrait centred, the qualifications below it ----------
+   Replaces the side-by-side arrangement: the photo stands in the middle of
+   the column at a little under two-thirds of its width, and the card sits
+   under it, centred, at the same reading width. */
+@media (max-width:760px){
+  .sx-photocol{display:flex;flex-direction:column;align-items:center;gap:12px;width:100%;max-width:none}
+  .sx-photocol .phero__photo{width:min(64%,280px);margin-inline:auto}
+  .sx-doccard{width:100%;max-width:420px}
+}
+
+/* ---------- years of experience, upright, to the left of the portrait ----------
+   A small upright card whose top lines up with the photo's top edge, set
+   completely outside the picture. On wider screens the photo column is
+   shared between the card and the photo (the photo keeps its proportions);
+   on phones the card sits in the space beside the centred photo. */
+.sx-exp{
+  display:flex;flex-direction:column;align-items:center;gap:4px;margin:0;padding:10px 4px;
+  border-radius:12px;background:#fff;color:#5A1013;text-align:center;line-height:1.15;
+  border:1.5px solid #9E2430;box-shadow:0 8px 20px -12px rgba(58,10,12,.5);
+}
+.sx-exp b{font-family:var(--font-head,inherit);font-size:2rem;font-weight:800;line-height:1;color:#9E2430}
+.sx-exp span{font-size:.74rem;font-weight:800;letter-spacing:0}
+@media (min-width:761px){
+  .sx-photocol{display:grid;grid-template-columns:84px minmax(0,1fr);column-gap:8px;align-items:start}
+  .sx-photocol .sx-exp span{font-size:.74rem}
+  .sx-photocol .sx-exp{grid-column:1;grid-row:1}
+  .sx-photocol .phero__photo{grid-column:2;grid-row:1;width:100%;height:auto;aspect-ratio:800/1131}
+}
+@media (max-width:760px){
+  /* the portrait is centred at min(64%, 280px); the card sits just left of it */
+  .sx-exp{position:absolute;z-index:3;top:0;width:64px;padding:10px 3px;left:calc((100% - min(64%, 280px)) / 2 - 70px)}
+  .sx-exp b{font-size:1.7rem}
+  .sx-exp span{font-size:.64rem;letter-spacing:-.01em}
+}
+
+/* ---------- years of experience as display text, not a button ----------
+   No box, border or shadow: a large gradient "16", a short coral rule and
+   the words beneath, set beside the portrait. */
+.sx-exp{padding:0;border:0;border-radius:0;background:none;box-shadow:none;gap:0}
+.sx-exp b{
+  font-size:2.7rem;letter-spacing:-.02em;
+  background:linear-gradient(160deg,#5A1013 0%,#9E2430 55%,#DF6A50 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.sx-exp span{display:block;font-size:.8rem;font-weight:800;line-height:1.2;color:#5A1013}
+.sx-exp span::before{content:"";display:block;width:26px;height:3px;margin:6px auto 7px;border-radius:3px;background:#DF6A50}
+@media (min-width:761px){
+  .sx-photocol .sx-exp span{font-size:.8rem}
+}
+@media (max-width:760px){
+  .sx-exp{padding:0}
+  .sx-exp b{font-size:2.2rem}
+  .sx-exp span{font-size:.68rem;letter-spacing:0}
+  .sx-exp span::before{width:22px;margin:4px auto 5px}
+}
+
+/* ---------- years of experience, one size up ----------
+   Larger figure and words. The text column widens to hold them, so the
+   portrait gives up a little width: 96px column on wider screens, and on
+   phones the photo narrows from 64% to 60% of the column. */
+.sx-exp b{font-size:3.2rem}
+.sx-exp span{font-size:.9rem}
+@media (min-width:761px){
+  .sx-photocol{grid-template-columns:96px minmax(0,1fr)}
+  .sx-photocol .sx-exp span{font-size:.9rem}
+}
+@media (max-width:760px){
+  .sx-photocol .phero__photo{width:min(60%,280px)}
+  .sx-exp{width:72px;left:calc((100% - min(60%, 280px)) / 2 - 78px)}
+  .sx-exp b{font-size:2.7rem}
+  .sx-exp span{font-size:.74rem}
+}
+
+/* ---------- years of experience, sized from the portrait ----------
+   The figure and words scale with the photo block's own width (container
+   units), so the text keeps the same proportion to the picture at every
+   size. The fixed sizes above stay as the fallback for browsers without
+   container queries. */
+.sx-photocol{container-type:inline-size}
+@media (min-width:761px){
+  /* text takes 30% of the photo block, the portrait 70% */
+  .sx-photocol{grid-template-columns:minmax(0,30fr) minmax(0,70fr)}
+  .sx-photocol .sx-exp b{font-size:14cqw}
+  .sx-photocol .sx-exp span{font-size:4.5cqw}
+  .sx-photocol .sx-exp span::before{width:9cqw;height:max(2px,1cqw)}
+}
+@media (max-width:760px){
+  /* the text fills the space left of the centred portrait */
+  .sx-exp{left:0;width:calc((100cqw - min(60cqw, 280px)) / 2 - 8px)}
+  .sx-exp b{font-size:11cqw}
+  .sx-exp span{font-size:3cqw}
+  .sx-exp span::before{width:6cqw}
+}
+
+/* ---------- a larger portrait ----------
+   The photo column widens at each desktop breakpoint so the portrait gets
+   back most of its size next to the experience text, which now takes a
+   quarter of the column. The title column gives up the difference. On
+   phones the portrait goes back to 64% of the width. */
+@media (min-width:1401px){
+  .phero__grid{grid-template-columns:380px minmax(0,1fr) 500px}
+}
+@media (min-width:1181px) and (max-width:1400px){
+  .phero__grid{grid-template-columns:350px minmax(0,1fr) 460px}
+}
+@media (min-width:1025px) and (max-width:1180px){
+  .phero__grid{grid-template-columns:300px minmax(0,1fr) 404px}
+}
+@media (min-width:761px) and (max-width:1024px){
+  .phero__grid{grid-template-columns:330px minmax(0,1fr)}
+}
+@media (min-width:761px){
+  .sx-photocol{grid-template-columns:minmax(0,25fr) minmax(0,75fr)}
+  .sx-photocol .sx-exp b{font-size:12cqw}
+  .sx-photocol .sx-exp span{font-size:3.6cqw}
+  .sx-photocol .sx-exp span::before{width:7cqw}
+}
+@media (max-width:760px){
+  .sx-photocol .phero__photo{width:min(64%,280px)}
+  .sx-exp{width:calc((100cqw - min(64cqw, 280px)) / 2 - 8px)}
+  .sx-exp b{font-size:10cqw}
+  .sx-exp span{font-size:2.8cqw;letter-spacing:-.02em}
+}
+
+/* ---------- experience text centred on the portrait's height ----------
+   It sat at the top of its column with empty space below; it now sits
+   half way down the photo, with the space shared evenly above and below. */
+@media (min-width:761px){
+  .sx-photocol .sx-exp{align-self:center}
+}
+@media (max-width:760px){
+  /* the portrait is min(64cqw, 280px) wide at 800:1131, so its middle is half that height */
+  .sx-exp{top:calc(min(64cqw, 280px) * 1.41375 / 2);transform:translateY(-50%)}
+}
+
+/* ---------- experience text across the full height of the portrait ----------
+   "16" at the photo's top edge, the words at its bottom edge, and a coral
+   rule running down between them, so the column is filled rather than
+   holding a small block in its middle. */
+.sx-exp{justify-content:space-between}
+.sx-exp b{order:0}
+.sx-exp span{order:2}
+.sx-exp span::before{display:none}
+.sx-exp::after{
+  content:"";order:1;flex:1 1 auto;width:3px;min-height:24px;margin:12px auto;border-radius:3px;
+  background:linear-gradient(180deg,#DF6A50,rgba(223,106,80,.12));
+}
+@media (min-width:761px){
+  .sx-photocol .sx-exp{align-self:stretch}
+}
+@media (max-width:760px){
+  .sx-exp{top:0;transform:none;height:calc(min(64cqw, 280px) * 1.41375)}
+  .sx-exp::after{margin:10px auto}
+}
+
+/* ---------- experience text, one size up again ----------
+   Wider screens: the text takes 30% of the photo block again, which leaves
+   room for the larger figure and words. Phones: the figure grows; the words
+   stay as they are, since they already fill the space beside the photo. */
+@media (min-width:761px){
+  .sx-photocol{grid-template-columns:minmax(0,30fr) minmax(0,70fr)}
+  .sx-photocol .sx-exp b{font-size:15cqw}
+  .sx-photocol .sx-exp span{font-size:4.4cqw}
+}
+@media (max-width:760px){
+  .sx-exp b{font-size:13cqw}
+}
+
+/* ---------- portrait one size up on wider screens ----------
+   The photo column widens again and the booking card gives up the
+   difference, so the title column keeps roughly the width it had. */
+@media (min-width:1401px){
+  .phero__grid{grid-template-columns:440px minmax(0,1fr) 460px}
+  .widget{width:460px}
+}
+@media (min-width:1181px) and (max-width:1400px){
+  .phero__grid{grid-template-columns:390px minmax(0,1fr) 430px}
+  .widget{width:430px}
+}
+@media (min-width:1025px) and (max-width:1180px){
+  .phero__grid{grid-template-columns:330px minmax(0,1fr) 380px}
+  .widget{width:380px}
+}
+@media (min-width:761px) and (max-width:1024px){
+  .phero__grid{grid-template-columns:370px minmax(0,1fr)}
+}
+
+/* the rule between the figure and the words is removed; the figure keeps
+   the top of the portrait and the words its bottom */
+.sx-exp::after{display:none}
+
+/* figure and words together as one block at the top of the portrait */
+.sx-exp{justify-content:flex-start}
+.sx-exp span{margin-top:6px}
+
+/* ---------- experience text, larger ----------
+   Phones: the block also uses the page's side margin, so the words can grow
+   without the photo shrinking. Wider screens: figure and words step up
+   within the text column. */
+@media (min-width:761px){
+  .sx-photocol .sx-exp b{font-size:17cqw}
+  .sx-photocol .sx-exp span{font-size:5cqw}
+}
+@media (max-width:760px){
+  .sx-exp{left:calc(6px - var(--gutter));width:calc((100cqw - min(64cqw, 280px)) / 2 - 14px + var(--gutter))}
+  .sx-exp b{font-size:15cqw}
+  .sx-exp span{font-size:3.3cqw;letter-spacing:-.02em}
+}
+
+/* ---------- sides swapped: portrait first, experience text to its right ---------- */
+@media (min-width:761px){
+  .sx-photocol{grid-template-columns:minmax(0,70fr) minmax(0,30fr)}
+  .sx-photocol .phero__photo{grid-column:1}
+  .sx-photocol .sx-exp{grid-column:2}
+}
+@media (max-width:760px){
+  .sx-exp{left:auto;right:calc(6px - var(--gutter))}
+}
+
+/* ---------- phones: portrait to the left edge, text in the space to its right ---------- */
+@media (max-width:760px){
+  .sx-photocol .phero__photo{align-self:flex-start;margin-inline:0}
+  .sx-exp{
+    right:auto;left:calc(min(64cqw, 280px) + 12px);
+    width:calc(100cqw - min(64cqw, 280px) - 12px);
+  }
+  .sx-exp b{font-size:20cqw}
+  .sx-exp span{font-size:4.5cqw;letter-spacing:0}
+}
+
+/* ---------- national recognition, under the qualification card ----------
+   The gold medal block from her profile page, in the same maroon and gold.
+   Shown with the qualification card, so on phones only. */
+.sx-award{
+  display:flex;align-items:flex-start;gap:14px;width:100%;max-width:420px;margin-top:12px;padding:16px;
+  border-radius:16px;color:rgba(255,255,255,.9);
+  background:linear-gradient(120deg,#5A1013 0%,#7A1626 60%,#9E2430 100%);
+  box-shadow:0 14px 30px -18px rgba(58,10,12,.7);
+}
+.sx-award__medal{
+  flex:none;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;color:#5A1013;
+  background:radial-gradient(circle at 35% 30%,#FBE3A1,#E3B04B 55%,#B8862B 100%);
+  box-shadow:0 0 0 4px rgba(227,176,75,.18),0 8px 18px -8px rgba(0,0,0,.6);
+}
+.sx-award__medal svg{width:24px;height:24px}
+.sx-award__tag{
+  display:inline-block;margin-bottom:8px;padding:4px 10px;border-radius:999px;background:rgba(255,255,255,.12);
+  font-size:.62rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#F2C46D;
+}
+.sx-award__title{margin:0 0 3px;font-family:var(--font-head,inherit);font-weight:800;font-size:1rem;line-height:1.3;color:#fff}
+.sx-award__sub{margin:0 0 6px;font-size:.8rem;font-weight:600;color:#F2C46D}
+.sx-award__text{margin:0;font-size:.78rem;line-height:1.55}
+@media (min-width:761px){
+  .sx-award{display:none}
+}
+
+/* a larger medal */
+.sx-award__medal{width:64px;height:64px;box-shadow:0 0 0 5px rgba(227,176,75,.18),0 10px 22px -8px rgba(0,0,0,.6)}
+.sx-award__medal svg{width:34px;height:34px}
+
+/* ---------- phones: no booking card in the hero ----------
+   The Book Appointment button in the bottom bar and every "book" link
+   open the appointment form directly, so the card with its location,
+   date and time pickers is left out at phone widths. */
+@media (max-width:760px){
+  .widget{display:none}
+}
+
+/* ---------- phones: a shorter page ----------
+   At phone widths the landing page leaves out the hero's fact list with
+   its location and timing lines, the About section, the Your Surgeon
+   band (the hero card already carries her name, qualifications and gold
+   medal), first symptoms, the "What is" patient education section, Why
+   Choose Advitya, surgery options, patient stories, insurance,
+   locations, patient experience, FAQs, the closing call-to-action band
+   and the footer. The bottom bar keeps Call, WhatsApp and Book
+   Appointment in reach, and buttons that would scroll to the hidden
+   locations go too. The thank-you pages share this stylesheet and keep
+   their own closing band and footer, hence the .phero check. */
+@media (max-width:760px){
+  .phero .facts,.phero__rule,.phero__line{display:none}
+  #about,#surgeon,#symptoms,section[id^="what-is"],#why,#options,#stories,#insurance,#locations,#experience,#faqs{display:none}
+  a.btn[href="#locations"]{display:none}
+  body:has(.phero) :is(.final,.footer){display:none}
 }

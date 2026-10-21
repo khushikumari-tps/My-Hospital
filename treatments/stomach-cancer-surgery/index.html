@@ -20,7 +20,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=13">
+<link rel="stylesheet" href="css/style.css?v=57">
 <script>document.documentElement.className+=" js";</script>
 
 <script type="application/ld+json">
@@ -254,9 +254,6 @@
         </ul>
       </div>
 
-  <button class="burger" type="button" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="drawer">
-    <svg><use href="#i-menu"/></svg>
-  </button>
 </div>
 
 <div class="scrim" id="scrim" hidden></div>
@@ -331,6 +328,7 @@
       <div class="phero__photo">
         <img src="images/dr-deeksha-hero.jpg" alt="Dr. Deeksha Kapoor, Pancreato-Biliary and Gastrointestinal Surgeon leading stomach cancer surgery at Advitya Healthcares" width="800" height="1131" fetchpriority="high">
       </div>
+      <p class="sx-exp"><b>16</b><span>Years of<br>Experience</span></p>
       <!-- the surgeon's qualifications, as on her profile page -->
       <div class="sx-doccard">
         <p class="sx-doccard__name">Dr. Deeksha Kapoor</p>
@@ -340,6 +338,16 @@
           <li>Console-trained Robotic Surgeon</li>
         </ul>
         <a class="sx-doccard__link" href="../../dr-deeksha-kapoor.html" target="_blank" rel="noopener">View full profile &rarr;</a>
+      </div>
+      <!-- national recognition, as on her profile page -->
+      <div class="sx-award">
+        <span class="sx-award__medal"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7.4 2.6h3.2L12 6.3l1.4-3.7h3.2l-2.7 6.1"/><path d="M9.9 8.7 7.4 2.6"/><circle cx="12" cy="15" r="6"/><path d="m12 11.9 1 2 2.1.3-1.5 1.5.4 2.1-2-1-1.9 1 .4-2.1-1.5-1.5 2.1-.3Z"/></svg></span>
+        <div>
+          <span class="sx-award__tag">National Level Recognition</span>
+          <p class="sx-award__title">Dr. B. Ramamurthi National Gold Medal</p>
+          <p class="sx-award__sub">DNB General Surgery &mdash; Batch of June 2014</p>
+          <p class="sx-award__text">Awarded for securing the highest marks nationally in the Diplomate of National Board examinations, marking a benchmark of academic and surgical excellence.</p>
+        </div>
       </div>
     </div>
 
@@ -366,7 +374,7 @@
       <ul class="facts">
         <li><b>Speciality :</b> Stomach Cancer &amp; Gastrointestinal Surgery</li>
         <li><b>Surgical Team:</b> Dr. Deeksha Kapoor &mdash; Pancreato-Biliary &amp; Gastrointestinal Surgery</li>
-        <li><b>Trained at:</b> Tata Memorial Hospital, Mumbai &middot; Medanta &ndash; The Medicity &middot; BLK Max, New Delhi &middot; fellowships in Japan, Germany &amp; France &middot; Da Vinci Xi robotic console</li>
+        <li class="sx-trained"><b>Trained at:</b> Tata Memorial Hospital, Mumbai &middot; Medanta &ndash; The Medicity &middot; BLK Max, New Delhi &middot; fellowships in Japan, Germany &amp; France &middot; Da Vinci Xi robotic console</li>
         <li><b>Treatment Options:</b> Partial Gastrectomy, Total Gastrectomy, Lymph Node Surgery, Minimally Invasive Surgery</li>
         <li><b>Conditions Treated:</b> Stomach (gastric) cancer and related gastric conditions requiring surgical evaluation</li>
       </ul>
@@ -817,35 +825,35 @@
         <div class="type-card__art"><svg viewBox="0 0 48 48" role="img" aria-label="Chemotherapy icon"><circle cx="24" cy="24" r="20" fill="#9E2430" opacity=".12"/><g transform="rotate(-45 24 24)"><rect x="9" y="18.5" width="30" height="11" rx="5.5" fill="#fff" stroke="#9E2430" stroke-width="2.2"/><path d="M9 18.5h15v11H9Z" fill="#DF6A50" opacity=".55"/><path d="M24 18.5v11" stroke="#9E2430" stroke-width="2.2"/></g></svg></div>
         <h3>Chemotherapy</h3>
         <p>Medicines that destroy cancer cells. Chemotherapy is often given before surgery to shrink the tumour, after surgery to reduce the risk of recurrence, or as the main treatment when surgery is not suitable.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal">
         <div class="type-card__art"><svg viewBox="0 0 48 48" role="img" aria-label="Radiation therapy icon"><circle cx="24" cy="24" r="20" fill="#DF6A50" opacity=".14"/><circle cx="24" cy="24" r="5" fill="none" stroke="#9E2430" stroke-width="2.2"/><path d="M24 9v6M24 33v6M9 24h6M33 24h6M13.4 13.4l4.2 4.2M30.4 30.4l4.2 4.2M34.6 13.4l-4.2 4.2M17.6 30.4l-4.2 4.2" stroke="#9E2430" stroke-width="2.2" stroke-linecap="round"/></svg></div>
         <h3>Radiation Therapy</h3>
         <p>High-energy rays directed at the tumour. Used in selected situations, sometimes combined with chemotherapy, or to relieve symptoms such as bleeding or pain.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal">
         <div class="type-card__art"><svg viewBox="0 0 48 48" role="img" aria-label="Targeted therapy icon"><circle cx="24" cy="24" r="20" fill="#9E2430" opacity=".12"/><circle cx="24" cy="24" r="13" fill="none" stroke="#9E2430" stroke-width="2.2"/><circle cx="24" cy="24" r="7" fill="none" stroke="#9E2430" stroke-width="2.2"/><circle cx="24" cy="24" r="2.4" fill="#9E2430"/></svg></div>
         <h3>Targeted Therapy</h3>
         <p>Medicines that act on specific features of cancer cells, such as the HER2 protein. Whether these are suitable depends on tests carried out on the biopsy tissue.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal">
         <div class="type-card__art"><svg viewBox="0 0 48 48" role="img" aria-label="Immunotherapy icon"><circle cx="24" cy="24" r="20" fill="#DF6A50" opacity=".14"/><path d="M24 10.5 13 15v8c0 7 4.6 13 11 15 6.4-2 11-8 11-15v-8Z" fill="#fff" stroke="#9E2430" stroke-width="2.2" stroke-linejoin="round"/><path d="M24 19v10M19 24h10" stroke="#9E2430" stroke-width="2.2" stroke-linecap="round"/></svg></div>
         <h3>Immunotherapy</h3>
         <p>Treatments that help the body&rsquo;s own immune system recognise and attack cancer cells. Offered to selected patients based on the stage of the cancer and test results.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal">
         <div class="type-card__art"><svg viewBox="0 0 48 48" role="img" aria-label="Multidisciplinary care icon"><circle cx="24" cy="24" r="20" fill="#9E2430" opacity=".12"/><path d="m17.6 22 11.8-6M17.6 26l11.8 6" stroke="#9E2430" stroke-width="2.2" stroke-linecap="round"/><circle cx="33" cy="14" r="4" fill="#fff" stroke="#9E2430" stroke-width="2.2"/><circle cx="14" cy="24" r="4" fill="#fff" stroke="#9E2430" stroke-width="2.2"/><circle cx="33" cy="34" r="4" fill="#fff" stroke="#9E2430" stroke-width="2.2"/></svg></div>
         <h3>Multidisciplinary Cancer Care</h3>
         <p>Surgeons, medical and radiation oncologists, radiologists, pathologists and dietitians review each case together so that the sequence of treatments is planned for the individual patient.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
     </div>
 
@@ -867,21 +875,21 @@
         <div class="type-card__art"><svg viewBox="0 0 48 56" role="img" aria-label="Illustration marking the lower part of the stomach"><use href="#stomach"/><circle cx="17" cy="40" r="10" fill="#DF6A50" opacity=".18"/><circle cx="17" cy="40" r="4.8" fill="#DF6A50" stroke="#fff" stroke-width="1.6"/></svg></div>
         <h3>Partial Gastrectomy</h3>
         <p>Removal of the affected portion of the stomach, most often the lower part, together with nearby lymph nodes. The remaining stomach is joined to the small intestine. Considered when the tumour is confined to one region of the stomach.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal" id="total-gastrectomy">
         <div class="type-card__art"><svg viewBox="0 0 48 56" role="img" aria-label="Illustration marking the whole stomach"><use href="#stomach"/><circle cx="26" cy="30" r="17" fill="#9E2430" opacity=".18"/><circle cx="26" cy="30" r="4.8" fill="#9E2430" stroke="#fff" stroke-width="1.6"/></svg></div>
         <h3>Total Gastrectomy</h3>
         <p>Removal of the entire stomach when required, for example when the cancer is in the upper stomach or involves a large area. The food pipe is joined directly to the small intestine. Eating patterns change, and dietary support is part of recovery.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
 
       <article class="type-card reveal" id="lymph-node-surgery">
         <div class="type-card__art"><svg viewBox="0 0 48 56" role="img" aria-label="Illustration marking the lymph nodes around the stomach"><use href="#stomach"/><path d="M41 12 45 30M45 30l-9 16M8 30l6-16" fill="none" stroke="#DF6A50" stroke-width="1.2" stroke-dasharray="2 2" opacity=".7"/><g fill="#DF6A50" stroke="#fff" stroke-width="1.4"><circle cx="41" cy="12" r="3.2"/><circle cx="45" cy="30" r="3.2"/><circle cx="36" cy="46" r="3.2"/><circle cx="8" cy="30" r="3.2"/><circle cx="14" cy="14" r="3.2"/></g></svg></div>
         <h3>Lymph Node Surgery</h3>
         <p>Removal and examination of the lymph nodes around the stomach as part of the operation. This is an important part of cancer treatment and staging, helping to determine whether further treatment is needed after surgery.</p>
-        <a class="type-card__link" href="#book">Discuss with our team <svg><use href="#i-arrow"/></svg></a>
+        <a class="type-card__link" href="#book" data-book>Discuss with our team <svg><use href="#i-arrow"/></svg></a>
       </article>
     </div>
 
@@ -1284,7 +1292,7 @@
           <li><a href="#top">Stomach Cancer Surgery</a></li>
           <li><a href="#locations">Locations</a></li>
           <li><a href="#faqs">FAQs</a></li>
-          <li><a href="#book">Contact</a></li>
+          <li><a href="#book" data-book>Contact</a></li>
         </ul>
       </div>
 
@@ -1392,7 +1400,6 @@ function googleTranslateElementInit(){
 
 <script src="js/crm-config.js" defer></script>
 <script src="js/crm-lead.js" defer></script>
-<script src="js/feedback.js" defer></script>
 <script src="js/main.js" defer></script>
 </body>
 </html>

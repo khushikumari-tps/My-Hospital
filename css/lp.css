@@ -1801,3 +1801,519 @@ body.lp [tabindex]:focus-visible {
         height: auto;
     }
 }
+
+/* ===================================================================
+   Trust blocks for search-ad visitors: a second-opinion callout under
+   the title, the surgeon's qualifications in the hero chip, the
+   multidisciplinary team note, patient stories, and insurance /
+   cashless / TPA support. Brand tokens from the :root above.
+   =================================================================== */
+
+/* ---------- second opinion, under the title ---------- */
+.lp-sop {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 16px;
+    max-width: 620px;
+    margin: 0 0 22px;
+    padding: 16px 18px;
+    border: 1px solid rgba(163, 34, 54, .2);
+    border-radius: var(--lp-radius);
+    background: linear-gradient(120deg, #FFF5F1, #FFFFFF);
+    box-shadow: var(--lp-shadow);
+}
+
+.lp-sop-ico {
+    flex: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--lp-blue);
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.lp-sop p {
+    flex: 1 1 260px;
+    margin: 0;
+    font-size: .98rem;
+    line-height: 1.5;
+    color: var(--lp-body);
+}
+
+.lp-sop p b {
+    color: var(--lp-ink);
+}
+
+.lp-sop-acts {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px 16px;
+}
+
+.lp-sop-alt {
+    font-weight: 700;
+    font-size: .92rem;
+    color: var(--lp-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- qualifications in the hero's surgeon chip ---------- */
+.lp-hero-quals {
+    display: block;
+    margin-top: 4px;
+    font-size: .8rem;
+    line-height: 1.45;
+    font-weight: 600;
+    color: var(--lp-blue-dark);
+}
+
+/* ---------- the multidisciplinary team ---------- */
+.lp-team {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin: 4px 0 22px;
+    padding: 16px 18px;
+    border-radius: var(--lp-radius);
+    background: var(--lp-sky);
+    border: 1px solid var(--lp-sky-deep);
+}
+
+.lp-team .lp-ico {
+    flex: none;
+    margin: 0;
+    background: #fff;
+}
+
+.lp-team b {
+    display: block;
+    margin-bottom: 4px;
+    font-family: var(--lp-head);
+    color: var(--lp-ink);
+}
+
+.lp-team p {
+    margin: 0;
+    font-size: .95rem;
+    line-height: 1.6;
+}
+
+/* ---------- patient stories ---------- */
+.lp-quotes {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(16px, 2.4vw, 26px);
+    margin-top: 38px;
+}
+
+.lp-quote {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: clamp(22px, 2.6vw, 32px);
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius-lg);
+    background: var(--lp-card);
+    box-shadow: var(--lp-shadow);
+}
+
+.lp-quote::before {
+    content: "\201C";
+    position: absolute;
+    top: 6px;
+    right: 20px;
+    font-family: Georgia, serif;
+    font-size: 4.4rem;
+    line-height: 1;
+    color: rgba(163, 34, 54, .14);
+}
+
+.lp-quote blockquote {
+    margin: 0 0 16px;
+    padding: 0;
+    border: 0;
+}
+
+.lp-quote blockquote p {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.7;
+    color: var(--lp-body);
+}
+
+.lp-quote figcaption {
+    margin-top: auto;
+    font-size: .8rem;
+    font-weight: 700;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    color: var(--lp-blue);
+}
+
+.lp-quotes-note {
+    margin: 22px 0 0;
+    text-align: center;
+    font-size: .88rem;
+    color: var(--lp-muted);
+}
+
+.lp-quotes-note a {
+    font-weight: 700;
+    color: var(--lp-blue);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+/* ---------- insurance, cashless and TPA ---------- */
+.lp-ins-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(14px, 2vw, 22px);
+    margin-top: 38px;
+}
+
+.lp-ins-card {
+    padding: 24px 22px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: var(--lp-card);
+    box-shadow: var(--lp-shadow-sm);
+}
+
+.lp-ins-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+}
+
+.lp-ins-card p,
+.lp-ins-card li {
+    font-size: .92rem;
+    line-height: 1.6;
+}
+
+.lp-ins-card p {
+    margin: 0;
+}
+
+.lp-ins-card ul {
+    margin: 0;
+    padding-left: 18px;
+    list-style: disc;
+}
+
+.lp-ins-check {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-top: clamp(18px, 2.4vw, 26px);
+    padding: 20px 24px;
+    border-radius: var(--lp-radius);
+    background: linear-gradient(120deg, var(--lp-navy-soft), var(--lp-navy));
+    color: rgba(255, 255, 255, .9);
+}
+
+.lp-ins-check p {
+    flex: 1 1 320px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+.lp-ins-check b {
+    color: #fff;
+}
+
+@media (max-width: 1100px) {
+    .lp-ins-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 760px) {
+    .lp-quotes,
+    .lp-ins-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lp-sop {
+        padding: 14px;
+    }
+
+    .lp-sop-acts,
+    .lp-sop-acts .lp-btn {
+        width: 100%;
+    }
+
+    .lp-sop-acts .lp-btn {
+        justify-content: center;
+    }
+
+    .lp-sop-alt {
+        margin: 0 auto;
+    }
+
+    .lp-ins-check {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .lp-ins-check .lp-btn {
+        justify-content: center;
+    }
+}
+
+/* At 860px and below the surgeon's photo is capped at 320px; it sits in the
+   middle of its card instead of leaving all the spare width on its right. */
+@media (max-width: 860px) {
+    .lp-doc-photo {
+        width: 100%;
+        margin-inline: auto;
+    }
+}
+
+/* ===================================================================
+   Surgeon block in the hero, matching the treatment pages: portrait
+   with the years of experience beside it, the qualification card and
+   the national gold medal. Phones: first thing in the hero, as on the
+   treatment pages. Wider screens: in the copy column, where the small
+   surgeon chip used to be. The text sizes follow the block's width.
+   =================================================================== */
+.lp-docblock {
+    max-width: 420px;
+    margin: 0 0 24px;
+}
+
+.lp-docblock__top {
+    display: grid;
+    grid-template-columns: minmax(0, 62fr) minmax(0, 38fr);
+    gap: 12px;
+    align-items: start;
+    container-type: inline-size;
+}
+
+.lp-docblock__photo {
+    display: block;
+    overflow: hidden;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: #fff;
+    box-shadow: var(--lp-shadow);
+}
+
+.lp-docblock__photo img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.lp-docblock__exp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.lp-docblock__exp b {
+    font-family: var(--lp-head);
+    font-weight: 800;
+    font-size: 17cqw;
+    line-height: 1;
+    letter-spacing: -.02em;
+    background: linear-gradient(160deg, #5A1013 0%, #9E2430 55%, #DF6A50 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.lp-docblock__exp span {
+    margin-top: 6px;
+    font-weight: 800;
+    font-size: 4.6cqw;
+    color: #5A1013;
+}
+
+.lp-docblock__card {
+    margin-top: 12px;
+    padding: 14px 16px;
+    border: 1px solid var(--lp-line);
+    border-radius: var(--lp-radius);
+    background: #fff;
+    box-shadow: var(--lp-shadow-sm);
+}
+
+.lp-docblock__name {
+    margin: 0 0 6px;
+    font-family: var(--lp-head);
+    font-weight: 800;
+    font-size: 1rem;
+    color: #5A1013;
+}
+
+.lp-docblock__card ul {
+    display: grid;
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.lp-docblock__card li {
+    position: relative;
+    padding-left: 14px;
+    font-size: .84rem;
+    line-height: 1.45;
+    color: var(--lp-body);
+}
+
+.lp-docblock__card li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: .5em;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: #DF6A50;
+}
+
+.lp-docblock__award {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-top: 12px;
+    padding: 16px;
+    border-radius: var(--lp-radius);
+    color: rgba(255, 255, 255, .9);
+    background: linear-gradient(120deg, #5A1013 0%, #7A1626 60%, #9E2430 100%);
+    box-shadow: var(--lp-shadow);
+}
+
+.lp-docblock__medal {
+    flex: none;
+    display: grid;
+    place-items: center;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 1.7rem;
+    color: #5A1013;
+    background: radial-gradient(circle at 35% 30%, #FBE3A1, #E3B04B 55%, #B8862B 100%);
+    box-shadow: 0 0 0 5px rgba(227, 176, 75, .18), 0 10px 22px -8px rgba(0, 0, 0, .6);
+}
+
+.lp-docblock__tag {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 4px 10px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .12);
+    font-size: .62rem;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: #F2C46D;
+}
+
+.lp-docblock__title {
+    margin: 0 0 3px;
+    font-family: var(--lp-head);
+    font-weight: 800;
+    font-size: 1rem;
+    line-height: 1.3;
+    color: #fff;
+}
+
+.lp-docblock__sub {
+    margin: 0 0 6px;
+    font-size: .8rem;
+    font-weight: 600;
+    color: #F2C46D;
+}
+
+.lp-docblock__text {
+    margin: 0;
+    font-size: .78rem;
+    line-height: 1.55;
+    color: rgba(255, 255, 255, .88);
+}
+
+/* The doctor's own page already shows her portrait in the hero, so the
+   figure and the words sit side by side with no second photo. */
+.lp-docblock--nophoto .lp-docblock__top {
+    display: flex;
+}
+
+.lp-docblock--nophoto .lp-docblock__exp {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    text-align: left;
+}
+
+.lp-docblock--nophoto .lp-docblock__exp b {
+    font-size: 3.4rem;
+}
+
+.lp-docblock--nophoto .lp-docblock__exp span {
+    margin: 0;
+    font-size: 1rem;
+}
+
+@media (max-width: 860px) {
+    .lp-hero-grid > div:first-child {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .lp-hero-grid > div:first-child > * {
+        max-width: 100%;
+    }
+
+    .lp-hero-grid > div:first-child > .lp-docblock {
+        align-self: stretch;
+        max-width: none;
+    }
+
+    .lp-hero-grid > div:first-child > .lp-docblock:not(.lp-docblock--nophoto) {
+        order: -1;
+    }
+}
+
+/* As on the treatment pages, the qualification card and the gold medal
+   show on phones; wider screens keep the portrait and the years of
+   experience, and the surgeon section further down carries the rest. */
+@media (min-width: 861px) {
+    .lp-docblock__card,
+    .lp-docblock__award {
+        display: none;
+    }
+}
+
+/* ---------- phones: a shorter campaign page ----------
+   Matches the treatment landing pages at phone widths. The hero, the
+   condition types where a page has them, the care journey, the booking
+   form and the medical disclaimer stay; the hero's location and reports
+   lines, the trust strip, the surgeon section, the explanatory sections,
+   stories, insurance, locations, FAQs and the footer are left out. The
+   sticky bar keeps Call, WhatsApp and Book in reach, and every "book"
+   link still scrolls to the form. Only the campaign pages carry the
+   appointment form, so the legal and thank-you pages that share this
+   stylesheet are untouched. */
+@media (max-width: 760px) {
+    body.lp:has(#lpAppointmentForm) :is(.lp-hero-where, .lp-hero-note, .lp-trust, .lp-foot),
+    body.lp:has(#lpAppointmentForm) main > section.lp-sec:not(#types, #colon, #rectal, #conditions, #journey, #appointment, .lp-sec-note) {
+        display: none;
+    }
+}
