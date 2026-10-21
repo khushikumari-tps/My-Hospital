@@ -1691,3 +1691,268 @@ em,i,cite,address,dfn,var{font-style:normal}
    it now reads at the same size, with the line length still capped. */
 .about p{font-size:clamp(1.04rem,.45vw + .95rem,1.14rem);line-height:1.75}
 .about__toggle,.about__ask{font-size:1.02rem}
+
+/* ---------- phones: the portrait no longer fills the first screen ----------
+   At full column width the 262:370 portrait was close to 480px tall, so on a
+   phone the page title only began below the fold. It becomes a 4:3 head-and-
+   shoulders banner instead (the face sits in the top half of the photo), and
+   the title follows it on the first screen. */
+@media (max-width:760px){
+  .phero__photo{width:100%;max-width:480px;height:auto;aspect-ratio:4/3}
+  .phero__photo img{height:100%;object-position:50% 4%}
+}
+
+/* ---------- phones: a smaller logo ----------
+   At 56-72px the logo crowded the language and menu buttons on a phone.
+   It steps down to 46px (42px on the smallest screens), and to 40px once the
+   header has compacted on scroll. The selectors cover every landing page's
+   logo markup, so the rule reads the same in each stylesheet. */
+@media (max-width:760px){
+  .sitelogo img,.brandmark img,.brandmark--stacked img{height:46px}
+  .brandmark.is-compact img,.brandmark--stacked.is-compact img{height:40px}
+  .mnav__logo img{width:54px;height:auto}
+}
+@media (max-width:390px){
+  .sitelogo img,.brandmark img,.brandmark--stacked img{height:42px}
+  .mnav__logo img{width:49px}
+}
+
+/* ==========================================================================
+   Trust blocks for visitors arriving from search ads: a second-opinion
+   callout under the title, the surgeon's training, patient stories and
+   insurance / cashless support. The same rules sit in every landing page's
+   stylesheet, so they use the brand colours directly rather than each
+   page's own tokens: maroon #5A1013, crimson #9E2430.
+   ========================================================================== */
+
+/* ---------- second opinion, under the title ---------- */
+.sx-sop{
+  display:flex;align-items:center;flex-wrap:wrap;gap:12px 14px;margin:14px 0 18px;padding:14px 16px;
+  border-radius:14px;background:linear-gradient(120deg,#FFF5F1,#FFFFFF);
+  border:1px solid rgba(158,36,48,.18);box-shadow:0 10px 24px -16px rgba(90,16,19,.4);
+}
+.sx-sop__icon{flex:none;display:grid;place-items:center;width:40px;height:40px;border-radius:12px;background:#9E2430;color:#fff}
+.sx-sop__icon svg{width:22px;height:22px}
+.sx-sop p{flex:1 1 220px;margin:0;font-size:.95rem;line-height:1.5;color:#3A2326}
+.sx-sop p b{color:#5A1013}
+.sx-sop__acts{display:flex;align-items:center;flex-wrap:wrap;gap:10px 14px}
+.sx-sop__btn{
+  display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 16px;border-radius:999px;
+  background:#1FA855;color:#fff;font-family:var(--font-head,inherit);font-weight:700;font-size:.9rem;
+  text-decoration:none;white-space:nowrap;
+}
+.sx-sop__btn svg{width:18px;height:18px}
+.sx-sop__btn:hover,.sx-sop__btn:focus-visible{background:#178A45;color:#fff}
+.sx-sop__alt{font-weight:700;font-size:.88rem;color:#9E2430;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- your surgeon ---------- */
+.sx-surgeon{
+  padding-block:clamp(48px,7vw,84px);color:rgba(255,255,255,.88);
+  background:linear-gradient(160deg,#5A1013 0%,#7A1626 55%,#9E2430 100%);
+}
+.sx-surgeon .eyebrow{color:#F6C9B8}
+.sx-surgeon h2{margin:6px 0 8px;color:#fff}
+.sx-surgeon__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(28px,4vw,56px);align-items:start}
+.sx-surgeon__role{margin:0 0 14px;font-weight:600;color:#F6C9B8}
+.sx-surgeon__intro p{margin:0 0 16px;line-height:1.65}
+.sx-stats{list-style:none;margin:20px 0;padding:0;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.sx-stats li{padding:14px 16px;border-radius:14px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.16)}
+.sx-stats b{display:block;font-family:var(--font-head,inherit);font-size:1.7rem;line-height:1.1;color:#fff}
+.sx-stats span{font-size:.84rem}
+.sx-link{display:inline-flex;align-items:center;gap:6px;font-weight:700;color:#fff;text-decoration:underline;text-underline-offset:4px}
+.sx-link:hover{color:#F6C9B8}
+.sx-edu__title{margin:0 0 4px;font-size:1.2rem;color:#fff}
+.sx-edu__sub{margin:0 0 16px;font-size:.9rem;color:#F6C9B8}
+.sx-edu__list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.sx-edu__list li{
+  position:relative;display:grid;gap:2px;padding:14px 16px 14px 46px;border-radius:14px;background:#fff;color:#4A3336;
+}
+.sx-edu__list li::before{
+  content:"";position:absolute;left:16px;top:17px;width:18px;height:18px;border-radius:50%;
+  background:#9E2430 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 12.5 4 4 8-9'/%3E%3C/svg%3E") center/12px no-repeat;
+}
+.sx-edu__list .sx-edu__when{font-size:.74rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#DF6A50}
+.sx-edu__list b{font-family:var(--font-head,inherit);color:#5A1013}
+.sx-edu__list span{font-size:.9rem;line-height:1.5}
+.sx-edu__list em{font-style:normal;font-size:.84rem;font-weight:700;color:#9E2430}
+
+.sx-global{margin-top:clamp(28px,4vw,44px)}
+.sx-global__head h3{margin:0 0 4px;font-size:1.2rem;color:#fff}
+.sx-global__head p{margin:0 0 16px;font-size:.9rem;color:#F6C9B8}
+.sx-global__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.6vw,18px)}
+.sx-global__card{display:flex;flex-direction:column;gap:6px;padding:18px;border-radius:14px;background:#fff;color:#4A3336}
+.sx-global__place{font-size:.74rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#DF6A50}
+.sx-global__card h4{margin:0;font-family:var(--font-head,inherit);font-size:1rem;color:#5A1013}
+.sx-global__card p{margin:0;font-size:.86rem;line-height:1.55}
+.sx-global__focus{margin-top:auto;padding-top:10px;border-top:1px solid rgba(158,36,48,.12);font-size:.84rem;line-height:1.45;color:#3A2326}
+.sx-global__focus b{display:block;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:#9E2430}
+@media (max-width:1100px){.sx-global__grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.sx-global__grid{grid-template-columns:1fr}}
+.sx-team{
+  display:flex;align-items:flex-start;gap:16px;margin-top:clamp(24px,3vw,36px);padding:18px 20px;
+  border-radius:16px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);
+}
+.sx-team__icon{flex:none;display:grid;place-items:center;width:44px;height:44px;border-radius:12px;background:#fff;color:#9E2430}
+.sx-team__icon svg{width:24px;height:24px}
+.sx-team h3{margin:0 0 4px;font-size:1.08rem;color:#fff}
+.sx-team p{margin:0;line-height:1.6}
+
+/* ---------- patient stories ---------- */
+.sx-quotes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(16px,2.4vw,26px)}
+.sx-quote{
+  position:relative;display:flex;flex-direction:column;margin:0;padding:clamp(22px,2.6vw,30px);
+  border-radius:18px;background:#fff;border:1px solid rgba(158,36,48,.12);
+  box-shadow:0 14px 34px -22px rgba(58,10,12,.4);
+}
+.sx-quote::before{content:"\201C";position:absolute;top:4px;right:18px;font-family:Georgia,serif;font-size:4.2rem;line-height:1;color:rgba(158,36,48,.14)}
+.sx-quote blockquote{margin:0 0 16px;padding:0;border:0}
+.sx-quote blockquote p{margin:0;font-size:1rem;line-height:1.7;color:#3A2326}
+.sx-quote figcaption{margin-top:auto;font-size:.8rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:#9E2430}
+.sx-note{margin:18px 0 0;text-align:center;font-size:.86rem;color:#6B5457}
+.sx-note a{font-weight:700;color:#9E2430;text-decoration:underline;text-underline-offset:3px}
+
+/* ---------- insurance, cashless & TPA ---------- */
+.sx-ins__grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(14px,2vw,22px)}
+.sx-ins__card{padding:22px 20px;border-radius:16px;background:#fff;border:1px solid rgba(158,36,48,.12)}
+.sx-ins__ico{display:grid;place-items:center;width:42px;height:42px;margin-bottom:14px;border-radius:12px;background:#FBEDEA;color:#9E2430}
+.sx-ins__ico svg{width:22px;height:22px}
+.sx-ins__card h3{margin:0 0 8px;font-size:1.04rem;color:#2B1416}
+.sx-ins__card p,.sx-ins__card li{font-size:.9rem;line-height:1.6;color:#4A3336}
+.sx-ins__card p{margin:0}
+.sx-ins__card ul{margin:0;padding-left:18px;list-style:disc}
+.sx-ins__check{
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;
+  margin-top:clamp(18px,2.4vw,26px);padding:18px 22px;border-radius:16px;background:#5A1013;color:rgba(255,255,255,.9);
+}
+.sx-ins__check p{flex:1 1 320px;margin:0;line-height:1.6}
+.sx-ins__check b{color:#fff}
+.sx-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:10px 20px;
+  border-radius:999px;background:#fff;color:#9E2430;font-family:var(--font-head,inherit);font-weight:800;
+  text-decoration:none;white-space:nowrap;
+}
+.sx-btn svg{width:18px;height:18px}
+.sx-btn:hover,.sx-btn:focus-visible{background:#FBEDEA;color:#5A1013}
+
+@media (max-width:1100px){
+  .sx-ins__grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:760px){
+  .sx-surgeon__grid,.sx-quotes,.sx-ins__grid{grid-template-columns:1fr}
+  .sx-sop{padding:12px 14px}
+  .sx-sop__acts{width:100%}
+  .sx-sop__btn{flex:1 1 auto;justify-content:center}
+  .sx-team{flex-direction:column}
+  .sx-ins__check{flex-direction:column;align-items:stretch}
+}
+
+/* ---------- the surgeon's qualifications, under the hero photo ----------
+   The same three lines as her profile page. On phones the card stays
+   compact and the photo banner trims to 16:10 (still head to chin), so the
+   page title remains on the first screen above the quick-contact bar. */
+.sx-photocol{position:relative;min-width:0}
+.sx-doccard{
+  margin-top:16px;padding:16px 16px 14px;border-radius:14px;background:#fff;
+  border:1px solid rgba(158,36,48,.14);box-shadow:0 12px 28px -18px rgba(58,10,12,.45);
+}
+.sx-doccard__name{margin:0 0 8px;font-family:var(--font-head,inherit);font-weight:800;font-size:1.06rem;color:#5A1013}
+.sx-doccard__creds{list-style:none;margin:0;padding:0;display:grid;gap:6px}
+.sx-doccard__creds li{position:relative;padding-left:16px;font-size:.84rem;line-height:1.45;color:#3A2326}
+.sx-doccard__creds li::before{content:"";position:absolute;left:0;top:.5em;width:7px;height:7px;border-radius:50%;background:#DF6A50}
+.sx-doccard__link{display:inline-block;margin-top:10px;font-weight:700;font-size:.84rem;color:#9E2430;text-decoration:underline;text-underline-offset:3px}
+@media (max-width:760px){
+  .sx-photocol{width:100%;max-width:480px}
+  .sx-photocol .phero__photo{aspect-ratio:16/10}
+  .sx-doccard{margin-top:10px;padding:12px 14px}
+  .sx-doccard__name{margin-bottom:4px;font-size:.96rem}
+  .sx-doccard__creds{gap:3px}
+  .sx-doccard__creds li{padding-left:14px;font-size:.78rem;line-height:1.4}
+  .sx-doccard__link{display:none}
+}
+
+/* ---------- feedback tab and dialog (js/feedback.js) ----------
+   A tab on the right edge, half way down, so it never meets the booking
+   card, the quick-contact bar or the floating buttons. It opens a short
+   form whose answer goes to the CRM. The star rating fills up to the
+   chosen star with :has(); browsers without it still mark the star picked. */
+.fb-tab{
+  position:fixed;right:0;top:50%;z-index:840;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;
+  padding:14px 9px;border:0;border-radius:0 10px 10px 0;background:#9E2430;color:#fff;cursor:pointer;
+  font-family:var(--font-head,inherit);font-weight:700;font-size:.82rem;letter-spacing:.08em;
+  box-shadow:6px 0 18px -8px rgba(58,10,12,.5);
+}
+.fb-tab:hover,.fb-tab:focus-visible{background:#5A1013}
+.fb-tab:focus-visible{outline:3px solid #F6C9B8;outline-offset:2px}
+body.fb-open{overflow:hidden}
+
+.fb-modal{position:fixed;inset:0;z-index:1200;display:grid;place-items:center;padding:16px;background:rgba(30,8,10,.55)}
+.fb-modal[hidden]{display:none}
+.fb-card{
+  position:relative;width:min(480px,100%);max-height:calc(100vh - 32px);overflow:auto;padding:26px 24px 22px;
+  border-radius:18px;background:#fff;color:#3A2326;box-shadow:0 30px 70px -20px rgba(30,8,10,.6);
+}
+.fb-close{
+  position:absolute;top:10px;right:12px;width:40px;height:40px;border:0;border-radius:50%;
+  background:#F7EEEC;color:#5A1013;font-size:1.5rem;line-height:1;cursor:pointer;
+}
+.fb-card h2{margin:0 0 6px;padding-right:40px;font-size:1.3rem;color:#5A1013}
+.fb-sub{margin:0 0 16px;font-size:.92rem;line-height:1.5;color:#6B5457}
+
+.fb-rate{margin:0 0 14px;padding:0;border:0}
+.fb-rate legend{margin-bottom:6px;padding:0;font-weight:700;font-size:.9rem;color:#2B1416}
+.fb-stars{display:inline-flex;gap:4px;vertical-align:middle}
+.fb-stars input{position:absolute;width:1px;height:1px;opacity:0}
+.fb-stars label{display:grid;place-items:center;width:40px;height:40px;border-radius:10px;color:#E5D4D0;cursor:pointer}
+.fb-stars svg{width:28px;height:28px;fill:currentColor}
+.fb-stars label:hover,.fb-stars input:checked + label{color:#F2B33D}
+.fb-stars input:focus-visible + label{outline:2px solid #9E2430;outline-offset:2px}
+.fb-stars:has(#fb-r2:checked) label:nth-of-type(-n+2),
+.fb-stars:has(#fb-r3:checked) label:nth-of-type(-n+3),
+.fb-stars:has(#fb-r4:checked) label:nth-of-type(-n+4),
+.fb-stars:has(#fb-r5:checked) label:nth-of-type(-n+5){color:#F2B33D}
+.fb-rate-label{display:inline-block;margin-left:10px;vertical-align:middle;font-size:.86rem;font-weight:700;color:#9E2430}
+.fb-sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+.fb-field{display:grid;gap:6px;margin-bottom:12px;font-size:.88rem;font-weight:700;color:#2B1416}
+.fb-field i{font-style:normal;font-weight:500;color:#8A7477}
+.fb-field textarea,.fb-field input{
+  width:100%;padding:11px 12px;border:1px solid #E3D3D0;border-radius:10px;background:#fff;
+  font:inherit;font-weight:400;font-size:.95rem;color:#2B1416;
+}
+.fb-field textarea{min-height:96px;resize:vertical}
+.fb-field textarea:focus,.fb-field input:focus{border-color:#9E2430;outline:2px solid rgba(158,36,48,.25)}
+.fb-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fb-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fb-consent{display:flex;align-items:flex-start;gap:10px;margin:4px 0 12px;font-size:.84rem;line-height:1.45;color:#4A3336}
+.fb-consent input{flex:none;width:18px;height:18px;margin-top:2px;accent-color:#9E2430}
+.fb-error{min-height:1.2em;margin:0 0 10px;font-size:.86rem;font-weight:600;color:#B3261E}
+.fb-send{
+  width:100%;min-height:48px;border:0;border-radius:999px;cursor:pointer;color:#fff;
+  background:linear-gradient(120deg,#5A1013,#9E2430 60%,#DF6A50);
+  font-family:var(--font-head,inherit);font-weight:800;font-size:1rem;
+}
+.fb-send:disabled{opacity:.7;cursor:progress}
+.fb-done{padding:10px 4px 2px;text-align:center}
+.fb-done-text{margin:0 0 18px;line-height:1.6}
+.fb-done-text a{font-weight:700;color:#9E2430;text-decoration:underline}
+
+@media (max-width:560px){
+  .fb-tab{padding:12px 7px;font-size:.74rem}
+  .fb-card{padding:22px 18px 18px}
+  .fb-row{grid-template-columns:1fr}
+}
+
+/* ---------- phones: the whole portrait, beside the qualifications ----------
+   The 16:10 banner cut the photo down to a face. The portrait now shows in
+   full at its own proportions, at just over half the width, with the
+   qualification card beside it — shorter overall than banner plus card, so
+   the page title still lands on the first screen. */
+@media (max-width:760px){
+  .sx-photocol{display:grid;grid-template-columns:minmax(0,52%) minmax(0,1fr);gap:12px;align-items:center;max-width:480px}
+  .sx-photocol .phero__photo{width:100%;max-width:none;height:auto;aspect-ratio:auto}
+  .sx-photocol .phero__photo img{width:100%;height:auto;object-fit:contain;object-position:50% 50%}
+  .sx-doccard{margin-top:0;padding:12px}
+  .sx-doccard__name{font-size:.92rem}
+  .sx-doccard__creds li{font-size:.74rem;line-height:1.38;padding-left:12px}
+  .sx-doccard__creds li::before{width:6px;height:6px}
+}

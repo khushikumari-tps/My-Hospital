@@ -2036,3 +2036,107 @@ body.hv-light .logo-link {
         font-size: 1rem;
     }
 }
+
+/* ---- Phones: a shorter header bar -----------------------------------------
+   Below 769px the bar was 120px tall around an 88px logo, a sixth of a phone
+   screen, and on Social Service, Blogs and FAQs it sat over the top of the
+   page title (measured at 390px: titles starting 81-108px down, under a 121px
+   bar). The bar drops to 72px around a 56px logo, and to 64px / 50px once the
+   page has scrolled. The drawer hangs off the bar's real bottom edge, so it
+   follows without a change. */
+@media (max-width: 768px) {
+
+    .nav-container,
+    body.hv-light .nav-container {
+        height: 72px;
+    }
+
+    .navbar.scrolled .nav-container,
+    body.hv-light .navbar.scrolled .nav-container {
+        height: 64px;
+    }
+
+    .logo img,
+    body.hv-light .logo img {
+        width: 56px;
+        height: 56px;
+    }
+
+    .navbar.scrolled .logo img,
+    body.hv-light .navbar.scrolled .logo img {
+        width: 50px;
+        height: 50px;
+    }
+
+    /* the home hero's 168px top was sized for the 120px bar: keep the same
+       47px between the bar and the hero copy */
+    body.hv-light .hv-hero {
+        padding-top: 120px;
+    }
+}
+
+/* ---- Phones: hero copy, quick-contact bar and emergency disc sized down ----
+   On a 390px phone the home hero set a 35px title, a 17.6px intro at 1.78
+   line height and two wide pill buttons; the quick-contact bar stood 74px
+   tall with 58px buttons, and the 54px emergency disc floated above it.
+   Everything keeps its place and its tap target (44px and up); only the
+   scale comes down. */
+@media (max-width: 640px) {
+
+    .hv-hero h1 {
+        font-size: 1.9rem;
+    }
+
+    body.hv-light .hv-hero p.hv-lede {
+        font-size: 1rem;
+        line-height: 1.65;
+    }
+
+    .hv-cta {
+        gap: 10px;
+    }
+
+    body.hv-light .hv-cta .btn-premium,
+    body.hv-light .hv-cta .hv-ghost {
+        flex: 1 1 100%;
+        justify-content: center;
+        padding: .8rem 1.3rem;
+        font-size: .92rem;
+    }
+
+    .hv-assure {
+        font-size: .82rem;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .adv-mbar {
+        gap: 6px;
+        padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+    }
+
+    .adv-mbar a {
+        min-height: 50px;
+        gap: 2px;
+        font-size: .86rem;
+    }
+
+    .adv-mbar a i {
+        font-size: 1.1rem;
+    }
+
+    body.has-mbar {
+        padding-bottom: calc(66px + env(safe-area-inset-bottom));
+    }
+
+    .adv-emg {
+        width: 46px;
+        height: 46px;
+        font-size: 1.2rem;
+    }
+
+    body.has-mbar .adv-emg {
+        bottom: calc(76px + env(safe-area-inset-bottom));
+    }
+}

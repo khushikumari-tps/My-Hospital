@@ -924,3 +924,25 @@
         max-width: 64ch;
     }
 }
+
+/* ---------------- hero clears the fixed header ----------------
+   The header is position:fixed and the hero began at the top of the page,
+   so the eyebrow and the top of the title sat under the bar at every width.
+   The hero now starts below the bar at each of its heights (150px desktop,
+   120px to 1360px, 72px on phones) plus its own breathing room. */
+.npf-hero {
+    /* the hero's own grid already adds more room on wide screens */
+    padding-top: 166px;
+}
+
+@media (max-width: 1360px) {
+    .npf-hero {
+        padding-top: calc(120px + clamp(24px, 3vw, 40px));
+    }
+}
+
+@media (max-width: 768px) {
+    .npf-hero {
+        padding-top: 100px;
+    }
+}
