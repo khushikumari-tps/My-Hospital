@@ -37,7 +37,7 @@
         '          <div class="cm-icon"><i class="fa-solid fa-location-dot"></i></div>' +
         '          <div><h4>Our centres</h4><p>' +
         '            <b>Advitya Hospital Baruipur</b><br>Kulpi Road, Puratan Bazar, Subuddhipur,<br>Baruipur, West Bengal &ndash; 700144<br>' +
-        '            <b>Kolkata OPD</b> &mdash; Rajdanga Main Road<br>' +
+        '            <b>Kolkata OPD</b> &mdash; G E 99, Rajdanga Main Road, Sector G, Kolkata &ndash; 700107<br>' +
         '            Alliance centre: Khunti<br>' +
         '            <a href="our-network.html">See the full network</a></p></div>' +
         '        </div>' +
