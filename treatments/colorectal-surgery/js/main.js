@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var WA_NUMBER = '919211221551';
+  var WA_NUMBER = '919211221553';
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -652,7 +652,7 @@
       a.rel = 'noopener';
       a.textContent = 'Open WhatsApp with your request filled in';
       text.appendChild(a);
-      text.appendChild(document.createTextNode(', or call +91 92112 21551.'));
+      text.appendChild(document.createTextNode(', or call +91 92112 21553.'));
     }
     showPanel(true);
     var done = $('.modal__go', apptDone);

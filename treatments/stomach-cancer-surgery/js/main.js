@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var WA_NUMBER = '919211221551';
+  var WA_NUMBER = '919211221553';
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -700,7 +700,7 @@
         qf.submit.disabled = false;
         qf.submit.textContent = 'Request Appointment';
         setQuickStatus('We could not send your request just now. Please <a href="' + whatsappUrl(lead) +
-          '" target="_blank" rel="noopener">send it on WhatsApp</a> or call <a href="tel:+919211221551">+91 9211221551</a>.');
+          '" target="_blank" rel="noopener">send it on WhatsApp</a> or call <a href="tel:+919211221553">+91 9211221553</a>.');
       });
     });
   }

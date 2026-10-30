@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  var WA_NUMBER = '919211221551';
+  var WA_NUMBER = '919211221553';
   var $  = function (s, c) { return (c || document).querySelector(s); };
   var $$ = function (s, c) { return Array.prototype.slice.call((c || document).querySelectorAll(s)); };
 
@@ -717,7 +717,7 @@
         button.disabled = false;
         button.removeAttribute('aria-busy');
         button.textContent = label;
-        setStatus('We could not reach our booking system, so WhatsApp has opened with your request. Please press Send, or call +91 92112 21551.');
+        setStatus('We could not reach our booking system, so WhatsApp has opened with your request. Please press Send, or call +91 92112 21553.');
         byWhatsApp(p);
       });
     });

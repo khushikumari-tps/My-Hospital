@@ -34,10 +34,12 @@ window.ADV_LP_CONFIG = {
        thank-you redirect are the same on both routes. */
     formEndpoint: '',
 
-    /* ---- contact points, matching the main site ---- */
-    phone: '+919211221551',
-    phoneDisplay: '+91 92112 21551',
-    whatsapp: '919211221551',
+    /* ---- contact points: the landing pages' own lines, 1553 for calls,
+       WhatsApp and emergencies and 1552 as the second line. The main
+       site keeps +91 92112 21551. ---- */
+    phone: '+919211221553',
+    phoneDisplay: '+91 92112 21553',
+    whatsapp: '919211221553',
     whatsappMessage: 'Hello, I would like to enquire about a surgical consultation.',
     email: 'info@advityahealthcares.com',
 
