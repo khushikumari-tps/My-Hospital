@@ -2140,3 +2140,25 @@ body.hv-light .logo-link {
         bottom: calc(76px + env(safe-area-inset-bottom));
     }
 }
+
+/* ---- Inner-page heroes clear the header -----------------------------------
+   The page heroes kept the 168px top padding they had before the bar grew.
+   Above 1360px the 46px utility bar and the 150px bar end at 196px, so the
+   eyebrow pill over the title sat behind the header on Our Network, Contact
+   and the other inner pages; between 769px and 1360px it cleared the 166px
+   header by 2px. The padding now leaves the same 32px of air at both sizes.
+   The Baruipur hospital page's own hero had the same fault, worse: 160px,
+   and 140px below 981px, so its title ran under the bar. */
+@media (min-width: 1361px) {
+    .pg-hero,
+    .hosp-hero {
+        padding-top: 228px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1360px) {
+    .pg-hero,
+    .hosp-hero {
+        padding-top: 198px;
+    }
+}
