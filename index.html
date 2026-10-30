@@ -704,7 +704,7 @@
                     <span class="loc-city">Owned and operated by Advitya Healthcares Pvt Ltd</span>
 
                     <button class="loc-card is-active is-owned" type="button"
-                        data-map="22.3470699,88.4400202">
+                        data-map="Advitya Hospital, Baruipur">
                         <span class="loc-badge loc-badge-owned">Multispeciality hospital</span>
                         <h3>Advitya Hospital Baruipur</h3>
                         <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Kulpi Road, Puratan Bazar,
@@ -715,7 +715,7 @@
                     </button>
 
                     <button class="loc-card is-owned" type="button"
-                        data-map="22.5108672,88.3995708">
+                        data-map="Dr Deeksha Kapoor, G E 99, Rajdanga Main Road, Kolkata 700107">
                         <span class="loc-badge loc-badge-owned">Outpatient department</span>
                         <h3>Advitya Kolkata OPD</h3>
                         <p class="loc-addr"><i class="fa-solid fa-location-dot"></i> Ground Floor, G E 99, Rajdanga Main Road,
@@ -764,7 +764,7 @@
 
                 <div class="loc-map" data-aos="fade-left" data-aos-delay="80">
                     <iframe id="locationMap"
-                        src="https://maps.google.com/maps?q=22.3470699,88.4400202&z=17&ie=UTF8&iwloc=&output=embed"
+                        src="https://maps.google.com/maps?q=Advitya+Hospital,+Baruipur&z=17&output=embed"
                         width="100%" height="100%" style="border:0;" allowfullscreen loading="lazy"
                         title="Map of the selected Advitya centre"></iframe>
                 </div>
@@ -1278,7 +1278,7 @@
                     cards.forEach(c => c.classList.remove('is-active'));
                     this.classList.add('is-active');
                     const q = encodeURIComponent(this.dataset.map);
-                    map.src = `https://maps.google.com/maps?q=${q}&t=&z=15&ie=UTF8&iwloc=&output=embed`;
+                    map.src = `https://maps.google.com/maps?q=${q}&t=&z=15&output=embed`;
                 });
             });
         })();
