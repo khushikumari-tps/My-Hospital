@@ -3183,3 +3183,30 @@ body.hv-light .hv-lp-card:hover .hv-lp-more i {
         transition: box-shadow .2s ease;
     }
 }
+
+/* ---- Baruipur hospital photo ----------------------------------------------
+   style.css lays this section out for a wide cutout, contained on its panel.
+   The photo is now a tall portrait, 720 x 1280, which would sit small in that
+   column with empty panel on both sides. The columns swap widths so the photo
+   gets one its shape suits, and it is cropped to 4:5 as on the Baruipur hospital
+   page, trimming sky and road and keeping the facade from name board to entrance.
+   Once the section is one column the panel stops at a size that fits a tablet. */
+@media (min-width: 941px) {
+    .milestone .ms-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1.45fr);
+    }
+}
+
+.milestone .ms-media img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 45%;
+    border-radius: 16px;
+}
+
+@media (max-width: 940px) {
+    .milestone .ms-media {
+        width: min(100%, 520px);
+        margin-inline: auto;
+    }
+}

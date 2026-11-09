@@ -2880,10 +2880,21 @@ article.dept-card .dept-cta {
     }
 }
 
-/* The cutout leaves a margin of its own inside the PNG, so the building read
-   small on its panel. It is scaled up rather than the panel shrunk, so the
-   studio surface around it keeps the same proportions. */
+/* The hero photo is a tall portrait of the building, 720 x 1280. Shown whole it
+   would stand far taller than the copy beside it, so it is cropped to 4:5, which
+   trims sky and road and keeps the facade from its name board to the entrance. */
 .hosp-hero-media img {
-    scale: 1.1;
-    transform-origin: 50% 52%;
+    display: block;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 45%;
+}
+
+/* Once the hero is one column the panel would take the full width, and the crop
+   would run taller than a tablet screen, so it stops at a sensible size. */
+@media (max-width: 980px) {
+    .hosp-hero-media {
+        width: min(100%, 520px);
+        margin-inline: auto;
+    }
 }

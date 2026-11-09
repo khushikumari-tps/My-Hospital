@@ -2,20 +2,21 @@
    lp-config.js — the only file a marketer has to edit.
 
    Two things live here: the contact points every CTA on the landing
-   pages uses, and the tracking IDs. Both are read by lp.js and by the
-   GTM snippet in each page's <head>.
+   pages uses, and the tracking IDs, kept for reference.
 
-   >>> BEFORE THE CAMPAIGNS GO LIVE <<<
-   Replace GTM_ID, GA4_ID and ADS_ID below with the real containers.
-   While GTM_ID is left at the placeholder the container is NOT injected,
-   so the pages stay clean and nothing silently half-tracks: every event
-   is still pushed to window.dataLayer, where it can be verified in the
-   console with `dataLayer` before a container exists.
+   >>> GOOGLE TAG MANAGER <<<
+   The container, GTM-WGHV76PH, is installed by Google's snippet at the
+   top of every page's <head>, with its noscript fallback after <body>.
+   Nothing reads GTM_ID below, so changing it does not change the
+   container: edit the snippet on each page instead. GA4 and Google Ads
+   tags belong inside the container. lp.js pushes every CTA, form and
+   scroll event to window.dataLayer, where GTM picks them up and where
+   they can be checked in the console with `dataLayer`.
    =================================================================== */
 window.ADV_LP_CONFIG = {
 
-    /* ---- tracking (replace before launch) ---- */
-    GTM_ID: 'GTM-XXXXXXX',          /* Google Tag Manager container      */
+    /* ---- tracking ---- */
+    GTM_ID: 'GTM-WGHV76PH',         /* Google Tag Manager container      */
     GA4_ID: 'G-XXXXXXXXXX',         /* GA4 measurement ID                */
     ADS_ID: 'AW-XXXXXXXXXX',        /* Google Ads conversion ID          */
     ADS_LEAD_LABEL: 'XXXXXXXXXXXXXXXXXX',  /* conversion label for a lead */
@@ -51,21 +52,3 @@ window.ADV_LP_CONFIG = {
     slug: '',
     pageType: 'landing_page'
 };
-
-/* -------------------------------------------------------------------
-   GTM loader. Kept here rather than pasted into six pages so there is
-   one place to change it, and guarded so the placeholder ID never
-   reaches the network.
-   ------------------------------------------------------------------- */
-(function (w, d, cfg) {
-    if (!cfg || !cfg.GTM_ID || cfg.GTM_ID.indexOf('XXXX') > -1) return;
-
-    w.dataLayer = w.dataLayer || [];
-    w.dataLayer.push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
-
-    var f = d.getElementsByTagName('script')[0];
-    var j = d.createElement('script');
-    j.async = true;
-    j.src = 'https://www.googletagmanager.com/gtm.js?id=' + cfg.GTM_ID;
-    f.parentNode.insertBefore(j, f);
-})(window, document, window.ADV_LP_CONFIG);
